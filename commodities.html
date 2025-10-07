@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Commodities — bataSutra</title>
+<meta name="description" content="Commodity tiles — native price & 1D % change with hover-only details. Powered by Commodities54 sheet." />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; }
+  html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial; }
+  body { background: var(--bg); color: var(--ink); }
+  .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+
+  /* Marquee */
+  .ticker-rail { position: relative; overflow: hidden; }
+  .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; }
+  .ticker-left  { animation: scroll-left 120s linear infinite; }
+  .ticker-right { animation: scroll-right 120s linear infinite; }
+  .ticker:hover { animation-play-state: paused; }
+  @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+  @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+  @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
+
+  /* Grid — fixed 6 tiles per row on desktop */
+  .grid-tiles {
+    display:grid;
+    grid-template-columns: repeat(2, minmax(0,1fr)); /* phones */
+    grid-auto-rows: 120px;
+    gap: 1rem;
+  }
+  @media (min-width: 640px){ .grid-tiles { grid-template-columns: repeat(3, minmax(0,1fr)); } }
+  @media (min-width: 768px){ .grid-tiles { grid-template-columns: repeat(4, minmax(0,1fr)); } }
+  @media (min-width: 1024px){ .grid-tiles { grid-template-columns: repeat(6, minmax(0,1fr)); } }
+
+  .tile { border-radius: .9rem; position: relative; overflow: hidden; border: 1px solid rgba(0,0,0,.06); }
+  .tile .inner { padding: 1rem; height:100%; display:flex; flex-direction:column; justify-content:space-between; }
+  .tile .top { display:flex; align-items:flex-start; justify-content:space-between; gap:.75rem; }
+  .tile .name { font-size:1rem; font-weight:800; line-height:1.15; letter-spacing:.01em; }
+  .tile .pill { font-weight:800; font-size:.75rem; padding:.22rem .5rem; border-radius:.45rem; background: rgba(255,255,255,.2); white-space:nowrap; }
+  .tile .meta { display:flex; align-items:center; gap:.5rem; font-size:.82rem; opacity:.95; }
+
+  /* Hover-only card */
+  .hovercard {
+    position: fixed; z-index: 60;
+    max-width: 380px; width: max-content;
+    background: #111; color:#fff;
+    border-radius: .65rem; border:1px solid rgba(255,255,255,.12);
+    box-shadow: 0 20px 40px rgba(0,0,0,.3);
+    padding: .8rem .9rem;
+    opacity: 0; transform: translateY(4px) scale(.98);
+    transition: opacity .12s ease, transform .12s ease;
+    pointer-events: none; /* never pins */
+  }
+  .hovercard[data-show="true"] { opacity:1; transform: translateY(0) scale(1); }
+  .hovercard h4 { font-size:.95rem; font-weight:700; margin: 0 0 .2rem 0; line-height:1.25; }
+  .hovercard .grid { display:grid; grid-template-columns: auto 1fr; gap:.35rem .8rem; margin-top:.45rem; font-size:.85rem; }
+  .hovercard .label { color:#d1d5db; white-space:nowrap; }
+  .hovercard .val { color:#fff; word-break: break-word; }
+
+  /* Footer */
+  .footer-red { background: var(--brand-ink); color:#fff; }
+  .footer-red a { color: rgba(255,255,255,.92); }
+  .footer-red a:hover { color:#fff; text-decoration: underline; }
+  .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+  .footer-red .muted { color: rgba(255,255,255,.78); }
+  .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+  .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+  .diag { background:#fff7ed; border-bottom:1px solid #fed7aa; color:#9a3412; }
+</style>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div id="countInfo" class="text-xs text-slate-600"></div>
+    </div>
+  </header>
+
+  <!-- Diagnostics -->
+  <div id="diag" class="diag hidden">
+    <div class="container py-2 text-[12px]" id="diagText"></div>
+  </div>
+
+  <!-- Main -->
+  <main class="container py-8">
+    <section class="pb-4">
+      <h1 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Commodities</h1>
+      <p class="text-slate-600 mt-2">Native price & 1D % change.</p>
+      <div id="lastUpdated" class="text-xs text-slate-500 mt-1"></div>
+    </section>
+
+    <!-- Legend -->
+    <div class="flex items-center justify-between flex-wrap gap-3">
+      <div class="flex items-center gap-3 text-xs text-slate-600">
+        <span>-5%</span>
+        <div class="legend w-48 sm:w-64 md:w-80" style="height:10px;border-radius:999px;background:linear-gradient(90deg,#dc2626,#f59e0b,#16a34a)"></div>
+        <span>+5%</span>
+      </div>
+      <div id="rangeInfo" class="text-xs text-slate-500"></div>
+    </div>
+
+    <!-- Tiles -->
+    <section class="mt-6">
+      <div id="tiles" class="grid-tiles">
+        <div class="tile" style="background:#f3f4f6"></div>
+        <div class="tile" style="background:#f3f4f6"></div>
+        <div class="tile" style="background:#f3f4f6"></div>
+        <div class="tile" style="background:#f3f4f6"></div>
+        <div class="tile" style="background:#f3f4f6"></div>
+        <div class="tile" style="background:#f3f4f6"></div>
+      </div>
+      <p id="emptyState" class="text-center text-slate-500 text-sm mt-8 hidden">No commodities found.</p>
+    </section>
+  </main>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail" aria-label="Bottom headlines">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/#indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/advertise">Advertising</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hover-only card -->
+  <div id="hoverCard" class="hovercard" aria-hidden="true">
+    <h4 id="hcTitle"></h4>
+    <div class="grid">
+      <div class="label">Ticker</div><div class="val" id="hcSym"></div>
+      <div class="label">% Change</div><div class="val" id="hcPct"></div>
+      <div class="label">Last (Native)</div><div class="val" id="hcLast"></div>
+      <div class="label">Exchange</div><div class="val" id="hcExch"></div>
+      <div class="label">Category</div><div class="val" id="hcCat"></div>
+      <div class="label">Last (INR)</div><div class="val" id="hcINR"></div>
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="commodities.js" defer></script>
+</body>
+</html>
