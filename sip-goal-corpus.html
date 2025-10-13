@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bataSutra — SIP Goal & Corpus</title>
+  <meta name="description" content="Compute required SIP for a goal or estimate corpus from a given SIP. Clean, client-side, shareable." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; --ring:rgba(139,0,0,.25);
+      --space:1.25rem; --border:#e5e7eb; --radius:1rem;
+    }
+    html,body{height:100%}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink)}
+
+    /* Container */
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    @media (min-width:768px){ .container{padding-left:1.25rem; padding-right:1.25rem;} }
+    @media (min-width:1024px){ .container{padding-left:1.5rem; padding-right:1.5rem;} }
+
+    /* Cards & atoms */
+    .card{background:var(--card); border:1px solid var(--border); border-radius:var(--radius); box-shadow:0 1px 2px rgba(0,0,0,.04);}
+    .lift{transition:transform .15s ease, box-shadow .15s ease}
+    .lift:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .kicker{letter-spacing:.08em; font-weight:700; font-size:.75rem; text-transform:uppercase; color:var(--brand-ink)}
+    .pill{font-weight:600; font-size:.72rem; padding:.25rem .5rem; border-radius:.5rem; background:#f1f5f9; color:#0f172a}
+    .muted{color:#64748b}
+    .small{font-size:.82rem}
+    .mono{font-variant-numeric:tabular-nums}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.65rem .9rem; border-radius:.65rem; font-weight:600; font-size:.92rem}
+    .btn-ghost{border:1px solid var(--border); color:#374151; background:#fff}
+    .btn-ghost:hover{border-color:var(--brand); color:var(--brand-ink)}
+    .btn-primary{background:var(--brand); color:#fff}
+    .btn-primary:hover{opacity:.9}
+
+    /* Fields */
+    .field{display:flex; flex-direction:column; gap:.45rem}
+    .field label{font-size:.85rem; color:#334155; font-weight:600}
+    .field input, .field select{
+      width:100%; padding:.72rem .85rem; border:1px solid var(--border); border-radius:.65rem; font-size:.95rem; background:#fff;
+    }
+    .field input:focus, .field select:focus{outline:none; box-shadow:0 0 0 .25rem var(--ring); border-color:var(--brand)}
+    .hint{font-size:.8rem; color:#6b7280}
+
+    /* Rhythm */
+    .flow > * + *{ margin-top: var(--space); }
+    .flow-sm > * + *{ margin-top: calc(var(--space) * .66); }
+    .section{ padding-top:1.25rem; padding-bottom:1.25rem; } @media (min-width:1024px){ .section{ padding-top:2rem; padding-bottom:2rem; } }
+    .main-grid{ gap:1rem; } @media (min-width:640px){ .main-grid{ gap:1.25rem; } } @media (min-width:1024px){ .main-grid{ gap:1.75rem; } }
+
+    /* Results: prevent overflow */
+    .result{display:block; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.25}
+
+    /* ===== Auto-start TICKERS ===== */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left 90s linear infinite; }
+    .ticker-right { animation: scroll-right 90s linear infinite; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
+
+    /* Footer */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+  </style>
+</head>
+<body class="min-h-full">
+  <!-- ===== Top Ticker ===== -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>MF SIP inflows strong</span><span>Sensex steady</span><span>Crude eases</span><span>Rupee firm</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Header ===== -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="hidden sm:flex items-center gap-2">
+        <button id="copyLink" class="btn btn-ghost" title="Copy link with inputs">Copy Link</button>
+        <a href="/tools" class="btn btn-ghost">Browse Tools</a>
+        <a href="/#subscribe" class="btn btn-primary">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="border-b bg-white">
+    <div class="container section">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 lg:gap-8">
+        <div class="flow-sm" style="max-width:38rem">
+          <div class="kicker">Planner</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">SIP Goal & Corpus</h1>
+          <p class="text-slate-600 text-lg">Compute required SIP for a target or estimate your corpus from a given SIP. Fully client-side.</p>
+          <div class="flex flex-wrap gap-2"><span class="pill">SIP</span><span class="pill">Goal</span><span class="pill">Corpus</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Main ===== -->
+  <main class="container section">
+    <div class="grid grid-cols-1 lg:grid-cols-2 main-grid">
+      <!-- Inputs -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">Inputs</h2>
+            <p class="muted">Pick mode, returns, timing. Optional inflation and annual step-up.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="mode">Mode</label>
+              <select id="mode">
+                <option value="goal" selected>Goal: find required SIP</option>
+                <option value="corpus">Corpus: compute final amount</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="freq">Frequency</label>
+              <select id="freq">
+                <option value="12" selected>Monthly</option>
+                <option value="4">Quarterly</option>
+                <option value="1">Annual</option>
+                <option value="52">Weekly</option>
+                <option value="365">Daily</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="years">Duration (years)</label>
+              <input id="years" type="number" inputmode="decimal" placeholder="15" min="0.1" step="any">
+            </div>
+            <div class="field">
+              <label for="rate">Expected return p.a. (%)</label>
+              <input id="rate" type="number" inputmode="decimal" placeholder="12" step="any">
+            </div>
+            <div class="field">
+              <label for="timing">Contribution timing</label>
+              <select id="timing">
+                <option value="end" selected>End of period</option>
+                <option value="start">Start of period</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="infl">Inflation p.a. (%) <span class="muted">(optional)</span></label>
+              <input id="infl" type="number" inputmode="decimal" placeholder="5" step="any">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="stepup">Step-up annually (%) <span class="muted">(optional)</span></label>
+              <input id="stepup" type="number" inputmode="decimal" placeholder="0" step="any">
+              <div class="hint">Applied once every 12 contributions.</div>
+            </div>
+            <div class="field">
+              <label for="lumpsum">Current corpus / lump-sum now</label>
+              <input id="lumpsum" type="number" inputmode="decimal" placeholder="0" min="0" step="any">
+            </div>
+          </div>
+
+          <!-- Mode: Goal -->
+          <div id="goalWrap" class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="target">Target corpus</label>
+              <input id="target" type="number" inputmode="decimal" placeholder="10000000" min="0" step="any">
+            </div>
+            <div class="field">
+              <label for="guess">Initial SIP guess <span class="muted">(optional)</span></label>
+              <input id="guess" type="number" inputmode="decimal" placeholder="25000" min="0" step="any">
+            </div>
+          </div>
+
+          <!-- Mode: Corpus -->
+          <div id="corpusWrap" class="grid md:grid-cols-2 gap-4 lg:gap-5 hidden">
+            <div class="field">
+              <label for="sip">SIP per contribution</label>
+              <input id="sip" type="number" inputmode="decimal" placeholder="25000" min="0" step="any">
+            </div>
+            <div class="field">
+              <label for="startAt">Start at period # <span class="muted">(0 = now)</span></label>
+              <input id="startAt" type="number" inputmode="numeric" placeholder="0" min="0" step="1">
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button id="calc" class="btn btn-primary">Calculate</button>
+            <button id="reset" class="btn btn-ghost">Reset</button>
+            <div id="msg" class="hint"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">Results</h2>
+            <p class="muted">Nominal by default; set inflation to also see real.</p>
+          </header>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+            <div class="p-4 rounded-lg border">
+              <div class="muted small" id="resultLead">Required SIP</div>
+              <span id="outMain" class="result text-2xl font-bold mono" title="—">—</span>
+              <div id="outMainReal" class="small muted mono mt-1">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Final corpus</div>
+              <span id="outCorpus" class="result text-2xl font-bold mono" title="—">—</span>
+              <div id="outCorpusReal" class="small muted mono mt-1">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Total invested</div>
+              <span id="outInvested" class="result text-2xl font-bold mono" title="—">—</span>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Assumptions</div>
+              <div id="outAssump" class="small mono">—</div>
+            </div>
+          </div>
+      </section>
+    </div>
+
+    <!-- ===== Examples (separate sections) ===== -->
+    <section class="section grid md:grid-cols-2 main-grid">
+      <div class="card p-6 lift">
+        <div class="kicker mb-2">Goal mode examples</div>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="g1">₹1 Cr in 15y • 12% p.a. • Monthly • End • No step-up • 5% infl</button></li>
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="g2">₹2 Cr in 20y • 12% p.a. • Monthly • Start • 10% step-up • 5% infl</button></li>
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="g3">₹50 L in 10y • 11% p.a. • Monthly • End • No step-up</button></li>
+        </ul>
+      </div>
+      <div class="card p-6 lift">
+        <div class="kicker mb-2">Corpus mode examples</div>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="c1">SIP ₹25k/mo for 12y • 11% p.a. • End • Lump ₹2L</button></li>
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="c2">SIP ₹15k/mo for 20y • 12% p.a. • Start • 10% step-up</button></li>
+          <li><button class="btn btn-ghost w-full justify-start ex" data-example="c3">SIP ₹10k/mo for 25y • 12% p.a. • End • No step-up</button></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== Bottom Ticker ===== -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail" aria-label="Bottom tips">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium">
+          <span>Start-of-period compounds longer</span><span>Set inflation to see real corpus</span><span>Optional annual step-up</span><span>Copy link preserves inputs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+ <footer class="footer-red text-sm">
+    <div class="divider"></div>
+
+    <div class="container py-10">
+      <!-- Top: brand + mission -->
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="indicies.html">Indices</a></li>
+            <li><a href="heatmap.html">Sector Heatmap</a></li>
+            <li><a href="commodities.html">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="SIP_Goal_Corpus_Planner.html">SIP Goal &amp; Corpus</a></li>
+            <li><a href="CAGR_Quick_IRR.html">CAGR &amp; Quick IRR</a></li>
+            <li><a href="PPF_Emergency_Ladder.html">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="Old_vs_New_Tax_Slab.html">Tax: Old vs New Slab</a></li>
+            <li><a href="Expense_Buckets_Runway.html">Expense Buckets &amp; Runway</a></li>
+            <li><a href="change-log.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="about.html">About</a></li>
+            <li><a href="inside-the-dashboard.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="data-sources.html">Data Sources</a></li>
+            <li><a href="editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="corrections.html">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-services.html">Terms of Service</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External script -->
+  <script src="sip-goal-corpus.js"></script>
+</body>
+</html>
