@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Careers — bataSutra</title>
+  <meta name="description" content="Join bataSutra. We’re hiring editors, reporters, data analysts, designers, and engineers. See open roles, culture, benefits, and how we hire."/>
+  <meta name="theme-color" content="#8B0000"/>
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border: 1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color: #fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color: #fff; text-decoration: underline; }
+    .footer-red .heading { font-size: .85rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top: 1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size: .72rem; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: .25rem .5rem; color: #fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display: flex; width: max-content; white-space: nowrap; gap: 2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform: translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce) { .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: .75rem; padding: .75rem; }
+    .badge { font-size: .72rem; background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; border-radius: 999px; padding: .15rem .5rem; }
+    .label { font-size: .72rem; color: #475569; }
+    .link-ink { color: var(--brand-ink); }
+    .link-ink:hover { text-decoration: underline; }
+    .toc a { color: #0f172a; }
+    .toc a:hover { color: var(--brand-ink); text-decoration: underline; }
+    code,kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Careers",
+    "publisher": { "@type": "Organization", "name": "bataSutra" },
+    "about": ["careers", "jobs", "hiring", "culture", "benefits"]
+  }
+  </script>
+
+  <!-- App script -->
+  <script src="careers.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>We’re hiring across editorial, data, and product</span>
+          <span>Hybrid-first, India</span>
+          <span>High ownership, pragmatic craft</span>
+          <span>Apply at careers@batasutra.in</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Careers</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">Build pragmatic products and journalism for India’s investors, operators, and policy-minded readers. High bar, low ego.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#roles" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Open roles</a>
+          <a href="#culture" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Culture & benefits</a>
+          <a href="#process" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">How we hire</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Hiring at a glance</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Location:</strong> Hybrid-first (India), remote-flex</li>
+          <li class="grid-bullet"><strong>Interview:</strong> 3–4 conversations + practical task</li>
+          <li class="grid-bullet"><strong>Contact:</strong> <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#roles">Open Roles</a></li>
+        <li><a href="#culture">Culture</a></li>
+        <li><a href="#benefits">Benefits</a></li>
+        <li><a href="#process">How We Hire</a></li>
+        <li><a href="#teams">Teams</a></li>
+        <li><a href="#interns">Internships</a></li>
+        <li><a href="#referrals">Referrals</a></li>
+        <li><a href="#equal">Equal Opportunity</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Open Roles -->
+  <section id="roles" class="container py-6">
+    <h2 class="text-xl font-bold tracking-tight mb-3">Open Roles</h2>
+
+    <div class="card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="text-left px-3 py-2">Role</th>
+              <th class="text-left px-3 py-2">Team</th>
+              <th class="text-left px-3 py-2">Type</th>
+              <th class="text-left px-3 py-2">Location</th>
+              <th class="text-left px-3 py-2">Summary</th>
+              <th class="text-left px-3 py-2">Apply</th>
+            </tr>
+          </thead>
+          <tbody id="rolesBody" class="divide-y"></tbody>
+        </table>
+      </div>
+    </div>
+    <p class="text-xs text-slate-500 mt-2">Don’t see a fit? Send a short note + links to <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a>.</p>
+  </section>
+
+  <!-- Culture -->
+  <section id="culture" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Culture</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Pragmatic craft:</strong> Fewer, better; measured by impact, not output.</li>
+          <li class="grid-bullet"><strong>High trust, low ego:</strong> Direct feedback, clear ownership.</li>
+          <li class="grid-bullet"><strong>Reader first:</strong> Utility, clarity, and accuracy over hot takes.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">How we work</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Hybrid-first (India) with async collaboration.</li>
+          <li class="grid-bullet">Documentation &gt; meetings; lightweight rituals.</li>
+          <li class="grid-bullet">Focus blocks and no-meeting windows.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section id="benefits" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Benefits</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Health &amp; Insurance</div>
+          <div class="text-sm mt-1">Group health cover incl. dependents; mental-health stipend.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Time Off</div>
+          <div class="text-sm mt-1">Generous leave, optional company shutdowns, flexible holidays.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Learning</div>
+          <div class="text-sm mt-1">Annual learning budget; books, courses, conferences.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Gear</div>
+          <div class="text-sm mt-1">Quality laptop/peripherals; home office stipend.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Parental</div>
+          <div class="text-sm mt-1">Inclusive parental leave; flexible return.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Ownership</div>
+          <div class="text-sm mt-1">Meaningful responsibility and career growth.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section id="process" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">How We Hire</h2>
+      <ol class="mt-3 list-decimal list-inside text-sm text-slate-700 space-y-1">
+        <li>Share CV/portfolio + 2–3 work samples via <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a>.</li>
+        <li>Intro call (30 min): team, role context, Q&amp;A.</li>
+        <li>Practical task aligned to the role (2–4 hrs async).</li>
+        <li>Panel: craft deep-dive + values interview.</li>
+        <li>Offer &amp; mutual references.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Teams -->
+  <section id="teams" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Teams</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Editorial:</strong> Markets, policy, explainers, data-led storytelling.</li>
+          <li class="grid-bullet"><strong>Data:</strong> ETL, dashboards, QA, and methodology.</li>
+          <li class="grid-bullet"><strong>Design:</strong> Systems, brand, product, and graphics.</li>
+          <li class="grid-bullet"><strong>Engineering:</strong> Frontend, performance, infra-light services.</li>
+          <li class="grid-bullet"><strong>Growth:</strong> Newsletters, partnerships, performance channels.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Tools we like</h3>
+        <div class="text-sm text-slate-700 mt-2">TypeScript, Tailwind, simple build pipelines, reproducible notebooks, and great docs.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Internships -->
+  <section id="interns" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Internships</h2>
+      <p class="text-sm text-slate-700 mt-2">Editorial, data, and design internships run year-round. 8–16 weeks, stipend provided. Write to <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a> with “Internship — [Team]”.</p>
+    </div>
+  </section>
+
+  <!-- Referrals -->
+  <section id="referrals" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Referrals</h2>
+      <p class="text-sm text-slate-700 mt-2">Know someone perfect? Email <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a> with the role, their LinkedIn/portfolio, and a short note.</p>
+    </div>
+  </section>
+
+  <!-- Equal Opportunity -->
+  <section id="equal" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Equal Opportunity</h2>
+      <p class="text-sm text-slate-700 mt-2">bataSutra is an equal-opportunity employer. We do not discriminate based on caste, religion, gender identity/expression, sexual orientation, age, disability, veteran status, or any legally protected status. We provide reasonable accommodations during hiring—write to <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a>.</p>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">CAREERS</span>
+        <div class="ticker-rail flex-1" aria-label="Careers ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>High ownership roles</span>
+            <span>Hybrid-first • India</span>
+            <span>Inclusive & equal opportunity</span>
+            <span>Apply: careers@batasutra.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="indicies.html">Indices</a></li>
+            <li><a href="heatmap.html">Sector Heatmap</a></li>
+            <li><a href="commodities.html">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="SIP_Goal_Corpus_Planner.html">SIP Goal &amp; Corpus</a></li>
+            <li><a href="CAGR_Quick_IRR.html">CAGR &amp; Quick IRR</a></li>
+            <li><a href="PPF_Emergency_Ladder.html">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="Old_vs_New_Tax_Slab.html">Tax: Old vs New Slab</a></li>
+            <li><a href="Expense_Buckets_Runway.html">Expense Buckets &amp; Runway</a></li>
+            <li><a href="change-log.html">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="about.html">About</a></li>
+            <li><a href="inside-the-dashboard.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="data-sources.html">Data Sources</a></li>
+            <li><a href="editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="corrections.html">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-services.html">Terms of Service</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
