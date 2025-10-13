@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bataSutra — All Articles</title>
+  <meta name="description" content="Explore the latest articles on Indian business trends, startups, tech, and finance." />
+  <meta name="keywords" content="Indian business, articles, startups, markets, bataSutra" />
+  <meta name="author" content="bataSutra" />
+
+  <!-- Fonts + Tailwind -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; --ring:rgba(139,0,0,.25);}
+    html,body{height:100%}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink)}
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    .card{background:var(--card); border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+    .lift{transition:transform .15s ease, box-shadow .15s ease}
+    .lift:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .kicker{letter-spacing:.08em; font-weight:700; font-size:.75rem; text-transform:uppercase; color:var(--brand-ink)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border-radius:.65rem; font-weight:600; font-size:.92rem}
+    .btn-ghost{border:1px solid #e5e7eb; color:#374151}
+    .btn-ghost:hover{border-color:var(--brand); color:var(--brand-ink)}
+    .btn-primary{background:var(--brand); color:#fff}
+    .btn-primary:hover{opacity:.9}
+    .muted{color:#64748b}
+    .pill{font-weight:600; font-size:.72rem; padding:.25rem .5rem; border-radius:.5rem; background:#f1f5f9; color:#0f172a}
+
+    /* ===== TICKERS ===== */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker-rail::after, .ticker-rail::before { content:""; position:absolute; top:0; bottom:0; width:48px; pointer-events:none; }
+    .ticker-rail::before { left:0; background: linear-gradient(to right, rgba(122,0,0,1), rgba(122,0,0,0)); }
+    .ticker-rail::after  { right:0; background: linear-gradient(to left,  rgba(122,0,0,1), rgba(122,0,0,0)); }
+    .ticker-rail--plain::before, .ticker-rail--plain::after { content:none; }
+
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left 120s linear infinite; }
+    .ticker-right { animation: scroll-right 120s linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
+
+    /* ===== Footer (red) ===== */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* ===== Articles ===== */
+    .read-more-btn { display:inline-block; padding:.6rem 1.05rem; background:var(--brand); color:#fff; border-radius:.5rem; font-size:.9rem; font-weight:600; line-height:1; }
+    .read-more-btn:hover { opacity:.92; }
+    .sponsored-card { background:#fff7f7; border-color:#f2dcdc; }
+    .sponsored-card .tag { font-size:.7rem; color:#888; letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:.5rem; font-weight:600; }
+  </style>
+
+  <!-- Page script (split out) -->
+  <script src="latest.js" defer></script>
+</head>
+<body class="min-h-full">
+
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top market headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>Sensex ▲</span><span>NIFTY50 ▲</span><span>Brent Crude ▼</span><span>USD/INR ↔</span><span>Gold (MCX) ▲</span><span>India VIX ▼</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <nav class="hidden sm:flex items-center gap-5 text-sm text-slate-600">
+        <a class="hover:text-[var(--brand-ink)]" href="/#indices">Markets</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#heatmap">Heatmap</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#commodities">Commodities</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/tools">Tools</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#articles" aria-current="page">Articles</a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="/#subscribe" class="btn btn-primary">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="border-b bg-white">
+    <div class="container py-8 md:py-12">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <div class="kicker mb-2">Editorial</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">All Articles</h1>
+          <p class="mt-3 text-slate-600 text-lg">Latest analysis on markets, policy, tech, infra, and primary—curated and continuously updated.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="pill">Markets</span><span class="pill">Policy</span>
+            <span class="pill">Primary</span><span class="pill">Tech</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="/tools" class="btn btn-ghost">Browse Tools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Body -->
+  <main class="container py-8">
+    <div class="grid grid-cols-1 gap-4">
+      <!-- Sample items (extend as needed) -->
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Sunday Brief: The Week Ahead — Markets, Policy & Data Playbook</h3>
+        <p class="text-slate-600 mt-1">Your Monday-to-Friday field guide: macro signposts, sector triggers, positioning tilts, and ops checklists to start the week strong.</p>
+        <div class="mt-3"><a href="sunday-brief-week-ahead-markets-policy-data-playbook.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h3>
+        <p class="text-slate-600 mt-1">How cohorts, take rate, CM2, and LTV/CAC drive value—plus sensitivity tables, valuation bridges, and diligence asks for investors.</p>
+        <div class="mt-3"><a href="urban-company-ipo-beyond-the-numbers-unit-economics-play.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <!-- … add the rest of your items here … -->
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Snapdeal Is Back?</h3>
+        <p class="text-slate-600 mt-1">A name that once dominated early Indian e-commerce headlines is quietly trying to re-enter the game.</p>
+        <div class="mt-3"><a href="snp.html" class="read-more-btn">Read Now</a></div>
+      </article>
+    </div>
+  </main>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail ticker-rail--plain" aria-label="Bottom market headlines">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium text-slate-700">
+          <span>Mutual fund SIP inflows hit record</span><span>RBI policy unchanged</span><span>GST collection beats estimates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5">Not just news — the <em>bata</em> behind the news.</div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl">We unpack India’s business stories and ship tools that turn insight into action.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles" aria-current="page">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices.html">Indices</a></li>
+            <li><a href="/heatmap.html">Sector Heatmap</a></li>
+            <li><a href="/commodities.html">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/inside-the-dashboard.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships.html">Partnerships</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology.html">Methodology</a></li>
+            <li><a href="/data-sources.html">Data Sources</a></li>
+            <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="/corrections.html">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-services.html">Terms of Service</a></li>
+            <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="/security.html">Security</a></li>
+            <li><a href="/responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="/licensing.html">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
