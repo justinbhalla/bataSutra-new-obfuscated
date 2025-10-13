@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Inside the Dashboard — bataSutra</title>
+  <meta name="description" content="How the bataSutra dashboards are built: data sources, refresh cadence, methodology, architecture, and how to read each module." />
+  <meta name="theme-color" content="#8B0000" />
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root { --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border: 1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color: #fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color: #fff; text-decoration: underline; }
+    .footer-red .heading { font-size: .85rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top: 1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size: .72rem; border: 1px solid rgba(255,255,255,.28); border-radius: 999px; padding: .25rem .5rem; color: #fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display: flex; width: max-content; white-space: nowrap; gap: 2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left   { 0% { transform: translateX(0) }   100% { transform: translateX(-50%) } }
+    @keyframes scroll-right  { 0% { transform: translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce) { .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background: #f8fafc; border: 1px solid #e5e7eb; border-radius: .75rem; padding: .75rem; }
+    .badge { font-size: .72rem; background: #f1f5f9; color: #0f172a; border: 1px solid #e2e8f0; border-radius: 999px; padding: .15rem .5rem; }
+    .label { font-size: .72rem; color: #475569; }
+    .link-ink { color: var(--brand-ink); }
+    .link-ink:hover { text-decoration: underline; }
+    .toc a { color: #0f172a; }
+    .toc a:hover { color: var(--brand-ink); text-decoration: underline; }
+    code, kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  </style>
+
+  <!-- App script -->
+  <script src="inside-dashboard.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker (Sheets → Headlines: Section=top) -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- First-paint fallback -->
+          <span>Transparent methods</span>
+          <span>Daily data refresh</span>
+          <span>Definitions in the UI</span>
+          <span>Errors? Tell us anytime</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Inside the Dashboard</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">A plain-English guide to how our dashboards work: sources, refresh cadence, definitions, and architecture — so you can trust what you’re seeing.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#overview" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Overview</a>
+          <a href="#modules" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Modules</a>
+          <a href="#refresh" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Refresh & Latency</a>
+          <a href="#architecture" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Architecture</a>
+        </div>
+      </div>
+
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">At a glance</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Coverage:</strong> India equities, macro, sectors, and corporate events</li>
+          <li class="grid-bullet"><strong>Cadence:</strong> Intraday for prices; daily for aggregates</li>
+          <li class="grid-bullet"><strong>Sources:</strong> Public disclosures, exchange feeds, reliable third-parties</li>
+          <li class="grid-bullet"><strong>Contact:</strong> <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#overview">Overview & principles</a></li>
+        <li><a href="#modules">Modules (what you’ll see)</a></li>
+        <li><a href="#definitions">Key definitions</a></li>
+        <li><a href="#refresh">Refresh & latency</a></li>
+        <li><a href="#quality">Data quality & fallbacks</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#privacy">Privacy & security</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Overview & principles</h2>
+      <ul class="mt-3 space-y-2 text-sm text-slate-700">
+        <li class="grid-bullet"><strong>Explain first:</strong> Visuals are annotated with units, basis, and time span.</li>
+        <li class="grid-bullet"><strong>Source-linked:</strong> Each widget references the underlying dataset where feasible.</li>
+        <li class="grid-bullet"><strong>Deterministic:</strong> Calculations are simple, documented, and reproducible.</li>
+        <li class="grid-bullet"><strong>Graceful degradation:</strong> If a source stalls, we show last good value with a staleness badge.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section id="modules" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Modules (what you’ll see)</h2>
+        <div class="mt-3 space-y-3">
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold">Indices</div>
+            <div class="text-sm mt-1">Live NIFTY/Sensex snapshots with breadth (adv/decl/unch), sector deltas, and intraday range.</div>
+            <div class="text-xs text-slate-500 mt-2">Calc: %Δ = (Last − PrevClose) / PrevClose.</div>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold">Sector Heatmap</div>
+            <div class="text-sm mt-1">Market-cap weighted move by NSE industry; hover for top movers & weights.</div>
+            <div class="text-xs text-slate-500 mt-2">Calc: Sector return = Σ(weightᵢ × returnᵢ).</div>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold">Commodities</div>
+            <div class="text-sm mt-1">Spot/futures for Brent, Gold, Silver, Copper; INR where relevant with FX baseline.</div>
+            <div class="text-xs text-slate-500 mt-2">Calc: INR series = USD × USDINR last.</div>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold">Calendars & Trackers</div>
+            <div class="text-sm mt-1">Earnings, IPOs, policy events; tagged by sector, size, and impact where available.</div>
+            <div class="text-xs text-slate-500 mt-2">SLA: refresh daily; event times in IST unless noted.</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Design conventions</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Green ↑ for positive moves; red ↓ for negative.</li>
+          <li class="grid-bullet">Grey hash = stale/partial data.</li>
+          <li class="grid-bullet">Tooltips include timestamp, unit, and source.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Definitions -->
+  <section id="definitions" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Key definitions</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">1D / 5D / 1M</div>
+          <div class="text-sm mt-1">Close-to-close change over the stated window; weekends/holidays skipped.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">YTD</div>
+          <div class="text-sm mt-1">From last trading day of previous calendar year to last close.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Real-time</div>
+          <div class="text-sm mt-1">Exchange permitted latency; typically 1–15 minutes unless noted “live”.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Refresh & Quality -->
+  <section id="refresh" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Refresh & latency</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Prices:</strong> Intraday every 1–5 minutes; stamps show last update.</li>
+          <li class="grid-bullet"><strong>Aggregates:</strong> Nightly recompute; sector weights & totals rebased daily.</li>
+          <li class="grid-bullet"><strong>Calendars:</strong> Daily 06:00–08:00 IST; ad-hoc during earnings weeks.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Data quality & fallbacks</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Primary → Secondary → Cached last-good.</li>
+          <li class="grid-bullet">Outliers flagged via z-score; winsorized view on hover.</li>
+          <li class="grid-bullet">Manual overrides logged; visible in changelog.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Architecture -->
+  <section id="architecture" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Architecture (high-level)</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Ingest</div>
+          <div class="text-sm mt-1">Scheduled pull from exchanges/APIs and public filings; schema-validated CSV/JSON.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Transform</div>
+          <div class="text-sm mt-1">Normalize, join, enrich (FX, sectors), compute derived fields; audit trail retained.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Serve</div>
+          <div class="text-sm mt-1">Edge-cached JSON for widgets; rate-limited; stale-while-revalidate for resilience.</div>
+        </div>
+      </div>
+      <p class="text-xs text-slate-500 mt-3">We publish methods and caveats in each widget’s tooltip or “info” panel.</p>
+    </div>
+  </section>
+
+  <!-- Privacy -->
+  <section id="privacy" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Privacy & security</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">No personal data needed to view dashboards.</li>
+          <li class="grid-bullet">Analytics optional (see <a class="link-ink" href="/cookies">Cookie Policy</a>).</li>
+          <li class="grid-bullet">Vulns? Report via <a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a>.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Licensing</h3>
+        <p class="text-sm text-slate-700 mt-2">See <a class="link-ink" href="/licensing">Licensing</a> for data usage, redistribution, and attribution rules.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">FAQ</h2>
+      <div class="mt-3 space-y-3">
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Why doesn’t my number match another site?</summary>
+          <div class="text-sm text-slate-700 mt-2">Different timestamp, corporate actions, or currency basis. Hover the info icon for our basis and last refresh.</div>
+        </details>
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Can I export the data?</summary>
+          <div class="text-sm text-slate-700 mt-2">We’re adding per-widget CSV soon. For syndication or commercial use, see <a class="link-ink" href="/licensing">Licensing</a>.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Changes -->
+  <section id="changes" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Changes</h2>
+      <ul class="mt-3 space-y-2 text-sm text-slate-700">
+        <li class="grid-bullet"><strong>Sep 2025:</strong> Added sector weights and staleness badges.</li>
+        <li class="grid-bullet"><strong>Aug 2025:</strong> Unified index methodology; improved commodity FX baseline.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Contact</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Data desk:</strong> <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Corrections:</strong> <a class="link-ink" href="mailto:corrections@batasutra.in">corrections@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Partnerships:</strong> <a class="link-ink" href="mailto:partnerships@batasutra.in">partnerships@batasutra.in</a></li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Related</h3>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><a class="link-ink" href="/methodology">Methodology</a></li>
+          <li class="grid-bullet"><a class="link-ink" href="/data-sources">Data Sources</a></li>
+          <li class="grid-bullet"><a class="link-ink" href="/editorial-policy">Editorial Policy</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker (Sheets → Headlines: Section=bottom) -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">DASHBOARD</span>
+        <div class="ticker-rail flex-1" aria-label="Dashboard ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- First-paint fallback -->
+            <span>Edge cached JSON</span>
+            <span>Stale-while-revalidate</span>
+            <span>Tooltips show timestamp & unit</span>
+            <span>Write to: data@batasutra.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Compliance</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#overview">Overview</a>
+          <a class="chip" href="#modules">Modules</a>
+          <a class="chip" href="#architecture">Architecture</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
