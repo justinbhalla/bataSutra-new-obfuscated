@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bataSutra — PPF Ladder (Simple)</title>
+  <meta name="description" content="Simple PPF ladder: set contribution, step-up, rate, and extension. Get maturity and key summary metrics. Fully client-side." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; --ring:rgba(139,0,0,.25);
+      --space:1.25rem;
+    }
+    html,body{height:100%}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink)}
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    @media (min-width:768px){ .container{padding-left:1.25rem; padding-right:1.25rem;} }
+    @media (min-width:1024px){ .container{padding-left:1.5rem; padding-right:1.5rem;} }
+
+    /* Cards & atoms */
+    .card{background:var(--card); border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+    .lift{transition:transform .15s ease, box-shadow .15s ease}
+    .lift:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .kicker{letter-spacing:.08em; font-weight:700; font-size:.75rem; text-transform:uppercase; color:var(--brand-ink)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border-radius:.65rem; font-weight:600; font-size:.92rem}
+    .btn-ghost{border:1px solid #e5e7eb; color:#374151}
+    .btn-ghost:hover{border-color:var(--brand); color:var(--brand-ink)}
+    .btn-primary{background:var(--brand); color:#fff}
+    .btn-primary:hover{opacity:.9}
+    .pill{font-weight:600; font-size:.72rem; padding:.25rem .5rem; border-radius:.5rem; background:#f1f5f9; color:#0f172a}
+    .muted{color:#64748b}
+    .small{font-size:.82rem}
+    .mono{font-variant-numeric:tabular-nums}
+    .result{font-variant-numeric:tabular-nums; display:block; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.25}
+
+    /* Fields */
+    .field label{font-size:.85rem; color:#334155; font-weight:600}
+    .field input, .field select{
+      width:100%; padding:.72rem .85rem; border:1px solid #e5e7eb; border-radius:.65rem; font-size:.95rem; background:#fff;
+    }
+    .field input:focus, .field select:focus{outline:none; box-shadow:0 0 0 .25rem var(--ring); border-color:var(--brand)}
+
+    /* Flow & grid */
+    .flow > * + *{ margin-top: var(--space); }
+    .flow-sm > * + *{ margin-top: calc(var(--space) * .66); }
+    .card .flow > * + *{ margin-top: 1rem; }
+    .main-grid{ gap:1rem; } @media (min-width:640px){ .main-grid{ gap:1.25rem; } } @media (min-width:1024px){ .main-grid{ gap:1.75rem; } } @media (min-width:1280px){ .main-grid{ gap:2rem; } }
+    .section{ padding-top:1.25rem; padding-bottom:1.25rem; } @media (min-width:768px){ .section{ padding-top:1.75rem; padding-bottom:1.75rem; } } @media (min-width:1024px){ .section{ padding-top:2rem; padding-bottom:2rem; } }
+
+    /* ===== Auto-start TICKERS ===== */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left 90s linear infinite; }
+    .ticker-right { animation: scroll-right 90s linear infinite; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
+
+    /* ===== Footer ===== */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+  </style>
+
+  <!-- load the app script -->
+  <script src="ppf.app.min.js" defer></script>
+</head>
+<body class="min-h-full">
+
+  <!-- ===== Top Ticker ===== -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top PPF pointers" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>PPF max ₹1.5L per FY</span><span>15-year lock-in, extend in 5-year blocks</span><span>Interest assumed annual for planning</span><span>Tax-free on maturity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Header (shared) ===== -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="hidden sm:flex items-center gap-2">
+        <button id="copyLink" class="btn btn-ghost" title="Copy link with inputs">Copy Link</button>
+        <a href="/tools" class="btn btn-ghost">Browse Tools</a>
+        <a href="/#subscribe" class="btn btn-primary">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="border-b bg-white">
+    <div class="container section">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 lg:gap-8">
+        <div class="flow-sm" style="max-width:38rem">
+          <div class="kicker">Planner</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">PPF Ladder</h1>
+          <p class="text-slate-600 text-lg">Set contribution, step-up and rate; choose extension mode. Get maturity and a clean summary.</p>
+          <div class="flex flex-wrap gap-2"><span class="pill">PPF</span><span class="pill">Tax-free</span><span class="pill">15Y + 5Y blocks</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Main ===== -->
+  <main class="container section">
+    <div class="grid grid-cols-1 lg:grid-cols-2 main-grid">
+      <!-- Inputs -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">Inputs</h2>
+            <p class="muted">Annual model (planning-grade). We compound interest on opening balance + year’s contribution.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="startYear">Start FY (YYYY)</label>
+              <input id="startYear" type="number" inputmode="numeric" placeholder="2025" min="1970" step="1">
+            </div>
+            <div class="field">
+              <label for="years">Horizon</label>
+              <select id="years">
+                <option value="15" selected>15 (lock-in)</option>
+                <option value="20">20 (15 + 1 block)</option>
+                <option value="25">25 (15 + 2 blocks)</option>
+                <option value="30">30 (15 + 3 blocks)</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="annual">Annual contribution (₹)</label>
+              <input id="annual" type="number" inputmode="decimal" placeholder="150000" min="0" step="any">
+              <div class="small muted mt-1">PPF cap: ₹1.5L per FY</div>
+            </div>
+            <div class="field">
+              <label for="stepUp">Step-up each year (%)</label>
+              <input id="stepUp" type="number" inputmode="decimal" placeholder="0" min="0" step="any">
+            </div>
+            <div class="field">
+              <label for="rate">Interest rate (% p.a.)</label>
+              <input id="rate" type="number" inputmode="decimal" placeholder="7.1" min="0" step="any">
+            </div>
+            <div class="field">
+              <label for="extMode">Extension after 15Y</label>
+              <select id="extMode">
+                <option value="cont" selected>With contributions</option>
+                <option value="noCont">Without contributions</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <button id="run" class="btn btn-primary">Project</button>
+            <button id="reset" class="btn btn-ghost">Reset</button>
+            <div id="msg" class="muted small"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Results -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">Results</h2>
+            <p class="muted">Quick summary (totals, corpus, multiple, and Year-15 marker).</p>
+          </header>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 lg:gap-5">
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Total invested</div>
+              <div id="totInv" class="result text-2xl font-bold mono" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Interest earned</div>
+              <div id="totInt" class="result text-2xl font-bold mono" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Corpus at end</div>
+              <div id="corpus" class="result text-2xl font-bold mono" title="—">—</div>
+              <div class="muted small mt-1">Multiple of invested: <span id="multiple" class="mono">—</span></div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted small">Year 15 marker</div>
+              <div id="y15" class="result text-2xl font-bold mono" title="—">—</div>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-lg bg-slate-50 border small text-slate-700">
+            <div class="kicker mb-1">Heads-up</div>
+            Planning-grade only: we ignore monthly crediting and deposit-day rules. For audit precision, use official statements.
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="kicker mb-2">Examples</div>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li><button class="btn btn-ghost w-full justify-start" data-ex="ex1">Flat ₹1.5L for 15Y @ 7.1% • With contributions</button></li>
+          <li><button class="btn btn-ghost w-full justify-start" data-ex="ex2">₹1.5L with 5% step-up for 20Y • With contributions</button></li>
+          <li><button class="btn btn-ghost w-full justify-start" data-ex="ex3">₹1.2L for 25Y • No-cont after 15Y</button></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===== Bottom Ticker ===== -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail" aria-label="Bottom tips">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium">
+          <span>Shareable link keeps your inputs</span><span>Adjust rate if govt revises</span><span>Outputs are estimates</span><span>Try the one-click examples</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="indicies.html">Indices</a></li>
+            <li><a href="heatmap.html">Sector Heatmap</a></li>
+            <li><a href="commodities.html">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="SIP_Goal_Corpus_Planner.html">SIP Goal &amp; Corpus</a></li>
+            <li><a href="CAGR_Quick_IRR.html">CAGR &amp; Quick IRR</a></li>
+            <li><a href="PPF_Emergency_Ladder.html">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="Old_vs_New_Tax_Slab.html">Tax: Old vs New Slab</a></li>
+            <li><a href="Expense_Buckets_Runway.html">Expense Buckets &amp; Runway</a></li>
+            <li><a href="change-log.html">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="about.html">About</a></li>
+            <li><a href="inside-the-dashboard.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="partnerships.html">Partnerships</a></li>
+            <li><a href="careers.html">Careers</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="methodology.html">Methodology</a></li>
+            <li><a href="data-sources.html">Data Sources</a></li>
+            <li><a href="editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="corrections.html">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="terms-of-services.html">Terms of Service</a></li>
+            <li><a href="cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="security.html">Security</a></li>
+            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="licensing.html">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
