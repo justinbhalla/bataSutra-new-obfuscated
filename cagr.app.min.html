@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bataSutra — CAGR & Quick IRR</title>
+  <meta name="description" content="Compute CAGR from start/end values or get a rough IRR from simple, equal-interval cashflows. No sign-in. All in your browser." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; --ring:rgba(139,0,0,.25); --space:1.25rem; }
+    html,body{height:100%}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink)}
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    @media (min-width:768px){ .container{padding-left:1.25rem; padding-right:1.25rem;} }
+    @media (min-width:1024px){ .container{padding-left:1.5rem; padding-right:1.5rem;} }
+
+    /* Cards & tokens */
+    .card{background:var(--card); border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04);}
+    .lift{transition:transform .15s ease, box-shadow .15s ease}
+    .lift:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .kicker{letter-spacing:.08em; font-weight:700; font-size:.75rem; text-transform:uppercase; color:var(--brand-ink)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border-radius:.65rem; font-weight:600; font-size:.92rem}
+    .btn-ghost{border:1px solid #e5e7eb; color:#374151}
+    .btn-ghost:hover{border-color:var(--brand); color:var(--brand-ink)}
+    .btn-primary{background:var(--brand); color:#fff}
+    .btn-primary:hover{opacity:.9}
+    .field label{font-size:.84rem; color:#334155; font-weight:600}
+    .field input, .field select, .field textarea{width:100%; padding:.7rem .8rem; border:1px solid #e5e7eb; border-radius:.65rem; font-size:.95rem}
+    .field input:focus, .field select:focus, .field textarea:focus{outline:none; box-shadow:0 0 0 .25rem var(--ring); border-color:var(--brand)}
+    .muted{color:#64748b}
+    .pill{font-weight:600; font-size:.72rem; padding:.25rem .5rem; border-radius:.5rem; background:#f1f5f9; color:#0f172a}
+    .result{font-variant-numeric:tabular-nums; display:block; max-width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.25;}
+    .hint{font-size:.8rem; color:#6b7280}
+    .err{color:#b91c1c}
+    .hint,.err{overflow-wrap:anywhere}
+
+    /* Flow rhythm */
+    .flow > * + *{ margin-top: var(--space); }
+    .flow-sm > * + *{ margin-top: calc(var(--space) * .66); }
+    .card .flow > * + *{ margin-top: 1rem; }
+
+    /* Grid */
+    .main-grid{ gap:1rem; }
+    @media (min-width:640px){ .main-grid{ gap:1.25rem; } }
+    @media (min-width:1024px){ .main-grid{ gap:1.75rem; } }
+    @media (min-width:1280px){ .main-grid{ gap:2rem; } }
+
+    .section{ padding-top:1.25rem; padding-bottom:1.25rem; }
+    @media (min-width:768px){ .section{ padding-top:1.75rem; padding-bottom:1.75rem; } }
+    @media (min-width:1024px){ .section{ padding-top:2rem; padding-bottom:2rem; } }
+    .measure{ max-width: 68ch; }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left 90s linear infinite; }
+    .ticker-right { animation: scroll-right 90s linear infinite; }
+    @keyframes scroll-left  { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes scroll-right { 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
+
+    /* Footer */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+  </style>
+
+  <!-- app script -->
+  <script src="cagr.app.min.js" defer></script>
+</head>
+<body class="min-h-full">
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top market headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>Markets open steady</span><span>Nifty 50 breadth improves</span><span>Crude eases</span><span>Rupee firm</span>
+          <span>Banking leads</span><span>IT stocks rebound</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="/#subscribe" class="btn btn-primary">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="border-b bg-white">
+    <div class="container section">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 lg:gap-8">
+        <div class="max-w-2xl flow-sm">
+          <div class="kicker">Calculator</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">CAGR & Quick IRR</h1>
+          <p class="text-slate-600 text-lg measure">Compute CAGR from start/end values or get a rough IRR from simple, equal-interval cashflows.</p>
+          <div class="flex flex-wrap gap-2"><span class="pill">CAGR</span><span class="pill">IRR</span></div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <button id="copyLink" class="btn btn-ghost" title="Copy link with inputs">Copy Link</button>
+          <a href="/tools" class="btn btn-ghost">Browse Tools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="container section">
+    <div class="grid grid-cols-1 lg:grid-cols-2 main-grid">
+      <!-- CAGR -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">CAGR</h2>
+            <p class="muted">Given start value, end value, and time, compute the compound annual growth rate.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="cagrStart">Start value</label>
+              <input id="cagrStart" type="number" inputmode="decimal" placeholder="e.g., 100000" min="0" step="any">
+            </div>
+            <div class="field">
+              <label for="cagrEnd">End value</label>
+              <input id="cagrEnd" type="number" inputmode="decimal" placeholder="e.g., 145000" min="0" step="any">
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="timeMode">Time mode</label>
+              <select id="timeMode">
+                <option value="years" selected>Years (enter years directly)</option>
+                <option value="dates">Dates (compute years between two dates)</option>
+              </select>
+            </div>
+            <div id="yearsWrap" class="field">
+              <label for="cagrYears">Years</label>
+              <input id="cagrYears" type="number" inputmode="decimal" placeholder="e.g., 3" min="0.0001" step="any">
+              <div class="hint mt-1">Use decimals for months (e.g., 2.5 years)</div>
+            </div>
+          </div>
+
+          <div id="dateWrap" class="grid md:grid-cols-2 gap-4 lg:gap-5 hidden">
+            <div class="field">
+              <label for="dateStart">Start date</label>
+              <input id="dateStart" type="date">
+            </div>
+            <div class="field">
+              <label for="dateEnd">End date</label>
+              <input id="dateEnd" type="date">
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button id="calcCAGR" class="btn btn-primary">Calculate</button>
+            <button id="resetCAGR" class="btn btn-ghost">Reset</button>
+            <div id="cagrMsg" class="hint"></div>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4 lg:gap-5">
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">CAGR</div>
+              <div id="cagrOut" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">Total return</div>
+              <div id="totalReturnOut" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">Years</div>
+              <div id="yearsOut" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick IRR -->
+      <section class="card p-6 md:p-8 lift">
+        <div class="flow">
+          <header class="flow-sm">
+            <h2 class="text-xl font-bold tracking-tight">Quick IRR</h2>
+            <p class="muted">For equal-interval cashflows. Use either the guided mode (initial + contributions + final) or paste a short series.</p>
+          </header>
+
+          <div class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="freq">Frequency</label>
+              <select id="freq">
+                <option value="1">Annual</option>
+                <option value="4">Quarterly</option>
+                <option value="12" selected>Monthly</option>
+                <option value="52">Weekly</option>
+                <option value="365">Daily</option>
+              </select>
+              <div class="hint mt-1">Used only for annualizing IRR.</div>
+            </div>
+            <div class="field">
+              <label for="mode">Input mode</label>
+              <select id="mode">
+                <option value="guided" selected>Guided (init + contributions + final)</option>
+                <option value="series">Series (comma-separated)</option>
+              </select>
+            </div>
+          </div>
+
+          <div id="guidedWrap" class="grid md:grid-cols-2 gap-4 lg:gap-5">
+            <div class="field">
+              <label for="initOutflow">Initial outflow (negative)</label>
+              <input id="initOutflow" type="number" inputmode="decimal" placeholder="-100000" step="any">
+              <div class="hint mt-1">Example: -100000</div>
+            </div>
+            <div class="field">
+              <label for="contribution">Equal contribution per period</label>
+              <input id="contribution" type="number" inputmode="decimal" placeholder="0" step="any">
+              <div class="hint mt-1">Use 0 if none (e.g., lumpsum only)</div>
+            </div>
+            <div class="field">
+              <label for="periods"># of contribution periods</label>
+              <input id="periods" type="number" inputmode="numeric" placeholder="12" min="0" step="1">
+            </div>
+            <div class="field">
+              <label for="finalValue">Final value at end</label>
+              <input id="finalValue" type="number" inputmode="decimal" placeholder="145000" step="any">
+            </div>
+          </div>
+
+          <div id="seriesWrap" class="hidden">
+            <div class="field">
+              <label for="series">Cashflow series (comma separated, equal intervals)</label>
+              <textarea id="series" rows="4" placeholder="-100000, 10000, 10000, 10000, 145000"></textarea>
+              <div class="hint mt-1">Convention: outflows negative, inflows positive. The last term can be your final value.</div>
+            </div>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-1">
+            <button id="calcIRR" class="btn btn-primary">Calculate IRR</button>
+            <button id="resetIRR" class="btn btn-ghost">Reset</button>
+            <div id="irrMsg" class="hint"></div>
+          </div>
+
+          <div class="grid sm:grid-cols-3 gap-4 lg:gap-5">
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">IRR (per period)</div>
+              <div id="irrPerPeriod" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">Annualized IRR</div>
+              <div id="irrAnnual" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+            <div class="p-4 rounded-lg border">
+              <div class="muted text-sm">NPV @ IRR</div>
+              <div id="npvAtIrr" class="result text-2xl font-bold" title="—">—</div>
+            </div>
+          </div>
+
+          <div class="text-xs text-slate-500 measure">
+            Notes: “Quick IRR” assumes <em>equal time spacing</em> between entries. For irregular dates, use a full XIRR tool.
+          </div>
+        </div>
+      </section>
+
+      <!-- Examples -->
+      <section class="card p-6 lift">
+        <div class="kicker mb-2">CAGR — Examples</div>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-cagr="e1">₹1,00,000 → ₹1,45,000 in 3 years (Years mode)</button></li>
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-cagr="e2">₹5,00,000 → ₹8,00,000 from 01 Apr 2020 to 01 Oct 2025 (Dates mode)</button></li>
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-cagr="e3">₹2,00,000 → ₹1,80,000 in 2 years (Negative CAGR)</button></li>
+        </ul>
+      </section>
+
+      <section class="card p-6 lift">
+        <div class="kicker mb-2">Quick IRR — Examples</div>
+        <ul class="text-sm text-slate-700 space-y-2">
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-irr="g1">Guided SIP: -₹1,00,000 + ₹5,000 × 12 → ₹1,45,000 (Monthly)</button></li>
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-irr="g2">Lumpsum only: -₹5,00,000 → ₹6,50,000 (no contributions)</button></li>
+          <li><button class="btn btn-ghost justify-start w-full text-left" data-ex-irr="s1">Series: -100000, 10000, 10000, 10000, 145000</button></li>
+        </ul>
+      </section>
+    </div>
+  </main>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail" aria-label="Bottom market headlines">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium">
+          <span>Top movers: Banks</span><span>Midcaps steady</span><span>VIX subdued</span><span>Global cues mixed</span>
+          <span>FIIs/DIIs flow watch</span><span>RBI policy ahead</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div><div class="heading mb-3">Editorial</div><ul class="space-y-2">
+          <li><a href="/articles">Latest</a></li><li><a href="/deep-dive">Deep Dives</a></li><li><a href="/weekend-wrap">Weekend Wrap</a></li>
+          <li><a href="/explainers">Explainers</a></li><li><a href="/policy">Policy &amp; Regulation</a></li><li><a href="/quick-stats">Quick Stats</a></li><li><a href="/archive">Archive</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Data</div><ul class="space-y-2">
+          <li><a href="indicies.html">Indices</a></li><li><a href="heatmap.html">Sector Heatmap</a></li><li><a href="commodities.html">Commodities</a></li>
+          <li><a href="/dashboards/sectors">Sector Dashboards</a></li><li><a href="/calendars/earnings">Earnings Calendar</a></li><li><a href="/trackers/ipo">IPO Tracker</a></li><li><a href="/trackers/budget">Budget Tracker</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Tools</div><ul class="space-y-2">
+          <li><a href="/tools">All Tools</a></li><li><a href="SIP_Goal_Corpus_Planner.html">SIP Goal &amp; Corpus</a></li><li><a href="CAGR_Quick_IRR.html">CAGR &amp; Quick IRR</a></li>
+          <li><a href="PPF_Emergency_Ladder.html">PPF &amp; Emergency Ladder</a></li><li><a href="Old_vs_New_Tax_Slab.html">Tax: Old vs New Slab</a></li><li><a href="Expense_Buckets_Runway.html">Expense Buckets &amp; Runway</a></li><li><a href="change-log.html">Changelog</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Company</div><ul class="space-y-2">
+          <li><a href="about.html">About</a></li><li><a href="inside-the-dashboard.html">Inside the Dashboard</a></li><li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="/press">Press</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Resources</div><ul class="space-y-2">
+          <li><a href="methodology.html">Methodology</a></li><li><a href="data-sources.html">Data Sources</a></li><li><a href="editorial-policy.html">Editorial Policy</a></li>
+          <li><a href="corrections.html">Corrections</a></li><li><a href="/ethics">Ethics &amp; Independence</a></li><li><a href="/style-guide">Style Guide</a></li><li><a href="/accessibility">Accessibility</a></li><li><a href="/sitemap">Sitemap</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Legal</div><ul class="space-y-2">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-services.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="security.html">Security</a></li><li><a href="responsible-disclosure.html">Responsible Disclosure</a></li><li><a href="licensing.html">Licensing</a></li>
+        </ul></div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
