@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Security — bataSutra</title>
+  <meta name="description" content="How bataSutra secures data and systems. Practices, encryption, access controls, vulnerability management, incident response, compliance, and contacts." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --card:#ffffff;}
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; background:#0f172a; color:#fff; padding:.1rem .35rem; border-radius:.35rem; font-size:.72rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+
+    /* Footer */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    /* Anchor offset for sticky header */
+    section[id] { scroll-margin-top: 5.5rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Security","about":["security","encryption","incident response","compliance"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- app -->
+  <script src="security.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- Fallback (replaced if Sheets loads) -->
+          <span>Status: all systems operational</span>
+          <span>Security docs refreshed</span>
+          <span>New: dependency audit process</span>
+          <span>Rotating keys this quarter</span>
+          <span>MFA enforcement completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-8 pb-6" id="top">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Security</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">Our approach to protecting user data and platform integrity: modern encryption, least-privilege access, continuous monitoring, and rapid incident response.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#practices" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Practices</a>
+          <a href="#dataprotection" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data Protection</a>
+          <a href="#incident" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Incident Response</a>
+          <a href="#compliance" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Compliance</a>
+        </div>
+      </div>
+
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">At a glance</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Security email:</strong> <a class="link-ink" href="mailto:security@batasutra.in">security@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>security.txt:</strong> <a class="link-ink" href="/.well-known/security.txt">/.well-known/security.txt</a></li>
+        </ul>
+        <div class="mt-3 text-xs text-slate-500">See also: <a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a>.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Practices -->
+  <section id="practices" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Security practices</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Defense-in-depth across app, network, and data layers</li>
+          <li class="grid-bullet">Least-privilege IAM with periodic access reviews</li>
+          <li class="grid-bullet">Mandatory MFA for admins and engineering roles</li>
+          <li class="grid-bullet">Code reviews, SAST/DAST, and supply-chain scanning</li>
+          <li class="grid-bullet">HSTS, secure cookies, CSP, and modern TLS</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Environment</h3>
+        <div class="mt-2 space-y-2 text-sm">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Cloud</div>
+            <div class="text-slate-700">Multi-AZ hosting with security groups and WAF</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Backups</div>
+            <div class="text-slate-700">Encrypted, periodic integrity checks, tested restores</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Data Protection -->
+  <section id="dataprotection" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Data protection</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Encryption in transit (TLS 1.2+) and at rest (AES-256 or cloud-native KMS)</li>
+          <li class="grid-bullet">Segregated environments (dev/stage/prod) with separate credentials</li>
+          <li class="grid-bullet">Tokenization/pseudonymization for sensitive fields where practical</li>
+          <li class="grid-bullet">Strict logging with redaction; access logs retained per policy</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Access controls</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">SSO + MFA; short-lived credentials</li>
+          <li class="grid-bullet">Just-in-time elevation with approvals</li>
+          <li class="grid-bullet">Quarterly least-privilege reviews</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Incident Response -->
+  <section id="incident" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Incident response</h2>
+        <ol class="mt-3 list-decimal list-inside space-y-1 text-sm text-slate-700">
+          <li>Detect & Triage — intake, severity, scope</li>
+          <li>Contain & Eradicate — isolate systems, revoke keys, patch</li>
+          <li>Recover — validate integrity, restore services, monitor</li>
+          <li>Post-mortem — root cause, corrective actions, timelines</li>
+          <li>Notify — stakeholders and users when required by law or policy</li>
+        </ol>
+      </div>
+      <aside class="card p-6 md:p-8" id="contact">
+        <h3 class="text-base font-semibold">Contact security</h3>
+        <div class="text-sm text-slate-700 mt-2">
+          Email <a class="link-ink" href="mailto:security@batasutra.in">security@batasutra.in</a>.
+          For vulnerability reports, see <a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a>.
+        </div>
+        <div class="mt-2 text-sm">
+          PGP fingerprint: <code class="kbd">A1B2 C3D4 E5F6 1122 3344 5566 7788 99AA BBCC DDEE</code>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Compliance & Policies -->
+  <section id="compliance" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Compliance & policies</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Privacy: see <a class="link-ink" href="/privacy">Privacy Policy</a></li>
+          <li class="grid-bullet">Data retention & deletion per product policy; backups per schedule</li>
+          <li class="grid-bullet">Vendor security review for critical third parties</li>
+          <li class="grid-bullet">Annual security training and phishing simulations</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Documents</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><a class="link-ink" href="/responsible-disclosure">Responsible Disclosure Policy</a></li>
+          <li class="grid-bullet"><a class="link-ink" href="/terms">Terms of Service</a></li>
+          <li class="grid-bullet"><a class="link-ink" href="/cookies">Cookie Policy</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">FAQ</h2>
+      <div class="mt-3 space-y-3">
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Do you encrypt data at rest and in transit?</summary>
+          <div class="text-sm text-slate-700 mt-2">Yes—TLS 1.2+ in transit and AES-256/KMS at rest.</div>
+        </details>
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Do you have a bug bounty?</summary>
+          <div class="text-sm text-slate-700 mt-2">We operate a responsible disclosure program; see the policy for rewards guidance.</div>
+        </details>
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">How do I report a security issue?</summary>
+          <div class="text-sm text-slate-700 mt-2">Email <a class="link-ink" href="mailto:security@batasutra.in">security@batasutra.in</a> with steps to reproduce. Use our PGP for sensitive details.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Log -->
+  <section id="log" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Security change log</h2>
+      <div class="mt-3 space-y-3 text-sm">
+        <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="text-slate-500 text-xs">2025-09-22</div>
+          <div class="font-medium mt-1">Static release build</div>
+          <div class="text-sm text-slate-700 mt-1">All sections are static; top/bottom tickers hydrate from Google Sheets (Headlines tab).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800"></span>
+        <div class="ticker-rail flex-1" aria-label="Security ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- Fallback (replaced if Sheets loads) -->
+            <span>Weekly patch window Friday 18:00 IST</span>
+            <span>Zero critical issues open</span>
+            <span>Key rotation in progress</span>
+            <span>New hardening baseline applied</span>
+            <span>Staff security training scheduled</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
