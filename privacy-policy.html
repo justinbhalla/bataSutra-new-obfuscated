@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — bataSutra</title>
+  <meta name="description" content="How bataSutra collects, uses, shares, and protects your data. Learn about categories of data, purposes, legal bases, retention, rights, and contact options." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform: translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform: translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Privacy Policy","about":["privacy","personal data","rights","legal basis","retention"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- load compact app script -->
+  <script src="privacy.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>Privacy-first design</span>
+          <span>Clear choices, no dark patterns</span>
+          <span>Manage cookies anytime</span>
+          <span>Contact privacy@batasutra.in</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Privacy Policy</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">This policy explains what data we collect, how we use it, your rights, and how to contact us.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#summary" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Summary</a>
+          <a href="#details" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Full policy</a>
+          <a href="/cookies" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Cookie Policy</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Privacy email:</strong> <a class="link-ink" href="mailto:privacy@batasutra.in">privacy@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Data requests:</strong> <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Data we collect</div>
+          <div class="text-sm mt-1">Account details, usage analytics, device data, content you submit, and payment data (via providers).</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Why we collect it</div>
+          <div class="text-sm mt-1">Provide services, secure accounts, personalize content, analyze performance, and comply with law.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Your choices</div>
+          <div class="text-sm mt-1">Access, rectify, delete, export, object, or restrict processing. Manage cookies and email prefs anytime.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOC -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#scope">Scope</a></li>
+        <li><a href="#data">Categories of Data</a></li>
+        <li><a href="#use">How We Use Data</a></li>
+        <li><a href="#legal">Legal Bases</a></li>
+        <li><a href="#share">Sharing & Processors</a></li>
+        <li><a href="#retention">Retention</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#intl">International Transfers</a></li>
+        <li><a href="#rights">Your Rights</a></li>
+        <li><a href="#children">Children</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Full Policy (same as your draft) -->
+  <section id="details" class="container py-6">
+    <div class="card p-6 md:p-8 space-y-6">
+      <section id="scope"><h3 class="text-lg font-bold">1) Scope</h3><p class="text-sm text-slate-700 mt-2">This policy covers personal data processed by bataSutra when you use our website, content, data products, or tools (“Services”).</p></section>
+      <section id="data"><h3 class="text-lg font-bold">2) Categories of Data</h3><ul class="mt-2 text-sm text-slate-700 space-y-2"><li class="grid-bullet"><strong>Account & Contact:</strong> name, email, preferences.</li><li class="grid-bullet"><strong>Usage & Device:</strong> pages, interactions, device/browser, approximate location.</li><li class="grid-bullet"><strong>Content:</strong> submissions, comments, forms.</li><li class="grid-bullet"><strong>Payments:</strong> processed by providers; we store minimal billing metadata.</li><li class="grid-bullet"><strong>Cookies:</strong> see our <a class="link-ink" href="/cookies">Cookie Policy</a> for categories, retention, and providers.</li></ul></section>
+      <section id="use"><h3 class="text-lg font-bold">3) How We Use Data</h3><ul class="mt-2 text-sm text-slate-700 space-y-2"><li class="grid-bullet">Provide and maintain the Services, including personalization and support.</li><li class="grid-bullet">Monitor, prevent, and detect abuse, fraud, and security incidents.</li><li class="grid-bullet">Measure performance and improve features (analytics is opt-in where required).</li><li class="grid-bullet">Communicate updates, content, or marketing (with opt-out choices).</li><li class="grid-bullet">Comply with legal obligations and enforce our <a class="link-ink" href="/terms">Terms of Service</a>.</li></ul></section>
+      <section id="legal"><h3 class="text-lg font-bold">4) Legal Bases</h3><ul class="mt-2 text-sm text-slate-700 space-y-2"><li class="grid-bullet"><strong>Contract:</strong> to deliver the Services you request.</li><li class="grid-bullet"><strong>Legitimate interests:</strong> security, product improvement, and non-intrusive analytics.</li><li class="grid-bullet"><strong>Consent:</strong> cookies/marketing where required; you can withdraw anytime.</li><li class="grid-bullet"><strong>Legal obligation:</strong> regulatory and tax compliance.</li></ul></section>
+      <section id="share"><h3 class="text-lg font-bold">5) Sharing & Processors</h3><p class="text-sm text-slate-700 mt-2">We use service providers for hosting, analytics, communications, and payments under contracts that protect your data. We do not sell personal data.</p></section>
+      <section id="retention"><h3 class="text-lg font-bold">6) Retention</h3><p class="text-sm text-slate-700 mt-2">We retain data for as long as needed to provide the Services and for legitimate business or legal purposes. Cookie retention varies by category (see Cookie Policy).</p></section>
+      <section id="security"><h3 class="text-lg font-bold">7) Security</h3><p class="text-sm text-slate-700 mt-2">We implement technical and organizational measures to protect your data. To report a vulnerability, see our <a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a>.</p></section>
+      <section id="intl"><h3 class="text-lg font-bold">8) International Transfers</h3><p class="text-sm text-slate-700 mt-2">When data is transferred across borders, we use appropriate safeguards such as standard contractual clauses and regional data centers where applicable.</p></section>
+      <section id="rights"><h3 class="text-lg font-bold">9) Your Rights</h3><ul class="mt-2 text-sm text-slate-700 space-y-2"><li class="grid-bullet">Access, rectify, delete, and export your personal data.</li><li class="grid-bullet">Object to or restrict certain processing.</li><li class="grid-bullet">Withdraw consent where processing relies on consent.</li><li class="grid-bullet">Manage cookies in our <a class="link-ink" href="/cookies">Cookie Policy</a>.</li><li class="grid-bullet">To exercise rights, email <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a>.</li></ul></section>
+      <section id="children"><h3 class="text-lg font-bold">10) Children</h3><p class="text-sm text-slate-700 mt-2">Our Services are not directed to children under 13. If you believe a child provided data, contact us to delete it.</p></section>
+      <section id="changes"><h3 class="text-lg font-bold">11) Changes</h3><p class="text-sm text-slate-700 mt-2">We may update this policy. Material changes will be noted with a new “Last updated” date at the top of this page.</p></section>
+      <section id="contact"><h3 class="text-lg font-bold">12) Contact</h3><p class="text-sm text-slate-700 mt-2">Questions or requests? Email <a class="link-ink" href="mailto:privacy@batasutra.in">privacy@batasutra.in</a> or <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a>.</p></section>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PRIVACY</span>
+        <div class="ticker-rail flex-1" aria-label="Privacy ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>No dark patterns</span>
+            <span>Analytics is opt-in</span>
+            <span>Export or delete your data</span>
+            <span>Contact: privacy@batasutra.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#summary">Summary</a>
+          <a class="chip" href="#details">Full policy</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
