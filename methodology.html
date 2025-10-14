@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Methodology — bataSutra</title>
+  <meta name="description" content="How we build charts and numbers: units, rebasing, deflators, seasonal adjustment, smoothing, composite indices, uncertainty, backtests, and revision policy." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <!-- (best-effort) prefetch the CSV -->
+  <link rel="prefetch" as="fetch" crossorigin="anonymous"
+        href="https://docs.google.com/spreadsheets/d/1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg/gviz/tq?tqx=out:csv&sheet=Headlines&range=A%3AC">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers (fast, cache-friendly) */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:#0f172a; color:#fff; padding:.12rem .4rem; border-radius:.35rem; font-size:.72rem; }
+    .pill { font-weight:600; font-size:.75rem; padding:.25rem .5rem; border-radius:.5rem; }
+    .pill-soft { background:#f1f5f9; border:1px solid #e2e8f0; }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Methodology","about":["data methodology","chart rules","rebasing","deflators","seasonal adjustment","composite indices","backtesting","revisions"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- load compact app script -->
+  <script src="methodology.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- fallback -->
+          <span>Units, sources, and methods are explicit</span>
+          <span>Deflators & rebasing documented</span>
+          <span>We show revisions and caveats</span>
+          <span>No cherry-picking: full context</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6" id="top">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Methodology</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">Our standard rules for transforming raw data into charts and metrics — from units and index bases to smoothing, deflators, and composite scores.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#summary" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Summary</a>
+          <a href="#charting" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Charting rules</a>
+          <a href="#adjustments" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Adjustments</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & references</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Data sources:</strong> <a class="link-ink" href="/data-sources">batasutra.in/data-sources</a></li>
+          <li class="grid-bullet"><strong>Contact:</strong> <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Units & currency</div>
+          <div class="text-sm mt-1">We label units; currency is INR unless stated. USD conversions use daily RBI reference or exchange quotes as noted.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Deflators & bases</div>
+          <div class="text-sm mt-1">Real series use CPI/WPI/GDP deflators. Index bases (100 = base-date) are specified in captions.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Smoothing</div>
+          <div class="text-sm mt-1">We prefer trailing averages (3/6/12-M) with raw series also shown or available.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#charting">Charting rules</a></li>
+        <li><a href="#adjustments">Adjustments & transforms</a></li>
+        <li><a href="#composites">Composite indices</a></li>
+        <li><a href="#uncertainty">Uncertainty & error</a></li>
+        <li><a href="#revisions">Revisions policy</a></li>
+        <li><a href="#backtests">Backtests & performance</a></li>
+        <li><a href="#citations">Citations & provenance</a></li>
+        <li><a href="#changes">Changes</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Charting rules -->
+  <section id="charting" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Charting rules</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet"><span class="pill pill-soft">Axes</span> Axes and units are explicit; left axis for primary measure, right axis used sparingly.</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Scales</span> Linear by default; log scale when growth ratios matter or spans are wide (clearly labeled).</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Ranges</span> Zero baseline for quantities; trimmed ranges allowed when emphasizing variation (annotated).</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Colors</span> High contrast, color-blind friendly. One series = one hue; uncertainty bands use opacity.</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Labels</span> Titles state metric, geography, and period; subtitles mention deflators or adjustments.</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Data gaps</span> Missing values are not interpolated unless stated; gaps are visually indicated.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Rounding & figures</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Percentages: 1 decimal unless tiny samples.</li>
+          <li class="grid-bullet">Large rupee amounts use crore/lakh formatting or SI (B/M) depending on context.</li>
+          <li class="grid-bullet">Index values show 0 decimals; rates show 2 decimals.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Adjustments & transforms -->
+  <section id="adjustments" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Adjustments & transforms</h2>
+      <div class="overflow-x-auto mt-3">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="text-left px-3 py-2">Topic</th>
+              <th class="text-left px-3 py-2">Default</th>
+              <th class="text-left px-3 py-2">Notes</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr>
+              <td class="px-3 py-2 font-medium">Rebasing</td>
+              <td class="px-3 py-2">Index = 100 at base date</td>
+              <td class="px-3 py-2">Caption: <span class="kbd">Base=YYYY-MM</span></td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Deflation</td>
+              <td class="px-3 py-2">CPI (headline) or WPI; GDP deflator for macro totals</td>
+              <td class="px-3 py-2">Choice stated; alt deflators noted when relevant</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Seasonal adjust.</td>
+              <td class="px-3 py-2">Raw by default</td>
+              <td class="px-3 py-2">SA/SAAR labeled if used; method referenced</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Smoothing</td>
+              <td class="px-3 py-2">3-M trailing average</td>
+              <td class="px-3 py-2">Raw series available on hover or secondary chart</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Growth rates</td>
+              <td class="px-3 py-2">MoM/YoY as context dictates</td>
+              <td class="px-3 py-2">Compound/annualized rates labeled “AR”</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Currency</td>
+              <td class="px-3 py-2">INR</td>
+              <td class="px-3 py-2">USD converted with RBI reference or market close; date shown</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Composite indices -->
+  <section id="composites" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Composite indices</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Inputs are standardized (z-scores) over a rolling window unless level units are comparable.</li>
+          <li class="grid-bullet">Weights are equal unless stated; expert or regression weights are disclosed.</li>
+          <li class="grid-bullet">Outliers beyond ±4σ are winsorized or annotated with rationale.</li>
+          <li class="grid-bullet">Backfilled history uses consistent methodology; breaks are flagged.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Publishing</h3>
+        <div class="mt-2 text-sm text-slate-700">We publish definitions, constituents, and weight tables with each composite dashboard.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Uncertainty -->
+  <section id="uncertainty" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Uncertainty & error</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Survey-based estimates show confidence intervals where available.</li>
+        <li class="grid-bullet">Model estimates are labeled “Estimate”; bands represent model/past error, not guarantees.</li>
+        <li class="grid-bullet">We avoid false precision; round to meaningful granularity.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Revisions -->
+  <section id="revisions" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Revisions policy</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">When sources revise history, we refresh affected charts promptly and annotate material effects.</li>
+          <li class="grid-bullet">Base-year or methodology changes are noted in captions and, for major series, in a brief explainer.</li>
+          <li class="grid-bullet">We archive prior outputs when comparisons matter (e.g., GDP series across base changes).</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Change log</h3>
+        <div class="mt-2 text-sm text-slate-700">Major methodology changes appear on the relevant dashboard/tool page’s changelog.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Backtests -->
+  <section id="backtests" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Backtests & performance</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Backtests are hypothetical and reflect assumptions shown on the page.</li>
+        <li class="grid-bullet">We use realistic costs/slippage where relevant, and state survivorship/data snooping caveats.</li>
+        <li class="grid-bullet">Benchmarks and windows are pre-declared; no cherry-picking of favorable periods.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Citations -->
+  <section id="citations" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Citations & provenance</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Each chart lists “Source(s)” with links plus “bataSutra calculations” when derived.</li>
+          <li class="grid-bullet">Method notes appear in a tooltip/footnote; full details link to this Methodology page.</li>
+          <li class="grid-bullet">See <a class="link-ink" href="/data-sources">Data Sources</a> for our source catalog and licensing notes.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Suggest improvements</h3>
+        <div class="mt-2 text-sm text-slate-700">Email <a class="link-ink" href="mailto:data@batasutra.in">data@batasutra.in</a> with proposed tweaks and examples.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800"></span>
+        <div class="ticker-rail flex-1" aria-label="Utility ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- fallback -->
+            <span>Method notes refreshed</span>
+            <span>Composite weights listed</span>
+            <span>Deflator choices clarified</span>
+            <span>Revisions policy updated</span>
+            <span>Backtest caveats emphasized</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#summary">Summary</a>
+          <a class="chip" href="#charting">Charting rules</a>
+          <a class="chip" href="#adjustments">Adjustments</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
