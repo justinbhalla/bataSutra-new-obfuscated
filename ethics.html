@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ethics & Independence — bataSutra</title>
+  <meta name="description" content="Our commitments on ethics, conflicts, independence from sponsors, gifts & hospitality, personal trading, sourcing, AI use, and transparency." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Ethics & Independence",
+    "about":["ethics","conflicts of interest","independence","gifts & hospitality","trading policy","transparency","AI use"],
+    "publisher":{"@type":"Organization","name":"bataSutra"}
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Ticker (Sheets → Headlines: Section=top) -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- First-paint fallback -->
+          <span>Editorial firewall: ads ≠ coverage</span>
+          <span>Conflicts disclosed or recused</span>
+          <span>No gifts that create obligation</span>
+          <span>Data-led work, transparent methods</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Ethics & Independence</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">The standards that keep our journalism fair, accurate, and free from improper influence.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#summary" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Summary</a>
+          <a href="#policy" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Full policy</a>
+          <a href="/editorial-policy" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Editorial Policy</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Ethics:</strong> <a class="link-ink" href="mailto:ethics@batasutra.in">ethics@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Corrections:</strong> <a class="link-ink" href="mailto:corrections@batasutra.in">corrections@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Press:</strong> <a class="link-ink" href="mailto:press@batasutra.in">press@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Editorial firewall</div>
+          <div class="text-sm mt-1">Coverage decisions are independent of commercial interests.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Conflicts managed</div>
+          <div class="text-sm mt-1">Disclose, recuse, or mitigate any actual or perceived conflicts.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">No undue influence</div>
+          <div class="text-sm mt-1">Gifts, hospitality, and perks are limited and reported.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#firewall">Editorial Firewall</a></li>
+        <li><a href="#conflicts">Conflicts of Interest</a></li>
+        <li><a href="#gifts">Gifts, Hospitality & Travel</a></li>
+        <li><a href="#trading">Personal Investments & Trading</a></li>
+        <li><a href="#sourcing">Sources & Attributions</a></li>
+        <li><a href="#ai">Use of AI & Automation</a></li>
+        <li><a href="#transparency">Transparency & Disclosures</a></li>
+        <li><a href="#process">Escalation & Enforcement</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Full Policy -->
+  <section id="policy" class="container py-6">
+    <div class="card p-6 md:p-8 space-y-6">
+      <section id="firewall">
+        <h3 class="text-lg font-bold">1) Editorial Firewall</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Advertising, partnerships, and sponsorships do not determine coverage or conclusions.</li>
+          <li class="grid-bullet">Sponsored content is clearly labeled and kept distinct from newsroom output.</li>
+          <li class="grid-bullet">Access journalism is discouraged; no quid-pro-quo coverage.</li>
+        </ul>
+      </section>
+
+      <section id="conflicts">
+        <h3 class="text-lg font-bold">2) Conflicts of Interest</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Staff must disclose potential conflicts (financial, familial, advisory roles) to editors.</li>
+          <li class="grid-bullet">Editors may require disclosure to readers, change of assignment, or recusal.</li>
+          <li class="grid-bullet">Freelancers agree to the same standards as a condition of assignment.</li>
+        </ul>
+      </section>
+
+      <section id="gifts">
+        <h3 class="text-lg font-bold">3) Gifts, Hospitality & Travel</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Token items of nominal value may be accepted; anything more is declined or donated.</li>
+          <li class="grid-bullet">Paid travel/accommodation by sources is avoided; exceptions require editor approval and disclosure.</li>
+          <li class="grid-bullet">Speaking fees and honoraria are disclosed; acceptance requires prior approval.</li>
+        </ul>
+      </section>
+
+      <section id="trading">
+        <h3 class="text-lg font-bold">4) Personal Investments & Trading</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Staff covering markets may face trading blackouts around sensitive assignments.</li>
+          <li class="grid-bullet">Short-term trading of companies/segments under active coverage is restricted or prohibited.</li>
+          <li class="grid-bullet">Personal holdings that create foreseeable conflicts must be disclosed and may require recusal.</li>
+        </ul>
+      </section>
+
+      <section id="sourcing">
+        <h3 class="text-lg font-bold">5) Sources & Attributions</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Prefer on-the-record sources; anonymity requires editor approval and public-interest rationale.</li>
+          <li class="grid-bullet">Quotes, data, charts, and images are attributed and used within license/fair-use limits.</li>
+          <li class="grid-bullet">Right of reply is offered to subjects of critical coverage.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h3 class="text-lg font-bold">6) Use of AI & Automation</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">AI tools can assist, not replace, editorial judgment; sensitive claims require human verification.</li>
+          <li class="grid-bullet">If AI meaningfully contributes to a work, we disclose and retain responsibility for accuracy.</li>
+        </ul>
+      </section>
+
+      <section id="transparency">
+        <h3 class="text-lg font-bold">7) Transparency & Disclosures</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Methodology, adjustments, and caveats are published for data-led work.</li>
+          <li class="grid-bullet">Sponsored/partner material is prominently labeled; newsroom retains standards oversight.</li>
+        </ul>
+      </section>
+
+      <section id="process">
+        <h3 class="text-lg font-bold">8) Escalation & Enforcement</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Concerns may be raised to an assigning editor or <a class="link-ink" href="mailto:ethics@batasutra.in">ethics@batasutra.in</a>.</li>
+          <li class="grid-bullet">Breaches may result in correction, disclosure, reassignment, or further action per company policy.</li>
+        </ul>
+      </section>
+
+      <section id="changes">
+        <h3 class="text-lg font-bold">9) Changes</h3>
+        <p class="text-sm text-slate-700 mt-2">Material updates to this page will be reflected in the “Last updated” date above.</p>
+      </section>
+
+      <section id="contact">
+        <h3 class="text-lg font-bold">10) Contact</h3>
+        <p class="text-sm text-slate-700 mt-2">Questions? Write to <a class="link-ink" href="mailto:ethics@batasutra.in">ethics@batasutra.in</a> or see our <a class="link-ink" href="/editorial-policy">Editorial Policy</a> and <a class="link-ink" href="/corrections">Corrections</a>.</p>
+      </section>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker (Sheets → Headlines: Section=bottom) -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">ETHICS</span>
+        <div class="ticker-rail flex-1" aria-label="Ethics ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- First-paint fallback -->
+            <span>Ads don’t drive coverage</span>
+            <span>Conflicts disclosed or recused</span>
+            <span>No gifts that create obligation</span>
+            <span>Corrections: /corrections</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#policy">Policy</a>
+          <a class="chip" href="#conflicts">Conflicts</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== Simple ticker hydration script (regular, not obfuscated) ===== -->
+  <script>
+    // ---- CONFIG (Sheets-only for tickers)
+    const SHEET_ID = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
+    const SHEET_TAB = 'Headlines';
+    const SHEET_RANGE = 'A:C'; // Section, Text, (optional Weight)
+    const CSV_URL =
+      `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq` +
+      `?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}&range=${encodeURIComponent(SHEET_RANGE)}`;
+
+    // Prefetch CSV (best-effort)
+    (function prefetchCSV() {
+      try {
+        const l = document.createElement('link');
+        l.rel = 'prefetch'; l.as = 'fetch'; l.crossOrigin = 'anonymous'; l.href = CSV_URL;
+        document.head.appendChild(l);
+      } catch {}
+    })();
+
+    // ---- Utils
+    function parseCsv(text){
+      const rows=[]; let row=[], cur='', inQuotes=false;
+      for(let i=0;i<text.length;i++){
+        const ch=text[i];
+        if(inQuotes){
+          if(ch === '"'){ if(text[i+1] === '"'){ cur+='"'; i++; } else { inQuotes=false; } }
+          else cur+=ch;
+        } else {
+          if(ch === '"') inQuotes=true;
+          else if(ch === ','){ row.push(cur); cur=''; }
+          else if(ch === '\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+          else if(ch !== '\r'){ cur+=ch; }
+        }
+      }
+      if(cur.length>0 || row.length>0){ row.push(cur); rows.push(row); }
+      return rows;
+    }
+
+    function fetchWithTimeout(url, ms=900){
+      return new Promise((resolve,reject)=>{
+        const ctrl = ('AbortController' in window) ? new AbortController() : null;
+        const t = setTimeout(()=>{ try{ctrl?.abort()}catch{}; reject(new Error('timeout')); }, ms);
+        fetch(url, { signal: ctrl?.signal, cache:'force-cache', credentials:'omit' })
+          .then(r=>{ clearTimeout(t); resolve(r); })
+          .catch(e=>{ clearTimeout(t); reject(e); });
+      });
+    }
+
+    function setTickerDuration(el, items){
+      const len = (items||[]).join(' • ').length || 120;
+      const secs = Math.min(140, Math.max(60, Math.round(len/1.8)));
+      el.style.setProperty('--dur', `${secs}s`);
+    }
+
+    function renderTicker(el, items, dir){
+      if(!el || !Array.isArray(items) || !items.length) return; // keep fallback
+      el.className = `ticker ${dir==='right'?'ticker-right':'ticker-left'} ${
+        el.id==='botTicker' ? 'text-sm text-slate-700' : 'text-sm font-medium'
+      }`;
+      el.innerHTML = '';
+      const loop = items.concat(items);
+      loop.forEach(txt => { const span=document.createElement('span'); span.textContent = txt; el.appendChild(span); });
+      setTickerDuration(el, items);
+    }
+
+    function paintFromData(data){
+      if(!data) return;
+      const top = data.filter(d=>d.section==='top').map(d=>d.text);
+      const bottom = data.filter(d=>d.section==='bottom').map(d=>d.text);
+      renderTicker(document.getElementById('topTicker'), top, 'right');
+      renderTicker(document.getElementById('botTicker'), bottom, 'left');
+    }
+
+    // ---- Cache (15 min)
+    const HL_CACHE_KEY = 'bs_headlines_ethics_v1';
+    const HL_TTL_MS = 15 * 60 * 1000;
+    function getCache(){
+      try{
+        const raw = localStorage.getItem(HL_CACHE_KEY);
+        if(!raw) return null;
+        const {ts, data} = JSON.parse(raw);
+        if(Date.now() - ts > HL_TTL_MS) return null;
+        return data;
+      }catch{ return null; }
+    }
+    function setCache(data){
+      try{ localStorage.setItem(HL_CACHE_KEY, JSON.stringify({ ts: Date.now(), data })); }catch{}
+    }
+
+    // ---- Fetch & transform
+    async function loadHeadlines(){
+      try{
+        const res = await fetchWithTimeout(CSV_URL, 900);
+        if(!res.ok) throw new Error(`HTTP ${res.status}`);
+        const txt = await res.text();
+        if (txt.trim().startsWith('<')) return []; // sheet not public
+        const rows = parseCsv(txt);
+        if(!rows.length) return [];
+        const headers = rows[0].map(h => h.replace(/^\uFEFF/,'').trim().toLowerCase());
+        const iSection = headers.indexOf('section');
+        const iText = headers.indexOf('text');
+        if(iSection<0 || iText<0) return [];
+        return rows.slice(1).map(r => ({
+          section:(r[iSection]||'').toLowerCase().trim(),
+          text:(r[iText]||'').trim()
+        })).filter(r => r.text);
+      }catch(e){
+        console.warn('Headlines fetch failed:', e.message || e);
+        return null;
+      }
+    }
+
+    // ---- Boot helpers
+    function respectReducedMotion(){
+      try{
+        if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          document.querySelectorAll('.ticker-left, .ticker-right').forEach(el=>{ el.style.animation='none'; });
+        }
+      }catch{}
+    }
+    function setYear(){
+      const y = document.getElementById('year');
+      if(y) y.textContent = String(new Date().getFullYear());
+    }
+
+    // ---- Boot
+    async function boot(){
+      setYear();
+      respectReducedMotion();
+
+      const cached = getCache();
+      if(cached) paintFromData(cached);
+
+      const data = await loadHeadlines();
+      if(data){ setCache(data); paintFromData(data); }
+    }
+
+    document.addEventListener('DOMContentLoaded', boot, { once:true });
+  </script>
+</body>
+</html>
