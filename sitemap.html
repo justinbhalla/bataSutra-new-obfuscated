@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sitemap — bataSutra</title>
+  <meta name="description" content="A human-friendly index of bataSutra: articles, data dashboards, tools, company pages, and legal/resources." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+  </style>
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"CollectionPage",
+    "name":"Sitemap",
+    "about":["site map","navigation","index"],
+    "publisher":{"@type":"Organization","name":"bataSutra"},
+    "hasPart":[
+      {"@type":"SiteNavigationElement","name":"Editorial","url":"/articles"},
+      {"@type":"SiteNavigationElement","name":"Data","url":"/indices"},
+      {"@type":"SiteNavigationElement","name":"Tools","url":"/tools"},
+      {"@type":"SiteNavigationElement","name":"Company","url":"/about"},
+      {"@type":"SiteNavigationElement","name":"Resources","url":"/methodology"},
+      {"@type":"SiteNavigationElement","name":"Legal","url":"/privacy"}
+    ]
+  }
+  </script>
+
+  <!-- Page script -->
+  <script src="sitemap.app.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- First-paint fallback -->
+          <span>Quick paths to everything</span>
+          <span>Editorial, Data, Tools, Legal</span>
+          <span>Looking for something? Try /search</span>
+          <span>Methodology linked on every chart</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Sitemap</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">A human-friendly index of all major sections on bataSutra. If a page is missing, ping <a class="link-ink" href="mailto:contact@batasutra.in">contact@batasutra.in</a>.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#editorial" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Editorial</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data & Tools</a>
+          <a href="#company" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Company</a>
+          <a href="#legal" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Legal & Resources</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Quick info</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, <span id="year"></span></span></li>
+          <li class="grid-bullet"><strong>XML sitemap:</strong> <a class="link-ink" href="/sitemap.xml">/sitemap.xml</a></li>
+          <li class="grid-bullet"><strong>Search:</strong> <a class="link-ink" href="/search">/search</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Editorial -->
+  <section id="editorial" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Editorial</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3 text-sm">
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/articles">Latest</a></li>
+          <li><a class="link-ink" href="/deep-dive">Deep Dives</a></li>
+          <li><a class="link-ink" href="/weekend-wrap">Weekend Wrap</a></li>
+          <li><a class="link-ink" href="/explainers">Explainers</a></li>
+          <li><a class="link-ink" href="/policy">Policy & Regulation</a></li>
+          <li><a class="link-ink" href="/quick-stats">Quick Stats</a></li>
+          <li><a class="link-ink" href="/archive">Archive</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/style-guide">Style Guide</a></li>
+          <li><a class="link-ink" href="/editorial-policy">Editorial Policy</a></li>
+          <li><a class="link-ink" href="/ethics">Ethics & Independence</a></li>
+          <li><a class="link-ink" href="/corrections">Corrections</a></li>
+          <li><a class="link-ink" href="/press">Press</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a></li>
+          <li><a class="link-ink" href="/security">Security</a></li>
+          <li><a class="link-ink" href="/accessibility">Accessibility</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Data & Tools -->
+  <section id="data" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Data & Tools</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3 text-sm">
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/indices">Indices</a></li>
+          <li><a class="link-ink" href="/heatmap">Sector Heatmap</a></li>
+          <li><a class="link-ink" href="/commodities">Commodities</a></li>
+          <li><a class="link-ink" href="/dashboards/sectors">Sector Dashboards</a></li>
+          <li><a class="link-ink" href="/calendars/earnings">Earnings Calendar</a></li>
+          <li><a class="link-ink" href="/trackers/ipo">IPO Tracker</a></li>
+          <li><a class="link-ink" href="/trackers/budget">Budget Tracker</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/tools">All Tools</a></li>
+          <li><a class="link-ink" href="/tools/sip-planner">SIP Goal & Corpus</a></li>
+          <li><a class="link-ink" href="/tools/cagr">CAGR & Quick IRR</a></li>
+          <li><a class="link-ink" href="/tools/ppf-ladder">PPF & Emergency Ladder</a></li>
+          <li><a class="link-ink" href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+          <li><a class="link-ink" href="/tools/expense-runway">Expense Buckets & Runway</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/methodology">Methodology</a></li>
+          <li><a class="link-ink" href="/data-sources">Data Sources</a></li>
+          <li><a class="link-ink" href="/tools#changelog">Tools Changelog</a></li>
+          <li><a class="link-ink" href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Company -->
+  <section id="company" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Company</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3 text-sm">
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/about">About</a></li>
+          <li><a class="link-ink" href="/partnerships">Partnerships</a></li>
+          <li><a class="link-ink" href="/advertise">Advertising & Media Kit</a></li>
+          <li><a class="link-ink" href="/careers">Careers</a></li>
+          <li><a class="link-ink" href="/contact">Contact</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/press">Press</a></li>
+          <li><a class="link-ink" href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+          <li><a class="link-ink" href="/archive">Archive</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Legal & Resources -->
+  <section id="legal" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Legal & Resources</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3 text-sm">
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/privacy">Privacy Policy</a></li>
+          <li><a class="link-ink" href="/terms">Terms of Service</a></li>
+          <li><a class="link-ink" href="/cookies">Cookie Policy</a></li>
+          <li><a class="link-ink" href="/licensing">Licensing</a></li>
+          <li><a class="link-ink" href="/responsible-disclosure">Responsible Disclosure</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/editorial-policy">Editorial Policy</a></li>
+          <li><a class="link-ink" href="/ethics">Ethics & Independence</a></li>
+          <li><a class="link-ink" href="/style-guide">Style Guide</a></li>
+          <li><a class="link-ink" href="/accessibility">Accessibility</a></li>
+          <li><a class="link-ink" href="/corrections">Corrections</a></li>
+        </ul>
+        <ul class="space-y-2">
+          <li><a class="link-ink" href="/sitemap">Sitemap (this page)</a></li>
+          <li><a class="link-ink" href="/sitemap.xml">Sitemap XML</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">SITEMAP</span>
+        <div class="ticker-rail flex-1" aria-label="Sitemap ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- First-paint fallback -->
+            <span>Find sections fast</span>
+            <span>Editorial, Data, Tools, Legal</span>
+            <span>Need help? /contact</span>
+            <span>XML: /sitemap.xml</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl">This is a human-friendly index. For crawlers, use <a class="link-ink" href="/sitemap.xml">/sitemap.xml</a>.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#editorial">Editorial</a>
+          <a class="chip" href="#data">Data & Tools</a>
+          <a class="chip" href="#company">Company</a>
+          <a class="chip" href="#legal">Legal & Resources</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
