@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cookie Policy — bataSutra</title>
+  <meta name="description" content="Learn how bataSutra uses cookies & similar technologies. View categories, full cookie list, retention, providers, and manage preferences anytime." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Ticker */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    dialog::backdrop { background: rgba(0,0,0,.35); }
+    dialog { border:none; border-radius:1rem; padding:0; width:min(900px, 96vw); }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+  </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Cookie Policy","about":["cookies","consent","analytics","marketing","privacy"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- load compact app script -->
+  <script src="cookie.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>We respect your privacy</span>
+          <span>Manage cookies anytime</span>
+          <span>Analytics is opt-in</span>
+          <span>Only essential cookies by default</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Cookie Policy</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">We use essential cookies to run the site and optional analytics/marketing cookies with your consent. You can change choices anytime.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#categories" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Categories</a>
+          <a href="#list" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Full cookie list</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & updates</div>
+        <div class="mt-2 text-sm text-slate-700">Effective: <span id="effective">Sep 01, 2025</span><br/>Last updated: <span id="lastUpdated">Sep 22, 2025</span></div>
+        <div class="mt-4 text-xs text-slate-500">For details on data rights and international transfers, see our <a class="link-ink" href="/privacy">Privacy Policy</a>.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Categories -->
+  <section id="categories" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Cookie categories</h2>
+      <div id="catGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3"></div>
+    </div>
+  </section>
+
+  <!-- Full Cookie List -->
+  <section id="list" class="container py-6">
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-xl font-bold tracking-tight">Full cookie list</h2>
+      <div class="flex items-center gap-2">
+        <input id="q" class="px-3 py-2 text-sm rounded-lg border border-gray-300" placeholder="Search name, domain, provider, purpose" />
+        <select id="fCat" class="px-3 py-2 text-sm rounded-lg border border-gray-300"><option value="">All categories</option></select>
+        <select id="fType" class="px-3 py-2 text-sm rounded-lg border border-gray-300"><option value="">All types</option><option>First-party</option><option>Third-party</option></select>
+        <button id="btnExport" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">Export CSV</button>
+      </div>
+    </div>
+
+    <div class="card overflow-hidden">
+      <div class="overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="text-left px-3 py-2">Name</th>
+              <th class="text-left px-3 py-2">Category</th>
+              <th class="text-left px-3 py-2">Purpose</th>
+              <th class="text-left px-3 py-2">Provider</th>
+              <th class="text-left px-3 py-2">Domain</th>
+              <th class="text-left px-3 py-2">Type</th>
+              <th class="text-left px-3 py-2">Duration</th>
+              <th class="text-left px-3 py-2">Link</th>
+            </tr>
+          </thead>
+          <tbody id="cookieBody" class="divide-y"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Consent Banner -->
+  <div id="consentBanner" class="fixed inset-x-0 bottom-0 z-50 hidden">
+    <div class="container pb-4">
+      <div class="card p-4 md:p-5 shadow-xl border-2 border-[var(--brand)]">
+        <div class="md:flex items-start gap-4">
+          <div class="flex-1 text-sm text-slate-800">
+            <div class="font-semibold">We use cookies</div>
+            <div class="mt-1">We use essential cookies and, with your permission, analytics/marketing cookies to improve our services. You can change choices anytime.</div>
+          </div>
+          <div class="mt-3 md:mt-0 flex gap-2 shrink-0">
+            <button id="bnrManage" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">Customize</button>
+            <button id="bnrReject" class="px-3 py-2 rounded-lg text-sm">Reject non-essential</button>
+            <button id="bnrAccept" class="px-3 py-2 rounded-lg bg-[var(--brand)] text-white text-sm">Accept all</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cookie Manager Dialog -->
+  <dialog id="cookieDlg">
+    <div class="p-5 md:p-8">
+      <div class="flex items-start justify-between gap-4">
+        <h3 class="text-xl font-bold tracking-tight">Cookie Preferences</h3>
+        <button id="dlgClose" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">Close</button>
+      </div>
+      <div class="mt-3 space-y-3 text-sm">
+        <label class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div>
+            <div class="font-medium">Essential</div>
+            <div class="text-slate-600 text-xs">Required to run the site. Always on.</div>
+          </div>
+          <input type="checkbox" checked disabled />
+        </label>
+        <label class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div>
+            <div class="font-medium">Analytics</div>
+            <div class="text-slate-600 text-xs">Helps us understand usage. Optional.</div>
+          </div>
+          <input id="ckAnalytics" type="checkbox" />
+        </label>
+        <label class="flex items-center justify-between p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div>
+            <div class="font-medium">Marketing</div>
+            <div class="text-slate-600 text-xs">Improves relevance of messages. Optional.</div>
+          </div>
+          <input id="ckMarketing" type="checkbox" />
+        </label>
+      </div>
+      <div class="mt-4 flex gap-2">
+        <button id="btnAcceptAll" class="px-3 py-2 rounded-lg bg-[var(--brand)] text-white text-sm">Accept all</button>
+        <button id="btnSavePrefs" class="px-3 py-2 rounded-lg border border-gray-300 text-sm">Save choices</button>
+      </div>
+      <div class="mt-3 text-xs text-slate-500">Your choices are stored in this browser (localStorage). Some third-party cookies may require page reload to apply changes.</div>
+    </div>
+  </dialog>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">COOKIES</span>
+        <div class="ticker-rail flex-1" aria-label="Privacy & cookies ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>Manage preferences anytime</span>
+            <span>Analytics disabled until you opt in</span>
+            <span>We don’t sell personal data</span>
+            <span>See our Privacy Policy for details</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div><div class="heading mb-3">Editorial</div><ul class="space-y-2">
+          <li><a href="/articles">Latest</a></li><li><a href="/deep-dive">Deep Dives</a></li><li><a href="/weekend-wrap">Weekend Wrap</a></li>
+          <li><a href="/explainers">Explainers</a></li><li><a href="/policy">Policy &amp; Regulation</a></li><li><a href="/quick-stats">Quick Stats</a></li><li><a href="/archive">Archive</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Data</div><ul class="space-y-2">
+          <li><a href="indicies.html">Indices</a></li><li><a href="heatmap.html">Sector Heatmap</a></li><li><a href="commodities.html">Commodities</a></li>
+          <li><a href="/dashboards/sectors">Sector Dashboards</a></li><li><a href="/calendars/earnings">Earnings Calendar</a></li><li><a href="/trackers/ipo">IPO Tracker</a></li><li><a href="/trackers/budget">Budget Tracker</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Tools</div><ul class="space-y-2">
+          <li><a href="/tools">All Tools</a></li><li><a href="SIP_Goal_Corpus_Planner.html">SIP Goal &amp; Corpus</a></li><li><a href="CAGR_Quick_IRR.html">CAGR &amp; Quick IRR</a></li>
+          <li><a href="PPF_Emergency_Ladder.html">PPF &amp; Emergency Ladder</a></li><li><a href="Old_vs_New_Tax_Slab.html">Tax: Old vs New Slab</a></li>
+          <li><a href="Expense_Buckets_Runway.html">Expense Buckets &amp; Runway</a></li><li><a href="change-log.html">Changelog</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Company</div><ul class="space-y-2">
+          <li><a href="about.html">About</a></li><li><a href="inside-the-dashboard.html">Inside the Dashboard</a></li><li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+          <li><a href="partnerships.html">Partnerships</a></li><li><a href="careers.html">Careers</a></li><li><a href="contact.html">Contact</a></li><li><a href="/press">Press</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Resources</div><ul class="space-y-2">
+          <li><a href="methodology.html">Methodology</a></li><li><a href="data-sources.html">Data Sources</a></li><li><a href="editorial-policy.html">Editorial Policy</a></li>
+          <li><a href="corrections.html">Corrections</a></li><li><a href="/ethics">Ethics &amp; Independence</a></li><li><a href="/style-guide">Style Guide</a></li><li><a href="/accessibility">Accessibility</a></li><li><a href="/sitemap">Sitemap</a></li>
+        </ul></div>
+        <div><div class="heading mb-3">Legal</div><ul class="space-y-2">
+          <li><a href="privacy-policy.html">Privacy Policy</a></li><li><a href="terms-of-services.html">Terms of Service</a></li><li><a href="cookie-policy.html">Cookie Policy</a></li>
+          <li><a href="security.html">Security</a></li><li><a href="responsible-disclosure.html">Responsible Disclosure</a></li><li><a href="licensing.html">Licensing</a></li>
+        </ul></div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3"></div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
