@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Style Guide — bataSutra</title>
+  <meta name="description" content="Our voice, tone, grammar, formatting, numbers & units, dates, links, accessibility, and SEO rules for consistent writing at bataSutra.">
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; background:#0f172a; color:#fff; padding:.12rem .4rem; border-radius:.35rem; font-size:.72rem; }
+    .pill { font-weight:600; font-size:.75rem; padding:.25rem .5rem; border-radius:.5rem; }
+    .pill-soft { background:#f1f5f9; border:1px solid #e2e8f0; }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Style Guide","about":["style guide","voice & tone","grammar","formatting","seo","accessibility","citations","numbers & units"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- External script (regular, un-obfuscated) -->
+  <script src="/style-guide.app.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>Clear > Clever</span>
+          <span>Data-first language</span>
+          <span>Use SI units & INR</span>
+          <span>Alt text for every image</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Style Guide</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">Rules for consistent, accessible, and credible writing across bataSutra — from voice and grammar to numbers, dates, links, and SEO.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#summary" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Summary</a>
+          <a href="#voice" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Voice & Tone</a>
+          <a href="#mechanics" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Mechanics</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Questions:</strong> <a class="link-ink" href="mailto:editorial@batasutra.in">editorial@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Voice</div>
+          <div class="text-sm mt-1">Direct, plain-English, data-led. Explain the “why,” not just the “what.”</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Numbers</div>
+          <div class="text-sm mt-1">Use SI or lakh/crore consistently. Label units and bases; INR by default.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Accessibility</div>
+          <div class="text-sm mt-1">Alt text, sufficient contrast, descriptive links, and keyboard-friendly embeds.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#voice">Voice & Tone</a></li>
+        <li><a href="#mechanics">Grammar & Mechanics</a></li>
+        <li><a href="#formatting">Formatting & Structure</a></li>
+        <li><a href="#numbers">Numbers, Units & Currencies</a></li>
+        <li><a href="#dates">Dates, Times & Timezones</a></li>
+        <li><a href="#links">Links, Citations & Quotes</a></li>
+        <li><a href="#seo">Headlines, SEO & Metadata</a></li>
+        <li><a href="#accessibility">Accessibility</a></li>
+        <li><a href="#media">Images, Charts & Tables</a></li>
+        <li><a href="#code">Code, Math & Notation</a></li>
+        <li><a href="#examples">Examples</a></li>
+        <li><a href="#changes">Changes</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Sections (Voice, Mechanics, Formatting, Numbers, Dates, Links, SEO, Accessibility, Media, Code, Examples) -->
+  <!-- Keep same content as the all-in-one version you approved earlier -->
+  <section id="voice" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Voice & Tone</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet"><span class="pill pill-soft">Clarity</span> Prefer short sentences and concrete nouns; avoid jargon unless defined.</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Neutrality</span> Be fair and evidence-led; separate news from opinion.</li>
+          <li class="grid-bullet"><span class="pill pill-soft">Audience</span> India-first perspectives; explain global context succinctly.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Tone sliders</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-1">
+          <li>Simple ↔ Technical: <strong>Simple</strong> unless specialist piece</li>
+          <li>Neutral ↔ Opinionated: <strong>Neutral</strong></li>
+          <li>Formal ↔ Conversational: <strong>Conversational</strong> but precise</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="mechanics" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Grammar & Mechanics</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Oxford comma: use it.</li>
+          <li class="grid-bullet">Spellings: Indian English (favour, labour), but units per SI.</li>
+          <li class="grid-bullet">Capitalization: sentence case for headlines; proper nouns capitalized.</li>
+          <li class="grid-bullet">Numerals: write out one–nine in prose; use digits from 10 onwards (context-dependent for data pieces).</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Rounding</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-1">
+          <li>Rates: 2 decimals</li>
+          <li>Index levels: 0 decimals</li>
+          <li>Percent change: 1 decimal (unless tiny samples)</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="formatting" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Formatting & Structure</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Use clear subheads every 3–5 paragraphs; one idea per paragraph.</li>
+        <li class="grid-bullet">Bullets for lists; avoid walls of text.</li>
+        <li class="grid-bullet">Pull quotes only if the quote adds meaning (not for decoration).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="numbers" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Numbers, Units & Currencies</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Label units in axis titles and first mention; INR by default. USD conversions use RBI reference or noted rates.</li>
+          <li class="grid-bullet">Prefer SI (k, M, B) or Indian (lakh, crore) consistently within a piece.</li>
+          <li class="grid-bullet">State index base (e.g., <span class="kbd">Base=2020-01</span>) and deflators used.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Examples</h3>
+        <div class="mt-2 text-sm text-slate-700">₹2.3 crore; ₹125 lakh; 3.4% YoY; 12-month trailing average.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="dates" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Dates, Times & Timezones</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">ISO-like dates in data contexts: 2025-09-22; prose can use “22 Sep 2025”.</li>
+        <li class="grid-bullet">Timezones: IST by default; note UTC offsets for global context.</li>
+        <li class="grid-bullet">Spell out months; avoid numeric-only formats in prose.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="links" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Links, Citations & Quotes</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Descriptive link text (avoid “click here”).</li>
+          <li class="grid-bullet">Citations: “Source: RBI; SEBI; bataSutra calculations.” with direct URLs where possible.</li>
+          <li class="grid-bullet">Quotes are exact; ellipses/brackets only for clarity, not meaning change.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">See also</h3>
+        <div class="mt-2 text-sm text-slate-700"><a class="link-ink" href="/data-sources">Data Sources</a> · <a class="link-ink" href="/methodology">Methodology</a></div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="seo" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Headlines, SEO & Metadata</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">H1: one per page, descriptive and specific (≤65 chars ideal).</li>
+        <li class="grid-bullet">Meta description: ~150–160 chars summarising the value prop.</li>
+        <li class="grid-bullet">Use semantic headings (H2/H3) and meaningful slugs.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="accessibility" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Accessibility</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Alt text for images; captions for charts; keyboard-focusable embeds.</li>
+          <li class="grid-bullet">Avoid conveying meaning by color alone; provide labels/markers.</li>
+          <li class="grid-bullet">Respect reduced motion; no auto-playing media with sound.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Contrast</h3>
+        <div class="mt-2 text-sm text-slate-700">Target WCAG AA for text and UI elements.</div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="media" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Images, Charts & Tables</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Charts must show units, sources, and adjustments (deflators, smoothing).</li>
+        <li class="grid-bullet">Zero baselines where appropriate; note trimmed axes.</li>
+        <li class="grid-bullet">Tables: concise headers, aligned decimals, and notes for caveats.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="code" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Code, Math & Notation</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Inline code uses backticks; blocks are fenced and labeled with language.</li>
+        <li class="grid-bullet">Math: keep simple in prose; for formulas, define variables and units.</li>
+        <li class="grid-bullet">Version pins for reproducibility when sharing code.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="examples" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Examples: Do / Don’t</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm mt-3">
+        <div class="p-4 rounded-lg bg-green-50 border border-green-200">
+          <div class="font-semibold">Do</div>
+          <ul class="list-disc list-inside mt-1 text-slate-700 space-y-1">
+            <li>“India’s CPI rose 3.8% YoY in Aug, below RBI’s 4% target.”</li>
+            <li>“See chart: Base=2019-04; CPI deflated; 3-month average.”</li>
+          </ul>
+        </div>
+        <div class="p-4 rounded-lg bg-red-50 border border-red-200">
+          <div class="font-semibold">Don’t</div>
+          <ul class="list-disc list-inside mt-1 text-slate-700 space-y-1">
+            <li>“Inflation exploded!!!” (hype, no context)</li>
+            <li>Unlabeled axes/units or missing sources.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">STYLE</span>
+        <div class="ticker-rail flex-1" aria-label="Style ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>Oxford comma</span>
+            <span>Sentence case headlines</span>
+            <span>Descriptive link text</span>
+            <span>Alt text required</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#summary">Summary</a>
+          <a class="chip" href="#voice">Voice & Tone</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
