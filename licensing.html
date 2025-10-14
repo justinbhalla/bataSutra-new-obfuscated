@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Licensing — bataSutra</title>
+  <meta name="description" content="Use of bataSutra content, data, code, and brand assets. Licenses, attribution, media permissions, trademarks, and request workflow." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --card:#ffffff;}
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .copy-btn{ border:1px solid #e5e7eb; padding:.35rem .6rem; border-radius:.5rem; font-size:.8rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+
+    /* Footer */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change:transform; }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    /* Avoid anchor overlap with sticky header */
+    section[id] { scroll-margin-top: 5.5rem; }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Licensing","about":["content license","data license","open source","trademark","permissions"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- app -->
+  <script src="licensing.app.min.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- Fallback items (replaced if Sheets loads) -->
+          <span>Markets steady into quarter-end</span>
+          <span>Rupee watch: range-bound session</span>
+          <span>Commodities mixed; crude eases</span>
+          <span>Tech earnings preview this week</span>
+          <span>Policy tracker: GST updates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-8 pb-6" id="top">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Licensing</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">Use of our content, data, code, and brand assets. Most editorial text is shareable with attribution; commercial reprints, bulk downloads, and brand uses require written permission.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#overview" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Overview</a>
+          <a href="#content" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Content</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data</a>
+          <a href="#code" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Code</a>
+          <a href="#trademark" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Trademarks</a>
+        </div>
+      </div>
+
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Last updated:</strong> <span id="lastUpdated">Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Licensing email:</strong> <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Press:</strong> <a class="link-ink" href="mailto:press@batasutra.in">press@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Overview -->
+  <section id="overview" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <div class="flex items-center justify-between mb-2">
+        <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+        <button class="px-3 py-2 rounded-lg border border-gray-300 text-sm opacity-60 cursor-not-allowed" title="Static build">Export (CSV)</button>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Editorial Content</div>
+          <div class="text-sm text-slate-700 mt-1">Short quotes OK with attribution. Full reprints need permission.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">Non-commercial OK</span></div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Charts & Images</div>
+          <div class="text-sm text-slate-700 mt-1">Embed unmodified with a link and credit. No logo removal.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">Attribution req.</span></div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Datasets & Feeds</div>
+          <div class="text-sm text-slate-700 mt-1">Personal use permitted. Redistribution/commercial use needs a license.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">License needed</span></div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Open-Source Code</div>
+          <div class="text-sm text-slate-700 mt-1">Use per repo LICENSE (MIT/Apache-2.0). Keep notices intact.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">Follow LICENSE</span></div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Brand & Trademarks</div>
+          <div class="text-sm text-slate-700 mt-1">No third-party use without written approval.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">Permission req.</span></div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Media & Classroom</div>
+          <div class="text-sm text-slate-700 mt-1">Classroom handouts OK with attribution; media reprints need approval.</div>
+          <div class="text-xs text-slate-500 mt-2"><span class="badge">Fair use + credit</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content licensing -->
+  <section id="content" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Content (articles, charts, images)</h2>
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">You may</div>
+            <div class="text-sm text-slate-700 mt-1">
+              Quote up to 100 words with a link to the original page and clear credit to <em>bataSutra</em>.
+              Embed chart thumbnails unmodified with a source link.
+            </div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">You must not</div>
+            <div class="text-sm text-slate-700 mt-1">
+              Republish full articles without permission, remove watermarks/logos, or sell our content as your product.
+            </div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Commercial reprints & translations</div>
+            <div class="text-sm text-slate-700 mt-1">
+              Allowed via paid license. Email <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a> with URL, territory, and duration.
+            </div>
+          </div>
+        </div>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Required attribution</h3>
+        <div class="mt-2 text-sm text-slate-700 space-y-2">
+          <div>Use this format when quoting or embedding:</div>
+          <pre id="attribSnippet" class="p-3 rounded-lg bg-slate-50 border text-xs overflow-x-auto">© <span id="yearA"></span> bataSutra. Source: https://batasutra.in/&lt;slug&gt; — “&lt;Title&gt;”.</pre>
+          <button class="copy-btn" data-copy="attribSnippet" aria-label="Copy attribution snippet">Copy</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Data licensing -->
+  <section id="data" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Data (tables, feeds, downloads)</h2>
+
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Permitted (no paid license)</div>
+            <ul class="list-disc pl-5 text-sm text-slate-700 mt-1 space-y-1">
+              <li>Personal analysis and classroom use with attribution.</li>
+              <li>Small excerpts (≤ 10 rows or single screenshot) in non-commercial posts, with a link.</li>
+              <li>Derived insights that do not redistribute raw data.</li>
+            </ul>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">License required</div>
+            <ul class="list-disc pl-5 text-sm text-slate-700 mt-1 space-y-1">
+              <li>Embedding live feeds/CSV/JSON in products or dashboards.</li>
+              <li>Bulk downloads, redistribution, or internal tools serving multiple users.</li>
+              <li>Commercial research, investor materials, or paid newsletters.</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold">Data license tiers (indicative)</h3>
+        <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-sm font-semibold">Starter</div>
+            <ul class="text-sm text-slate-700 mt-2 space-y-1">
+              <li>• 15k requests/mo or 1 bulk file</li>
+              <li>• 15-min cache allowed</li>
+              <li>• Single app/site</li>
+            </ul>
+            <div class="text-xs text-slate-500 mt-2"><span class="badge">Attribution required</span></div>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-sm font-semibold">Pro</div>
+            <ul class="text-sm text-slate-700 mt-2 space-y-1">
+              <li>• 250k requests/mo + bulk files</li>
+              <li>• 5-min cache, SLA option</li>
+              <li>• Multi-property usage</li>
+            </ul>
+            <div class="text-xs text-slate-500 mt-2"><span class="badge">Display rules apply</span></div>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-sm font-semibold">Enterprise</div>
+            <ul class="text-sm text-slate-700 mt-2 space-y-1">
+              <li>• Unlimited or flat-file SOW</li>
+              <li>• Custom refresh windows</li>
+              <li>• Redistribution rights</li>
+            </ul>
+            <div class="text-xs text-slate-500 mt-2"><span class="badge">Custom terms</span></div>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold">Key display & caching rules</h3>
+        <ul class="list-disc pl-5 text-sm text-slate-700 mt-2 space-y-1">
+          <li>Always show “Source: bataSutra” with a link to the originating page.</li>
+          <li>No removal of notes, caveats, or methodology; no re-hosting as your “original dataset”.</li>
+          <li>Respect cache windows; offline storage beyond cache requires explicit approval.</li>
+        </ul>
+
+        <h3 class="mt-6 font-semibold">Prohibited uses</h3>
+        <ul class="list-disc pl-5 text-sm text-slate-700 mt-2 space-y-1">
+          <li>Reselling our raw files or APIs, or training models that replicate our products.</li>
+          <li>White-label redistribution without a sublicensing clause in your agreement.</li>
+        </ul>
+      </div>
+
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Request a data license</h3>
+        <div class="text-sm text-slate-700">
+          Email <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a> with:
+          <ul class="list-disc pl-5 mt-2 space-y-1">
+            <li>Intended use & audience</li>
+            <li>Endpoints/fields needed</li>
+            <li>Refresh rate & cache window</li>
+            <li>Territory & term</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Code / OSS -->
+  <section id="code" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Code & Open Source</h2>
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Licensing policy</div>
+            <p class="text-sm text-slate-700 mt-1">
+              Our repositories are licensed per repo (e.g., MIT/Apache-2.0). See each repo’s <code>LICENSE</code> file.
+              Using our code does not grant rights to our brand names, logos, or UI look-and-feel.
+            </p>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Attribution & notices</div>
+            <p class="text-sm text-slate-700 mt-1">
+              Keep copyright headers and third-party notices intact in source and any substantial binary distribution.
+            </p>
+          </div>
+
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Contributions</div>
+            <p class="text-sm text-slate-700 mt-1">
+              By submitting a PR, you certify you wrote the code or have permission to contribute it under the repo’s license.
+              We may request a CLA for large contributions.
+            </p>
+          </div>
+        </div>
+
+        <h3 class="mt-6 font-semibold">Example license texts</h3>
+        <div class="mt-3 space-y-3 text-sm">
+          <details class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <summary class="font-medium cursor-pointer">MIT (snippet)</summary>
+            <pre class="text-xs overflow-x-auto mt-2">Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the “Software”), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies…</pre>
+          </details>
+          <details class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <summary class="font-medium cursor-pointer">Apache-2.0 (snippet)</summary>
+            <pre class="text-xs overflow-x-auto mt-2">Licensed under the Apache License, Version 2.0 (the “License”); you may not
+use this file except in compliance with the License. You may obtain a copy of the
+License at http://www.apache.org/licenses/LICENSE-2.0 …</pre>
+          </details>
+        </div>
+      </div>
+
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Need a commercial code license?</h3>
+        <p class="text-sm text-slate-700">
+          For dual-licensing, private forks, or embedding in proprietary systems, email
+          <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a>.
+        </p>
+        <h4 class="mt-4 font-semibold text-sm">No trademark grant</h4>
+        <p class="text-sm text-slate-700 mt-1">Open-source licenses exclude wordmarks, logos, and trade dress.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Trademarks / Brand -->
+  <section id="trademark" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Trademarks & Brand</h2>
+
+        <h3 class="mt-2 font-semibold">Word marks (examples)</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>bataSutra</strong> — media & data products</li>
+          <li class="grid-bullet"><strong>ZLG / ZenLock Group</strong> — parent organization</li>
+        </ul>
+
+        <h3 class="mt-6 font-semibold">Logo & brand assets</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Do not modify, recolor, or distort logos. Maintain clear space equal to the “b” height around the logo.</li>
+          <li class="grid-bullet">No use in app icons, favicons, or signage without written approval.</li>
+          <li class="grid-bullet">No combination with third-party marks to imply endorsement.</li>
+        </ul>
+
+        <h3 class="mt-6 font-semibold">Permitted without asking</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Editorial references to “bataSutra” when discussing our work, with a link.</li>
+          <li class="grid-bullet">Screenshots of our site for reviews or commentary with attribution.</li>
+        </ul>
+
+        <h3 class="mt-6 font-semibold">Requires permission</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet">Any use of our logos or wordmarks in marketing, UI, or packaging.</li>
+          <li class="grid-bullet">Merchandise, swag, or co-branding of events and campaigns.</li>
+          <li class="grid-bullet">Domain names, social handles, or ads that could confuse users.</li>
+        </ul>
+      </div>
+
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Brand kit</h3>
+        <div class="mt-2 text-sm text-slate-700">
+          Vector logos, clear-space rules, and palette are available after approval.
+          Email <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a>.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Media & Classroom -->
+  <section id="media" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Media & Classroom</h2>
+        <div class="mt-3 space-y-3">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">Classroom</div>
+            <div class="text-sm text-slate-700 mt-1">Handouts/slides may quote excerpts with attribution and links.</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-medium">News media</div>
+            <div class="text-sm text-slate-700 mt-1">For reprints or chart use, email <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a>.</div>
+          </div>
+        </div>
+      </div>
+      <aside id="request" class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Request permission</h3>
+        <div class="text-sm text-slate-700">
+          Send intended use, audience, territory, duration, and URLs to
+          <a class="link-ink" href="mailto:licensing@batasutra.in">licensing@batasutra.in</a>.
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">FAQ</h2>
+      <div class="mt-3 space-y-3">
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Can I republish an entire article?</summary>
+          <div class="text-sm text-slate-700 mt-2">Yes, with a commercial reprint license. Email us with the URL and details.</div>
+        </details>
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Can I screenshot a chart for social?</summary>
+          <div class="text-sm text-slate-700 mt-2">Yes, keep it unaltered and include a source link to bataSutra.</div>
+        </details>
+        <details class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <summary class="font-medium cursor-pointer">Do you offer data APIs?</summary>
+          <div class="text-sm text-slate-700 mt-2">We license structured data/feeds commercially. Describe your use case via email.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Change Log -->
+  <section id="log" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Licensing change log</h2>
+      <div class="mt-3 space-y-3 text-sm">
+        <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="text-slate-500 text-xs">2025-09-22</div>
+          <div class="font-medium mt-1">Static build with live tickers</div>
+          <div class="text-sm text-slate-700 mt-1">All sections are static; top/bottom tickers hydrate from Google Sheets (Headlines tab).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800"></span>
+        <div class="ticker-rail flex-1" aria-label="Utility ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>Methodology updated: CPI weights</span>
+            <span>New: sector heatmap v2</span>
+            <span>Docs: data terms clarified</span>
+            <span>Tool: CAGR quick calc</span>
+            <span>Press: media kit refresh</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#faq">FAQ</a>
+          <a class="chip" href="#log">Change log</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
