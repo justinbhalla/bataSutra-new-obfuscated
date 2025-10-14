@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Editorial Policy — bataSutra</title>
+  <meta name="description" content="Our standards for accuracy, fairness, sourcing, corrections, conflicts, independence, graphics, social media, AI use, and transparency." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Editorial Policy",
+    "about": ["accuracy", "fairness", "sourcing", "corrections", "independence", "conflicts", "graphics", "AI policy", "transparency"],
+    "publisher": {"@type": "Organization", "name": "bataSutra"}
+  }
+  </script>
+
+  <!-- external app script -->
+  <script src="editorial-policy.app.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker (Sheets → Headlines: Section=top) -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- First-paint fallback -->
+          <span>Accuracy over speed</span>
+          <span>Data-led, not hype-led</span>
+          <span>Corrections are transparent</span>
+          <span>Independence from sponsors</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2"></div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Editorial Policy</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">How we ensure accuracy, fairness, independence, and transparency across our reporting and analysis.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#summary" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Summary</a>
+          <a href="#policy" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Full policy</a>
+          <a href="/corrections" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Corrections</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Editorial:</strong> <a class="link-ink" href="mailto:editorial@batasutra.in">editorial@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Corrections:</strong> <a class="link-ink" href="mailto:corrections@batasutra.in">corrections@batasutra.in</a></li>
+          <li class="grid-bullet"><strong>Press:</strong> <a class="link-ink" href="mailto:press@batasutra.in">press@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Summary -->
+  <section id="summary" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Accuracy & Fairness</div>
+          <div class="text-sm mt-1">We verify facts, seek balanced context, and correct mistakes promptly and visibly.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Independence</div>
+          <div class="text-sm mt-1">Editorial decisions are separate from commercial influence; conflicts must be disclosed.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Transparency</div>
+          <div class="text-sm mt-1">We cite sources, publish methodologies, and clearly label opinion, analysis, and sponsored content.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#mission">Mission & Scope</a></li>
+        <li><a href="#standards">Standards: Accuracy, Fairness, Context</a></li>
+        <li><a href="#sourcing">Sourcing, Anonymous Sources & Right of Reply</a></li>
+        <li><a href="#data">Data, Charts & Methodology</a></li>
+        <li><a href="#independence">Independence & Conflicts</a></li>
+        <li><a href="#labels">Labelling: News, Analysis, Opinion, Sponsored</a></li>
+        <li><a href="#corrections">Corrections & Updates</a></li>
+        <li><a href="#embargo">Embargoes & Off-the-Record</a></li>
+        <li><a href="#social">Social Media & Personal Publishing</a></li>
+        <li><a href="#ai">AI & Automated Tools</a></li>
+        <li><a href="#minors">Privacy, Safety & Minors</a></li>
+        <li><a href="#plagiarism">Plagiarism & Attribution</a></li>
+        <li><a href="#feedback">Feedback & Complaints</a></li>
+        <li><a href="#changes">Changes</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Full Policy -->
+  <section id="policy" class="container py-6">
+    <div class="card p-6 md:p-8 space-y-6">
+      <!-- (content unchanged from your draft) -->
+      <!-- ... keep all policy sections exactly as shared ... -->
+      <section id="mission">
+        <h3 class="text-lg font-bold">1) Mission & Scope</h3>
+        <p class="text-sm text-slate-700 mt-2">bataSutra publishes India-focused business, markets, and policy journalism. This policy applies to all editorial staff, contributors, editors, and designers.</p>
+      </section>
+
+      <section id="standards">
+        <h3 class="text-lg font-bold">2) Standards: Accuracy, Fairness, Context</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Accuracy over speed: we verify facts before publication and correct swiftly when wrong.</li>
+          <li class="grid-bullet">Provide sufficient context and avoid misleading framing or clickbait headlines.</li>
+          <li class="grid-bullet">Seek diverse perspectives; reflect material counter-arguments where relevant.</li>
+        </ul>
+      </section>
+
+      <section id="sourcing">
+        <h3 class="text-lg font-bold">3) Sourcing, Anonymous Sources & Right of Reply</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Prefer named sources; anonymity requires editor approval and a clear public-interest rationale.</li>
+          <li class="grid-bullet">Corroborate claims with documents, data, or multiple sources when feasible.</li>
+          <li class="grid-bullet">Offer timely right of reply to subjects of critical coverage.</li>
+        </ul>
+      </section>
+
+      <section id="data">
+        <h3 class="text-lg font-bold">4) Data, Charts & Methodology</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Publish methodology, caveats, and source links for data-led stories and graphics.</li>
+          <li class="grid-bullet">Charts must reflect underlying data faithfully; choices (axes, baselines, sampling) are justified.</li>
+          <li class="grid-bullet">We label modeled/estimated figures and avoid overstating precision.</li>
+        </ul>
+      </section>
+
+      <section id="independence">
+        <h3 class="text-lg font-bold">5) Independence & Conflicts</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Editorial and commercial functions are separated; sponsors do not influence coverage.</li>
+          <li class="grid-bullet">Disclose and manage actual or perceived conflicts; editors may reassign stories or require disclosures.</li>
+          <li class="grid-bullet">Editorial staff may be subject to trading blackouts and holdings rules where coverage overlaps.</li>
+        </ul>
+      </section>
+
+      <section id="labels">
+        <h3 class="text-lg font-bold">6) Labelling: News, Analysis, Opinion, Sponsored</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet"><strong>News:</strong> Reported facts with neutral tone.</li>
+          <li class="grid-bullet"><strong>Analysis/Explainer:</strong> Context and interpretation grounded in data and reporting.</li>
+          <li class="grid-bullet"><strong>Opinion:</strong> Clearly marked commentary.</li>
+          <li class="grid-bullet"><strong>Sponsored/Partner:</strong> Prominently labeled; editorial retains control over standards disclosures.</li>
+        </ul>
+      </section>
+
+      <section id="corrections">
+        <h3 class="text-lg font-bold">7) Corrections & Updates</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Material errors: visible correction note detailing what changed and when.</li>
+          <li class="grid-bullet">Non-material clarifications and updates are noted in-line or in footers where appropriate.</li>
+          <li class="grid-bullet">Readers can request corrections at <a class="link-ink" href="mailto:corrections@batasutra.in">corrections@batasutra.in</a>.</li>
+        </ul>
+      </section>
+
+      <section id="embargo">
+        <h3 class="text-lg font-bold">8) Embargoes & Off-the-Record</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">We honor embargoes we agree to; we do not accept conditions that compromise independence.</li>
+          <li class="grid-bullet">“Off the record” terms must be explicit and agreed beforehand.</li>
+        </ul>
+      </section>
+
+      <section id="social">
+        <h3 class="text-lg font-bold">9) Social Media & Personal Publishing</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Staff should avoid partisan endorsements that undermine perceived neutrality.</li>
+          <li class="grid-bullet">Breaking news and corrections should route through editorial channels before posting.</li>
+        </ul>
+      </section>
+
+      <section id="ai">
+        <h3 class="text-lg font-bold">10) AI & Automated Tools</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">AI may assist with research/production but never replaces editorial judgment; sensitive claims require human verification.</li>
+          <li class="grid-bullet">If AI meaningfully contributes to text or imagery, we disclose.</li>
+        </ul>
+      </section>
+
+      <section id="minors">
+        <h3 class="text-lg font-bold">11) Privacy, Safety & Minors</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Exercise heightened care with minors and vulnerable subjects; minimize harm and avoid gratuitous details.</li>
+          <li class="grid-bullet">Respect reasonable expectations of privacy unless overriding public interest exists.</li>
+        </ul>
+      </section>
+
+      <section id="plagiarism">
+        <h3 class="text-lg font-bold">12) Plagiarism & Attribution</h3>
+        <ul class="mt-2 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">We do not plagiarize. Quotations and unique reporting are attributed; images and data carry source credits.</li>
+          <li class="grid-bullet">Use of external material complies with license terms and fair dealing/fair use.</li>
+        </ul>
+      </section>
+
+      <section id="feedback">
+        <h3 class="text-lg font-bold">13) Feedback & Complaints</h3>
+        <p class="text-sm text-slate-700 mt-2">Write to <a class="link-ink" href="mailto:editorial@batasutra.in">editorial@batasutra.in</a> or <a class="link-ink" href="mailto:corrections@batasutra.in">corrections@batasutra.in</a>. We review and respond in good faith.</p>
+      </section>
+
+      <section id="changes">
+        <h3 class="text-lg font-bold">14) Changes</h3>
+        <p class="text-sm text-slate-700 mt-2">Material updates to this policy will be signposted with a new “Last updated” date above.</p>
+      </section>
+
+      <section id="contact">
+        <h3 class="text-lg font-bold">15) Contact</h3>
+        <p class="text-sm text-slate-700 mt-2">Questions? Contact <a class="link-ink" href="mailto:editorial@batasutra.in">editorial@batasutra.in</a>.</p>
+      </section>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker (Sheets → Headlines: Section=bottom) -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">EDITORIAL</span>
+        <div class="ticker-rail flex-1" aria-label="Editorial ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- First-paint fallback -->
+            <span>Accuracy over speed</span>
+            <span>Right of reply is offered</span>
+            <span>Anonymous sources require approval</span>
+            <span>Corrections: corrections@batasutra.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl"></p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <!-- (footer lists unchanged as shared) -->
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Compliance</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#summary">Summary</a>
+          <a class="chip" href="#policy">Full policy</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
