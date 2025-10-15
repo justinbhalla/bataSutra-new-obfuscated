@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Changelog — bataSutra</title>
+  <meta name="description" content="All notable changes to bataSutra: features, fixes, data updates, infrastructure, and deprecations." />
+  <meta name="theme-color" content="#8B0000">
+
+  <!-- Perf warmup -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="//docs.google.com">
+  <link rel="preconnect" href="https://docs.google.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background: var(--bg); color: var(--ink); }
+    section[id] { scroll-margin-top: 5.5rem; }
+
+    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
+    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
+    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
+
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+
+    /* Tickers */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
+    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
+    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+
+    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
+    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
+    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
+    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+
+    /* Timeline */
+    .dot { width:.65rem; height:.65rem; background:#0ea5e9; border-radius:999px; box-shadow: 0 0 0 4px rgba(14,165,233,.15); }
+    .row { display:grid; grid-template-columns: 8rem 1fr; gap:1rem; align-items:start; }
+    @media (max-width:640px){ .row{ grid-template-columns: 1fr; } }
+  </style>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Changelog","about":["release notes","features","fixes","data updates","deprecations"],"publisher":{"@type":"Organization","name":"bataSutra"}}
+  </script>
+
+  <!-- Page script (separate file) -->
+  <link rel="prefetch" href="changelog.app.js" as="script" crossorigin="anonymous">
+  <script src="changelog.app.js" defer></script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- First-paint fallback -->
+          <span>Transparent releases</span>
+          <span>Breaking changes are flagged</span>
+          <span>Performance & reliability first</span>
+          <span>See whats-new highlights below</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <div class="flex items-center gap-2">
+        <a href="/tools#changelog" class="text-sm text-[var(--brand-ink)] font-medium">Tools Changelog</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="container pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Changelog</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">All notable changes in features, datasets, performance, and infrastructure. We group releases by date and tag them with type: <span class="badge">Feature</span>, <span class="badge">Fix</span>, <span class="badge">Data</span>, <span class="badge">Perf</span>, <span class="badge">Deprecation</span>.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#latest" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Latest</a>
+          <a href="#policy" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Versioning</a>
+          <a href="#upcoming" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Upcoming</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Effective & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><strong>Effective:</strong> <span>Sep 01, 2025</span></li>
+          <li class="grid-bullet"><strong>Last updated:</strong> <span>Sep 22, 2025</span></li>
+          <li class="grid-bullet"><strong>Release notes:</strong> <a class="link-ink" href="mailto:release@batasutra.in">release@batasutra.in</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Contents -->
+  <section class="container py-2">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
+      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
+        <li><a href="#latest">Latest releases</a></li>
+        <li><a href="#highlights">Highlights</a></li>
+        <li><a href="#policy">Versioning & channels</a></li>
+        <li><a href="#components">Component changes</a></li>
+        <li><a href="#infra">Infrastructure</a></li>
+        <li><a href="#deprecations">Deprecations</a></li>
+        <li><a href="#upcoming">Upcoming</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- Latest -->
+  <section id="latest" class="container py-6">
+    <div class="card p-6 md:p-8 space-y-6">
+      <h2 class="text-xl font-bold tracking-tight">Latest releases</h2>
+
+      <div class="row">
+        <div class="text-sm text-slate-500">2025-09-22</div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5"></span>
+            <div>
+              <div class="font-medium">Sector Heatmap — <span class="badge">Feature</span></div>
+              <p class="text-sm text-slate-700">New filter chips (Market-cap, Beta, Earnings) with sticky state. Improves analyst workflow on mobile.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5" style="background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.15)"></span>
+            <div>
+              <div class="font-medium">Data pipelines — <span class="badge">Perf</span></div>
+              <p class="text-sm text-slate-700">Daily backfill time reduced by ~34%; retries are now jittered to avoid exchange throttle windows.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5" style="background:#f59e0b;box-shadow:0 0 0 4px rgba(245,158,11,.15)"></span>
+            <div>
+              <div class="font-medium">IPO Tracker tooltip — <span class="badge">Fix</span></div>
+              <p class="text-sm text-slate-700">Resolved a Safari hover flicker when moving across the pricing band badge.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-sm text-slate-500">2025-09-18</div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5" style="background:#ef4444;box-shadow:0 0 0 4px rgba(239,68,68,.15)"></span>
+            <div>
+              <div class="font-medium">Cookies banner — <span class="badge">Deprecation</span></div>
+              <p class="text-sm text-slate-700">Removed legacy consent SDK; moved to lightweight, zero-tracking notice.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5"></span>
+            <div>
+              <div class="font-medium">Commodities dashboard — <span class="badge">Data</span></div>
+              <p class="text-sm text-slate-700">Added LME aluminum inventories, RBI reference FX snapshot, and MCX settlement notes.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="text-sm text-slate-500">2025-09-12</div>
+        <div class="space-y-3">
+          <div class="flex items-start gap-3">
+            <span class="dot mt-1.5"></span>
+            <div>
+              <div class="font-medium">Accessibility — <span class="badge">Fix</span></div>
+              <p class="text-sm text-slate-700">Contrast and focus styles improved for nav chips; landmarks labeled.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Highlights -->
+  <section id="highlights" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Highlights</h2>
+      <div class="mt-3 grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Mobile polish</div>
+          <div class="mt-1">Sticky filters, better tap targets, contextual tooltips on data tables.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Reliability</div>
+          <div class="mt-1">Fewer red deploys; faster fallbacks when an upstream is late.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">New datasets</div>
+          <div class="mt-1">Global benchmarks and RBI daily ref FX added to more dashboards.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Policy -->
+  <section id="policy" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Versioning & channels</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="grid-bullet"><span class="badge">SemVer-ish</span> We group UI & data changes by date; breaking API changes (if any) are versioned separately.</li>
+          <li class="grid-bullet"><span class="badge">Channels</span> Canary → Beta → Stable. High-risk changes soak on canary 24–72h.</li>
+          <li class="grid-bullet"><span class="badge">Flags</span> Big features ship behind flags and are rolled out progressively.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">What counts as breaking?</h3>
+        <div class="mt-2 text-sm text-slate-700">Public URL or contract changes, removed metrics, or altered semantics without alias/migration path.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Components -->
+  <section id="components" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Component changes</h2>
+      <div class="mt-3 overflow-x-auto">
+        <table class="min-w-full text-sm">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="text-left px-3 py-2">Component</th>
+              <th class="text-left px-3 py-2">Type</th>
+              <th class="text-left px-3 py-2">Summary</th>
+              <th class="text-left px-3 py-2">Date</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            <tr>
+              <td class="px-3 py-2 font-medium">Sector Heatmap</td>
+              <td class="px-3 py-2"><span class="badge">Feature</span></td>
+              <td class="px-3 py-2">Added filter chips; remember state per session.</td>
+              <td class="px-3 py-2">2025-09-22</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">IPO Tracker</td>
+              <td class="px-3 py-2"><span class="badge">Fix</span></td>
+              <td class="px-3 py-2">Hover jitter in Safari resolved.</td>
+              <td class="px-3 py-2">2025-09-22</td>
+            </tr>
+            <tr>
+              <td class="px-3 py-2 font-medium">Data ETL</td>
+              <td class="px-3 py-2"><span class="badge">Perf</span></td>
+              <td class="px-3 py-2">Backfill improved; jittered retries.</td>
+              <td class="px-3 py-2">2025-09-22</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Infra -->
+  <section id="infra" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Infrastructure</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">SWR cache for ticker CSV with fast timeouts and graceful fallbacks.</li>
+        <li class="grid-bullet">Improved logging on data refresh jobs for upstream outages.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Deprecations -->
+  <section id="deprecations" class="container py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">Deprecations</h2>
+      <ul class="mt-3 text-sm text-slate-700 space-y-2">
+        <li class="grid-bullet">Legacy cookies SDK removed (Sep 18, 2025). No action needed for readers.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Upcoming -->
+  <section id="upcoming" class="container py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Upcoming</h2>
+        <ul class="mt-3 text-sm text-slate-700 space-y-2">
+          <li class="grid-bullet">Personalized “My Watchlist” for equities and macro tiles.</li>
+          <li class="grid-bullet">More global commodity overlays and hedging visuals.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Feedback</h3>
+        <div class="mt-2 text-sm text-slate-700">Suggest or upvote changes at <a class="link-ink" href="mailto:release@batasutra.in">release@batasutra.in</a>.</div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="container">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">CHANGELOG</span>
+        <div class="ticker-rail flex-1" aria-label="Changelog ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <!-- First-paint fallback -->
+            <span>Canary → Beta → Stable</span>
+            <span>Flagged rollouts; easy rollbacks</span>
+            <span>Breaking changes clearly marked</span>
+            <span>Release notes: release@batasutra.in</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-red text-sm mt-0">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl">We ship in small, frequent updates. This page lists what changed and why.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="chip" href="#latest">Latest</a>
+          <a class="chip" href="#highlights">Highlights</a>
+          <a class="chip" href="#policy">Versioning</a>
+        </div>
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
