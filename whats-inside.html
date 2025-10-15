@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>What’s Inside — Market Pulse Dashboard | bataSutra</title>
+  <meta name="description" content="See what’s inside the Market Pulse dashboard: breadth, momentum, rotation. Join the waitlist for alert emails as we roll out." />
+  <meta name="theme-color" content="#8B0000">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; }
+    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    body { background:#fff; color:#111; }
+    section[id]{ scroll-margin-top:5.5rem; }
+
+    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
+
+    /* Tickers */
+    .ticker-rail{ position:relative; overflow:hidden; }
+    .ticker{ display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change:transform; transform:translateZ(0); }
+    .ticker-left{ animation:sL var(--dur,120s) linear infinite; }
+    .ticker-right{ animation:sR var(--dur,120s) linear infinite; }
+    @keyframes sL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes sR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+    @media (prefers-reduced-motion: reduce){ .ticker-left,.ticker-right{ animation:none !important; } }
+
+    /* Reserve block */
+    .reserve-gradient{
+      background: radial-gradient(1200px 400px at 10% -20%, #dc26261c 10%, transparent 60%),
+                  radial-gradient(800px 300px at 90% -10%, #8B00001f 10%, transparent 60%),
+                  linear-gradient(180deg, #101010, #0d0d0d 60%, #0b0b0b);
+      border:1px solid #1f2937;
+    }
+    .reserve-border{ border:1px solid rgba(255,255,255,.08); }
+    .reserve-input{ background:#0f172a; border:1px solid #334155; color:#e5e7eb; }
+    .reserve-input::placeholder{ color:#94a3b8; }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"What’s Inside — Market Pulse Dashboard",
+    "about":["market pulse","breadth","momentum","sector rotation","alerts waitlist"],
+    "publisher":{"@type":"Organization","name":"bataSutra"}
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Ticker -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <!-- Fallback -->
+          <span>Market Pulse: breadth, momentum, rotation</span>
+          <span>Pre-open brief + closing wrap</span>
+          <span>Alerts waitlist is open</span>
+          <span>Methodology linked on page</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <a href="/dashboard/market-pulse" class="hidden sm:inline-flex px-3 py-1.5 rounded-lg border border-gray-300 text-sm">Open Dashboard</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
+      <div class="lg:col-span-2">
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What’s inside — Market Pulse Dashboard</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">A fast overview of market internals: breadth, momentum, sector rotation, and positioning — stitched into a clean daily workflow.</p>
+        <div class="mt-5 flex flex-wrap gap-3">
+          <a href="#modules" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Modules</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data & Methods</a>
+          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Reserve Alerts</a>
+        </div>
+      </div>
+      <aside class="card p-5">
+        <div class="text-sm text-slate-600">Status & contacts</div>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Status:</strong> <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-500"></span>In active build</span></li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Public preview:</strong> Rolling out</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Alerts:</strong> Waitlist open</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Contact:</strong> <a class="text-[var(--brand-ink)] hover:underline" href="mailto:dashboard@batasutra.in">dashboard@batasutra.in</a></li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Methodology:</strong> <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">batasutra.in/methodology</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- At-a-glance -->
+  <section class="max-w-6xl mx-auto px-4 py-6">
+    <div class="card p-6 md:p-8">
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Internals</div>
+          <div class="text-sm mt-1">Advance-decline, highs/lows, up/down volume, breadth composites.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Rotations</div>
+          <div class="text-sm mt-1">3/6/12-M returns, MA breadth, sector/size/quality rotation matrices.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Workflows</div>
+          <div class="text-sm mt-1">Pre-open brief, closing wrap, weekly context — one scroll.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modules -->
+  <section id="modules" class="max-w-6xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Modules</h2>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold mb-1">Breadth Overview</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Advance-Decline, Up/Down volume</li>
+              <li>52-week highs/lows and percentiles</li>
+              <li>Composite diffusion gauges</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold mb-1">Momentum Stack</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>3/6/12-M returns & z-scores</li>
+              <li>MA crossovers & MA breadth</li>
+              <li>Breakouts & pullbacks monitor</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold mb-1">Sector & Factor Rotation</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Sector grid (NSE sectors)</li>
+              <li>Size/Value/Quality tilt</li>
+              <li>Heatmap & diffusion index</li>
+            </ul>
+          </div>
+          <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="font-semibold mb-1">Positioning (lite)</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Index derivatives snapshot*</li>
+              <li>FPI activity overview*</li>
+              <li class="text-xs text-slate-500">* subject to license & timing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Why it’s different</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Opinion-light, chart-first.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Methodology & caveats linked.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Fast on mobile, no fluff.</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Data & Methods -->
+  <section id="data" class="max-w-6xl mx-auto px-4 py-6">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
+      <div class="lg:col-span-2 card p-6 md:p-8">
+        <h2 class="text-xl font-bold tracking-tight">Data & Methods</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Sources:</strong> NSE/BSE for prices, volumes, corporate actions; official indices.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Cleaning:</strong> Survivorship-aware panels for backtests; split/bonus adjustments.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Smoothing:</strong> Trailing averages (3/6/12-M), winsorization for extreme outliers.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Publishing:</strong> Units, baselines, and caveats posted; see <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">Methodology</a> & <a class="text-[var(--brand-ink)] hover:underline" href="/data-sources">Data Sources</a>.</li>
+        </ul>
+      </div>
+      <aside class="card p-6 md:p-8">
+        <h3 class="text-base font-semibold">Update cadence</h3>
+        <div class="mt-2 text-sm text-slate-700 grid grid-cols-2 gap-2">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Prices & breadth</div>
+            <div class="font-semibold">Live / EOD</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Rotation & factors</div>
+            <div class="font-semibold">Daily</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Backtests</div>
+            <div class="font-semibold">Ad-hoc</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Roadmap</div>
+            <div class="font-semibold">Monthly</div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Reserve Alerts (Waitlist) -->
+  <section id="reserve" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="reserve-gradient rounded-2xl p-6 md:p-10 text-white">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Reserve alerts for Market Pulse</h2>
+          <p class="opacity-80 mt-2 text-sm">Join the email list for pre-open briefs, closing wraps, and notable shifts in breadth/rotation. We only need your email.</p>
+          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <li class="reserve-border rounded-lg p-3">No spam, unsubscribe anytime</li>
+            <li class="reserve-border rounded-lg p-3">Rollout: staged access</li>
+            <li class="reserve-border rounded-lg p-3">Same subscribe backend</li>
+          </ul>
+        </div>
+        <div>
+          <form id="reserveForm" class="space-y-3" aria-label="Reserve alerts form">
+            <label for="reserveEmail" class="sr-only">Email</label>
+            <input id="reserveEmail" type="email" required autocomplete="email"
+                   class="reserve-input w-full rounded-lg px-3 py-3 text-sm"
+                   placeholder="you@example.com" />
+            <button type="submit"
+                    class="w-full rounded-lg bg-[var(--brand)] text-white px-4 py-3 text-sm font-semibold hover:opacity-95">
+              Join waitlist
+            </button>
+            <div id="reserveMsg" class="text-xs opacity-80">We’ll confirm when alerts are ready.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bottom Ticker -->
+  <div class="w-full bg-slate-50 border-t mt-12">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex items-center gap-3 py-2">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PULSE</span>
+        <div class="ticker-rail flex-1" aria-label="Market ticker" aria-live="polite">
+          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
+            <span>Breadth first. Hype last.</span>
+            <span>Fast mobile charts</span>
+            <span>Methodology linked</span>
+            <span>Alerts: waitlist open</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-[var(--brand-ink)] text-white text-sm mt-0">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs opacity-80 -mt-0.5"></div>
+          </div>
+        </a>
+        <p class="opacity-80 max-w-2xl">Market Pulse distills breadth, momentum, and rotation into one fast scroll. Email <a class="underline" href="mailto:dashboard@batasutra.in">dashboard@batasutra.in</a> for access.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/dashboard/whats-inside.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="uppercase tracking-wide text-xs opacity-80 mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy">Privacy Policy</a></li>
+            <li><a href="/terms">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/15 mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="flex flex-wrap items-center gap-3">
+          <span class="text-xs opacity-80">© <span id="year"></span> bataSutra</span>
+        </div>
+        <div class="opacity-80 text-xs">All rights reserved.</div>
+        <div>
+          <button type="button" class="text-xs underline" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- External script -->
+  <script src="whats-inside.js" defer></script>
+</body>
+</html>
