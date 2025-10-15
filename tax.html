@@ -52,7 +52,7 @@
     .section{ padding-top:1.25rem; padding-bottom:1.25rem; } @media (min-width:768px){ .section{ padding-top:1.75rem; padding-bottom:1.75rem; } } @media (min-width:1024px){ .section{ padding-top:2rem; padding-bottom:2rem; } }
     .measure{ max-width: 68ch; }
 
-    /* ===== TICKERS ===== */
+    /* ===== TICKERS (from CAGR) ===== */
     .ticker-rail { position: relative; overflow: hidden; }
     .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; }
     .ticker-left  { animation: scroll-left 90s linear infinite; }
@@ -61,7 +61,7 @@
     @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
     @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
 
-    /* ===== Footer ===== */
+    /* ===== Footer (from CAGR) ===== */
     .footer-red { background: var(--brand-ink); color:#fff; }
     .footer-red a { color: rgba(255,255,255,.92); }
     .footer-red a:hover { color:#fff; text-decoration: underline; }
@@ -70,9 +70,6 @@
     .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
     .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
   </style>
-
-  <!-- load app script -->
-  <script src="tax.app.min.js" defer></script>
 </head>
 <body class="min-h-full">
   <!-- ===== Top Ticker ===== -->
@@ -89,7 +86,7 @@
     </div>
   </div>
 
-  <!-- ===== Header ===== -->
+  <!-- ===== Header (from CAGR) ===== -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
     <div class="container flex items-center justify-between py-3">
       <a href="/" class="flex items-center gap-3">
@@ -228,11 +225,12 @@
     </div>
   </div>
 
-  <!-- ===== Footer ===== -->
+  <!-- ===== Footer (from CAGR) ===== -->
  <footer class="footer-red text-sm">
     <div class="divider"></div>
 
     <div class="container py-10">
+      <!-- Top: brand + mission -->
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <a href="/" class="flex items-center gap-3">
           <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
@@ -241,10 +239,14 @@
             <div class="text-xs muted -mt-0.5"></div>
           </div>
         </a>
-        <p class="muted max-w-2xl"></p>
+        <p class="muted max-w-2xl">
+         
+        </p>
       </div>
 
+      <!-- Middle: professional link grid (no duplicates across sections) -->
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <!-- Editorial -->
         <div>
           <div class="heading mb-3">Editorial</div>
           <ul class="space-y-2">
@@ -257,6 +259,8 @@
             <li><a href="/archive">Archive</a></li>
           </ul>
         </div>
+
+        <!-- Markets & Dashboards -->
         <div>
           <div class="heading mb-3">Data</div>
           <ul class="space-y-2">
@@ -269,6 +273,8 @@
             <li><a href="/trackers/budget">Budget Tracker</a></li>
           </ul>
         </div>
+
+        <!-- Tools & Calculators -->
         <div>
           <div class="heading mb-3">Tools</div>
           <ul class="space-y-2">
@@ -281,6 +287,8 @@
             <li><a href="change-log.html">Changelog</a></li>
           </ul>
         </div>
+
+        <!-- Company -->
         <div>
           <div class="heading mb-3">Company</div>
           <ul class="space-y-2">
@@ -293,6 +301,8 @@
             <li><a href="/press">Press</a></li>
           </ul>
         </div>
+
+        <!-- Resources/docs (methodology & policies for readers) -->
         <div>
           <div class="heading mb-3">Resources</div>
           <ul class="space-y-2">
@@ -306,6 +316,8 @@
             <li><a href="/sitemap">Sitemap</a></li>
           </ul>
         </div>
+
+        <!-- Legal (privacy, terms, compliance only here) -->
         <div>
           <div class="heading mb-3">Legal</div>
           <ul class="space-y-2">
@@ -319,15 +331,21 @@
         </div>
       </div>
 
+      <!-- Bottom: connect + legal line -->
       <div class="divider mt-10"></div>
       <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div class="flex flex-wrap items-center gap-3"></div>
-        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="muted">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
+        </div>
         <div class="flex items-center gap-4 muted">
           <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- External script (tickers + calculator logic) -->
+  <script src="tax-slab.js" defer></script>
 </body>
 </html>
