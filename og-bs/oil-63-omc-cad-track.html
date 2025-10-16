@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Crude near $63 changes both OMC marketing math and India’s CAD. A clear, number-first explainer with rules-of-thumb and scenario tables."/>
+  <meta name="keywords" content="India, crude oil, OMC, IOC, BPCL, HPCL, petrol, diesel, marketing margins, trade parity price, taxes, CAD, rupee, USDINR, WTI, PPAC, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Crude Near $63: OMC Margins & India’s CAD Track — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">OIL · ENERGY · COMMODITIES</div>
+        <h1>Crude Near $63: OMC Margins & India’s CAD Track</h1>
+        <div class="sub">With pump prices steady, softer crude and a rangebound rupee shift both OMC marketing math and India’s external balance. Here are rules-of-thumb and scenarios.</div>
+        <div class="meta">By bataSutra Editorial · August 19, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>How OMC marketing margins work in India’s price build-up</li>
+    <li>Two rules-of-thumb: $/bbl and USD/INR sensitivities (₹/L)</li>
+    <li>Scenario table (WTI × USD/INR): implied cost change vs a $70/₹88 baseline</li>
+    <li>CAD math: what $63 implies vs $70</li>
+    <li>What to watch: policy levers, inventory lags, and risks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Softer crude = relief:</strong> At <em>~$63 WTI</em> and <em>~₹88/$</em>, the implied product cost is roughly <strong>₹3.9/L lower</strong> than a $70/₹88 baseline (illustrative, before refining, freight, and margins).</li>
+      <li><strong>Rules-of-thumb:</strong> Every <strong>$1/bbl</strong> moves product cost by ~<strong>₹0.55/L</strong> (at ₹88/$). Every <strong>₹1</strong> move in USD/INR (at $63/bbl) changes cost by ~<strong>₹0.40/L</strong>.</li>
+      <li><strong>CAD sensitivity:</strong> A <strong>$10/bbl</strong> swing in oil can shift India’s CAD by ~<strong>$15B</strong> annually; from $70 → $63 implies an improvement of ~<strong>$10–11B</strong> (rule-of-thumb).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Price build-up & margin mechanics</h2>
+  <p>Retail fuel uses a <em>trade parity price (TPP)</em> concept (import/export parity), to which dealer commission and central/state taxes are added. <em>OMC marketing margin</em> is the residual between the RSP (net of taxes) and the TPP plus distribution/operating costs. When global product prices and crude soften but pump prices stay unchanged, margins expand; when prices spike or the rupee weakens, margins compress.</p>
+  <p class="callout"><span class="badge">Remember</span> Taxes are a large share of final pump prices; hence a big cost move (₹/L) does <em>not</em> necessarily translate to a visible RSP change immediately.</p>
+</section>
+
+<section>
+  <h2>Rules-of-thumb you can use</h2>
+  <ul>
+    <li><strong>$ sensitivity:</strong> ~₹0.55 per litre for each $1/bbl move (at ₹88/$). So ±$5 ≈ ±₹2.75/L; ±$10 ≈ ±₹5.5/L.</li>
+    <li><strong>FX sensitivity:</strong> ~₹0.40 per litre for each ₹1 move in USD/INR (at $63/bbl).</li>
+  </ul>
+  <blockquote><strong>Method:</strong> Cost per litre ≈ (USD/INR × $/bbl) ÷ 159. Derivatives give the per-unit sensitivities. This is simplified, pre-refining/marketing costs and ignores quality spreads.</blockquote>
+</section>
+
+<section>
+  <h2>Scenario table — change vs $70 / ₹88 baseline</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>WTI ($/bbl)</th>
+        <th>USD/INR</th>
+        <th>Indicative Δ cost (₹/L)</th>
+        <th>What it means if pump prices are steady</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>60</td><td>86</td><td><strong>-6.29</strong></td><td>Headroom ↑ (margins expand)</td></tr>
+      <tr><td>60</td><td>88</td><td><strong>-5.53</strong></td><td>Headroom ↑</td></tr>
+      <tr><td>60</td><td>90</td><td><strong>-4.78</strong></td><td>Headroom ↑</td></tr>
+      <tr><td>63</td><td>86</td><td><strong>-4.67</strong></td><td>Headroom ↑</td></tr>
+      <tr><td>63</td><td>88</td><td><strong>-3.87</strong></td><td>Headroom ↑</td></tr>
+      <tr><td>63</td><td>90</td><td><strong>-3.08</strong></td><td>Headroom ↑</td></tr>
+      <tr><td>70</td><td>86</td><td><strong>-0.88</strong></td><td>Slight relief vs baseline</td></tr>
+      <tr><td>70</td><td>88</td><td><strong>0.00</strong></td><td>Baseline</td></tr>
+      <tr><td>70</td><td>90</td><td><strong>+0.88</strong></td><td>Headroom ↓ (margins compress)</td></tr>
+      <tr><td>75</td><td>88</td><td><strong>+2.77</strong></td><td>Headroom ↓</td></tr>
+    </tbody>
+  </table>
+  <blockquote>Δ cost is illustrative change in underlying product cost before refining/operating costs and taxes. Realised margins also depend on inventory lags, product crack spreads, and OMC pricing decisions.</blockquote>
+</section>
+
+<section>
+  <h2>CAD math — quick scenarios</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Oil ($/bbl)</th><th>CAD shift vs $70 baseline</th><th>Rule-of-thumb</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>60</td><td><strong>~+$15B</strong> (narrower deficit)</td><td>$10 → ~$15B change</td></tr>
+      <tr><td>63</td><td><strong>~+$10–11B</strong></td><td>$7 → ~$10.5B</td></tr>
+      <tr><td>70</td><td><strong>~$0B</strong></td><td>Baseline</td></tr>
+      <tr><td>75</td><td><strong>~–$7.5B</strong> (wider deficit)</td><td>$5 → ~$7.5B</td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><strong>Note:</strong> Actual CAD also depends on volumes, non-oil trade, services surplus, and gold imports.</p>
+</section>
+
+<section>
+  <h2>What to watch</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Policy levers</h3>
+      <p>Excise/VAT tweaks, dealer commission revisions, or a calibrated pump-price change can re-allocate margin headroom.</p>
+    </div>
+    <div class="card half">
+      <h3>Inventory & cracks</h3>
+      <p>OMC P&L reflects lagged stocks and product cracks (petrol/diesel). Short spells of low crude may not fully flow through.</p>
+    </div>
+    <div class="card half">
+      <h3>FX & differentials</h3>
+      <p>USD/INR path and regional spreads (e.g., Russian/ME grades vs benchmarks) shift landed costs independent of WTI/Brent.</p>
+    </div>
+    <div class="card half">
+      <h3>Festive season optics</h3>
+      <p>Near festivals, OMCs sometimes pass relief to consumers; outside windows, they may retain headroom to buffer volatility.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Will pump prices be cut?</strong> If softer crude persists and FX cooperates, OMCs historically gained headroom of ~₹2–3/L (context-dependent). Cuts are discretionary.</li>
+    <li><strong>Is $63 the Indian basket?</strong> This piece uses WTI as a simple marker; Indian basket and product prices can differ by quality and crack spreads.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Independent analysis with illustrative math; do not treat as investment advice. Numbers reflect simplified calculations and public data.</small></div>
+    </div>
+  </main>
+</body>
+</html>

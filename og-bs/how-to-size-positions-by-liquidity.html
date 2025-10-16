@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A practical, numbers-first framework to size Indian equity positions using ADV, free float, volatility, and a 3-day exit rule."/>
+  <meta name="keywords" content="position sizing, liquidity, ADV, free float, volatility, India equities, risk management, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>How to Size Positions by Liquidity — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Strategy · RISK</div>
+        <h1>How to Size Positions by Liquidity</h1>
+        <div class="sub">A practical, numbers-first framework using ADV, float, and volatility—so you can exit inside three trading days without slippage shock.</div>
+        <div class="meta">By bataSutra Editorial · September 23, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The 3-day exit rule</li>
+    <li>Four inputs: ADV, float, vol, event risk</li>
+    <li>A simple sizing formula (with examples)</li>
+    <li>When to override (and when not to)</li>
+    <li>Desk checklist</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The 3-day exit rule</h2>
+  <p>Size every position so you can unwind it in <strong>≤ 3 trading days</strong> without exceeding a conservative fraction of market liquidity. This caps P&L tail risk during gaps, downgrades, or macro shocks.</p>
+  <div class="callout"><span class="badge">Rule of thumb</span> Don’t exceed <strong>15–20%</strong> of the <em>expected</em> three-day value traded for liquid large/mid-caps; for smallcaps, cap to <strong>8–12%</strong>.</div>
+</section>
+
+<section>
+  <h2>Four inputs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>1) ADV (Value)</h3>
+      <p>Use 20-day median traded value (₹). Drop the top/bottom outliers. Multiply by 3 for the exit window.</p>
+    </div>
+    <div class="card">
+      <h3>2) Free float</h3>
+      <p>Lower float means more impact per ₹. Haircut ADV by a float factor: <em>Haircut</em> ≈ (Free-float % / 100) ^ 0.7.</p>
+    </div>
+    <div class="card">
+      <h3>3) Volatility</h3>
+      <p>Higher ATR/σ = wider expected range = more slippage. Apply a vol surcharge: reduce capacity by 10–30% for high-vol names.</p>
+    </div>
+    <div class="card">
+      <h3>4) Event risk</h3>
+      <p>Results, block deals, index changes. Halve capacity in the 3–5 sessions around binary events.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>A simple sizing formula</h2>
+  <p>Let <em>ADV20</em> be 20-day median value traded, <em>FF</em> free-float %, <em>V</em> volatility factor (1 = normal; 0.8 = high vol cut), and <em>ER</em> event factor (1 = none; 0.5 = binary risk).</p>
+  <blockquote><strong>Max Position (₹)</strong> ≈ <em>ADV20 × 3 × TargetParticipation × (FF/100)^0.7 × V × ER</em></blockquote>
+  <p class="callout"><span class="badge">TargetParticipation</span> Large/mid: 0.18 (18%). Small: 0.10 (10%). Illiquid micro: 0.06 (6%).</p>
+
+  <h3>Illustrative examples</h3>
+  <table class="table">
+    <thead><tr><th>Bucket</th><th>ADV20 (₹ cr)</th><th>FF %</th><th>V</th><th>ER</th><th>Target%</th><th>Max Position (₹ cr)</th></tr></thead>
+    <tbody>
+      <tr><td>Large-cap bank</td><td>1,200</td><td>88</td><td>1.0</td><td>1.0</td><td>18%</td><td>570</td></tr>
+      <tr><td>Mid-cap capital goods</td><td>250</td><td>55</td><td>0.9</td><td>1.0</td><td>18%</td><td>155</td></tr>
+      <tr><td>Small-cap specialty chem</td><td>45</td><td>40</td><td>0.8</td><td>1.0</td><td>10%</td><td>23</td></tr>
+      <tr><td>Microcap consumer (event week)</td><td>12</td><td>32</td><td>0.8</td><td>0.5</td><td>6%</td><td>3</td></tr>
+    </tbody>
+  </table>
+  <p><small class="mute">Numbers are illustrative; plug your own ADV, float and risk factors before use.</small></p>
+</section>
+
+<section>
+  <h2>When to override (and when not to)</h2>
+  <ul>
+    <li><strong>OK to override up</strong> if you have <em>firm</em> liquidity support (block window, reverse-inquiry, index inclusion flows).</li>
+    <li><strong>Never override</strong> on hope: illiquid smallcaps ahead of results, or into known supply (warrant/ESOP unlocks) without buyers mapped.</li>
+    <li><strong>Dynamic cuts</strong>: If stock drops &gt; 8% vs cost without news, shrink to restore exit capacity.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Desk checklist</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Before entry</h3>
+      <ul>
+        <li>Compute ADV20 (value), float factor, vol factor, event factor.</li>
+        <li>Confirm 3-day exit capacity ≥ planned size.</li>
+        <li>Tag catalysts and blackout windows.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>While in trade</h3>
+      <ul>
+        <li>Recalc weekly; reduce size if ADV dries up or vol spikes.</li>
+        <li>Escalate trims on breadth deterioration (A/D line flips).</li>
+        <li>Log realized slippage vs model—tighten targets if offside.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+
+      <div class="footer"><small class="mute">Framework reflects late-Sep 2025 market structure.</small></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SEBI’s new guardrails for index derivatives: a 14-stock minimum, tighter concentration caps, and a phased restructuring path. What changes for Bank Nifty, Bankex, and strategy."/>
+  <meta name="keywords" content="India, SEBI, derivatives, index derivatives, Nifty Bank, Bankex, Nifty Financial Services, concentration caps, broad-based index, trading, risk, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Index Derivatives Guardrails: The New 14-Stock Rule & Concentration Caps — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Finance · REGULATION · DERIVATIVES</div>
+        <h1>Index Derivatives Guardrails: The New 14-Stock Rule & Concentration Caps</h1>
+        <div class="sub">SEBI proposes a broader base and tighter weight ceilings for indices with derivatives. Here’s what changes, who’s impacted, and how to recalibrate trading.</div>
+        <div class="meta">By bataSutra Editorial · August 20, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The new “broad-based” tests (14 stocks; 20%/45% caps; descending weights)</li>
+    <li>Which indices must rejig, and transition pathways</li>
+    <li>Strategy shifts for traders, funds, and market-makers</li>
+    <li>Timeline, FAQs, and a quick compliance checklist</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Broader baskets:</strong> Non-benchmark indices used for derivatives should have <strong>≥14 constituents</strong> and pass new <strong>concentration caps</strong>.</li>
+      <li><strong>Caps:</strong> <em>Single stock ≤ 20%</em>; <em>top-3 combined ≤ 45%</em>; remaining members in <em>descending order</em> by weight (illustrative summary).</li>
+      <li><strong>Why now:</strong> Limits <em>index dominance</em> by a few heavyweights and reduces manipulation risk; aims to make sector/thematic F&O safer.</li>
+      <li><strong>Transition:</strong> Exchanges/AMCs can <em>restructure</em> existing indices rather than launch entirely new ones; feedback window runs through early September 2025.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>What exactly are the guardrails?</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Area</th><th>Guardrail (proposed/clarified)</th><th>So what?</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Constituent count</td>
+        <td><strong>Minimum 14 stocks</strong> for indices eligible for derivatives (non-benchmark).</td>
+        <td>Sector indices with 10–12 names likely add mid-caps to qualify.</td>
+      </tr>
+      <tr>
+        <td>Single-name cap</td>
+        <td><strong>≤ 20%</strong> weight for the largest constituent.</td>
+        <td>Dilutes dominance of mega banks/tech in finance/IT indices.</td>
+      </tr>
+      <tr>
+        <td>Top-3 cap</td>
+        <td><strong>≤ 45%</strong> combined for the top three constituents.</td>
+        <td>Flattens tail risk; lowers single-event gap risk.</td>
+      </tr>
+      <tr>
+        <td>Weighting discipline</td>
+        <td>Remaining members must follow <strong>strict descending order</strong> by weight.</td>
+        <td>Prevents arbitrary overweighting of smaller names.</td>
+      </tr>
+      <tr>
+        <td>Implementation</td>
+        <td><strong>Phased restructuring</strong> preferred; exchanges to publish revised methodologies and timelines.</td>
+        <td>Minimises churn for ETFs, options chains, and hedgers.</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>These are the headline criteria as articulated across the latest circulars/consultations and regulator/exchange commentary. Exact wording/timelines sit in official docs—not all details are reproduced here.</blockquote>
+</section>
+
+<section>
+  <h2>Who needs to change—quick index map</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Nifty Bank / Bankex</h3>
+      <p>Currently <em>highly concentrated</em>. Expect addition of mid-tier banks and reweights to bring top-3 under the cap. Options liquidity likely remains robust; spreads may widen briefly during rebalance windows.</p>
+    </div>
+    <div class="card half">
+      <h3>Nifty Financial Services</h3>
+      <p>Multiple sub-sectors (banks, NBFCs, insurance). Top weights ease; NBFC/insurance shares gain marginally in the mix.</p>
+    </div>
+    <div class="card half">
+      <h3>Other sector/thematic indices</h3>
+      <p>IT, Auto, PSU baskets to check caps and member count; some may add 2–4 names or shift to float-adjusted methodology variants.</p>
+    </div>
+    <div class="card half">
+      <h3>ETFs & index funds</h3>
+      <p>Prospectus addenda + staggered rebalances. Track tracking-error during the transition; avoid large creations/redemptions on the rebalance day.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Trading & risk implications</h2>
+  <ul>
+    <li><strong>Vol structure:</strong> Lower single-name dominance can compress jump risk; skew may normalise vs. past “heavyweight-led” dynamics.</li>
+    <li><strong>Spreads & depth:</strong> Temporary widening around methodology change/constituent adds—use limit orders and staggered hedges.</li>
+    <li><strong>Basis & calendars:</strong> Expect basis wiggles as ETFs roll and MM models update; watch weekly expiries around announcement dates.</li>
+    <li><strong>Strategy:</strong> Pairs/spreads reliant on old weights should be re-parameterised; reassess correlation matrices.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Checklist for desks</h2>
+  <ol>
+    <li>Download provisional <em>constituent/weight</em> files as exchanges publish them.</li>
+    <li>Backtest strategies under 20/45 caps; update <em>risk limits</em> for single-name shock scenarios.</li>
+    <li>Coordinate with <em>ETF APs</em> on rebalance calendars to avoid slippage.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Does this kill liquidity?</strong> Unlikely. Flagship contracts should retain depth; short-term friction is normal during index surgery.</li>
+    <li><strong>When does it go live?</strong> Post-consultation; watch exchange circulars for exact cut-over windows.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Independent explainer; verify final criteria from official circulars/exchange notices before trading decisions.</small></div>
+    </div>
+  </main>
+</body>
+</html>

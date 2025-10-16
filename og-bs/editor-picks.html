@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Curated editor picks on Indian business, economy, markets, and policy."/>
+  <meta name="keywords" content="editor picks, business insights, bataSutra recommendations"/>
+  <meta name="author" content="bataSutra"/>
+  <title>Editor Picks - bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --primary-color: #8B0000;
+      --hover-color: #a52a2a;
+      --light-bg: #fafafa;
+      --text-muted: #555;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    header {
+      background: var(--primary-color);
+      color: #fff;
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+
+    header h1 a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: #f0f0f0;
+    }
+
+    .hero {
+      background: #f9f9f9;
+      padding: 3rem 1rem 2rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hero h2 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 2.5rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+
+    .article-card {
+      background: var(--light-bg);
+      border: 1px solid #e5e5e5;
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .article-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .article-card h3 {
+      font-size: 1.15rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .article-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      margin-top: 0.9rem;
+      font-size: 0.9rem;
+      color: var(--primary-color);
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .read-more-btn::after {
+      content: "→";
+      margin-left: 6px;
+      transition: margin-left 0.2s ease;
+    }
+
+    .read-more-btn:hover::after {
+      margin-left: 10px;
+    }
+
+    .sponsored-card {
+      background: #fff7f7;
+      border: 1px solid #f2dcdc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .sponsored-card:hover {
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+    }
+
+    .sponsored-card .tag {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      color: #999;
+      margin-bottom: 0.4rem;
+    }
+
+    .sponsored-card h3 {
+      font-size: 1.1rem;
+      color: var(--primary-color);
+      font-weight: 600;
+    }
+
+    .sponsored-card p {
+      font-size: 0.92rem;
+      color: #555;
+      margin-top: 0.5rem;
+    }
+
+    .sponsored-card a {
+      display: inline-block;
+      margin-top: 0.8rem;
+      color: var(--primary-color);
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-decoration: underline;
+    }
+
+    .section-footer {
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    .back-btn {
+      display: inline-block;
+      padding: 0.7rem 1.4rem;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
+    }
+
+    .back-btn:hover {
+      background: var(--hover-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.85rem;
+      background: #f8f8f8;
+      color: #777;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+
+      .article-card h3 {
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1><a href="index.html">bataSutra</a></h1>
+    <p>Not just news — the bata behind the news.</p>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Editor Picks</h2>
+      <p>Our editors handpick the most insightful stories, deep dives, and trends shaping India's business and economy.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="grid">
+
+      <div class="article-card">
+        <h3>India’s Freight Race: Trains, Trucks, and Tech</h3>
+        <p>Dedicated corridors and automation are reshaping India’s transport game. Here’s what’s changing and who’s betting big.</p>
+        <a href="ill.html" class="read-more-btn">Read Now</a>
+      </div>
+
+      <div class="article-card">
+        <h3>FMCG 2.0: What’s Powering India’s Brand Shift</h3>
+        <p>New-age brands, digital loyalty, and rural buyers are reshaping the fast-moving goods market like never before in India.</p>
+        <a href="fmcg.html" class="read-more-btn">Read Now</a>
+      </div>
+
+      <!-- Ad 1 -->
+      <div class="sponsored-card">
+        <div class="tag">Sponsored</div>
+        <h3>Scale Smarter with TallyPrime</h3>
+        <p>Accounting, inventory, and compliance — all in one ERP for fast-growing Indian businesses.</p>
+        <a href="https://tallysolutions.com" target="_blank">Explore Plans →</a>
+      </div>
+
+      <div class="article-card">
+        <h3>India’s EdTech Reset: From Boom to Balance</h3>
+        <p>After a scorching run and a cold winter, edtech players are now pivoting to sustainable models — cautiously but boldly.</p>
+        <a href="detect-reset.html" class="read-more-btn">Read Now</a>
+      </div>
+
+      <div class="article-card">
+        <h3>The Quiet Rise of Agritech in Rural India</h3>
+        <p>Precision farming, drone monitoring, and supply chain tech are quietly redefining how agriculture works across India.</p>
+        <a href="qra.html" class="read-more-btn">Read Now</a>
+      </div>
+
+      <!-- Ad 2 -->
+      <div class="sponsored-card">
+        <div class="tag">Sponsored</div>
+        <h3>Hire Developers in 72 Hours</h3>
+        <p>Tap into Turing’s global network of pre-vetted engineers and scale your team effortlessly.</p>
+        <a href="https://www.turing.com" target="_blank">Get Talent →</a>
+      </div>
+
+      <div class="article-card">
+        <h3>The Consulting Crunch: Signals From the Top</h3>
+        <p>Big firms freeze hiring, trim benches, and watch margins — is this India Inc’s white-collar slowdown moment?</p>
+        <a href="tcw.html" class="read-more-btn">Read Now</a>
+      </div>
+
+    </div>
+
+    <div class="section-footer">
+     
+    </div>
+  </main>
+
+  <footer>
+    <!-- <p>Want your story featured in Editor Picks? <a href="#">Pitch us your insight</a></p> -->
+    &copy; <span id="year"></span> bataSutra. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>

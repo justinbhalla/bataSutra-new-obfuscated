@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="How India is moving from heavy imports to building its own AI chip design and manufacturing stack — and what makes the numbers work."/>
+  <meta name="keywords" content="India, AI chips, semiconductor, fabless, RISC-V, GPU, packaging, foundry, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>India’s AI Chip Play: From Import Reliance to Indigenous Silicon — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+
+:root {
+  --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222;
+}
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+
+/* NEW: make the entire header clickable back to index */
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+
+  </style>
+</head>
+<body>
+  <!-- Wrap the header with a block-level anchor -->
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">CHIPS · AI · MANUFACTURING</div>
+        <h1>India’s AI Chip Play: From Import Reliance to Indigenous Silicon</h1>
+        <div class="sub">From fabless to packaging to future foundry bets — a practical map of where value accrues and how the unit economics can close.</div>
+        <div class="meta">By bataSutra Editorial · August 12, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short version — where India can actually win</li>
+<li>Stack map: design, IP, packaging, and foundry</li>
+<li>Unit economics: what moves margins for AI silicon</li>
+<li>Policy, grants, and talent flywheels</li>
+<li>Risks, bottlenecks, and an operator checklist</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Design &amp; packaging first.</strong> Indigenous foundry is a long game; near-term value sits in <em>fabless IP</em> and <em>advanced packaging/test</em>.</li>
+      <li><strong>Memory bandwidth is destiny.</strong> AI workloads are memory-bound; HBM access and interposer tech shape performance per watt.</li>
+      <li><strong>Don’t chase widest nodes for AI.</strong> Accelerators crave advanced nodes; for edge AI, mature nodes + NPU blocks can win.</li>
+      <li><strong>Talent clusters compound.</strong> Bangalore/Hyderabad design centres create a recruiting flywheel for domestic ventures.</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>Stack map: where value accrues</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>1) Fabless design &amp; IP</h3>
+      <p>RISC‑V cores, NPUs, and domain‑specific accelerators for inference at the edge (retail, industrial, autos). <span class="badge">Moat</span> IP + toolchains</p>
+    </div>
+    <div class="card half">
+      <h3>2) Firmware, compilers, SDKs</h3>
+      <p>Kernel optimisations and quantisation toolchains that squeeze perf from commodity silicon. <span class="badge">Moat</span> Developer lock‑in</p>
+    </div>
+    <div class="card half">
+      <h3>3) OSAT: packaging, test, reliability</h3>
+      <p>Advanced packaging (chiplets, 2.5D) and burn‑in testing. <span class="badge">Revenue</span> Higher ASPs per packaged part</p>
+    </div>
+    <div class="card half">
+      <h3>4) Foundry &amp; specialty processes</h3>
+      <p>Domestic foundry is capex‑heavy and time‑intensive; specialty sensors and mature nodes can be a bridge.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Unit economics: sanity stack</h2>
+  <table class="table">
+    <thead><tr><th>Driver</th><th>Why it matters</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Node &amp; yield</td><td>Perf/watt &amp; die cost</td><td>Yields dominate gross margin for accelerators</td></tr>
+      <tr><td>HBM &amp; packaging</td><td>Memory bandwidth</td><td>Interposers, chiplets, thermal budget are cost drivers</td></tr>
+      <tr><td>Software stack</td><td>Adoption friction</td><td>SDK maturity shortens POCs, drives stickiness</td></tr>
+      <tr><td>Volume commitments</td><td>Tooling amortisation</td><td>Pre‑buys reduce per‑unit costs and lead times</td></tr>
+    </tbody>
+  </table>
+  <blockquote><strong>Rule‑of‑thumb:</strong> If you can’t beat cutting‑edge nodes, win on <em>system cost</em> and <em>developer experience</em>.</blockquote>
+</section>
+<section>
+  <h2>Policy &amp; talent</h2>
+  <ul>
+    <li>Targeted grants for <em>EDA, compilers, and ML runtimes</em>, not just capex.</li>
+    <li>Anchor orders via public deployments (edge AI in infra, health, agriculture).</li>
+    <li>University shuttle programs to tape‑out on mature nodes for startups.</li>
+  </ul>
+</section>
+<section>
+  <h2>Risks &amp; operator checklist</h2>
+  <ul>
+    <li><strong>Export controls</strong> on advanced GPUs; design for graceful degradation on commodity nodes.</li>
+    <li><strong>HBM supply</strong> concentration; secure multi‑year packaging partners.</li>
+    <li><strong>Talent churn</strong>; build ESOPs and academia partnerships.</li>
+  </ul>
+  <ol>
+    <li>Pick a <em>specific workload</em> (e.g., vision at the edge) and optimise ruthlessly.</li>
+    <li>Ship SDKs/docs early; treat developers as a first‑class customer.</li>
+    <li>Model BOM under ±20% yield and memory price swings.</li>
+  </ol>
+</section>
+
+      <div class="footer"></div>
+    </div>
+  </main>
+</body>
+</html>

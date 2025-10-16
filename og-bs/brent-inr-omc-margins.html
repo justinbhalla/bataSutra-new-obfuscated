@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brent up and INR weak? See how OMC marketing margins—and your fuel bill—move. A simple explainer with scenario tables, sensitivities, and a household impact guide."/>
+  <meta name="keywords" content="Brent, USD/INR, OMC, petrol price, diesel price, marketing margin, PPAC, crude, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Brent + Weak INR: OMC Margins & Your Fuel Bill — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){ .two { grid-template-columns: repeat(12, 1fr); } .half { grid-column: span 6; } }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">ENERGY · OIL · PRICES</div>
+        <h1>Brent + Weak INR: OMC Margins & Your Fuel Bill</h1>
+        <div class="sub">Explain-through visuals: crude range × USD/INR; OMC sensitivity; household-friendly scenarios.</div>
+        <div class="meta">By bataSutra Editorial · September 2, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short: why <em>Brent × USD/INR</em> matters more than either alone</li>
+    <li>How OMC marketing margins actually work</li>
+    <li>Scenario matrix: landed cost bands (₹/L)</li>
+    <li>City price build-up: where taxes fit (structure)</li>
+    <li>What it means for households (monthly impact)</li>
+    <li>Watchlist & FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Two levers:</strong> Landed product cost rises when <strong>Brent ↑</strong> and/or <strong>USD/INR ↑</strong>. Both together squeeze OMC marketing margins; the reverse widens them.</li>
+      <li><strong>Rule of thumb (illustrative):</strong> Every <strong>+$1 Brent</strong> changes margin by roughly <strong>−₹0.52/L</strong> (at ~USD/INR 83–87). Every <strong>+₹1 on USD/INR</strong> changes margin by roughly <strong>−₹0.50–0.55/L</strong> (at Brent ~70–85).</li>
+      <li><strong>Pump prices:</strong> Retail = <em>pre-tax base</em> + Central excise + State VAT + dealer commission. Pass-through to retail is often <em>lumpy</em> (policy & timing).</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>How margins work (simple model)</h2>
+  <p><strong>Gross marketing margin (₹/L) ≈</strong> <code>Pre-tax retail (₹/L) − Landed product cost (₹/L)</code>.</p>
+  <ul>
+    <li><span class="badge">Pre-tax retail</span> = Your city’s pump price minus taxes and dealer commission.</li>
+    <li><span class="badge">Landed product cost</span> ≈ <em>((Brent + product crack) × USD/INR ÷ 159)</em> + freight/other. (1 barrel = 159 L.)</li>
+    <li><span class="badge">Reality check</span> Actual pricing is based on refined product benchmarks (gasoline/diesel “cracks”), not Brent alone, and varies by city/state tax structure.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Scenario matrix — landed cost bands (₹/L)</h2>
+  <p>Illustrative landed product costs using a notional crack of <strong>$10/bbl</strong> and freight/other of <strong>₹1/L</strong>. Use this to gauge <em>direction</em>; plug your own crack/FX for precision.</p>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Brent (USD/bbl)</th>
+        <th>USD/INR 83</th>
+        <th>USD/INR 85</th>
+        <th>USD/INR 87</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>65</td><td>₹40.15</td><td>₹41.09</td><td>₹42.04</td></tr>
+      <tr><td>70</td><td>₹42.76</td><td>₹43.77</td><td>₹44.77</td></tr>
+      <tr><td>75</td><td>₹45.37</td><td>₹46.44</td><td>₹47.51</td></tr>
+      <tr><td>80</td><td>₹47.98</td><td>₹49.11</td><td>₹50.25</td></tr>
+      <tr><td>85</td><td>₹50.59</td><td>₹51.79</td><td>₹52.98</td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><span class="badge">How to use</span> If your city’s <em>pre-tax base</em> is, say, ₹48/L, compare with the landed cost to eyeball margin headroom: <em>Margin ≈ 48 − landed</em>.</p>
+</section>
+
+<section>
+  <h2>City price build-up (structure)</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Components</h3>
+      <ul>
+        <li><strong>Pre-tax base:</strong> Reflects product benchmarks, FX, freight.</li>
+        <li><strong>Central excise:</strong> Fixed per-litre levy (policy-determined).</li>
+        <li><strong>State VAT:</strong> Often ad-valorem; varies by state and may move with price.</li>
+        <li><strong>Dealer commission:</strong> Per-litre component.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>What shifts in a squeeze?</h3>
+      <ul>
+        <li>OMC margin compresses first if retail prices are <em>held</em>.</li>
+        <li>Persistent squeeze → partial retail price adjustment (timing varies).</li>
+        <li>Refining gains/losses offset marketing only partially (product mix dependent).</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What it means for households</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Use case</th><th>Monthly litres</th><th>₹1/L move</th><th>₹2/L move</th><th>₹5/L move</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>City commuter (2-wheeler)</td><td>20 L</td><td>₹20/month</td><td>₹40/month</td><td>₹100/month</td></tr>
+      <tr><td>Petrol hatchback</td><td>45 L</td><td>₹45/month</td><td>₹90/month</td><td>₹225/month</td></tr>
+      <tr><td>Diesel SUV</td><td>70 L</td><td>₹70/month</td><td>₹140/month</td><td>₹350/month</td></tr>
+      <tr><td>Intra-city delivery van</td><td>120 L</td><td>₹120/month</td><td>₹240/month</td><td>₹600/month</td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><span class="badge">Tip</span> If you’re price-sensitive, small behaviour shifts (route planning, tyre pressure, idling) offset ₹1–2/L moves easily over a month.</p>
+</section>
+
+<section>
+  <h2>OMC watchlist</h2>
+  <ul>
+    <li><span class="badge">Product cracks</span> Diesel & gasoline cracks vs. Brent drive actual realizations.</li>
+    <li><span class="badge">FX path</span> A weaker INR amplifies any Brent move; stability eases margins.</li>
+    <li><span class="badge">Inventory gains/losses</span> Sharp moves create mark-to-market noise.</li>
+    <li><span class="badge">Policy cadence</span> Price adjustments can be batched; watch festival windows and budget season.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Why not just Brent?</strong> Pumps sell refined products; refiners realize <em>product cracks</em> over Brent. We use Brent for simplicity and call out cracks separately.</li>
+    <li><strong>Do all states tax the same?</strong> No. VAT and local levies vary by state and can be ad-valorem; that’s why city prices differ.</li>
+    <li><strong>Are these numbers exact?</strong> No—tables are <em>illustrative</em>. Use them directionally; wire your live PPAC/product benchmarks for precision.</li>
+  </ul>
+</section>
+
+      <div class="footer">
+        <small class="mute">Build-up logic references PPAC methodology; calculations use 1 bbl = 159 L. Scenario costs and sensitivities are illustrative and for education only.</small>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

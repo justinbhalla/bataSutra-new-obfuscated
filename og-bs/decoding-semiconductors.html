@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An in-depth look at India's semiconductor strategy to become a global chip manufacturing hub." />
+  <meta name="keywords" content="India semiconductor, chip manufacturing, electronics policy, ISM, bataSutra" />
+  <meta name="author" content="bataSutra" />
+  <title>India's Semiconductor Push - bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --primary-color: #8B0000;
+      --hover-color: #a52a2a;
+      --light-bg: #fdf5f5;
+      --text-light: #fff;
+      --text-muted: #555;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.7;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header a {
+      color: inherit;
+    }
+    footer {
+      background: var(--primary-color);
+      color: #f0dcdc;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #ffe5e5;
+      text-decoration: underline;
+    }
+    article h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    article img {
+      max-width: 100%;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    article p {
+      margin-bottom: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">bataSutra</a></h1>
+    <p>Not just news — the bata behind the news.</p>
+  </header>
+
+  <main class="container">
+    <article>
+      <h1>Decoding India's Semiconductor Push: From Aspirations to Action</h1>
+      <p class="article-meta">By bataSutra Editorial Team | May 22, 2025</p>
+
+      <p>India is aiming to join the global chip race with a bold, state-backed plan to transform itself into a semiconductor powerhouse. As digital infrastructure becomes the backbone of economic growth, the government has identified chip manufacturing as a strategic national priority.</p>
+
+      <h2>🌐 Why Semiconductors Matter</h2>
+      <p>From smartphones to satellites, semiconductors are the foundation of modern technology. The pandemic-induced supply chain crisis laid bare India's dependence on foreign-made chips, prompting a rethink on self-reliance.</p>
+      <ul>
+        <li><strong>India imports 100% of its high-end chips</strong>, primarily from Taiwan, South Korea, and the US.</li>
+        <li><strong>Demand for semiconductors</strong> in India is expected to exceed $100 billion by 2030.</li>
+        <li><strong>Strategic applications</strong> in defence, AI, EVs, and telecom make local manufacturing critical.</li>
+      </ul>
+
+      <h2>🏛️ The Government's Plan</h2>
+      <p>Launched under the India Semiconductor Mission (ISM), the plan includes over <strong>₹76,000 crore (~$10B USD)</strong> in incentives, infrastructure development, and talent investment. The objective: build a domestic ecosystem from design to fabrication.</p>
+      <ul>
+        <li><strong>Foundries and fabs:</strong> Partnerships with global giants to set up fabrication plants in Gujarat and Tamil Nadu.</li>
+        <li><strong>Chip design hubs:</strong> Encouraging startups and academia to develop IP domestically.</li>
+        <li><strong>Skilling programs:</strong> Universities and ITIs rolling out semiconductor-specific curricula.</li>
+      </ul>
+
+      <h2>📈 Investment Momentum</h2>
+      <p>The response from industry has been promising. Major players like Micron, Vedanta-Foxconn, and Tower Semiconductor have announced intent to invest in India’s chip infrastructure.</p>
+
+      <h3>📊 Semiconductor Demand vs. Investment Commitments</h3>
+      <canvas id="semiconductorChart" style="width: 100%; max-width: 100%; height: 400px;"></canvas>
+      <p class="text-sm text-muted">Source: Ministry of Electronics & IT, 2025</p>
+
+      <h2>🔮 Challenges Ahead</h2>
+      <p>Building a semiconductor ecosystem is a multi-decade journey. India must tackle challenges related to water, power, logistics, and a skilled workforce—along with global competition for talent and capital.</p>
+      <p>Still, experts believe that a focused approach and geopolitical tailwinds could make India the next major node in the global chip supply chain.</p>
+
+      <h2>🚀 What to Watch</h2>
+      <ul>
+        <li>First foundry break-ground expected in Q3 2025.</li>
+        <li>New chip design startups emerging in Bengaluru and Hyderabad.</li>
+        <li>Global chip demand continuing to outpace supply into 2026.</li>
+      </ul>
+
+      <p class="font-semibold text-black mt-6">India’s semiconductor push is not just about tech—it’s about long-term sovereignty, competitiveness, and resilience in the digital age.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>Have a tip or feedback? <a href="/contact">Contact us</a></p>
+    &copy; <span id="year"></span> bataSutra. All rights reserved. | <a href="/privacy">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const ctx = document.getElementById('semiconductorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2022', '2023', '2024', '2025'],
+        datasets: [
+          {
+            label: 'Projected Demand (Billion USD)',
+            data: [50, 65, 80, 100],
+            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+            borderColor: 'rgb(22, 163, 74)',
+            borderWidth: 1
+          },
+          {
+            label: 'Confirmed Investments (Billion USD)',
+            data: [0.5, 1.5, 5.2, 10.0],
+            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            borderColor: 'rgb(37, 99, 235)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          title: { display: false }
+        },
+        animation: {
+          duration: 1500,
+          easing: 'easeOutQuart'
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'USD (Billions)'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

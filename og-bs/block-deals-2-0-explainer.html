@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="SEBI has proposed Block Deals 2.0: raising the minimum order size to ₹25 crore, tightening pricing and disclosures, and insisting on delivery. We decode windows, reference pricing, and the PE/promoter exit playbook."/>
+  <meta name="keywords" content="SEBI, block deal, ₹25 crore, price band, disclosure, delivery, promoter, private equity, market structure, India, NSE, BSE, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery — bataSutra</title>
+
+  <!-- Canonical & OG/Twitter -->
+  <link rel="canonical" href="https://batasutra.com/block-deals-2-0-explainer.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="bataSutra" />
+  <meta property="og:title" content="Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery" />
+  <meta property="og:description" content="Windows, reference pricing, disclosure rules, and what changes for promoters, PEs, and long-only funds." />
+  <meta property="og:url" content="https://batasutra.com/block-deals-2-0-explainer.html" />
+  <meta property="og:image" content="https://batasutra.com/assets/og/block-deals-2-0.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery" />
+  <meta name="twitter:description" content="Decode SEBI’s refreshed block deal framework: bigger size, tighter pricing, delivery-only, and faster disclosure." />
+  <meta name="twitter:image" content="https://batasutra.com/assets/og/block-deals-2-0.jpg" />
+
+  <!-- JSON-LD: Article + Breadcrumb + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery",
+    "description":"SEBI has proposed Block Deals 2.0: raising the minimum order size to ₹25 crore, tightening pricing and disclosures, and insisting on delivery. We decode windows, reference pricing, and the PE/promoter exit playbook.",
+    "author":{"@type":"Organization","name":"bataSutra"},
+    "publisher":{"@type":"Organization","name":"bataSutra","logo":{"@type":"ImageObject","url":"https://batasutra.com/assets/logo-512.png"}},
+    "datePublished":"2025-08-23T20:05:00+05:30",
+    "dateModified":"2025-08-23T20:05:00+05:30",
+    "image":"https://batasutra.com/assets/og/block-deals-2-0.jpg",
+    "mainEntityOfPage":"https://batasutra.com/block-deals-2-0-explainer.html",
+    "keywords":["SEBI","block deal","₹25 crore","price band","disclosure","delivery","India"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://batasutra.com/"},
+      {"@type":"ListItem","position":2,"name":"Block Deals 2.0"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What is the new minimum block deal size?","acceptedAnswer":{"@type":"Answer","text":"₹25 crore, up from ₹10 crore, as proposed by SEBI."}},
+      {"@type":"Question","name":"Are block deals delivery-only?","acceptedAnswer":{"@type":"Answer","text":"Yes, the proposal requires all block deal trades to result in delivery—no squaring off or reversals within the window."}},
+      {"@type":"Question","name":"How will the price be set?","acceptedAnswer":{"@type":"Answer","text":"Pricing would reference previous close (AM window) or an intraday VWAP band (PM window), with bands reviewed to curb manipulation."}},
+      {"@type":"Question","name":"When do window trades happen?","acceptedAnswer":{"@type":"Answer","text":"Two 15-minute windows are proposed: a morning window before the regular session, and an afternoon window during market hours, each with its own reference price."}}
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{--brand:#8B0000;--ink:#111;--muted:#555;--bg:#fff;--light:#f9f5f5;--accent:#b22222;}
+    *{box-sizing:border-box} html{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+    body{margin:0;background:var(--bg);line-height:1.6}
+    .header{background:var(--brand);color:#fff;padding:56px 24px 40px}
+    .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:12px;opacity:.9}
+    h1{font-size:clamp(28px,3.2vw,40px);margin:8px 0 10px;line-height:1.2}
+    .sub{font-size:clamp(16px,2vw,20px);opacity:.95}
+    .meta{font-size:13px;opacity:.9;margin-top:10px}
+    main{padding:28px 0 64px;background:#fff}
+    section{margin:30px 0}
+    h2{font-size:22px;margin:30px 0 10px}
+    h3{font-size:18px;margin:22px 0 8px}
+    p{margin:10px 0}
+    ul,ol{padding-left:20px}
+    hr{border:0;height:1px;background:#eee;margin:28px 0}
+    .callout{background:var(--light);border-left:4px solid var(--brand);padding:14px 16px;border-radius:8px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12;padding:14px;border:1px solid #eee;border-radius:12px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    @media(min-width:760px){.two{grid-template-columns:repeat(12,1fr)} .half{grid-column:span 6}}
+    blockquote{margin:10px 0;padding:10px 16px;border-left:3px solid #ddd;color:#333;background:#fafafa;border-radius:6px}
+    .toc{background:#fcfcfc;border:1px solid #eee;padding:12px 14px;border-radius:10px}
+    small.mute{color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border:1px solid #eee;padding:10px;text-align:left}
+    .table th{background:#fafafa}
+    .header-link{text-decoration:none;color:inherit;display:block}
+    .header-link:focus-visible{outline:2px dashed #fff;outline-offset:4px}
+    a.anchor{color:inherit;text-decoration:none}
+    .badge{display:inline-block;padding:2px 8px;border:1px solid #e6e6e6;border-radius:999px;font-size:12px;background:#fafafa;margin-right:6px}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Structure · BLOCK DEALS</div>
+        <h1>Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery</h1>
+        <div class="sub">SEBI’s consultation raises the minimum size to <strong>₹25 crore</strong>, sharpens pricing bands and disclosures, and mandates <strong>delivery-only</strong> settlement. Here’s what changes for promoters, PEs, and long-only funds.</div>
+        <div class="meta">By bataSutra Editorial · August 23, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      <section id="toc" class="toc">
+        <strong>In this piece:</strong>
+        <ul>
+          <li><a class="anchor" href="#short">The short</a></li>
+          <li><a class="anchor" href="#windows">Windows & reference pricing</a></li>
+          <li><a class="anchor" href="#pricing">Price bands & disclosures</a></li>
+          <li><a class="anchor" href="#playbook">Promoter/PE guide: what to change</a></li>
+          <li><a class="anchor" href="#watch">What to watch next</a></li>
+          <li><a class="anchor" href="#faq">FAQ</a></li>
+        </ul>
+      </section>
+
+      <section id="short">
+        <h2>The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Bigger clips:</strong> Minimum block size proposed at <em>₹25 crore</em> (up from ₹10 crore) to curb small, tactical prints.</li>
+            <li><strong>Delivery-only:</strong> No intrawindow square-offs; trades must result in delivery to tighten integrity.</li>
+            <li><strong>Firmer pricing:</strong> Morning window references previous close; afternoon window references an intraday VWAP—bands to be reviewed/tightened.</li>
+            <li><strong>More sunlight:</strong> Same-day public disclosure of scrip, client, quantity, and price after market hours.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="windows">
+        <h2>Windows & reference pricing</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Morning window</h3>
+            <p><span class="badge">Timing</span> ~8:45–9:00 am (before regular trading).<br/>
+               <span class="badge">Reference</span> Previous day’s closing price; prints constrained within an allowed band around it.</p>
+          </div>
+          <div class="card half">
+            <h3>Afternoon window</h3>
+            <p><span class="badge">Timing</span> ~2:05–2:20 pm (during market hours).<br/>
+               <span class="badge">Reference</span> A VWAP computed over a pre-defined slice (e.g., 1:30–2:00 pm), with a band around the reference.</p>
+          </div>
+        </div>
+        <small class="mute">Exact timings/bands are as proposed; final circulars may tweak them.</small>
+      </section>
+
+      <section id="pricing">
+        <h2>Price bands & disclosures</h2>
+        <ul>
+          <li><strong>Band review:</strong> Exchanges/regulator to recalibrate bands to reduce opportunistic prints while preserving deal certainty.</li>
+          <li><strong>Delivery-only:</strong> All window prints settle by delivery; no offsetting within the window.</li>
+          <li><strong>Disclosures:</strong> Post-close publication of key details (scrip, client, quantity, price) the same day.</li>
+        </ul>
+        <blockquote>Raising the floor to ₹25 crore nudges genuine transfers into the window while pushing smaller liquidity needs back to the order book or bulk trades.</blockquote>
+      </section>
+
+      <section id="playbook">
+        <h2>Promoter/PE guide: what to change</h2>
+        <table class="table">
+          <thead><tr><th>Actor</th><th>Implication</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>Promoters</td><td>Larger tickets; tighter pricing corridors.</td><td>Stage sales; coordinate with anchors; prep clean disclosure packs.</td></tr>
+            <tr><td>Private Equity</td><td>Higher certainty, but tighter bands.</td><td>Use VWAP windows wisely; pre-match blocks; avoid spillover into regular book.</td></tr>
+            <tr><td>Long-only funds</td><td>Better transparency; reduced gameable prints.</td><td>Align cash flows to windows; negotiate blocks near rebalances.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="watch">
+        <h2>What to watch next</h2>
+        <div class="grid two">
+          <div class="card half"><h3>Feedback window</h3><p>Public comments run through mid-September; watch for tweaks to timings, bands, and disclosure granularity.</p></div>
+          <div class="card half"><h3>Coordination</h3><p>Exchange system readiness and member workflows to ensure clean settlement and timely public dissemination.</p></div>
+          <div class="card half"><h3>Overlap with bulk trades</h3><p>How revised bands affect migration between block vs. bulk and on-screen execution.</p></div>
+          <div class="card half"><h3>Liquidity patterns</h3><p>Order-book spreads around 2 pm; potential crowding into the PM window on index/ETF event days.</p></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>Is the ₹25 crore size final?</strong> Not yet—this is a proposal; the final threshold will be notified by SEBI after comments.</li>
+          <li><strong>Can I break a deal across windows?</strong> You can stage deals, but each window’s trade must meet rules and settle by delivery.</li>
+          <li><strong>Will this reduce volatility?</strong> Tighter bands around reference prices should reduce manipulation risk and surprise prints.</li>
+        </ul>
+      </section>
+
+      <hr/>
+      <p class="mute"><small>Disclosure: This explainer summarises a regulatory proposal and may evolve after public comments and final SEBI/exchange circulars.</small></p>
+    </div>
+  </main>
+</body>
+</html>

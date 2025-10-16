@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pay-by-credit on UPI is moving from pilots to prime time. Here’s how economics shift for issuers, merchants, and PSPs."/>
+  <meta name="keywords" content="India, markets, finance, policy, tech, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Credit on UPI: Rails, Risk, and Rupees — A Merchant-First Explainer — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root {
+  --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222;
+}
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+
+/* Make the entire header clickable back to index */
+.header-link { text-decoration:none; color:inherit; display:block; }
+.header-link:focus-visible { outline:2px dashed #fff; outline-offset:4px; }
+  </style>
+</head>
+<body>
+  <!-- Clickable header linking back to home -->
+  <a href="index.html" class="header-link" aria-label="Back to Home (index)">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">BANKING · PAYMENTS · RISK</div>
+        <h1>Credit on UPI: Rails, Risk, and Rupees — A Merchant-First Explainer</h1>
+        <div class="sub">Pay-by-credit on UPI is moving from pilots to prime time. Here’s how economics shift for issuers, merchants, and PSPs.</div>
+        <div class="meta">By bataSutra Editorial · August 11, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short version — what changes and for whom</li>
+    <li>How credit on UPI actually flows (issuer ↔ PSP ↔ merchant)</li>
+    <li>Unit economics: MDR, interchange, rewards, risk</li>
+    <li>Risk controls without breaking UX</li>
+    <li>What to watch over the next 12 months</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Merchants</strong> get a bigger basket and better conversion; MDR exists but can be priced to ROI.</li>
+      <li><strong>Issuers</strong> gain new spend corridors and richer data; underwriting must be “session-aware”.</li>
+      <li><strong>PSPs / Apps</strong> win on engagement, lose if dispute ops aren’t tight.</li>
+      <li><strong>Consumers</strong> see card-like rewards with UPI familiarity; misuse controls matter.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>What “credit on UPI” covers</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>1) RuPay credit card on UPI</h3>
+      <p>Card credentials are tokenised into UPI; merchant sees a UPI collect/pay, issuer settles as card credit.</p>
+    </div>
+    <div class="card half">
+      <h3>2) Pre-sanctioned credit lines</h3>
+      <p>Bank/NBFC extends a revolving line mapped to a UPI handle. Feels like pay-later, settles like credit.</p>
+    </div>
+    <div class="card half">
+      <h3>3) Merchant-tied EMIs</h3>
+      <p>Higher-ticket purchases split into instalments at checkout; MDR includes subvention where applicable.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Flow &amp; roles</h2>
+  <p><span class="badge">Issuer</span> owns underwriting, line management, rewards. <span class="badge">PSP/App</span> owns UX, risk prompts, dispute intake. <span class="badge">Merchant</span> owns KYC discipline, refund SLAs, and reconciliation hygiene.</p>
+  <blockquote>Golden rule: <strong>authorise fast, settle clean.</strong> Ops debt compounds quickly in disputes and refunds.</blockquote>
+</section>
+
+<section>
+  <h2>Unit economics (stylised)</h2>
+  <table class="table">
+    <thead><tr><th>Stakeholder</th><th>Money Out</th><th>Money In</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td>Merchant</td><td>MDR 0.3–1.0%</td><td>Higher AOV, conversion, potential offers</td><td>For low-margin SKUs, pair with minimum bill value</td></tr>
+      <tr><td>Issuer</td><td>Rewards, funding cost, losses</td><td>Interchange, interest/EMI, data</td><td>Session-aware risk cuts loss-rate tails</td></tr>
+      <tr><td>PSP/App</td><td>Incentives, support costs</td><td>MDR share, engagement, cross-sell</td><td>Dispute tooling is moat</td></tr>
+    </tbody>
+  </table>
+  <p>For issuers, the hinge is <strong>loss rate</strong>. When loss &lt; interchange + interest – rewards – ops, the model scales. Rewards should track lifetime value, not headline rates.</p>
+</section>
+
+<section>
+  <h2>Risk controls that don’t trash UX</h2>
+  <ul>
+    <li><strong>Contextual limits:</strong> Lower per-txn limits for new devices, new merchants, or odd hours.</li>
+    <li><strong>In-session re-KYC:</strong> Step-up only when risk spikes (geo-mismatch, device change, SIM swap).</li>
+    <li><strong>Merchant hygiene:</strong> MCC whitelists, refund-policy checks, settlement holdbacks for fresh merchants.</li>
+    <li><strong>Abuse controls:</strong> Velocity checks, chargeback heatmaps, dynamic 2FA with fallback rails.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Playbooks</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>For Banks/NBFCs</h3>
+      <ul>
+        <li>Spin up <em>session-aware</em> risk scoring (device, geo, merchant, ticket size).</li>
+        <li>Tune rewards to preferred corridors (grocery, fuel, billpay) not flat rates.</li>
+        <li>Instrument disputes for T+0 intake; automate provisional credits.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>For Merchants</h3>
+      <ul>
+        <li>Offer credit only where uplift beats MDR. Track AOV and refund friction.</li>
+        <li>Surface EMI on product pages; keep refund SLAs crisp.</li>
+        <li>Monitor issuer/PSP reliability; switch off noisy corridors quickly.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What to watch</h2>
+  <ul>
+    <li>Interchange/MDR evolution as volumes scale</li>
+    <li>Risk-ops: fraud rings and app-to-app exploits</li>
+    <li>Consumer controls: per-merchant caps and “cool-off” windows</li>
+    <li>Cross-sell: how issuers turn UPI credit traffic into deposits and loans</li>
+  </ul>
+</section>
+
+      <div class="footer"></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="SEBI has proposed a Closing Auction Session (CAS) for the equity cash market—starting with derivative stocks—to set official closing prices. We unpack timings, phases, price bands, and who gains or loses."/>
+  <meta name="keywords" content="SEBI, closing auction, CAS, closing price, VWAP, market microstructure, ETFs, passive funds, India, NSE, BSE, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close — bataSutra</title>
+
+  <!-- Canonical & OG/Twitter -->
+  <link rel="canonical" href="https://batasutra.com/closing-auction-cas-explainer.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="bataSutra" />
+  <meta property="og:title" content="Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close" />
+  <meta property="og:description" content="A crisp explainer on SEBI’s proposed Closing Auction Session (CAS): timings, phases, bands, and flow-on effects for ETFs, HFT, and retail." />
+  <meta property="og:url" content="https://batasutra.com/closing-auction-cas-explainer.html" />
+  <meta property="og:image" content="https://batasutra.com/assets/og/cas-closing-auction.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close" />
+  <meta name="twitter:description" content="Timings, phases, and price bands for SEBI’s proposed Closing Auction Session (CAS)—and what it means for tracking error and liquidity." />
+  <meta name="twitter:image" content="https://batasutra.com/assets/og/cas-closing-auction.jpg" />
+
+  <!-- JSON-LD: Article + Breadcrumb + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close",
+    "description": "SEBI has proposed a Closing Auction Session (CAS) for the equity cash market—starting with derivative stocks—to set official closing prices. We unpack timings, phases, price bands, and who gains or loses.",
+    "author": { "@type": "Organization", "name": "bataSutra" },
+    "publisher": { "@type": "Organization", "name": "bataSutra", "logo": { "@type": "ImageObject", "url": "https://batasutra.com/assets/logo-512.png" } },
+    "datePublished": "2025-08-23T20:00:00+05:30",
+    "dateModified": "2025-08-23T20:00:00+05:30",
+    "image": "https://batasutra.com/assets/og/cas-closing-auction.jpg",
+    "mainEntityOfPage": "https://batasutra.com/closing-auction-cas-explainer.html",
+    "keywords": ["SEBI","CAS","closing auction","closing price","VWAP","NSE","BSE","India"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://batasutra.com/"},
+      {"@type":"ListItem","position":2,"name":"Closing Auction (CAS) Explainer"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"When will CAS go live?","acceptedAnswer":{"@type":"Answer","text":"This is a consultation-stage proposal. Final timelines depend on SEBI’s approval and exchange implementation after public comments."}},
+      {"@type":"Question","name":"Does CAS replace the current VWAP-based closing price?","acceptedAnswer":{"@type":"Answer","text":"Yes—if adopted, the official closing price would be discovered via a call-auction during the CAS window rather than the last-30-min VWAP."}},
+      {"@type":"Question","name":"Will all stocks be covered on day one?","acceptedAnswer":{"@type":"Answer","text":"No. SEBI proposes a phased rollout starting with liquid derivative stocks, with potential extension to other highly liquid names."}},
+      {"@type":"Question","name":"What price protections apply during CAS?","acceptedAnswer":{"@type":"Answer","text":"A reference-price-based band (e.g., ±3% around a VWAP-derived reference) is proposed to keep the auction orderly."}}
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{--brand:#8B0000;--ink:#111;--muted:#555;--bg:#fff;--light:#f9f5f5;--accent:#b22222;}
+    *{box-sizing:border-box} html{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+    body{margin:0;background:var(--bg);line-height:1.6}
+    .header{background:var(--brand);color:#fff;padding:56px 24px 40px}
+    .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:12px;opacity:.9}
+    h1{font-size:clamp(28px,3.2vw,40px);margin:8px 0 10px;line-height:1.2}
+    .sub{font-size:clamp(16px,2vw,20px);opacity:.95}
+    .meta{font-size:13px;opacity:.9;margin-top:10px}
+    main{padding:28px 0 64px;background:#fff}
+    section{margin:30px 0}
+    h2{font-size:22px;margin:30px 0 10px}
+    h3{font-size:18px;margin:22px 0 8px}
+    p{margin:10px 0}
+    ul,ol{padding-left:20px}
+    hr{border:0;height:1px;background:#eee;margin:28px 0}
+    .callout{background:var(--light);border-left:4px solid var(--brand);padding:14px 16px;border-radius:8px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12;padding:14px;border:1px solid #eee;border-radius:12px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    @media(min-width:760px){.two{grid-template-columns:repeat(12,1fr)} .half{grid-column:span 6}}
+    blockquote{margin:10px 0;padding:10px 16px;border-left:3px solid #ddd;color:#333;background:#fafafa;border-radius:6px}
+    .toc{background:#fcfcfc;border:1px solid #eee;padding:12px 14px;border-radius:10px}
+    small.mute{color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border:1px solid #eee;padding:10px;text-align:left}
+    .table th{background:#fafafa}
+    .header-link{text-decoration:none;color:inherit;display:block}
+    .header-link:focus-visible{outline:2px dashed #fff;outline-offset:4px}
+    a.anchor{color:inherit;text-decoration:none}
+    .badge{display:inline-block;padding:2px 8px;border:1px solid #e6e6e6;border-radius:999px;font-size:12px;background:#fafafa;margin-right:6px}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Dervitaves · STRUCTURE</div>
+        <h1>Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close</h1>
+        <div class="sub">SEBI’s consultation proposes a <em>Closing Auction Session (CAS)</em>—initially for derivative stocks—to discover the official closing price via a call auction instead of last-30-minute VWAP.</div>
+        <div class="meta">By bataSutra Editorial · August 23, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      <section id="toc" class="toc">
+        <strong>In this piece:</strong>
+        <ul>
+          <li><a class="anchor" href="#short">The short</a></li>
+          <li><a class="anchor" href="#how">How CAS works (phases & bands)</a></li>
+          <li><a class="anchor" href="#timings">Proposed timings & scope</a></li>
+          <li><a class="anchor" href="#impact">Winners, losers & market impact</a></li>
+          <li><a class="anchor" href="#watch">What to watch next</a></li>
+          <li><a class="anchor" href="#faq">FAQ</a></li>
+        </ul>
+      </section>
+
+      <section id="short">
+        <h2>The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Auction, not VWAP:</strong> A post-afternoon call auction would set the <em>official close</em>, aligning India with major markets.</li>
+            <li><strong>Start small:</strong> Phased rollout beginning with <em>liquid derivative stocks</em>; possible later expansion to other highly liquid names.</li>
+            <li><strong>Orderly band:</strong> Trading constrained around a reference price (e.g., ±3%) to reduce manipulation and spikes.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="how">
+        <h2>How CAS works</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Four phases</h3>
+            <ol>
+              <li><strong>Reference set:</strong> Exchanges compute a reference price (e.g., VWAP from ~3:00–3:15 pm).</li>
+              <li><strong>Order entry:</strong> Market participants enter/modify/cancel limit orders within a protected band.</li>
+              <li><strong>Random close:</strong> Randomized cut-off to deter gaming.</li>
+              <li><strong>Matching & print:</strong> Call auction uncrosses; the uncross price becomes the <em>official closing price</em>.</li>
+            </ol>
+          </div>
+          <div class="card half">
+            <h3>Protections</h3>
+            <ul>
+              <li><strong>Price band:</strong> Auction operates in a tight corridor (illustratively ±3% vs. reference) to keep things orderly.</li>
+              <li><strong>Transparency:</strong> Indicative price/imbalance publication reduces guesswork and slippage.</li>
+            </ul>
+          </div>
+        </div>
+        <blockquote>CAS should compress tracking error for index funds/ETFs and improve closing-print reliability for valuation & settlement.</blockquote>
+      </section>
+
+      <section id="timings">
+        <h2>Proposed timings & scope</h2>
+        <p><span class="badge">Window</span> Illustratively ~3:15–3:35 pm for CAS, near the 3:30 pm market close, with a randomized end inside the window.</p>
+        <p><span class="badge">Scope</span> Start with <strong>stocks in the derivatives segment</strong>; extend after operational learnings.</p>
+        <p><span class="badge">Expiry nuance</span> On expiry days, near-month <em>stock</em> derivatives may align to a slightly later close than index derivatives to accommodate CAS operations.</p>
+        <small class="mute">Note: Specifics are from SEBI’s consultation drafts and may change in the final rules.</small>
+      </section>
+
+      <section id="impact">
+        <h2>Who gains, who adapts</h2>
+        <table class="table">
+          <thead><tr><th>Group</th><th>Likely impact</th></tr></thead>
+          <tbody>
+            <tr><td>Passive funds/ETFs</td><td>Better match to index close; lower tracking error on rebalance days.</td></tr>
+            <tr><td>Active managers</td><td>Cleaner reference price; tighter end-of-day execution.</td></tr>
+            <tr><td>HFT/liquidity providers</td><td>Richer auction mechanics; new strategies around imbalance supply/demand.</td></tr>
+            <tr><td>Retail</td><td>Clearer close; may need to adapt to auction mechanics on rebalance/expiry days.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="watch">
+        <h2>What to watch next</h2>
+        <div class="grid two">
+          <div class="card half"><h3>Final spec</h3><p>Exact band width, disclosure cadence (indicative price/volume), and randomization rules.</p></div>
+          <div class="card half"><h3>Rollout plan</h3><p>Exchange readiness, mock auctions, and go-live sequencing by stock cohorts.</p></div>
+          <div class="card half"><h3>Downstream rules</h3><p>Index methodology tweaks; closing NAV calculation templates for MFs/ETFs.</p></div>
+          <div class="card half"><h3>Behaviour shifts</h3><p>Last-hour liquidity migration into the auction and impact on regular-session spreads.</p></div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>Will there still be a post-close trading session?</strong> Exchanges may retain a post-close session for trades at the official close; the auction only <em>sets</em> the close.</li>
+          <li><strong>What about broad-market stocks?</strong> SEBI signals expansion after the derivative-stock cohort proves stable.</li>
+        </ul>
+      </section>
+
+      <hr/>
+      <p class="mute"><small>Disclosure: This explainer summarises a regulatory proposal and may evolve after public comments and final SEBI/exchange circulars.</small></p>
+    </div>
+  </main>
+</body>
+</html>

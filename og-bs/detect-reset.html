@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An in-depth look at India's semiconductor strategy to become a global chip manufacturing hub." />
+  <meta name="keywords" content="India semiconductor, chip manufacturing, electronics policy, ISM, bataSutra" />
+  <meta name="author" content="bataSutra" />
+  <title>India's Semiconductor Push - bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --primary-color: #8B0000;
+      --hover-color: #a52a2a;
+      --light-bg: #fdf5f5;
+      --text-light: #fff;
+      --text-muted: #555;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.7;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header a {
+      color: inherit;
+    }
+    footer {
+      background: var(--primary-color);
+      color: #f0dcdc;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #ffe5e5;
+      text-decoration: underline;
+    }
+    article h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    article img {
+      max-width: 100%;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    article p {
+      margin-bottom: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">bataSutra</a></h1>
+    <p>Not just news — the bata behind the news.</p>
+  </header>
+<body>
+<main class="container mx-auto px-4 py-12">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-6">India’s EdTech Reset</h1>
+    <p class="text-lg text-gray-700 mb-6">
+      After the pandemic boom and the subsequent funding bust, India’s EdTech sector is entering a phase of hard recalibration. From unsustainable valuations to layoffs and consolidations, 2024 marked a reality check. But out of the noise, a more focused and sustainable model is emerging — one rooted in outcomes, not hype.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">From Blitzscale to Basics</h2>
+    <p class="text-gray-700 mb-4">
+      The explosive growth of 2020–21 led to bloated teams, aggressive customer acquisition, and sky-high burn. As capital dried up, many EdTechs were forced to revisit fundamentals — product quality, student retention, and real learning outcomes. Now, survival is less about scale and more about staying power.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Offline is Back — and Integrated</h2>
+    <p class="text-gray-700 mb-4">
+      Hybrid learning is gaining traction. Players like BYJU’S and PhysicsWallah are launching offline centers to build trust and drive completion rates. The future isn’t either-or — it’s both. Platforms combining online flexibility with offline accountability are resonating with parents and students alike.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Skilling Over Schooling</h2>
+    <p class="text-gray-700 mb-4">
+      Demand is shifting from K–12 to outcome-oriented education: job-ready skills, vocational training, and upskilling for the digital economy. Startups in coding, language learning, and professional certifications are seeing renewed traction — especially those that can prove placement pipelines or ROI.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">The Funding Equation</h2>
+    <p class="text-gray-700 mb-4">
+      Investors are now asking tougher questions. No more vanity metrics — retention rates, revenue quality, and CAC:LTV ratios dominate pitch decks. The capital is still there, but it's flowing to models with defensibility, regulatory compliance, and clear monetization strategies.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Looking Ahead</h2>
+    <p class="text-gray-700 mb-4">
+      The next wave of EdTech won’t promise overnight success. It will be built on measured growth, real impact, and trust. Startups that listen to parents, enable teachers, and solve for Bharat — not just metro elites — will define India’s learning future.
+    </p>
+
+    <p class="mt-6 text-gray-800 italic">
+      India’s EdTech story is far from over. It’s just learning to grow up — one lesson at a time.
+    </p>
+  </article>
+</main>
+</body>
+</html>
+
+  <footer>
+    <p>Have a tip or feedback? <a href="/contact">Contact us</a></p>
+    &copy; <span id="year"></span> bataSutra. All rights reserved. | <a href="/privacy">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const ctx = document.getElementById('semiconductorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2022', '2023', '2024', '2025'],
+        datasets: [
+          {
+            label: 'Projected Demand (Billion USD)',
+            data: [50, 65, 80, 100],
+            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+            borderColor: 'rgb(22, 163, 74)',
+            borderWidth: 1
+          },
+          {
+            label: 'Confirmed Investments (Billion USD)',
+            data: [0.5, 1.5, 5.2, 10.0],
+            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            borderColor: 'rgb(37, 99, 235)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          title: { display: false }
+        },
+        animation: {
+          duration: 1500,
+          easing: 'easeOutQuart'
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'USD (Billions)'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>

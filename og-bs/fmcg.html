@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="An in-depth look at India's semiconductor strategy to become a global chip manufacturing hub." />
+  <meta name="keywords" content="India semiconductor, chip manufacturing, electronics policy, ISM, bataSutra" />
+  <meta name="author" content="bataSutra" />
+  <title>India's Semiconductor Push - bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --primary-color: #8B0000;
+      --hover-color: #a52a2a;
+      --light-bg: #fdf5f5;
+      --text-light: #fff;
+      --text-muted: #555;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #fff;
+      color: #111;
+      line-height: 1.7;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    header {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header a {
+      color: inherit;
+    }
+    footer {
+      background: var(--primary-color);
+      color: #f0dcdc;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 4rem;
+    }
+    footer a {
+      color: #ffe5e5;
+      text-decoration: underline;
+    }
+    article h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .article-meta {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+    }
+    article img {
+      max-width: 100%;
+      border-radius: 0.75rem;
+      margin: 1.5rem 0;
+    }
+    article p {
+      margin-bottom: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">bataSutra</a></h1>
+    <p>Not just news — the bata behind the news.</p>
+  </header>
+<body>
+<main class="container mx-auto px-4 py-12">
+  <article class="max-w-3xl mx-auto">
+    <h1 class="text-4xl font-bold mb-6">What’s Driving the FMCG Resurgence</h1>
+    <p class="text-lg text-gray-700 mb-6">
+      After weathering inflationary pressures and muted consumption, India’s Fast-Moving Consumer Goods (FMCG) sector is back in growth mode. With rural markets rebounding, digital channels expanding, and brands tightening their value propositions, the FMCG playbook is being rewritten — again.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Rural Markets Reignite</h2>
+    <p class="text-gray-700 mb-4">
+      A good monsoon, easing inflation, and higher direct benefit transfers are reviving rural demand. Tier 3 and 4 towns are witnessing double-digit growth in categories like personal care and packaged foods. FMCG majors are doubling down with rural-specific SKUs, affordable price points, and hyperlocal distribution.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">E-Commerce Becomes Essential</h2>
+    <p class="text-gray-700 mb-4">
+      From quick commerce to D2C channels, digital is no longer just a supplement — it's central. Startups and legacy players alike are leveraging platforms like Blinkit, Jiomart, and Amazon Pantry to reach younger, urban consumers with personalized offers and subscription-based models. Even kirana stores are being digitally integrated through B2B platforms.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Brand Loyalty in a Fragmented Market</h2>
+    <p class="text-gray-700 mb-4">
+      Despite the rise of challenger brands, incumbents with strong recall and distribution are holding ground. Brands like HUL, Dabur, and Marico are reinforcing loyalty with value-based campaigns, health-focused innovation, and regional customization. The battle is now fought on trust, not just price.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Premiumization and Health-First Thinking</h2>
+    <p class="text-gray-700 mb-4">
+      Consumers are increasingly opting for health-conscious, premium products — be it cold-pressed oils, sugar-free biscuits, or ayurvedic supplements. This shift is opening up margin-rich segments even in traditionally mass-market categories.
+    </p>
+
+    <h2 class="text-2xl font-semibold mt-8 mb-4">Looking Ahead</h2>
+    <p class="text-gray-700 mb-4">
+      As India's consumption base deepens and digitizes, FMCG is evolving into a hybrid battleground — blending offline reach with online agility. Players who can unify distribution, data, and differentiated positioning will set the pace for the next phase of growth.
+    </p>
+
+    <p class="mt-6 text-gray-800 italic">
+      Rural roots, digital wings, and sharper brand minds — the FMCG resurgence is a case study in adaptive growth.
+    </p>
+  </article>
+</main>
+</body>
+</html>
+
+  <footer>
+    <p>Have a tip or feedback? <a href="/contact">Contact us</a></p>
+    &copy; <span id="year"></span> bataSutra. All rights reserved. | <a href="/privacy">Privacy Policy</a>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const ctx = document.getElementById('semiconductorChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['2022', '2023', '2024', '2025'],
+        datasets: [
+          {
+            label: 'Projected Demand (Billion USD)',
+            data: [50, 65, 80, 100],
+            backgroundColor: 'rgba(34, 197, 94, 0.7)',
+            borderColor: 'rgb(22, 163, 74)',
+            borderWidth: 1
+          },
+          {
+            label: 'Confirmed Investments (Billion USD)',
+            data: [0.5, 1.5, 5.2, 10.0],
+            backgroundColor: 'rgba(59, 130, 246, 0.7)',
+            borderColor: 'rgb(37, 99, 235)',
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'top' },
+          title: { display: false }
+        },
+        animation: {
+          duration: 1500,
+          easing: 'easeOutQuart'
+        },
+        scales: {
+          y: {
+            beginAtZero: true,
+            title: {
+              display: true,
+              text: 'USD (Billions)'
+            }
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
