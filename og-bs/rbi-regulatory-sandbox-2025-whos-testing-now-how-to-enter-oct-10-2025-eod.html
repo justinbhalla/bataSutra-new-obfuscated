@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Themes in flight, selection patterns, and a four-week application sprint plan—so your fintech can clear screening and hit UAT fast."/>
+  <meta name="keywords" content="RBI sandbox, fintech India 2025, cohort themes, eligibility, UAT, compliance, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>RBI Regulatory Sandbox 2025: Who’s Testing Now & How to Enter — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">FINTECH · SANDBOX</div>
+        <h1>RBI Regulatory Sandbox 2025: Who’s Testing Now & How to Enter</h1>
+        <div class="sub">Themes in flight, selection patterns, and a four-week application sprint plan—so your fintech can clear screening and hit UAT fast.</div>
+        <div class="meta">By bataSutra Editorial · October 10, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — where the bar sits now</li>
+    <li>Where the sandbox stands (clean snapshot)</li>
+    <li>Eligibility matrix & red lines</li>
+    <li>Week-by-week application plan</li>
+    <li>Graduation paths & what “success” looks like</li>
+    <li>FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Momentum:</strong> Recent cohorts skew toward risk, compliance automation, and MSME credit pipes.</li>
+      <li><strong>What wins:</strong> Clear customer harm reduction, measurable compliance lift, and tight data-risk controls.</li>
+      <li><strong>What stalls:</strong> Weak KYC/consent posture, synthetic data without provenance, and bank-less pilots.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Where the sandbox stands</h2>
+  <table class="table">
+    <thead><tr><th>Item</th><th>Early-Oct status (indicative)</th><th>Operator read</th></tr></thead>
+    <tbody>
+      <tr><td>Active theme mix</td><td>Regtech/KYC · MSME credit rails · Cross-border LRS UX</td><td>Bias to supervision & inclusion</td></tr>
+      <tr><td>Selection rate</td><td>~10–20% of complete applications</td><td>Quality over volume</td></tr>
+      <tr><td>Time to onboarding</td><td>~8–12 weeks from complete pack</td><td>Front-load due diligence</td></tr>
+      <tr><td>PSU/private bank partners</td><td>Growing pool; NDA heavy</td><td>Secure at least one LoI before filing</td></tr>
+      <tr><td>Graduations</td><td>Incremental, theme-dependent</td><td>Define success metrics up front</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Eligibility matrix & red lines</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Must-haves</h3>
+      <ul>
+        <li>Incorporated Indian entity (or recognized academic/consortium arm).</li>
+        <li>Working prototype; reproducible test plan; UAT-ready builds.</li>
+        <li>Data rights and consent flows mapped; PII minimization plan.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Red lines</h3>
+      <ul>
+        <li>Unlicensed deposit-taking, leverage, or shadow bank behavior.</li>
+        <li>Crypto exposure that bypasses extant frameworks.</li>
+        <li>Weak AML/CFT controls; no audit trails.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Week-by-week application plan</h2>
+  <ol>
+    <li><strong>Week 1 — Fit & partner:</strong> Lock theme, draft “harm reduced” statement, secure a bank/NBFC LoI.</li>
+    <li><strong>Week 2 — Data & risk:</strong> Publish data provenance, consent logs, and retention schedule; DPIA signed.</li>
+    <li><strong>Week 3 — Tech pack:</strong> Reproducible Docker image, API spec, test cases, rollback/runbooks.</li>
+    <li><strong>Week 4 — Submission:</strong> Cover note (metrics, cohorts, safeguards), founder KYC, cap table, incident policy.</li>
+  </ol>
+  <div class="callout"><span class="badge">Attach</span> Bank/NBFC LoI · DPIA · InfoSec controls · Customer communication templates · MIS dashboards</div>
+</section>
+
+<section>
+  <h2>Graduation paths & “success” metrics</h2>
+  <table class="table">
+    <thead><tr><th>Path</th><th>Metric</th><th>Threshold (illustrative)</th><th>Why it matters</th></tr></thead>
+    <tbody>
+      <tr><td>Pilot → Scale with partner</td><td>Risk event rate</td><td>&lt; 5 bps vs baseline</td><td>Demonstrates harm reduction</td></tr>
+      <tr><td>Policy note/clarification</td><td>Audit coverage</td><td>&gt; 95% events logged</td><td>Supervisory visibility</td></tr>
+      <tr><td>Multi-bank rollout</td><td>Time-to-KYC</td><td>−30–50% vs control</td><td>Real customer benefit</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Can pre-revenue startups apply?</strong> Yes, if prototype, partner LoI, and data governance are strong.</li>
+    <li><strong>Is production data required?</strong> Prefer test datasets; if production is needed, add consent and masking plans.</li>
+    <li><strong>What if the partner backs out?</strong> Keep a backup LoI; disclose promptly and propose revised timelines.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Snapshot reflects EOD Oct 10, 2025 context. Align your submission to the live theme note and partner bank requirements.</small></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="IndiaAI’s third tender adds ~3,850 GPUs (and Trillium TPUs). Who gets them next, how onboarding works for startups & academia, pricing/subsidy rules, and a practical hurdles checklist."/>
+  <meta name="keywords" content="IndiaAI, GPUs, compute portal, voucher model, ₹67 per GPU-hour, Trillium TPU, H100, H200, Gaudi, MI300X, PMEC, onboarding, startups, academia, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>IndiaAI Compute: Who Gets the Next 3.8k GPUs? Onboarding, Quotas & Hurdles — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+    body { margin:0; background:var(--bg); line-height:1.6; }
+    .header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+    .kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+    h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+    .sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+    .meta { font-size: 13px; opacity:.9; margin-top:10px; }
+    main { padding: 28px 0 64px; background:#fff; }
+    section { margin: 30px 0; }
+    h2 { font-size: 22px; margin: 30px 0 10px; }
+    h3 { font-size: 18px; margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 20px; }
+    hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+    .callout { background: var(--light); border-left: 4px solid --var(--brand); padding: 14px 16px; border-radius: 8px; }
+    .callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+    .badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+    .grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+    @media(min-width: 760px){ .two { grid-template-columns: repeat(12, 1fr); } .half { grid-column: span 6; } }
+    blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+    .footer { color:#777; font-size:12px; margin-top:28px; }
+    .toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+    small.mute { color:var(--muted); }
+    .table { width:100%; border-collapse: collapse; font-size: 14px; }
+    .table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+    .table th { background:#fafafa; }
+    .header-link { text-decoration: none; color: inherit; display: block; }
+    .header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+    .flag { font-weight:700; padding:2px 8px; border-radius:999px; border:1px solid #eee; background:#fafafa; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">AI · COMPUTE · POLICY</div>
+        <h1>IndiaAI Compute: Who Gets the Next 3.8k GPUs? Onboarding, Quotas & Hurdles</h1>
+        <div class="sub">Onboarding flow for startups & academia, pricing/subsidy rules, and the practical hurdles (power, cooling, datasets) — with an “apply” checklist.</div>
+        <div class="meta">By bataSutra Editorial · September 7, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+      <section class="toc" aria-labelledby="toc">
+        <strong id="toc">In this piece:</strong>
+        <ul>
+          <li>The short: what’s new in the ~3.8k GPU tranche</li>
+          <li>Onboarding flow & thresholds (who gets auto-OK vs PMEC review)</li>
+          <li>Pricing, subsidy & the new voucher model</li>
+          <li>Practical hurdles: power, cooling, network, datasets</li>
+          <li>“Apply” checklist you can copy-paste</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="short">
+        <h2 id="short">The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Fresh capacity:</strong> IndiaAI’s <em>third tender</em> adds ~<strong>3,850 GPUs</strong> (first tranche to include <strong>Google Trillium TPUs</strong>) on top of a pool that crossed <strong>34k GPUs</strong> by end-May.</li>
+            <li><strong>Pay-as-you-go:</strong> Access via the Compute Portal from ~<strong>₹67/GPU-hour</strong> with <strong>up to 40% subsidy</strong> for eligible users.</li>
+            <li><strong>What’s next:</strong> Government has indicated a <strong>coupon/voucher-style</strong> mechanism alongside a larger secured pool reported at ~<strong>38k units</strong>.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="whats-new">
+        <h2 id="whats-new">What’s new in this tranche</h2>
+        <p>Round-3 adds ~<strong>3,850 GPUs</strong> and the first inclusion of ~<strong>1,050 Trillium TPUs</strong>, alongside earlier H100/H200/L-class additions. Treat mix as evolving until commercial close & delivery schedules firm up.</p>
+        <table class="table" role="table" aria-label="Signals and meanings">
+          <thead><tr><th scope="col">Signal</th><th scope="col">What it means</th></tr></thead>
+          <tbody>
+            <tr><td>Trillium TPUs join pool</td><td>Training/inference options beyond Nvidia/AMD; check framework support & quotas per project.</td></tr>
+            <tr><td>Pool scale (public)</td><td>~34k+ GPUs by late May; more recent reporting points to ~38k secured capacity.</td></tr>
+            <tr><td>Portal pricing</td><td>Baseline ~₹67/GPU-hr; subsidy up to 40% for priority users.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section aria-labelledby="onboarding">
+        <h2 id="onboarding">Onboarding flow (startups, academia, gov) — how approvals work</h2>
+        <ol>
+          <li><strong>Register</strong> on the IndiaAI Compute Portal with org/institute email + mobile → OTP verification.</li>
+          <li><strong>Submit IDs</strong> (auto-verification where possible):
+            <ul>
+              <li><span class="badge">Students</span> APAAR ID</li>
+              <li><span class="badge">Startups</span> DPIIT recognition; <span class="badge">MSMEs</span> Udyam ID</li>
+              <li><span class="badge">Researchers/Faculty</span> Google Scholar / ORCID / Scopus author IDs</li>
+            </ul>
+          </li>
+          <li><strong>Project proposal</strong> (problem, novelty, national impact, team track). Institute verifiers (students/research) and MeitY Startup Hub CoEs (startups) review.</li>
+          <li><strong>Monthly window</strong>: Requests collated <em>1st–25th</em>; PMEC meets end/start of month; results published by the <em>10th</em>.</li>
+          <li><strong>Thresholds</strong> that trigger PMEC: requests <em>&gt; 5,000 GPU-hours</em> or <em>&gt; 50 GPUs</em>; below that, category verifiers can approve.</li>
+        </ol>
+        <p class="callout"><span class="badge">Auto-OK paths</span> Researchers meeting simple h-index/citation bars, and IndiaAI Fellowship awardees, typically see faster allocation post-verification.</p>
+      </section>
+
+      <section aria-labelledby="pricing">
+        <h2 id="pricing">Pricing, subsidy & vouchers</h2>
+        <ul>
+          <li><strong>Rack rate:</strong> ~₹67/GPU-hour via the portal (roughly one-third typical global rates).</li>
+          <li><strong>Subsidy:</strong> PMEC may award <strong>up to 40%</strong> subsidy on approved project BOMs; paid to providers quarterly.</li>
+          <li><strong>Voucher/coupon model:</strong> Announced to simplify access and cap user costs; integration underway.</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="hurdles">
+        <h2 id="hurdles">Practical hurdles you’ll still hit</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Infra frictions</h3>
+            <ul>
+              <li><span class="badge">Power/cooling</span> DC slots depend on local MW & thermal capacity; expect staged delivery.</li>
+              <li><span class="badge">Network</span> Egress can dwarf compute costs; budget for object-store and inter-DC traffic.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>Data & platform</h3>
+            <ul>
+              <li><span class="badge">Datasets</span> AIKosha (IndiaAI datasets) is live; check licensing & privacy flags.</li>
+              <li><span class="badge">Heterogeneous silicon</span> Trillium/Nvidia/AMD/Gaudi mixes → validate framework support early.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="apply">
+        <h2 id="apply">Apply checklist (copy–paste)</h2>
+        <ul>
+          <li><strong>Account:</strong> Org/institute email + mobile ready.</li>
+          <li><strong>ID docs:</strong> APAAR (students), DPIIT (startups), Udyam (MSMEs), Scholar/ORCID/Scopus (researchers).</li>
+          <li><strong>One-pager:</strong> Problem, novelty, target users, milestones, expected GPU-hours, models/tooling stack.</li>
+          <li><strong>Team bios:</strong> brief CVs + links (code/pubs/patents).</li>
+          <li><strong>Data plan:</strong> sources, licensing, storage/egress budget; any AIKosha sets.</li>
+          <li><strong>Budget:</strong> rack at ₹67/GPU-hr; request subsidy with justification; note if you exceed <em>5,000 hours / 50 GPUs</em>.</li>
+        </ul>
+      </section>
+
+      <div class="footer">
+        <small class="mute">Public info reflects portal and official communications as of Sep 7, 2025. Mix/models and voucher specifics may evolve; check the IndiaAI portal for live terms.</small>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

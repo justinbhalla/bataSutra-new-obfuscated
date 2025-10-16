@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Insights on Indian policy, government regulations, and their impact on business."/>
+  <meta name="keywords" content="policy, Indian regulations, business laws, government news"/>
+  <meta name="author" content="bataSutra"/>
+  <title>Policy & Regulation - bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #fff;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header a {
+      display: block;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: #8B0000;
+      color: #fff;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1rem;
+      margin-top: 0.5rem;
+      color: #ddd;
+    }
+
+    .hero {
+      background: #f5f5f5;
+      padding: 2rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero p {
+      color: #555;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .category-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 2rem;
+      justify-content: center;
+    }
+
+    .category-bar a {
+      background: #eee;
+      padding: 0.4rem 0.8rem;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      color: #111;
+      transition: background 0.2s;
+    }
+
+    .category-bar a:hover {
+      background: #ddd;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #8B0000;
+      display: inline-block;
+    }
+
+    .article-link {
+      text-decoration: none;
+      display: block;
+      color: inherit;
+    }
+
+    .article-card {
+      background: #fafafa;
+      border: 1px solid #e0e0e0;
+      border-radius: 10px;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      transition: transform 0.2s, opacity 0.4s ease-out;
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    .article-card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .article-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .article-card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #111;
+    }
+
+    .article-card p {
+      margin: 0.4rem 0 0;
+      color: #444;
+    }
+
+    .ad-card {
+      background: #fffdf5;
+      border: 1px dashed #f4c542;
+      border-radius: 10px;
+      padding: 1rem;
+      margin: 2rem 0;
+    }
+
+    .ad-card h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: #8B0000;
+    }
+
+    .ad-card p {
+      margin: 0.4rem 0 0;
+    }
+
+    .ad-card a {
+      color: #8B0000;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      background: #8B0000;
+      color: #fff;
+      border-top: 1px solid #ddd;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    @media (max-width: 600px) {
+      .category-bar {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 1.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">
+      <h1>bataSutra</h1>
+      <p>Not just news — the bata behind the news.</p>
+    </a>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Policy & Regulation</h2>
+      <p>Track key regulatory changes, government moves, and policy shifts impacting Indian business and economy.</p>
+    </div>
+  </section>
+
+  <div class="container">
+    <nav class="category-bar">
+      <a href="#budget">Budget</a>
+      <a href="#sebi">SEBI</a>
+      <a href="#tax">Tax</a>
+      <a href="#gst">GST</a>
+      <a href="#startups">Startups</a>
+      <a href="#global-policy">Global Policy</a>
+    </nav>
+
+    <section id="budget" class="section">
+      <h2 class="section-title">🧾 Budget</h2>
+      <a href="union-budget-2025.html" class="article-link"><div class="article-card"><h3>Union Budget 2025 Highlights</h3><p>Major tax sops for MSMEs, infra push, and digital skilling initiatives.</p></div></a>
+      <a href="capex-allocation.html" class="article-link"><div class="article-card"><h3>Capex Allocation Doubled</h3><p>Record ₹12 lakh crore outlay for infrastructure and logistics corridors.</p></div></a>
+      <a href="green-budget-2025.html" class="article-link"><div class="article-card"><h3>Green Budget: ₹50,000 Cr for Renewables</h3><p>Focus on energy storage, EV infrastructure, and hydrogen missions.</p></div></a>
+    </section>
+
+    <div class="ad-card">
+      <h3>📊 INDmoney: Track & Grow Your Wealth</h3>
+      <p>Manage your mutual funds, US stocks, and credit score — all in one app. Trusted by 10M+ users. <a href="https://indmoney.com" target="_blank">Try INDmoney →</a></p>
+    </div>
+
+    <section id="sebi" class="section">
+      <h2 class="section-title">📊 SEBI</h2>
+      <a href="sebi-ipo-norms.html" class="article-link"><div class="article-card"><h3>SEBI Tightens IPO Norms</h3><p>New disclosures required for loss-making startups going public.</p></div></a>
+      <a href="algo-trading-rules.html" class="article-link"><div class="article-card"><h3>Algo Trading Rules Finalized</h3><p>Broker accountability and audit trails now mandatory for algorithms.</p></div></a>
+      <a href="mf-stress-tests.html" class="article-link"><div class="article-card"><h3>Mutual Fund Stress Tests Mandated</h3><p>New framework to boost transparency during liquidity events.</p></div></a>
+    </section>
+
+    <div class="ad-card">
+      <h3>💳 Upgrade Your Lifestyle with CRED</h3>
+      <p>Pay credit card bills and earn rewards. Access exclusive products and experiences. <a href="https://cred.club" target="_blank">Join CRED →</a></p>
+    </div>
+
+    <section id="tax" class="section">
+      <h2 class="section-title">💸 Tax</h2>
+      <a href="capital-gains-tax.html" class="article-link"><div class="article-card"><h3>Capital Gains Tax Overhaul</h3><p>Simplified slabs to encourage long-term equity holding.</p></div></a>
+      <a href="new-tax-regime.html" class="article-link"><div class="article-card"><h3>New Tax Regime Gains Traction</h3><p>60% salaried class now opts for simplified tax route.</p></div></a>
+      <a href="crypto-tax.html" class="article-link"><div class="article-card"><h3>Crypto Tax Clarity Issued</h3><p>Mining expenses not deductible; 1% TDS to stay.</p></div></a>
+    </section>
+
+    <div class="ad-card">
+      <h3>🧠 Supercharge Productivity with Notion</h3>
+      <p>Notes, tasks, docs & projects — all in one workspace. For teams & individuals. <a href="https://www.notion.so" target="_blank">Start Free →</a></p>
+    </div>
+
+    <section id="gst" class="section">
+      <h2 class="section-title">🧾 GST</h2>
+      <a href="gst-collections.html" class="article-link"><div class="article-card"><h3>GST Collections Hit ₹1.9 Lakh Cr</h3><p>Services sector and compliance automation drive growth.</p></div></a>
+      <a href="gst-rate-rationalization.html" class="article-link"><div class="article-card"><h3>GST Council Eyes Rate Rationalization</h3><p>Single-rate structure proposed to ease business burden.</p></div></a>
+      <a href="e-invoicing.html" class="article-link"><div class="article-card"><h3>E-Invoicing Expanded</h3><p>Mandatory for businesses above ₹5 crore turnover.</p></div></a>
+    </section>
+
+    <section id="startups" class="section">
+      <h2 class="section-title">🚀 Startups</h2>
+      <a href="startup-compliance.html" class="article-link"><div class="article-card"><h3>DPIIT Reduces Compliance Load</h3><p>Quarterly returns now suffice for registered startups.</p></div></a>
+      <a href="startup-india-fund.html" class="article-link"><div class="article-card"><h3>Startup India Fund Allocation Increased</h3><p>Additional ₹2,500 crore infused to back early-stage ventures.</p></div></a>
+      <a href="angel-tax-rollback.html" class="article-link"><div class="article-card"><h3>Angel Tax Rollback for DPIIT Certified Startups</h3><p>Boosts investor confidence amid slowdown in funding.</p></div></a>
+    </section>
+
+    <section id="global-policy" class="section">
+      <h2 class="section-title">🌐 Global Policy</h2>
+      <a href="data-pact-eu.html" class="article-link"><div class="article-card"><h3>India Signs Cross-Border Data Pact</h3><p>Alignment with GDPR opens digital trade corridors with EU.</p></div></a>
+      <a href="fta-uk.html" class="article-link"><div class="article-card"><h3>FTA with UK Nearing Finalization</h3><p>Negotiations on digital trade and pharma reach agreement.</p></div></a>
+      <a href="wto-digital-goods.html" class="article-link"><div class="article-card"><h3>WTO Row on Digital Goods Tariffs</h3><p>India calls for fairer terms as moratorium ends.</p></div></a>
+    </section>
+  </div>
+
+  <footer>
+    © 2025 bataSutra. All rights reserved.
+  </footer>
+
+  <script>
+    const cards = document.querySelectorAll('.article-card');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    cards.forEach(card => observer.observe(card));
+  </script>
+
+</body>
+</html>

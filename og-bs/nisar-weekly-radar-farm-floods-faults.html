@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NISAR launched July 30, 2025. Here’s what dual-band SAR means for crop insurance, floods & landslides, groundwater and city planning—and how to access early products now."/>
+  <meta name="keywords" content="NISAR, SAR, L-band, S-band, ASF DAAC, Earthdata, floods, landslides, agriculture, groundwater, municipal planning, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>NISAR After Launch: Weekly Radar Eyes for Farm, Floods & Faults — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+    body { margin:0; background:var(--bg); line-height:1.6; }
+    .header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+    .kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+    h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+    .sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+    .meta { font-size: 13px; opacity:.9; margin-top:10px; }
+    main { padding: 28px 0 64px; background:#fff; }
+    section { margin: 30px 0; }
+    h2 { font-size: 22px; margin: 30px 0 10px; }
+    h3 { font-size: 18px; margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 20px; }
+    hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+    .callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+    .badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+    .grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+    @media(min-width: 760px){ .two { grid-template-columns: repeat(12, 1fr); } .half { grid-column: span 6; } }
+    blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+    .footer { color:#777; font-size:12px; margin-top:28px; }
+    .toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+    small.mute { color:var(--muted); }
+    .table { width:100%; border-collapse: collapse; font-size: 14px; }
+    .table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+    .table th { background:#fafafa; }
+    .header-link { text-decoration: none; color: inherit; display: block; }
+    .header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">EARTH OBS · AGRI · SAR</div>
+        <h1>NISAR After Launch: Weekly Radar Eyes for Farm, Floods & Faults</h1>
+        <div class="sub">What dual-band SAR delivers for crop insurance, landslide risk, groundwater & municipal planning — and how to access early products.</div>
+        <div class="meta">By bataSutra Editorial · September 7, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+      <section class="toc" aria-labelledby="toc">
+        <strong id="toc">In this piece:</strong>
+        <ul>
+          <li>The short: launch, swath, cadence & data policy</li>
+          <li>Farm/floods/faults: where dual-band SAR actually helps</li>
+          <li>Access: Earthdata/ASF (Vertex, APIs) and ISRO pathways</li>
+          <li>Weekly workflow + product map you can reuse</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="short">
+        <h2 id="short">The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Launch:</strong> NISAR lifted off on <strong>July 30, 2025</strong> aboard <strong>GSLV-F16</strong>. Its 12-m reflector unfurled during commissioning.</li>
+            <li><strong>What it is:</strong> First Earth-obs mission with <strong>L-band + S-band SAR</strong>; ~<strong>240 km</strong> swath; <strong>3–10 m</strong> mode-dependent resolution; global land/ice coverage roughly every <strong>12 days</strong> (average sampling ~6 days using ascending/descending passes).</li>
+            <li><strong>Data:</strong> <em>Free & open</em> via NASA’s Earthdata/ASF DAAC (Vertex web UI, Search API, and <code>asf_search</code> Python module).</li>
+          </ul>
+        </div>
+      </section>
+
+      <section aria-labelledby="benefits">
+        <h2 id="benefits">Farm, floods & faults — where dual bands matter</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Agriculture & water</h3>
+            <ul>
+              <li><span class="badge">Crop insurance</span> L-band penetrates canopy → more reliable planted-area & flood-loss maps under cloud cover.</li>
+              <li><span class="badge">Soil moisture proxies</span> Combined L/S responses improve change detection across growth stages.</li>
+              <li><span class="badge">Groundwater/subsidence</span> Repeated InSAR tracks slow compaction over aquifers & metro corridors.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>Disaster & infrastructure</h3>
+            <ul>
+              <li><span class="badge">Floods</span> Wide swath enables basin-scale extent mapping, independent of monsoon cloud cover.</li>
+              <li><span class="badge">Landslides & quakes</span> cm-level deformation time-series to flag unstable slopes and post-seismic slip.</li>
+              <li><span class="badge">Urban planning</span> Encroachment & subsidence dashboards for city agencies using regular cadence.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="access">
+        <h2 id="access">How to access NISAR data (early)</h2>
+        <ol>
+          <li><strong>Create an Earthdata Login</strong> (free) — single sign-on for NASA DAAC downloads.</li>
+          <li><strong>Use ASF Vertex</strong> for search & download (or programmatic access via the ASF Search API / <code>asf_search</code> Python module).</li>
+          <li><strong>Practice</strong> with official <em>NISAR sample products</em> & tutorials (RTC/InSAR/PolSAR workflows).</li>
+          <li><strong>ISRO channels</strong>: watch ISRO’s NISAR page and <em>Bhoonidhi</em> for domestic pathways.</li>
+        </ol>
+        <p class="callout"><span class="badge">Note</span> Commissioning runs ~90 days post-launch; full science ops ramp through late-2025 as cadence and latencies tighten.</p>
+      </section>
+
+      <section aria-labelledby="workflow">
+        <h2 id="workflow">Weekly workflow (editorial/ops)</h2>
+        <ol>
+          <li>Define AOIs: districts/basins/slopes; save Vertex queries.</li>
+          <li>Pull <em>rapid</em> layers first (water extent/RTC) for flood desks; queue InSAR for deformation time-series.</li>
+          <li>Fuse with rainfall & river gauges; publish a <span class="badge">map + delta</span> card for each AOI.</li>
+          <li>Archive & compare bi-weekly to build your early-warning trendline.</li>
+        </ol>
+      </section>
+
+      <section aria-labelledby="products">
+        <h2 id="products">Product map (starter)</h2>
+        <table class="table" role="table" aria-label="NISAR product starter map">
+          <thead><tr><th scope="col">Product</th><th scope="col">What you get</th><th scope="col">Use quickly for</th></tr></thead>
+          <tbody>
+            <tr><td><strong>RTC (Radiometrically Terrain-Corrected)</strong></td><td>Backscatter maps (L/S)</td><td>Flood extent, crop damage, wetness shifts</td></tr>
+            <tr><td><strong>InSAR (displacement)</strong></td><td>Phase-based deformation</td><td>Landslide creep, subsidence, post-quake slip</td></tr>
+            <tr><td><strong>PolSAR</strong></td><td>Polarimetric features</td><td>Crop type/structure, urban classification</td></tr>
+          </tbody>
+        </table>
+        <p><small class="mute">Tutorials & sample products for these workflows are available via Earthdata/ASF resources.</small></p>
+      </section>
+
+      <div class="footer">
+        <small class="mute">Specs, access links and timelines reflect known mission info as of Sep 7, 2025. Expect refinements as commissioning completes and products move to routine cadence.</small>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>

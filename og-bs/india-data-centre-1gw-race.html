@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="India is racing to build 1-GW class data centers. Who’s building, who’s buying compute, and where the next gigawatt lands—plus policy and power constraints."/>
+  <meta name="keywords" content="India, data centre, hyperscaler, colocation, 1GW, Google, OpenAI, AdaniConneX, Nxtra, Equinix, power, policy, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>India’s 1-GW DC Race: Who Builds, Who Buys Compute? — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">TECH · DATA · INFRA</div>
+        <h1>India’s 1-GW DC Race: Who Builds, Who Buys Compute?</h1>
+        <div class="sub">Hyperscalers eye gigawatt-class campuses while local colos sprint on land, power and subsea routes. We map the builders, buyers, and the bottlenecks.</div>
+        <div class="meta">By bataSutra Editorial · September 11, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>Why the 1-GW headline matters (and what it really means)</li>
+    <li>Who’s building vs who’s buying compute</li>
+    <li>City-by-city odds: where the next GW lands</li>
+    <li>Risks: power, water, clearances, cable landings</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Signal:</strong> India’s DC market is graduating to <em>gigawatt-class</em> campuses as AI/cloud demand explodes. Major logos now talk in 500 MW–1 GW campuses, not 10–20 MW halls.</li>
+      <li><strong>Momentum:</strong> New multi-hundred-MW commitments (Vizag, Chennai, NCR) + revived <em>National Data Centre Policy</em> promise single-window clearances and standardised incentives.</li>
+      <li><strong>Ceiling:</strong> Grid and water are the hard constraints; renewable PPAs + coastal siting near cable landings will decide speed.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Why “1-GW” is the new yardstick</h2>
+  <p>1 GW ≈ a full campus lifecycle across multiple buildings over 5–8 years. It signals locked-in land, long-lead power, and anchor buyers who can pre-contract capacity. For publishers and investors, the GW bar helps separate PR from shovel-ready plans.</p>
+</section>
+
+<section>
+  <h2>Who builds (developers/colos) vs who buys (workloads)</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Builders (recent moves)</h3>
+      <ul>
+        <li><strong>AdaniConneX</strong> — financing lines, 1-GW platform by 2030; Chennai & Noida builds in flight.</li>
+        <li><strong>Equinix</strong> — Mumbai estate + new CN1 Chennai interconnection hub.</li>
+        <li><strong>Nxtra (Airtel)</strong> — rapid capacity growth; green-energy PPAs; new hyperscale in Chennai.</li>
+        <li><strong>Iron Mountain (Web Werks)</strong> — JV consolidation; Navi Mumbai and pan-India expansion.</li>
+        <li><strong>Digital Connexion (Digital Realty–Brookfield–RIL)</strong> — scaling India platform targeting hyperscale.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>Buyers (compute demand)</h3>
+      <ul>
+        <li><strong>Hyperscale cloud</strong> — AWS/Azure/Google expanding regions and AI-ready zones.</li>
+        <li><strong>Frontier AI</strong> — model training/inference footprints (foundation models, RAG, agentic).</li>
+        <li><strong>Domestic demand</strong> — BFSI, telecom, public sector stack, video/commerce, SaaS.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Recent headline commitments (illustrative)</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Player</th>
+        <th>Headline</th>
+        <th>Location(s)</th>
+        <th>Read as</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Google</td>
+        <td>~$6B plan incl. 1-GW DC + 24/7 power stack</td>
+        <td>Visakhapatnam, Andhra Pradesh</td>
+        <td>Coastal campus near cable landings; large renewables slice</td>
+      </tr>
+      <tr>
+        <td>OpenAI</td>
+        <td>Scouting partners for ≥1-GW India DC</td>
+        <td>TBD (multi-state evaluations)</td>
+        <td>Frontier AI compute anchor; likely phased build</td>
+      </tr>
+      <tr>
+        <td>AdaniConneX</td>
+        <td>Platform targeting 1-GW by 2030</td>
+        <td>Chennai, Noida, +</td>
+        <td>Grid + clean-energy integration; multi-city rollout</td>
+      </tr>
+      <tr>
+        <td>Equinix</td>
+        <td>CN1 (Chennai) + Mumbai estate expansion</td>
+        <td>Chennai, Mumbai</td>
+        <td>Interconnection hub; subsea proximity</td>
+      </tr>
+      <tr>
+        <td>Nxtra</td>
+        <td>Capacity to ~450 MW in ~3 years; new Chennai hyperscale</td>
+        <td>Chennai, Mumbai, NCR</td>
+        <td>Renewable PPAs, brownfield + greenfield mix</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>Note: “1-GW” is a lifecycle target—delivered in phases; energisation depends on grid upgrades, PPAs, and clearances.</blockquote>
+</section>
+
+<section>
+  <h2>Where the next GW likely lands (near-term odds)</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Metro/Cluster</th><th>Why it wins</th><th>Watch-outs</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Vizag (AP)</strong></td>
+        <td>Coast + cable landings + proactive state; large land banks</td>
+        <td>Transmission upgrades; balanced green/thermal mix for 24/7</td>
+      </tr>
+      <tr>
+        <td><strong>Chennai (TN)</strong></td>
+        <td>CLS hub; established DC parks; new interconnection campus</td>
+        <td>Monsoon hardening; water + urban planning constraints</td>
+      </tr>
+      <tr>
+        <td><strong>Mumbai–Navi Mumbai (MH)</strong></td>
+        <td>CLS density; rich ecosystem; developer pipeline</td>
+        <td>Power costs/availability; land scarcity</td>
+      </tr>
+      <tr>
+        <td><strong>NCR (Noida)</strong></td>
+        <td>Policy support; space for large campuses; captive renewables</td>
+        <td>Seasonal cooling loads; grid redundancy</td>
+      </tr>
+      <tr>
+        <td><strong>Hyderabad (TS)</strong></td>
+        <td>Existing hyperscale region; talent; policy comfort</td>
+        <td>Transmission ramp speed; water-wise design</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Risks & path dependencies</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Power:</strong> Transmission capacity, low-carbon PPAs, and “essential service” status for priority restoration.</li>
+      <li><strong>Water:</strong> Cooling choices (air/liquid), state-wise extraction charges, and WUE transparency.</li>
+      <li><strong>Permits:</strong> Single-window timelines vs 30+ approvals; coastal siting/CRZ and CLS permissions.</li>
+      <li><strong>Subsea:</strong> Cable landing station access/ILD licensing; ROW for terrestrial backhaul.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Is 1-GW “one building”?</strong> No—think multi-building campus phased over years.</li>
+    <li><strong>Do all gigawatts go to AI?</strong> Not just AI; mix of cloud, database, analytics, content. AI raises density/power needs.</li>
+    <li><strong>What decides siting?</strong> Power first; then subsea proximity, land, policy, climate risk, and skilled ops.</li>
+  </ul>
+</section>
+
+      <div class="footer">
+        <small class="mute">Notes: Signals compiled from public filings and press as of Sep 11, 2025. Figures are indicative; campus totals deliver in phases subject to power, permits, and contracts. Sources include Reuters and industry releases.</small>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

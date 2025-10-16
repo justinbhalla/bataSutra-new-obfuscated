@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BESS is shifting from pilots to procurement. Here’s a practical guide to costs, contracts, and use-cases that actually clear."/>
+  <meta name="keywords" content="India, markets, finance, policy, tech, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>India’s Battery Storage Playbook: From 4-Hour Peakers to Round-the-Clock Renewables — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root {
+  --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222;
+}
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+
+/* NEW: make the entire header clickable back to index */
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <!-- Wrap the header with a block-level anchor -->
+  <a href="index.html" class="header-link" aria-label="Back to Home (index)">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">ENERGY · MARKETS · INFRA</div>
+        <h1>India’s Battery Storage Playbook: From 4-Hour Peakers to Round-the-Clock Renewables</h1>
+        <div class="sub">BESS is shifting from pilots to procurement. Here’s a practical guide to costs, contracts, and use-cases that actually clear.</div>
+        <div class="meta">By bataSutra Editorial · August 11, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short version — what matters in one screen</li>
+    <li>Where BESS earns: peakers, firming, and grid services</li>
+    <li>Unit economics: a simple stack you can sanity-check</li>
+    <li>Contracts: RTC blends, peak power, and tolling models</li>
+    <li>Risks, bottlenecks, and what to watch next</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Use-case first, chemistry later.</strong> 1–2h for <em>ancillary/peak-shave</em>, 4h for <em>RTC firming</em>, 8h+ only when curtailment is chronic.</li>
+      <li><strong>Tariffs beat tech.</strong> If peak/off-peak spreads are thin, returns compress regardless of pack prices.</li>
+      <li><strong>Capex is falling, but integration isn’t free.</strong> EPC, EMS, land, O&amp;M, and augmentation add ~20–35% over pack costs.</li>
+      <li><strong>Contract shape drives IRR.</strong> Blended RTC PPAs and capacity payments derisk cashflows vs pure merchant.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Where BESS actually earns in India</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>1) Peak-shaving / “peaker” replacement (2–4h)</h3>
+      <p>Store cheap mid-day solar; discharge in evening ramps. Revenues hinge on the spread between <em>mid-day</em> and <em>evening</em> tariffs.</p>
+      <p><span class="badge">Revenue</span> Arbitrage + Capacity Payment (if contracted)</p>
+    </div>
+    <div class="card half">
+      <h3>2) RTC firming (4h typical)</h3>
+      <p>Pair with solar/wind to meet a firmed hourly schedule. Works when curtailment is non-trivial and penalties bite.</p>
+      <p><span class="badge">Revenue</span> PPA tariff + Availability Bonus – Deviation Penalties</p>
+    </div>
+    <div class="card half">
+      <h3>3) Ancillary &amp; grid services (1–2h)</h3>
+      <p>Frequency response, reserves, black-start. Requires dispatch discipline and metering clarity.</p>
+      <p><span class="badge">Revenue</span> Regulated fees + market payments</p>
+    </div>
+    <div class="card half">
+      <h3>4) Behind-the-meter (1–3h)</h3>
+      <p>Industrial consumers shave demand charges, enhance PV self-consumption, add backup.</p>
+      <p><span class="badge">Revenue</span> Avoided grid costs + reliability value</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Unit economics: a simple sanity stack</h2>
+  <p>Use this stylised 4-hour, 100&nbsp;MW / 400&nbsp;MWh utility BESS as a check. Numbers are indicative and will vary by vendor, location, and financing.</p>
+  <table class="table">
+    <thead><tr><th>Line item</th><th>Assumption</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Pack + PCS + BoP</td><td>₹22,000–26,000 / kWh</td><td>DC pack, PCS, transformers; chemistry-agnostic range</td></tr>
+      <tr><td>EPC / Integration</td><td>+20–30%</td><td>Site works, interconnect, EMS, commissioning</td></tr>
+      <tr><td>O&amp;M (annual)</td><td>1.5–2.5% of capex</td><td>Incl. EMS, warranties, insurance</td></tr>
+      <tr><td>Degradation &amp; Augmentation</td><td>~15–20% energy add over life</td><td>To maintain deliverable MWh</td></tr>
+      <tr><td>Round-trip efficiency</td><td>86–92%</td><td>Impacts arbitrage margins directly</td></tr>
+      <tr><td>Utilisation</td><td>~250–300 cycles/year</td><td>RTC contracts may drive higher scheduled cycling</td></tr>
+    </tbody>
+  </table>
+  <p><strong>Back-of-envelope LCOES:</strong> Combine WACC-levelised capex + fixed O&amp;M over lifetime energy delivered. Stress-test with ±20% capex and ±10pp efficiency.</p>
+  <blockquote><strong>Rule-of-thumb:</strong> If <em>peak–off-peak spread</em> × cycles × efficiency &gt; levelised cost per kWh cycled, the economics close. Capacity payments dramatically help.</blockquote>
+</section>
+
+<section>
+  <h2>Contracts shape cashflows</h2>
+  <ul>
+    <li><strong>RTC blend:</strong> Solar + wind + 4h BESS; availability-linked payments; deviation penalties cap upside but protect downside.</li>
+    <li><strong>Peak power:</strong> Fixed evening block delivery; option to pool across multiple plants.</li>
+    <li><strong>Tolling / capacity:</strong> Buyer pays a fixed MW “readiness” fee; operator monetises energy separately.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Risks &amp; mitigations</h2>
+  <ul>
+    <li><strong>EMS &amp; dispatch errors:</strong> Kill margins; invest in forecasting and controls.</li>
+    <li><strong>Augmentation surprises:</strong> Lock augmentation price bands upfront.</li>
+    <li><strong>Policy &amp; metering ambiguity:</strong> Standardise measurement for multi-use stacking to avoid double counting.</li>
+    <li><strong>Supply concentration:</strong> Dual-source critical components; enforce spares SLAs.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Operator checklist</h2>
+  <ol>
+    <li>Pin your <em>primary revenue</em> (arbitrage vs capacity vs RTC premium).</li>
+    <li>Model spreads under conservative volatility; don’t back-solve IRR.</li>
+    <li>Pre-agree augmentation logic and warranty triggers.</li>
+    <li>Pilot dispatch algorithms in shadow mode before go-live.</li>
+  </ol>
+</section>
+
+      <div class="footer"></div>
+    </div>
+  </main>
+</body>
+</html>

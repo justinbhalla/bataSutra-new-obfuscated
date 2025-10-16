@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="SEBI now allows Investment Advisers and Research Analysts to meet their mandatory deposit via units of liquid or overnight mutual funds (lien to IAASB/RAASB). Here’s cashflow relief, risks, and step-by-step how-to."/>
+  <meta name="keywords" content="SEBI, Investment Adviser, Research Analyst, IA, RA, deposit, liquid fund, overnight fund, IAASB, RAASB, compliance, lien, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To — bataSutra</title>
+
+  <!-- Canonical & OG/Twitter -->
+  <link rel="canonical" href="https://batasutra.com/ia-ra-deposit-liquid-overnight-mf-how-to.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="bataSutra" />
+  <meta property="og:title" content="IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To" />
+  <meta property="og:description" content="SEBI’s Aug 12 circular lets IAs/RAs park the regulatory deposit in liquid/overnight MFs (lien to IAASB/RAASB). See eligibility, process, and risk controls." />
+  <meta property="og:url" content="https://batasutra.com/ia-ra-deposit-liquid-overnight-mf-how-to.html" />
+  <meta property="og:image" content="https://batasutra.com/assets/og/ia-ra-deposit-mf.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To" />
+  <meta name="twitter:description" content="Use liquid/overnight MF units (with lien) to meet deposit norms. Step-by-step, with caveats." />
+  <meta name="twitter:image" content="https://batasutra.com/assets/og/ia-ra-deposit-mf.jpg" />
+
+  <!-- JSON-LD: Article + Breadcrumb + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To",
+    "description":"SEBI allows IAs/RAs to maintain their deposit via units of liquid or overnight mutual funds (with lien). This explainer covers eligibility, timelines and operational steps.",
+    "author":{"@type":"Organization","name":"bataSutra"},
+    "publisher":{"@type":"Organization","name":"bataSutra","logo":{"@type":"ImageObject","url":"https://batasutra.com/assets/logo-512.png"}},
+    "datePublished":"2025-08-24T21:12:00+05:30",
+    "dateModified":"2025-08-24T21:12:00+05:30",
+    "image":"https://batasutra.com/assets/og/ia-ra-deposit-mf.jpg",
+    "mainEntityOfPage":"https://batasutra.com/ia-ra-deposit-liquid-overnight-mf-how-to.html",
+    "keywords":["SEBI","IA","RA","deposit","liquid fund","overnight fund","IAASB","RAASB","compliance"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://batasutra.com/"},
+      {"@type":"ListItem","position":2,"name":"IA/RA Deposits via Liquid/Overnight MFs"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"What exactly did SEBI change?","acceptedAnswer":{"@type":"Answer","text":"As of Aug 12, 2025, IAs/RAs may maintain the mandated deposit in the form of units of a liquid or an overnight mutual fund—alternatively, they may continue using a scheduled-bank deposit. The deposit must be marked as lien in favour of IAASB/RAASB."}},
+      {"@type":"Question","name":"By when must I comply?","acceptedAnswer":{"@type":"Answer","text":"IAs/RAs must align by Sept 30, 2025 (per the circular). IAASB/RAASB (BSE) will operationalise processes and notify stakeholders."}},
+      {"@type":"Question","name":"Any investment risks to note?","acceptedAnswer":{"@type":"Answer","text":"Liquid/overnight MFs target very short-maturity instruments but still carry market and credit risk. Check scheme documents, cut-off times, and any applicable exit loads before opting."}},
+      {"@type":"Question","name":"How is the lien created?","acceptedAnswer":{"@type":"Answer","text":"Through the administrator (IAASB/RAASB) and the AMC/RTA—your units are marked under lien in favour of the administrator; redemptions/transfers require their release."}}
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{--brand:#8B0000;--ink:#111;--muted:#555;--bg:#fff;--light:#f9f5f5;--accent:#b22222;}
+    *{box-sizing:border-box} html{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+    body{margin:0;background:var(--bg);line-height:1.6}
+    .header{background:var(--brand);color:#fff;padding:56px 24px 40px}
+    .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:12px;opacity:.9}
+    h1{font-size:clamp(28px,3.2vw,40px);margin:8px 0 10px;line-height:1.2}
+    .sub{font-size:clamp(16px,2vw,20px);opacity:.95}
+    .meta{font-size:13px;opacity:.9;margin-top:10px}
+    main{padding:28px 0 64px;background:#fff}
+    section{margin:30px 0}
+    h2{font-size:22px;margin:30px 0 10px}
+    h3{font-size:18px;margin:22px 0 8px}
+    p{margin:10px 0}
+    ul,ol{padding-left:20px}
+    hr{border:0;height:1px;background:#eee;margin:28px 0}
+    .callout{background:var(--light);border-left:4px solid var(--brand);padding:14px 16px;border-radius:8px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12;padding:14px;border:1px solid #eee;border-radius:12px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    @media(min-width:760px){.two{grid-template-columns:repeat(12,1fr)} .half{grid-column:span 6}}
+    blockquote{margin:10px 0;padding:10px 16px;border-left:3px solid #ddd;color:#333;background:#fafafa;border-radius:6px}
+    .toc{background:#fcfcfc;border:1px solid #eee;padding:12px 14px;border-radius:10px}
+    small.mute{color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border:1px solid #eee;padding:10px;text-align:left}
+    .table th{background:#fafafa}
+    .header-link{text-decoration:none;color:inherit;display:block}
+    .header-link:focus-visible{outline:2px dashed #fff;outline-offset:4px}
+    a.anchor{color:inherit;text-decoration:none}
+    .badge{display:inline-block;padding:2px 8px;border:1px solid #e6e6e6;border-radius:999px;font-size:12px;background:#fafafa;margin-right:6px}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REGULATION · COMPLIANCE</div>
+        <h1>IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To</h1>
+        <div class="sub">SEBI’s Aug 12, 2025 circular lets IAs/RAs keep their mandated deposit in <strong>liquid/overnight MF units</strong> (with lien). Here’s the playbook to implement safely by <strong>Sept 30, 2025</strong>.</div>
+        <div class="meta">By bataSutra Editorial · August 24, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+      <section id="toc" class="toc">
+        <strong>In this piece:</strong>
+        <ul>
+          <li><a class="anchor" href="#short">The short</a></li>
+          <li><a class="anchor" href="#what">What SEBI changed</a></li>
+          <li><a class="anchor" href="#how">How-to: step-by-step</a></li>
+          <li><a class="anchor" href="#risks">Risks & controls</a></li>
+          <li><a class="anchor" href="#ops">Ops checklist (IA/RA & admin)</a></li>
+          <li><a class="anchor" href="#faq">FAQ</a></li>
+        </ul>
+      </section>
+
+      <section id="short">
+        <h2>The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Flexibility:</strong> Deposit can be in <em>units of a liquid or an overnight MF</em> (or keep a bank deposit)—<em>lien</em> in favour of IAASB/RAASB.</li>
+            <li><strong>Cashflow relief:</strong> Potentially higher yield than plain deposits; still conservatively managed.</li>
+            <li><strong>Deadline:</strong> Align by <em>Sept 30, 2025</em>; administrators will publish process specifics.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="what">
+        <h2>What SEBI changed</h2>
+        <p>SEBI amended the IA/RA regulations and, via circular, allowed the mandated deposit to be maintained either as a <strong>scheduled-bank deposit</strong> or as <strong>units of a liquid/overnight mutual fund</strong>, marked under <strong>lien</strong> to the administrator (IAASB/RAASB). The circular became effective on Aug 12, 2025, with a compliance date of Sept 30, 2025.</p>
+        <blockquote>Result: smaller advisory/research outfits get working-capital relief without compromising administrator control.</blockquote>
+      </section>
+
+      <section id="how">
+        <h2>How-to — step-by-step (illustrative)</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>1) Choose scheme</h3>
+            <ul>
+              <li>Prefer <em>overnight</em> or high-quality <em>liquid</em> funds; examine portfolio credit quality and maturity ladders.</li>
+              <li>Check <strong>exit load</strong> policy and <strong>cut-off times</strong> for purchases/redemptions.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>2) Open folio & invest</h3>
+            <ul>
+              <li>Invest the <em>required deposit amount</em> (as per IA/RA regulations).</li>
+              <li>Keep investment and KYC records handy for the administrator.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>3) Mark lien</h3>
+            <ul>
+              <li>Initiate lien marking in favour of <strong>IAASB/RAASB</strong> via AMC/RTA as per the administrator’s SOP.</li>
+              <li>Confirm lien status on the statement; redemptions need lien release.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>4) Ongoing</h3>
+            <ul>
+              <li>Maintain the <strong>required amount</strong> (NAV-linked); top up if needed.</li>
+              <li>Review scheme changes; keep board/partner approvals on file.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="risks">
+        <h2>Risks & controls</h2>
+        <ul>
+          <li><strong>NAV fluctuation:</strong> Even ultra-short products can move—monitor daily and maintain a buffer.</li>
+          <li><strong>Liquidity windows:</strong> Adhere to cut-off times; some liquid funds may have short-term exit loads.</li>
+          <li><strong>Operational errors:</strong> Test the lien creation/release process before relying on it.</li>
+        </ul>
+      </section>
+
+      <section id="ops">
+        <h2>Ops checklist — IAs/RAs & administrator</h2>
+        <table class="table">
+          <thead><tr><th>Actor</th><th>Action</th></tr></thead>
+          <tbody>
+            <tr><td>IA/RA</td><td>Adopt a board-approved <em>Deposit Policy</em> (scheme selection, buffer %, review cadence); document lien confirmations.</td></tr>
+            <tr><td>IAASB/RAASB</td><td>Publish SOPs with AMC/RTA formats for lien creation/release; set reporting templates and audit trails.</td></tr>
+            <tr><td>Auditors</td><td>Verify deposit valuation vs regulatory requirement at period-end; check lien status.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>How big is the deposit?</strong> As specified under the IA/RA regulations for your registration category; check the latest SEBI notification.</li>
+          <li><strong>Can I split between bank deposit and MF units?</strong> The circular allows either form; splitting may be operationally feasible—confirm with IAASB/RAASB.</li>
+          <li><strong>Which funds qualify?</strong> <em>Liquid</em> or <em>Overnight</em> mutual funds registered with SEBI—choose schemes with strong credit discipline and transparent portfolios.</li>
+        </ul>
+      </section>
+
+      <hr/>
+      <p class="mute"><small>Note: This is an informational explainer, not legal or investment advice. Confirm details with IAASB/RAASB circulars and your counsel.</small></p>
+    </div>
+  </main>
+</body>
+</html>

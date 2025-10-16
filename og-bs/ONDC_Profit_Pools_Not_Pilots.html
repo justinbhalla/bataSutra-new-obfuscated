@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ONDC 2.0 through a profitability lens—settlement flows, catalog standards, logistics arbitrage, and where sustainable margins actually accrue."/>
+  <meta name="keywords" content="India, ONDC, marketplaces, logistics, settlement, Beckn, catalog, unit economics, NPs, buyer app, seller app, profitability, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>ONDC 2.0: Profit Pools, Not Pilots — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">POLICY · MARKETPLACES · LOGISTICS</div>
+        <h1>ONDC 2.0: Profit Pools, Not Pilots</h1>
+        <div class="sub">Settlement, catalog standards, logistics arbitrage — and who actually makes money when volumes get real.</div>
+        <div class="meta">By bataSutra Editorial · August 18, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>ONDC’s money map: BA, SA, LSP, PSP, and gateway roles</li>
+    <li>Settlement flows &amp; working-capital traps</li>
+    <li>Catalog correctness: why schema beats coupons</li>
+    <li>Logistics arbitrage: city density, batching, and SLAs</li>
+    <li>Scorecard: who wins as AOV and order density rise</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Discovery is commoditising.</strong> Buyer Apps (BAs) win via UX, trust, and payments; price alone is a race to zero.</li>
+      <li><strong>Catalog is margin.</strong> Clean taxonomy, attributes, and availability accuracy reduce cancellations, refunds, and reattempt costs.</li>
+      <li><strong>Logistics is the lever.</strong> City-level density, micro-fulfilment, and batching economics decide contribution margins.</li>
+      <li><strong>Settlement discipline matters.</strong> Late settlements and reconciliation leakage crush small sellers’ working capital.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Who this applies to</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Buyer Apps (BA)</h3>
+      <p>Own demand, payments, and post-order CX. <span class="badge">Trust &amp; UX</span> <span class="badge">Repeat</span></p>
+    </div>
+    <div class="card half">
+      <h3>Seller Apps (SA) &amp; SMEs</h3>
+      <p>Onboard, normalise, and service supply; minimise cancellations. <span class="badge">Fill-rate</span> <span class="badge">Catalog hygiene</span></p>
+    </div>
+    <div class="card half">
+      <h3>Logistics (LSP)</h3>
+      <p>First–mid–last mile; SLA, NDR, and return costs define profitability. <span class="badge">Density</span> <span class="badge">Routing</span></p>
+    </div>
+    <div class="card half">
+      <h3>Gateways / PSPs</h3>
+      <p>Network policies, payments, and dispute rails; keep failure loops tight. <span class="badge">Reliability</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Settlement &amp; working capital</h2>
+  <p>Two things break unit economics: <em>refund loops</em> (cancellations, unavailable inventory) and <em>settlement slippage</em> (late credit, partial reconciliation). For small sellers, a 3–7 day lag can choke reorder capacity.</p>
+  <ul>
+    <li><strong>Principle:</strong> Tie BA/SA incentives to <em>first-attempt delivery</em> and <em>same-day reconciliation</em> windows.</li>
+    <li><strong>Operational:</strong> Auto-close orders after proof-of-delivery; trigger settlement minus network fees and LSP dues.</li>
+    <li><strong>Data:</strong> Keep a <em>single source of truth</em> for order state; suppress duplicate callbacks to avoid ghost refunds.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Catalog standards = fewer losses</h2>
+  <p>Attribute completeness (brand, size/pack, MRP, shelf-life, veg/non-veg, HSN) and <em>stock freshness</em> lower NDR/returns by double-digit percentages in dense categories like grocery and pharma-light.</p>
+  <div class="callout">
+    <strong>Checklist:</strong> Mandatory attributes per category, image count ≥3, last-updated timestamp, and hard blocks on stale listings.
+  </div>
+</section>
+
+<section>
+  <h2>Logistics arbitrage</h2>
+  <p>Three knobs move contribution margin:</p>
+  <ol>
+    <li><strong>Density:</strong> Orders per km per hour. Push slotting and hyperlocal assortments.</li>
+    <li><strong>Batching:</strong> Two-stop merges with SLA headroom can shave 12–20% cost on short routes.</li>
+    <li><strong>Returns containment:</strong> Pre-delivery confirmation for high-NDR SKUs; doorstep QC for perishables.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Quick table — where the money sits</h2>
+  <table class="table">
+    <thead><tr><th>Actor</th><th>Profit pool</th><th>Pressure points</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Buyer App</td>
+        <td>Payments, cross-sell, ads, subscriptions</td>
+        <td>CAC vs LTV, refund handling, chargebacks</td>
+      </tr>
+      <tr>
+        <td>Seller App</td>
+        <td>Onboarding fees, SaaS tools, fulfilment add-ons</td>
+        <td>Catalog QA cost, support load, churn</td>
+      </tr>
+      <tr>
+        <td>LSP</td>
+        <td>Dense lanes, batching, reverse-logistics fees</td>
+        <td>NDR, SLA penalties, idle time</td>
+      </tr>
+      <tr>
+        <td>Gateway/PSP</td>
+        <td>TPV take-rate, value-added fraud tools</td>
+        <td>Disputes TAT, peak reliability</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Scorecard — when do profits show up?</h2>
+  <ul>
+    <li><strong>AOV ↑ + Density ↑:</strong> BA ads/subscriptions and LSP batching margins expand.</li>
+    <li><strong>Catalog accuracy ↑:</strong> SA support costs fall; first-attempt deliveries rise.</li>
+    <li><strong>Settlement T+1:</strong> Seller churn drops; supply depth improves without subsidies.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Playbook to move from pilot to profit</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>For Buyer Apps</h3>
+      <ul>
+        <li>Enforce attribute completeness; penalise stale stock.</li>
+        <li>Offer slots, not promises—build SLA headroom for batching.</li>
+        <li>Subscription for free-returns threshold; cap abuse.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>For Seller Apps</h3>
+      <ul>
+        <li>Auto-sync inventory; lock low-availability SKUs.</li>
+        <li>Standardised imagery; no “variant ambiguity”.</li>
+        <li>Weekly cohort reviews: NDR, cancellations, and repeat.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>One-line takeaway</h2>
+  <blockquote>ONDC profits don’t come from discounts—they come from <em>clean catalogs, dense routes, and disciplined settlement.</em></blockquote>
+</section>
+
+      <div class="footer"><small class="mute">Illustrative analysis for educational purposes; not business, accounting, or legal advice.</small></div>
+    </div>
+  </main>
+</body>
+</html>

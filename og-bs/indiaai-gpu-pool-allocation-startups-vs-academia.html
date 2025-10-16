@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Public GPU scarcity will shape India’s AI map. We propose allocation models, a fair-share scoring rubric, SLOs, governance, abuse controls, and playbooks for startups and academia."/>
+  <meta name="keywords" content="IndiaAI, GPU, compute credits, allocation, startups, academia, SLOs, policy, AI infrastructure, rubric, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>IndiaAI GPU Pool: Who Gets Compute Slots — Startups vs Academia? — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">POLICY · AI · COMPUTE</div>
+        <h1>IndiaAI GPU Pool: Who Gets Compute Slots — Startups vs Academia?</h1>
+        <div class="sub">Allocation—not just capacity—decides innovation. A fair-share rubric, SLOs, caps, governance, and abuse controls you can implement.</div>
+        <div class="meta">By bataSutra Editorial · September 17, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — why allocation design matters</li>
+    <li>Demand scenarios & slot models</li>
+    <li>Fair-share scoring rubric (publishable)</li>
+    <li>SLOs, caps & transparency</li>
+    <li>Abuse controls & audit trails</li>
+    <li>Regional hubs: infra & sustainability</li>
+    <li>Playbooks (startups, academia, operators, policy)</li>
+    <li>Application form blueprint & KPIs</li>
+    <li>FAQs</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Scarcity is policy:</strong> Allocation rules steer research & products for years.</li>
+      <li><strong>Hybrid wins:</strong> Scorecard + credits + random tie-breakers balance merit and access.</li>
+      <li><strong>Guardrails:</strong> Org caps, use-it-or-lose-it credits, and safety reviews curb hoarding & misuse.</li>
+      <li><strong>Trust:</strong> Weekly utilization dashboards & unlock calendars sustain legitimacy.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Demand scenarios & slot models</h2>
+  <table class="table">
+    <thead><tr><th>Scenario</th><th>Profile</th><th>Best model</th><th>Risk</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Exploration surge</td><td>Many small fine-tunes</td><td>Usage credits + caps</td><td>Credit stacking</td><td>Org KYC, rolling hourly caps</td></tr>
+      <tr><td>Pretraining wave</td><td>Few very large jobs</td><td>Peer review + scheduled blocks</td><td>Queue starvation</td><td>Reserve small-job lanes</td></tr>
+      <tr><td>Mixed demand</td><td>Research + productization</td><td><strong>Hybrid</strong> (score + credits + lottery)</td><td>Score gaming</td><td>Random tie-breakers, audits</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Fair-share scoring rubric</h2>
+  <p><strong>Score = 0.35·Impact + 0.25·Execution + 0.20·Public-good + 0.10·Inclusion + 0.10·Safety</strong></p>
+  <div class="grid">
+    <div class="card">
+      <h3>Impact (35%)</h3>
+      <ul>
+        <li>Clear user need; estimated users/beneficiaries</li>
+        <li>Sector priority (health, education, MSME enablement)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Execution (25%)</h3>
+      <ul>
+        <li>Data readiness; baselines; eval plan</li>
+        <li>Team track record; milestones</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Public-good (20%)</h3>
+      <ul>
+        <li>Open code/data; benchmark submissions</li>
+        <li>Reproducibility commitments</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Inclusion (10%)</h3>
+      <ul>
+        <li>Tier-2/3 or non-metro institutions</li>
+        <li>First-time grantee bonus</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Safety (10%)</h3>
+      <ul>
+        <li>Eval suite & red-teaming</li>
+        <li>Data consent & provenance</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>SLOs, caps & transparency</h2>
+  <table class="table">
+    <thead><tr><th>Dimension</th><th>Target</th><th>Why</th></tr></thead>
+    <tbody>
+      <tr><td>Queue time</td><td>P95 start ≤ 48h (small), ≤ 7d (large)</td><td>Predictability & fairness</td></tr>
+      <tr><td>Org cap</td><td>≤ 5% monthly GPU-hours/org</td><td>Anti-hoarding</td></tr>
+      <tr><td>Use-it-or-lose-it</td><td>Credits expire in 7 days if idle</td><td>Recycle to waitlist</td></tr>
+      <tr><td>Transparency</td><td>Weekly utilization & anonymized project list</td><td>Trust, auditability</td></tr>
+      <tr><td>Safety</td><td>Restricted dual-use; model cards for big runs</td><td>Responsible access</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Abuse controls & audit trails</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Threats</h3>
+      <ul>
+        <li>Proxy training for large sponsors via shell orgs</li>
+        <li>Multi-ID stacking to bypass caps</li>
+        <li>Undeclared dual-use/bio risks</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Controls</h3>
+      <ul>
+        <li>Org-level KYC; funding disclosure</li>
+        <li>Anomaly detection on job graphs & credit spend</li>
+        <li>Pre-run safety attestation; post-run model cards</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Audit trail</h3>
+      <ul>
+        <li>Immutable logs of queue, allocations, artifacts</li>
+        <li>Quarterly independent review & public summary</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Regional hubs: infra & sustainability</h2>
+  <table class="table">
+    <thead><tr><th>Design lever</th><th>Choice</th><th>Reason</th></tr></thead>
+    <tbody>
+      <tr><td>Power</td><td>Long-term PPAs; renewable mix</td><td>Cost & stability; ESG</td></tr>
+      <tr><td>Cooling</td><td>Liquid/immersion where feasible</td><td>Lower PUE; higher density</td></tr>
+      <tr><td>Network</td><td>Fiber adjacency; peering</td><td>Latency for interactive jobs</td></tr>
+      <tr><td>Placement</td><td>Multiple hubs</td><td>Resilience; inclusion via proximity</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Playbooks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Startups</h3>
+      <ul>
+        <li>Prefer LoRA/QLoRA & quantization over full pretraining.</li>
+        <li>Batch & checkpoint; align runs to SLO windows.</li>
+        <li>Publish evals; claim public-good rubric points.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Academia</h3>
+      <ul>
+        <li>Co-PI with Tier-2/3 labs for inclusion credit.</li>
+        <li>Open datasets & baselines; reproducibility kits.</li>
+        <li>Coordinate around teaching calendars; use reservations.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Operators</h3>
+      <ul>
+        <li>Expose telemetry APIs; auto-resume jobs.</li>
+        <li>Credit wallets with org-level controls.</li>
+        <li>Incident response SOPs & public postmortems.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Policy</h3>
+      <ul>
+        <li>Carve-outs: 40% academia, 40% startups/SMEs, 20% public-interest.</li>
+        <li>Quarterly rebalancing by utilization data.</li>
+        <li>Independent ethics & safety board with veto power.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Application form blueprint & KPIs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Applicant fields</h3>
+      <ul>
+        <li>Problem statement; expected beneficiaries/users</li>
+        <li>Data provenance & consent</li>
+        <li>Baseline metrics & eval plan</li>
+        <li>Public-good commitments (open code/data)</li>
+        <li>Org links & funding disclosures</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Program KPIs</h3>
+      <ul>
+        <li>Wait times (P50/P95) by job size</li>
+        <li>Utilization by cohort (acad/startup/public)</li>
+        <li>Outputs: papers, open datasets, models shipped</li>
+        <li>Inclusion: Tier-2/3 share; first-time grantees</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Will auctions shut out academia?</strong> Use hybrid: grant credits + org caps + peer-review lanes.</li>
+    <li><strong>How to stop proxy training?</strong> Org KYC, funding disclosure, anomaly detection, audits.</li>
+    <li><strong>What about safety?</strong> Restricted dual-use; mandatory evals & model cards for large runs.</li>
+  </ul>
+</section>
+
+
+
+      <div class="footer"><small class="mute">Designs are illustrative as of Sep 17, 2025. Implement with published SLOs, org caps, transparent dashboards, and independent audits.</small></div>
+    </div>
+  </main>
+</body>
+</html>

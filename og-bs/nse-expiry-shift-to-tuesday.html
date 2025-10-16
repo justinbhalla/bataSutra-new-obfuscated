@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NSE shifts index & stock derivatives expiry to Tuesday from Sep 2025. What exactly changes, how hedging/liquidity adapt, and a desk-ready checklist."/>
+  <meta name="keywords" content="India, NSE, derivatives, expiry day, Tuesday expiry, Nifty, Bank Nifty, FINNIFTY, weekly expiry, monthly expiry, trading, risk, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>NSE Moves Expiry to Tuesday: Hedging & Liquidity 101 — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Stocks · DERIVATIVES · STRUCTURE</div>
+        <h1>NSE Moves Expiry to Tuesday: Hedging & Liquidity 101</h1>
+        <div class="sub">NSE has shifted the expiry day for index <em>and</em> stock derivatives to Tuesday. Here’s the precise cut-over, instruments impacted, and how to recalibrate trading and risk.</div>
+        <div class="meta">By bataSutra Editorial · August 21, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The official change-over: weekly and monthly contracts</li>
+    <li>What happens to existing long-dated options</li>
+    <li>Liquidity, spreads, and basis around roll windows</li>
+    <li>Desk checklist and FAQs</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>What changed:</strong> <em>All</em> index and single-stock derivatives on NSE move from <strong>Thursday</strong> expiry to <strong>Tuesday</strong>.</li>
+      <li><strong>Effective window:</strong> Existing contracts expiring on/before <strong>Aug 31, 2025</strong> keep their original schedule; newly generated contracts with expiries on/after <strong>Sep 1, 2025</strong> follow <strong>Tuesday</strong>.</li>
+      <li><strong>Realignment:</strong> Long-dated <strong>NIFTY & BANKNIFTY</strong> options (Sep ’25 onwards) are <em>re-aligned</em> to Tuesday via contract master updates.</li>
+      <li><strong>BSE alignment:</strong> BSE has indicated it will host <strong>Thursday</strong> expiries to avoid a same-day clash.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Contract-by-contract: old vs new</h2>
+  <table class="table">
+    <thead>
+      <tr><th>Instrument</th><th>Old expiry</th><th>New expiry</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>NIFTY (monthly/quarterly/half-yearly)</td>
+        <td>Last Thursday</td>
+        <td>Last Tuesday</td>
+        <td>Long-dated options from Sep ’25 re-aligned to Tuesday.</td>
+      </tr>
+      <tr>
+        <td>NIFTY (weekly)</td>
+        <td>Thursday</td>
+        <td>Tuesday</td>
+        <td>New weekly chains generated as Tuesday expiries per cut-over.</td>
+      </tr>
+      <tr>
+        <td>BANKNIFTY (monthly/quarterly)</td>
+        <td>Last Thursday</td>
+        <td>Last Tuesday</td>
+        <td>Contract master updated at scheduled EOD.</td>
+      </tr>
+      <tr>
+        <td>FINNIFTY / MIDCPNIFTY / NIFTYNXT50 (monthly)</td>
+        <td>Last Thursday</td>
+        <td>Last Tuesday</td>
+        <td>No other spec changes.</td>
+      </tr>
+      <tr>
+        <td>All single-stock derivatives (monthly)</td>
+        <td>Last Thursday</td>
+        <td>Last Tuesday</td>
+        <td>Sep ’25 expiries onward generated as Tuesday.</td>
+      </tr>
+    </tbody>
+  </table>
+  <blockquote>This page summarises the exchange circulars for quick trading reference. Always confirm dates in the live contract master files.</blockquote>
+</section>
+
+<section>
+  <h2>Trading & risk implications</h2>
+  <ul>
+    <li><strong>Spread & depth:</strong> Expect transient widening and “learning” phase for market makers; use limit orders on first few Tuesday expiries.</li>
+    <li><strong>Basis & calendars:</strong> Calendar spreads may reprice; watch ETF/AP activity and basis kinks around the new roll cadence.</li>
+    <li><strong>Cross-venue hedges:</strong> If you run NSE–BSE hedges, note the <em>non-overlap</em> of expiry days (Tue vs Thu) and adjust carry/roll models.</li>
+    <li><strong>Vol surface:</strong> Day-of-week seasonality shifts; re-estimate skew dynamics around Tuesday fixes.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Desk checklist</h2>
+  <ol>
+    <li>Refresh <em>contract.gz</em> / <em>MII-Contract.gz</em> files and rebuild symbol maps.</li>
+    <li>Backtest rolls with Tuesday nodes; revisit auto-hedge and stop logic around expiry.</li>
+    <li>Coordinate with clearing/broker ops on settlement and corporate action timing.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Do specs change beyond expiry day?</strong> No—no other contract-spec changes have been announced alongside the shift.</li>
+    <li><strong>Will liquidity suffer?</strong> Typically stabilises after the first 2–3 cycles; temporary frictions are normal during calendar surgery.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Source: Exchange circulars and broker notices. Verify final dates in the official contract master before trading.</small></div>
+    </div>
+  </main>
+</body>
+</html>
