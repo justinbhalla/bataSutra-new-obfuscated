@@ -1,1745 +1,1293 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>bataSutra — All Articles</title>
   <meta name="description" content="Explore the latest articles on Indian business trends, startups, tech, and finance." />
   <meta name="keywords" content="Indian business, articles, startups, markets, bataSutra" />
   <meta name="author" content="bataSutra" />
-  <title>All Articles - bataSutra</title>
-
-  <!-- Inter with 400/600/700 and swap -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    /* ---------- Tokens ---------- */
-    :root {
-      --primary-color: #8B0000;
-      --hover-color: #a52a2a;
-      --light-bg: #fdf5f5;
-      --text-light: #fff;
-      --text-muted: #555;
-      --ink: #111;
-      --card: #fff;
-      --border: #eee;
-      --sponsor-bg: #fff7f7;
-      --sponsor-border: #f2dcdc;
-      --focus: 0 0 0 3px rgba(139, 0, 0, 0.25);
-      --font-stack: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    }
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#fff; --card:#fff; --ring:rgba(139,0,0,.25);}    
+    html,body{height:100%}
+    body{font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--ink)}
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    .card{background:var(--card); border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04);}    
+    .lift{transition:transform .15s ease, box-shadow .15s ease}
+    .lift:hover{transform:translateY(-1px); box-shadow:0 6px 18px rgba(0,0,0,.08)}
+    .kicker{letter-spacing:.08em; font-weight:700; font-size:.75rem; text-transform:uppercase; color:var(--brand-ink)}
+    .btn{display:inline-flex; align-items:center; gap:.5rem; padding:.625rem .9rem; border-radius:.65rem; font-weight:600; font-size:.92rem}
+    .btn-ghost{border:1px solid #e5e7eb; color:#374151}
+    .btn-ghost:hover{border-color:var(--brand); color:var(--brand-ink)}
+    .btn-primary{background:var(--brand); color:#fff}
+    .btn-primary:hover{opacity:.9}
+    .muted{color:#64748b}
+    .pill{font-weight:600; font-size:.72rem; padding:.25rem .5rem; border-radius:.5rem; background:#f1f5f9; color:#0f172a}
 
-    /* ---------- Global ---------- */
-    html, body {
-      margin: 0;
-      color: var(--ink);
-      background: #fff;
-      line-height: 1.6;
-      font-family: var(--font-stack);
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-synthesis-weight: none;
-      font-synthesis-style: none;
-      text-rendering: optimizeLegibility;
-    }
+    /* ===== TICKERS (EXACT SHELL) ===== */
+    .ticker-rail { position: relative; overflow: hidden; }
+    .ticker-rail::after, .ticker-rail::before { content:""; position:absolute; top:0; bottom:0; width:48px; pointer-events:none; }
+    .ticker-rail::before { left:0; background: linear-gradient(to right, rgba(122,0,0,1), rgba(122,0,0,0)); }
+    .ticker-rail::after  { right:0; background: linear-gradient(to left,  rgba(122,0,0,1), rgba(122,0,0,0)); }
+    /* Plain rail (NO HIGHLIGHTS) for bottom */
+    .ticker-rail--plain::before,
+    .ticker-rail--plain::after { content:none; }
 
-    *, *::before, *::after { box-sizing: border-box; }
+    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; }
+    .ticker-left  { animation: scroll-left 120s linear infinite; }
+    .ticker-right { animation: scroll-right 120s linear infinite; }
+    .ticker:hover { animation-play-state: paused; }
+    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
+    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
+    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
 
-    a { color: inherit; text-decoration: none; }
-    a:focus-visible, button:focus-visible { outline: none; box-shadow: var(--focus); border-radius: 6px; }
+    /* ===== Footer (red) ===== */
+    .footer-red { background: var(--brand-ink); color:#fff; }
+    .footer-red a { color: rgba(255,255,255,.92); }
+    .footer-red a:hover { color:#fff; text-decoration: underline; }
+    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
+    .footer-red .muted { color: rgba(255,255,255,.78); }
+    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
 
-    h1, h2, h3 {
-      font-family: var(--font-stack);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-      line-height: 1.25;
-      margin: 0 0 0.5rem 0;
-    }
-
-    p { margin: 0 0 0.75rem 0; }
-
-    /* ---------- Header ---------- */
-    header {
-      background-color: var(--primary-color);
-      color: var(--text-light);
-      padding: 2.5rem 1rem 2rem;
-      text-align: center;
-    }
-    header a { color: inherit; }
-
-    /* ---------- Layout ---------- */
-    /* Full-bleed container */
-    .container {
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    .section-title {
-      font-size: 2rem;
-      border-left: 5px solid var(--primary-color);
-      padding: 0.75rem 1rem 0.75rem 0.75rem;
-      margin: 1.5rem 0 1rem;
-      display: inline-block;
-      background: linear-gradient(to right, rgba(139,0,0,0.05), transparent);
-    }
-
-    /* ---------- Cards (full-width) ---------- */
-    .article-card,
-    .sponsored-card {
-      width: 100%;
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      background: var(--card);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      border-left: none;
-      border-right: none;
-      border-radius: 0;                 /* edge-to-edge look */
-      overflow: hidden;
-      padding: 1.25rem 1.5rem;
-      margin: 0;                        /* no side margins for full bleed */
-      transition: background-color 180ms ease;
-    }
-
-    .article-card:hover,
-    .sponsored-card:hover {
-      background-color: #fafafa;
-    }
-
-    .card-text {
-      flex: 1;
-      font-family: var(--font-stack);
-      max-width: 1200px;                /* keep text readable on ultra-wide */
-      margin: 0 auto;
-    }
-
-    .card-text h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      line-height: 1.3;
-      letter-spacing: -0.01em;
-      margin-bottom: 0.4rem;
-    }
-
-    .card-text p {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .read-more-btn {
-      display: inline-block;
-      padding: 0.6rem 1.05rem;
-      background: var(--primary-color);
-      color: #fff;
-      border-radius: 0.5rem;
-      font-size: 0.9rem;
-      font-weight: 600;
-      line-height: 1;
-      transition: background-color 160ms ease, transform 160ms ease;
-    }
-    .read-more-btn:hover { background-color: var(--hover-color); }
-    .read-more-btn:active { transform: translateY(1px); }
-
-    /* ---------- Sponsored ---------- */
-    .sponsored-card {
-      background: var(--sponsor-bg);
-      border-top: 1px solid var(--sponsor-border);
-      border-bottom: 1px solid var(--sponsor-border);
-    }
-
-    .sponsored-card .tag {
-      font-size: 0.7rem;
-      color: #888;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      display: block;
-      margin-bottom: 0.5rem;
-      font-weight: 600;
-    }
-
-    /* ---------- Footer ---------- */
-    footer {
-      background: var(--primary-color);
-      color: #f0dcdc;
-      padding: 2rem 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 2rem;
-    }
-    footer a { color: #ffe5e5; text-decoration: underline; }
-
-    /* ---------- Responsive ---------- */
-    @media (max-width: 640px) {
-      .article-card, .sponsored-card { flex-direction: column; padding: 1rem; }
-      .card-text h3 { font-size: 1.08rem; }
-    }
+    /* ===== Articles (use shared atoms) ===== */
+    .read-more-btn { display:inline-block; padding:.6rem 1.05rem; background:var(--brand); color:#fff; border-radius:.5rem; font-size:.9rem; font-weight:600; line-height:1; }
+    .read-more-btn:hover { opacity:.92; }
+    .sponsored-card { background:#fff7f7; border-color:#f2dcdc; }
+    .sponsored-card .tag { font-size:.7rem; color:#888; letter-spacing:.06em; text-transform:uppercase; display:block; margin-bottom:.5rem; font-weight:600; }
   </style>
 </head>
-<body>
-
-  <!-- Header -->
-  <header>
-    <h1><a href="/">bataSutra</a></h1>
-    <p></p>
-  </header>
-
-  <!-- All Articles -->
-  <div class="container">
-    <h2 class="section-title">All Articles</h2>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Morning Markets Pulse: Nifty Setup, Rotation & Flows</h3>
-        <p>Pre-open five-liner, first-90-minute execution rules, rotation map, breadth markers, and sizing guardrails for Tuesday (Oct 14).</p>
-        <a href="morning-markets-pulse-nifty-setup-rotation-flows-oct-14-2025-am.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Closing Bell: Market Wrap — Leaders, Laggards & What Carries to Tomorrow</h3>
-        <p>Session in five lines, leaders/laggards, breadth & flows read, sector rotation snapshot, and a Wednesday watchlist with risk controls.</p>
-        <a href="closing-bell-market-wrap-leaders-laggards-carry-to-tomorrow-oct-14-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Morning Markets Pulse: Nifty Setup, Rotation & Flows</h3>
-        <p>Pre-open five-liner, first-90-minute execution rules, rotation map, breadth markers, and sizing guardrails for Oct 13.</p>
-        <a href="morning-markets-pulse-nifty-setup-rotation-flows-oct-13-2025-am.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h3>
-        <p>Take-rate realities, cohort durability, CM2 bridge, sensitivity table, and anchor/retail checklists in a roadshow-ready breakdown.</p>
-        <a href="urban-company-ipo-unit-economics-play-oct-13-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Week Ahead: Markets & Macro — Earnings, Flows, Rotation</h3>
-        <p>Five-line brief, sector rotation map, flows/positioning, risk controls, and an Oct 13–17 indicative calendar to set rules before Monday.</p>
-        <a href="week-ahead-markets-macro-earnings-flows-rotation-oct-12-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Household Money Sunday: Fuel, EMI & Travel — Lock It Before Monday</h3>
-        <p>City fuel bands, car-cost math, EMI sensitivity, airfare timing and hotel hacks, plus a weekly checklist for families and small businesses.</p>
-        <a href="household-money-sunday-fuel-emi-travel-lock-before-monday-oct-12-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Weekend Wrap: This Week in Indian Business — Tariffs, Tech & Tax</h3>
-        <p>Five-line brief on macro, trade, tech/infra and tax signals; tariff clarity for components, stable fuel bands, and operator playbooks for enterprises and households heading into Monday.</p>
-        <a href="weekend-wrap-this-week-in-indian-business-tariffs-tech-tax-oct-11-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Who Filed, Who Delayed</h3>
-        <p>Filed/observations/paused snapshot with SME day-2 reality. Includes illustrative issuer tables, anchor/retail checklists, and a two-week indicative calendar.</p>
-        <a href="ipo-pipeline-watch-who-filed-who-delayed-weekly-oct-11-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs & What Changes</h3>
-        <p>Who’s impacted, how to fund the deposit without killing cash flow, the minimum viable cyber stack, and rollout steps with illustrative carry-cost math.</p>
-        <a href="sebi-ra-ia-security-deposits-2025-hacks-costs-what-changes-oct-10-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI Regulatory Sandbox 2025: Who’s Testing Now & How to Enter</h3>
-        <p>Clean snapshot of themes, selection rates, and timelines—plus an eligibility matrix, a four-week application plan, and graduation metrics your team can target.</p>
-        <a href="rbi-regulatory-sandbox-2025-whos-testing-now-how-to-enter-oct-10-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Brent + INR Sensitivity: OMC Margins & Your Fuel Bill</h3>
-        <p>Mid-$60s Brent and a range-bound INR keep retail bands steady, but a $5/bbl or ₹1/USD swing can shift OMC margins fast. Includes margin table, city price bands, and household/fleet planners.</p>
-        <a href="brent-inr-sensitivity-omc-margins-fuel-bill-oct-9-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
-        <p>Single-window approvals, open-access RE, and siting norms reshape build timelines. Who wins what, illustrative cost models, and checklists for site, power, and compliance decisions.</p>
-        <a href="national-data-centre-policy-2025-hyperscalers-vs-local-oct-9-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s Faster IPO Approvals & FPI Hygiene — 2025 Playbook</h3>
-        <p>Shorter, predictable review cycles if filings are data-tight; deeper unit-economics and governance disclosures; BO clarity for cleaner anchor books—plus issuer/banker/investor checklists.</p>
-        <a href="sebi-faster-ipo-approvals-fpi-hygiene-2025-playbook-oct-8-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IndiaAI GPU Pool: Who Gets Compute — Startups vs Academia?</h3>
-        <p>Allocation principles, illustrative capacity slices, eligibility matrices, and readiness checklists for data, model, and ops—so you can maximize your odds of a GPU slot.</p>
-        <a href="indiaai-gpu-pool-who-gets-compute-startups-vs-academia-oct-8-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Banks & Capex: Why Leadership Might Persist</h3>
-        <p>Credit momentum + benign asset quality with capex-linked flows keep banks in the lead. PSU vs Private scorecard, deposit-risk map, and positioning/exit rules for October.</p>
-        <a href="banks-capex-why-leadership-might-persist-oct-7-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Power & Utilities: Tariff Clarity vs Fuel Bottlenecks</h3>
-        <p>Firm demand and clearer tariffs vs coal logistics and receivables risk. PLFs & linkage table, three-city tariff snapshot, and a positioning map with hard exit triggers.</p>
-        <a href="power-utilities-tariff-clarity-vs-fuel-bottlenecks-oct-7-2025-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Nifty Heatmap: Sector Rotation Signals for October</h3>
-        <p>Where leadership is clustering across Banks and Capital Goods, what’s improving (Autos/Pharma/Power), what’s cooling (IT, frothy discretionary), and a rotation map with risk flags and exit rules.</p>
-        <a href="nifty-heatmap-sector-rotation-october-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Urban Company, Euro Pratik & SME Surges</h3>
-        <p>EOD pipeline view for mid-October: subscription tendencies, illustrative valuation bands, SME day-2 liquidity reality, and checklists for retail investors and anchors.</p>
-        <a href="ipo-pipeline-watch-urban-company-euro-pratik-sme-surges-oct-6-eod.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Sunday Brief: The Week Ahead — Markets, Policy & Data Playbook</h3>
-        <p>Your Monday-to-Friday field guide: macro signposts, sector triggers, positioning tilts, and ops checklists to start the week strong.</p>
-        <a href="sunday-brief-week-ahead-markets-policy-data-playbook.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h3>
-        <p>How cohorts, take rate, CM2, and LTV/CAC drive value—plus sensitivity tables, valuation bridges, and diligence asks for investors.</p>
-        <a href="urban-company-ipo-beyond-the-numbers-unit-economics-play.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Weekend Wrap: This Week in Indian Business — Tariffs, Tech, and Tax</h3>
-        <p>Tariff watch on components, AI/data-centre signals, steady tax inflows, and fuel/FX moves—plus operator playbooks and DIY charts.</p>
-        <a href="weekend-wrap-this-week-in-indian-business-tariffs-tech-tax.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Who Filed, Who Delayed — Week Ending Oct 4</h3>
-        <p>Fresh DRHP refreshes, observation letters for mid-caps, selective deferrals, SME day-2 liquidity reality, and checklists for retail and anchors.</p>
-        <a href="ipo-pipeline-watch-who-filed-who-delayed-week-ending-oct-4-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs & What Changes</h3>
-        <p>Who must post deposits, how much, cyber guardrails, cost math for solo advisers vs platforms, and timelines to comply.</p>
-        <a href="sebi-ra-ia-security-deposits-2025-hacks-costs-what-changes.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI Regulatory Sandbox 2025: Who’s Testing Now & How to Enter</h3>
-        <p>Current themes and example use-cases, eligibility matrix, a week-by-week application plan, and graduation paths for fintechs.</p>
-        <a href="rbi-regulatory-sandbox-2025-whos-testing-now-how-to-enter.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Brent + INR Sensitivity: Mapping OMC Margins & Fuel Bills</h3>
-        <p>Spot check on Brent and USD/INR with an illustrative OMC margin table, household fuel-bill planner, and near-term swing factors.</p>
-        <a href="brent-inr-sensitivity-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
-        <p>Draft contours on incentives, single-window approvals, and green-power rails—plus who benefits and a checklist for operators.</p>
-        <a href="national-data-centre-policy-2025-hyperscalers-vs-local-players.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI MPC: Hold at 5.5% — What Changed & How to Position</h3>
-        <p>Neutral stance, updated growth/inflation projections, liquidity cues, and sector playbooks for lenders, exporters, and OMCs.</p>
-        <a href="rbi-mpc-hold-5-5-what-changed-how-to-position.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>PMI September: 57.7 — Demand Cools, Prices Heat Up</h3>
-        <p>Factory momentum eases while input and output prices accelerate; sector exposures, policy angle, and operator checklist.</p>
-        <a href="pmi-september-57-7-demand-cools-prices-heat-up.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Nifty Heatmap: Sector Rotation Signals — Late September</h3>
-        <p>Where leadership is forming (and fading) across Nifty sectors—breadth, relative strength, and revision tells with positioning cues.</p>
-        <a href="nifty-heatmap-sector-rotation-signals-late-september.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Midcap Tracker: Revisions, Liquidity & Traps — EOM Check</h3>
-        <p>End-September view on India mid/smallcaps—earnings revisions, float/liquidity pockets, SME day-2 realities, and sizing & exit rules.</p>
-        <a href="midcap-tracker-revisions-liquidity-traps-eom-check.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Markets Morning Brief: India Macro Nowcast</h3>
-        <p>Snapshot of Nifty, USD/INR, Brent, and the 10-year into RBI week—sector cues, day-swing risks, and an editor note on intraday levels.</p>
-        <a href="markets-morning-brief-india-macro-nowcast.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch (EOD): Bands, Books & Buzz</h3>
-        <p>End-of-day wrap on fresh DRHPs, observation letters, SME windows, and a Tuesday AM checklist for anchors, float, and liquidity.</p>
-        <a href="ipo-pipeline-watch-eod-bands-books-buzz.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Week Ahead Playbook: RBI MPC, PMI, OPEC+, and US Jobs — India Lens</h3>
-        <p>Your Monday–Friday plan: RBI MPC (Sep 29–Oct 1), India PMI (Oct 1), US payrolls (Oct 3), and OPEC+ (Oct 5) with sector cues for banks, OMCs, IT, and cap goods.</p>
-        <a href="week-ahead-playbook-rbi-mpc-pmi-opec-us-jobs.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>October 1 Price Reset Watch: LPG & ATF — Impact & Prep</h3>
-        <p>ATF (1st & 16th) and LPG (1st) price resets—who’s most exposed, Brent–INR sensitivity, and a quick operator checklist for airlines, OMCs, hospitality, and logistics.</p>
-        <a href="october-1-price-reset-watch-lpg-atf-impact-prep.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Weekend Wrap: This Week in Indian Business — Tariffs, Tech, and Tax</h3>
-        <p>A crisp digest on trade duties, digital policy moves, tax clarifications, market rotation, and what to watch next week.</p>
-        <a href="weekend-wrap-tariffs-tech-tax.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Who Filed, Who Delayed</h3>
-        <p>This weekend’s snapshot of India’s IPO queue—new DRHPs, observation letters, schedule slips, subscription tells, and a two-week planner.</p>
-        <a href="ipo-pipeline-watch-who-filed-who-delayed.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h3>
-        <p>RAs/IAs can now use Liquid/Overnight MF units under lien to meet deposit norms. Slabs, lien setup steps, and cyber/ops hygiene to pass audits.</p>
-        <a href="sebi-august-ra-ia-deposits-hacks-costs-changes.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI Sandbox: Which Fintechs Are Testing Now?</h3>
-        <p>Theme-Neutral, On-Tap, and IoRS tracks explained—how to verify participants, pick the right route, and assemble an evidence pack that gets accepted.</p>
-        <a href="rbi-sandbox-which-fintechs-are-testing-now.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Brent + INR Sensitivity: Mapping OMC Margins & Fuel Bills</h3>
-        <p>With Brent ~USD 69/bbl and USD/INR ~88.7, a reusable heatmap shows where IOC/BPCL/HPCL marketing margins and pump-price risk land—plus what could move the matrix.</p>
-        <a href="brent-inr-sensitivity-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
-        <p>National Data Centre Policy 2025: Hyperscalers vs Local Players</p>
-        <a href="national-data-centre-policy-2025-hyperscalers-vs-local.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s Faster IPO Approvals & FPI Rules — What Changes for 2025</h3>
-        <p>Target ~3-month approvals, FY25 KPI disclosure standards, and cleaner FPI registers. Practical checklists for issuers, bankers, and investors.</p>
-        <a href="sebi-faster-ipo-approvals-fpi-rules-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Policy & Primary EOD — Sep 24, 2025</h3>
-        <p>End-of-day wrap: TLH transmission code, FPI ease for G-Sec-only investors, faster IPO-clock cues, and what to prep before tomorrow’s open.</p>
-        <a href="policy-primary-eod-2025-09-24.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Nifty Heatmap: Sector Rotation Signals for Rest of September</h3>
-        <p>Where leadership is clustering (banks, capital goods), what’s improving (autos, power, pharma), and what’s cooling (IT/discretionary). Rotation map, positioning cues, and exit rules.</p>
-        <a href="nifty-heatmap-sector-rotation-september-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>How to Size Positions by Liquidity</h3>
-        <p>A 3-day exit framework using ADV, free float, volatility and event risk—plus a simple sizing formula and desk checklist to avoid slippage shocks.</p>
-        <a href="how-to-size-positions-by-liquidity.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Urban Company, Euro Pratik & SME Surges</h3>
-        <p>Five names to watch, subscription patterns across QIB/HNI/retail, and valuation read-throughs heading into late September.</p>
-        <a href="ipo-pipeline-watch-urban-company-euro-pratik-sme-surges.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Primary Market EOD: DRHP/RHP & Listings — Sep 22, 2025</h3>
-        <p>End-of-day wrap: what closed today across filings, observations, anchors, and listings—and what rolls into tomorrow’s trade.</p>
-        <a href="primary-market-eod-drhp-rhp-listings-2025-09-22.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Consumer & Retail Pulse: Festive Inventory, Pricing & Footfalls</h3>
-        <p>Durables, apparel, FMCG and e-com pre-festive check—inventory health, discount ladders, returns risk, and operator/investor playbooks for next week.</p>
-        <a href="consumer-retail-pulse-festive-inventory-pricing-footfalls.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tech & Infrastructure: Data Centers, Semis, and Power</h3>
-        <p>Where capacity is landing across DCs and semis, the green-power puzzle, grid bottlenecks, and phased-capex strategies to de-risk execution.</p>
-        <a href="tech-infrastructure-data-centers-semis-power.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>This Week in Indian Business: Tariffs, Tech, and Tax</h3>
-        <p>Tariff shifts, AI/data policy nudges, and tax enforcement trends—who’s exposed, what to track next week, and operator/investor playbooks.</p>
-        <a href="weekend-wrap-tariffs-tech-tax.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Who Filed, Who Delayed</h3>
-        <p>Fresh DRHP/RHP activity, observation letters, SME calendar, anchor dynamics, and valuation read-across for the next two weeks.</p>
-        <a href="ipo-pipeline-watch-who-filed-who-delayed.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h3>
-        <p>What SEBI’s deposit/guarantee norms mean for Research Analysts & Investment Advisers—cost math (FD vs BG), timelines, audit checklists, and practical compliance playbooks.</p>
-        <a href="sebi-august-ra-ia-deposits-hacks-costs-what-changes.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI Sandbox: Which Fintechs Are Testing Now?</h3>
-        <p>How cohorts run, what archetypes are live, the metrics that pass, and playbooks for startups, banks/NBFCs, and investors—plus a weekly circulars scaffold.</p>
-        <a href="rbi-sandbox-which-fintechs-are-testing-now.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Brent + INR Sensitivity: Mapping OMC Margins & Fuel Bills</h3>
-        <p>Two variables drive the pump: crude and currency. Sensitivity tables for pump prices and OMC margins, pass-through math, and a monthly household fuel-bill planner.</p>
-        <a href="brent-inr-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
-        <p>Incentives, power access, and sustainability targets will decide who scales. Capability matrix, procurement/localization levers, regional hub map, and operator/investor playbooks.</p>
-        <a href="national-data-centre-policy-2025-hyperscalers-vs-local.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Urban Company IPO: The Unit Economics Play — Beyond the Numbers</h3>
-        <p>Cohorts, density and partner earnings—not GMV—drive value. Payback ladders, CM2, and category-by-category LTV/CAC for investors.</p>
-        <a href="urban-company-ipo-unit-economics-play.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IndiaAI GPU Pool: Who Gets Compute Slots — Startups vs Academia?</h3>
-        <p>A fair-share blueprint for scarce public GPUs: hybrid allocation models, scoring rubric, SLOs, caps, and practical playbooks for labs and founders.</p>
-        <a href="indiaai-gpu-pool-allocation-startups-vs-academia.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s Faster IPO Approvals & FPI Rules — What Changes for 2025</h3>
-        <p>Accelerated timelines, sharper disclosures, and tougher FPI checks—issuer, banker, and investor playbooks with practical checklists.</p>
-        <a href="sebi-faster-ipo-approvals-fpi-rules-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>India’s Infra Push: InvITs, EPC Awards & Where the Orders Are</h3>
-        <p>InvIT flywheel systems, EPC award cadence, yield vs growth positioning, and risk flags across roads, power, logistics, and data centres.</p>
-        <a href="india-infra-invits-epc-awards-where-the-orders-are.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Week Ahead: CPI/WPI, Rupee & Crude — Setup for RBI MPC</h3>
-        <p>Inflation prints, USD/INR range, Brent watch, flows, and an MPC scenario tree with trader/PM playbooks.</p>
-        <a href="week-ahead-cpi-wpi-rupee-crude-rbi-mpc.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Nifty Heatmap: Sector Rotation Signals for September</h3>
-        <p>Leadership in banks/industrials, improving autos/pharma, cooling IT/discretionary—screens, guardrails, and quick charts.</p>
-        <a href="nifty-heatmap-sector-rotation-september-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Pipeline Watch: Urban Company, Euro Pratik & SME Surges</h3>
-        <p>Who’s filing/open, bands & issue sizes, SME oversubscription—signals to track for the next 2 weeks.</p>
-        <a href="weekend-wrap-ipo-pipeline-sep-14-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>This Week in Indian Markets: Macro, IPOs & Regulation</h3>
-        <p>CPI/WPI watch, INR ~83, Brent ~$79, FII net +₹4,200 cr; SEBI fast-track & InvIT chatter.</p>
-        <a href="weekend-wrap-markets-macro-ipo-regulation-sep-14-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Classrooms Go Geopolitical: Why Indian B-Schools Are Adding It Now</h3>
-        <p>Core/elective shift: sanctions, supply chains, AI/data—live sims, risk quant, and who benefits.</p>
-        <a href="geopolitics-bschools-mba-curriculum.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Rajdhani to Aizawl: Sairang–Delhi Launch — Route, Frequency, Run Time</h3>
-        <p>Weekly via Guwahati (~42h). First new Rajdhani in 6 years—traveller tips and Phase-2 to watch.</p>
-        <a href="sairang-delhi-rajdhani-launch.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Delhi’s ₹3,000-cr Package: Drainage, Water, Health, Roads — What’s Launching</h3>
-        <p>Sep 17–Oct 2 rollouts: drainage master plan, Okhla STP, Nand Nagri flyover, 101 Ayushman centres, 38 MRI & 150 dialysis units.</p>
-        <a href="delhi-3000cr-package-seva-pakhwada.htmll" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Big Billion Days 2025: Dates, Biggest Deals & a Smart Shopper’s Playbook</h3>
-        <p>Starts Sep 23: iPhone 16, Pixel 9, Galaxy S24. How to stack bank + exchange + UPI/EMI for the lowest net price.</p>
-        <a href="big-billion-days-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>India’s 1-GW DC Race: Who Builds, Who Buys Compute?</h3>
-        <p>Who’s building (AdaniConneX, Equinix, Nxtra), who buys (hyperscalers/AI), city odds (Vizag/Chennai/NCR).</p>
-        <a href="india-data-centre-1gw-race.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>National DC Policy 2025: 6 Metrics to Track</h3>
-        <p>Single-window clearances, firm RE PPAs, ESMA status, NBC code, CLS/ROW timelines.</p>
-        <a href="national-dc-policy-what-to-track.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Urban Company IPO: Dates, Price Band, Financials — Should You Apply?</h3>
-        <p>Sep 10–12 window, ₹98–₹103 band, ₹1,900 cr issue (₹472 cr fresh + ₹1,428 cr OFS)</p>
-        <a href="urban-company-ipo.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Vande Bharat Sleeper: Delhi–Patna First — Value vs Rajdhani</h3>
-        <p>Timings (~11.5h), fare bands vs Rajdhani (+10–15%), berth math, route & halts</p>
-        <a href="vande-bharat-sleeper-delhi-patna" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>UPI from Sep 15: ₹5L/Txn, ₹10L/Day — Categories, App Support & Guardrails</h3>
-        <p>Verified-category P2M only: eligible MCCs, app-by-app day-1 readiness, bank sub-limits, and fraud guardrails—plus a copy-paste checklist.</p>
-        <a href="upi-limits-sep15-5l-10l.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s New Intraday Caps (Oct 1): Index Behavior, Broker Risk Engines & IV Structure</h3>
-        <p>Entity-level caps of ₹5,000cr net and ₹10,000cr gross/side with random snapshots; how brokers throttle risk - what it means for expiry-day flow and implied vols.</p>
-        <a href="sebi-intraday-caps-oct1-index.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Rupee @ Record Low: Imports, EMIs, Holidays — A Quick Hedging Playbook</h3>
-        <p>What INR weakness means for travel, tuition, SaaS & electronics—plus do-now moves and simple SME forward-ladder hedges.</p>
-        <a href="rupee-record-low-hedging-playbook-2.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>GST 2.0 from Sep 22: Two-Slab Regime — What Changes & Merchant Checklist</h3>
-        <p>Two main slabs (5% & 18%) with 40% on sin/luxury; what shifts where, and a POS/ERP, invoicing & ITC readiness checklist.</p>
-        <a href="gst-2-0-two-slab-sep22.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IndiaAI Compute: Who Gets the Next 3.8k GPUs? Onboarding, Quotas & Hurdles</h3>
-        <p>Startup/academia onboarding flow, quotas & subsidies, power/cooling/data hurdles—and a copy-paste apply checklist.</p>
-        <a href="indiaai-compute-next-3-8k-gpus.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>NISAR After Launch: Weekly Radar Eyes for Farm, Floods & Faults</h3>
-        <p>Dual-band SAR for crop insurance, floods/landslides, groundwater & city planning—with quick links to early products.</p>
-        <a href="nisar-weekly-radar-farm-floods-faults.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Starlink in India: Pricing Reality vs Rural Promise</h3>
-        <p>Licence + IN-SPACe greenlight decoded—first coverage, kit/monthly scenarios, and how it stacks up to Jio/Airtel FWA.</p>
-        <a href="starlink-india-pricing-reality.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Dholera Fab, From PPT to Pipes: India’s First Chip Fab Supply-Chain Map</h3>
-        <p>Groundworks, tool/chem suppliers, Assam OSAT linkage, hiring bar, and realistic tape-out timelines.</p>
-        <a href="dholera-fab-supply-chain-map.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>GST 2-Slab Reset (5%/18% + 40% Sin): Winners/Losers & Pass-Through Cheat Sheet</h3>
-        <p>FMCG, autos/EVs, insurance: who benefits, who doesn’t—and how much of the tax cut actually reaches prices.</p>
-        <a href="gst-2-slab-reset-winners-losers.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Rupee @ 88 Handle: Import Bill Reality & Hedging Playbook</h3>
-        <p>USD spends, holiday budgets, EMIs: plan if USD/INR stays 87–90—quick tables and a practical hedge plan.</p>
-        <a href="rupee-88-handle-hedging-playbook.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Credit on UPI Goes Live(ish): Small-Ticket Credit, Risk Knobs & Who Wins First</h3>
-        <p>Pre-sanctioned bank credit lines via UPI: how it works, KYC/consents, risk controls, and early winners.</p>
-        <a href="credit-on-upi-goes-live.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Inflation Trackers: CPI (Sep 12) & WPI (Sep 15) — What Base Effects Hide</h3>
-        <p>Release watchlist, base-effect cheats, and quick scenarios.</p>
-        <a href="inflation-trackers-cpi-wpi.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Apple’s India Manufacturing Push (iPhone 17 Cycle): Suppliers, Jobs, and the Real Value-Chain</h3>
-        <p>Who assembles, who machines the enclosures, who supplies optics—and what it means for jobs & exports.</p>
-        <a href="apple-iphone17-india-suppliers.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Semicon Watch: Where Tata’s Dholera Fab & Micron Sanand Are Now</h3>
-        <p>Milestones, hiring timelines, and how Gujarat’s chip corridor is shaping up.</p>
-        <a href="semicon-watch-dholera-micron.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tariff Heat Check: Sector Winners/Losers from US Tariff Hike</h3>
-        <p>Textiles, engineering, IT services: who’s most vulnerable—and how to hedge.</p>
-        <a href="tariff-heatcheck-us.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Brent + Weak INR: OMC Margins & Your Fuel Bill</h3>
-        <p>Scenario bands & sensitivities: how crude × FX squeezes OMC margins—and what it means at the pump.</p>
-        <a href="brent-inr-omc-margins.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Rupee @ Record Low: What It Means for Imports, EMIs, and Holidays</h3>
-        <p>Record-low INR makes imports, gold, and USD-billed services costlier.</p>
-        <a href="rupee-record-low-hedging-playbook.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>GDP 7.8% in Q1 FY26: Real vs Nominal Story — why markets shrugged</h3>
-        <p>Real 7.8% vs nominal 8.8% (soft deflator); services led, mining/utilities lagged.</p>
-        <a href="gdp-q1-fy26-real-vs-nominal.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Gold & Silver at New Highs — Buy Smart Before the Festive Rush</h3>
-        <p>Pre-festive buying checklist, budget bands, and how to lock-in rates.</p>
-        <a href="gold-silver-festive-buying-checklist.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IPO Radar: What’s Opening in the Next 7–14 Days</h3>
-        <p>Dates, price bands, quick blurbs — plus a simple 5-point ‘Should I apply?’ test (no P/E maths).</p>
-        <a href="ipo-radar-next-14-days.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s Digital Accessibility Deadline: What Brokers/AMCs Should File by Sep 30</h3>
-        <p>Quick compliance checklist, budgets, vendors, and penalties—plus template wording.</p>
-        <a href="sebi-digital-accessibility-compliance-sep30.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Small Caps: Flow Frenzy vs. Liquidity Reality</h3>
-        <p>Track retail SIPs, premium vs. history, regulatory tone, and risk signals to watch.</p>
-        <a href="small-caps-heatcheck.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Q1 FY26 GDP Beat: What Drove It—And Where It Shows Up in Earnings</h3>
-        <p>Investment vs. consumption, sector standouts, and how this resets Oct–Dec expectations.</p>
-        <a href="gdp-q1-fy26-one-pager.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI Sep 29–Oct 1: Cut Path vs. Inflation Path</h3>
-        <p>Plan the runway into Q3: growth surprise vs. core disinflation; STCI, PSU bank, and duration implications.</p>
-        <a href="rbi-mpc-sep-preview.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Street Read: Tariff Spills to Bank Credit — Delinquencies & Working-Capital Lines</h3>
-        <p>Export-MSME stress watch: SMA creep, receivable slippages, and WC limit tightening—what banks/NBFCs are adjusting now.</p>
-        <a href="street-read-tariff-spills-bank-credit.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tariff D-Day, Day-2/3: Who Blinked on Pricing?</h3>
-        <p>Track exporter re-quotes after the 50% U.S. duty went live on Aug 27; map HS-code hit-list and re-routing chatter.</p>
-        <a href="tariff-d-day-day-2-3-who-blinked-on-pricing.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tariff D-Day, Day-2: Who Blinked?</h3>
-        <p>Export desks re-price after the 50% U.S. tariff went live on Aug 27—map HS codes, track carve-out chatter, and watch RBI ops.</p>
-        <a href="tariff-d-day-day-2-who-blinked.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Weekly Expiry Shuffle Goes Live Sep 1 — NSE Tuesdays, BSE Thursdays</h3>
-        <p>Flow migration, market-maker risk (Greeks & funding), and the broker ops checklist to ship before Monday.</p>
-        <a href="weekly-expiry-shuffle-sep-1-nse-tuesdays-bse-thursdays.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Q1 FY26 GDP on Aug 29 — Growth Watch & Tariff Shock Channels</h3>
-        <p>Preview the print (Reuters poll, consensus 6.7%); track MoSPI calendar; build a nowcast dashboard for capex/services.</p>
-        <a href="q1-fy26-gdp-aug-29-preview-nowcast-tariff-channels.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tariff D-Day, Day-1: Stocks, Rupee & Exporters After 50% U.S. Duty Kicks In</h3>
-        <p>What moved at the open, which HS codes hurt first, and RBI liquidity watch.</p>
-        <a href="tariff-day-1-stocks-rupee-exporters-50-us-duty.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Tariff D-Day: 50% U.S. Duty from Aug 27 — CFO Survival Kit</h3>
-        <p>Sectors at risk, carve-outs to watch, rupee/curve checklist, and what RBI’s “ready to act” line means for liquidity.</p>
-        <a href="tariff-d-day-us-50-duty-cfo-survival-kit.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Resident Indians in FPIs + SWAGAT-FI: Opening the Foreign Window</h3>
-        <p>How RI participation and a single-window for “trusted” FPIs/FVCIs could change flows—especially via GIFT City/IFSC schemes.</p>
-        <a href="resident-indians-in-fpis-swagat-fi-opening-foreign-window.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Dream11 x BCCI: Jersey Deal on the Chopping Block After Online Gaming Law</h3>
-        <p>Dream11’s ₹358 cr jersey deal with BCCI is ending after India’s new Online Gaming law banned real-money games and their advertising.</p>
-        <a href="dream11-bcci-jersey-deal-online-gaming-law-compliance.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI @ FIBAC: “Frontiers of Growth” → What This Signals for Liquidity, Tariffs & Cuts</h3>
-        <p>At FIBAC 2025 in Mumbai, RBI’s Governor framed a ‘frontiers of growth’ stance—supporting liquidity while watching tariff risks.</p>
-        <a href="rbi-fibac-frontiers-of-growth-liquidity-tariffs-cuts.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>IA/RA Compliance Hack — Deposits via Liquid/Overnight MFs: Cashflow Relief, Risks & How-To</h3>
-        <p>SEBI lets RA/IA deposits sit in liquid/overnight MFs—cashflow relief, risks, and a practical how-to.</p>
-        <a href="ia-ra-deposit-liquid-overnight-mf-how-to.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>T+0 (Optional) & Pledge Extension: Two-Speed Retail Should Navigate</h3>
-        <p>Same-day pledge/withdrawal basics, collateral haircuts, broker ops, and how funding costs shift for small investors.</p>
-        <a href="t0-optional-margin-pledge-extension-retail-two-speed.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Closing Auction Comes to Dalal Street: How SEBI’s CAS Would Set the Close</h3>
-        <p>SEBI proposes a closing auction for derivative stocks—phases, price bands, and who gains (ETFs, active funds, retail).</p>
-        <a href="closing-auction-cas-explainer.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Block Deals 2.0: ₹25 Cr Minimum, Tighter Bands & Full Delivery</h3>
-        <p>New ₹25 cr floor, delivery-only settlement, and tighter pricing bands—what changes for promoters, PEs, and long-onlys.</p>
-        <a href="block-deals-2-0-explainer.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>RBI’s 4% Target Review: Bonds, EMIs & Savers</h3>
-        <p>RBI’s framework review—what keeping or tweaking 4% means for yields, EMIs & savers; scenarios and rules-of-thumb.</p>
-        <a href="rbi-4-percent-target-review-bonds-emis-savers.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Starlink + Aadhaar eKYC: Onboarding, Reach & Pricing Reality</h3>
-        <p>UIDAI onboarded Starlink for Aadhaar auth/eKYC—onboarding flows, rural reach, and pricing/latency trade-offs.</p>
-        <a href="starlink-aadhaar-ekyc-onboarding-india.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>NSE Moves Expiry to Tuesday: Hedging & Liquidity 101</h3>
-        <p>All NSE index & stock derivatives move from Thursday to Tuesday from Sep ’25—cut-over, instruments.</p>
-        <a href="nse-expiry-shift-to-tuesday.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI Signals Longer Derivative Tenures: Winners, Losers & Liquidity</h3>
-        <p>Policy signal to extend derivative tenures—implications for retail outcomes, broker/exchange P&L, and market depth.</p>
-        <a href="sebi-longer-derivative-tenures-winners-liquidity.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Crude Near $63: OMC Margins & India’s CAD Track</h3>
-        <p>Softer crude, steady pump prices—OMC headroom, ₹/L sensitivities, and CAD scenarios.</p>
-        <a href="oil-63-omc-cad-track.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>FASTag Annual Pass: ₹3,000 Highway Plan — Savings & Reality</h3>
-        <p>Eligibility, activation, 200-crossing cap, and break-even math for real routes.</p>
-        <a href="fastag-annual-pass-2025-logistics.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>GST Slab Reset: Demand Pulse & Sector Winners</h3>
-        <p>Two-slab talk meets fiscal math—how cuts flow through prices, margins, and volumes.</p>
-        <a href="gst-slab-reset-demand-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Peak Power Is Changing: SECI Hybrid & BESS Tariffs</h3>
-        <p>Storage-backed hybrids are repricing the evening peak—contracts, tariffs, and winners.</p>
-        <a href="seci-hybrid-bess-tariffs-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>ONDC 2.0: Profit Pools, Not Pilots</h3>
-        <p>Settlement, catalog standards, logistics arbitrage—and who actually makes money.</p>
-        <a href="ondc_profit_pools_not_pilots.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SM REITs: Fractional Real Estate, Regulated</h3>
-        <p>Ticket sizes, yield math, fees, liquidity, and risk.</p>
-        <a href="sm_reits_fractional_real_estate.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>4 New Chip Projects Cleared: India’s 10-Project Pipeline, Real Timelines</h3>
-        <p>Cabinet cleared four more units—here’s the fab vs. OSAT mix, locations, and realistic ramps.</p>
-        <a href="semiconductor-10-project-pipeline-aug-2025.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>SEBI’s August Updates: What RA/IA Changes Mean for Fin-Creators & Finfluencers</h3>
-        <p>Compliance deltas, copy-ready disclosure blocks, and monetisation guardrails you can use now.</p>
-        <a href="sebi-aug-2025-updates-for-creators-ra-ia.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>AI & Semiconductors: India’s Bid for the Next Compute Wave</h3>
-        <p>Why India is pivoting from broad fab dreams to AI-specific silicon — and where the real margins will be made.</p>
-        <a href="ai_semi_conductors_computer_wave.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Notion for Operating Manuals</h3>
-        <p>Docs, wikis, and project tracking in one flexible workspace.</p>
-        <a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer">Start with Notion →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>India’s Carbon Credit Market: The Next Commodities Play?</h3>
-        <p>How pricing, regulation, and corporate demand could turn India into a major carbon credit exporter.</p>
-        <a href="carbon_credit_commodities.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>India’s AI Chip Play: From Import Reliance to Indigenous Silicon</h3>
-        <p>From fabless startups to foundry dreams, India is building an AI chip ecosystem to cut import dependence.</p>
-        <a href="india_ai_chip_play.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Private Credit in India: The $100B Shadow Banking Wave</h3>
-        <p>As banks pull back, private lenders are filling the gap—but the opacity raises systemic risk questions.</p>
-        <a href="private_credit_india.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Credit on UPI: Rails, Risk, and Rupees — A Merchant-First Explainer</h3>
-        <p>Pay-by-credit on UPI is moving from pilots to prime time. Here’s how economics shift for issuers, merchants, and PSPs.</p>
-        <a href="credit-on-upi-merchant-first.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>India’s Battery Storage Playbook: From 4-Hour Peakers to Round-the-Clock Renewables</h3>
-        <p>BESS is shifting from pilots to procurement. Here’s a practical guide to costs, contracts, and use-cases that actually clear.</p>
-        <a href="india-battery-storage-playbook.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Semiconductor Push: From Fab Dreams to Fab Reality</h3>
-        <p>Policy incentives and supply-chain shifts are giving India’s chip ambitions a fresh shot.</p>
-        <a href="india_semiconductor_push.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>EV Supply Chain: Securing Batteries, Chips, and Charging Infrastructure</h3>
-        <p>Three gigafactories are under construction, each with distinct chemistries—LFP.</p>
-        <a href="india_ev_supply_chain.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-    
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Steel: Hydrogen, Scrap, Smarter Energy</h3>
-        <p>Expanding EAF capacity can deliver faster emission reductions when paired with clean power.</p>
-        <a href="steel-energy-mix.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Quantum Bet: Building Capacity for Next-Gen Compute</h3>
-        <p>Cyber policy teams are planning for a “harvest now, decrypt later” world.</p>
-        <a href="quantum-next-gen-compute.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-    
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Angel Tax Fallout: Cleantech Feels the Chill</h3>
-        <p>India’s cleantech sector has been basking in attention.</p>
-        <a href="atf.html" class="read-more-btn">Read Now</a>
-      </div>
-    </div>
-
-    <div class="sponsored-card">
-      <div class="card-text">
-        <span class="tag">Sponsored</span>
-        <h3>Hire Developers Fast</h3>
-        <p>Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
-        <a href="https://www.turing.com" target="_blank" rel="noopener noreferrer">Get Talent →</a>
-      </div>
-    </div>
-
-    <div class="article-card">
-      <div class="card-text">
-        <h3>Snapdeal Is Back?</h3>
-        <p>A name that once dominated early Indian e-commerce headlines is quietly trying to re-enter the game.</p>
-        <a href="snp.html" class="read-more-btn">Read Now</a>
+<body class="min-h-full">
+
+  <!-- ===== Top Ticker (with fades/highlights) ===== -->
+  <div class="w-full bg-[var(--brand-ink)] text-white">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+      <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
+        <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
+      </span>
+      <div class="ticker-rail flex-1" aria-label="Top market headlines" aria-live="polite">
+        <!-- instant placeholders; hydrated after load -->
+        <div id="topTicker" class="ticker ticker-right text-sm font-medium">
+          <span>Sensex ▲</span><span>NIFTY50 ▲</span><span>Brent Crude ▼</span><span>USD/INR ↔</span><span>Gold (MCX) ▲</span><span>India VIX ▼</span>
+        </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
-  <footer>
-    &copy; <span id="year"></span> bataSutra. All rights reserved.
+  <!-- ===== Header (exact) ===== -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+        </div>
+      </a>
+      <nav class="hidden sm:flex items-center gap-5 text-sm text-slate-600">
+        <a class="hover:text-[var(--brand-ink)]" href="/#indices">Markets</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#heatmap">Heatmap</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#commodities">Commodities</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/tools">Tools</a>
+        <a class="hover:text-[var(--brand-ink)]" href="/#articles" aria-current="page">Articles</a>
+      </nav>
+      <div class="hidden sm:flex items-center gap-2">
+        <a href="/#subscribe" class="btn btn-primary">Subscribe</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== Hero ===== -->
+  <section class="border-b bg-white">
+    <div class="container py-8 md:py-12">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        <div class="max-w-2xl">
+          <div class="kicker mb-2">Editorial</div>
+          <h1 class="text-3xl md:text-4xl font-extrabold tracking-tight">All Articles</h1>
+          <p class="mt-3 text-slate-600 text-lg">Latest analysis on markets, policy, tech, infra, and primary—curated and continuously updated.</p>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <span class="pill">Markets</span><span class="pill">Policy</span><span class="pill">Primary</span><span class="pill">Tech</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 shrink-0">
+          <a href="/tools" class="btn btn-ghost">Browse Tools</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Body ===== -->
+  <main class="container py-8">
+    <div class="grid grid-cols-1 gap-4">
+      <!-- ===== BEGIN FULL LIST ===== -->
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Morning Markets Pulse: Nifty Setup, Rotation &amp; Flows</h3>
+        <p class="text-slate-600 mt-1">Pre-open five-liner, first-90-minute execution rules, rotation map, breadth markers, and sizing guardrails for Tuesday (Oct 14).</p>
+        <div class="mt-3"><a href="morning-markets-pulse-nifty-setup-rotation-flows-oct-14-2025-am.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Closing Bell: Market Wrap — Leaders, Laggards &amp; What Carries to Tomorrow</h3>
+        <p class="text-slate-600 mt-1">Session in five lines, leaders/laggards, breadth &amp; flows read, sector rotation snapshot, and a Wednesday watchlist with risk controls.</p>
+        <div class="mt-3"><a href="closing-bell-market-wrap-leaders-laggards-carry-to-tomorrow-oct-14-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Morning Markets Pulse: Nifty Setup, Rotation &amp; Flows</h3>
+        <p class="text-slate-600 mt-1">Pre-open five-liner, first-90-minute execution rules, rotation map, breadth markers, and sizing guardrails for Oct 13.</p>
+        <div class="mt-3"><a href="morning-markets-pulse-nifty-setup-rotation-flows-oct-13-2025-am.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h3>
+        <p class="text-slate-600 mt-1">Take-rate realities, cohort durability, CM2 bridge, sensitivity table, and anchor/retail checklists in a roadshow-ready breakdown.</p>
+        <div class="mt-3"><a href="urban-company-ipo-unit-economics-play-oct-13-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Week Ahead: Markets &amp; Macro — Earnings, Flows, Rotation</h3>
+        <p class="text-slate-600 mt-1">Five-line brief, sector rotation map, flows/positioning, risk controls, and an Oct 13–17 indicative calendar to set rules before Monday.</p>
+        <div class="mt-3"><a href="week-ahead-markets-macro-earnings-flows-rotation-oct-12-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Household Money Sunday: Fuel, EMI &amp; Travel — Lock It Before Monday</h3>
+        <p class="text-slate-600 mt-1">City fuel bands, car-cost math, EMI sensitivity, airfare timing and hotel hacks, plus a weekly checklist for families and small businesses.</p>
+        <div class="mt-3"><a href="household-money-sunday-fuel-emi-travel-lock-before-monday-oct-12-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Weekend Wrap: This Week in Indian Business — Tariffs, Tech &amp; Tax</h3>
+        <p class="text-slate-600 mt-1">Five-line brief on macro, trade, tech/infra and tax signals; tariff clarity for components, stable fuel bands, and operator playbooks for enterprises and households heading into Monday.</p>
+        <div class="mt-3"><a href="weekend-wrap-this-week-in-indian-business-tariffs-tech-tax-oct-11-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Who Filed, Who Delayed</h3>
+        <p class="text-slate-600 mt-1">Filed/observations/paused snapshot with SME day-2 reality. Includes illustrative issuer tables, anchor/retail checklists, and a two-week indicative calendar.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-who-filed-who-delayed-weekly-oct-11-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs &amp; What Changes</h3>
+        <p class="text-slate-600 mt-1">Who’s impacted, how to fund the deposit without killing cash flow, the minimum viable cyber stack, and rollout steps with illustrative carry-cost math.</p>
+        <div class="mt-3"><a href="sebi-ra-ia-security-deposits-2025-hacks-costs-what-changes-oct-10-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI Regulatory Sandbox 2025: Who’s Testing Now &amp; How to Enter</h3>
+        <p class="text-slate-600 mt-1">Clean snapshot of themes, selection rates, and timelines—plus an eligibility matrix, a four-week application plan, and graduation metrics your team can target.</p>
+        <div class="mt-3"><a href="rbi-regulatory-sandbox-2025-whos-testing-now-how-to-enter-oct-10-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Brent + INR Sensitivity: OMC Margins &amp; Your Fuel Bill</h3>
+        <p class="text-slate-600 mt-1">Mid-$60s Brent and a range-bound INR keep retail bands steady, but a $5/bbl or ₹1/USD swing can shift OMC margins fast. Includes margin table, city price bands, and household/fleet planners.</p>
+        <div class="mt-3"><a href="brent-inr-sensitivity-omc-margins-fuel-bill-oct-9-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
+        <p class="text-slate-600 mt-1">Single-window approvals, open-access RE, and siting norms reshape build timelines. Who wins what, illustrative cost models, and checklists for site, power, and compliance decisions.</p>
+        <div class="mt-3"><a href="national-data-centre-policy-2025-hyperscalers-vs-local-oct-9-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s Faster IPO Approvals &amp; FPI Hygiene — 2025 Playbook</h3>
+        <p class="text-slate-600 mt-1">Shorter, predictable review cycles if filings are data-tight; deeper unit-economics and governance disclosures; BO clarity for cleaner anchor books—plus issuer/banker/investor checklists.</p>
+        <div class="mt-3"><a href="sebi-faster-ipo-approvals-fpi-hygiene-2025-playbook-oct-8-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IndiaAI GPU Pool: Who Gets Compute — Startups vs Academia?</h3>
+        <p class="text-slate-600 mt-1">Allocation principles, illustrative capacity slices, eligibility matrices, and readiness checklists for data, model, and ops—so you can maximize your odds of a GPU slot.</p>
+        <div class="mt-3"><a href="indiaai-gpu-pool-who-gets-compute-startups-vs-academia-oct-8-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Banks &amp; Capex: Why Leadership Might Persist</h3>
+        <p class="text-slate-600 mt-1">Credit momentum + benign asset quality with capex-linked flows keep banks in the lead. PSU vs Private scorecard, deposit-risk map, and positioning/exit rules for October.</p>
+        <div class="mt-3"><a href="banks-capex-why-leadership-might-persist-oct-7-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Power &amp; Utilities: Tariff Clarity vs Fuel Bottlenecks</h3>
+        <p class="text-slate-600 mt-1">Firm demand and clearer tariffs vs coal logistics and receivables risk. PLFs &amp; linkage table, three-city tariff snapshot, and a positioning map with hard exit triggers.</p>
+        <div class="mt-3"><a href="power-utilities-tariff-clarity-vs-fuel-bottlenecks-oct-7-2025-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Nifty Heatmap: Sector Rotation Signals for October</h3>
+        <p class="text-slate-600 mt-1">Where leadership is clustering across Banks and Capital Goods, what’s improving (Autos/Pharma/Power), what’s cooling (IT, frothy discretionary), and a rotation map with risk flags and exit rules.</p>
+        <div class="mt-3"><a href="nifty-heatmap-sector-rotation-october-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Urban Company, Euro Pratik &amp; SME Surges</h3>
+        <p class="text-slate-600 mt-1">EOD pipeline view for mid-October: subscription tendencies, illustrative valuation bands, SME day-2 liquidity reality, and checklists for retail investors and anchors.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-urban-company-euro-pratik-sme-surges-oct-6-eod.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Sunday Brief: The Week Ahead — Markets, Policy &amp; Data Playbook</h3>
+        <p class="text-slate-600 mt-1">Your Monday-to-Friday field guide: macro signposts, sector triggers, positioning tilts, and ops checklists to start the week strong.</p>
+        <div class="mt-3"><a href="sunday-brief-week-ahead-markets-policy-data-playbook.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h3>
+        <p class="text-slate-600 mt-1">How cohorts, take rate, CM2, and LTV/CAC drive value—plus sensitivity tables, valuation bridges, and diligence asks for investors.</p>
+        <div class="mt-3"><a href="urban-company-ipo-beyond-the-numbers-unit-economics-play.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Weekend Wrap: This Week in Indian Business — Tariffs, Tech, and Tax</h3>
+        <p class="text-slate-600 mt-1">Tariff watch on components, AI/data-centre signals, steady tax inflows, and fuel/FX moves—plus operator playbooks and DIY charts.</p>
+        <div class="mt-3"><a href="weekend-wrap-this-week-in-indian-business-tariffs-tech-tax.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Who Filed, Who Delayed — Week Ending Oct 4</h3>
+        <p class="text-slate-600 mt-1">Fresh DRHP refreshes, observation letters for mid-caps, selective deferrals, SME day-2 liquidity reality, and checklists for retail and anchors.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-who-filed-who-delayed-week-ending-oct-4-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs &amp; What Changes</h3>
+        <p class="text-slate-600 mt-1">Who must post deposits, how much, cyber guardrails, cost math for solo advisers vs platforms, and timelines to comply.</p>
+        <div class="mt-3"><a href="sebi-ra-ia-security-deposits-2025-hacks-costs-what-changes.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI Regulatory Sandbox 2025: Who’s Testing Now &amp; How to Enter</h3>
+        <p class="text-slate-600 mt-1">Current themes and example use-cases, eligibility matrix, a week-by-week application plan, and graduation paths for fintechs.</p>
+        <div class="mt-3"><a href="rbi-regulatory-sandbox-2025-whos-testing-now-how-to-enter.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Brent + INR Sensitivity: Mapping OMC Margins &amp; Fuel Bills</h3>
+        <p class="text-slate-600 mt-1">Spot check on Brent and USD/INR with an illustrative OMC margin table, household fuel-bill planner, and near-term swing factors.</p>
+        <div class="mt-3"><a href="brent-inr-sensitivity-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
+        <p class="text-slate-600 mt-1">Draft contours on incentives, single-window approvals, and green-power rails—plus who benefits and a checklist for operators.</p>
+        <div class="mt-3"><a href="national-data-centre-policy-2025-hyperscalers-vs-local-players.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI MPC: Hold at 5.5% — What Changed &amp; How to Position</h3>
+        <p class="text-slate-600 mt-1">Neutral stance, updated growth/inflation projections, liquidity cues, and sector playbooks for lenders, exporters, and OMCs.</p>
+        <div class="mt-3"><a href="rbi-mpc-hold-5-5-what-changed-how-to-position.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">PMI September: 57.7 — Demand Cools, Prices Heat Up</h3>
+        <p class="text-slate-600 mt-1">Factory momentum eases while input and output prices accelerate; sector exposures, policy angle, and operator checklist.</p>
+        <div class="mt-3"><a href="pmi-september-57-7-demand-cools-prices-heat-up.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Nifty Heatmap: Sector Rotation Signals — Late September</h3>
+        <p class="text-slate-600 mt-1">Where leadership is forming (and fading) across Nifty sectors—breadth, relative strength, and revision tells with positioning cues.</p>
+        <div class="mt-3"><a href="nifty-heatmap-sector-rotation-signals-late-september.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Midcap Tracker: Revisions, Liquidity &amp; Traps — EOM Check</h3>
+        <p class="text-slate-600 mt-1">End-September view on India mid/smallcaps—earnings revisions, float/liquidity pockets, SME day-2 realities, and sizing &amp; exit rules.</p>
+        <div class="mt-3"><a href="midcap-tracker-revisions-liquidity-traps-eom-check.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Markets Morning Brief: India Macro Nowcast</h3>
+        <p class="text-slate-600 mt-1">Snapshot of Nifty, USD/INR, Brent, and the 10-year into RBI week—sector cues, day-swing risks, and an editor note on intraday levels.</p>
+        <div class="mt-3"><a href="markets-morning-brief-india-macro-nowcast.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch (EOD): Bands, Books &amp; Buzz</h3>
+        <p class="text-slate-600 mt-1">End-of-day wrap on fresh DRHPs, observation letters, SME windows, and a Tuesday AM checklist for anchors, float, and liquidity.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-eod-bands-books-buzz.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Week Ahead Playbook: RBI MPC, PMI, OPEC+, and US Jobs — India Lens</h3>
+        <p class="text-slate-600 mt-1">Your Monday–Friday plan: RBI MPC (Sep 29–Oct 1), India PMI (Oct 1), US payrolls (Oct 3), and OPEC+ (Oct 5) with sector cues for banks, OMCs, IT, and cap goods.</p>
+        <div class="mt-3"><a href="week-ahead-playbook-rbi-mpc-pmi-opec-us-jobs.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">October 1 Price Reset Watch: LPG &amp; ATF — Impact &amp; Prep</h3>
+        <p class="text-slate-600 mt-1">ATF (1st &amp; 16th) and LPG (1st) price resets—who’s most exposed, Brent–INR sensitivity, and a quick operator checklist for airlines, OMCs, hospitality, and logistics.</p>
+        <div class="mt-3"><a href="october-1-price-reset-watch-lpg-atf-impact-prep.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Weekend Wrap: This Week in Indian Business — Tariffs, Tech, and Tax</h3>
+        <p class="text-slate-600 mt-1">A crisp digest on trade duties, digital policy moves, tax clarifications, market rotation, and what to watch next week.</p>
+        <div class="mt-3"><a href="weekend-wrap-tariffs-tech-tax.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Who Filed, Who Delayed</h3>
+        <p class="text-slate-600 mt-1">This weekend’s snapshot of India’s IPO queue—new DRHPs, observation letters, schedule slips, subscription tells, and a two-week planner.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-who-filed-who-delayed.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h3>
+        <p class="text-slate-600 mt-1">RAs/IAs can now use Liquid/Overnight MF units under lien to meet deposit norms. Slabs, lien setup steps, and cyber/ops hygiene to pass audits.</p>
+        <div class="mt-3"><a href="sebi-august-ra-ia-deposits-hacks-costs-changes.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI Sandbox: Which Fintechs Are Testing Now?</h3>
+        <p class="text-slate-600 mt-1">Theme-Neutral, On-Tap, and IoRS tracks explained—how to verify participants, pick the right route, and assemble an evidence pack that gets accepted.</p>
+        <div class="mt-3"><a href="rbi-sandbox-which-fintechs-are-testing-now.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Brent + INR Sensitivity: Mapping OMC Margins &amp; Fuel Bills</h3>
+        <p class="text-slate-600 mt-1">With Brent ~USD 69/bbl and USD/INR ~88.7, a reusable heatmap shows where IOC/BPCL/HPCL marketing margins and pump-price risk land—plus what could move the matrix.</p>
+        <div class="mt-3"><a href="brent-inr-sensitivity-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
+        <p class="text-slate-600 mt-1">National Data Centre Policy 2025: Hyperscalers vs Local Players</p>
+        <div class="mt-3"><a href="national-data-centre-policy-2025-hyperscalers-vs-local.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s Faster IPO Approvals &amp; FPI Rules — What Changes for 2025</h3>
+        <p class="text-slate-600 mt-1">Target ~3-month approvals, FY25 KPI disclosure standards, and cleaner FPI registers. Practical checklists for issuers, bankers, and investors.</p>
+        <div class="mt-3"><a href="sebi-faster-ipo-approvals-fpi-rules-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Policy &amp; Primary EOD — Sep 24, 2025</h3>
+        <p class="text-slate-600 mt-1">End-of-day wrap: TLH transmission code, FPI ease for G-Sec-only investors, faster IPO-clock cues, and what to prep before tomorrow’s open.</p>
+        <div class="mt-3"><a href="policy-primary-eod-2025-09-24.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Nifty Heatmap: Sector Rotation Signals for Rest of September</h3>
+        <p class="text-slate-600 mt-1">Where leadership is clustering (banks, capital goods), what’s improving (autos, power, pharma), and what’s cooling (IT/discretionary). Rotation map, positioning cues, and exit rules.</p>
+        <div class="mt-3"><a href="nifty-heatmap-sector-rotation-september-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">How to Size Positions by Liquidity</h3>
+        <p class="text-slate-600 mt-1">A 3-day exit framework using ADV, free float, volatility and event risk—plus a simple sizing formula and desk checklist to avoid slippage shocks.</p>
+        <div class="mt-3"><a href="how-to-size-positions-by-liquidity.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Urban Company, Euro Pratik &amp; SME Surges</h3>
+        <p class="text-slate-600 mt-1">Five names to watch, subscription patterns across QIB/HNI/retail, and valuation read-throughs heading into late September.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-urban-company-euro-pratik-sme-surges.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Primary Market EOD: DRHP/RHP &amp; Listings — Sep 22, 2025</h3>
+        <p class="text-slate-600 mt-1">End-of-day wrap: what closed today across filings, observations, anchors, and listings—and what rolls into tomorrow’s trade.</p>
+        <div class="mt-3"><a href="primary-market-eod-drhp-rhp-listings-2025-09-22.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Consumer &amp; Retail Pulse: Festive Inventory, Pricing &amp; Footfalls</h3>
+        <p class="text-slate-600 mt-1">Durables, apparel, FMCG and e-com pre-festive check—inventory health, discount ladders, returns risk, and operator/investor playbooks for next week.</p>
+        <div class="mt-3"><a href="consumer-retail-pulse-festive-inventory-pricing-footfalls.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tech &amp; Infrastructure: Data Centers, Semis, and Power</h3>
+        <p class="text-slate-600 mt-1">Where capacity is landing across DCs and semis, the green-power puzzle, grid bottlenecks, and phased-capex strategies to de-risk execution.</p>
+        <div class="mt-3"><a href="tech-infrastructure-data-centers-semis-power.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">This Week in Indian Business: Tariffs, Tech, and Tax</h3>
+        <p class="text-slate-600 mt-1">Tariff shifts, AI/data policy nudges, and tax enforcement trends—who’s exposed, what to track next week, and operator/investor playbooks.</p>
+        <div class="mt-3"><a href="weekend-wrap-tariffs-tech-tax.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Who Filed, Who Delayed</h3>
+        <p class="text-slate-600 mt-1">Fresh DRHP/RHP activity, observation letters, SME calendar, anchor dynamics, and valuation read-across for the next two weeks.</p>
+        <div class="mt-3"><a href="ipo-pipeline-watch-who-filed-who-delayed.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h3>
+        <p class="text-slate-600 mt-1">What SEBI’s deposit/guarantee norms mean for Research Analysts &amp; Investment Advisers—cost math (FD vs BG), timelines, audit checklists, and practical compliance playbooks.</p>
+        <div class="mt-3"><a href="sebi-august-ra-ia-deposits-hacks-costs-what-changes.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI Sandbox: Which Fintechs Are Testing Now?</h3>
+        <p class="text-slate-600 mt-1">How cohorts run, what archetypes are live, the metrics that pass, and playbooks for startups, banks/NBFCs, and investors—plus a weekly circulars scaffold.</p>
+        <div class="mt-3"><a href="rbi-sandbox-which-fintechs-are-testing-now.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Brent + INR Sensitivity: Mapping OMC Margins &amp; Fuel Bills</h3>
+        <p class="text-slate-600 mt-1">Two variables drive the pump: crude and currency. Sensitivity tables for pump prices and OMC margins, pass-through math, and a monthly household fuel-bill planner.</p>
+        <div class="mt-3"><a href="brent-inr-omc-margins-fuel-bills.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">National Data Centre Policy 2025: Hyperscalers vs Local Players</h3>
+        <p class="text-slate-600 mt-1">Incentives, power access, and sustainability targets will decide who scales. Capability matrix, procurement/localization levers, regional hub map, and operator/investor playbooks.</p>
+        <div class="mt-3"><a href="national-data-centre-policy-2025-hyperscalers-vs-local.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Urban Company IPO: The Unit Economics Play — Beyond the Numbers</h3>
+        <p class="text-slate-600 mt-1">Cohorts, density and partner earnings—not GMV—drive value. Payback ladders, CM2, and category-by-category LTV/CAC for investors.</p>
+        <div class="mt-3"><a href="urban-company-ipo-unit-economics-play.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IndiaAI GPU Pool: Who Gets Compute Slots — Startups vs Academia?</h3>
+        <p class="text-slate-600 mt-1">A fair-share blueprint for scarce public GPUs: hybrid allocation models, scoring rubric, SLOs, caps, and practical playbooks for labs and founders.</p>
+        <div class="mt-3"><a href="indiaai-gpu-pool-allocation-startups-vs-academia.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s Faster IPO Approvals &amp; FPI Rules — What Changes for 2025</h3>
+        <p class="text-slate-600 mt-1">Accelerated timelines, sharper disclosures, and tougher FPI checks—issuer, banker, and investor playbooks with practical checklists.</p>
+        <div class="mt-3"><a href="sebi-faster-ipo-approvals-fpi-rules-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">India’s Infra Push: InvITs, EPC Awards &amp; Where the Orders Are</h3>
+        <p class="text-slate-600 mt-1">InvIT flywheel systems, EPC award cadence, yield vs growth positioning, and risk flags across roads, power, logistics, and data centres.</p>
+        <div class="mt-3"><a href="india-infra-invits-epc-awards-where-the-orders-are.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Week Ahead: CPI/WPI, Rupee &amp; Crude — Setup for RBI MPC</h3>
+        <p class="text-slate-600 mt-1">Inflation prints, USD/INR range, Brent watch, flows, and an MPC scenario tree with trader/PM playbooks.</p>
+        <div class="mt-3"><a href="week-ahead-cpi-wpi-rupee-crude-rbi-mpc.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Nifty Heatmap: Sector Rotation Signals for September</h3>
+        <p class="text-slate-600 mt-1">Leadership in banks/industrials, improving autos/pharma, cooling IT/discretionary—screens, guardrails, and quick charts.</p>
+        <div class="mt-3"><a href="nifty-heatmap-sector-rotation-september-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Pipeline Watch: Urban Company, Euro Pratik &amp; SME Surges</h3>
+        <p class="text-slate-600 mt-1">Who’s filing/open, bands &amp; issue sizes, SME oversubscription—signals to track for the next 2 weeks.</p>
+        <div class="mt-3"><a href="weekend-wrap-ipo-pipeline-sep-14-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">This Week in Indian Markets: Macro, IPOs &amp; Regulation</h3>
+        <p class="text-slate-600 mt-1">CPI/WPI watch, INR ~83, Brent ~$79, FII net +₹4,200 cr; SEBI fast-track &amp; InvIT chatter.</p>
+        <div class="mt-3"><a href="weekend-wrap-markets-macro-ipo-regulation-sep-14-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Classrooms Go Geopolitical: Why Indian B-Schools Are Adding It Now</h3>
+        <p class="text-slate-600 mt-1">Core/elective shift: sanctions, supply chains, AI/data—live sims, risk quant, and who benefits.</p>
+        <div class="mt-3"><a href="geopolitics-bschools-mba-curriculum.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Rajdhani to Aizawl: Sairang–Delhi Launch — Route, Frequency, Run Time</h3>
+        <p class="text-slate-600 mt-1">Weekly via Guwahati (~42h). First new Rajdhani in 6 years—traveller tips and Phase-2 to watch.</p>
+        <div class="mt-3"><a href="sairang-delhi-rajdhani-launch.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Delhi’s ₹3,000-cr Package: Drainage, Water, Health, Roads — What’s Launching</h3>
+        <p class="text-slate-600 mt-1">Sep 17–Oct 2 rollouts: drainage master plan, Okhla STP, Nand Nagri flyover, 101 Ayushman centres, 38 MRI &amp; 150 dialysis units.</p>
+        <div class="mt-3"><a href="delhi-3000cr-package-seva-pakhwada.htmll" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Big Billion Days 2025: Dates, Biggest Deals &amp; a Smart Shopper’s Playbook</h3>
+        <p class="text-slate-600 mt-1">Starts Sep 23: iPhone 16, Pixel 9, Galaxy S24. How to stack bank + exchange + UPI/EMI for the lowest net price.</p>
+        <div class="mt-3"><a href="big-billion-days-2025.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">India’s 1-GW DC Race: Who Builds, Who Buys Compute?</h3>
+        <p class="text-slate-600 mt-1">Who’s building (AdaniConneX, Equinix, Nxtra), who buys (hyperscalers/AI), city odds (Vizag/Chennai/NCR).</p>
+        <div class="mt-3"><a href="india-data-centre-1gw-race.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">National DC Policy 2025: 6 Metrics to Track</h3>
+        <p class="text-slate-600 mt-1">Single-window clearances, firm RE PPAs, ESMA status, NBC code, CLS/ROW timelines.</p>
+        <div class="mt-3"><a href="national-dc-policy-what-to-track.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Urban Company IPO: Dates, Price Band, Financials — Should You Apply?</h3>
+        <p class="text-slate-600 mt-1">Sep 10–12 window, ₹98–₹103 band, ₹1,900 cr issue (₹472 cr fresh + ₹1,428 cr OFS)</p>
+        <div class="mt-3"><a href="urban-company-ipo.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Vande Bharat Sleeper: Delhi–Patna First — Value vs Rajdhani</h3>
+        <p class="text-slate-600 mt-1">Timings (~11.5h), fare bands vs Rajdhani (+10–15%), berth math, route &amp; halts</p>
+        <div class="mt-3"><a href="vande-bharat-sleeper-delhi-patna" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">UPI from Sep 15: ₹5L/Txn, ₹10L/Day — Categories, App Support &amp; Guardrails</h3>
+        <p class="text-slate-600 mt-1">Verified-category P2M only: eligible MCCs, app-by-app day-1 readiness, bank sub-limits, and fraud guardrails—plus a copy-paste checklist.</p>
+        <div class="mt-3"><a href="upi-limits-sep15-5l-10l.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s New Intraday Caps (Oct 1): Index Behavior, Broker Risk Engines &amp; IV Structure</h3>
+        <p class="text-slate-600 mt-1">Entity-level caps of ₹5,000cr net and ₹10,000cr gross/side with random snapshots; how brokers throttle risk - what it means for expiry-day flow and implied vols.</p>
+        <div class="mt-3"><a href="sebi-intraday-caps-oct1-index.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Rupee @ Record Low: Imports, EMIs, Holidays — A Quick Hedging Playbook</h3>
+        <p class="text-slate-600 mt-1">What INR weakness means for travel, tuition, SaaS &amp; electronics—plus do-now moves and simple SME forward-ladder hedges.</p>
+        <div class="mt-3"><a href="rupee-record-low-hedging-playbook-2.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">GST 2.0 from Sep 22: Two-Slab Regime — What Changes &amp; Merchant Checklist</h3>
+        <p class="text-slate-600 mt-1">Two main slabs (5% &amp; 18%) with 40% on sin/luxury; what shifts where, and a POS/ERP, invoicing &amp; ITC readiness checklist.</p>
+        <div class="mt-3"><a href="gst-2-0-two-slab-sep22.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IndiaAI Compute: Who Gets the Next 3.8k GPUs? Onboarding, Quotas &amp; Hurdles</h3>
+        <p class="text-slate-600 mt-1">Startup/academia onboarding flow, quotas &amp; subsidies, power/cooling/data hurdles—and a copy-paste apply checklist.</p>
+        <div class="mt-3"><a href="indiaai-compute-next-3-8k-gpus.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">NISAR After Launch: Weekly Radar Eyes for Farm, Floods &amp; Faults</h3>
+        <p class="text-slate-600 mt-1">Dual-band SAR for crop insurance, floods/landslides, groundwater &amp; city planning—with quick links to early products.</p>
+        <div class="mt-3"><a href="nisar-weekly-radar-farm-floods-faults.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Starlink in India: Pricing Reality vs Rural Promise</h3>
+        <p class="text-slate-600 mt-1">Licence + IN-SPACe greenlight decoded—first coverage, kit/monthly scenarios, and how it stacks up to Jio/Airtel FWA.</p>
+        <div class="mt-3"><a href="starlink-india-pricing-reality.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Dholera Fab, From PPT to Pipes: India’s First Chip Fab Supply-Chain Map</h3>
+        <p class="text-slate-600 mt-1">Groundworks, tool/chem suppliers, Assam OSAT linkage, hiring bar, and realistic tape-out timelines.</p>
+        <div class="mt-3"><a href="dholera-fab-supply-chain-map.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">GST 2-Slab Reset (5%/18% + 40% Sin): Winners/Losers &amp; Pass-Through Cheat Sheet</h3>
+        <p class="text-slate-600 mt-1">FMCG, autos/EVs, insurance: who benefits, who doesn’t—and how much of the tax cut actually reaches prices.</p>
+        <div class="mt-3"><a href="gst-2-slab-reset-winners-losers.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Rupee @ 88 Handle: Import Bill Reality &amp; Hedging Playbook</h3>
+        <p class="text-slate-600 mt-1">USD spends, holiday budgets, EMIs: plan if USD/INR stays 87–90—quick tables and a practical hedge plan.</p>
+        <div class="mt-3"><a href="rupee-88-handle-hedging-playbook.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Credit on UPI Goes Live(ish): Small-Ticket Credit, Risk Knobs &amp; Who Wins First</h3>
+        <p class="text-slate-600 mt-1">Pre-sanctioned bank credit lines via UPI: how it works, KYC/consents, risk controls, and early winners.</p>
+        <div class="mt-3"><a href="credit-on-upi-goes-live.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Inflation Trackers: CPI (Sep 12) &amp; WPI (Sep 15) — What Base Effects Hide</h3>
+        <p class="text-slate-600 mt-1">Release watchlist, base-effect cheats, and quick scenarios.</p>
+        <div class="mt-3"><a href="inflation-trackers-cpi-wpi.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Apple’s India Manufacturing Push (iPhone 17 Cycle): Suppliers, Jobs, and the Real Value-Chain</h3>
+        <p class="text-slate-600 mt-1">Who assembles, who machines the enclosures, who supplies optics—and what it means for jobs &amp; exports.</p>
+        <div class="mt-3"><a href="apple-iphone17-india-suppliers.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Semicon Watch: Where Tata’s Dholera Fab &amp; Micron Sanand Are Now</h3>
+        <p class="text-slate-600 mt-1">Milestones, hiring timelines, and how Gujarat’s chip corridor is shaping up.</p>
+        <div class="mt-3"><a href="semicon-watch-dholera-micron.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tariff Heat Check: Sector Winners/Losers from US Tariff Hike</h3>
+        <p class="text-slate-600 mt-1">Textiles, engineering, IT services: who’s most vulnerable—and how to hedge.</p>
+        <div class="mt-3"><a href="tariff-heatcheck-us.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Brent + Weak INR: OMC Margins &amp; Your Fuel Bill</h3>
+        <p class="text-slate-600 mt-1">Scenario bands &amp; sensitivities: how crude × FX squeezes OMC margins—and what it means at the pump.</p>
+        <div class="mt-3"><a href="brent-inr-omc-margins.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Rupee @ Record Low: What It Means for Imports, EMIs, and Holidays</h3>
+        <p class="text-slate-600 mt-1">Record-low INR makes imports, gold, and USD-billed services costlier.</p>
+        <div class="mt-3"><a href="rupee-record-low-hedging-playbook.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">GDP 7.8% in Q1 FY26: Real vs Nominal Story — why markets shrugged</h3>
+        <p class="text-slate-600 mt-1">Real 7.8% vs nominal 8.8% (soft deflator); services led, mining/utilities lagged.</p>
+        <div class="mt-3"><a href="gdp-q1-fy26-real-vs-nominal.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Gold &amp; Silver at New Highs — Buy Smart Before the Festive Rush</h3>
+        <p class="text-slate-600 mt-1">Pre-festive buying checklist, budget bands, and how to lock-in rates.</p>
+        <div class="mt-3"><a href="gold-silver-festive-buying-checklist.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">IPO Radar: What’s Opening in the Next 7–14 Days</h3>
+        <p class="text-slate-600 mt-1">Dates, price bands, quick blurbs — plus a simple 5-point ‘Should I apply?’ test (no P/E maths).</p>
+        <div class="mt-3"><a href="ipo-radar-next-14-days.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">SEBI’s Digital Accessibility Deadline: What Brokers/AMCs Should File by Sep 30</h3>
+        <p class="text-slate-600 mt-1">Quick compliance checklist, budgets, vendors, and penalties—plus template wording.</p>
+        <div class="mt-3"><a href="sebi-digital-accessibility-compliance-sep30.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Small Caps: Flow Frenzy vs. Liquidity Reality</h3>
+        <p class="text-slate-600 mt-1">Track retail SIPs, premium vs. history, regulatory tone, and risk signals to watch.</p>
+        <div class="mt-3"><a href="small-caps-heatcheck.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Q1 FY26 GDP Beat: What Drove It—And Where It Shows Up in Earnings</h3>
+        <p class="text-slate-600 mt-1">Investment vs. consumption, sector standouts, and how this resets Oct–Dec expectations.</p>
+        <div class="mt-3"><a href="gdp-q1-fy26-one-pager.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">RBI Sep 29–Oct 1: Cut Path vs. Inflation Path</h3>
+        <p class="text-slate-600 mt-1">Plan the runway into Q3: growth surprise vs. core disinflation; STCI, PSU bank, and duration implications.</p>
+        <div class="mt-3"><a href="rbi-mpc-sep-preview.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Street Read: Tariff Spills to Bank Credit — Delinquencies &amp; Working-Capital Lines</h3>
+        <p class="text-slate-600 mt-1">Export-MSME stress watch: SMA creep, receivable slippages, and WC limit tightening—what banks/NBFCs are adjusting now.</p>
+        <div class="mt-3"><a href="street-read-tariff-spills-bank-credit.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tariff D-Day, Day-2/3: Who Blinked on Pricing?</h3>
+        <p class="text-slate-600 mt-1">Track exporter re-quotes after the 50% U.S. duty went live on Aug 27; map HS-code hit-list and re-routing chatter.</p>
+        <div class="mt-3"><a href="tariff-d-day-day-2-3-who-blinked-on-pricing.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tariff D-Day, Day-2: Who Blinked?</h3>
+        <p class="text-slate-600 mt-1">Export desks re-price after the 50% U.S. tariff went live on Aug 27—map HS codes, track carve-out chatter, and watch RBI ops.</p>
+        <div class="mt-3"><a href="tariff-d-day-day-2-who-blinked.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Notion for Operating Manuals</h3>
+        <p class="text-slate-600 mt-1">Docs, wikis, and project tracking in one flexible workspace.</p>
+        <div class="mt-3"><a href="https://www.notion.so/" target="_blank" rel="noopener noreferrer" class="read-more-btn">Start with Notion →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Weekly Expiry Shuffle Goes Live Sep 1 — NSE Tuesdays, BSE Thursdays</h3>
+        <p class="text-slate-600 mt-1">Flow migration, market-maker risk (Greeks &amp; funding), and the broker ops checklist to ship before Monday.</p>
+        <div class="mt-3"><a href="weekly-expiry-shuffle-sep-1-nse-tuesdays-bse-thursdays.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <aside class="card lift p-5 sponsored-card">
+        <span class="tag">Sponsored</span>
+        <h3 class="text-lg font-semibold leading-snug">Hire Developers Fast</h3>
+        <p class="text-slate-600 mt-1">Turing’s global network matches you with pre-vetted devs in 72 hours.</p>
+        <div class="mt-3"><a href="https://www.turing.com" target="_blank" rel="noopener noreferrer" class="read-more-btn">Get Talent →</a></div>
+      </aside>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Q1 FY26 GDP on Aug 29 — Growth Watch &amp; Tariff Shock Channels</h3>
+        <p class="text-slate-600 mt-1">Preview the print (Reuters poll, consensus 6.7%); track MoSPI calendar; build a nowcast dashboard for capex/services.</p>
+        <div class="mt-3"><a href="q1-fy26-gdp-aug-29-preview-nowcast-tariff-channels.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tariff D-Day, Day-1: Stocks, Rupee &amp; Exporters After 50% U.S. Duty Kicks In</h3>
+        <p class="text-slate-600 mt-1">What moved at the open, which HS codes hurt first, and RBI liquidity watch.</p>
+        <div class="mt-3"><a href="tariff-day-1-stocks-rupee-exporters-50-us-duty.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Tariff D-Day: 50% U.S. Duty from Aug 27 — CFO Survival Kit</h3>
+        <p class="text-slate-600 mt-1">Sectors at risk, carve-outs to watch, rupee/curve checklist, and what RBI’s “ready to act” line means for liquidity.</p>
+        <div class="mt-3"><a href="tariff-d-day-us-50-duty-cfo-survival-kit.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Resident Indians in FPIs + SWAGAT-FI: Opening the Foreign Window</h3>
+        <p class="text-slate-600 mt-1">How RI participation and a single-window for “trusted” FPIs/FVCIs could change flows—especially via GIFT City/IFSC schemes.</p>
+        <div class="mt-3"><a href="resident-indians-in-fpis-swagat-fi-opening-foreign-window.html" class="read-more-btn">Read Now</a></div>
+      </article>
+
+      <article class="card lift p-5">
+        <h3 class="text-lg font-semibold leading-snug">Dream11 x BCCI: Jersey Deal on the Chopping Block After Online Gaming Law</h3>
+        <p class="text-slate-600 mt-1">Dream11’s ₹358 cr jersey deal with BCCI is ending after India’s new Online Gaming law banned real-money games and their advertising.</p>
+        <div class="mt-3"><a href="dream11-bcci-jersey-deal-online-gaming-law-compliance.html" class="read-more-btn">Read Now</a></div>
+      </article>
+      </div>
+
+      </main>
+
+  <!-- ===== Bottom Ticker (plain rail, no fades) ===== -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail ticker-rail--plain" aria-label="Bottom market headlines">
+        <!-- instant placeholders; hydrated after load -->
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium text-slate-700">
+          <span>Mutual fund SIP inflows hit record</span><span>RBI policy unchanged</span><span>GST collection beats estimates</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== Footer (exact) ===== -->
+  <footer class="footer-red text-sm">
+    <div class="divider"></div>
+    <div class="container py-10">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+          <div>
+            <div class="text-lg font-bold leading-tight">bataSutra</div>
+            <div class="text-xs muted -mt-0.5">Not just news — the <em>bata</em> behind the news.</div>
+          </div>
+        </a>
+        <p class="muted max-w-2xl">We unpack India’s business stories and ship tools that turn insight into action.</p>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/articles" aria-current="page">Latest</a></li>
+            <li><a href="/deep-dive">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy">Policy &amp; Regulation</a></li>
+            <li><a href="/quick-stats">Quick Stats</a></li>
+            <li><a href="/archive">Archive</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indices.html">Indices</a></li>
+            <li><a href="/heatmap.html">Sector Heatmap</a></li>
+            <li><a href="/commodities.html">Commodities</a></li>
+            <li><a href="/dashboards/sectors">Sector Dashboards</a></li>
+            <li><a href="/calendars/earnings">Earnings Calendar</a></li>
+            <li><a href="/trackers/ipo">IPO Tracker</a></li>
+            <li><a href="/trackers/budget">Budget Tracker</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="/tools">All Tools</a></li>
+            <li><a href="/tools/sip-planner">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/tools/ppf-ladder">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tools/cagr">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/tools/tax-old-vs-new">Tax: Old vs New Slab</a></li>
+            <li><a href="/tools/expense-runway">Expense Buckets &amp; Runway</a></li>
+            <li><a href="/tools#changelog">Changelog</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/inside-the-dashboard.html">Inside the Dashboard</a></li>
+            <li><a href="/advertise">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnerships.html">Partnerships</a></li>
+            <li><a href="/careers.html">Careers</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+            <li><a href="/press">Press</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology.html">Methodology</a></li>
+            <li><a href="/data-sources.html">Data Sources</a></li>
+            <li><a href="/editorial-policy.html">Editorial Policy</a></li>
+            <li><a href="/corrections.html">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/style-guide">Style Guide</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+            <li><a href="/sitemap">Sitemap</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy-policy.html">Privacy Policy</a></li>
+            <li><a href="/terms-of-services.html">Terms of Service</a></li>
+            <li><a href="/cookie-policy.html">Cookie Policy</a></li>
+            <li><a href="/security.html">Security</a></li>
+            <li><a href="/responsible-disclosure.html">Responsible Disclosure</a></li>
+            <li><a href="/licensing.html">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="divider mt-10"></div>
+      <div class="py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div class="muted">&copy; <span id="year"></span> bataSutra. All rights reserved.</div>
+        <div class="flex items-center gap-4 muted">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+    /* ========= SHARED UTILS ========= */
+    const SHEET_ID = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg'; // Headlines book
+    const FALLBACK_TOP = ['Sensex ▲','NIFTY50 ▲','Brent Crude ▼','USD/INR ↔','Gold (MCX) ▲','India VIX ▼'];
+    const FALLBACK_BOTTOM = ['Mutual fund SIP inflows hit record','RBI policy unchanged','GST collection beats estimates'];
+
+    const gvizCsv = (sheetId, sheet, range) =>
+      `https://docs.google.com/spreadsheets/d/${sheetId}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(sheet)}&range=${encodeURIComponent(range)}&t=${Date.now()}`;
+
+    function parseCsv(text){
+      if ((text||'').trim().startsWith('<')) return { rows: [], isHtml:true };
+      const rows=[]; let row=[], cur='', inQuotes=false;
+      for(let i=0;i<text.length;i++){
+        const ch=text[i];
+        if(inQuotes){
+          if(ch === '"'){ if(text[i+1] === '"'){ cur+='"'; i++; } else { inQuotes=false; } }
+          else cur+=ch;
+        } else {
+          if(ch === '"') inQuotes=true;
+          else if(ch === ','){ row.push(cur); cur=''; }
+          else if(ch === '\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+          else if(ch === '\r'){ } else cur+=ch;
+        }
+      }
+      if(cur.length>0 || row.length>0){ row.push(cur); rows.push(row); }
+      return { rows, isHtml:false };
+    }
+
+    async function fetchSheetObjects(sheet, range){
+      const res = await fetch(gvizCsv(SHEET_ID, sheet, range), { cache: 'no-store' });
+      if(!res.ok) throw new Error('Sheet fetch failed: ' + sheet);
+      const txt = await res.text();
+      const { rows, isHtml } = parseCsv(txt);
+      if (isHtml) throw new Error('Not CSV (publish-to-web missing?)');
+      if(!rows.length) return [];
+      const headers = rows[0].map(h => h.replace(/^\uFEFF/,'').replace(/\u00A0/g,' ').trim());
+      return rows.slice(1)
+        .filter(r => r.some(x => (x??'').toString().trim()!==''))
+        .map(r => Object.fromEntries(headers.map((h,i)=>[h, (r[i]??'').toString().trim()])));
+    }
+
+    function ensureLoopWidth(el){
+      // Guarantee at least 2× rail width for smooth infinite loop
+      const railWidth = el.parentElement?.clientWidth || 0;
+      if (!railWidth) return;
+      while (el.scrollWidth < railWidth * 2) {
+        [...el.children].forEach(ch => el.appendChild(ch.cloneNode(true)));
+      }
+    }
+
+    function renderTicker(id, items, dir='right'){
+      const el = document.getElementById(id);
+      if (!el) return;
+      // reset classes & content
+      el.classList.remove('ticker-left','ticker-right');
+      el.innerHTML = '';
+      const data = (items && items.length) ? items : (id==='topTicker' ? FALLBACK_TOP : FALLBACK_BOTTOM);
+      const loop = [...data, ...data]; // base double for seamlessness
+      loop.forEach(t => { const s=document.createElement('span'); s.textContent=String(t||'').trim(); el.appendChild(s); });
+
+      // width guard
+      ensureLoopWidth(el);
+
+      // reflow + animate
+      void el.offsetWidth;
+      el.classList.add(dir==='right'?'ticker-right':'ticker-left','ticker');
+    }
+
+    async function hydrateTickers(){
+      try {
+        // Sheet "Headlines" with columns: Section, Text
+        const rows = await fetchSheetObjects('Headlines','A:B');
+        const top = rows.filter(r=>/^top$/i.test((r.Section||''))).map(r=>r.Text).filter(Boolean);
+        const bottom = rows.filter(r=>/^bottom$/i.test((r.Section||''))).map(r=>r.Text).filter(Boolean);
+        if (top.length)    renderTicker('topTicker', top, 'right');
+        if (bottom.length) renderTicker('bottomTicker', bottom, 'left');
+      } catch(e){
+        console.warn('Headlines error', e?.message||e);
+        renderTicker('topTicker', FALLBACK_TOP, 'right');
+        renderTicker('bottomTicker', FALLBACK_BOTTOM, 'left');
+      }
+    }
+
+    // Footer year
+    document.addEventListener('DOMContentLoaded', () => {
+      const y=document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    });
+
+    // ===== Init: render placeholders instantly, hydrate, then refresh every 5 min
+    (function init(){
+      renderTicker('topTicker', FALLBACK_TOP, 'right');
+      renderTicker('bottomTicker', FALLBACK_BOTTOM, 'left');
+      hydrateTickers();
+      const timer = setInterval(hydrateTickers, 5*60*1000);
+      window.addEventListener('pagehide', ()=>clearInterval(timer));
+      // Resize guard: if viewport changes, re-ensure width without rehydrating
+      let rqf;
+      window.addEventListener('resize', ()=>{
+        cancelAnimationFrame(rqf);
+        rqf = requestAnimationFrame(()=>{
+          ensureLoopWidth(document.getElementById('topTicker'));
+          ensureLoopWidth(document.getElementById('bottomTicker'));
+        });
+      });
+    })();
   </script>
 </body>
 </html>
