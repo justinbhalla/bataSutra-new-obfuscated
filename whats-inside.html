@@ -14,6 +14,7 @@
     body { background:#fff; color:#111; }
     section[id]{ scroll-margin-top:5.5rem; }
 
+    /* Cards */
     .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
     .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
 
@@ -36,6 +37,16 @@
     .reserve-border{ border:1px solid rgba(255,255,255,.08); }
     .reserve-input{ background:#0f172a; border:1px solid #334155; color:#e5e7eb; }
     .reserve-input::placeholder{ color:#94a3b8; }
+
+    /* ===== Footer polish ===== */
+    .footer-red{ background:#fff; color:#111; }
+    .footer-red a{ color:#111; opacity:.9; text-decoration:none; }
+    .footer-red a:hover{ opacity:1; text-decoration:underline; }
+    .footer-red .heading{ font-weight:700; font-size:.875rem; letter-spacing:.02em; color:#111; }
+    .footer-red .muted{ color:var(--muted); }
+    .footer-red .divider{ height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent); }
+    .footer-red .chip{ border:1px solid rgba(0,0,0,.2); padding:.375rem .625rem; border-radius:.5rem; font-size:.875rem; background:transparent; }
+    .footer-red .chip:hover{ background:rgba(0,0,0,.04); }
   </style>
 
   <script type="application/ld+json">
@@ -74,7 +85,7 @@
         <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
         <div>
           <div class="text-lg font-bold leading-tight">bataSutra</div>
-          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context &amp; tools</div>
         </div>
       </a>
       <a href="/dashboard/market-pulse" class="hidden sm:inline-flex px-3 py-1.5 rounded-lg border border-gray-300 text-sm">Open Dashboard</a>
@@ -89,12 +100,12 @@
         <p class="text-slate-700 mt-3 max-w-2xl">A fast overview of market internals: breadth, momentum, sector rotation, and positioning — stitched into a clean daily workflow.</p>
         <div class="mt-5 flex flex-wrap gap-3">
           <a href="#modules" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Modules</a>
-          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data & Methods</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data &amp; Methods</a>
           <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Reserve Alerts</a>
         </div>
       </div>
       <aside class="card p-5">
-        <div class="text-sm text-slate-600">Status & contacts</div>
+        <div class="text-sm text-slate-600">Status &amp; contacts</div>
         <ul class="mt-2 space-y-2 text-sm text-slate-700">
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Status:</strong> <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-500"></span>In active build</span></li>
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Public preview:</strong> Rolling out</li>
@@ -116,7 +127,7 @@
           <div class="text-sm mt-1">Advance-decline, highs/lows, up/down volume, breadth composites.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-          <div class="font-semibold">Momentum & rotation</div>
+          <div class="font-semibold">Momentum &amp; rotation</div>
           <div class="text-sm mt-1">3/6/12-M returns, MA breadth, sector/size/quality rotation matrices.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
@@ -144,17 +155,17 @@
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
             <div class="font-semibold mb-1">Momentum Stack</div>
             <ul class="list-disc list-inside text-slate-700 space-y-1">
-              <li>3/6/12-M returns & z-scores</li>
-              <li>MA crossovers & MA breadth</li>
-              <li>Breakouts & pullbacks monitor</li>
+              <li>3/6/12-M returns &amp; z-scores</li>
+              <li>MA crossovers &amp; MA breadth</li>
+              <li>Breakouts &amp; pullbacks monitor</li>
             </ul>
           </div>
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="font-semibold mb-1">Sector & Factor Rotation</div>
+            <div class="font-semibold mb-1">Sector &amp; Factor Rotation</div>
             <ul class="list-disc list-inside text-slate-700 space-y-1">
               <li>Sector grid (NSE sectors)</li>
               <li>Size/Value/Quality tilt</li>
-              <li>Heatmap & diffusion index</li>
+              <li>Heatmap &amp; diffusion index</li>
             </ul>
           </div>
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
@@ -162,7 +173,7 @@
             <ul class="list-disc list-inside text-slate-700 space-y-1">
               <li>Index derivatives snapshot*</li>
               <li>FPI activity overview*</li>
-              <li class="text-xs text-slate-500">* subject to license & timing</li>
+              <li class="text-xs text-slate-500">* subject to license &amp; timing</li>
             </ul>
           </div>
         </div>
@@ -172,7 +183,7 @@
         <h3 class="text-base font-semibold">Why it’s different</h3>
         <ul class="mt-2 space-y-2 text-sm text-slate-700">
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Opinion-light, chart-first.</li>
-          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Methodology & caveats linked.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Methodology &amp; caveats linked.</li>
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Fast on mobile, no fluff.</li>
         </ul>
       </aside>
@@ -183,23 +194,23 @@
   <section id="data" class="max-w-6xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
-        <h2 class="text-xl font-bold tracking-tight">Data & Methods</h2>
+        <h2 class="text-xl font-bold tracking-tight">Data &amp; Methods</h2>
         <ul class="mt-3 space-y-2 text-sm text-slate-700">
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Sources:</strong> NSE/BSE for prices, volumes, corporate actions; official indices.</li>
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Cleaning:</strong> Survivorship-aware panels for backtests; split/bonus adjustments.</li>
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Smoothing:</strong> Trailing averages (3/6/12-M), winsorization for extreme outliers.</li>
-          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Publishing:</strong> Units, baselines, and caveats posted; see <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">Methodology</a> & <a class="text-[var(--brand-ink)] hover:underline" href="/data-sources">Data Sources</a>.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Publishing:</strong> Units, baselines, and caveats posted; see <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">Methodology</a> &amp; <a class="text-[var(--brand-ink)] hover:underline" href="/data-sources">Data Sources</a>.</li>
         </ul>
       </div>
       <aside class="card p-6 md:p-8">
         <h3 class="text-base font-semibold">Update cadence</h3>
         <div class="mt-2 text-sm text-slate-700 grid grid-cols-2 gap-2">
           <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="text-xs text-slate-500">Prices & breadth</div>
+            <div class="text-xs text-slate-500">Prices &amp; breadth</div>
             <div class="font-semibold">Live / EOD</div>
           </div>
           <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="text-xs text-slate-500">Rotation & factors</div>
+            <div class="text-xs text-slate-500">Rotation &amp; factors</div>
             <div class="font-semibold">Daily</div>
           </div>
           <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
@@ -263,103 +274,108 @@
   </div>
 
   <!-- Footer -->
-   <footer class="footer-red text-sm">
+  <footer class="footer-red text-sm mt-12">
     <div class="divider"></div>
 
-    <div class="container py-10">
+    <div class="max-w-6xl mx-auto px-4 py-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <a href="/" class="flex items-center gap-3">
           <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
           <div>
             <div class="text-lg font-bold leading-tight">bataSutra</div>
-            <div class="text-xs muted -mt-0.5"></div>
+            <div class="text-xs muted -mt-0.5">News, context &amp; tools</div>
           </div>
         </a>
         <p class="muted max-w-2xl"></p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
-        <div>
-          <div class="heading mb-3">Editorial</div>
-          <ul class="space-y-2">
-            <li><a href="latest.html">Latest</a></li>
-            <li><a href="deep-dives.html">Deep Dives</a></li>
-            <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
-            <li><a href="explainers.html">Explainers</a></li>
-            <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
-          </ul>
+      <nav aria-labelledby="footerNav" class="mt-10">
+        <h2 id="footerNav" class="sr-only">Footer navigation</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div>
+            <div class="heading mb-3">Editorial</div>
+            <ul class="space-y-2">
+              <li><a href="latest.html">Latest</a></li>
+              <li><a href="deep-dives.html">Deep Dives</a></li>
+              <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
+              <li><a href="explainers.html">Explainers</a></li>
+              <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Data</div>
+            <ul class="space-y-2">
+              <li><a href="indices.html">Indices</a></li>
+              <li><a href="heatmap.html">Sector Heatmap</a></li>
+              <li><a href="commodities.html">Commodities</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Tools</div>
+            <ul class="space-y-2">
+              <li><a href="sip-goal-corpus.html">SIP Goal &amp; Corpus</a></li>
+              <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
+              <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
+              <li><a href="tax.html">Tax: Old vs New Slab</a></li>
+              <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Company</div>
+            <ul class="space-y-2">
+              <li><a href="about.html">About</a></li>
+              <li><a href="whats-inside.html">Inside the Dashboard</a></li>
+              <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
+              <li><a href="partnerships.html">Partnerships</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Resources</div>
+            <ul class="space-y-2">
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="data-sources.html">Data Sources</a></li>
+              <li><a href="editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="corrections.html">Corrections</a></li>
+              <li><a href="ethics.html">Ethics &amp; Independence</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Legal</div>
+            <ul class="space-y-2">
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+              <li><a href="licensing.html">Licensing</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="divider mt-10"></div>
+
+      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-center">
+        <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
+
+        <div class="muted text-center">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
         </div>
 
-        <div>
-          <div class="heading mb-3">Data</div>
-          <ul class="space-y-2">
-            <li><a href="indicies.html">Indices</a></li>
-            <li><a href="heatmap.html">Sector Heatmap</a></li>
-            <li><a href="commodities.html">Commodities</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Tools</div>
-          <ul class="space-y-2">
-            <li><a href="sip-goal-corpus.html.html">SIP Goal &amp; Corpus</a></li>
-            <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
-            <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
-            <li><a href="tax.html">Tax: Old vs New Slab</a></li>
-            <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Company</div>
-          <ul class="space-y-2">
-            <li><a href="about.html">About</a></li>
-            <li><a href="whats-inside.html">Inside the Dashboard</a></li>
-            <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
-            <li><a href="partnerships.html">Partnerships</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Resources</div>
-          <ul class="space-y-2">
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="data-sources.html">Data Sources</a></li>
-            <li><a href="editorial-policy.html">Editorial Policy</a></li>
-            <li><a href="corrections.html">Corrections</a></li>
-            <li><a href="ethics.html">Ethics &amp; Independence</a></li>
-            <li><a href="accessibility.html">Accessibility</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Legal</div>
-          <ul class="space-y-2">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-services.html">Terms of Service</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-            <li><a href="security.html">Security</a></li>
-            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
-            <li><a href="licensing.html">Licensing</a></li>
-          </ul>
+        <div class="flex items-center gap-4 muted justify-center md:justify-end">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+            Back to top ↑
+          </button>
         </div>
       </div>
-
-    <div class="divider mt-10"></div>
-
-<div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
-  <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
-
-  <div class="muted text-center">
-    &copy; <span id="year"></span> bataSutra. All rights reserved.
-  </div>
-
-  <div class="flex items-center gap-4 muted justify-center md:justify-end">
-    <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
-  </div>
-</div>
     </div>
   </footer>
 
