@@ -3,81 +3,55 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>What’s Inside — Pulseboard | bataSutra</title>
+  <title>Pulseboard | bataSutra</title>
   <meta name="description" content="See what’s inside Pulseboard: breadth, median move, leaders/laggards, and intraday sparks. Join the waitlist for alert emails as we roll out." />
-  <meta name="theme-color" content="#8B0000">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
       --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280;
-      /* Set this to match your other pages: 72rem ≈ max-w-6xl */
-      --container:72rem;
-      --header-h:64px;
+      --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; --ring:rgba(139,0,0,.25);
     }
-    html { font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans"; }
-    body { background:#fff; color:#111; margin:0; }
-    section[id]{ scroll-margin-top:calc(var(--header-h) + 24px); }
-
-    /* Unified container rail */
-    .wrap{ max-width:var(--container); margin-inline:auto; padding-inline:1rem; }
-    @media (min-width:640px){ .wrap{ padding-inline:1.5rem; } }
-    @media (min-width:1024px){ .wrap{ padding-inline:2rem; } }
-
-    /* Cards */
-    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
-    .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
-
-    /* Tickers (width locked by .wrap parent) */
+    html{ font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans","Apple Color Emoji","Segoe UI Emoji"; }
+    body{ background:var(--bg); color:var(--ink); }
+    /* ===== STRUCTURE (EXACT MATCH) ===== */
+    .container{ max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem; }
+    .card{ background:var(--card); border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .card-pad{ padding:1rem; }
+    .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .25s ease; }
+    /* ===== TICKERS (EXACT MATCH) ===== */
     .ticker-rail{ position:relative; overflow:hidden; }
-    .ticker{ display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change:transform; transform:translateZ(0); }
-    .ticker-left{ animation:sL var(--dur,120s) linear infinite; }
-    .ticker-right{ animation:sR var(--dur,120s) linear infinite; }
-    @keyframes sL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-    @keyframes sR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
-    @media (prefers-reduced-motion: reduce){ .ticker-left,.ticker-right{ animation:none !important; } }
-
-    /* Reserve block */
-    .reserve-gradient{
-      background:
-        radial-gradient(1200px 400px at 10% -20%, #dc26261c 10%, transparent 60%),
-        radial-gradient(800px 300px at 90% -10%, #8B00001f 10%, transparent 60%),
-        linear-gradient(180deg, #101010, #0d0d0d 60%, #0b0b0b);
-      border:1px solid #1f2937;
-    }
-    .reserve-border{ border:1px solid rgba(255,255,255,.08); }
-    .reserve-input{ background:#0f172a; border:1px solid #334155; color:#e5e7eb; }
-    .reserve-input::placeholder{ color:#94a3b8; }
-
-    /* Footer */
-    .footer-red{ background:#fff; color:#111; }
-    .footer-red a{ color:#111; opacity:.9; text-decoration:none; }
-    .footer-red a:hover{ opacity:1; text-decoration:underline; }
-    .footer-red .heading{ font-weight:700; font-size:.875rem; letter-spacing:.02em; color:#111; }
-    .footer-red .muted{ color:var(--muted); }
-    .footer-red .divider{ height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent); }
-    .footer-red .chip{ border:1px solid rgba(0,0,0,.2); padding:.375rem .625rem; border-radius:.5rem; font-size:.875rem; background:transparent; }
-    .footer-red .chip:hover{ background:rgba(0,0,0,.04); }
+    .ticker-rail::after,.ticker-rail::before{ content:""; position:absolute; top:0; bottom:0; width:48px; pointer-events:none; }
+    .ticker-rail::before{ left:0; background:linear-gradient(to right, rgba(122,0,0,1), rgba(122,0,0,0)); }
+    .ticker-rail::after{ right:0; background:linear-gradient(to left, rgba(122,0,0,1), rgba(122,0,0,0)); }
+    .ticker-rail.plain::before,.ticker-rail.plain::after{ display:none; }
+    .ticker{ display:flex; width:max-content; white-space:nowrap; gap:2.5rem; }
+    .ticker-left{ animation:scroll-left 120s linear infinite; }
+    .ticker-right{ animation:scroll-right 120s linear infinite; }
+    .ticker:hover{ animation-play-state:paused; }
+    @keyframes scroll-left{ 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    @keyframes scroll-right{ 0%{transform:translateX(-50%)} 100%{transform:translateX(0)} }
+    @media (prefers-reduced-motion:reduce){ .ticker-left,.ticker-right{ animation:none; } }
+    /* ===== FOOTER (EXACT MATCH) ===== */
+    .footer-red{ background:var(--brand-ink); color:#fff; }
+    .footer-red a{ color:rgba(255,255,255,.92); }
+    .footer-red a:hover{ color:#fff; text-decoration:underline; }
+    .footer-red .heading{ font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:rgba(255,255,255,.82); }
+    .footer-red .muted{ color:rgba(255,255,255,.78); }
+    .footer-red .divider{ border-top:1px solid rgba(255,255,255,.18); }
+    .footer-red .chip{ font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background:rgba(255,255,255,.08); }
+    /* Minor helpers */
+    section[id]{ scroll-margin-top:5.5rem; }
   </style>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"WebPage",
-    "name":"What’s Inside — Pulseboard",
-    "about":["pulseboard","breadth","median move","leaders/laggards","intraday sparks","alerts waitlist"],
-    "publisher":{"@type":"Organization","name":"bataSutra"}
-  }
-  </script>
 </head>
 <body>
-  <!-- Top Ticker (full-bleed bg, inner width locked by .wrap) -->
+  <!-- Top Ticker: FULL WIDTH (px paddings, not .container) -->
   <div class="w-full bg-[var(--brand-ink)] text-white">
-    <div class="wrap flex items-center gap-3 py-2">
+    <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
       <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
         <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
       </span>
-      <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
+      <div class="ticker-rail" aria-label="Top headlines" aria-live="polite" style="flex:1">
         <div id="topTicker" class="ticker ticker-right text-sm font-medium">
           <span>Pulseboard: breadth, median move, and sparks — live</span>
           <span>Pre-open brief + closing wrap</span>
@@ -88,11 +62,11 @@
     </div>
   </div>
 
-  <!-- Header (width locked; same dimensions across site) -->
-  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70" style="height:var(--header-h)">
-    <div class="wrap h-full flex items-center justify-between">
+  <!-- Header / Nav (identical widths & logo block) -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+    <div class="container flex items-center justify-between py-3">
       <a href="/" class="flex items-center gap-3">
-        <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
+        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
         <div>
           <div class="text-lg font-bold leading-tight">bataSutra</div>
           <div class="text-xs text-[var(--muted)] -mt-0.5">News, context &amp; tools</div>
@@ -105,10 +79,10 @@
   </header>
 
   <!-- Hero -->
-  <section class="wrap pt-10 pb-6">
+  <section class="container pt-10 pb-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
       <div class="lg:col-span-2">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What’s inside — Pulseboard</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Pulseboard</h1>
         <p class="text-slate-700 mt-3 max-w-2xl">Scan the tape in seconds. Breadth, median move, leaders/laggards, and intraday sparks in one fast board.</p>
         <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600">
           <span class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-200">LIVE</span>
@@ -118,11 +92,11 @@
         </div>
         <div class="mt-5 flex flex-wrap gap-3">
           <a href="#modules" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Modules</a>
-          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data &amp; Methods</a>
-          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Reserve Alerts</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data</a>
+          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Alerts</a>
         </div>
       </div>
-      <aside class="card p-5">
+      <aside class="card card-pad p-5">
         <div class="text-sm text-slate-600">Status &amp; contacts</div>
         <ul class="mt-2 space-y-2 text-sm text-slate-700">
           <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Status:</strong> <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-500"></span>In active build</span></li>
@@ -136,7 +110,7 @@
   </section>
 
   <!-- At-a-glance -->
-  <section class="wrap py-6">
+  <section class="container py-6">
     <div class="card p-6 md:p-8">
       <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
@@ -145,11 +119,11 @@
           <div class="text-sm mt-1">Advance/Decline, highs/lows, up/down volume, breadth composites.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-          <div class="font-semibold">Momentum &amp; Rotation</div>
+          <div class="font-semibold">Rotations</div>
           <div class="text-sm mt-1">3/6/12-M returns, MA breadth, sector/size/quality rotation matrices.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-          <div class="font-semibold">Daily workflow</div>
+          <div class="font-semibold">Workflows</div>
           <div class="text-sm mt-1">Pre-open brief, closing wrap, weekly context — one scroll.</div>
         </div>
       </div>
@@ -157,7 +131,7 @@
   </section>
 
   <!-- Modules -->
-  <section id="modules" class="wrap py-6">
+  <section id="modules" class="container py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Modules</h2>
@@ -209,7 +183,7 @@
   </section>
 
   <!-- Data & Methods -->
-  <section id="data" class="wrap py-6">
+  <section id="data" class="container py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Data &amp; Methods</h2>
@@ -244,295 +218,232 @@
     </div>
   </section>
 
-  <!-- Reserve Alerts (Waitlist) -->
-  <section id="reserve" class="wrap py-10">
-    <div class="reserve-gradient rounded-2xl p-6 md:p-10 text-white">
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2">
-          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Reserve alerts for Pulseboard</h2>
-          <p class="opacity-80 mt-2 text-sm">Join the email list for pre-open briefs, closing wraps, and notable shifts in breadth/rotation. We only need your email.</p>
-          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-            <li class="reserve-border rounded-lg p-3">No spam, unsubscribe anytime</li>
-            <li class="reserve-border rounded-lg p-3">Rollout: staged access</li>
-            <li class="reserve-border rounded-lg p-3">Same subscribe backend</li>
-          </ul>
-        </div>
-        <div>
-          <form id="reserveForm" class="space-y-3" aria-label="Reserve alerts form">
-            <label for="reserveEmail" class="sr-only">Email</label>
-            <input id="reserveEmail" type="email" required autocomplete="email"
-                   class="reserve-input w-full rounded-lg px-3 py-3 text-sm"
-                   placeholder="you@example.com" />
-            <button type="submit"
-                    class="w-full rounded-lg bg-[var(--brand)] text-white px-4 py-3 text-sm font-semibold hover:opacity-95">
-              Join waitlist
-            </button>
-            <div id="reserveMsg" class="text-xs opacity-80">We’ll confirm when alerts are ready.</div>
-          </form>
-        </div>
+  <!-- Reserve Alerts -->
+  <section id="reserve" class="container py-10">
+    <div class="card p-0 overflow-hidden">
+      <div class="bg-[var(--brand-ink)] text-white p-6 md:p-10">
+        <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Reserve alerts for Pulseboard</h2>
+        <p class="opacity-90 mt-2 text-sm">Get pre-open briefs, closing wraps, and notable shifts in breadth/rotation. We only need your email.</p>
+        <form id="reserveForm" class="mt-6 flex flex-col sm:flex-row gap-3 max-w-2xl">
+          <input id="reserveEmail" type="email" required autocomplete="email"
+                 class="flex-1 rounded-lg px-4 py-3 text-sm text-slate-900"
+                 placeholder="you@example.com" />
+          <button type="submit"
+                  class="rounded-lg bg-white text-[var(--brand-ink)] px-5 py-3 text-sm font-semibold hover:opacity-95">
+            Join waitlist
+          </button>
+        </form>
+        <div id="reserveMsg" class="text-xs mt-3 opacity-90">We’ll confirm when alerts are ready.</div>
       </div>
     </div>
   </section>
 
-  <!-- Bottom Ticker (full-bleed bg, inner width locked) -->
-  <div class="w-full bg-slate-50 border-t mt-12">
-    <div class="wrap">
-      <div class="flex items-center gap-3 py-2">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PULSEBOARD</span>
-        <div class="ticker-rail flex-1" aria-label="Pulseboard ticker" aria-live="polite">
-          <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
-            <span>Breadth first. Hype last.</span>
-            <span>Fast mobile charts</span>
-            <span>Methodology linked</span>
-            <span>Alerts: waitlist open</span>
-          </div>
+  <!-- Bottom Ticker: FULL WIDTH (px paddings, plain rail) -->
+  <div class="w-full bg-slate-100 border-y">
+    <div class="py-3 px-4 sm:px-6 lg:px-8">
+      <div class="ticker-rail plain" aria-label="Bottom headlines">
+        <div id="bottomTicker" class="ticker ticker-left text-sm font-medium">
+          <span>Breadth first. Hype last.</span>
+          <span>Fast mobile charts</span>
+          <span>Methodology linked</span>
+          <span>Alerts: waitlist open</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Footer (width locked) -->
-  <footer class="footer-red text-sm mt-12">
+  <!-- Footer (identical structure) -->
+  <footer class="footer-red text-sm">
     <div class="divider"></div>
-
-    <div class="wrap py-10">
+    <div class="container py-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <a href="/" class="flex items-center gap-3">
-          <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
+          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
           <div>
             <div class="text-lg font-bold leading-tight">bataSutra</div>
-            <div class="text-xs muted -mt-0.5">News, context &amp; tools</div>
+            <div class="text-xs muted -mt-0.5"></div>
           </div>
         </a>
         <p class="muted max-w-2xl"></p>
       </div>
 
-      <nav aria-labelledby="footerNav" class="mt-10">
-        <h2 id="footerNav" class="sr-only">Footer navigation</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
-          <div>
-            <div class="heading mb-3">Editorial</div>
-            <ul class="space-y-2">
-              <li><a href="latest.html">Latest</a></li>
-              <li><a href="deep-dives.html">Deep Dives</a></li>
-              <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
-              <li><a href="explainers.html">Explainers</a></li>
-              <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="heading mb-3">Data</div>
-            <ul class="space-y-2">
-              <li><a href="indices.html">Indices</a></li>
-              <li><a href="heatmap.html">Sector Heatmap</a></li>
-              <li><a href="commodities.html">Commodities</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="heading mb-3">Tools</div>
-            <ul class="space-y-2">
-              <li><a href="sip-goal-corpus.html">SIP Goal &amp; Corpus</a></li>
-              <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
-              <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
-              <li><a href="tax.html">Tax: Old vs New Slab</a></li>
-              <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="heading mb-3">Company</div>
-            <ul class="space-y-2">
-              <li><a href="about.html">About</a></li>
-              <li><a href="whats-inside.html">Inside Pulseboard</a></li>
-              <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
-              <li><a href="partnership.html">Partnerships</a></li>
-              <li><a href="careers.html">Careers</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="heading mb-3">Resources</div>
-            <ul class="space-y-2">
-              <li><a href="methodology.html">Methodology</a></li>
-              <li><a href="data-sources.html">Data Sources</a></li>
-              <li><a href="editorial-policy.html">Editorial Policy</a></li>
-              <li><a href="corrections.html">Corrections</a></li>
-              <li><a href="ethics.html">Ethics &amp; Independence</a></li>
-              <li><a href="accessibility.html">Accessibility</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <div class="heading mb-3">Legal</div>
-            <ul class="space-y-2">
-              <li><a href="privacy-policy.html">Privacy Policy</a></li>
-              <li><a href="terms-of-service.html">Terms of Service</a></li>
-              <li><a href="cookies.html">Cookie Policy</a></li>
-              <li><a href="security.html">Security</a></li>
-              <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
-              <li><a href="licensing.html">Licensing</a></li>
-            </ul>
-          </div>
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
+        <div>
+          <div class="heading mb-3">Editorial</div>
+          <ul class="space-y-2">
+            <li><a href="/latest">Latest</a></li>
+            <li><a href="/deep-dives">Deep Dives</a></li>
+            <li><a href="/weekend-wrap">Weekend Wrap</a></li>
+            <li><a href="/explainers">Explainers</a></li>
+            <li><a href="/policy-regulation">Policy &amp; Regulation</a></li>
+          </ul>
         </div>
-      </nav>
+        <div>
+          <div class="heading mb-3">Data</div>
+          <ul class="space-y-2">
+            <li><a href="/indicies">Indices</a></li>
+            <li><a href="/heatmap">Sector Heatmap</a></li>
+            <li><a href="/commodities">Commodities</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Tools</div>
+          <ul class="space-y-2">
+            <li><a href="sip-goal-corpus.html.html">SIP Goal &amp; Corpus</a></li>
+            <li><a href="/cagr.app.min">CAGR &amp; Quick IRR</a></li>
+            <li><a href="/ppf.app.min">PPF &amp; Emergency Ladder</a></li>
+            <li><a href="/tax">Tax: Old vs New Slab</a></li>
+            <li><a href="/runway.app.min">Expense Buckets &amp; Runway</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Company</div>
+          <ul class="space-y-2">
+            <li><a href="/about">About</a></li>
+            <li><a href="/whats-inside">Inside the Dashboard</a></li>
+            <li><a href="/ad-media">Advertising &amp; Media Kit</a></li>
+            <li><a href="/partnership">Partnerships</a></li>
+            <li><a href="/careers">Careers</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Resources</div>
+          <ul class="space-y-2">
+            <li><a href="/methodology">Methodology</a></li>
+            <li><a href="/data-sources">Data Sources</a></li>
+            <li><a href="/editorial-policy">Editorial Policy</a></li>
+            <li><a href="/corrections">Corrections</a></li>
+            <li><a href="/ethics">Ethics &amp; Independence</a></li>
+            <li><a href="/accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="heading mb-3">Legal</div>
+          <ul class="space-y-2">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-services">Terms of Service</a></li>
+            <li><a href="/cookies">Cookie Policy</a></li>
+            <li><a href="/security">Security</a></li>
+            <li><a href="/responsible-disclosure">Responsible Disclosure</a></li>
+            <li><a href="/licensing">Licensing</a></li>
+          </ul>
+        </div>
+      </div>
 
       <div class="divider mt-10"></div>
-
-      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-center">
+      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
         <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
-
         <div class="muted text-center">
           &copy; <span id="year"></span> bataSutra. All rights reserved.
         </div>
-
         <div class="flex items-center gap-4 muted justify-center md:justify-end">
-          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
-            Back to top ↑
-          </button>
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
         </div>
       </div>
     </div>
   </footer>
 
-  <!-- ===== Single inline script (tickers + waitlist) ===== -->
+  <!-- ===== Inline script: tickers + waitlist (same behavior as index) ===== -->
   <script>
-  // ========= CONFIG =========
-  const SHEET_ID    = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
-  const SHEET_TAB   = 'Headlines';
-  const SHEET_RANGE = 'A:C';
-  const CSV_URL     = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}&range=${encodeURIComponent(SHEET_RANGE)}`;
+    const SHEET_ID = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
+    const SHEET_TAB = 'Headlines';
+    const SHEET_RANGE = 'A:C';
+    const CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&headers=1&sheet=${encodeURIComponent(SHEET_TAB)}&range=${encodeURIComponent(SHEET_RANGE)}&t=${Date.now()}`;
+    const SUBSCRIBE_SCRIPT = 'https://script.google.com/macros/s/AKfycbwT4FQr2Qb91fiqEgeUQMdnD5dDACtWyFnktA5MUp8sHHVebvFIOq4k3yMGKqJmlPJ_MA/exec';
 
-  const SUBSCRIBE_SCRIPT = 'https://script.google.com/macros/s/AKfycbwT4FQr2Qb91fiqEgeUQMdnD5dDACtWyFnktA5MUp8sHHVebvFIOq4k3yMGKqJmlPJ_MA/exec';
-
-  // ========= Utils =========
-  function parseCsv(text){
-    const rows=[]; let row=[], cur='', q=false;
-    for(let i=0;i<text.length;i++){
-      const ch=text[i];
-      if(q){
-        if(ch === '"'){ if(text[i+1] === '"'){ cur+='"'; i++; } else { q=false; } }
-        else cur+=ch;
-      } else {
-        if(ch === '"') q=true;
-        else if(ch === ','){ row.push(cur); cur=''; }
-        else if(ch === '\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
-        else if(ch !== '\r'){ cur+=ch; }
+    function parseCsv(text){
+      if ((text||'').trim().startsWith('<')) return [];
+      const rows=[]; let row=[], cur='', q=false;
+      for(let i=0;i<text.length;i++){
+        const ch=text[i];
+        if(q){ if(ch === '"'){ if(text[i+1] === '"'){ cur+='"'; i++; } else { q=false; } } else cur+=ch; }
+        else { if(ch === '"') q=true; else if(ch === ','){ row.push(cur); cur=''; }
+          else if(ch === '\n'){ row.push(cur); rows.push(row); row=[]; cur=''; } else if(ch !== '\r'){ cur+=ch; } }
       }
+      if(cur.length || row.length){ row.push(cur); rows.push(row); }
+      return rows;
     }
-    if(cur.length || row.length){ row.push(cur); rows.push(row); }
-    return rows;
-  }
 
-  function setAutoDuration(el, items){
-    const len = (items||[]).join(' • ').length || 120;
-    const secs = Math.min(140, Math.max(60, Math.round(len/1.8)));
-    el && el.style.setProperty('--dur', secs+'s');
-  }
-
-  function renderTicker(el, items, dir){
-    if(!el || !items?.length) return;
-    el.className = `ticker ${dir==='right'?'ticker-right':'ticker-left'} ${el.id==='botTicker'?'text-sm text-slate-700':'text-sm font-medium'}`;
-    el.innerHTML = '';
-    const loop = items.concat(items);
-    const frag = document.createDocumentFragment();
-    loop.forEach(t => { const s=document.createElement('span'); s.textContent=t; frag.appendChild(s); });
-    el.appendChild(frag);
-    setAutoDuration(el, items);
-  }
-
-  function paintFromData(data){
-    if(!data) return;
-    const top = data.filter(d=> (d[0] || d.section || '').toString().toLowerCase()==='top').map(d=> d[1] || d.text).filter(Boolean);
-    const bottom = data.filter(d=> (d[0] || d.section || '').toString().toLowerCase()==='bottom').map(d=> d[1] || d.text).filter(Boolean);
-    renderTicker(document.getElementById('topTicker'), top, 'right');
-    renderTicker(document.getElementById('botTicker'), bottom, 'left');
-  }
-
-  (function prefetchCSV(){
-    try{
-      const l=document.createElement('link');
-      l.rel='prefetch'; l.as='fetch'; l.crossOrigin='anonymous'; l.href=CSV_URL; document.head.appendChild(l);
-    }catch{}
-  })();
-
-  function fetchCsv(url, ms=1400){
-    return new Promise(resolve=>{
-      const t=setTimeout(()=>resolve(null), ms);
-      fetch(url, {cache:'force-cache', credentials:'omit'})
-        .then(r=>{ clearTimeout(t); resolve(r.ok ? r : null); })
-        .catch(()=>{ clearTimeout(t); resolve(null); });
-    });
-  }
-
-  async function loadHeadlines(){
-    const res = await fetchCsv(CSV_URL, 1600);
-    if(!res) return null;
-    const txt = await res.text();
-    if((txt||'').trim().startsWith('<')) return [];
-    const rows = parseCsv(txt);
-    if(!rows.length) return [];
-    const hdr = rows[0].map(h => h.replace(/^\uFEFF/,'').trim().toLowerCase());
-    const iS = hdr.indexOf('section'), iT = hdr.indexOf('text');
-    if(iS<0 || iT<0){
-      return rows.slice(1).map(r=>({section:(r[0]||'').trim(), text:(r[1]||'').trim()})).filter(r=>r.text);
+    function setAutoDuration(el, items){
+      const len = (items||[]).join(' • ').length || 120;
+      const secs = Math.min(140, Math.max(60, Math.round(len/1.8)));
+      el && el.style.setProperty('animation-duration', secs+'s');
     }
-    return rows.slice(1).map(r=>({section:(r[iS]||'').trim(), text:(r[iT]||'').trim()})).filter(r=>r.text);
-  }
 
-  async function reserveSubmit(email){
-    const fd = new FormData();
-    fd.append('email', email);
-    try{
-      const res = await fetch(SUBSCRIBE_SCRIPT, { method:'POST', body: fd });
-      const txt = (await res.text()||'').toLowerCase();
-      if (txt.includes('success') || txt.includes('ok')) return 'ok';
-      if (txt.includes('already')) return 'already';
-      return 'unknown';
-    }catch{
-      return 'error';
+    function renderTicker(el, items, dir){
+      if(!el || !items?.length) return;
+      el.className = `ticker ${dir==='right'?'ticker-right':'ticker-left'} ${el.id==='bottomTicker'?'text-sm font-medium':'text-sm font-medium'}`;
+      el.innerHTML = '';
+      const loop = items.concat(items);
+      const frag = document.createDocumentFragment();
+      loop.forEach(t => { const s=document.createElement('span'); s.textContent=t; frag.appendChild(s); });
+      el.appendChild(frag);
+      setAutoDuration(el, items);
     }
-  }
 
-  (function boot(){
-    const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+    async function loadHeadlines(){
+      try{
+        const res = await fetch(CSV_URL, {cache:'force-cache', credentials:'omit'});
+        const txt = await res.text();
+        const rows = parseCsv(txt);
+        if(!rows.length) return {top:[], bottom:[]};
+        const hdr = rows[0].map(h => h.replace(/^\uFEFF/,'').trim().toLowerCase());
+        const iS = hdr.indexOf('section'), iT = hdr.indexOf('text');
+        const data = rows.slice(1).map(r=>({section:(r[iS]||'').trim().toLowerCase(), text:(r[iT]||'').trim()})).filter(r=>r.text);
+        return {
+          top: data.filter(d=>d.section==='top').map(d=>d.text),
+          bottom: data.filter(d=>d.section==='bottom').map(d=>d.text)
+        };
+      }catch{ return {top:[], bottom:[]}; }
+    }
 
-    try{
-      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        document.querySelectorAll('.ticker-left, .ticker-right').forEach(el => { el.style.animation='none'; });
-      }
-    }catch{}
+    async function bootTickers(){
+      const { top, bottom } = await loadHeadlines();
+      const topEl = document.getElementById('topTicker');
+      const botEl = document.getElementById('bottomTicker');
+      renderTicker(topEl, top.length? top : [
+        'Pulseboard: breadth, median move, and sparks — live',
+        'Pre-open brief + closing wrap','Alerts waitlist is open','Methodology linked on page'
+      ], 'right');
+      renderTicker(botEl, bottom.length? bottom : [
+        'Breadth first. Hype last.','Fast mobile charts','Methodology linked','Alerts: waitlist open'
+      ], 'left');
+    }
 
-    loadHeadlines().then(data => { if(data) paintFromData(data); });
+    async function reserveSubmit(email){
+      const fd = new FormData(); fd.append('email', email);
+      try{
+        const res = await fetch(SUBSCRIBE_SCRIPT, { method:'POST', body: fd });
+        const txt = (await res.text()||'').toLowerCase();
+        if (txt.includes('success') || txt.includes('ok')) return 'ok';
+        if (txt.includes('already')) return 'already';
+        return 'unknown';
+      }catch{ return 'error'; }
+    }
 
-    const form = document.getElementById('reserveForm');
-    const emailEl = document.getElementById('reserveEmail');
-    const msg = document.getElementById('reserveMsg');
-    form?.addEventListener('submit', async (e)=>{
-      e.preventDefault();
-      const email = (emailEl?.value||'').trim();
-      if(!email){ emailEl?.focus(); return; }
-      emailEl.disabled = true;
-      const btn = form.querySelector('button[type="submit"]'); if(btn) btn.disabled = true;
+    (function init(){
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      bootTickers();
 
-      const status = await reserveSubmit(email);
-      if(status==='ok'){
-        msg.textContent = 'Thanks! You’re on the waitlist. We’ll email when alerts go live.';
-        form.reset();
-      }else if(status==='already'){
-        msg.textContent = '⚠️ You’re already on the list.';
-      }else if(status==='unknown'){
-        msg.textContent = 'Submitted. If you don’t see a confirmation, we’ll still try to add you.';
-      }else{
-        msg.textContent = 'Something went wrong. Please try again or email alerts@batasutra.in.';
-      }
+      const form = document.getElementById('reserveForm');
+      const emailEl = document.getElementById('reserveEmail');
+      const msg = document.getElementById('reserveMsg');
+      form?.addEventListener('submit', async (e)=>{
+        e.preventDefault();
+        const email = (emailEl?.value||'').trim(); if(!email){ emailEl?.focus(); return; }
+        emailEl.disabled = true;
+        const btn = form.querySelector('button[type="submit"]'); if(btn) btn.disabled = true;
 
-      emailEl.disabled = false;
-      if(btn) btn.disabled = false;
-    });
-  })();
+        const status = await reserveSubmit(email);
+        if(status==='ok'){ msg.textContent = 'Thanks! You’re on the waitlist. We’ll email when alerts go live.'; form.reset(); }
+        else if(status==='already'){ msg.textContent = '⚠️ You’re already on the list.'; }
+        else if(status==='unknown'){ msg.textContent = 'Submitted. If you don’t see a confirmation, we’ll still try to add you.'; }
+        else{ msg.textContent = 'Something went wrong. Please try again or email alerts@batasutra.in.'; }
+
+        emailEl.disabled = false; if(btn) btn.disabled = false;
+      });
+    })();
   </script>
 </body>
 </html>
