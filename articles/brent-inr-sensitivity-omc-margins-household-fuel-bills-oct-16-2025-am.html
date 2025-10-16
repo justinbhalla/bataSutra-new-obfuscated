@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Directional math for how crude (Brent) and USD/INR translate into OMC marketing margins and city fuel bills. Sensitivity ladders, formulas, and quick guardrails."/>
+  <meta name="keywords" content="Brent, USDINR, OMC margins, petrol price, diesel price, India fuel, household budget, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Brent + INR Sensitivity: OMC Margins & Fuel Bills — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid --var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">ENERGY · FX · HOUSEHOLD</div>
+        <h1>Brent + INR Sensitivity: OMC Margins & Fuel Bills</h1>
+        <div class="sub">How crude and currency move pump prices, gross marketing margins (GMM), and your monthly fuel bill—using practical, directional math.</div>
+        <div class="meta">By bataSutra Editorial · October 16, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — five-line brief</li>
+    <li>Formula: from Brent & USD/INR to pump price</li>
+    <li>OMC margin ladder (illustrative)</li>
+    <li>City bands & household math</li>
+    <li>What can break the math (policy, inventories, cracks)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Direction:</strong> Lower Brent and a stable INR usually widen OMC GMM and keep retail bands steady.</li>
+      <li><strong>Sensitivity:</strong> ~₹0.40–₹0.60/L per US$1/bbl move (diesel closer to the high end); ~₹0.50–₹0.70/L per ₹1 on USD/INR.</li>
+      <li><strong>Inventory lag:</strong> Spot changes drip into pumps with a lag; clean trends matter more than one-day moves.</li>
+      <li><strong>Policy:</strong> Excise/VAT tweaks or ad-hoc retail band management can override pure-cost signals.</li>
+      <li><strong>Households:</strong> City bands allow budgeting; EV math still wins on per-km energy cost, finance costs aside.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Formula — from Brent + USD/INR to pump price (simplified)</h2>
+  <p><strong>Pump price (₹/L) ≈</strong> <em>landed product cost</em> (Brent × crack × FX) + freight + OMC opex + dealer margin + central excise + state VAT.</p>
+  <ul>
+    <li><strong>Brent:</strong> Base crude marker.</li>
+    <li><strong>Cracks:</strong> Product spreads (gasoline/diesel) vs crude; move independently and shift margins.</li>
+    <li><strong>FX:</strong> Most inputs priced in USD; INR depreciation lifts landed cost.</li>
+    <li><strong>GMM (₹/L):</strong> Pump price net of taxes − landed cost − logistics/opex.</li>
+  </ul>
+  <p class="callout"><span class="badge">Tip</span> Use trends, not ticks. A 2–3 week drift in Brent/INR is more predictive of retail adjustments than a 24-hr spike.</p>
+</section>
+
+<section>
+  <h2>OMC margin ladder (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Scenario</th><th>Brent (US$/bbl)</th><th>USD/INR</th><th>Indicative petrol GMM (₹/L)</th><th>Indicative diesel GMM (₹/L)</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td>A</td><td>60</td><td>83</td><td>₹4.5–6.0</td><td>₹5.0–6.5</td><td>Benign; room for promo/retail band stability</td></tr>
+      <tr><td>B</td><td>70</td><td>84</td><td>₹3.0–4.5</td><td>₹3.5–5.0</td><td>Comfortable if cracks don’t spike</td></tr>
+      <tr><td>C</td><td>80</td><td>86</td><td>₹1.0–2.5</td><td>₹1.5–3.0</td><td>Tight; selective under-recovery risks appear</td></tr>
+      <tr><td>D</td><td>75</td><td>88</td><td>₹0.5–2.0</td><td>₹1.0–2.5</td><td>FX hurts more than Brent in short bursts</td></tr>
+    </tbody>
+  </table>
+  <blockquote><strong>Rule of thumb:</strong> Watch crack spreads; a diesel crack spike can compress GMM even if Brent is stable.</blockquote>
+</section>
+
+<section>
+  <h2>City bands & household math (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>City</th><th>Petrol (₹/L)</th><th>Diesel (₹/L)</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>Delhi</td><td>102–105</td><td>90–93</td><td>Baseline bands</td></tr>
+      <tr><td>Mumbai</td><td>106–110</td><td>93–97</td><td>Higher VAT/cess</td></tr>
+      <tr><td>Bengaluru</td><td>102–106</td><td>88–92</td><td>Recent tax resets reflected</td></tr>
+      <tr><td>Chennai</td><td>101–104</td><td>92–95</td><td>Levy mix different</td></tr>
+    </tbody>
+  </table>
+
+  <div class="grid">
+    <div class="card">
+      <h3>Monthly car fuel bill (Delhi band)</h3>
+      <ul>
+        <li>1,000 km @ 14 km/L (petrol): <strong>₹7,250–₹7,500</strong></li>
+        <li>1,000 km @ 18 km/L (diesel): <strong>₹5,000–₹5,200</strong></li>
+        <li>EV @ 7 km/kWh, ₹9/kWh: <strong>~₹1,285</strong> (ex-parking/finance)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What can break the math</h3>
+      <ul>
+        <li>Tax changes (excise/VAT) or temporary retail band management.</li>
+        <li>Inventory timing (older, costlier cargoes vs new spot purchases).</li>
+        <li>Crack spread spikes (especially diesel) independent of Brent.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <div class="footer"><small class="mute">Figures are directional/illustrative as of Oct 16, 2025. Use your city’s posted prices and latest Brent/FX prints to finalize decisions.</small></div>
+    </div>
+  </main>
+</body>
+</html>
