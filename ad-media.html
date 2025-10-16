@@ -459,5 +459,32 @@
 </div>
     </div>
   </footer>
+
+  <!-- Ticker width guard (keeps both tickers looping seamlessly) -->
+  <script>
+    (function(){
+      function ensureLoopWidthById(id){
+        var el = document.getElementById(id);
+        if(!el) return;
+        var rail = el.parentElement;
+        if(!rail) return;
+        var railWidth = rail.clientWidth || 0;
+        if(!railWidth) return;
+        while(el.scrollWidth < railWidth * 2){
+          Array.from(el.children).forEach(function(ch){ el.appendChild(ch.cloneNode(true)); });
+        }
+      }
+      function refresh(){
+        ensureLoopWidthById('topTicker');
+        ensureLoopWidthById('botTicker');
+      }
+      window.addEventListener('load', refresh);
+      var raf;
+      window.addEventListener('resize', function(){
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(refresh);
+      });
+    })();
+  </script>
 </body>
 </html>
