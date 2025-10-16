@@ -52,6 +52,10 @@
     .toc a { color: #0f172a; }
     .toc a:hover { color: var(--brand-ink); text-decoration: underline; }
     code,kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+    /* Roles filters */
+    .filter-pill { border:1px solid #e5e7eb; border-radius:.75rem; padding:.5rem .75rem; font-size:.8rem; background:#fff; }
+    .filter-pill:focus { outline: none; box-shadow: 0 0 0 3px rgba(139,0,0,.15); border-color: #d1d5db; }
   </style>
 
   <script type="application/ld+json">
@@ -83,7 +87,7 @@
   </div>
 
   <!-- Header -->
-   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
     <div class="container flex items-center justify-between py-3">
       <a href="/" class="flex items-center gap-3">
         <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
@@ -92,7 +96,6 @@
           <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
         </div>
       </a>
-
       <div class="flex items-center gap-2">
         <a href="#subscribe" class="hidden sm:inline-block text-sm font-medium px-3 py-2 rounded-lg bg-[var(--brand)] text-white hover:opacity-90">Subscribe</a>
       </div>
@@ -142,7 +145,20 @@
 
   <!-- Open Roles -->
   <section id="roles" class="container py-6">
-    <h2 class="text-xl font-bold tracking-tight mb-3">Open Roles</h2>
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-xl font-bold tracking-tight">Open Roles</h2>
+      <div class="flex items-center gap-2">
+        <select id="filterTeam" class="filter-pill">
+          <option value="">All Teams</option>
+        </select>
+        <select id="filterType" class="filter-pill">
+          <option value="">All Types</option>
+        </select>
+        <select id="filterLoc" class="filter-pill">
+          <option value="">All Locations</option>
+        </select>
+      </div>
+    </div>
     <div class="card overflow-hidden">
       <div class="overflow-x-auto">
         <table class="min-w-full text-sm">
@@ -160,6 +176,7 @@
         </table>
       </div>
     </div>
+    <p id="rolesCount" class="text-xs text-slate-500 mt-2"></p>
     <p class="text-xs text-slate-500 mt-2">Don’t see a fit? Send a short note + links to <a class="link-ink" href="mailto:careers@batasutra.in">careers@batasutra.in</a>.</p>
   </section>
 
@@ -294,7 +311,7 @@
   </div>
 
   <!-- Footer -->
-   <footer class="footer-red text-sm">
+  <footer class="footer-red text-sm">
     <div class="divider"></div>
 
     <div class="container py-10">
@@ -313,20 +330,20 @@
         <div>
           <div class="heading mb-3">Editorial</div>
           <ul class="space-y-2">
-            <li><a href="latest.html">Latest</a></li>
-            <li><a href="deep-dives.html">Deep Dives</a></li>
-            <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
-            <li><a href="explainers.html">Explainers</a></li>
-            <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
+            <li><a href='/latest'>Latest</a></li>
+            <li><a href='/deep-dives'>Deep Dives</a></li>
+            <li><a href='/weekend-wrap'>Weekend Wrap</a></li>
+            <li><a href='/explainers'>Explainers</a></li>
+            <li><a href='/policy-regulation'>Policy &amp; Regulation</a></li>
           </ul>
         </div>
 
         <div>
           <div class="heading mb-3">Data</div>
           <ul class="space-y-2">
-            <li><a href="indicies.html">Indices</a></li>
-            <li><a href="heatmap.html">Sector Heatmap</a></li>
-            <li><a href="commodities.html">Commodities</a></li>
+            <li><a href='/indicies'>Indices</a></li>
+            <li><a href='/heatmap'>Sector Heatmap</a></li>
+            <li><a href='/commodities'>Commodities</a></li>
           </ul>
         </div>
 
@@ -334,67 +351,172 @@
           <div class="heading mb-3">Tools</div>
           <ul class="space-y-2">
             <li><a href="sip-goal-corpus.html.html">SIP Goal &amp; Corpus</a></li>
-            <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
-            <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
-            <li><a href="tax.html">Tax: Old vs New Slab</a></li>
-            <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
+            <li><a href='/cagr.app.min'>CAGR &amp; Quick IRR</a></li>
+            <li><a href='/ppf.app.min'>PPF &amp; Emergency Ladder</a></li>
+            <li><a href='/tax'>Tax: Old vs New Slab</a></li>
+            <li><a href='/runway.app.min'>Expense Buckets &amp; Runway</a></li>
           </ul>
         </div>
 
         <div>
           <div class="heading mb-3">Company</div>
           <ul class="space-y-2">
-            <li><a href="about.html">About</a></li>
-            <li><a href="whats-inside.html">Inside the Dashboard</a></li>
-            <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
-            <li><a href="partnership.html">Partnerships</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href='/about'>About</a></li>
+            <li><a href='/whats-inside'>Inside the Dashboard</a></li>
+            <li><a href='/ad-media'>Advertising &amp; Media Kit</a></li>
+            <li><a href='/partnership'>Partnerships</a></li>
+            <li><a href='/careers'>Careers</a></li>
+            <li><a href='/contact'>Contact</a></li>
           </ul>
         </div>
 
         <div>
           <div class="heading mb-3">Resources</div>
           <ul class="space-y-2">
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="data-sources.html">Data Sources</a></li>
-            <li><a href="editorial-policy.html">Editorial Policy</a></li>
-            <li><a href="corrections.html">Corrections</a></li>
-            <li><a href="ethics.html">Ethics &amp; Independence</a></li>
-            <li><a href="accessibility.html">Accessibility</a></li>
+            <li><a href='/methodology'>Methodology</a></li>
+            <li><a href='/data-sources'>Data Sources</a></li>
+            <li><a href='/editorial-policy'>Editorial Policy</a></li>
+            <li><a href='/corrections'>Corrections</a></li>
+            <li><a href='/ethics'>Ethics &amp; Independence</a></li>
+            <li><a href='/accessibility'>Accessibility</a></li>
           </ul>
         </div>
 
         <div>
           <div class="heading mb-3">Legal</div>
           <ul class="space-y-2">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-services.html">Terms of Service</a></li>
-            <li><a href="cookies.html">Cookie Policy</a></li>
-            <li><a href="security.html">Security</a></li>
-            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
-            <li><a href="licensing.html">Licensing</a></li>
+            <li><a href='/privacy-policy'>Privacy Policy</a></li>
+            <li><a href='/terms-of-services'>Terms of Service</a></li>
+            <li><a href='/cookies'>Cookie Policy</a></li>
+            <li><a href='/security'>Security</a></li>
+            <li><a href='/responsible-disclosure'>Responsible Disclosure</a></li>
+            <li><a href='/licensing'>Licensing</a></li>
           </ul>
         </div>
       </div>
 
-    <div class="divider mt-10"></div>
+      <div class="divider mt-10"></div>
 
-<div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
-  <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
+      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
+        <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
 
-  <div class="muted text-center">
-    &copy; <span id="year"></span> bataSutra. All rights reserved.
-  </div>
+        <div class="muted text-center">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
+        </div>
 
-  <div class="flex items-center gap-4 muted justify-center md:justify-end">
-    <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
-  </div>
-</div>
+        <div class="flex items-center gap-4 muted justify-center md:justify-end">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <!-- External, obfuscated script -->
+  <!-- External, obfuscated script (kept) -->
   <script src="careers.js" defer></script>
+
+  <!-- Inline: roles data + renderer -->
+  <script>
+    const ROLES = [
+      // Editorial & Research
+      { title:"Business Reporter", team:"Editorial & Research", type:"Full-time", location:"Remote / Gurgaon", summary:"Join our editorial team to cover Indian startups, tech, and policy. Strong writing skills and curiosity required." },
+      { title:"Newsletter Editor", team:"Editorial & Research", type:"Full-time", location:"Remote", summary:"Own the bataSutra weekly newsletter. Curate, write, and design a sharp, snappy digest for thousands of subscribers." },
+      { title:"Policy & Regulation Analyst", team:"Editorial & Research", type:"Full-time", location:"Remote", summary:"Write deep, analytical pieces on Indian economic policy, regulation, and governance. Prior research or policy background preferred." },
+      { title:"Fact-Checker & Research Assistant", team:"Editorial & Research", type:"Full-time", location:"Remote", summary:"Work alongside reporters to ensure factual accuracy and clarity in all our content. Detail orientation is a must." },
+      { title:"Investigative Reporter", team:"Editorial & Research", type:"Contract", location:"Remote / On-assignment", summary:"Pitch, report, and write in-depth stories on corporate governance, finance, or tech. Contract-based, story-driven role." },
+
+      // Design & Product
+      { title:"Data Visualisation Designer", team:"Design & Product", type:"Full-time", location:"Remote / Gurgaon", summary:"Craft visual narratives with charts and interactive graphics. Experience with D3.js, Flourish, or Figma preferred." },
+      { title:"UX Designer", team:"Design & Product", type:"Full-time", location:"Remote / Hybrid", summary:"Design smooth, accessible, and delightful reader journeys across web and mobile. Aesthetic sensibility + wireframing essential." },
+      { title:"Product & Platform Lead", team:"Design & Product", type:"Full-time", location:"Hybrid / Bengaluru", summary:"Bridge editorial, design, and engineering to scale our content platform—think CMS, performance, and UX improvements." },
+      { title:"Frontend Developer", team:"Design & Product", type:"Full-time", location:"Remote / Gurgaon", summary:"Build fast, engaging experiences using HTML, CSS, JS, and modern frontend frameworks." },
+
+      // Growth & Partnerships
+      { title:"Growth Strategist", team:"Growth & Partnerships", type:"Full-time", location:"Remote / Gurgaon", summary:"Develop and execute audience growth across SEO, partnerships, and referrals. Analytical mindset required." },
+      { title:"Ad Sales & Partnerships Lead", team:"Growth & Partnerships", type:"Full-time", location:"Hybrid / Delhi NCR", summary:"Lead outreach to sponsors and strategic partners. Branded content, media sales, and niche B2B growth experience needed." },
+      { title:"Community & Events Manager", team:"Growth & Partnerships", type:"Full-time", location:"Gurgaon / Hybrid", summary:"Run reader engagement, coordinate AMAs, and plan small-format roundtables and gatherings." },
+
+      // Digital Media & Social
+      { title:"Social Media Editor", team:"Digital Media & Social", type:"Full-time", location:"Remote", summary:"Grow our reach with engaging posts across LinkedIn, X, and Instagram. News/digital media experience is a plus." },
+      { title:"Multimedia Producer", team:"Digital Media & Social", type:"Full-time", location:"Remote / Gurgaon", summary:"Create reels, shorts, and explainer videos for bataSutra’s channels. Turn dull stats into visual gold." },
+
+      // Internships
+      { title:"Research Fellow (Internship)", team:"Internships", type:"Internship (Paid)", location:"Remote", summary:"A 3-month paid program for those looking to break into business journalism or policy analysis. Students welcome." },
+      { title:"Editorial Intern", team:"Internships", type:"Internship (Paid)", location:"Remote", summary:"Support content creation, pitch ideas, and learn editorial workflow at bataSutra." },
+      { title:"Design Intern", team:"Internships", type:"Internship (Paid)", location:"Remote", summary:"Work with designers on graphics, data visuals, and digital layouts for editorial and social." },
+      { title:"Marketing Intern", team:"Internships", type:"Internship (Paid)", location:"Remote", summary:"Assist with audience campaigns, SEO initiatives, and reader engagement." },
+      { title:"Tech Intern", team:"Internships", type:"Internship (Paid)", location:"Remote", summary:"Support UI updates, CMS optimization, and experiments with interactivity tools." }
+    ];
+
+    function mailtoLink(role){
+      const subject = encodeURIComponent(`Application — ${role.title}`);
+      const body = encodeURIComponent(
+`Hi bataSutra team,
+
+I’d like to apply for ${role.title} (${role.team}).
+
+Links:
+- CV:
+- Portfolio/Clips:
+
+Notes:
+
+Thanks,`
+      );
+      return `mailto:careers@batasutra.in?subject=${subject}&body=${body}`;
+    }
+
+    function slugify(s){ return s.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/(^-|-$)/g,''); }
+
+    function renderRoles(list){
+      const tbody = document.getElementById('rolesBody');
+      const countEl = document.getElementById('rolesCount');
+      tbody.innerHTML = '';
+      list.forEach(r=>{
+        const tr = document.createElement('tr');
+        tr.id = slugify(r.title);
+        tr.innerHTML = `
+          <td class="px-3 py-3 font-medium"><a class="link-ink" href="#${slugify(r.title)}">${r.title}</a></td>
+          <td class="px-3 py-3">${r.team}</td>
+          <td class="px-3 py-3">${r.type}</td>
+          <td class="px-3 py-3">${r.location}</td>
+          <td class="px-3 py-3 text-slate-600">${r.summary}</td>
+          <td class="px-3 py-3"><a class="link-ink font-medium" href="${mailtoLink(r)}">Apply →</a></td>
+        `;
+        tbody.appendChild(tr);
+      });
+      countEl.textContent = `${list.length} role${list.length===1?'':'s'} listed`;
+    }
+
+    function populateFilters(){
+      const teamSel = document.getElementById('filterTeam');
+      const typeSel = document.getElementById('filterType');
+      const locSel  = document.getElementById('filterLoc');
+
+      const by = (k) => [...new Set(ROLES.map(r=>r[k]))].sort((a,b)=>a.localeCompare(b));
+      by('team').forEach(v=> teamSel.insertAdjacentHTML('beforeend', `<option>${v}</option>`));
+      by('type').forEach(v=> typeSel.insertAdjacentHTML('beforeend', `<option>${v}</option>`));
+      by('location').forEach(v=> locSel.insertAdjacentHTML('beforeend', `<option>${v}</option>`));
+
+      function apply(){
+        const t = teamSel.value, ty = typeSel.value, l = locSel.value;
+        const out = ROLES.filter(r=>
+          (!t || r.team===t) &&
+          (!ty || r.type===ty) &&
+          (!l || r.location===l)
+        );
+        renderRoles(out);
+      }
+      teamSel.addEventListener('change', apply);
+      typeSel.addEventListener('change', apply);
+      locSel.addEventListener('change', apply);
+      apply();
+    }
+
+    // Boot
+    (function(){
+      const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+      populateFilters();
+    })();
+  </script>
 </body>
 </html>
