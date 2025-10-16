@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="index,follow,max-image-preview:large" />
+  <meta name="description" content="Optional T+0 keeps rolling out while SEBI extends the new pledge/re-pledge deadline to Oct 10, 2025. Here’s the two-speed market retail must navigate—timelines, windows, and checklists for brokers and investors."/>
+  <meta name="keywords" content="SEBI, T+0, same-day settlement, optional, QSBs, NSE, BSE, pledge, re-pledge, NSDL, CDSL, margins, settlement cycle, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>T+0 (Optional) & Pledge Extension: Two-Speed Retail Should Navigate — bataSutra</title>
+
+  <!-- Canonical & OG/Twitter -->
+  <link rel="canonical" href="https://batasutra.com/t0-optional-margin-pledge-extension-retail-two-speed.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="bataSutra" />
+  <meta property="og:title" content="T+0 (Optional) & Margin Pledge Extension: The Two-Speed Market Retail Must Navigate" />
+  <meta property="og:description" content="SEBI’s T+0 roadmap + pledge/re-pledge extension to Oct 10, 2025. Clear checklists for brokers and retail." />
+  <meta property="og:url" content="https://batasutra.com/t0-optional-margin-pledge-extension-retail-two-speed.html" />
+  <meta property="og:image" content="https://batasutra.com/assets/og/t0-margin-pledge.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="T+0 (Optional) & Margin Pledge Extension: The Two-Speed Market Retail Must Navigate" />
+  <meta name="twitter:description" content="Same-day settlement keeps expanding, while margin pledge goes live by Oct 10. What brokers and investors must do now." />
+  <meta name="twitter:image" content="https://batasutra.com/assets/og/t0-margin-pledge.jpg" />
+
+  <!-- JSON-LD: Article + Breadcrumb + FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"T+0 (Optional) & Margin Pledge Extension: The Two-Speed Market Retail Must Navigate",
+    "description":"Optional T+0 rolls out while SEBI extends the pledge/re-pledge deadline to Oct 10, 2025—timelines and operational checklists for brokers and investors.",
+    "author":{"@type":"Organization","name":"bataSutra"},
+    "publisher":{"@type":"Organization","name":"bataSutra","logo":{"@type":"ImageObject","url":"https://batasutra.com/assets/logo-512.png"}},
+    "datePublished":"2025-08-24T21:10:00+05:30",
+    "dateModified":"2025-08-24T21:10:00+05:30",
+    "image":"https://batasutra.com/assets/og/t0-margin-pledge.jpg",
+    "mainEntityOfPage":"https://batasutra.com/t0-optional-margin-pledge-extension-retail-two-speed.html",
+    "keywords":["SEBI","T+0","settlement","pledge","re-pledge","NSDL","CDSL","brokers","investors","India"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://batasutra.com/"},
+      {"@type":"ListItem","position":2,"name":"T+0 & Margin Pledge: Two-Speed Market"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"Is T+0 mandatory for everyone?","acceptedAnswer":{"@type":"Answer","text":"No. It’s optional alongside T+1. Exchanges list eligible stocks and the T+0 trading/settlement windows in their circulars."}},
+      {"@type":"Question","name":"What changed on margin pledge?","acceptedAnswer":{"@type":"Answer","text":"SEBI extended the go-live timeline for the updated pledge/re-pledge framework to October 10, 2025 to ensure smooth implementation across DPs, brokers and depositories."}},
+      {"@type":"Question","name":"Will T+0 quotes differ from T+1?","acceptedAnswer":{"@type":"Answer","text":"Yes. T+0 typically runs in a defined intraday window with price-band protections and separate liquidity; some exchange rules keep T+0 trades outside index calculation."}},
+      {"@type":"Question","name":"Can brokers charge differently for T+0?","acceptedAnswer":{"@type":"Answer","text":"Yes. Brokers may levy distinct fees given faster settlement and operational costs. Check your broker’s tariff note."}}
+    ]
+  }
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="preload" as="style" onload="this.rel='stylesheet'"/>
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/></noscript>
+
+  <style>
+    :root{--brand:#8B0000;--ink:#111;--muted:#555;--bg:#fff;--light:#f9f5f5;--accent:#b22222;}
+    *{box-sizing:border-box} html{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Helvetica Neue',Arial,sans-serif;color:var(--ink)}
+    body{margin:0;background:var(--bg);line-height:1.6}
+    .header{background:var(--brand);color:#fff;padding:56px 24px 40px}
+    .wrap{max-width:920px;margin:0 auto;padding:0 16px}
+    .kicker{text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-size:12px;opacity:.9}
+    h1{font-size:clamp(28px,3.2vw,40px);margin:8px 0 10px;line-height:1.2}
+    .sub{font-size:clamp(16px,2vw,20px);opacity:.95}
+    .meta{font-size:13px;opacity:.9;margin-top:10px}
+    main{padding:28px 0 64px;background:#fff}
+    section{margin:30px 0}
+    h2{font-size:22px;margin:30px 0 10px}
+    h3{font-size:18px;margin:22px 0 8px}
+    p{margin:10px 0}
+    ul,ol{padding-left:20px}
+    hr{border:0;height:1px;background:#eee;margin:28px 0}
+    .callout{background:var(--light);border-left:4px solid var(--brand);padding:14px 16px;border-radius:8px}
+    .grid{display:grid;gap:14px;grid-template-columns:repeat(12,1fr)}
+    .card{grid-column:span 12;padding:14px;border:1px solid #eee;border-radius:12px;background:#fff;box-shadow:0 1px 0 rgba(0,0,0,.03)}
+    @media(min-width:760px){.two{grid-template-columns:repeat(12,1fr)} .half{grid-column:span 6}}
+    blockquote{margin:10px 0;padding:10px 16px;border-left:3px solid #ddd;color:#333;background:#fafafa;border-radius:6px}
+    .toc{background:#fcfcfc;border:1px solid #eee;padding:12px 14px;border-radius:10px}
+    small.mute{color:var(--muted)}
+    .table{width:100%;border-collapse:collapse;font-size:14px}
+    .table th,.table td{border:1px solid #eee;padding:10px;text-align:left}
+    .table th{background:#fafafa}
+    .header-link{text-decoration:none;color:inherit;display:block}
+    .header-link:focus-visible{outline:2px dashed #fff;outline-offset:4px}
+    a.anchor{color:inherit;text-decoration:none}
+    .badge{display:inline-block;padding:2px 8px;border:1px solid #e6e6e6;border-radius:999px;font-size:12px;background:#fafafa;margin-right:6px}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Policy · SETTLEMENT</div>
+        <h1>T+0 (Optional) & Pledge Extension: Two-Speed Retail Should Navigate</h1>
+        <div class="sub">Same-day settlement keeps expanding while the new pledge/re-pledge framework’s go-live is pushed to <strong>Oct 10, 2025</strong>. Here’s how brokers and retail can operate cleanly in a two-speed market.</div>
+        <div class="meta">By bataSutra Editorial · August 24, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+      <section id="toc" class="toc">
+        <strong>In this piece:</strong>
+        <ul>
+          <li><a class="anchor" href="#short">The short</a></li>
+          <li><a class="anchor" href="#timeline">Timeline & windows (T+0)</a></li>
+          <li><a class="anchor" href="#pledge">Pledge/re-pledge: what’s changing</a></li>
+          <li><a class="anchor" href="#brokers">Broker checklist</a></li>
+          <li><a class="anchor" href="#investors">Investor checklist</a></li>
+          <li><a class="anchor" href="#faq">FAQ</a></li>
+        </ul>
+      </section>
+
+      <section id="short">
+        <h2>The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Two-speed:</strong> <em>Optional</em> T+0 runs alongside T+1—different liquidity pools and protections.</li>
+            <li><strong>Pledge push-out:</strong> Updated pledge/re-pledge framework now slated for <em>Oct 10, 2025</em>, giving DPs/brokers more time to align systems.</li>
+            <li><strong>Actionables:</strong> Brokers must split risk, ops, and tariffs by cycle; investors should learn T+0 windows, price bands, and funds/securities availability rules.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="timeline">
+        <h2>Timeline & windows — T+0 at a glance</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Rollout</h3>
+            <ul>
+              <li>Beta in Mar 2024 with 25 names.</li>
+              <li>Scope expanded towards top 500 from Dec 10, 2024 (phased additions).</li>
+              <li>Broker readiness for optional T+0 extended to <strong>Nov 1, 2025</strong> for QSBs.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>Trading systems</h3>
+            <ul>
+              <li>Defined intraday <strong>T+0 window</strong> (per exchange circulars; early phases used ~9:15–13:30).</li>
+              <li><strong>Price-band</strong> protections vs T+1 quotes; <em>T+0 prints typically excluded from index calculation</em>.</li>
+              <li>Separate liquidity; settlement and pay-in/pay-out are same-day.</li>
+            </ul>
+          </div>
+        </div>
+        <small class="mute">Check the latest NSE/BSE circulars for eligible stocks, exact windows, and bands.</small>
+      </section>
+
+      <section id="pledge">
+        <h2>Pledge/re-pledge — what’s changing by Oct 10</h2>
+        <ul>
+          <li><strong>New framework:</strong> Margin obligations to flow through the depository pledge/re-pledge pipe (audit-friendly; no “off-market” shortcuts).</li>
+          <li><strong>Revised go-live:</strong> Deadline extended to <strong>October 10, 2025</strong> to complete system builds and end-to-end testing across DPs/brokers.</li>
+          <li><strong>Takeaway:</strong> Expect staged broker cut-overs; investors may see updated pledge screens and consent flows.</li>
+        </ul>
+      </section>
+
+      <section id="brokers">
+        <h2>Broker checklist — two speeds, one OMS/RMS</h2>
+        <table class="table">
+          <thead><tr><th>Area</th><th>What to do</th></tr></thead>
+          <tbody>
+            <tr><td>Onboarding & UI</td><td>Add explicit <em>T+0 vs T+1</em> selection; disclose windows, bands, and tariff differences.</td></tr>
+            <tr><td>RMS/Margins</td><td>Separate risk buckets; T+0 requires same-day funding and inventory settlement.</td></tr>
+            <tr><td>DP & Pledge</td><td>Map new pledge/re-pledge APIs; rehearse lien creation/cancellation flows pre-Oct 10.</td></tr>
+            <tr><td>Ops Timings</td><td>Publish cut-offs for <em>funds/securities pay-in</em> specific to T+0 vs T+1.</td></tr>
+            <tr><td>Custody/Institutions</td><td>Enable custodian-routed T+0 (per exchange FAQs) and reconcile allocations.</td></tr>
+            <tr><td>Disclosures</td><td>Make clear that T+0 quotes/liquidity differ; some prices/bands may not impact indices.</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="investors">
+        <h2>Investor checklist — avoid gotchas</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Before you trade</h3>
+            <ul>
+              <li>Confirm if your stock is <strong>T+0-eligible</strong> and note the <strong>window</strong>.</li>
+              <li>Keep <strong>funds ready</strong>; same-day pay-in applies.</li>
+              <li>Expect <strong>tighter bands</strong> and different liquidity vs T+1.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>After you trade</h3>
+            <ul>
+              <li>Watch settlement timelines—credit/debit same day.</li>
+              <li>Corporate actions/indices may reference T+1, not T+0 prints.</li>
+              <li>Charges may differ by cycle; check your broker’s schedule.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq">
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>Can I switch between T+0 and T+1 intraday?</strong> Your broker’s UI will show eligible choices; selections apply per order.</li>
+          <li><strong>Does the Oct 10 date affect my current pledges?</strong> Brokers/DPs are migrating systems. Existing pledges should continue; watch for new consent flows.</li>
+          <li><strong>Will T+0 expand further?</strong> Exchanges keep updating cohorts; watch their circulars for additions.</li>
+        </ul>
+      </section>
+
+      <hr/>
+      <p class="mute"><small>Disclosure: This explainer summarises regulatory/exchange circulars. Final windows, eligible names and pledge mechanics may change via fresh notices.</small></p>
+    </div>
+  </main>
+</body>
+</html>

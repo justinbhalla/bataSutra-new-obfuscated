@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cohorts, density, partner earnings and payback—how Urban Company’s unit economics really work across categories, and what investors should model."/>
+  <meta name="keywords" content="Urban Company IPO, unit economics, CAC, LTV, cohorts, density, take rate, contribution margin, marketplace, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Urban Company IPO: The Unit Economics Play — Beyond the Numbers — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">KPI · IPO · ECONOMICS</div>
+        <h1>Urban Company IPO: The Unit Economics Play — Beyond the Numbers</h1>
+        <div class="sub">Cohorts, density, partner earnings and payback—not GMV—drive valuation. Here’s the model investors should read for.</div>
+        <div class="meta">By bataSutra Editorial · September 17, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — what actually matters</li>
+    <li>KPI map & clean definitions</li>
+    <li>Cohorts & payback (with sensitivity)</li>
+    <li>Density & routing economics (zone archetypes)</li>
+    <li>Partner earnings, take rate & incentive taper</li>
+    <li>Category mix & cross-subsidy questions</li>
+    <li>Cancellations, refunds & trust costs</li>
+    <li>Offline substitutes & moat tests</li>
+    <li>Playbooks (investors, founders, bankers)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Cohort durability &gt; blended growth:</strong> Value rests on 12–24m repeat curves by category/city.</li>
+      <li><strong>Payback in months:</strong> CAC should return in &le; 9m (Tier-1 dense), &le; 12m (Tier-2).</li>
+      <li><strong>Density compounding:</strong> More jobs/zone/day ↓ CAC, ↓ cancels, ↑ NPS, ↑ CM2%.</li>
+      <li><strong>Partner viability:</strong> Post-incentive earnings must clear a living-wage floor to avoid churn-CAC spirals.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>KPI map & definitions</h2>
+  <table class="table">
+    <thead><tr><th>Metric</th><th>Definition (clean)</th><th>Inspect</th></tr></thead>
+    <tbody>
+      <tr><td>GMV</td><td>Pre-commission order value</td><td>Mix shifts; promo inflation</td></tr>
+      <tr><td>Take rate</td><td>(Platform revenue – discounts – subsidies) ÷ GMV</td><td>Net vs gross disclosure</td></tr>
+      <tr><td>CM2%</td><td>Platform revenue – (incentives + CS + payments + refunds)</td><td>Promo normalization</td></tr>
+      <tr><td>CAC (true)</td><td>Paid media + referral credits + first-order subsidy ÷ new paid users</td><td>Attribution window</td></tr>
+      <tr><td>LTV (cohort)</td><td>Σ CM2_user_t ÷ (1+r)^t for t=1..24m</td><td>Decay assumptions by category</td></tr>
+      <tr><td>Payback</td><td>CAC ÷ monthly CM2 per retained user</td><td>Zone density effect</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Cohorts & payback — with sensitivity</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Illustrative payback matrix (Beauty, dense Tier-1)</h3>
+      <table class="table">
+        <thead><tr><th>CM2% ▼ / AOV ▲</th><th>₹900</th><th>₹1,100</th><th>₹1,300</th></tr></thead>
+        <tbody>
+          <tr><td>18%</td><td>12m</td><td>10m</td><td>9m</td></tr>
+          <tr><td>22%</td><td>10m</td><td>8m</td><td>7m</td></tr>
+          <tr><td>26%</td><td>8m</td><td>7m</td><td>6m</td></tr>
+        </tbody>
+      </table>
+      <p><small class="mute">Assume CAC ₹700–₹900; retention Month-12 ~30–35%.</small></p>
+    </div>
+    <div class="card">
+      <h3>Stress tests</h3>
+      <ul>
+        <li><strong>AOV −10%</strong> with constant CAC → payback slips ~1–2m.</li>
+        <li><strong>Payout +3%</strong> (partner uplift) → CM2 compresses ~150–250bps unless AOV lifts.</li>
+        <li><strong>Cancel rate +200bps</strong> → refunds & re-slot costs rise; CM2 hit magnified in low-density zones.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Density & routing economics</h2>
+  <p>Service density (jobs/zone/day) reduces travel dead-time and increases slot fill, directly improving CM2% and retention.</p>
+  <table class="table">
+    <thead><tr><th>Zone archetype</th><th>Jobs/day</th><th>Est. CAC</th><th>CM2%</th><th>Cancel risk</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Tier-1 Core</td><td>12–18</td><td>Low</td><td>High</td><td>Low</td><td>Best unit economics; anchor for cohorts</td></tr>
+      <tr><td>Tier-1 Fringe</td><td>7–10</td><td>Mid</td><td>Mid</td><td>Mid</td><td>Needs routing + surge discipline</td></tr>
+      <tr><td>Tier-2/3 Mixed</td><td>3–6</td><td>High</td><td>Lower</td><td>Higher</td><td>Partner availability & trust dominate</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Partner earnings, take rate & incentive taper</h2>
+  <ul>
+    <li><strong>Stability test:</strong> Post-incentive take-home ≥ category median within city; otherwise churn raises CAC.</li>
+    <li><strong>Elasticity:</strong> If partner payout ↑ 3–4%, model AOV lift from better talent retention & NPS.</li>
+    <li><strong>Safety costs:</strong> Background checks, training, consumables → book these in CM2 for apples-to-apples.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Category mix & cross-subsidy questions</h2>
+  <table class="table">
+    <thead><tr><th>Category</th><th>AOV</th><th>CM2%</th><th>Repeat</th><th>Role in mix</th></tr></thead>
+    <tbody>
+      <tr><td>Beauty & Wellness</td><td>Mid–High</td><td>High</td><td>Monthly/Bi-monthly</td><td>Profit anchor in dense zones</td></tr>
+      <tr><td>Cleaning/Deep Clean</td><td>High</td><td>Mid</td><td>Quarterly</td><td>Seasonal spikes; staffing heavy</td></tr>
+      <tr><td>Repairs/Handyman</td><td>Low–Mid</td><td>Lower</td><td>Event-driven</td><td>Trust-led; availability moat</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Cancellations, refunds & trust costs</h2>
+  <ul>
+    <li><strong>Late cancel matrix:</strong> Time-of-day × category; evening beauty & weekend cleaning are high risk.</li>
+    <li><strong>Refund policy clarity:</strong> Where do refunds sit—gross, net, or below the line? Normalize for CM2.</li>
+    <li><strong>Trust spend:</strong> Safety gear, insurance, and dispute ops reduce churn & chargebacks; capture benefit in retention curves.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Offline substitutes & moat tests</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Substitutes</h3>
+      <ul>
+        <li>Local salons/home parlours (Beauty)</li>
+        <li>Housing society vendors (Cleaning)</li>
+        <li>Local technicians (Repairs)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Moat tests</h3>
+      <ul>
+        <li>Availability advantage: median wait time vs offline</li>
+        <li>Trust: incident rate & resolution SLA vs peers</li>
+        <li>Price dispersion vs NPS: can premiums sustain?</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Playbooks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Investors</h3>
+      <ul>
+        <li>Model category-level LTV/CAC; avoid blended optics.</li>
+        <li>Demand net take-rate & CM2 reconciliation to audited notes.</li>
+        <li>Run −10% AOV & +3% payout shocks; require payback &le; 12m.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Founders</h3>
+      <ul>
+        <li>Publish a locked KPI glossary; align DRHP, MD&A, decks.</li>
+        <li>Show density maps, cancel fixes, safety spend ROI.</li>
+        <li>Disclose post-incentive partner earnings distributions.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Bankers</h3>
+      <ul>
+        <li>Educate anchors on cohort math & payback ladders.</li>
+        <li>Ensure float sizing suits retail volatility.</li>
+        <li>Avoid metric drift; one definition everywhere.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+      <div class="footer"><small class="mute">Frameworks are illustrative as of Sep 17, 2025. Validate definitions and numbers against official filings before drawing conclusions.</small></div>
+    </div>
+  </main>
+</body>
+</html>

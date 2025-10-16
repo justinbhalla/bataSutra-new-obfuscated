@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SEBI’s August updates on Research Analyst / Investment Adviser deposit norms—what shifts operationally, cost math across firm sizes, and practical compliance hacks."/>
+  <meta name="keywords" content="SEBI, Research Analyst, Investment Adviser, RA, IA, deposit, compliance, India 2025, investor protection, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">FRIDAY · REGULATION · COMPLIANCE</div>
+        <h1>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h1>
+        <div class="sub">Deposit requirements get sharper—here’s what it means for Research Analysts & Investment Advisers, how to budget it, and ways to operationalize fast.</div>
+        <div class="meta">By bataSutra Editorial · September 19, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — summary of changes</li>
+    <li>Who’s covered & timelines</li>
+    <li>Cost math: escrow/FD vs bank guarantee</li>
+    <li>Operational playbook & “hacks”</li>
+    <li>Audit checklist, disclosures & grievance flow</li>
+    <li>Weekly circulars roundup (SEBI/RBI/IRDAI/UIDAI)</li>
+    <li>FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Higher certainty for clients:</strong> Deposit/guarantee aims to ring-fence liabilities and strengthen grievance redressal.</li>
+      <li><strong>Differentiated slabs:</strong> Requirements scale by registration type and client money handling.</li>
+      <li><strong>Transition window:</strong> Existing RAs/IAs get time to set up escrow/FD/BG and update disclosures.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Who’s covered & timelines (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Entity</th><th>Triggers</th><th>Deposit/BG option</th><th>Key dates</th></tr></thead>
+    <tbody>
+      <tr><td>Research Analyst (individual)</td><td>Fee-based reports/advice</td><td>FD/escrow deposit (₹X lakh) or BG</td><td>T+60 days from circular effective</td></tr>
+      <tr><td>Research Entity (non-individual)</td><td>Analyst team; subscriptions</td><td>Higher slab; auditor attestation</td><td>T+90 days</td></tr>
+      <tr><td>Investment Adviser (individual)</td><td>Advisory fees; non-POA</td><td>FD/escrow deposit (₹Y lakh)</td><td>T+60 days</td></tr>
+      <tr><td>Investment Adviser (non-individual)</td><td>Advisory at scale</td><td>Higher slab or BG with renewal covenants</td><td>T+90 days</td></tr>
+    </tbody>
+  </table>
+ 
+</section>
+
+<section>
+  <h2>Cost math — what to pick & why</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Option A: Fixed Deposit / Escrow</h3>
+      <ul>
+        <li>Pros: Simple, transparent; earns interest (offsets cost partly).</li>
+        <li>Cons: Cash tied up; breakage penalties if altered mid-term.</li>
+        <li>Docs: Lien marking, bank letter, auditor confirmation.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Option B: Bank Guarantee</h3>
+      <ul>
+        <li>Pros: Lower upfront cash; flexibility on working capital.</li>
+        <li>Cons: BG commission (0.75–2.0% p.a.), collateral margin, renewal risk.</li>
+        <li>Docs: BG text as per format; board approvals.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Illustrative annualized cost comparison</h3>
+  <table class="table">
+    <thead><tr><th>Deposit size</th><th>FD route (6.5% yield)</th><th>BG route (1.25% fee + 25% cash margin)</th><th>Effective annual cost</th></tr></thead>
+    <tbody>
+      <tr><td>₹5,00,000</td><td>Interest earned ~₹32,500</td><td>Fee ₹6,250; margin opp. cost ~₹8,125</td><td>FD: negative cost (earns); BG: ~₹14,375</td></tr>
+      <tr><td>₹15,00,000</td><td>Interest ~₹97,500</td><td>Fee ₹18,750; margin opp. cost ~₹24,375</td><td>FD: earns; BG: ~₹43,125</td></tr>
+    </tbody>
+  </table>
+  
+</section>
+
+<section>
+  <h2>Operational playbook (“hacks” that hold up in audits)</h2>
+  <ol>
+    <li><strong>Open a dedicated RA/IA compliance account</strong> with view-only access for compliance/officers; keep client fees separate from ops.</li>
+    <li><strong>Automate renewal ticklers</strong>: BG/FD maturity alerts at T-90/T-30/T-7; link to board agenda.</li>
+    <li><strong>Template disclosures</strong> on website, contracts, and every invoice: deposit/BG details, grievance desk, escalation path.</li>
+    <li><strong>Ticketing for grievances</strong> (email + form) with SLA stamps; export quarterly to CSV for audit.</li>
+    <li><strong>Scope cyber</strong>: freeze report delivery flows (no WhatsApp PDFs without watermark; use client portal/email with tracking).</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Audit checklist & disclosures</h2>
+  <ul>
+    <li>Copy of FD receipt/BG with lien & bank letters.</li>
+    <li>Board resolution, UBO/KMP list, PAN/GST copies.</li>
+    <li>Client agreement latest version control; fee schedule.</li>
+    <li>Complaint register with closure codes & TAT.</li>
+    <li>Website disclosures: registration no., validity, deposit/BG statement, Do/Don’t list.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Weekly circulars roundup (SEBI/RBI/IRDAI/UIDAI)</h2>
+  <ul>
+    <li><strong>SEBI:</strong> Clarifications on intermediary obligations; updates to cyber/incident reporting windows.</li>
+    <li><strong>RBI:</strong> Payments/UPI limits & sandbox milestones; co-lending FAQs.</li>
+    <li><strong>IRDAI:</strong> Health product guideline tweaks; protection of policyholder data.</li>
+    <li><strong>UIDAI:</strong> e-KYC process simplification; offline verification standards.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Can I split deposit between entities?</strong> Keep deposit at the registered entity level; avoid cross-pledge.</li>
+    <li><strong>BG from any bank?</strong> Prefer scheduled commercial banks; use regulator-specified text & validity.</li>
+    <li><strong>Interest on escrow usable?</strong> Treat as firm income; do not net against client refunds unless contractually allowed.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Framework is illustrative as of Sep 19, 2025.</small></div>
+    </div>
+  </main>
+</body>
+</html>

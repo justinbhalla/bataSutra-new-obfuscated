@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Cut through vanity metrics: cohorts, take rate, contribution margins, and the sensitivity tests that actually price the stock."/>
+  <meta name="keywords" content="Urban Company IPO, unit economics, cohorts, LTV CAC, contribution margin, IPO valuation India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Urban Company IPO: Beyond the Numbers — The Unit Economics Play — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">IPO · UNIT ECONOMICS</div>
+        <h1>Urban Company IPO: Beyond the Numbers — The Unit Economics Play</h1>
+        <div class="sub">Cohorts, take rates, contribution margins, and cash conversion—how to read the filing like an operator.</div>
+        <div class="meta">By bataSutra Editorial · October 5, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — how value is actually created</li>
+    <li>Cohort engine & repeat usage</li>
+    <li>Take rate, incentives & contribution margin</li>
+    <li>LTV/CAC math & payback months</li>
+    <li>Sensitivity table & valuation bridge</li>
+    <li>Red flags & diligence asks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Core:</strong> This is a <em>frequency + trust</em> engine. Cohort health—not GMV headlines—drives durability.</li>
+      <li><strong>North star:</strong> Contribution Margin 2 (after variable ops and CX) turning sustainably positive on mature cohorts.</li>
+      <li><strong>Cash:</strong> OCF/EBITDA trending to &gt; 0.8 with low receivable days is the de-risking tell.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Cohort engine & repeat usage</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>What to read</h3>
+      <ul>
+        <li>Monthly active users by vintage; 12/18/24-month retention curves.</li>
+        <li>Service-mix drift: one-off high-ticket vs repeat low-ticket categories.</li>
+        <li>Professional supply: activation, utilization, churn, NPS.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Operator cues</h3>
+      <ul>
+        <li>Drive habit-forming categories (cleaning, grooming) to lift repeat frequency.</li>
+        <li>Cap incentives once a cohort’s repeat rate stabilizes; avoid rent-seeking “promo loops”.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Take rate, incentives & contribution margin</h2>
+  <table class="table">
+    <thead><tr><th>Component</th><th>Illustrative range</th><th>Levers</th><th>Investor read</th></tr></thead>
+    <tbody>
+      <tr><td>Gross take rate</td><td>18–24%</td><td>Category mix, bundles, surge pricing</td><td>Higher in repeat categories with lower cancellations</td></tr>
+      <tr><td>Incentives/subsidies</td><td>2–6%</td><td>Promo discipline, LTV gating</td><td>Watch tapering in mature cohorts</td></tr>
+      <tr><td>Variable ops (CX, ops, payments)</td><td>5–8%</td><td>Automation, payment costs</td><td>Scale should compress per-order cost</td></tr>
+      <tr><td><strong>Contribution Margin 2</strong></td><td><strong>4–9%</strong></td><td>Mix & discipline</td><td><strong>North-star metric</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><span class="badge">Note</span> Exact figures depend on category/market maturity; use ranges to stress-test the bridge.</p>
+</section>
+
+<section>
+  <h2>LTV/CAC math & payback</h2>
+  <ol>
+    <li><strong>LTV:</strong> Avg order value × orders per user per year × CM2 × years of relationship (discounted).</li>
+    <li><strong>CAC:</strong> Performance + brand + referral costs attributable to first purchase.</li>
+    <li><strong>Payback months:</strong> CAC ÷ (CM2 per user per month).</li>
+  </ol>
+  <div class="callout"><span class="badge">Guardrail</span> Aim for payback &lt; 12 months in mature cities; &lt; 18 months in build-out markets.</div>
+</section>
+
+<section>
+  <h2>Sensitivity table (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Orders/user/yr</th><th>Avg order (₹)</th><th>CM2 %</th><th>LTV (₹)</th><th>CAC (₹)</th><th>Payback (months)</th></tr></thead>
+    <tbody>
+      <tr><td>3.0</td><td>900</td><td>5%</td><td>1,215</td><td>900</td><td>~8–10</td></tr>
+      <tr><td>3.5</td><td>1,000</td><td>6%</td><td>1,890</td><td>1,050</td><td>~7–9</td></tr>
+      <tr><td>4.0</td><td>1,100</td><td>7%</td><td>3,080</td><td>1,200</td><td>~6–8</td></tr>
+    </tbody>
+  </table>
+  <blockquote><strong>Method:</strong> Discount factor simplified; purpose is directional sizing for diligence, not a valuation opinion.</blockquote>
+</section>
+
+<section>
+  <h2>Valuation bridge (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Step</th><th>Metric</th><th>Illustrative</th><th>Comment</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>GMV</td><td>₹X,XXX cr</td><td>Scale proxy; not a profit driver alone</td></tr>
+      <tr><td>2</td><td>Net revenue (take-rate)</td><td>20% of GMV</td><td>Category mix critical</td></tr>
+      <tr><td>3</td><td>CM2</td><td>6–8% of GMV</td><td>Automation & cancellations</td></tr>
+      <tr><td>4</td><td>Adj. EBITDA</td><td>Breakeven → low double digits</td><td>City maturity curve</td></tr>
+      <tr><td>5</td><td>EV/Revenue</td><td>3–5×</td><td>Asset-light services range</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Red flags & diligence asks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Red flags</h3>
+      <ul>
+        <li>Promo-led growth without cohort stickiness.</li>
+        <li>High cancellations/refunds in new categories.</li>
+        <li>Receivable days rising; negative OCF despite EBITDA optics.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Diligence asks</h3>
+      <ul>
+        <li>Cohort tables by city/month with CM2, repeat, CAC, and payback.</li>
+        <li>Pro supply health: utilization, churn, NPS, training funnels.</li>
+        <li>Complaint rates and SLA breaches by category.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Investor playbook</h2>
+  <ul>
+    <li>Anchor quality and float trump GMP chatter.</li>
+    <li>Size allocations to free float and lock-in schedules.</li>
+    <li>Track post-listing disclosures on CM2 and city-maturity mix each quarter.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">This framework is for editorial analysis. Map all claims to the issuer’s filing, audited notes, and quarterly updates before investing.</small></div>
+    </div>
+  </main>
+</body>
+</html>

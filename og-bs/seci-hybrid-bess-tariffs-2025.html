@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="India’s peak-power equation is shifting with hybrid renewables and battery storage—how tariffs, contracts, and dispatch rules are rewriting the evening peak."/>
+  <meta name="keywords" content="India, SECI, BESS, hybrid, peak power, tariffs, discom, electricity market, energy storage, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Peak Power Is Changing: SECI Hybrid & BESS Tariffs — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">POWER · ENERGY · STORAGE</div>
+        <h1>Peak Power Is Changing: SECI Hybrid &amp; BESS Tariffs</h1>
+        <div class="sub">Evening peaks are being re-priced by storage-backed hybrids. Here’s how the contracts work—and who wins.</div>
+        <div class="meta">By bataSutra Editorial · August 18, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>Why peak is shifting (load, weather, EVs, AC)</li>
+    <li>What SECI’s hybrid and storage bids are signalling</li>
+    <li>BESS economics 101 (4-hour vs. 2-hour; degradation; cycling)</li>
+    <li>Contract structures: RTC, peak blocks, and deviation rules</li>
+    <li>Who benefits: discoms, IPPs, OEMs—and consumers</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Tariff discovery:</strong> Storage-backed hybrids are narrowing the spread between solar-day and evening-peak power.</li>
+      <li><strong>System value:</strong> Four-hour BESS shifts cheap mid-day energy into the 6–10 pm block, cutting reliance on expensive peakers.</li>
+      <li><strong>Next step:</strong> Firming contracts (RTC/peak) and ancillary markets monetise flexibility, not just megawatt-hours.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Why peaks are different now</h2>
+  <p>Air-conditioning load, hotter evenings, and shifting industrial schedules have fattened the evening peak. Renewables are already shaving the midday curve; storage is now filling the dusk valley-to-crest gap.</p>
+</section>
+
+<section>
+  <h2>What SECI’s bids tell us</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Hybrid (solar+wind+storage)</h3>
+      <p>Bundled bids deliver higher <em>effective</em> capacity with lower curtailment. <span class="badge">Dispatchable</span> <span class="badge">Lower integration cost</span></p>
+    </div>
+    <div class="card half">
+      <h3>Standalone BESS</h3>
+      <p>Procured for peak blocks and ancillary services. <span class="badge">Fast response</span> <span class="badge">Multi-revenue</span></p>
+    </div>
+  </div>
+  <p>Recent discoveries indicate that storage adders are becoming predictable, enabling bankable PPAs where energy and capacity are priced separately.</p>
+</section>
+
+<section>
+  <h2>BESS economics in one page</h2>
+  <ul>
+    <li><strong>Duration choice:</strong> 4-hour solves the evening peak; 2-hour suits ramping/ancillary services.</li>
+    <li><strong>Cycling:</strong> Daily cycles with 85–90% round-trip efficiency; warranties structured on throughput (MWh) and years.</li>
+    <li><strong>Degradation:</strong> Capacity fade is managed via augmentation tranches in years 4–8.</li>
+    <li><strong>Stacked value:</strong> Energy arbitrage + peak capacity + frequency control + deviation settlement savings.</li>
+  </ul>
+  <table class="table">
+    <thead>
+      <tr><th>Design</th><th>Use-case</th><th>Revenue levers</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>4-hour BESS @ 1C</td>
+        <td>Evening peak block</td>
+        <td>Capacity payment + peak energy + deviation savings</td>
+      </tr>
+      <tr>
+        <td>2-hour BESS @ 0.5–1C</td>
+        <td>Ramping, reserves</td>
+        <td>Ancillary + congestion relief</td>
+      </tr>
+      <tr>
+        <td>Hybrid (S+W+BESS)</td>
+        <td>Firm/RTC slices</td>
+        <td>Bundled PPA with cap/energy split</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Contracts that matter</h2>
+  <ul>
+    <li><strong>RTC (Round-the-Clock):</strong> Firm delivery percentages (e.g., 85–90%) with penalties for shortfall—BESS covers variability.</li>
+    <li><strong>Peak-block PPAs:</strong> Fixed delivery window (often 4 hours in the evening); capacity and energy decoupled.</li>
+    <li><strong>Deviation Settlement:</strong> Better forecasting and storage reduce imbalance charges and grid stress.</li>
+  </ul>
+  <blockquote><strong>Bankability tip:</strong> Clear augmentation rules + indexed battery replacement costs de-risk lender models.</blockquote>
+</section>
+
+<section>
+  <h2>Who benefits</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Discoms</h3>
+      <p>Lower peak procurement costs and fewer emergency purchases. <span class="badge">Tariff stability</span></p>
+    </div>
+    <div class="card half">
+      <h3>IPPs/Developers</h3>
+      <p>Multi-revenue stacks and higher capacity factors. <span class="badge">Bankable cash flows</span></p>
+    </div>
+    <div class="card half">
+      <h3>OEMs &amp; Integrators</h3>
+      <p>Inverters, EMS, transformers, and safety systems scale with storage penetration.</p>
+    </div>
+    <div class="card half">
+      <h3>Consumers</h3>
+      <p>Fewer outages and smoother tariffs as peak volatility declines.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Risks &amp; mitigants</h2>
+  <ul>
+    <li><strong>Supply-chain swings:</strong> Lock module supply with indexed contracts; diversify vendors.</li>
+    <li><strong>Policy drift:</strong> Push for explicit capacity payments and ancillary market access.</li>
+    <li><strong>Under-sizing:</strong> Model realistic load growth; avoid 2-hour systems for 4-hour problems.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What to watch next</h2>
+  <ul>
+    <li>Next SECI storage/RTC auctions and discovered adders</li>
+    <li>Ancillary market rules (AGC, primary/secondary reserve procurement)</li>
+    <li>State regulators’ ToD tariff revisions and peak spreads</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">This explainer is independent analysis and not investment advice.</small></div>
+    </div>
+  </main>
+</body>
+</html>

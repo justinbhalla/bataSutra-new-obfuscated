@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SEBI has extended the filing deadline to Sep 30, 2025. Here’s the checklist brokers/AMCs need, budgets, vendor notes, penalties—and template wording you can paste."/>
+  <meta name="keywords" content="SEBI, accessibility, WCAG, GIGW, IS 17802, IAAP, brokers, AMCs, RTA, depositories, KRA, disability, compliance, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>SEBI’s Digital Accessibility Deadline: What Brokers/AMCs Should File by Sep 30 — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REGULATION · SEBI · ACCESSIBILITY</div>
+        <h1>SEBI’s Digital Accessibility Deadline: What Brokers/AMCs Should File by Sep 30</h1>
+        <div class="sub">Quick compliance checklist, budgets, vendors, and penalties—plus template wording.</div>
+        <div class="meta">By bataSutra Editorial · August 31, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>What changed (Sep 30 filing extension) & who must comply</li>
+    <li>Checklist you can tick off today</li>
+    <li>Budgets & vendor notes (IAAP auditors, docs, ISL/captions)</li>
+    <li>Template wording for your submission & website footer</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Scope:</strong> Applies to all SEBI Regulated Entities (brokers, AMCs, RTAs/QRTAs, KRAs, MIIs, depositories, etc.). Baselines: <strong>WCAG 2.1+</strong>, <strong>GIGW</strong>, <strong>IS 17802</strong>, annual IAAP-certified audits & grievance redressal.</li>
+      <li><strong>By Sep 30, 2025:</strong> File <em>list of digital platforms</em> + <em>compliance / action-taken report</em> (extension from Aug 30).</li>
+      <li><strong>Next gates:</strong> Appoint <em>IAAP auditor</em> by <strong>Dec 14, 2025</strong> → complete <em>audit</em> by <strong>Apr 30, 2026</strong> → <em>remediate</em> by <strong>Jul 31, 2026</strong> → <em>annual report</em> by <strong>Apr 30, 2027</strong>.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Who must file & to whom</h2>
+  <ul>
+    <li><strong>Brokers/DPs:</strong> File to your <em>stock exchange/depository</em>.</li>
+    <li><strong>Investment Advisers / Research Analysts:</strong> File to <em>BSE Ltd.</em> (updated authority).</li>
+    <li><strong>Others (incl. AMCs, KRAs, RTAs/QRTAs, MIIs):</strong> File to <em>SEBI</em> as specified.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Quick checklist (copy/paste)</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>File by <em>Sep 30</em></h3>
+      <ol>
+        <li>Inventory all <strong>digital platforms</strong> (websites, mobile apps, portals, onboarding flows, PDF content).</li>
+        <li>Prepare <strong>Action-Taken Report</strong> against circular clauses (institutional arrangements, training, audits, grievance).</li>
+        <li><strong>Nominate Nodal Officer</strong> (senior officer/Compliance) and enable an <strong>accessibility grievance</strong> channel.</li>
+      </ol>
+    </div>
+    <div class="card half">
+      <h3>Start now for next gates</h3>
+      <ul>
+        <li>Engage <strong>IAAP-certified</strong> accessibility auditor; book audit slots early.</li>
+        <li>Bake <strong>WCAG 2.1 AA+</strong> into dev sprints; fix PDFs (tagging, alt text, reading order).</li>
+        <li>Include <strong>ISL/captions/audio-description</strong> in investor videos; update RFPs to include accessibility.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Deadlines at a glance</h2>
+  <table class="table">
+    <thead><tr><th>Requirement</th><th>Original</th><th><strong>Revised</strong></th></tr></thead>
+    <tbody>
+      <tr><td>Submit list of digital platforms + compliance/action-taken report</td><td>Aug 30, 2025</td><td><strong>Sep 30, 2025</strong></td></tr>
+      <tr><td>Appoint IAAP-certified auditor</td><td>Sep 14, 2025</td><td><strong>Dec 14, 2025</strong></td></tr>
+      <tr><td>Complete accessibility audit</td><td>Oct 31, 2025</td><td><strong>Apr 30, 2026</strong></td></tr>
+      <tr><td>Remediate audit findings</td><td>Jan 31, 2026</td><td><strong>Jul 31, 2026</strong></td></tr>
+      <tr><td>Annual accessibility report (CEO/CTO sign-off)</td><td>Apr 30, 2026</td><td><strong>Apr 30, 2027</strong></td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><span class="badge">Source</span> SEBI circular (Jul 31, 2025) + extension circular (Aug 29, 2025).</p>
+</section>
+
+<section>
+  <h2>Budgets (illustrative; tune to scope)</h2>
+  <table class="table">
+    <thead><tr><th>Org profile</th><th>Audit (IAAP)</th><th>Remediation (dev/design/docs)</th><th>ISL/Captions & training</th></tr></thead>
+    <tbody>
+      <tr><td>Small broker / RIA (1 site + 1 app)</td><td>₹3–7 lakh</td><td>₹8–15 lakh</td><td>₹2–5 lakh</td></tr>
+      <tr><td>Mid AMC / RTA (multi-site + app + PDFs)</td><td>₹12–25 lakh</td><td>₹25–60 lakh</td><td>₹6–12 lakh</td></tr>
+      <tr><td>MII / large platform (complex flows)</td><td>₹30–60 lakh</td><td>₹1.0–1.5 crore</td><td>₹15–30 lakh</td></tr>
+    </tbody>
+  </table>
+  <small class="mute">Ranges reflect typical Indian market pricing; negotiate fixed-fee audits, bundle PDF remediation, and include usability testing by PwDs.</small>
+</section>
+
+<section>
+  <h2>Vendor notes</h2>
+  <ul>
+    <li><strong>Auditors:</strong> Prioritize <em>IAAP-certified</em> teams with PwD usability testing.</li>
+    <li><strong>Tooling:</strong> Automated scans help, but <em>manual</em> audits drive compliance. Ensure PDF tagging and mobile gestures are covered.</li>
+    <li><strong>Docs & video:</strong> Standardize accessible templates; pre-book captions/ISL vendors for earnings/webinars.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Template wording (use as base)</h2>
+  <h3>1) Board / Senior Officer attestation (for submission)</h3>
+  <blockquote>
+  We confirm that [Entity Name] has inventoried all investor-facing digital platforms and initiated compliance with SEBI’s Digital Accessibility Circular (SEBI/HO/ITD-1/ITD_VIAP/P/CIR/2025/111). A Nodal Officer has been designated. An IAAP-certified auditor will be appointed by Dec 14, 2025; the audit will be completed by Apr 30, 2026, followed by remediation by Jul 31, 2026. We will submit the annual accessibility report within 30 days of financial year-end.
+  </blockquote>
+  <h3>2) Accessibility notice (for website/app footer)</h3>
+  <blockquote>
+  We are committed to inclusive access. If you face difficulty using our website/app, please write to <em>accessibility@[domain]</em> or call <em>[phone]</em>. We provide ISL interpretation, captions, audio description, and alternative onboarding support on request.
+  </blockquote>
+</section>
+
+<section>
+  <h2>Penalties & enforcement (practical view)</h2>
+  <p>Non-compliance can trigger regulatory action under the SEBI Act and directions via your reporting authority. Beyond penalties, <strong>operational risk</strong> is immediate: blocked onboarding, investor complaints, and reputational damage. Treat this like <em>CSCRF-grade</em> hygiene: audit → fix → train → monitor annually.</p>
+</section>
+
+      <div class="footer"><small class="mute">Based on SEBI circulars dated Jul 31 & Aug 29, 2025; timelines reflect official extensions. Always file to your designated authority.</small></div>
+    </div>
+  </main>
+</body>
+</html>

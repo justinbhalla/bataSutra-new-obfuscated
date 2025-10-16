@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="From Sep 1, weekly index expiry splits: NSE moves to Tuesdays and BSE to Thursdays. Flow migration, market-maker risk, and broker ops checklists—what to change this week."/>
+  <meta name="keywords" content="India, derivatives, weekly expiry, NSE, BSE, Tuesdays, Thursdays, options, market microstructure, brokers, risk, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Weekly Expiry Shuffle Goes Live Sep 1 — NSE Tuesdays, BSE Thursdays — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">DERIVATIVES · STRUCTURE · OPS</div>
+        <h1>Weekly Expiry Shuffle Goes Live Sep 1 — NSE Tuesdays, BSE Thursdays</h1>
+        <div class="sub">A new “neutral” week is here. What migrates where, how market-makers tweak books, and the broker ops checklist you must ship before Monday.</div>
+        <div class="meta">By bataSutra Editorial · August 28, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short (what changes Sep 1)</li>
+    <li>Flow migration: NSE vs BSE</li>
+    <li>Market-maker risk: Greeks & funding</li>
+    <li>Broker ops checklist</li>
+    <li>FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>When:</strong> From <strong>Sep 1</strong>, <em>NSE weekly index expiry = Tuesday</em>; <em>BSE weekly index expiry = Thursday</em>.</li>
+      <li><strong>Why it matters:</strong> Hedging calendars, funding rolls, and expiry-day liquidity split across the week.</li>
+      <li><strong>Immediate to-dos:</strong> Update contract masters, algos, and client comms; re-test risk engines and margin ladders.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Flow migration — where the tape could shift</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>NSE Tuesdays</h3>
+      <ul>
+        <li>Higher passive & retail flow concentration early week.</li>
+        <li>Expect tighter spreads in liquid strikes; faster decay windows.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>BSE Thursdays</h3>
+      <ul>
+        <li>Scope for MM-led price discovery; potential for wider opening spreads.</li>
+        <li>Relative-value trades vs NSE weeklies and monthlies.</li>
+      </ul>
+    </div>
+  </div>
+  <blockquote>Watch cross-venue dislocations around macro prints and RBI/US data—Tuesday vs Thursday setups will behave differently.</blockquote>
+</section>
+
+<section>
+  <h2>Risk — Greeks & funding</h2>
+  <table class="table">
+    <thead><tr><th>Risk bucket</th><th>What changes</th><th>Strategy</th></tr></thead>
+    <tbody>
+      <tr><td>Gamma/Theta</td><td>Two peak-gamma days per week</td><td>Flatten late-day; re-bucket inventory to DTE ladders</td></tr>
+      <tr><td>Vega</td><td>Shorter shock absorption between expiries</td><td>Bump vol-of-vol; widen wings into events</td></tr>
+      <tr><td>Funding</td><td>Carry now spans Tue→Thu</td><td>Refit repo/SLB; align haircuts; watch T+0 pledge cut-offs</td></tr>
+      <tr><td>Basis/Spreads</td><td>Cross-venue/calendar spreads get busier</td><td>Automate parity checks; alert for stale quotes</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Broker ops checklist — ship before Monday</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Systems</h3>
+      <ul>
+        <li>Contract master & symbol mapping (Tue/Thu).</li>
+        <li>Algo calendars (roll, stop, OCO) and <em>expiry-day throttles</em>.</li>
+        <li>Risk engine: span/var params; peak margin snapshots aligned to new expiries.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>Client comms</h3>
+      <ul>
+        <li>Explainer banners/emails on new weekly expiries.</li>
+        <li>Update option chains, payoff tools, and API docs.</li>
+        <li>Desk script for <em>Tuesday gap</em> & <em>Thursday squeeze</em> scenarios.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>Ops & funding</h3>
+      <ul>
+        <li>SLB/repo lines extended; haircuts tested around Tue/Thu.</li>
+        <li>Collateral pledge/withdrawal cut-offs updated across partners.</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>Controls</h3>
+      <ul>
+        <li>Intraday exposure caps & kill-switches tuned for two peak days.</li>
+        <li>Surveillance for cross-venue spoof/marking at the close.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Do monthly expiries change?</strong> No—the shuffle is for <em>weekly index</em> expiries.</li>
+    <li><strong>What about stock options?</strong> Unaffected unless separately notified; re-check contract specs.</li>
+    <li><strong>Any margin changes?</strong> Same framework, but peak snapshots move with the new expiry days.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Operational guidance as of Aug 28, 2025. Check exchange circulars and your clearing member’s cut-offs before trading.</small></div>
+    </div>
+  </main>
+</body>
+</html>

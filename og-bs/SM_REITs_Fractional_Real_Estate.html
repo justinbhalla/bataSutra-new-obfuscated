@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SM REITs decoded—ticket sizes, yield math, fees, liquidity, and risk controls. A practical, numbers-first explainer for Indian investors."/>
+  <meta name="keywords" content="India, SM REIT, small and medium REIT, fractional real estate, yields, fees, liquidity, risk, distribution, dividends, IRR, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>SM REITs: Fractional Real Estate, Regulated — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media(min-width: 760px){
+  .two { grid-template-columns: repeat(12, 1fr); }
+  .half { grid-column: span 6; }
+}
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+small.mute { color:var(--muted); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+.header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+</head>
+<body>
+  <a aria-label='Back to Home (index)' class='header-link' href='/'>
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REAL ESTATE · MARKETS · YIELD</div>
+        <h1>SM REITs: Fractional Real Estate, Regulated</h1>
+        <div class="sub">Ticket sizes, yield math, fees, liquidity, and risk—an investor’s field guide.</div>
+        <div class="meta">By bataSutra Editorial · August 18, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>What SM REITs are (and aren’t)</li>
+    <li>Ticket sizes &amp; investor eligibility</li>
+    <li>Yield waterfall: from rent to distributions</li>
+    <li>Fee stack &amp; how it hits returns</li>
+    <li>Liquidity pathways, taxes, and key risks</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Institutional wrapper for small assets.</strong> SM REITs pool one/few properties in a regulated trust.</li>
+      <li><strong>Yields are made, not promised.</strong> Vacancy, expenses, and fees can shave 150–300 bps off headline rent yields.</li>
+      <li><strong>Liquidity is designed, not assumed.</strong> Listing/market making, periodic auctions, or buyback windows matter more than brochures.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Who this applies to</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Income-focused investors</h3>
+      <p>Prefer distributed rent with lower operating hassle. <span class="badge">Distribution</span></p>
+    </div>
+    <div class="card half">
+      <h3>Sponsors/Managers</h3>
+      <p>Aggregate stable assets; earn fees aligned to NOI, not hype. <span class="badge">Alignment</span></p>
+    </div>
+    <div class="card half">
+      <h3>Wealth Platforms</h3>
+      <p>Offer regulated fractional exposure; standardise disclosures. <span class="badge">Compliance</span></p>
+    </div>
+    <div class="card half">
+      <h3>Tenants</h3>
+      <p>Longer leases, clearer capex responsibilities, professional management. <span class="badge">Stability</span></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Ticket sizes &amp; structure</h2>
+  <ul>
+    <li>Denominations target accessibility while keeping KYC and suitability checks intact.</li>
+    <li>Expect closed-end or semi-open structures around a single asset (office/warehousing/retail) or a micro-portfolio.</li>
+    <li>Distributions typically flow quarterly or semi-annually from net distributable cash flows.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Yield waterfall — illustrative math</h2>
+  <p>Start with contracted rent; subtract what actually erodes cash. Example (illustrative, not advice):</p>
+  <table class="table">
+    <thead><tr><th>Item</th><th>Assumption</th><th>Impact on yield</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Gross rental yield</td>
+        <td>9.0% on asset value</td>
+        <td>9.00%</td>
+      </tr>
+      <tr>
+        <td>Vacancy/credit loss</td>
+        <td>5% of rent</td>
+        <td>-0.45%</td>
+      </tr>
+      <tr>
+        <td>Operating expenses</td>
+        <td>Common area, insurance, statutory</td>
+        <td>-0.80%</td>
+      </tr>
+      <tr>
+        <td>Manager &amp; trustee fees</td>
+        <td>Mgmt 0.8% + trustee/other 0.2%</td>
+        <td>-1.00%</td>
+      </tr>
+      <tr>
+        <td>Capex/maintenance reserve</td>
+        <td>Periodic refurbishments</td>
+        <td>-0.30%</td>
+      </tr>
+      <tr>
+        <td><strong>Net distributable yield</strong></td>
+        <td>Before leverage &amp; taxes</td>
+        <td><strong>6.45%</strong></td>
+      </tr>
+    </tbody>
+  </table>
+  <p><small class="mute">Add leverage carefully: debt can raise distributions if spreads are favourable, but amplifies downside.</small></p>
+</section>
+
+<section>
+  <h2>Fee stack — what to watch</h2>
+  <table class="table">
+    <thead><tr><th>Fee</th><th>Typical basis</th><th>Investor lens</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Management fee</td>
+        <td>% of asset value or NOI</td>
+        <td>Prefer NOI-linked; aligns to operational performance.</td>
+      </tr>
+      <tr>
+        <td>Acquisition/disposition</td>
+        <td>One-time % of deal size</td>
+        <td>Cap or stagger; look for independent valuation.</td>
+      </tr>
+      <tr>
+        <td>Trustee &amp; admin</td>
+        <td>Flat + small %</td>
+        <td>Should be transparent and predictable.</td>
+      </tr>
+      <tr>
+        <td>Performance fee (if any)</td>
+        <td>Over a benchmark hurdle</td>
+        <td>Hurdle &gt; inflation + risk spread; crystal-clear calculation.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Liquidity design</h2>
+  <ul>
+    <li><strong>Listing/market-making:</strong> Depth comes from market makers, not just listing status.</li>
+    <li><strong>Periodic windows:</strong> Auction or buyback windows provide exits in lean periods.</li>
+    <li><strong>Registrar experience:</strong> Transfers, payouts, and statements should be painless.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Taxes (high level)</h2>
+  <ul>
+    <li>Distributions may mix interest, dividend, and amortisation; tax treatment differs by component.</li>
+    <li>Capital gains depend on holding period and listing status; check latest rules before allocating.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Risk checklist</h2>
+  <div class="grid two">
+    <div class="card half">
+      <h3>Concentration &amp; lease</h3>
+      <ul>
+        <li>Tenant concentration &gt;50%? Demand longer lock-ins.</li>
+        <li>Indexation clauses &amp; step-ups documented?</li>
+        <li>Fit-out and restoration responsibilities clear?</li>
+      </ul>
+    </div>
+    <div class="card half">
+      <h3>Valuation &amp; liquidity</h3>
+      <ul>
+        <li>Independent valuation frequency &amp; methodology.</li>
+        <li>Exit windows &amp; market-making commitments.</li>
+        <li>Debt covenants and LTV guardrails.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>One-line takeaway</h2>
+  <blockquote>SM REITs work when <em>fees align with NOI, leases are long,</em> and <em>liquidity is engineered</em>—not just promised.</blockquote>
+</section>
+
+      <div class="footer"><small class="mute">Illustrative, educational content. Not investment advice; consult a qualified adviser for your situation.</small></div>
+    </div>
+  </main>
+</body>
+</html>

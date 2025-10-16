@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Status check on India’s two flagship chip projects: Tata–PSMC fab at Dholera (Gujarat) and Micron’s ATMP at Sanand. Milestones, hiring timelines, and local ecosystem impact."/>
+  <meta name="keywords" content="semiconductors, Tata Electronics, PSMC, Dholera, Micron, Sanand, ATMP, wafers, OSAT, Gujarat, ISM, jobs, cleanroom, fab timeline"/>
+  <meta name="author" content="bataSutra" />
+  <title>Semicon Watch: Tata’s Dholera Fab & Micron Sanand — Where They Stand Now — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+    * { box-sizing: border-box; }
+    html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+    body { margin:0; background:var(--bg); line-height:1.6; }
+    .header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+    .wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+    .kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+    h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+    .sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+    .meta { font-size: 13px; opacity:.9; margin-top:10px; }
+    main { padding: 28px 0 64px; background:#fff; }
+    section { margin: 30px 0; }
+    h2 { font-size: 22px; margin: 30px 0 10px; }
+    h3 { font-size: 18px; margin: 22px 0 8px; }
+    p { margin: 10px 0; }
+    ul, ol { padding-left: 20px; }
+    hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+    .callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+    .badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+    .grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+    .card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+    @media(min-width: 760px){ .two { grid-template-columns: repeat(12, 1fr); } .half { grid-column: span 6; } }
+    blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+    .footer { color:#777; font-size:12px; margin-top:28px; }
+    .toc { background:#fcfcfc; border:1px solid #eee; padding:12px 14px; border-radius:10px; }
+    small.mute { color:var(--muted); }
+    .table { width:100%; border-collapse: collapse; font-size: 14px; }
+    .table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+    .table th { background:#fafafa; }
+    .header-link { text-decoration: none; color: inherit; display: block; }
+    .header-link:focus-visible { outline: 2px dashed #fff; outline-offset: 4px; }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"NewsArticle",
+    "headline":"Semicon Watch: Where Tata’s Dholera Fab & Micron Sanand Stand Now",
+    "datePublished":"2025-09-03",
+    "dateModified":"2025-09-03",
+    "author":{"@type":"Organization","name":"bataSutra"},
+    "publisher":{"@type":"Organization","name":"bataSutra"},
+    "description":"Milestones achieved, what’s next on the Gantt, hiring timelines, and how the local ecosystem is shaping up around Gujarat’s chip corridor."
+  }
+  </script>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">SEMICONDUCTORS · POLICY · INDUSTRY</div>
+        <h1>Semicon Watch: Where Tata’s Dholera Fab & Micron Sanand Are Now</h1>
+        <div class="sub">Milestones achieved, what’s next on the Gantt, hiring timelines, and how the local ecosystem is shaping up around Gujarat’s chip corridor.</div>
+        <div class="meta">By bataSutra Editorial · September 3, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+      <section class="toc">
+        <strong>In this piece:</strong>
+        <ul>
+          <li>The short: status at a glance</li>
+          <li>Tata–PSMC (Dholera): capex, capacity, nodes, timeline</li>
+          <li>Micron (Sanand ATMP): cleanroom, hiring, first-outs</li>
+          <li>Local impact: vendors, housing, talent pipelines</li>
+          <li>FAQ: What’s realistic for 2025–26?</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>The short</h2>
+        <div class="callout">
+          <ul>
+            <li><strong>Tata–PSMC Fab (Dholera):</strong> Cabinet-approved project of ~₹91,000 cr with planned <strong>50,000 WSPM</strong> (300 mm) capacity; construction underway after the Sept ’24 tech-transfer agreement.</li>
+            <li><strong>Micron ATMP (Sanand):</strong> Phase-1 cleanroom validation reported mid-2025; hiring ramp targets ~<strong>5,000 direct</strong> jobs and ~<strong>15,000 community</strong> jobs over time.</li>
+            <li><strong>Outlook 2025–26:</strong> Dholera moves through build-out and tool-install; Micron scales ATMP output with export focus once validation transitions to volume.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section>
+        <h2>Tata–PSMC (Dholera): milestones & what’s next</h2>
+        <table class="table">
+          <thead><tr><th>Milestone</th><th>When</th><th>Status / Notes</th></tr></thead>
+          <tbody>
+            <tr><td>Cabinet approval (ISM)</td><td>Feb 29, 2024</td><td>Project cleared with ~₹91,000 cr capex; capacity 50k WSPM.</td></tr>
+            <tr><td>Tech-transfer agreement (TEPL–PSMC)</td><td>Sept 26, 2024</td><td>Definitive agreement for 12-inch fab; mature nodes incl. 28/40/55 nm.</td></tr>
+            <tr><td>Construction & site works</td><td>2025</td><td>Fab build-out underway; policy framework outlines 50% fiscal support (eligible costs).</td></tr>
+            <tr><td>Tool-install / early commissioning</td><td>Late 2025 → 2026</td><td>Industry guidance points to initial output in 2026 (ramp thereafter).</td></tr>
+          </tbody>
+        </table>
+        <p class="callout"><span class="badge">Scope</span> Target markets include power management ICs, MCUs, display drivers, communications, storage, and automotive.</p>
+      </section>
+
+      <section>
+        <h2>Micron (Sanand ATMP): where things stand</h2>
+        <div class="grid two">
+          <div class="card half">
+            <h3>Timeline</h3>
+            <ul>
+              <li>Project announced: Jun 2023; Phase-1 ops originally targeted late 2024.</li>
+              <li>Cleanroom validation stage: Jun 2025.</li>
+              <li>First export-bound output window signalled for 2025 as validation moves to ramp.</li>
+            </ul>
+          </div>
+          <div class="card half">
+            <h3>People & capability</h3>
+            <ul>
+              <li>~5,000 direct Micron jobs; ~15,000 community jobs over the next several years.</li>
+              <li>SEZ approvals and ongoing capex underpin export orientation in early phases.</li>
+            </ul>
+          </div>
+        </div>
+        <blockquote><strong>What ATMP means:</strong> Assembly, test, mark, and pack—i.e., post-fab packaging and final test. It’s not wafer fabrication; that’s what Tata–PSMC brings at Dholera.</blockquote>
+      </section>
+
+      <section>
+        <h2>Local ecosystem impacts (Gujarat focus)</h2>
+        <ul>
+          <li><strong>Vendors & logistics:</strong> Tool-install and facilities O&M pull in specialty gases, ultrapure water systems, cleanroom EPC, and third-party metrology.</li>
+          <li><strong>Talent:</strong> Hiring spans facilities, yield, test, and reliability, with Dholera fab roles in MES/automation also appearing.</li>
+          <li><strong>Spillovers:</strong> OSAT pilots (Sanand) and allied projects increase demand for substrate, leadframe, and molding compound suppliers in-country.</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>FAQ</h2>
+        <ul>
+          <li><strong>Will Dholera make bleeding-edge chips?</strong> No—initial focus is mature nodes (e.g., 28/40/55 nm) where auto/industrial demand is deep and supply tightness matters.</li>
+          <li><strong>Is Micron “making chips” in India?</strong> It’s <em>packaging and testing</em> chips (ATMP). Wafer fabrication remains outside India (for now).</li>
+          <li><strong>When do we see volume?</strong> Expect a staged ramp: Micron ATMP through 2025; Dholera fab toward 2026 and beyond.</li>
+        </ul>
+      </section>
+
+      <div class="footer">
+        <small class="mute">Sourcing reflects public reports as of Sep 3, 2025.</small>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

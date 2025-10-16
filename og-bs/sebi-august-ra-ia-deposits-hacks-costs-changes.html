@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="SEBI now permits RAs/IAs to meet deposit norms via Liquid/Overnight MF units under lien. Slabs, deadline, lien steps, and cyber hygiene to adopt before audits."/>
+  <meta name="keywords" content="SEBI, Research Analyst, Investment Adviser, deposit requirement, Liquid MF, Overnight MF, RAASB, IAASB, compliance 2025, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REGULATION · COMPLIANCE</div>
+        <h1>SEBI’s August RA/IA Deposits: Hacks, Costs, and What Changes</h1>
+        <div class="sub">Liquid/Overnight MF units under lien are now allowed for RA/IA deposit compliance—what to change in ops and cyber hygiene before audits.</div>
+        <div class="meta">By bataSutra Editorial · September 26, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>What changed:</strong> RAs and IAs can now meet deposit norms using <strong>Liquid/Overnight mutual fund units under lien</strong> (earlier, bank FDs only).</li>
+      <li><strong>Why it matters:</strong> Cuts cash drag, keeps compliance assets low-risk and liquid, and simplifies treasury operations.</li>
+      <li><strong>Action window:</strong> Existing entities should align deposits and lien documentation before quarter-end audits.</li>
+      <li><strong>Good practice:</strong> Monthly NAV reconciliations and maker–checker approvals for any lien movement.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Deposit slabs (reference)</h2>
+  <table class="table">
+    <thead><tr><th>Category</th><th>Client count</th><th>Deposit (₹)</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Research Analyst (RA)</td><td>Up to 150</td><td>1,00,000</td><td rowspan="4">Verify the exact slab against your registration and latest master circular.</td></tr>
+      <tr><td>RA</td><td>151–300</td><td>2,00,000</td></tr>
+      <tr><td>RA</td><td>301–1,000</td><td>5,00,000</td></tr>
+      <tr><td>RA</td><td>1,001+</td><td>10,00,000</td></tr>
+      <tr><td>Investment Adviser (IA)</td><td>Per IA norms</td><td>As specified</td><td>MF lien route permitted in addition to bank FDs.</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Lien setup — step by step</h2>
+  <ol>
+    <li>Select a <strong>Liquid/Overnight</strong> scheme with high-credit portfolio and minimal duration.</li>
+    <li>Open folio in the entity’s legal name and execute a <strong>lien in favour of the supervisory body</strong> (RAASB/IAASB or as specified).</li>
+    <li>Obtain lien confirmation from AMC/RTA and store in your compliance vault.</li>
+    <li>Schedule <strong>monthly NAV recon</strong> and set a <strong>top-up trigger</strong> if valuation falls below the slab.</li>
+    <li>Define a <strong>break-glass</strong> protocol for lien release, with board and compliance approvals.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>Cyber & ops hygiene</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Controls</h3>
+      <ul>
+        <li>Two-person approval for any lien change (maker–checker).</li>
+        <li>Enable AMC/RTA SMS and email alerts for lien or mandate edits.</li>
+        <li>Quarterly confirmation from AMC/RTA and your supervisory body.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Disclosures</h3>
+      <ul>
+        <li>Publish the deposit method on your website and in client kits.</li>
+        <li>Explain segregation from client assets and the shortfall top-up SLA.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>FAQs</h2>
+  <ul>
+    <li><strong>Can I split between FD and MF?</strong> Yes—if the total meets the slab and all pieces are properly lien-marked.</li>
+    <li><strong>What if I cross a slab mid-year?</strong> Step up the deposit promptly and minute the change in compliance records.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Editorial summary as of Sep 26, 2025. Always use official circulars and your registration terms for filings and audits.</small></div>
+    </div>
+  </main>
+</body>
+</html>

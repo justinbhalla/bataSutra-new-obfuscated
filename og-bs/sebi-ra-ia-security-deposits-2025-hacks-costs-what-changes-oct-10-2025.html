@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What the 2025 deposit regime means for Research Analysts (RA) and Investment Advisers (IA): slab ideas, cyber hygiene, cost-of-capital math, and rollout playbooks."/>
+  <meta name="keywords" content="SEBI, RA, IA, security deposit, compliance, cyber hygiene, India 2025, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs & What Changes — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REGULATION · COMPLIANCE</div>
+        <h1>SEBI’s RA/IA Security Deposits 2025 — Hacks, Costs & What Changes</h1>
+        <div class="sub">The deposit regime, cyber hygiene expectations, cost-of-capital math, and an implementation plan for individuals and firms.</div>
+        <div class="meta">By bataSutra Editorial · October 10, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — who’s impacted and how</li>
+    <li>Deposit slabs & smart financing (illustrative)</li>
+    <li>Cyber hygiene: minimum viable stack</li>
+    <li>Cost-of-capital impact: examples</li>
+    <li>Rollout plan & documentation pack</li>
+    <li>FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Why:</strong> Deposits act as prudential buffers and behavior guardrails for client-facing advice/research firms.</li>
+      <li><strong>Who:</strong> Individual and non-individual RA/IA entities; exemptions/reliefs may depend on registration class and history.</li>
+      <li><strong>What changes:</strong> Higher or tiered deposits, renewal proofs, and tighter cyber controls around client data.</li>
+      <li><strong>Good news:</strong> Instruments can be optimized (bank guarantee, FDR) to reduce cash drag if structured well.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Deposit slabs (illustrative) & smart financing</h2>
+  <table class="table">
+    <thead><tr><th>Registrant</th><th>Clients (AUA)</th><th>Illustrative deposit</th><th>Form</th><th>Optimization</th></tr></thead>
+    <tbody>
+      <tr><td>RA — Individual</td><td>&lt; 200</td><td>₹2–5 lakh</td><td>FDR/BG</td><td>Use FDR lien; keep working capital free</td></tr>
+      <tr><td>RA — Non-individual</td><td>200–1,000</td><td>₹10–25 lakh</td><td>BG + FDR mix</td><td>Stagger maturities, ladder renewals</td></tr>
+      <tr><td>IA — Individual</td><td>&lt; ₹25 cr AUA</td><td>₹5–10 lakh</td><td>FDR</td><td>OD against FDR to offset opportunity cost</td></tr>
+      <tr><td>IA — Non-individual</td><td>₹25–100 cr AUA</td><td>₹25–50 lakh</td><td>BG</td><td>Corporate guarantee where eligible</td></tr>
+      <tr><td>IA — Large</td><td>&gt; ₹100 cr AUA</td><td>₹50 lakh–₹1 cr</td><td>BG + FDR</td><td>Blend bank lines; negotiate BG margin</td></tr>
+    </tbody>
+  </table>
+  <p class="callout"><span class="badge">Note</span> Numbers are directional; align to your registration letter and latest circulars.</p>
+</section>
+
+<section>
+  <h2>Cyber hygiene — the minimum viable stack</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Identity & access</h3>
+      <ul>
+        <li>Mandatory MFA for email, CRM, and PMS/RMS consoles.</li>
+        <li>Quarterly access review; no shared admin accounts.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Data & devices</h3>
+      <ul>
+        <li>Client data encrypted at rest; device disk encryption enforced.</li>
+        <li>DLP rules for PAN/Aadhaar patterns; redaction on exports.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Ops & records</h3>
+      <ul>
+        <li>Ticketed change management for model updates.</li>
+        <li>90-day log retention; breach drill every quarter.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Cost-of-capital impact (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Case</th><th>Deposit</th><th>Funding</th><th>Annual carry (8% proxy)</th><th>Mitigation</th></tr></thead>
+    <tbody>
+      <tr><td>Solo RA</td><td>₹5 lakh</td><td>Own cash</td><td>₹40,000</td><td>Convert to FDR + OD; net carry ~₹10–15k</td></tr>
+      <tr><td>IA boutique</td><td>₹25 lakh</td><td>50% BG / 50% FDR</td><td>₹2,00,000</td><td>Negotiate BG margin; raise annual fee 10–20 bps</td></tr>
+      <tr><td>Mid IA</td><td>₹75 lakh</td><td>BG</td><td>₹4–6 lakh (fees)</td><td>Three-bank RfQ; link fees to CASA flows</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Rollout plan & documentation pack</h2>
+  <ol>
+    <li><strong>Week 1:</strong> Confirm slab; RfQ to 3 banks for BG/FDR terms; draft Board resolution.</li>
+    <li><strong>Week 2:</strong> Freeze cyber stack; update client data policy; appoint ISMS owner.</li>
+    <li><strong>Week 3:</strong> Execute instrument; file proof; update website disclosures and client agreements.</li>
+    <li><strong>Week 4:</strong> Run breach drill; maintain deposit register & renewal calendar.</li>
+  </ol>
+  <div class="callout"><span class="badge">Checklist</span> Registration letter · Net worth proof · Board resolution · BG/FDR receipts · Cyber policy · Incident runbook</div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Can I split the deposit?</strong> Yes, subject to instrument types accepted; ensure lien/beneficiary details match format.</li>
+    <li><strong>Will fees rise?</strong> Likely marginally; communicate value (security, continuity) alongside.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Framework reflects Oct 10, 2025 context. Map final numbers to your registration class and current exchange/circular language.</small></div>
+    </div>
+  </main>
+</body>
+</html>
