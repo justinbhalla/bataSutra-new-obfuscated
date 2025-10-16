@@ -3,17 +3,18 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 
 // Local articles (fallback)
 const ARTICLES = [
-  {
-    href: "nse-expiry-shift-to-tuesday.html",
-    title: "NSE Moves Expiry to Tuesday: Hedging & Liquidity 101",
-    blurb: "All NSE index & stock derivatives move from Thursday to Tuesday from Sep ’25—cut-over, instruments."
+{
+    "href": "/articles/brent-inr-sensitivity-omc-margins-household-fuel-bills-oct-16-2025-am",
+    "title": "Brent + INR Sensitivity: OMC Margins & Fuel Bills",
+    "blurb": "Five-line brief, crude/FX-to-pump formula, OMC margin ladder, city fuel bands, and household cost math with what can break the model (policy, inventory, cracks)."
   },
   {
-    href: "sebi-longer-derivative-tenures-winners-liquidity.html",
-    title: "SEBI Signals Longer Derivative Tenures: Liquidity",
-    blurb: "Policy signal to extend derivative tenures—implications for retail outcomes, broker/exchange P&L, and market depth."
+    "href": "/articles/national-data-centre-policy-2025-hyperscalers-vs-local-players-oct-16-2025-eod",
+    "title": "National Data Centre Policy 2025: Hyperscalers vs Local Players",
+    "blurb": "Corridor map for land/power, capex/MW and PUE math, rack-density cooling choices, renewables + storage SLAs, GTM lanes, and state/developer checklists."
   }
 ];
+
 
 
 (()=>{"use strict";
