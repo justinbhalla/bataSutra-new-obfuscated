@@ -14,6 +14,11 @@
     body { background:#fff; color:#111; }
     section[id]{ scroll-margin-top:5.5rem; }
 
+    /* Shared container (matches other pages) */
+    .container{max-width:80rem; margin:0 auto; padding-left:1rem; padding-right:1rem;}
+    @media (min-width:768px){ .container{padding-left:1.25rem; padding-right:1.25rem;} }
+    @media (min-width:1024px){ .container{padding-left:1.5rem; padding-right:1.5rem;} }
+
     /* Cards */
     .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
     .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
@@ -38,7 +43,7 @@
     .reserve-input{ background:#0f172a; border:1px solid #334155; color:#e5e7eb; }
     .reserve-input::placeholder{ color:#94a3b8; }
 
-    /* Footer */
+    /* Footer polish (as provided on this page) */
     .footer-red{ background:#fff; color:#111; }
     .footer-red a{ color:#111; opacity:.9; text-decoration:none; }
     .footer-red a:hover{ opacity:1; text-decoration:underline; }
@@ -77,13 +82,13 @@
     </div>
   </div>
 
-  <!-- Header (fixed brand block + aligned container) -->
+  <!-- Header (standardized to site container + fixed logo block) -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between py-3">
-      <a href="/" class="flex items-center gap-3 min-w-0" aria-label="bataSutra home">
-        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--brand)] text-white font-extrabold leading-none shadow-sm">bS</span>
-        <div class="leading-tight">
-          <div class="text-lg font-bold">bataSutra</div>
+    <div class="container flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3">
+        <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
+        <div>
+          <div class="text-lg font-bold leading-tight">bataSutra</div>
           <div class="text-xs text-[var(--muted)] -mt-0.5">News, context &amp; tools</div>
         </div>
       </a>
@@ -95,7 +100,7 @@
   </header>
 
   <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
+  <section class="container pt-10 pb-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
       <div class="lg:col-span-2">
         <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What’s inside — Market Pulse Dashboard</h1>
@@ -120,7 +125,7 @@
   </section>
 
   <!-- At-a-glance -->
-  <section class="max-w-6xl mx-auto px-4 py-6">
+  <section class="container py-6">
     <div class="card p-6 md:p-8">
       <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
@@ -141,7 +146,7 @@
   </section>
 
   <!-- Modules -->
-  <section id="modules" class="max-w-6xl mx-auto px-4 py-6">
+  <section id="modules" class="container py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Modules</h2>
@@ -193,7 +198,7 @@
   </section>
 
   <!-- Data & Methods -->
-  <section id="data" class="max-w-6xl mx-auto px-4 py-6">
+  <section id="data" class="container py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Data &amp; Methods</h2>
@@ -229,7 +234,7 @@
   </section>
 
   <!-- Reserve Alerts (Waitlist) -->
-  <section id="reserve" class="max-w-6xl mx-auto px-4 py-10">
+  <section id="reserve" class="container py-10">
     <div class="reserve-gradient rounded-2xl p-6 md:p-10 text-white">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
@@ -260,7 +265,7 @@
 
   <!-- Bottom Ticker -->
   <div class="w-full bg-slate-50 border-t mt-12">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="container">
       <div class="flex items-center gap-3 py-2">
         <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PULSE</span>
         <div class="ticker-rail flex-1" aria-label="Market ticker" aria-live="polite">
@@ -279,10 +284,10 @@
   <footer class="footer-red text-sm mt-12">
     <div class="divider"></div>
 
-    <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="container py-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <a href="/" class="flex items-center gap-3" aria-label="bataSutra home">
-          <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
+        <a href="/" class="flex items-center gap-3">
+          <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
           <div>
             <div class="text-lg font-bold leading-tight">bataSutra</div>
             <div class="text-xs muted -mt-0.5">News, context &amp; tools</div>
@@ -381,7 +386,7 @@
     </div>
   </footer>
 
-  <!-- ===== Single inline script (tickers + waitlist) ===== -->
+  <!-- ===== Single inline script (tickers + waitlist, same subscribe arch) ===== -->
   <script>
   // ========= CONFIG =========
   const SHEET_ID    = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
@@ -389,6 +394,7 @@
   const SHEET_RANGE = 'A:C';
   const CSV_URL     = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}&range=${encodeURIComponent(SHEET_RANGE)}`;
 
+  // Waitlist — SAME Apps Script subscribe backend (collects only `email`)
   const SUBSCRIBE_SCRIPT = 'https://script.google.com/macros/s/AKfycbwT4FQr2Qb91fiqEgeUQMdnD5dDACtWyFnktA5MUp8sHHVebvFIOq4k3yMGKqJmlPJ_MA/exec';
 
   // ========= Utils =========
@@ -455,7 +461,7 @@
     const res = await fetchCsv(CSV_URL, 1400);
     if(!res) return null;
     const txt = await res.text();
-    if((txt||'').trim().startsWith('<')) return [];  // not public
+    if((txt||'').trim().startsWith('<')) return [];
     const rows = parseCsv(txt);
     if(!rows.length) return [];
     const hdr = rows[0].map(h => h.replace(/^\uFEFF/,'').trim().toLowerCase());
@@ -466,6 +472,7 @@
     return rows.slice(1).map(r=>({section:(r[iS]||'').trim(), text:(r[iT]||'').trim()})).filter(r=>r.text);
   }
 
+  // ========= Reserve => SAME subscribe backend =========
   async function reserveSubmit(email){
     const fd = new FormData();
     fd.append('email', email);
@@ -480,6 +487,7 @@
     }
   }
 
+  // ========= Boot =========
   (function boot(){
     const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
 
