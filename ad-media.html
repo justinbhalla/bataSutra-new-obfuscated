@@ -1,69 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Advertising & Media Kit — bataSutra</title>
-  <meta name="description" content="Audience, inventory, formats, specs, pricing bands, sponsorships, and contact for advertising with bataSutra." />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>What’s Inside — Market Pulse Dashboard | bataSutra</title>
+  <meta name="description" content="See what’s inside the Market Pulse dashboard: breadth, momentum, rotation. Join the waitlist for alert emails as we roll out." />
   <meta name="theme-color" content="#8B0000">
-
-  <!-- Perf warmup -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="//docs.google.com">
-  <link rel="preconnect" href="https://docs.google.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; }
+    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; }
     html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
-    body { background: var(--bg); color: var(--ink); }
-    section[id] { scroll-margin-top: 5.5rem; }
+    body { background:#fff; color:#111; }
+    section[id]{ scroll-margin-top:5.5rem; }
 
-    .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
-    .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
-    .card:hover { box-shadow: 0 6px 18px rgba(0,0,0,.08); transition: box-shadow .2s ease; }
-
-    .footer-red { background: var(--brand-ink); color:#fff; }
-    .footer-red a { color: rgba(255,255,255,.92); }
-    .footer-red a:hover { color:#fff; text-decoration: underline; }
-    .footer-red .heading { font-size:.85rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color: rgba(255,255,255,.82); }
-    .footer-red .muted { color: rgba(255,255,255,.78); }
-    .footer-red .divider { border-top:1px solid rgba(255,255,255,.18); }
-    .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
+    /* Cards */
+    .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
+    .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
 
     /* Tickers */
-    .ticker-rail { position: relative; overflow: hidden; }
-    .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; will-change: transform; transform: translateZ(0); }
-    .ticker-left  { animation: scroll-left var(--dur,120s) linear infinite; }
-    .ticker-right { animation: scroll-right var(--dur,120s) linear infinite; }
-    .ticker:hover { animation-play-state: paused; }
-    @keyframes scroll-left  { 0% { transform:translateX(0) } 100% { transform: translateX(-50%) } }
-    @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
-    @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none !important; } }
+    .ticker-rail{ position:relative; overflow:hidden; }
+    .ticker{ display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change:transform; transform:translateZ(0); }
+    .ticker-left{ animation:sL var(--dur,120s) linear infinite; }
+    .ticker-right{ animation:sR var(--dur,120s) linear infinite; }
+    @keyframes sL{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+    @keyframes sR{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+    @media (prefers-reduced-motion: reduce){ .ticker-left,.ticker-right{ animation:none !important; } }
 
-    .grid-bullet { background:#f8fafc; border:1px solid #e5e7eb; border-radius:.75rem; padding:.75rem; }
-    .badge { font-size:.72rem; background:#f1f5f9; color:#0f172a; border:1px solid #e2e8f0; border-radius:999px; padding:.15rem .5rem; }
-    .link-ink{ color:var(--brand-ink); } .link-ink:hover{ text-decoration:underline; }
-    .toc a{ color:#0f172a } .toc a:hover{ color:var(--brand-ink); text-decoration:underline; }
+    /* Reserve block */
+    .reserve-gradient{
+      background: radial-gradient(1200px 400px at 10% -20%, #dc26261c 10%, transparent 60%),
+                  radial-gradient(800px 300px at 90% -10%, #8B00001f 10%, transparent 60%),
+                  linear-gradient(180deg, #101010, #0d0d0d 60%, #0b0b0b);
+      border:1px solid #1f2937;
+    }
+    .reserve-border{ border:1px solid rgba(255,255,255,.08); }
+    .reserve-input{ background:#0f172a; border:1px solid #334155; color:#e5e7eb; }
+    .reserve-input::placeholder{ color:#94a3b8; }
 
-    .pill { font-weight:600; font-size:.75rem; padding:.25rem .5rem; border-radius:.5rem; }
-    .pill-soft { background:#f1f5f9; border:1px solid #e2e8f0; }
+    /* Footer */
+    .footer-red{ background:#fff; color:#111; }
+    .footer-red a{ color:#111; opacity:.9; text-decoration:none; }
+    .footer-red a:hover{ opacity:1; text-decoration:underline; }
+    .footer-red .heading{ font-weight:700; font-size:.875rem; letter-spacing:.02em; color:#111; }
+    .footer-red .muted{ color:var(--muted); }
+    .footer-red .divider{ height:1px; background:linear-gradient(90deg, transparent, rgba(0,0,0,.12), transparent); }
+    .footer-red .chip{ border:1px solid rgba(0,0,0,.2); padding:.375rem .625rem; border-radius:.5rem; font-size:.875rem; background:transparent; }
+    .footer-red .chip:hover{ background:rgba(0,0,0,.04); }
   </style>
 
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Advertising & Media Kit",
-    "about": ["advertising", "media kit", "sponsorships", "audience", "ad specs", "brand partnerships"],
-    "publisher": {"@type": "Organization", "name": "bataSutra"}
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"What’s Inside — Market Pulse Dashboard",
+    "about":["market pulse","breadth","momentum","sector rotation","alerts waitlist"],
+    "publisher":{"@type":"Organization","name":"bataSutra"}
   }
   </script>
-
-  <!-- Page script -->
-  <script src="ad-media.app.js" defer></script>
 </head>
 <body>
   <!-- Top Ticker -->
@@ -74,285 +68,207 @@
       </span>
       <div class="ticker-rail flex-1" aria-label="Top headlines" aria-live="polite">
         <div id="topTicker" class="ticker ticker-right text-sm font-medium">
-          <span>Audience you can trust</span>
-          <span>Context-rich brand integrations</span>
-          <span>Premium display & custom content</span>
-          <span>Data-led targeting, privacy-first</span>
+          <span>Market Pulse: breadth, momentum, rotation</span>
+          <span>Pre-open brief + closing wrap</span>
+          <span>Alerts waitlist is open</span>
+          <span>Methodology linked on page</span>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Header -->
+  <!-- Header (fixed brand block + aligned container) -->
   <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="container flex items-center justify-between py-3">
-      <a href="/" class="flex items-center gap-3">
-        <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
-        <div>
-          <div class="text-lg font-bold leading-tight">bataSutra</div>
-          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context & tools</div>
+    <div class="max-w-6xl mx-auto px-4 flex items-center justify-between py-3">
+      <a href="/" class="flex items-center gap-3 min-w-0" aria-label="bataSutra home">
+        <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[var(--brand)] text-white font-extrabold leading-none shadow-sm">bS</span>
+        <div class="leading-tight">
+          <div class="text-lg font-bold">bataSutra</div>
+          <div class="text-xs text-[var(--muted)] -mt-0.5">News, context &amp; tools</div>
         </div>
       </a>
-      <div class="flex items-center gap-2"></div>
+
+      <div class="flex items-center gap-2">
+        <a href="#subscribe" class="hidden sm:inline-block text-sm font-medium px-3 py-2 rounded-lg bg-[var(--brand)] text-white hover:opacity-90">Subscribe</a>
+      </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="container pt-10 pb-6">
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
       <div class="lg:col-span-2">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Advertising & Media Kit</h1>
-        <p class="text-slate-700 mt-3 max-w-2xl">Partner with bataSutra to reach professionals, investors, and decision-makers who care about clarity, accuracy, and signal over noise.</p>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What’s inside — Market Pulse Dashboard</h1>
+        <p class="text-slate-700 mt-3 max-w-2xl">A fast overview of market internals: breadth, momentum, sector rotation, and positioning — stitched into a clean daily workflow.</p>
         <div class="mt-5 flex flex-wrap gap-3">
-          <a href="#audience" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Audience</a>
-          <a href="#formats" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Formats & Specs</a>
-          <a href="#sponsorships" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Sponsorships</a>
-          <a href="#pricing" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Pricing Bands</a>
-          <a href="#contact" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Contact</a>
+          <a href="#modules" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Modules</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data &amp; Methods</a>
+          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Reserve Alerts</a>
         </div>
       </div>
       <aside class="card p-5">
-        <div class="text-sm text-slate-600">Snapshot</div>
+        <div class="text-sm text-slate-600">Status &amp; contacts</div>
         <ul class="mt-2 space-y-2 text-sm text-slate-700">
-          <li class="grid-bullet"><strong>Audience:</strong> India business, markets & policy</li>
-          <li class="grid-bullet"><strong>Channels:</strong> Web, newsletters, dashboards, tools</li>
-          <li class="grid-bullet"><strong>Lead time:</strong> 5–10 business days</li>
-          <li class="grid-bullet"><strong>Contact:</strong> <a class="link-ink" href="mailto:ads@batasutra.in">ads@batasutra.in</a></li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Status:</strong> <span class="inline-flex items-center gap-2"><span class="h-2 w-2 rounded-full bg-amber-500"></span>In active build</span></li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Public preview:</strong> Rolling out</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Alerts:</strong> Waitlist open</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Contact:</strong> <a class="text-[var(--brand-ink)] hover:underline" href="mailto:dashboard@batasutra.in">dashboard@batasutra.in</a></li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Methodology:</strong> <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">batasutra.in/methodology</a></li>
         </ul>
       </aside>
     </div>
   </section>
 
-  <!-- Contents -->
-  <section class="container py-2">
+  <!-- At-a-glance -->
+  <section class="max-w-6xl mx-auto px-4 py-6">
     <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Contents</h2>
-      <ol class="toc mt-3 list-decimal list-inside text-sm space-y-1">
-        <li><a href="#audience">Audience & Reach</a></li>
-        <li><a href="#formats">Ad Formats & Technical Specs</a></li>
-        <li><a href="#sponsorships">Sponsorships & Custom</a></li>
-        <li><a href="#brand">Brand Safety & Guidelines</a></li>
-        <li><a href="#pricing">Pricing Bands</a></li>
-        <li><a href="#measurement">Measurement & Reporting</a></li>
-        <li><a href="#contact">Contact & Next Steps</a></li>
-        <li><a href="#terms">Terms</a></li>
-      </ol>
+      <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Market internals</div>
+          <div class="text-sm mt-1">Advance-decline, highs/lows, up/down volume, breadth composites.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Momentum &amp; rotation</div>
+          <div class="text-sm mt-1">3/6/12-M returns, MA breadth, sector/size/quality rotation matrices.</div>
+        </div>
+        <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
+          <div class="font-semibold">Daily workflow</div>
+          <div class="text-sm mt-1">Pre-open brief, closing wrap, weekly context — one scroll.</div>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Audience -->
-  <section id="audience" class="container py-6">
+  <!-- Modules -->
+  <section id="modules" class="max-w-6xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
-        <h2 class="text-xl font-bold tracking-tight">Audience & Reach</h2>
-        <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+        <h2 class="text-xl font-bold tracking-tight">Modules</h2>
+        <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="font-semibold">Profile</div>
-            <div class="text-slate-700 mt-1">Professionals, founders, investors, policy-watchers; metro-skewed, high intent.</div>
+            <div class="font-semibold mb-1">Breadth Overview</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Advance-Decline, Up/Down volume</li>
+              <li>52-week highs/lows and percentiles</li>
+              <li>Composite diffusion gauges</li>
+            </ul>
           </div>
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="font-semibold">Context</div>
-            <div class="text-slate-700 mt-1">They come for signal: data-first explainers, dashboards, and practical tools.</div>
+            <div class="font-semibold mb-1">Momentum Stack</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>3/6/12-M returns &amp; z-scores</li>
+              <li>MA crossovers &amp; MA breadth</li>
+              <li>Breakouts &amp; pullbacks monitor</li>
+            </ul>
           </div>
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="font-semibold">Channels</div>
-            <div class="text-slate-700 mt-1">Site, newsletters, data tools; time-on-page oriented, not clickbait-driven.</div>
+            <div class="font-semibold mb-1">Sector &amp; Factor Rotation</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Sector grid (NSE sectors)</li>
+              <li>Size/Value/Quality tilt</li>
+              <li>Heatmap &amp; diffusion index</li>
+            </ul>
           </div>
           <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-            <div class="font-semibold">Geo</div>
-            <div class="text-slate-700 mt-1">India-focused; global diaspora in finance/tech/consulting.</div>
+            <div class="font-semibold mb-1">Positioning (lite)</div>
+            <ul class="list-disc list-inside text-slate-700 space-y-1">
+              <li>Index derivatives snapshot*</li>
+              <li>FPI activity overview*</li>
+              <li class="text-xs text-slate-500">* subject to license &amp; timing</li>
+            </ul>
           </div>
         </div>
       </div>
+
       <aside class="card p-6 md:p-8">
-        <h3 class="text-base font-semibold">Badges</h3>
-        <div class="mt-2 space-y-2 text-xs text-slate-700">
-          <div class="grid-bullet"><span class="badge">Brand safe</span> — manual QA</div>
-          <div class="grid-bullet"><span class="badge">Privacy-first</span> — no creepy trackers</div>
-          <div class="grid-bullet"><span class="badge">High intent</span> — utility-led content</div>
-        </div>
+        <h3 class="text-base font-semibold">Why it’s different</h3>
+        <ul class="mt-2 space-y-2 text-sm text-slate-700">
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Opinion-light, chart-first.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Methodology &amp; caveats linked.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3">Fast on mobile, no fluff.</li>
+        </ul>
       </aside>
     </div>
   </section>
 
-  <!-- Formats & Specs -->
-  <section id="formats" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Ad Formats & Technical Specs</h2>
-      <div class="overflow-x-auto mt-3">
-        <table class="min-w-full text-sm">
-          <thead class="bg-slate-50">
-            <tr>
-              <th class="text-left px-3 py-2">Format</th>
-              <th class="text-left px-3 py-2">Placement</th>
-              <th class="text-left px-3 py-2">Specs</th>
-              <th class="text-left px-3 py-2">Notes</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y">
-            <tr>
-              <td class="px-3 py-2 font-medium">Leaderboard</td>
-              <td class="px-3 py-2">Top / In-article</td>
-              <td class="px-3 py-2">970×250 / 728×90, <span class="pill pill-soft">JPG/PNG/GIF</span></td>
-              <td class="px-3 py-2">Polite load; max 150KB; 15s loops</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Medium Rectangle</td>
-              <td class="px-3 py-2">In-article / Sidebar</td>
-              <td class="px-3 py-2">300×250, <span class="pill pill-soft">JPG/PNG/GIF</span></td>
-              <td class="px-3 py-2">Static preferred for speed</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Native Card</td>
-              <td class="px-3 py-2">Article stream</td>
-              <td class="px-3 py-2">Image 1200×628, Title 60c, Desc 140c, URL</td>
-              <td class="px-3 py-2">“Sponsored” label; editorial QA</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Newsletter Slot</td>
-              <td class="px-3 py-2">Top / Mid / Bottom</td>
-              <td class="px-3 py-2">Image 600×200 + 30–50 words</td>
-              <td class="px-3 py-2">UTM tagging supported</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Tool/Report Sponsor</td>
-              <td class="px-3 py-2">Dashboards & Tools</td>
-              <td class="px-3 py-2">Logo (SVG/PNG), tagline, link</td>
-              <td class="px-3 py-2">Brand safety & fit review</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="text-xs text-slate-600 mt-3">We can host creatives via our CDN or serve from your ad server (ads.txt available). Audio/video on request.</p>
-    </div>
-  </section>
-
-  <!-- Sponsorships -->
-  <section id="sponsorships" class="container py-6">
+  <!-- Data & Methods -->
+  <section id="data" class="max-w-6xl mx-auto px-4 py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
-        <h2 class="text-xl font-bold tracking-tight">Sponsorships & Custom</h2>
-        <ul class="mt-3 text-sm text-slate-700 space-y-2">
-          <li class="grid-bullet"><span class="pill pill-soft">Series sponsor</span> Branded presence across a themed editorial series (logo lockup, intro/outro tag, CTA link).</li>
-          <li class="grid-bullet"><span class="pill pill-soft">Newsletter sponsor</span> Category exclusivity for an issue; header card + midroll mention.</li>
-          <li class="grid-bullet"><span class="pill pill-soft">Tool/Index sponsor</span> “Supported by” on dashboards/tools with evergreen attribution.</li>
-          <li class="grid-bullet"><span class="pill pill-soft">Custom research</span> Survey/data project with co-branded report and launch article.</li>
+        <h2 class="text-xl font-bold tracking-tight">Data &amp; Methods</h2>
+        <ul class="mt-3 space-y-2 text-sm text-slate-700">
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Sources:</strong> NSE/BSE for prices, volumes, corporate actions; official indices.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Cleaning:</strong> Survivorship-aware panels for backtests; split/bonus adjustments.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Smoothing:</strong> Trailing averages (3/6/12-M), winsorization for extreme outliers.</li>
+          <li class="bg-slate-50 border border-slate-200 rounded-lg p-3"><strong>Publishing:</strong> Units, baselines, and caveats posted; see <a class="text-[var(--brand-ink)] hover:underline" href="/methodology">Methodology</a> &amp; <a class="text-[var(--brand-ink)] hover:underline" href="/data-sources">Data Sources</a>.</li>
         </ul>
       </div>
       <aside class="card p-6 md:p-8">
-        <h3 class="text-base font-semibold">Lead times</h3>
-        <div class="mt-2 text-sm text-slate-700">Display: 5 business days • Newsletter: 3–5 • Custom: 2–4 weeks</div>
+        <h3 class="text-base font-semibold">Update cadence</h3>
+        <div class="mt-2 text-sm text-slate-700 grid grid-cols-2 gap-2">
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Prices &amp; breadth</div>
+            <div class="font-semibold">Live / EOD</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Rotation &amp; factors</div>
+            <div class="font-semibold">Daily</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Backtests</div>
+            <div class="font-semibold">Ad-hoc</div>
+          </div>
+          <div class="p-3 rounded-lg bg-slate-50 border border-slate-200">
+            <div class="text-xs text-slate-500">Roadmap</div>
+            <div class="font-semibold">Monthly</div>
+          </div>
+        </div>
       </aside>
     </div>
   </section>
 
-  <!-- Brand Safety -->
-  <section id="brand" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Brand Safety & Guidelines</h2>
-      <ul class="mt-3 text-sm text-slate-700 space-y-2">
-        <li class="grid-bullet">We do not run ads with misleading claims, illegal products, or discriminatory targeting.</li>
-        <li class="grid-bullet">Sponsored content is clearly labeled and adheres to our <a class="link-ink" href="/editorial-policy">Editorial Policy</a>.</li>
-        <li class="grid-bullet">Tracking is minimal and privacy-respecting; see <a class="link-ink" href="/privacy">Privacy Policy</a> and <a class="link-ink" href="/cookies">Cookie Policy</a>.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Pricing Bands (Indicative)</h2>
-      <div class="overflow-x-auto mt-3">
-        <table class="min-w-full text-sm">
-          <thead class="bg-slate-50">
-            <tr>
-              <th class="text-left px-3 py-2">Inventory</th>
-              <th class="text-left px-3 py-2">Basis</th>
-              <th class="text-left px-3 py-2">Band (₹)</th>
-              <th class="text-left px-3 py-2">Notes</th>
-            </tr>
-          </thead>
-          <tbody class="divide-y">
-            <tr>
-              <td class="px-3 py-2 font-medium">Leaderboard</td>
-              <td class="px-3 py-2">CPM</td>
-              <td class="px-3 py-2">300–650</td>
-              <td class="px-3 py-2">Frequency caps; viewability targets</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Medium Rectangle</td>
-              <td class="px-3 py-2">CPM</td>
-              <td class="px-3 py-2">200–450</td>
-              <td class="px-3 py-2">Context & placement tiers</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Native Card</td>
-              <td class="px-3 py-2">CPC / Fixed</td>
-              <td class="px-3 py-2">₹20–₹60 CPC / 50k–2L fixed</td>
-              <td class="px-3 py-2">Creative QA & A/B support</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Newsletter</td>
-              <td class="px-3 py-2">Fixed</td>
-              <td class="px-3 py-2">40k–2L / issue</td>
-              <td class="px-3 py-2">Slot + mention + link</td>
-            </tr>
-            <tr>
-              <td class="px-3 py-2 font-medium">Tool/Index Sponsor</td>
-              <td class="px-3 py-2">Monthly</td>
-              <td class="px-3 py-2">1.5L–6L / mo</td>
-              <td class="px-3 py-2">Logo + evergreen page credit</td>
-            </tr>
-          </tbody>
-        </table>
+  <!-- Reserve Alerts (Waitlist) -->
+  <section id="reserve" class="max-w-6xl mx-auto px-4 py-10">
+    <div class="reserve-gradient rounded-2xl p-6 md:p-10 text-white">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Reserve alerts for Market Pulse</h2>
+          <p class="opacity-80 mt-2 text-sm">Join the email list for pre-open briefs, closing wraps, and notable shifts in breadth/rotation. We only need your email.</p>
+          <ul class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <li class="reserve-border rounded-lg p-3">No spam, unsubscribe anytime</li>
+            <li class="reserve-border rounded-lg p-3">Rollout: staged access</li>
+            <li class="reserve-border rounded-lg p-3">Same subscribe backend</li>
+          </ul>
+        </div>
+        <div>
+          <form id="reserveForm" class="space-y-3" aria-label="Reserve alerts form">
+            <label for="reserveEmail" class="sr-only">Email</label>
+            <input id="reserveEmail" type="email" required autocomplete="email"
+                   class="reserve-input w-full rounded-lg px-3 py-3 text-sm"
+                   placeholder="you@example.com" />
+            <button type="submit"
+                    class="w-full rounded-lg bg-[var(--brand)] text-white px-4 py-3 text-sm font-semibold hover:opacity-95">
+              Join waitlist
+            </button>
+            <div id="reserveMsg" class="text-xs opacity-80">We’ll confirm when alerts are ready.</div>
+          </form>
+        </div>
       </div>
-      <p class="text-xs text-slate-600 mt-3">Final quotes depend on flight, targeting, seasonality, category exclusivity, and deliverables.</p>
     </div>
   </section>
 
-  <!-- Measurement -->
-  <section id="measurement" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Measurement & Reporting</h2>
-      <ul class="mt-3 text-sm text-slate-700 space-y-2">
-        <li class="grid-bullet">Metrics: impressions, clicks/CTR, time-on-page, viewability (where applicable).</li>
-        <li class="grid-bullet">Weekly flight reports; end-of-campaign summary with insights.</li>
-        <li class="grid-bullet">UTM tagging and server-side event logging available.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Terms -->
-  <section id="terms" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Terms</h2>
-      <ul class="mt-3 text-sm text-slate-700 space-y-2">
-        <li class="grid-bullet">All creative subject to editorial review for brand safety and fit.</li>
-        <li class="grid-bullet">Payment terms: 100% advance for first campaign; net-15 thereafter.</li>
-        <li class="grid-bullet">Cancellations within 72h of flight start may incur fees.</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="container py-6">
-    <div class="card p-6 md:p-8">
-      <h2 class="text-xl font-bold tracking-tight">Contact & Next Steps</h2>
-      <p class="text-sm text-slate-700 mt-2">Share flight dates, objectives, formats, and target pages with <a class="link-ink" href="mailto:ads@batasutra.in">ads@batasutra.in</a>. We’ll respond with inventory and a proposal.</p>
-    </div>
-  </section>
-
-  <!-- Bottom Ticker (now directly above footer) -->
+  <!-- Bottom Ticker -->
   <div class="w-full bg-slate-50 border-t mt-12">
-    <div class="container">
+    <div class="max-w-6xl mx-auto px-4">
       <div class="flex items-center gap-3 py-2">
-        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">ADS</span>
-        <div class="ticker-rail flex-1" aria-label="Ads ticker" aria-live="polite">
+        <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PULSE</span>
+        <div class="ticker-rail flex-1" aria-label="Market ticker" aria-live="polite">
           <div id="botTicker" class="ticker ticker-left text-sm text-slate-700">
-            <span>Premium audience, brand safe</span>
-            <span>Newsletter & native options</span>
-            <span>Custom research available</span>
-            <span>Contact: ads@batasutra.in</span>
+            <span>Breadth first. Hype last.</span>
+            <span>Fast mobile charts</span>
+            <span>Methodology linked</span>
+            <span>Alerts: waitlist open</span>
           </div>
         </div>
       </div>
@@ -360,131 +276,247 @@
   </div>
 
   <!-- Footer -->
- <footer class="footer-red text-sm">
+  <footer class="footer-red text-sm mt-12">
     <div class="divider"></div>
 
-    <div class="container py-10">
+    <div class="max-w-6xl mx-auto px-4 py-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        <a href="/" class="flex items-center gap-3">
+        <a href="/" class="flex items-center gap-3" aria-label="bataSutra home">
           <span class="grid place-items-center h-9 w-9 rounded-xl bg-[var(--brand)] text-white font-bold shadow-sm">bS</span>
           <div>
             <div class="text-lg font-bold leading-tight">bataSutra</div>
-            <div class="text-xs muted -mt-0.5"></div>
+            <div class="text-xs muted -mt-0.5">News, context &amp; tools</div>
           </div>
         </a>
         <p class="muted max-w-2xl"></p>
       </div>
 
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 mt-10">
-        <div>
-          <div class="heading mb-3">Editorial</div>
-          <ul class="space-y-2">
-            <li><a href="latest.html">Latest</a></li>
-            <li><a href="deep-dives.html">Deep Dives</a></li>
-            <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
-            <li><a href="explainers.html">Explainers</a></li>
-            <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
-          </ul>
+      <nav aria-labelledby="footerNav" class="mt-10">
+        <h2 id="footerNav" class="sr-only">Footer navigation</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8">
+          <div>
+            <div class="heading mb-3">Editorial</div>
+            <ul class="space-y-2">
+              <li><a href="latest.html">Latest</a></li>
+              <li><a href="deep-dives.html">Deep Dives</a></li>
+              <li><a href="weekend-wrap.html">Weekend Wrap</a></li>
+              <li><a href="explainers.html">Explainers</a></li>
+              <li><a href="policy-regulation.html">Policy &amp; Regulation</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Data</div>
+            <ul class="space-y-2">
+              <li><a href="indices.html">Indices</a></li>
+              <li><a href="heatmap.html">Sector Heatmap</a></li>
+              <li><a href="commodities.html">Commodities</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Tools</div>
+            <ul class="space-y-2">
+              <li><a href="sip-goal-corpus.html">SIP Goal &amp; Corpus</a></li>
+              <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
+              <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
+              <li><a href="tax.html">Tax: Old vs New Slab</a></li>
+              <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Company</div>
+            <ul class="space-y-2">
+              <li><a href="about.html">About</a></li>
+              <li><a href="whats-inside.html">Inside the Dashboard</a></li>
+              <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
+              <li><a href="partnership.html">Partnerships</a></li>
+              <li><a href="careers.html">Careers</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Resources</div>
+            <ul class="space-y-2">
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="data-sources.html">Data Sources</a></li>
+              <li><a href="editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="corrections.html">Corrections</a></li>
+              <li><a href="ethics.html">Ethics &amp; Independence</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="heading mb-3">Legal</div>
+            <ul class="space-y-2">
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+              <li><a href="cookie-policy.html">Cookie Policy</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+              <li><a href="licensing.html">Licensing</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div class="divider mt-10"></div>
+
+      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-center">
+        <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
+
+        <div class="muted text-center">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
         </div>
 
-        <div>
-          <div class="heading mb-3">Data</div>
-          <ul class="space-y-2">
-            <li><a href="indicies.html">Indices</a></li>
-            <li><a href="heatmap.html">Sector Heatmap</a></li>
-            <li><a href="commodities.html">Commodities</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Tools</div>
-          <ul class="space-y-2">
-            <li><a href="sip-goal-corpus.html.html">SIP Goal &amp; Corpus</a></li>
-            <li><a href="cagr.app.min.html">CAGR &amp; Quick IRR</a></li>
-            <li><a href="ppf.app.min.html">PPF &amp; Emergency Ladder</a></li>
-            <li><a href="tax.html">Tax: Old vs New Slab</a></li>
-            <li><a href="runway.app.min.html">Expense Buckets &amp; Runway</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Company</div>
-          <ul class="space-y-2">
-            <li><a href="about.html">About</a></li>
-            <li><a href="whats-inside.html">Inside the Dashboard</a></li>
-            <li><a href="ad-media.html">Advertising &amp; Media Kit</a></li>
-            <li><a href="partnership.html">Partnerships</a></li>
-            <li><a href="careers.html">Careers</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Resources</div>
-          <ul class="space-y-2">
-            <li><a href="methodology.html">Methodology</a></li>
-            <li><a href="data-sources.html">Data Sources</a></li>
-            <li><a href="editorial-policy.html">Editorial Policy</a></li>
-            <li><a href="corrections.html">Corrections</a></li>
-            <li><a href="ethics.html">Ethics &amp; Independence</a></li>
-            <li><a href="accessibility.html">Accessibility</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="heading mb-3">Legal</div>
-          <ul class="space-y-2">
-            <li><a href="privacy-policy.html">Privacy Policy</a></li>
-            <li><a href="terms-of-services.html">Terms of Service</a></li>
-            <li><a href="cookie-policy.html">Cookie Policy</a></li>
-            <li><a href="security.html">Security</a></li>
-            <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
-            <li><a href="licensing.html">Licensing</a></li>
-          </ul>
+        <div class="flex items-center gap-4 muted justify-center md:justify-end">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+            Back to top ↑
+          </button>
         </div>
       </div>
-
-    <div class="divider mt-10"></div>
-
-<div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
-  <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
-
-  <div class="muted text-center">
-    &copy; <span id="year"></span> bataSutra. All rights reserved.
-  </div>
-
-  <div class="flex items-center gap-4 muted justify-center md:justify-end">
-    <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
-  </div>
-</div>
     </div>
   </footer>
 
-  <!-- Ticker width guard (keeps both tickers looping seamlessly) -->
+  <!-- ===== Single inline script (tickers + waitlist) ===== -->
   <script>
-    (function(){
-      function ensureLoopWidthById(id){
-        var el = document.getElementById(id);
-        if(!el) return;
-        var rail = el.parentElement;
-        if(!rail) return;
-        var railWidth = rail.clientWidth || 0;
-        if(!railWidth) return;
-        while(el.scrollWidth < railWidth * 2){
-          Array.from(el.children).forEach(function(ch){ el.appendChild(ch.cloneNode(true)); });
-        }
+  // ========= CONFIG =========
+  const SHEET_ID    = '1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
+  const SHEET_TAB   = 'Headlines';
+  const SHEET_RANGE = 'A:C';
+  const CSV_URL     = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:csv&sheet=${encodeURIComponent(SHEET_TAB)}&range=${encodeURIComponent(SHEET_RANGE)}`;
+
+  const SUBSCRIBE_SCRIPT = 'https://script.google.com/macros/s/AKfycbwT4FQr2Qb91fiqEgeUQMdnD5dDACtWyFnktA5MUp8sHHVebvFIOq4k3yMGKqJmlPJ_MA/exec';
+
+  // ========= Utils =========
+  function parseCsv(text){
+    const rows=[]; let row=[], cur='', q=false;
+    for(let i=0;i<text.length;i++){
+      const ch=text[i];
+      if(q){
+        if(ch === '"'){ if(text[i+1] === '"'){ cur+='"'; i++; } else { q=false; } }
+        else cur+=ch;
+      } else {
+        if(ch === '"') q=true;
+        else if(ch === ','){ row.push(cur); cur=''; }
+        else if(ch === '\n'){ row.push(cur); rows.push(row); row=[]; cur=''; }
+        else if(ch !== '\r'){ cur+=ch; }
       }
-      function refresh(){
-        ensureLoopWidthById('topTicker');
-        ensureLoopWidthById('botTicker');
+    }
+    if(cur.length || row.length){ row.push(cur); rows.push(row); }
+    return rows;
+  }
+
+  function setAutoDuration(el, items){
+    const len = (items||[]).join(' • ').length || 120;
+    const secs = Math.min(140, Math.max(60, Math.round(len/1.8)));
+    el && el.style.setProperty('--dur', secs+'s');
+  }
+
+  function renderTicker(el, items, dir){
+    if(!el || !items?.length) return;
+    el.className = `ticker ${dir==='right'?'ticker-right':'ticker-left'} ${el.id==='botTicker'?'text-sm text-slate-700':'text-sm font-medium'}`;
+    el.innerHTML = '';
+    const loop = items.concat(items);
+    const frag = document.createDocumentFragment();
+    loop.forEach(t => { const s=document.createElement('span'); s.textContent=t; frag.appendChild(s); });
+    el.appendChild(frag);
+    setAutoDuration(el, items);
+  }
+
+  function paintFromData(data){
+    if(!data) return;
+    const top = data.filter(d=> (d[0] || d.section || '').toString().toLowerCase()==='top').map(d=> d[1] || d.text).filter(Boolean);
+    const bottom = data.filter(d=> (d[0] || d.section || '').toString().toLowerCase()==='bottom').map(d=> d[1] || d.text).filter(Boolean);
+    renderTicker(document.getElementById('topTicker'), top, 'right');
+    renderTicker(document.getElementById('botTicker'), bottom, 'left');
+  }
+
+  (function prefetchCSV(){
+    try{
+      const l=document.createElement('link');
+      l.rel='prefetch'; l.as='fetch'; l.crossOrigin='anonymous'; l.href=CSV_URL; document.head.appendChild(l);
+    }catch{}
+  })();
+
+  function fetchCsv(url, ms=1200){
+    return new Promise(resolve=>{
+      const t=setTimeout(()=>resolve(null), ms);
+      fetch(url, {cache:'force-cache', credentials:'omit'})
+        .then(r=>{ clearTimeout(t); resolve(r.ok ? r : null); })
+        .catch(()=>{ clearTimeout(t); resolve(null); });
+    });
+  }
+
+  async function loadHeadlines(){
+    const res = await fetchCsv(CSV_URL, 1400);
+    if(!res) return null;
+    const txt = await res.text();
+    if((txt||'').trim().startsWith('<')) return [];  // not public
+    const rows = parseCsv(txt);
+    if(!rows.length) return [];
+    const hdr = rows[0].map(h => h.replace(/^\uFEFF/,'').trim().toLowerCase());
+    const iS = hdr.indexOf('section'), iT = hdr.indexOf('text');
+    if(iS<0 || iT<0){
+      return rows.slice(1).map(r=>({section:(r[0]||'').trim(), text:(r[1]||'').trim()})).filter(r=>r.text);
+    }
+    return rows.slice(1).map(r=>({section:(r[iS]||'').trim(), text:(r[iT]||'').trim()})).filter(r=>r.text);
+  }
+
+  async function reserveSubmit(email){
+    const fd = new FormData();
+    fd.append('email', email);
+    try{
+      const res = await fetch(SUBSCRIBE_SCRIPT, { method:'POST', body: fd });
+      const txt = (await res.text()||'').toLowerCase();
+      if (txt.includes('success') || txt.includes('ok')) return 'ok';
+      if (txt.includes('already')) return 'already';
+      return 'unknown';
+    }catch{
+      return 'error';
+    }
+  }
+
+  (function boot(){
+    const y = document.getElementById('year'); if (y) y.textContent = new Date().getFullYear();
+
+    try{
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        document.querySelectorAll('.ticker-left, .ticker-right').forEach(el => { el.style.animation='none'; });
       }
-      window.addEventListener('load', refresh);
-      var raf;
-      window.addEventListener('resize', function(){
-        cancelAnimationFrame(raf);
-        raf = requestAnimationFrame(refresh);
-      });
-    })();
+    }catch{}
+
+    loadHeadlines().then(data => { if(data) paintFromData(data); });
+
+    const form = document.getElementById('reserveForm');
+    const emailEl = document.getElementById('reserveEmail');
+    const msg = document.getElementById('reserveMsg');
+    form?.addEventListener('submit', async (e)=>{
+      e.preventDefault();
+      const email = (emailEl?.value||'').trim();
+      if(!email){ emailEl?.focus(); return; }
+      emailEl.disabled = true;
+      const btn = form.querySelector('button[type="submit"]'); if(btn) btn.disabled = true;
+
+      const status = await reserveSubmit(email);
+      if(status==='ok'){
+        msg.textContent = 'Thanks! You’re on the waitlist. We’ll email when alerts go live.';
+        form.reset();
+      }else if(status==='already'){
+        msg.textContent = '⚠️ You’re already on the list.';
+      }else if(status==='unknown'){
+        msg.textContent = 'Submitted. If you don’t see a confirmation, we’ll still try to add you.';
+      }else{
+        msg.textContent = 'Something went wrong. Please try again or email alerts@batasutra.in.';
+      }
+
+      emailEl.disabled = false;
+      if(btn) btn.disabled = false;
+    });
+  })();
   </script>
 </body>
 </html>
