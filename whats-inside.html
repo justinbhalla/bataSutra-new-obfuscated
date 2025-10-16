@@ -3,22 +3,32 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-  <title>Pulseboard | bataSutra</title>
+  <title>What’s Inside — Pulseboard | bataSutra</title>
   <meta name="description" content="See what’s inside Pulseboard: breadth, median move, leaders/laggards, and intraday sparks. Join the waitlist for alert emails as we roll out." />
   <meta name="theme-color" content="#8B0000">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-    :root{ --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; }
-    html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans"; }
+    :root{
+      --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280;
+      /* Set this to match your other pages: 72rem ≈ max-w-6xl */
+      --container:72rem;
+      --header-h:64px;
+    }
+    html { font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans"; }
     body { background:#fff; color:#111; margin:0; }
-    section[id]{ scroll-margin-top:5.5rem; }
+    section[id]{ scroll-margin-top:calc(var(--header-h) + 24px); }
+
+    /* Unified container rail */
+    .wrap{ max-width:var(--container); margin-inline:auto; padding-inline:1rem; }
+    @media (min-width:640px){ .wrap{ padding-inline:1.5rem; } }
+    @media (min-width:1024px){ .wrap{ padding-inline:2rem; } }
 
     /* Cards */
     .card{ background:#fff; border:1px solid #e5e7eb; border-radius:1rem; box-shadow:0 1px 2px rgba(0,0,0,.04); }
     .card:hover{ box-shadow:0 6px 18px rgba(0,0,0,.08); transition:box-shadow .2s ease; }
 
-    /* Tickers */
+    /* Tickers (width locked by .wrap parent) */
     .ticker-rail{ position:relative; overflow:hidden; }
     .ticker{ display:flex; width:max-content; white-space:nowrap; gap:2.25rem; will-change:transform; transform:translateZ(0); }
     .ticker-left{ animation:sL var(--dur,120s) linear infinite; }
@@ -29,9 +39,10 @@
 
     /* Reserve block */
     .reserve-gradient{
-      background: radial-gradient(1200px 400px at 10% -20%, #dc26261c 10%, transparent 60%),
-                  radial-gradient(800px 300px at 90% -10%, #8B00001f 10%, transparent 60%),
-                  linear-gradient(180deg, #101010, #0d0d0d 60%, #0b0b0b);
+      background:
+        radial-gradient(1200px 400px at 10% -20%, #dc26261c 10%, transparent 60%),
+        radial-gradient(800px 300px at 90% -10%, #8B00001f 10%, transparent 60%),
+        linear-gradient(180deg, #101010, #0d0d0d 60%, #0b0b0b);
       border:1px solid #1f2937;
     }
     .reserve-border{ border:1px solid rgba(255,255,255,.08); }
@@ -60,9 +71,9 @@
   </script>
 </head>
 <body>
-  <!-- Top Ticker -->
+  <!-- Top Ticker (full-bleed bg, inner width locked by .wrap) -->
   <div class="w-full bg-[var(--brand-ink)] text-white">
-    <div class="max-w-6xl mx-auto flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
+    <div class="wrap flex items-center gap-3 py-2">
       <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
         <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
       </span>
@@ -77,9 +88,9 @@
     </div>
   </div>
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between py-3">
+  <!-- Header (width locked; same dimensions across site) -->
+  <header class="sticky top-0 z-40 border-b bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70" style="height:var(--header-h)">
+    <div class="wrap h-full flex items-center justify-between">
       <a href="/" class="flex items-center gap-3">
         <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
         <div>
@@ -87,18 +98,17 @@
           <div class="text-xs text-[var(--muted)] -mt-0.5">News, context &amp; tools</div>
         </div>
       </a>
-
       <div class="flex items-center gap-2">
-        <a href="#subscribe" class="hidden sm:inline-block text-sm font-medium px-3 py-2 rounded-lg bg-[var(--brand)] text-white hover:opacity-90">Subscribe</a>
+        <a href="#reserve" class="hidden sm:inline-block text-sm font-medium px-3 py-2 rounded-lg bg-[var(--brand)] text-white hover:opacity-90">Subscribe</a>
       </div>
     </div>
   </header>
 
   <!-- Hero -->
-  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
+  <section class="wrap pt-10 pb-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-start">
       <div class="lg:col-span-2">
-        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Pulseboard</h1>
+        <h1 class="text-3xl sm:text-4xl font-extrabold tracking-tight">What’s inside — Pulseboard</h1>
         <p class="text-slate-700 mt-3 max-w-2xl">Scan the tape in seconds. Breadth, median move, leaders/laggards, and intraday sparks in one fast board.</p>
         <div class="mt-3 flex flex-wrap items-center gap-2 text-xs text-slate-600">
           <span class="inline-flex items-center gap-2 px-2.5 py-1 rounded-full border border-slate-200">LIVE</span>
@@ -108,8 +118,8 @@
         </div>
         <div class="mt-5 flex flex-wrap gap-3">
           <a href="#modules" class="px-4 py-2 rounded-lg bg-[var(--brand)] text-white text-sm font-medium">Modules</a>
-          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data</a>
-          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Alerts</a>
+          <a href="#data" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Data &amp; Methods</a>
+          <a href="#reserve" class="px-4 py-2 rounded-lg border border-gray-300 text-sm font-medium">Reserve Alerts</a>
         </div>
       </div>
       <aside class="card p-5">
@@ -126,7 +136,7 @@
   </section>
 
   <!-- At-a-glance -->
-  <section class="max-w-6xl mx-auto px-4 py-6">
+  <section class="wrap py-6">
     <div class="card p-6 md:p-8">
       <h2 class="text-xl font-bold tracking-tight">At-a-glance</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
@@ -135,11 +145,11 @@
           <div class="text-sm mt-1">Advance/Decline, highs/lows, up/down volume, breadth composites.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-          <div class="font-semibold">Rotations</div>
+          <div class="font-semibold">Momentum &amp; Rotation</div>
           <div class="text-sm mt-1">3/6/12-M returns, MA breadth, sector/size/quality rotation matrices.</div>
         </div>
         <div class="p-4 rounded-lg bg-slate-50 border border-slate-200">
-          <div class="font-semibold">Workflows</div>
+          <div class="font-semibold">Daily workflow</div>
           <div class="text-sm mt-1">Pre-open brief, closing wrap, weekly context — one scroll.</div>
         </div>
       </div>
@@ -147,7 +157,7 @@
   </section>
 
   <!-- Modules -->
-  <section id="modules" class="max-w-6xl mx-auto px-4 py-6">
+  <section id="modules" class="wrap py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Modules</h2>
@@ -199,7 +209,7 @@
   </section>
 
   <!-- Data & Methods -->
-  <section id="data" class="max-w-6xl mx-auto px-4 py-6">
+  <section id="data" class="wrap py-6">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 items-start">
       <div class="lg:col-span-2 card p-6 md:p-8">
         <h2 class="text-xl font-bold tracking-tight">Data &amp; Methods</h2>
@@ -235,16 +245,16 @@
   </section>
 
   <!-- Reserve Alerts (Waitlist) -->
-  <section id="reserve" class="max-w-6xl mx-auto px-4 py-10">
+  <section id="reserve" class="wrap py-10">
     <div class="reserve-gradient rounded-2xl p-6 md:p-10 text-white">
       <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div class="lg:col-span-2">
           <h2 class="text-2xl md:text-3xl font-extrabold tracking-tight">Reserve alerts for Pulseboard</h2>
           <p class="opacity-80 mt-2 text-sm">Join the email list for pre-open briefs, closing wraps, and notable shifts in breadth/rotation. We only need your email.</p>
           <ul class="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
-            <li class="reserve-border rounded-lg p-3"></li>
+            <li class="reserve-border rounded-lg p-3">No spam, unsubscribe anytime</li>
             <li class="reserve-border rounded-lg p-3">Rollout: staged access</li>
-            <li class="reserve-border rounded-lg p-3"></li>
+            <li class="reserve-border rounded-lg p-3">Same subscribe backend</li>
           </ul>
         </div>
         <div>
@@ -264,9 +274,9 @@
     </div>
   </section>
 
-  <!-- Bottom Ticker -->
+  <!-- Bottom Ticker (full-bleed bg, inner width locked) -->
   <div class="w-full bg-slate-50 border-t mt-12">
-    <div class="max-w-6xl mx-auto px-4">
+    <div class="wrap">
       <div class="flex items-center gap-3 py-2">
         <span class="inline-flex items-center gap-2 text-xs font-semibold bg-slate-200 px-2.5 py-1 rounded-full text-slate-800">PULSEBOARD</span>
         <div class="ticker-rail flex-1" aria-label="Pulseboard ticker" aria-live="polite">
@@ -281,11 +291,11 @@
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer (width locked) -->
   <footer class="footer-red text-sm mt-12">
     <div class="divider"></div>
 
-    <div class="max-w-6xl mx-auto px-4 py-10">
+    <div class="wrap py-10">
       <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
         <a href="/" class="flex items-center gap-3">
           <span class="grid place-items-center h-9 w-9 shrink-0 rounded-xl bg-[var(--brand)] text-white font-bold leading-none shadow-sm">bS</span>
@@ -343,29 +353,29 @@
             </ul>
           </div>
 
-            <div>
-              <div class="heading mb-3">Resources</div>
-              <ul class="space-y-2">
-                <li><a href="methodology.html">Methodology</a></li>
-                <li><a href="data-sources.html">Data Sources</a></li>
-                <li><a href="editorial-policy.html">Editorial Policy</a></li>
-                <li><a href="corrections.html">Corrections</a></li>
-                <li><a href="ethics.html">Ethics &amp; Independence</a></li>
-                <li><a href="accessibility.html">Accessibility</a></li>
-              </ul>
-            </div>
+          <div>
+            <div class="heading mb-3">Resources</div>
+            <ul class="space-y-2">
+              <li><a href="methodology.html">Methodology</a></li>
+              <li><a href="data-sources.html">Data Sources</a></li>
+              <li><a href="editorial-policy.html">Editorial Policy</a></li>
+              <li><a href="corrections.html">Corrections</a></li>
+              <li><a href="ethics.html">Ethics &amp; Independence</a></li>
+              <li><a href="accessibility.html">Accessibility</a></li>
+            </ul>
+          </div>
 
-            <div>
-              <div class="heading mb-3">Legal</div>
-              <ul class="space-y-2">
-                <li><a href="privacy-policy.html">Privacy Policy</a></li>
-                <li><a href="terms-of-service.html">Terms of Service</a></li>
-                <li><a href="cookies.html">Cookie Policy</a></li>
-                <li><a href="security.html">Security</a></li>
-                <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
-                <li><a href="licensing.html">Licensing</a></li>
-              </ul>
-            </div>
+          <div>
+            <div class="heading mb-3">Legal</div>
+            <ul class="space-y-2">
+              <li><a href="privacy-policy.html">Privacy Policy</a></li>
+              <li><a href="terms-of-service.html">Terms of Service</a></li>
+              <li><a href="cookies.html">Cookie Policy</a></li>
+              <li><a href="security.html">Security</a></li>
+              <li><a href="responsible-disclosure.html">Responsible Disclosure</a></li>
+              <li><a href="licensing.html">Licensing</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
 
@@ -448,7 +458,7 @@
     }catch{}
   })();
 
-  function fetchCsv(url, ms=1200){
+  function fetchCsv(url, ms=1400){
     return new Promise(resolve=>{
       const t=setTimeout(()=>resolve(null), ms);
       fetch(url, {cache:'force-cache', credentials:'omit'})
@@ -458,7 +468,7 @@
   }
 
   async function loadHeadlines(){
-    const res = await fetchCsv(CSV_URL, 1400);
+    const res = await fetchCsv(CSV_URL, 1600);
     if(!res) return null;
     const txt = await res.text();
     if((txt||'').trim().startsWith('<')) return [];
