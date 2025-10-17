@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/brent-inr-sensitivity-omc-margins-household-fuel-bills-oct-16-2025-am",
-    "title": "Brent + INR Sensitivity: OMC Margins & Fuel Bills",
-    "blurb": "Five-line brief, crude/FX-to-pump formula, OMC margin ladder, city fuel bands, and household cost math with what can break the model (policy, inventory, cracks)."
+    "href": "/articles/regulation-compliance-radar-weekly-roundup-oct-17-2025-am",
+    "title": "Regulation & Compliance Radar — Weekly Roundup",
+    "blurb": "SEBI/RBI/IRDAI/UIDAI highlights with who’s impacted, near-term actions, a 14-day compliance calendar, and team checklists for controls, disclosures, and governance."
   },
   {
-    "href": "/articles/national-data-centre-policy-2025-hyperscalers-vs-local-players-oct-16-2025-eod",
-    "title": "National Data Centre Policy 2025: Hyperscalers vs Local Players",
-    "blurb": "Corridor map for land/power, capex/MW and PUE math, rack-density cooling choices, renewables + storage SLAs, GTM lanes, and state/developer checklists."
+    "href": "/articles/rbi-sandbox-whos-testing-now-cohorts-learnings-how-to-get-in-oct-17-2025-eod",
+    "title": "RBI Sandbox: Who’s Testing Now — Cohorts, Learnings & How to Get In",
+    "blurb": "Snapshot of active/pipeline cohorts, what prototypes are being tested, entry→testing→exit gates, sponsor & applicant priorities, and security/ops/compliance checklists."
   }
 ];
 
