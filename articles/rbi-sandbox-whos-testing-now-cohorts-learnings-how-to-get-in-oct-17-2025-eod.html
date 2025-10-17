@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="A practical guide to the RBI Regulatory Sandbox: where cohorts stand, what’s being tested, go/no-go gates, and how fintechs and banks should prepare."/>
+  <meta name="keywords" content="RBI sandbox, fintech India, regulatory sandbox, payments, lending, RegTech, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>RBI Sandbox: Who’s Testing Now — Cohorts, Learnings & How to Get In — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.spacer { height: 18px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">FINTECH · POLICY · EOD</div>
+        <h1>RBI Sandbox: Who’s Testing Now — Cohorts, Learnings & How to Get In</h1>
+        <div class="sub">Where the cohorts stand, what’s being tested, and the templates that get shortlisted.</div>
+        <div class="meta">By bataSutra Editorial · October 17, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — this week’s snapshot</li>
+    <li>Where the sandbox stands</li>
+    <li>What’s being tested (illustrative)</li>
+    <li>Gates: entry → testing → exit</li>
+    <li>How to choose your lane</li>
+    <li>Bank & fintech checklists</li>
+    <li>FAQ</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Theme concentration:</strong> Payments resilience and consent-first credit remain dominant.</li>
+      <li><strong>Data rails:</strong> AA-led flows with explicit purpose binding get smoother approvals.</li>
+      <li><strong>Testing focus:</strong> Incident drills, fraud throttling, and explainable models in scope.</li>
+      <li><strong>Exit reality:</strong> Most pilots scale only with a sponsoring bank and clear ops runbooks.</li>
+      <li><strong>Time-boxing:</strong> Applicants with pre-arranged data partners move faster through gates.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Where the sandbox stands</h2>
+  <table class="table">
+    <thead><tr><th>Area</th><th>Status (directional)</th><th>Key note</th></tr></thead>
+    <tbody>
+      <tr><td>Active cohorts</td><td>Payments, Digital Lending, RegTech</td><td>Security, consent, and recovery drills in scope</td></tr>
+      <tr><td>Pipeline</td><td>Cross-border LRS-lite, MSME cash-flow</td><td>Data-sharing & settlement design under review</td></tr>
+      <tr><td>Footfall</td><td>Healthy; many first-time applicants</td><td>Shortlisted teams show readiness with bank partners</td></tr>
+      <tr><td>Conversion</td><td>Selective</td><td>Production rollouts depend on sponsor banks and control evidence</td></tr>
+    </tbody>
+  </table>
+
+  <div class="spacer"></div>
+
+  <div class="grid">
+    <div class="card">
+      <h3>What sponsors push for</h3>
+      <ul>
+        <li>Clear kill-switch and client-data vaulting before they commit to go-live.</li>
+        <li>Cost-to-serve math that holds at scale; vendor exit plan defined.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>What applicants underestimate</h3>
+      <ul>
+        <li>Production logs & audit trails requirements; need for immutable evidence.</li>
+        <li>Disaster-recovery playbooks and quarterly drill expectations.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>What’s being tested (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Lane</th><th>Prototype</th><th>Proof points sought</th><th>Go/No-go red flags</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Payments</td>
+        <td>Device-binding + risk-scored OTP throttling</td>
+        <td>False-positive rate &lt; 2%; MTTR on incident drills</td>
+        <td>Opaque ML; no incident post-mortems</td>
+      </tr>
+      <tr>
+        <td>Credit</td>
+        <td>AA-based cash-flow underwriting</td>
+        <td>Lift vs bureau baseline; consent revocation handling</td>
+        <td>Shadow profiling; unverifiable features</td>
+      </tr>
+      <tr>
+        <td>RegTech</td>
+        <td>Real-time STR triggers & entity graphing</td>
+        <td>Precision/recall on labelled sets; SIEM integration</td>
+        <td>Hard-coded thresholds; no tuning audit</td>
+      </tr>
+      <tr>
+        <td>Customer protection</td>
+        <td>In-app grievance & language personalization</td>
+        <td>TAT reduction ≥ 30%; dispute reversals accuracy</td>
+        <td>Missing local-language coverage; dark patterns</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Gates — entry → testing → exit</h2>
+  <ol>
+    <li><strong>Entry:</strong> Problem statement, regulatory fit memo, data partner letters, security architecture, DPI alignment (UPI/AA/OCEN where relevant).</li>
+    <li><strong>Testing:</strong> Time-boxed pilots, success metrics (precision/recall, TATs), incident drills, opt-out pathways.</li>
+    <li><strong>Exit:</strong> Final report with evidence packs; production plan with sponsor, risk controls, and phased rollout.</li>
+  </ol>
+  <div class="callout"><span class="badge">Tip</span> Arrive with anonymized datasets and an executing sponsor; the delta between deck and demo decides your slot.</div>
+</section>
+
+<section>
+  <h2>How to choose your lane</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>If you’re a fintech</h3>
+      <ul>
+        <li>Pick one metric to beat (e.g., collections TAT, fraud false-positives).</li>
+        <li>Show model drift handling and rollback plans.</li>
+        <li>Pre-consent templates and privacy nutrition labels in-app.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>If you’re a bank/NBFC sponsor</h3>
+      <ul>
+        <li>Demand kill-switch, audit-ready logs, and breach runbooks.</li>
+        <li>Insist on unit-economics at scale: infra, compliance, and support costs.</li>
+        <li>Plan BAU handover before greenlighting production.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Bank & fintech checklists</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Security & privacy</h3>
+      <ul>
+        <li>PII minimization; tokenization at ingress; role-based views.</li>
+        <li>Immutable audit trails; quarterly DR drills with evidence.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Operations</h3>
+      <ul>
+        <li>On-call rosters, MTTR targets, incident post-mortems with CAPA.</li>
+        <li>Vendor exit & data return/destruction plans.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Compliance</h3>
+      <ul>
+        <li>Consent artifacts mapped to every feature.</li>
+        <li>Language/localization coverage; grievance TAT dashboards.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Can we run paid pilots?</strong> Yes if contracts are clear and sandbox boundaries aren’t breached.</li>
+    <li><strong>What kills applications?</strong> No bank sponsor, fuzzy security, and lack of measurable success metrics.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Overview reflects sandbox practices as of Oct 17, 2025. Treat counts and lanes as directional; finalize with your regulator liaison and sponsor bank.</small></div>
+    </div>
+  </main>
+</body>
+</html>
