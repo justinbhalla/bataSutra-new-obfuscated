@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/rbi-sandbox-whos-testing-now-cohorts-learnings-how-to-get-in-oct-17-2025-eod",
-    "title": "RBI Sandbox: Who’s Testing Now — Cohorts, Learnings & How to Get In",
+    "title": "RBI Sandbox: Who’s Testing Now — Cohorts, Learnings",
     "blurb": "Snapshot of active/pipeline cohorts, what prototypes are being tested, entry→testing→exit gates, sponsor & applicant priorities, and security/ops/compliance checklists."
   }
 ];
