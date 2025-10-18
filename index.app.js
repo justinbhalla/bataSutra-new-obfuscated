@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "weekely-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
+    "href": "/articles/weekely-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
     "title": "Weekly Review: This Week in Indian Business — Tariffs, Tech & Tax",
     "blurb": "Tariff tweaks, AI/data-centre momentum, tax hygiene shifts, and household price bands. Sector read-throughs, operator to-dos for Monday, and directional fuel/EMI math."
   },
   {
-    "href": "ipo-pipeline-watch-who-filed-who-delayed-oct-18-2025-pm",
+    "href": "/articles/ipo-pipeline-watch-who-filed-who-delayed-oct-18-2025-pm",
     "title": "IPO Pipeline Watch (Weekly): Who Filed, Who Delayed",
     "blurb": "Named deals across mainboard & SME: Sify Infinit Spaces, Rays Power Infra, Integris Medtech, BVG India, Hotel Polo Towers, plus Urban Company float dynamics."
   }
