@@ -4,7 +4,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/weekely-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
+    "href": "/articles/weekly-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
     "title": "Weekly Review: This Week in Indian Business — Tariffs, Tech & Tax",
     "blurb": "Tariff tweaks, AI/data-centre momentum, tax hygiene shifts, and household price bands. Sector read-throughs, operator to-dos for Monday, and directional fuel/EMI math."
   },
