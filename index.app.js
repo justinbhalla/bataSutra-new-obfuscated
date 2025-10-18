@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "ipo-pipeline-watch-who-filed-who-delayed-oct-18-2025-pm",
     "title": "IPO Pipeline Watch (Weekly): Who Filed, Who Delayed",
-    "blurb": "Named deals across mainboard & SME: Sify Infinit Spaces, Rays Power Infra, Integris Medtech, BVG India, Hotel Polo Towers, plus Urban Company float dynamics—valuation bands, subscription tells, and an indicative two-week calendar."
+    "blurb": "Named deals across mainboard & SME: Sify Infinit Spaces, Rays Power Infra, Integris Medtech, BVG India, Hotel Polo Towers, plus Urban Company float dynamics."
   }
 ];
 
