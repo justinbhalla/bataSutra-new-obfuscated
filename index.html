@@ -9,20 +9,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     :root{
-      --brand:#8B0000;         /* primary */
-      --brand-ink:#7a0000;     /* darker */
-      --ink:#111;              /* text */
-      --muted:#6b7280;         /* gray-500 */
-      --bg:#ffffff;            /* surface */
-      --soft:#f8fafc;          /* slate-50 */
-      --card:#ffffff;          /* card */
-      --ring:rgba(139,0,0,.25);/* focus ring */
+      --brand:#8B0000; --brand-ink:#7a0000; --ink:#111; --muted:#6b7280; --bg:#ffffff; --soft:#f8fafc; --card:#ffffff; --ring:rgba(139,0,0,.25);
     }
-
     html { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
     body { background: var(--bg); color: var(--ink); }
 
-    /* ==== STRUCTURE & UI ATOMS ==== */
     .container { max-width: 80rem; margin: 0 auto; padding-left: 1rem; padding-right: 1rem; }
     .card { background: var(--card); border:1px solid #e5e7eb; border-radius: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,.04); }
     .card-pad { padding: 1rem; }
@@ -30,9 +21,7 @@
 
     /* ==== TICKERS ==== */
     .ticker-rail { position: relative; overflow: hidden; }
-    .ticker-rail::after, .ticker-rail::before { content:""; position:absolute; top:0; bottom:0; width:48px; pointer-events:none; }
-    .ticker-rail::before { left:0; background: linear-gradient(to right, rgba(122,0,0,1), rgba(122,0,0,0)); }
-    .ticker-rail::after  { right:0; background: linear-gradient(to left,  rgba(122,0,0,1), rgba(122,0,0,0)); }
+    /* gradients removed for “plain” */
     .ticker-rail.plain::before, .ticker-rail.plain::after { display: none; }
     .ticker { display:flex; width:max-content; white-space:nowrap; gap:2.5rem; }
     .ticker-left  { animation: scroll-left 120s linear infinite; }
@@ -42,28 +31,21 @@
     @keyframes scroll-right { 0% { transform:translateX(-50%) } 100% { transform: translateX(0) } }
     @media (prefers-reduced-motion: reduce){ .ticker-left, .ticker-right { animation: none; } }
 
-    /* ==== REVEAL ANIMATIONS ==== */
     .reveal { opacity: 0; transform: translateY(16px); transition: opacity .5s ease, transform .5s ease; }
     .reveal.show { opacity: 1; transform: none; }
 
-    /* ==== SPARKLINES ==== */
     .spark path { fill: none; stroke-width: 2; }
 
-    /* ==== HEATMAP ==== */
     .heat-tile { aspect-ratio: 1 / 1; border-radius: .75rem; display:flex; align-items:center; justify-content:center; text-align:center; font-weight:600; font-size:.9rem; color:#0f172a; box-shadow: 0 1px 0 rgba(0,0,0,.05) inset, 0 1px 2px rgba(0,0,0,.04); user-select:none; }
 
-    /* ==== BADGES ==== */
     .pill { font-weight:600; font-size:.75rem; padding:.25rem .5rem; border-radius:.5rem; }
 
-    /* ==== SKELETONS ==== */
     .skeleton { background: linear-gradient(90deg, #f3f4f6, #e5e7eb, #f3f4f6); background-size: 200% 100%; animation: shimmer 1.2s linear infinite; }
     @keyframes shimmer { 0% { background-position: 200% 0 } 100% { background-position: -200% 0 } }
 
-    /* ==== TABLE ==== */
     .table th { font-weight:600; color:#374151; }
     .table td, .table th { padding:.75rem 1rem; }
 
-    /* ==== RED (brand) FOOTER ==== */
     .footer-red { background: var(--brand-ink); color:#fff; }
     .footer-red a { color: rgba(255,255,255,.92); }
     .footer-red a:hover { color:#fff; text-decoration: underline; }
@@ -73,17 +55,16 @@
     .footer-red .chip { font-size:.72rem; border:1px solid rgba(255,255,255,.28); border-radius:999px; padding:.25rem .5rem; color:#fff; background: rgba(255,255,255,.08); }
   </style>
 
-  <!-- Link your external JS (defer so DOM is parsed first) -->
   <script defer src="index.app.js"></script>
 </head>
 <body>
-  <!-- Top Ticker: FULL WIDTH -->
+  <!-- Top Ticker: FULL WIDTH (LIVE pill restored, gradients removed) -->
   <div class="w-full bg-[var(--brand-ink)] text-white">
     <div class="flex items-center gap-3 py-2 px-4 sm:px-6 lg:px-8">
       <span class="inline-flex items-center gap-2 text-xs font-semibold bg-white/10 px-2.5 py-1 rounded-full">
         <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span> LIVE
       </span>
-      <div class="ticker-rail flex-1" aria-label="Top market headlines" aria-live="polite">
+      <div class="ticker-rail plain flex-1" aria-label="Top market headlines" aria-live="polite">
         <div id="topTicker" class="ticker ticker-right text-sm font-medium"></div>
       </div>
     </div>
@@ -336,19 +317,16 @@
         </div>
       </div>
 
-    <div class="divider mt-10"></div>
-
-<div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
-  <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
-
-  <div class="muted text-center">
-    &copy; <span id="year"></span> bataSutra. All rights reserved.
-  </div>
-
-  <div class="flex items-center gap-4 muted justify-center md:justify-end">
-    <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
-  </div>
-</div>
+      <div class="divider mt-10"></div>
+      <div class="py-6 grid gap-4 grid-cols-1 md:grid-cols-3 md:items-end">
+        <div class="flex flex-wrap items-center gap-3 justify-center md:justify-start"></div>
+        <div class="muted text-center">
+          &copy; <span id="year"></span> bataSutra. All rights reserved.
+        </div>
+        <div class="flex items-center gap-4 muted justify-center md:justify-end">
+          <button type="button" class="chip" onclick="window.scrollTo({top:0,behavior:'smooth'})">Back to top ↑</button>
+        </div>
+      </div>
     </div>
   </footer>
 </body>
