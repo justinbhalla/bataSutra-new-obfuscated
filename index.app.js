@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/regulation-compliance-radar-weekly-roundup-oct-17-2025-am",
-    "title": "Regulation & Compliance Radar — Weekly Roundup",
-    "blurb": "SEBI/RBI/IRDAI/UIDAI highlights with who’s impacted, near-term actions, a 14-day compliance calendar, and team checklists for controls, disclosures, and governance."
+    "href": "weekely-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
+    "title": "Weekend Wrap: This Week in Indian Business — Tariffs, Tech & Tax",
+    "blurb": "Tariff tweaks, AI/data-centre momentum, tax hygiene shifts, and household price bands. Sector read-throughs, operator to-dos for Monday, and directional fuel/EMI math."
   },
   {
-    "href": "/articles/rbi-sandbox-whos-testing-now-cohorts-learnings-how-to-get-in-oct-17-2025-eod",
-    "title": "RBI Sandbox: Who’s Testing Now — Cohorts, Learnings",
-    "blurb": "Snapshot of active/pipeline cohorts, what prototypes are being tested, entry→testing→exit gates, sponsor & applicant priorities."
+    "href": "ipo-pipeline-watch-who-filed-who-delayed-oct-18-2025-pm",
+    "title": "IPO Pipeline Watch (Weekly): Who Filed, Who Delayed",
+    "blurb": "Named deals across mainboard & SME: Sify Infinit Spaces, Rays Power Infra, Integris Medtech, BVG India, Hotel Polo Towers, plus Urban Company float dynamics—valuation bands, subscription tells, and an indicative two-week calendar."
   }
 ];
 
