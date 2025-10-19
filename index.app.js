@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/weekly-review-this-week-in-indian-business-tariffs-tech-tax-oct-18-2025-am",
-    "title": "Weekly Review: This Week in Indian Business — Tariffs, Tech & Tax",
-    "blurb": "Tariff tweaks, AI/data-centre momentum, tax hygiene shifts, and household price bands. Sector read-throughs, operator to-dos for Monday, and directional fuel/EMI math."
+    "href": "/articles/week-ahead-policy-earnings-ipos-commodities-oct-19-2025",
+    "title": "Week Ahead: Policy, Earnings, IPOs & Commodities",
+    "blurb": "A one-page brief for Monday: policy/data calendar, sector earnings tells, mainboard/SME IPO lanes, crude/FX guardrails."
   },
   {
-    "href": "/articles/ipo-pipeline-watch-who-filed-who-delayed-oct-18-2025-pm",
-    "title": "IPO Pipeline Watch (Weekly): Who Filed, Who Delayed",
-    "blurb": "Named deals across mainboard & SME: Sify Infinit Spaces, Rays Power Infra, Integris Medtech, BVG India, Hotel Polo Towers, plus Urban Company float dynamics."
+    "href": "/articles/consumer-price-tracker-food-fuel-fees-oct-19-2025",
+    "title": "Consumer Price Tracker: Food, Fuel & Fees",
+    "blurb": "City fuel bands with car math, a weekly grocery-basket drift, fee creeps to watch, and 30-minute money moves to keep monthly spend on track."
   }
 ];
 
