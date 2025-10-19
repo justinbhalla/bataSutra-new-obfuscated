@@ -6,12 +6,12 @@ const ARTICLES = [
 {
     "href": "/articles/week-ahead-policy-earnings-ipos-commodities-oct-19-2025",
     "title": "Week Ahead: Policy, Earnings, IPOs & Commodities",
-    "blurb": "A one-page brief for Monday: policy/data calendar, sector earnings tells, mainboard/SME IPO lanes, crude/FX guardrails."
+    "blurb": "A one-page brief for Monday: policy/data calendar, sector earnings tells."
   },
   {
     "href": "/articles/consumer-price-tracker-food-fuel-fees-oct-19-2025",
     "title": "Consumer Price Tracker: Food, Fuel & Fees",
-    "blurb": "City fuel bands with car math, a weekly grocery-basket drift, fee creeps to watch, and 30-minute money moves to keep monthly spend on track."
+    "blurb": "City fuel bands with car math, a weekly grocery-basket drift, fee creeps to watch."
   }
 ];
 
