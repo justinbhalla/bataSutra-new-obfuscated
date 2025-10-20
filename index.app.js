@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "/articles/corporate-earnings-watchlist-banks-industrials-autos-oct-20-2025",
     "title": "Corporate Earnings: Banks, Industrials, Autos",
-    "blurb": "Call-by-call prompts for the week—NIM bridge and deposit beta, order-to-revenue conversion and escalation clauses, festive sell-through vs dealer weeks, TCV ramps, and US launch cadence."
+    "blurb": "Call-by-call prompts for the week—NIM bridge and deposit beta, order-to-revenue conversion and escalation clauses, festive sell-through vs dealer weeks."
   }
 ];
 
