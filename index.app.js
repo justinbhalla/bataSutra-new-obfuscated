@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/week-ahead-policy-earnings-ipos-commodities-oct-19-2025",
-    "title": "Week Ahead: Policy, Earnings, IPOs & Commodities",
-    "blurb": "A one-page brief for Monday: policy/data calendar, sector earnings tells."
+    "href": "/articles/nifty-heatmap-rotation-breadth-revisions-week-43-oct-20-2025",
+    "title": "Nifty Heatmap: Rotation, Breadth & Revisions",
+    "blurb": "Banks/Capital Goods lead; Autos/Pharma/Power improve; IT cools. Rotation map, breadth & revisions quick read, and clear exit rules sized by liquidity."
   },
   {
-    "href": "/articles/consumer-price-tracker-food-fuel-fees-oct-19-2025",
-    "title": "Consumer Price Tracker: Food, Fuel & Fees",
-    "blurb": "City fuel bands with car math, a weekly grocery-basket drift, fee creeps to watch."
+    "href": "/articles/corporate-earnings-watchlist-banks-industrials-autos-oct-20-2025",
+    "title": "Corporate Earnings: Banks, Industrials, Autos",
+    "blurb": "Call-by-call prompts for the week—NIM bridge and deposit beta, order-to-revenue conversion and escalation clauses, festive sell-through vs dealer weeks, TCV ramps, and US launch cadence."
   }
 ];
 
