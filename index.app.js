@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "/articles/national-data-centre-policy-2025-hyperscalers-vs-local-players-oct-21-2025-pm",
     "title": "National Data Centre Policy 2025: Hyperscalers vs Local Players",
-    "blurb": "What the evolving DC policy means for capacity and economics: corridor archetypes, power MW ladders and PUE targets, 3-route fiber redundancy, permits that truly save time, build-vs-buy models, unit-economics checks, and playbooks for developers."
+    "blurb": "What the evolving DC policy means for capacity and economics: corridor archetypes, power MW ladders and PUE targets, 3-route fiber redundancy, permits that truly save time, build-vs-buy models, unit-economics checks."
   }
 ];
 
