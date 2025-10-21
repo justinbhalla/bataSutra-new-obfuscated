@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What India’s data-centre policy direction means for capacity, sites, and economics. Power, fiber, permits, incentives—and the hyperscaler vs local play."/>
+  <meta name="keywords" content="data centre India 2025, hyperscaler, colocation, PUE, power distribution, corridor, permits, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>National Data Centre Policy 2025: Hyperscalers vs Local Players — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+/* helpers */
+.mt-24{margin-top:24px;}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">POLICY · INFRA</div>
+        <h1>National Data Centre Policy 2025: Hyperscalers vs Local Players</h1>
+        <div class="sub">Power, fiber, permits, and incentives—plus the build-vs-buy call that will shape India’s next 24 months of compute capacity.</div>
+        <div class="meta">By bataSutra Editorial · October 21, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — five-line brief</li>
+    <li>Corridors & siting: metro core · ring · tier-2</li>
+    <li>Power play: MW ladders, PUE, and green PPAs</li>
+    <li>Fiber & redundancy: the 3-route rule</li>
+    <li>Permits & incentives: what actually saves time</li>
+    <li>Build vs Buy: hyperscalers and local colos</li>
+    <li>Unit economics: ₹/MW, ₹/rack, and time-to-revenue</li>
+    <li>Playbooks: developer, hyperscaler, enterprise</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Capacity:</strong> Demand concentrates in 3 corridor archetypes—metro cores, urban rings, and power-rich tier-2.</li>
+      <li><strong>Power:</strong> Connection agility beats tariff—a fast 50–100 MW ladder can trump a cheaper but slow line.</li>
+      <li><strong>Fiber:</strong> Three genuinely diverse routes (OSP + two neutral) reduce outage and SLA penalties.</li>
+      <li><strong>Permits:</strong> Single-window only works if utilities are in-scope; pre-zoned DC parks cut months.</li>
+      <li><strong>Model:</strong> Hyperscalers mix JV/built-to-suit with colocation for speed; locals win on brownfield agility.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Corridors & siting</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Metro core (CBD/IX proximity)</h3>
+      <ul>
+        <li><strong>Pros:</strong> Lowest latency to IX and enterprise cores; premium rack yields.</li>
+        <li><strong>Cons:</strong> Land scarcity; power import limits; capex intensity.</li>
+        <li><strong>Use:</strong> High-density retail colo; interconnect hubs; AI inference edges.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Urban ring (20–60 km)</h3>
+      <ul>
+        <li><strong>Pros:</strong> Better land parcels; 132/220 kV access; cooling logistics.</li>
+        <li><strong>Cons:</strong> Permit patchwork across municipalities.</li>
+        <li><strong>Use:</strong> Campus scale, scalable to 50–150 MW in phases.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Tier-2 power-rich</h3>
+      <ul>
+        <li><strong>Pros:</strong> Faster power tie-ins; lower land cost; renewable PPAs nearby.</li>
+        <li><strong>Cons:</strong> Backhaul diversity must be built; staffing fly-in costs.</li>
+        <li><strong>Use:</strong> Build-to-suit for training clusters; archival; price-sensitive workloads.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Power play — MW ladders, PUE, green PPAs</h2>
+  <table class="table">
+    <thead><tr><th>Item</th><th>Good</th><th>Better</th><th>Best</th><th>Notes</th></tr></thead>
+    <tbody>
+      <tr><td>Initial tie-in</td><td>20–30 MW @ 132 kV</td><td>50 MW @ 220 kV</td><td>100 MW @ 400 kV</td><td>Speed > tariff for first 12–18 months</td></tr>
+      <tr><td>PUE target</td><td>1.55–1.60</td><td>1.45–1.52</td><td>≤1.40 (climate/tech permitting)</td><td>Hot & humid sites need smart free-cooling windows</td></tr>
+      <tr><td>Energy mix</td><td>Grid + RE credits</td><td>25–40% firm RE</td><td>50–70% RE with storage</td><td>Round-the-clock PPAs reduce green-washing risk</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Fiber & redundancy — the 3-route rule</h2>
+  <ul>
+    <li>At least <strong>three physically diverse</strong> long-haul routes; avoid common trenching near rail/ROW.</li>
+    <li>Metro ring with dual POPs; IX adjacency for peering + cloud on-ramps.</li>
+    <li>Design SLAs with trench-cut penalties and MTTR commitments.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Permits & incentives — time is the currency</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>What actually saves time</h3>
+      <ul>
+        <li>Pre-approved DC zones with bundled power + water + environmental clearance.</li>
+        <li>Utility coordination inside single-window (not just municipal NOCs).</li>
+        <li>Standardised fire & OT security checklists to cut re-work.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Incentives that move the needle</h3>
+      <ul>
+        <li>Stamp duty/SGST refunds <em>and</em> connection-charge rebates.</li>
+        <li>RE banking & open-access certainty (≥15-year horizon).</li>
+        <li>Fiber wayleave fast-track with capped TATs.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Build vs Buy — hyperscalers & local colos</h2>
+  <table class="table">
+    <thead><tr><th>Model</th><th>Pros</th><th>Cons</th><th>Best for</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>Build-to-suit / JV (campus)</td>
+        <td>Custom density, long contracts, power at scale</td>
+        <td>Time to revenue; capex heavy; permit risk</td>
+        <td>Hyperscalers with steady multi-year demand</td>
+      </tr>
+      <tr>
+        <td>Wholesale colo (shell + power)</td>
+        <td>Faster ramps; lower capex; landlord power procurement</td>
+        <td>Less customisation; SLA shared</td>
+        <td>Cloud edges; AI inference; scale-ups</td>
+      </tr>
+      <tr>
+        <td>Retail colo (per-rack)</td>
+        <td>Maximum agility; interconnect rich</td>
+        <td>Highest ₹/kW; limited high-density blocks</td>
+        <td>Enterprises, fintech, SaaS edges</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Unit economics — fast sanity checks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Capex & yields (illustrative)</h3>
+      <ul>
+        <li>Shell + power infra: <strong>₹8–11 cr/MW</strong> (site & kV level dependent).</li>
+        <li>Fit-out for high density AI halls: <strong>+₹3–5 cr/MW</strong>.</li>
+        <li>Retail rack yields premium vs wholesale by <strong>25–40%</strong>.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Time-to-revenue levers</h3>
+      <ul>
+        <li>Phase-wise energisation (10–20 MW blocks, 90-120 days apart).</li>
+        <li>Pre-approval of designs with utilities & fire to avoid re-draw.</li>
+        <li>Interim DG + temporary feeders to light first halls early.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Playbooks</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Developers</h3>
+      <ul>
+        <li>Secure dual-utility LOAs before land close; add reversion clauses.</li>
+        <li>Lock three-route fiber; trench maps embedded in contracts.</li>
+        <li>Standardise hall modules (5–8 MW) to shorten procurement.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Hyperscalers</h3>
+      <ul>
+        <li>Blend JV (training/long-term) with colo (edge/seasonal peaks).</li>
+        <li>PUE and RE targets embedded in MSAs; performance credits.</li>
+        <li>Design for liquid cooling lanes even in air-cooled shells.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Enterprises</h3>
+      <ul>
+        <li>Prioritise interconnect & SLA over raw ₹/kW; multi-availability-zone DR.</li>
+        <li>Bundle security certifications (ISO/PCI/CSA) to reduce audits.</li>
+        <li>Negotiate growth options per rack row to avoid re-site.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <div class="footer"><small class="mute">Guidance reflects corridor patterns and operating realities as of Oct 21, 2025. Validate power, fiber, and incentive specifics with your state utilities and providers before committing capex.</small></div>
+    </div>
+  </main>
+</body>
+</html>
