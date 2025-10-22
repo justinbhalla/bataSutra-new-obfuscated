@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/brent-inr-guardrails-omc-margins-city-fuel-bills-oct-21-2025",
-    "title": "Brent + INR Guardrails: OMC Margins & City Fuel Bills",
-    "blurb": "Directional math that links Brent and USD/INR to pump prices and OMC gross marketing margins. Includes a sensitivity ladder, simplified pricing formula, city price bands, and monthly car fuel bill estimates with clear policy/lag caveats."
+    "href": "/articles/earnings-watch-today-next-48-hours-oct-22-2025",
+    "title": "Earnings Watch: Today & Next 48 Hours",
+    "blurb": "Named issuers for the next two days with the first question to ask on each call, sector playcards (BFSI, FMCG, IT/Analytics, Healthcare, Industrials), and a one-metric cheat sheet to cut noise and run the Q&A."
   },
   {
-    "href": "/articles/national-data-centre-policy-2025-hyperscalers-vs-local-players-oct-21-2025",
-    "title": "National Data Centre Policy 2025: Hyperscalers vs Local Players",
-    "blurb": "What the evolving DC policy means for capacity and economics: corridor archetypes, power MW ladders and PUE targets, 3-route fiber redundancy, permits that truly save time, build-vs-buy models, unit-economics checks."
+    "href": "/articles/policy-radar-14-day-price-movers-oct-22-2025",
+    "title": "Policy Radar (Next 14 Days): What Can Actually Change Prices",
+    "blurb": "Two-week watchlist of tariffs, GST/duty edits, market plumbing, eKYC/API shifts and banking rails. Includes calendar view, regulator cards, compliance actions (Owner·Doc·Due), and a risk matrix with actionable hedges."
   }
 ];
 
