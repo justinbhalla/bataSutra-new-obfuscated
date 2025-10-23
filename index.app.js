@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/fx-rates-playbook-importers-vs-exporters-month-end-oct-23-2025",
-    "title": "FX & Rates Playbook: Importers vs Exporters into Month-End",
+    "title": "FX: Importers vs Exporters into Month-End",
     "blurb": "Guardrails and hedge ladders for USD/INR (Soft/Base/Stress bands), 1–3M coverage plans for importers and exporters, forward-point and collar math, plus a clear do/don’t list for treasury desks."
   },
   {
