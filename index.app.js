@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "/articles/equities-winners-laggards-what-flipped-oct-23-2025",
     "title": "Equities: Winners, Laggards & What Flipped",
-    "blurb": "Delta view since Monday across leadership, breadth, and revisions. Move/Explain grid, rotation update with positioning cues and risk triggers, and liquidity-aware sizing and exit rules into Friday."
+    "blurb": "Delta view since Monday across leadership, breadth, and revisions. Shift/Explain grid, rotation update with positioning cues and risk triggers, and liquidity-aware sizing and exit rules into Friday."
   }
 ];
 
