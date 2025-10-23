@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Actionable hedge ladders for importers and exporters into month-end: INR guardrails, rate scenarios, collars vs forwards, and a clean do/don’t list."/>
+  <meta name="keywords" content="USDINR, INR, hedging India, import export, forwards, options, collars, interest rates, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>FX & Rates Playbook: Importers vs Exporters into Month-End — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.tag { display:inline-block; font-size:11px; padding:2px 8px; border:1px solid #eee; border-radius:999px; background:#fafafa; margin-right:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">Equities · ANALYSIS</div>
+        <h1>FX & Rates Playbook: Importers vs Exporters into Month-End</h1>
+        <div class="sub">Guardrails, hedge ladders, and stress bands for USD/INR—with clean do/don’t rules for treasury desks.</div>
+        <div class="meta">By bataSutra Editorial · October 23, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — five-line brief</li>
+    <li>INR guardrails & stress bands</li>
+    <li>Importer hedge ladder (1–3 months)</li>
+    <li>Exporter hedge ladder (1–3 months)</li>
+    <li>Rates spillover & collar math (illustrative)</li>
+    <li>Do / Don’t list for treasury</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Direction:</strong> A stable-to-soft USD/INR path favors <em>staggered</em> importer cover; exporters keep dry powder for spikes.</li>
+      <li><strong>Bands:</strong> Use three guardrails: <strong>Base</strong> 83.5–85.0 · <strong>Soft</strong> &lt;83.0 · <strong>Stress</strong> &gt;86.0 (illustrative bands for planning).</li>
+      <li><strong>Tenor:</strong> Keep 1–3M as the “workhorse” window; extend only if stress triggers fire.</li>
+      <li><strong>Rates:</strong> Front-end firmness lifts fwd points; collars become cost-effective as vols ease.</li>
+      <li><strong>Play:</strong> Importers ladder forwards 25/35/20; exporters run seagull/collar overlays on 30–50% exposure.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>INR guardrails & stress bands (planning)</h2>
+  <table class="table">
+    <thead><tr><th>Band</th><th>USD/INR</th><th>Bias</th><th>Treasury cue</th></tr></thead>
+    <tbody>
+      <tr><td>Soft</td><td>&lt; 83.0</td><td>INR stronger</td><td>Importers extend cover on dips; exporters lighten cover, prefer participative collars</td></tr>
+      <tr><td>Base</td><td>83.5–85.0</td><td>Range</td><td>Importers 60–70% 1–3M; exporters 30–40% with floors</td></tr>
+      <tr><td>Stress</td><td>&gt; 86.0</td><td>INR weaker</td><td>Importers step-up to 80–90%; exporters add forwards, reduce options</td></tr>
+    </tbody>
+  </table>
+  
+</section>
+
+<section>
+  <h2>Importer hedge ladder (1–3M)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Coverage plan (illustrative)</h3>
+      <ul>
+        <li><strong>Week 1:</strong> 25% 1M forwards</li>
+        <li><strong>Week 2:</strong> 35% 2M forwards</li>
+        <li><strong>Week 3:</strong> 20% 3M forwards</li>
+        <li><strong>Optional:</strong> 10–20% collars if vols cheap (floor ATM−₹0.30; cap ATM+₹0.60)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Triggers to accelerate</h3>
+      <ul>
+        <li>USD/INR breaches stress band or 20D vol jumps &gt; 1.5× baseline</li>
+        <li>Front-end rate prints push forward points sharply higher</li>
+        <li>Commodity invoices bunch into a tight cash-flow window</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Exporter hedge ladder (1–3M)</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Coverage plan (illustrative)</h3>
+      <ul>
+        <li><strong>Base band:</strong> 30–40% 1–3M forwards</li>
+        <li><strong>On spikes (&gt; band):</strong> Add 20–30% forwards; top with low-cost collars or 1×2 seagulls</li>
+        <li><strong>Participation:</strong> Maintain upside with partial floors; avoid 100% straight forwards unless stress persists</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>When to lighten</h3>
+      <ul>
+        <li>INR rallies into Soft band with vol crush</li>
+        <li>Order book visibility &lt; 6 weeks (don’t over-hedge)</li>
+        <li>Forward point differential turns punitive vs margin</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Rates spillover & collar math (illustrative)</h2>
+  <table class="table">
+    <thead><tr><th>Tenor</th><th>Indicative fwd pts*</th><th>Importer</th><th>Exporter</th><th>Option cue</th></tr></thead>
+    <tbody>
+      <tr><td>1M</td><td>₹0.20–₹0.35</td><td>Use forwards; collars only if vols cheap</td><td>Partial forwards + short-dated floors</td><td>ATM strangle if vols sub-trend</td></tr>
+      <tr><td>2M</td><td>₹0.45–₹0.70</td><td>Blend 2M/3M; avoid bunching</td><td>Step-up on spikes; keep participation</td><td>1×2 seagull for exporters</td></tr>
+      <tr><td>3M</td><td>₹0.70–₹1.05</td><td>Only if stress or cash-flow clustering</td><td>Cap 50–60% unless stress persists</td><td>Zero-cost collars with conservative caps</td></tr>
+    </tbody>
+  </table>
+  <p class="mute"><small>*Fwd points bands are planning ranges; refresh with your bank quotes.</small></p>
+</section>
+
+<section>
+  <h2>Do / Don’t for treasury</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Do</h3>
+      <ul>
+        <li>Stagger cover; match hedge tenor to cash flow</li>
+        <li>Track realised vol and fwd points weekly</li>
+        <li>Pre-book credit lines for spikes (same-day capacity)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Don’t</h3>
+      <ul>
+        <li>Don’t 100% forward in Base band without trigger</li>
+        <li>Don’t sell optionality you can’t margin</li>
+        <li>Don’t bunch settlements at month-end without buffers</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+      <div class="footer"><small class="mute">Illustrative playbook as of Oct 23, 2025. Align bands and points with your bank quotes and internal risk limits before execution.</small></div>
+    </div>
+  </main>
+</body>
+</html>
