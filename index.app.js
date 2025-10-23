@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/earnings-watch-today-next-48-hours-oct-22-2025",
-    "title": "Earnings Watch: Today & Next 48 Hours",
-    "blurb": "Named issuers for the next two days with the first question to ask on each call, sector playcards (BFSI, FMCG, IT/Analytics, Healthcare, Industrials), and a one-metric cheat sheet to cut noise and run the Q&A."
+    "href": "/articles/fx-rates-playbook-importers-vs-exporters-month-end-oct-23-2025",
+    "title": "FX & Rates Playbook: Importers vs Exporters into Month-End",
+    "blurb": "Guardrails and hedge ladders for USD/INR (Soft/Base/Stress bands), 1–3M coverage plans for importers and exporters, forward-point and collar math, plus a clear do/don’t list for treasury desks."
   },
   {
-    "href": "/articles/policy-radar-14-day-price-movers-oct-22-2025",
-    "title": "Policy Radar (Next 14 Days): What Can Actually Change Prices",
-    "blurb": "Two-week watchlist of tariffs, GST/duty edits, market plumbing, eKYC/API shifts and banking rails. Includes calendar view, regulator cards, compliance actions (Owner·Doc·Due), and a risk matrix with actionable hedges."
+    "href": "/articles/equities-winners-laggards-what-flipped-oct-23-2025",
+    "title": "Equities: Winners, Laggards & What Flipped",
+    "blurb": "Delta view since Monday across leadership, breadth, and revisions. Move/Explain grid, rotation update with positioning cues and risk triggers, and liquidity-aware sizing and exit rules into Friday."
   }
 ];
 
