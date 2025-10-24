@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/fx-importers-vs-exporters-month-end-oct-23-2025",
-    "title": "FX: Importers vs Exporters into Month-End",
-    "blurb": "Guardrails and hedge ladders for USD/INR (Soft/Base/Stress bands), 1–3M coverage plans for importers and exporters, forward-point and collar math, plus a clear do/don’t list for treasury desks."
+    "href": "/articles/compliance-radar-weekly-sebi-rbi-irdai-uidai-oct-24-2025",
+    "title": "Compliance Radar (Weekly): SEBI · RBI · IRDAI · UIDAI",
+    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes. Includes Owner·Doc·Due tables, 14-day calendar, impact/priority matrix, and an audit checklist."
   },
   {
-    "href": "/articles/equities-winners-laggards-what-flipped-oct-23-2025",
-    "title": "Equities: Winners, Laggards & What Flipped",
-    "blurb": "Delta view since Monday across leadership, breadth, and revisions. Shift/Explain grid, rotation update with positioning cues and risk triggers, and liquidity-aware sizing and exit rules into Friday."
+    "href": "/articles/rbi-regulatory-sandbox-2025-cohorts-gates-sponsor-play-oct-24-2025",
+    "title": "RBI Regulatory Sandbox 2025: Cohorts, Gates & Sponsor Play",
+    "blurb": "On-tap, theme-neutral status (since Apr 2025) with entrance→graduation gates, tripwires (complaints >0.3%, NCL guardrails), and sponsor-bank SLA models. Provides a live-status summary, KPI templates, data/consent artifacts, and an audit-ready checklist to move proposals from screening to production."
   }
 ];
 
