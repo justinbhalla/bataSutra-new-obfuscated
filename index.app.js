@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/compliance-radar-weekly-sebi-rbi-irdai-uidai-oct-24-2025",
     "title": "Compliance Radar: SEBI · RBI · IRDAI · UIDAI",
-    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes. Includes Owner·Doc·Due tables, 14-day calendar, impact/priority matrix, and an audit checklist."
+    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes. Includes Owner·Doc·Due tables, 14-day calendar, impact/priority matrix."
   },
   {
     "href": "/articles/rbi-regulatory-sandbox-2025-cohorts-gates-sponsor-play-oct-24-2025",
