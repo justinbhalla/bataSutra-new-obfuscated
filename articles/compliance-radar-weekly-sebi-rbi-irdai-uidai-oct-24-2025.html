@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Operator-first weekly of circulars and changes that alter P&L, liquidity, or onboarding costs. Owner·Doc·Due tables, impact ratings, and time-to-implement bands."/>
+  <meta name="keywords" content="SEBI, RBI, IRDAI, UIDAI, CBIC, circulars, compliance India, Owner Doc Due, policy calendar, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Compliance Radar: SEBI · RBI · IRDAI · UIDAI — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.tag { display:inline-block; font-size:11px; padding:2px 8px; border:1px solid #eee; border-radius:999px; background:#fafafa; margin-right:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">POLICY · REGULATION</div>
+        <h1>Compliance Radar: SEBI · RBI · IRDAI · UIDAI</h1>
+        <div class="sub">Owner·Doc·Due tables, impact ratings, and time-to-implement bands—so ops teams can act within 14 days.</div>
+        <div class="meta">By bataSutra Editorial · October 24, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — what moves price/P&L in 14 days</li>
+    <li>Calendar — next two weeks</li>
+    <li>Actions — Owner · Doc · Due · Eff. date · TTI</li>
+    <li>Impact & priority matrix</li>
+    <li>Risk & audit checklist</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>SEBI:</strong> New master circular for NCS (Oct 15) tightens disclosure uniformity; <strong>Angel Funds</strong> PPM allocation-methodology deadline now <strong>Jan 31, 2026</strong>.</li>
+      <li><strong>RBI:</strong> Retail floating-rate reset FAQ refreshed <strong>Oct 1</strong>—banks must present <em>switch options</em> with cost disclosure.</li>
+      <li><strong>CBIC/GST:</strong> New rate structure effective <strong>Sep 22</strong>; <strong>90% provisional IDS refunds</strong> from <strong>Oct 1</strong> ease MSME liquidity.</li>
+      <li><strong>UIDAI:</strong> Aadhaar eKYC updates continue; co-op banks onboarding framework (rev. <strong>Oct 17</strong>) affects integrations.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Calendar — next 14 days</h2>
+  <table class="table">
+    <thead><tr><th>Date window</th><th>Lever</th><th>Likely impact</th><th>Who</th><th>Priority</th><th>TTI</th></tr></thead>
+    <tbody>
+      <tr><td>Now–7 days</td><td>SEBI NCS master circular alignment</td><td>Offer docs & listings formatting</td><td>Issuers/DTs/AMCs</td><td>High</td><td>S (≤7d)</td></tr>
+      <tr><td>Now–10 days</td><td>Angel Funds PPM updates</td><td>Fundraising cadence; governance optics</td><td>AIF Cat-I Angel Funds</td><td>Med</td><td>S–M</td></tr>
+      <tr><td>Now–7 days</td><td>RBI floating-rate reset comms</td><td>Consumer disclosures; call-center load</td><td>Banks/NBFC</td><td>High</td><td>S</td></tr>
+      <tr><td>Now–14 days</td><td>IDS 90% provisional refunds</td><td>Working-capital release</td><td>Manufacturing/MSME</td><td>High</td><td>S</td></tr>
+      <tr><td>Rolling</td><td>UIDAI API diff & onboarding</td><td>eKYC reliability; audit trail</td><td>FIs/Fintech</td><td>Med</td><td>S</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Actions — Owner · Doc · Due</h2>
+  <table class="table">
+    <thead><tr><th>Regulator</th><th>Item</th><th>Who’s impacted</th><th>Owner</th><th>Doc</th><th>Due (target)</th><th>Eff. date</th><th>TTI</th></tr></thead>
+    <tbody>
+      <tr><td>SEBI</td><td>NCS master circular alignment</td><td>Issuers/DTs</td><td>CFO · CoSec</td><td>NCS checklist; template pack</td><td>7 d</td><td>Oct 15</td><td>S</td></tr>
+      <tr><td>SEBI</td><td>Angel Funds — PPM allocation method</td><td>AIF Cat-I (Angel)</td><td>Compliance</td><td>PPM annexures; BoD note</td><td>Jan 31, 2026</td><td>—</td><td>S–M</td></tr>
+      <tr><td>RBI</td><td>Retail floating-rate reset comms</td><td>Banks/NBFC</td><td>Retail Lending</td><td>Switch offer script; cost calculator</td><td>5 d</td><td>Oct 1 (FAQ upd)</td><td>S</td></tr>
+      <tr><td>CBIC</td><td>IDS 90% provisional refund SOP</td><td>Tax/Finance</td><td>Indirect Tax</td><td>Refund pack; tracker</td><td>7 d</td><td>Oct 1</td><td>S</td></tr>
+      <tr><td>UIDAI</td><td>Co-op bank onboarding framework</td><td>Banks/Fintech</td><td>CTO</td><td>API diff; SLA addendum</td><td>10 d</td><td>Aug 1 (rev Oct 17)</td><td>S–M</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Impact & priority matrix</h2>
+  <table class="table">
+    <thead><tr><th>Change</th><th>Probability</th><th>Impact</th><th>Action</th><th>Owner</th></tr></thead>
+    <tbody>
+      <tr><td>Offer doc misalignment</td><td>Med</td><td>High</td><td>Adopt NCS templates; map deviations</td><td>CoSec</td></tr>
+      <tr><td>Float/PPM gaps</td><td>Med</td><td>Med</td><td>Freeze PPM addendum; LP comms</td><td>AIF Ops</td></tr>
+      <tr><td>Reset comms slippage</td><td>Med</td><td>High</td><td>Call-center scripting; web tool</td><td>Retail Lending</td></tr>
+      <tr><td>Refund backlog</td><td>Low–Med</td><td>Med</td><td>SOP & escalation; daily MIS</td><td>Indirect Tax</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Risk & audit checklist</h2>
+  <ul>
+    <li>NCS alignment pack approved; deviations logged and signed off.</li>
+    <li>Angel Funds PPM methodology drafted; BoD/LP communication calendar set.</li>
+    <li>Floating-rate reset scripts live; cost calculator audited.</li>
+    <li>IDS refund pack and MIS running; TAT monitored.</li>
+    <li>UIDAI API diff captured; data-retention/deletion plan updated.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Live items captured as of Oct 24, 2025. Use Owner·Doc·Due tables to execute within 14 days; confirm specifics with your counsel before filing.</small></div>
+    </div>
+  </main>
+</body>
+</html>

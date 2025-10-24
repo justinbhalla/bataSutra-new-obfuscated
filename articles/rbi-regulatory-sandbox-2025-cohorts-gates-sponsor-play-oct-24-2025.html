@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Exactly where the RBI sandbox sits today: on-tap cohort status, dated updates, entry→exit gates, sponsor-bank models, and an audit-ready checklist."/>
+  <meta name="keywords" content="RBI Regulatory Sandbox, fintech India, cohorts, theme neutral, on tap, sponsor bank, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>RBI Regulatory Sandbox 2025: Cohorts, Gates & Sponsor Play — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.mt-24{margin-top:24px;}
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">REGULATION · BRIEFINGS</div>
+        <h1>RBI Regulatory Sandbox 2025: Cohorts, Gates & Sponsor Play</h1>
+        <div class="sub">On-tap facility (Apr 2025), current gates, and how to pass from proposal to production without tripping compliance.</div>
+        <div class="meta">By bataSutra Editorial · October 24, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — who should apply and when</li>
+    <li>Where the sandbox stands (on-tap + cadence)</li>
+    <li>Live status summary (as of today)</li>
+    <li>Entry → Exit gates (acceptance criteria)</li>
+    <li>Sponsor-bank models & SLAs</li>
+    <li>Compliance & audit checklist</li>
+    <li>FAQ (timelines, data, customer protection)</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Status:</strong> <em>Theme-neutral, on-tap</em> window is open (since Apr 2025). Expect 6–9 months end-to-end for most pilots.</li>
+      <li><strong>Fit:</strong> Tests needing real customers under tight guardrails—UPI offline edges, underwriting with capped limits, RegTech controls.</li>
+      <li><strong>Tripwires:</strong> Auto-pause if complaints &gt; 0.3% of sample or NCL &gt; guardrail; deletion proof mandatory at exit.</li>
+      <li><strong>Bank capacity:</strong> Sponsor SLAs (onboarding/day caps, dispute TAT) are the bottleneck—lock these before Gate-2.</li>
+      <li><strong>Production:</strong> Graduation permits only the tested scope; any expansion is a new approval conversation.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Where the sandbox stands (structure & cadence)</h2>
+  <table class="table">
+    <thead><tr><th>Layer</th><th>What it covers</th><th>What RBI expects</th><th>Common failure</th></tr></thead>
+    <tbody>
+      <tr><td>Screening</td><td>Eligibility, novelty, consumer benefit</td><td>Problem clarity; measurable benefit; risk controls</td><td>Generic claims; weak harm mitigation</td></tr>
+      <tr><td>Test design</td><td>Cohort size, KPIs, stop-loss</td><td>KPI math (default %, TAT); rollback defined</td><td>Vague KPIs; no rollback</td></tr>
+      <tr><td>Execution</td><td>Live customers under caps</td><td>Consent, dispute TAT, real-time logs</td><td>Shadow ops; sponsor delays</td></tr>
+      <tr><td>Evaluation</td><td>Outcome vs plan; audit</td><td>Complete logs; deletion certificate</td><td>Partial logs/deletion</td></tr>
+      <tr><td>Graduation</td><td>Scope + safeguards</td><td>Bounded scope; supervision notes</td><td>Assuming licence equivalence</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Live status summary (today)</h2>
+  <table class="table">
+    <thead><tr><th>Pillar</th><th>Current state</th><th>Why it matters</th><th>What to do this week</th></tr></thead>
+    <tbody>
+      <tr><td>Window</td><td>On-tap, theme-neutral window open</td><td>Apply when sponsor capacity is real</td><td>Secure LOI with hard SLA dates</td></tr>
+      <tr><td>Recent cohorts</td><td>Prior Cohort-5 entities remain reference points</td><td>Set KPI baselines realistically</td><td>Harvest benchmarks for your plan</td></tr>
+      <tr><td>Docs</td><td>Retail loan reset FAQ updated Oct 1 guides comms style</td><td>Borrowed for sandbox comms T&Cs</td><td>Mirror format in your comms pack</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Entry → Exit gates (acceptance criteria)</h2>
+  <table class="table">
+    <thead><tr><th>Gate</th><th>To pass</th><th>Tripwire (auto-pause)</th><th>Docs</th></tr></thead>
+    <tbody>
+      <tr><td>Entrance</td><td>Eligibility + sponsor LOI + MVD spec</td><td>Missing consent or harm plan</td><td>Concept note; risk register</td></tr>
+      <tr><td>Go-live</td><td>Signed SLAs; customer comms</td><td>Dispute TAT undefined</td><td>Comms pack; SOPs; TAT matrix</td></tr>
+      <tr><td>Mid-test</td><td>KPIs within band; logs complete</td><td>Complaints &gt; 0.3% or NCL &gt; guardrail</td><td>KPI pack; incident log</td></tr>
+      <tr><td>Exit</td><td>KPIs achieved; deletions certified</td><td>Deletion failure; scope creep</td><td>Audit report; deletion certificate</td></tr>
+      <tr><td>Graduation</td><td>Defined production scope + safeguards</td><td>Open audit items</td><td>Closure note; conditions register</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Sponsor-bank models & SLAs</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Models</h3>
+      <ul>
+        <li><strong>Embedded sponsor:</strong> Bank runs rails; fintech supplies UX/risk.</li>
+        <li><strong>Aggregator hub:</strong> Multi-bank integration with common SLA.</li>
+        <li><strong>Direct-bank pilot:</strong> One bank; shortest approvals; capacity-limited.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>SLA guardrails</h3>
+      <ul>
+        <li>Daily onboarding caps; dispute TAT; fraud ops staffing.</li>
+        <li>Data-sharing contract: fields, purpose, retention, deletion, breach window.</li>
+        <li>Change management: versioning; rollback; stakeholder notice.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Compliance & audit checklist</h2>
+  <ul>
+    <li><strong>MVD plan:</strong> Event schema, PII map, retention/deletion, encryption.</li>
+    <li><strong>Consent artifacts:</strong> Screenshots/timestamps; withdrawal path.</li>
+    <li><strong>Incident playbook:</strong> Thresholds, comms templates, regulator flow.</li>
+    <li><strong>Sandbox logs:</strong> Immutable run-logs; access audits; drift notes.</li>
+    <li><strong>Post-test deletion:</strong> Certificates from all (sub)processors.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Is on-tap indefinite?</strong> It’s open, but capacity and themes steer prioritisation.</li>
+    <li><strong>How big can a pilot be?</strong> Start small; expand only after KPI proof within risk caps.</li>
+    <li><strong>Does graduation equal blanket approval?</strong> No—only within tested scope and safeguards.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">Status and dated updates are current to Oct 24, 2025. Secure sponsor capacity and define KPIs before filing to compress cycle time.</small></div>
+    </div>
+  </main>
+</body>
+</html>
