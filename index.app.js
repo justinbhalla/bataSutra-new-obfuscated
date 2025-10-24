@@ -6,12 +6,12 @@ const ARTICLES = [
 {
     "href": "/articles/compliance-radar-weekly-sebi-rbi-irdai-uidai-oct-24-2025",
     "title": "Compliance Radar: SEBI · RBI · IRDAI · UIDAI",
-    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes. Includes Owner·Doc·Due tables, 14-day calendar, impact/priority matrix."
+    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes."
   },
   {
     "href": "/articles/rbi-regulatory-sandbox-2025-cohorts-gates-sponsor-play-oct-24-2025",
     "title": "RBI Regulatory Sandbox 2025: Cohorts, Gates & Sponsor Play",
-    "blurb": "On-tap, theme-neutral status (since Apr 2025) with entrance→graduation gates, tripwires (complaints >0.3%, NCL guardrails), and sponsor-bank SLA models. Provides a live-status summary, KPI templates, data/consent artifacts, and an audit-ready checklist to move proposals from screening to production."
+    "blurb": "On-tap, theme-neutral status (since Apr 2025) with entrance→graduation gates, tripwires (complaints >0.3%, NCL guardrails), and sponsor-bank SLA models. Provides a live-status summary, KPI templates, data/consent artifacts."
   }
 ];
 
