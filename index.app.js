@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/compliance-radar-weekly-sebi-rbi-irdai-uidai-oct-24-2025",
-    "title": "Compliance Radar: SEBI · RBI · IRDAI · UIDAI",
-    "blurb": "Live items for the week: SEBI NCS master circular alignment, Angel Funds PPM methodology deadline (Jan 31, 2026), RBI retail floating-rate reset comms (Oct 1 update), CBIC IDS 90% provisional refunds, and UIDAI eKYC onboarding changes."
+    "href": "/articles/weekly-review-tariffs-tech-tax-oct-25-2025",
+    "title": "Weekly Review: Tariffs, Tech, and Tax",
+    "blurb": "What moved P&L this week: tighter HS-code scrutiny, GST combo clarifications, faster refund mechanics, and fresh AI/data-centre capex signals. Includes actionable Owner·Doc·Due tables, tariff/GST pass-through playbook, and household/SME impact grid."
   },
   {
-    "href": "/articles/rbi-regulatory-sandbox-2025-cohorts-gates-sponsor-play-oct-24-2025",
-    "title": "RBI Regulatory Sandbox 2025: Cohorts, Gates & Sponsor Play",
-    "blurb": "On-tap, theme-neutral status (since Apr 2025) with entrance→graduation gates, tripwires (complaints >0.3%, NCL guardrails), and sponsor-bank SLA models. Provides a live-status summary, KPI templates, data/consent artifacts."
+    "href": "/articles/ipo-pipeline-watch-who-filed-who-delayed-oct-25-2025",
+    "title": "IPO Pipeline Watch: Who Filed, Who Delayed",
+    "blurb": "Live mainboard roster with stages and size bands—Integris Medtech, Rays Power Infra, BVG India, Avaada Electro (confidential), Sify Infinit Spaces, and Duroflex—plus SME liquidity grid, anchor/float stability rules, and a DRHP→listing checklist."
   }
 ];
 
