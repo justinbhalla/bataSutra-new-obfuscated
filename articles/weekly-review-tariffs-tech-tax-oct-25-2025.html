@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="What actually changed P&L this week: tariff/GST mechanics, data centre & AI capex signals, and household/SME bill impacts. Concrete actions with Owner·Doc·Due tables."/>
+  <meta name="keywords" content="India business weekly, tariffs, GST, AI capex, data centres, compliance, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Weekly Review: Tariffs, Tech, and Tax — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin:10px 0; padding:10px 16px; border-left:3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+.tag { display:inline-block; font-size:11px; padding:2px 8px; border:1px solid #eee; border-radius:999px; background:#fafafa; margin-right:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">WEEkly Review · REAL ECONOMY</div>
+        <h1>This Week in Indian Business: Tariffs, Tech, and Tax</h1>
+        <div class="sub">Tariff/GST systems, AI & data-centre capex signals, and concrete actions for ops within 14 days.</div>
+        <div class="meta">By bataSutra Editorial · October 25, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — five-line brief with actions</li>
+    <li>Tariffs & GST — who pays, who passes through</li>
+    <li>Tech & capex — data centres & AI hardware</li>
+    <li>Tax/admin — consumer & SME impact</li>
+    <li>Playbook — Owner · Doc · Due & risk triggers</li>
+  </ul>
+</section>
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Tariffs:</strong> Scrutiny on borderline HS codes rose this week; importers should lock <em>broker pre-clearances</em> and pass-through clauses.</li>
+      <li><strong>GST:</strong> Clarifications on composite items require <em>invoice & ERP</em> changes; run a relabel plan to avoid dual-MRP friction.</li>
+      <li><strong>AI/DC:</strong> Fresh DRHPs from data-centre and renewables names signal sustained infra demand; verify <em>power/water SLAs</em> before capex.</li>
+      <li><strong>Households:</strong> Fuel city-bands broadly stable m/m; staples remain the volatility driver in urban CPI baskets.</li>
+      <li><strong>Play:</strong> Advance-purchase critical imports; phase DC builds (shell-first); keep dual-rail eKYC in case of API churn.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Tariffs & GST — who pays, who passes through</h2>
+  <table class="table">
+    <thead><tr><th>Item</th><th>What changed</th><th>Immediate action</th><th>P&L effect (near-term)</th></tr></thead>
+    <tbody>
+      <tr><td>Customs reclassification</td><td>Borderline parts under tighter view</td><td>Re-map HS codes; secure broker opinions</td><td>+50–150 bps COGS swing</td></tr>
+      <tr><td>GST on combos</td><td>Clarified rate treatment</td><td>ERP/invoice update; credit note SOP</td><td>One-off WC impact</td></tr>
+      <tr><td>Refund mechanics</td><td>Faster provisional refunds live</td><td>File SOP; daily MIS; track TAT</td><td>Liquidity release in 7–14d</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Tech & capex — data centres & AI hardware</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Signals</h3>
+      <ul>
+        <li>New DRHPs in <strong>data centres</strong> and <strong>renewables manufacturing</strong> (see IPO piece) back infra orderbooks.</li>
+        <li>GPU availability improving in tranches; chilled-water capacity and transformer lead times are the bottlenecks.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Execution watch</h3>
+      <ul>
+        <li>Verify <strong>power SLAs</strong>, water permissions, and grid connection timelines before locking IRR assumptions.</li>
+        <li>Adopt <strong>phased commissioning</strong> to manage chip/cooling cycles and preserve returns.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Tax/admin — consumer & SME impact</h2>
+  <table class="table">
+    <thead><tr><th>Lever</th><th>Household effect</th><th>SME effect</th><th>Action</th></tr></thead>
+    <tbody>
+      <tr><td>Fuel bands</td><td>Stable city bands</td><td>Freight quotes steady</td><td>Fix quarterly transport SLAs</td></tr>
+      <tr><td>eKYC/API edits</td><td>Fewer onboarding retries</td><td>Lower drop-offs with dual-rail</td><td>Keep offline fallback live</td></tr>
+      <tr><td>Refund cadence</td><td>—</td><td>Cash-flow relief</td><td>Weekly CFO dashboard</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Playbook — Owner · Doc · Due & risk triggers</h2>
+  <table class="table">
+    <thead><tr><th>Workstream</th><th>Owner</th><th>Doc</th><th>Due</th><th>Trigger to escalate</th></tr></thead>
+    <tbody>
+      <tr><td>Tariff mapping</td><td>Indirect Tax</td><td>HS code remap pack</td><td>5 d</td><td>Port holds / broker disputes</td></tr>
+      <tr><td>GST relabel</td><td>Sales Ops</td><td>MRP memo; stock tagging</td><td>7 d</td><td>Dual-MRP exceptions &gt; 5%</td></tr>
+      <tr><td>DC capex</td><td>CFO · Projects</td><td>Power/water SLA binder</td><td>10 d</td><td>Transformer lead time &gt; 20 wks</td></tr>
+      <tr><td>eKYC resilience</td><td>CTO</td><td>API diff + fallback SOP</td><td>5 d</td><td>Auth failures &gt; 1.5× baseline</td></tr>
+    </tbody>
+  </table>
+</section>
+
+      <div class="footer"><small class="mute">Live as of Oct 25, 2025. Use Owner·Doc·Due tables to execute within 14 days.</small></div>
+    </div>
+  </main>
+</body>
+</html>
