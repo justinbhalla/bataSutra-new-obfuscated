@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/weekly-review-tariffs-tech-tax-oct-25-2025",
     "title": "Weekly Review: Tariffs, Tech, and Tax",
-    "blurb": "What moved P&L this week: tighter HS-code scrutiny, GST combo clarifications, faster refund mechanics, and fresh AI/data-centre capex signals. Includes actionable Owner·Doc·Due tables, tariff/GST pass-through playbook, and household/SME impact grid."
+    "blurb": "What moved P&L this week: tighter HS-code scrutiny, GST combo clarifications, faster refund mechanics, and fresh AI/data-centre capex signals. Includes actionable Owner·Doc·Due tables, tariff/GST pass-through playbook, and household/SME."
   },
   {
     "href": "/articles/ipo-pipeline-watch-who-filed-who-delayed-oct-25-2025",
