@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/weekly-review-tariffs-tech-tax-oct-25-2025",
-    "title": "Weekly Review: Tariffs, Tech, and Tax",
-    "blurb": "What moved P&L this week: tighter HS-code scrutiny, GST combo clarifications, faster refund mechanics, and fresh AI/data-centre capex signals. Includes actionable Owner·Doc·Due tables, tariff/GST pass-through playbook, and household/SME."
+    "href": "/articles/equities-now-monday-open-setup-oct-26-2025",
+    "title": "Equities Now: Monday Open Setup — RS, Breadth, and Risk Bands",
+    "blurb": "Nifty/Sensex last close, sector rotation tells, and the smallcap risk gauge heading into the Monday open—plus clean sizing and exit rules grounded in breadth and revisions."
   },
   {
-    "href": "/articles/ipo-pipeline-watch-who-filed-who-delayed-oct-25-2025",
-    "title": "IPO Pipeline Watch: Who Filed, Who Delayed",
-    "blurb": "Live mainboard roster with stages and size bands—Integris Medtech, Rays Power Infra, BVG India, Avaada Electro (confidential), Sify Infinit Spaces, and Duroflex—plus SME liquidity grid, anchor/float stability rules, and a DRHP→listing checklist."
+    "href": "/articles/ipo-pipeline-next-10-days-float-anchors-liquidity-oct-26-2025",
+    "title": "IPO Pipeline: Next 10 Business Days (Float, Anchors, Day-2 Depth)",
+    "blurb": "Live roster with price bands, lot sizes, and float for Jayesh Logistics and Game Changers Texfab, plus on-deck mainboard names (Sify Infinit Spaces, Duroflex, Avaada Electro) and a stability-over-GMP checklist."
   }
 ];
 
