@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "/articles/ipo-pipeline-next-10-days-float-anchors-liquidity-oct-26-2025",
     "title": "IPO Pipeline: Next 10 Business Days (Float, Anchors, Day-2 Depth)",
-    "blurb": "Live roster with price bands, lot sizes, and float for Jayesh Logistics and Game Changers Texfab, plus on-deck mainboard names (Sify Infinit Spaces, Duroflex, Avaada Electro) and a stability-over-GMP checklist."
+    "blurb": "Live roster with price bands, lot sizes, and float for Jayesh Logistics and Game Changers Texfab, plus on-deck mainboard names (Sify Infinit Spaces, Duroflex."
   }
 ];
 
