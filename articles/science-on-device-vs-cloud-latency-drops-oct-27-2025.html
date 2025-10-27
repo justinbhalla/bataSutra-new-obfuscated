@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="On-device AI vs cloud: where latency drops this quarter, what it costs, and a simple grid to pick the right path feature-by-feature."/>
+  <meta name="keywords" content="on-device AI, edge AI, cloud AI, latency, battery, cost, SLA, India, bataSutra"/>
+  <meta name="author" content="bataSutra" />
+  <title>Science Noon: On-Device AI vs Cloud — Where Latency Drops — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+@media (min-width:760px){ .half{grid-column:span 6;} .third{grid-column:span 4;} }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">SCIENCE · PHONES & APPS</div>
+        <h1>On-Device AI vs Cloud: Where Latency Drops This Quarter</h1>
+        <div class="sub">The snappy feel you notice: what runs fast on your handset, what still needs big servers — plus a one-glance grid.</div>
+        <div class="meta">By bataSutra Editorial · October 27, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main>
+    <div class="wrap">
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Local wins</strong> on quick, private tasks: voice control, smart replies, photo clean-ups, receipt OCR.</li>
+      <li><strong>Cloud wins</strong> on heavy lifts: long docs, research, cross-file recall, team context, big video jobs.</li>
+      <li><strong>Hybrid</strong> feels best: start local for the first answer, shift to cloud for depth — fast now, thorough later.</li>
+    </ul>
+  </div>
+  <p><small class="mute">Think: a home chef for small plates; a banquet hall for a thousand guests.</small></p>
+</section>
+
+<section>
+  <h2>What changed this quarter</h2>
+  <div class="grid">
+    <div class="card third">
+      <h3>Snappier chips</h3>
+      <p>Fresh NPUs push camera OCR and voice to near-instant. Your handset keeps up with your tap rhythm.</p>
+    </div>
+    <div class="card third">
+      <h3>Lean local nets</h3>
+      <p>Quantized nets handle short notes and replies without heat spikes. Not perfect, fast enough.</p>
+    </div>
+    <div class="card third">
+      <h3>Smart hand-offs</h3>
+      <p>Apps switch to cloud as tasks get long. You see answers, not routing.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Quick grid (feature × lag / cost / SLA)</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Feature</th>
+        <th>Lag feel</th>
+        <th>Battery & ₹ cost</th>
+        <th>Reliability / SLA</th>
+        <th>Best path</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Voice control (“set timer”, “open maps”)</td>
+        <td>Near-instant if local</td>
+        <td>Low battery; zero cloud cost</td>
+        <td>Works offline</td>
+        <td><strong>On-device</strong></td>
+      </tr>
+      <tr>
+        <td>Smart replies / quick summaries</td>
+        <td>Sub-second local; cloud adds delay</td>
+        <td>Light battery; tiny cost</td>
+        <td>Local OK; cloud adds consistency</td>
+        <td><strong>On-device → Cloud on demand</strong></td>
+      </tr>
+      <tr>
+        <td>Translate signs & boards (camera)</td>
+        <td>Instant AR overlays locally</td>
+        <td>Short burst battery; free to run</td>
+        <td>Offline capable</td>
+        <td><strong>On-device</strong></td>
+      </tr>
+      <tr>
+        <td>Long docs (10–200 pages)</td>
+        <td>Local stalls; cloud streams answers</td>
+        <td>Phone stays cool; token cost exists</td>
+        <td>High accuracy with larger nets</td>
+        <td><strong>Cloud</strong></td>
+      </tr>
+      <tr>
+        <td>Team notes + search across files</td>
+        <td>Needs an index; local too tight</td>
+        <td>Cloud billed; worth it for recall</td>
+        <td>Versioning + access rules</td>
+        <td><strong>Cloud (indexed)</strong></td>
+      </tr>
+      <tr>
+        <td>Photo clean-ups / receipt OCR</td>
+        <td>Fast on recent chips</td>
+        <td>Short burst battery</td>
+        <td>Private; no upload</td>
+        <td><strong>On-device</strong></td>
+      </tr>
+      <tr>
+        <td>Video edits / upscales</td>
+        <td>Local can heat, then throttle</td>
+        <td>Heavy battery; time cost</td>
+        <td>Cloud queues yet steady</td>
+        <td><strong>Cloud (or desktop)</strong></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Real-world feel tests</h2>
+  <div class="grid">
+    <div class="card half">
+      <h3>City rail test</h3>
+      <p>Tunnel, weak signal. Local voice and cam text still snap. Cloud waits till you resurface — no spinny wheels.</p>
+    </div>
+    <div class="card half">
+      <h3>Office test</h3>
+      <p>Strong Wi-Fi. Local drafts the reply; cloud polishes tone and finds last quarter’s note. You get speed <em>and</em> context.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Beliefs vs reality</h2>
+  <ul>
+    <li><strong>Belief:</strong> Local always drains faster. <strong>Reality:</strong> Short bursts on-device often beat round-trips.</li>
+    <li><strong>Belief:</strong> Cloud is “free”. <strong>Reality:</strong> You pay in tokens/₹, plus upload time.</li>
+    <li><strong>Tip:</strong> Queue heavy cloud tasks on Wi-Fi while plugged in.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>Privacy & compliance</h2>
+  <div class="callout">
+    <p><strong>Rule of thumb:</strong> If you wouldn’t email it, don’t upload it. Keep IDs, payroll slips, and legal scans local unless policy says OK.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Setup: 90-second tune-up</h2>
+  <ol>
+    <li>In your AI app, pick <strong>“local first”</strong> with auto hand-off past ~2,000 words or cross-file tasks.</li>
+    <li>Enable <strong>offline packs</strong> for voice and translate in your top two tongues.</li>
+    <li>Toggle <strong>“Wi-Fi only for heavy jobs”</strong> and queue overnight while charging.</li>
+  </ol>
+</section>
+
+<section>
+  <h2>How to choose (one rule)</h2>
+  <div class="callout">
+    <p><strong>Short + private → on-device.</strong> <br/><strong>Long + shared/context-heavy → cloud.</strong> Unsure? Start local, then switch — fast now, depth after.</p>
+  </div>
+  <p><small class="mute">You want snap for taps, stamina for projects. Hybrid gives both without extra taps.</small></p>
+</section>
+
+<section>
+  <h2>Glossary</h2>
+  <ul>
+    <li><strong>NPU:</strong> Neural block on your chip that speeds AI math.</li>
+    <li><strong>Quantized net:</strong> A pared-down AI net that trades tiny accuracy for big speed.</li>
+    <li><strong>SLA:</strong> The cloud’s pledge on speed and uptime.</li>
+  </ul>
+</section>
+
+      <div class="footer"><small class="mute">This guide favors feel over lab charts. Your result varies by device, app, and network. Hybrid defaults keep day-to-day use fast and sane.</small></div>
+    </div>
+  </main>
+</body>
+</html>
