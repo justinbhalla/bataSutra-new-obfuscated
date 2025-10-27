@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
 "href": "/articles/science-on-device-vs-cloud-latency-drops-oct-27-2025",
-"title": "Science Noon: On-Device AI vs Cloud — Where Latency Drops This Quarter",
+"title": "Science Noon: On-Device AI vs Cloud — Where Latency Drops",
 "blurb": "What runs fast on your phone and what still needs big servers, with a feature×latency/cost/SLA grid, real-world feel tests, and a simple rule: short + private on-device; long + shared in the cloud."
 }
 ];
