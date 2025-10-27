@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/equities-now-monday-open-setup-oct-26-2025",
-    "title": "Equities Now: Monday Open Setup — RS, Breadth, and Risk Bands",
-    "blurb": "Nifty/Sensex last close, sector rotation tells, and the smallcap risk gauge heading into the Monday open—plus clean sizing and exit rules grounded in breadth and revisions."
-  },
-  {
-    "href": "/articles/ipo-pipeline-next-10-days-float-anchors-liquidity-oct-26-2025",
-    "title": "IPO Pipeline: Next 10 Business Days (Float, Anchors, Day-2 Depth)",
-    "blurb": "Live roster with price bands, lot sizes, and float for Jayesh Logistics and Game Changers Texfab, plus on-deck mainboard names (Sify Infinit Spaces, Duroflex."
-  }
+"href": "/articles/equities-now-monday-open-setup-oct-27-2025",
+"title": "Equities Now: Monday Open Setup — Levels, Breadth, Rotation",
+"blurb": "Banks and capital goods lead while breadth flips positive; USD/INR hovers near 88. Includes a quick levels table, rotation cues, and clean sizing/exit rules grounded in advance–decline and earnings revisions."
+},
+{
+"href": "/articles/science-on-device-vs-cloud-latency-drops-oct-27-2025",
+"title": "Science Noon: On-Device AI vs Cloud — Where Latency Drops This Quarter",
+"blurb": "What runs fast on your phone and what still needs big servers, with a feature×latency/cost/SLA grid, real-world feel tests, and a simple rule: short + private on-device; long + shared in the cloud."
+}
 ];
 
 
