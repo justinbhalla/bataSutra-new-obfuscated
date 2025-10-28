@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/equities-now-monday-open-setup-oct-27-2025",
-"title": "Equities Now: Monday Open Setup — Levels, Breadth, Rotation",
-"blurb": "Banks and capital goods lead while breadth flips positive; USD/INR hovers near 88. Includes a quick levels table, rotation cues, and clean sizing/exit rules grounded in advance–decline and earnings revisions."
+"href": "/articles/shein-listing-detour-tariffs-tiktok-last-leg-oct-28-2025",
+"title": "Shein’s Listing Detour: Tariffs, TikTok, and the Last-Leg Puzzle",
+"blurb": "Duty exposure, ad-rail dependence, and returns are the swing factors. Our route-to-customer grid shows where cost and delay risk stack up—and the filings to watch next (duty tables, channel-mix guardrails, regional hub rollout)."
 },
 {
-"href": "/articles/science-on-device-vs-cloud-latency-drops-oct-27-2025",
-"title": "Science Noon: On-Device AI vs Cloud — Where Latency Drops",
-"blurb": "What runs fast on your phone and what still needs big servers, with a feature×latency/cost/SLA grid, real-world feel tests, and a simple rule: short + private on-device; long + shared in the cloud."
+"href": "/articles/reusable-rockets-weekly-cadence-turnaround-cost-oct-28-2025",
+"title": "Reusable Rockets: Weekly Launch Cadence Changes Everything",
+"blurb": "Fast reflight shifts launch from rare slot to regular service. Table compares vehicles by turnaround target and $/kg trend, with a clear tell to track: sub-two-day pad intervals after ground-gear upgrades."
 }
 ];
 
