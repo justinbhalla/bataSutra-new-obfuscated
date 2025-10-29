@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/shein-listing-detour-tariffs-tiktok-last-leg-oct-28-2025",
-"title": "Shein’s Listing Detour: Tariffs, TikTok, and the Last-Leg Puzzle",
-"blurb": "Duty exposure, ad-rail dependence, and returns are the swing factors. Our route-to-customer grid shows where cost and delay risk stack up—and the filings to watch next (duty tables, channel-mix guardrails, regional hub rollout)."
+"href": "/articles/business-toyota-solid-state-timeline-oct-29-2025",
+"title": "Toyota’s Solid-State Timeline: Winners and Worriers in EV Land",
+"blurb": "What a credible SSB rollout looks like, why cycle life past 500 cycles matters, and who gains across cathode, solid electrolyte, fixtures, and inspection gear—plus a chemistry × cycle life × pack-cost matrix and clear signposts to track."
 },
 {
-"href": "/articles/reusable-rockets-weekly-cadence-turnaround-cost-oct-28-2025",
-"title": "Reusable Rockets: Weekly Launch Cadence Changes Everything",
-"blurb": "Fast reflight shifts launch from rare slot to regular service. Table compares vehicles by turnaround target and $/kg trend, with a clear tell to track: sub-two-day pad intervals after ground-gear upgrades."
+"href": "/articles/science-open-vs-closed-ai-speed-safety-cost-oct-29-2025",
+"title": "Open vs Closed AI: Where Safety, Speed, and Cost Diverge",
+"blurb": "A practical grid for which stack to use by task—RAG, bulk rewrite, agents, voice/vision—covering latency, guardrail control, and total cost. Includes a simple rule for hybrid routing: keep frontier tasks on closed, run bulk private work on tuned open."
 }
 ];
 
