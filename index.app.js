@@ -4,15 +4,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/business-toyota-solid-state-timeline-oct-29-2025",
-"title": "Toyota’s Solid-State Timeline: Winners and Worriers in EV Land",
-"blurb": "What a credible SSB rollout looks like, why cycle life past 500 cycles matters, and who gains across cathode, solid electrolyte, fixtures, and inspection gear—plus a chemistry × cycle life × pack-cost matrix and clear signposts to track."
+"href": "ventures-gpu-rush-infra-funds-ai-hubs-oct-30-2025",
+"title": "Venture’s GPU Rush: Why Infra Funds Back AI Hubs",
+"blurb": "Racks, rent, and reliable power draw long-horizon capital. Our deal grid (lease-to-own, pre-lease, rev-share, GPU SPV) ranks lock-in risk and payback logic, with a clear tell to track next: lease-to-own tied to confirmed substation dates."
 },
 {
-"href": "/articles/science-open-vs-closed-ai-speed-safety-cost-oct-29-2025",
-"title": "Open vs Closed AI: Where Safety, Speed, and Cost Diverge",
-"blurb": "A practical grid for which stack to use by task—RAG, bulk rewrite, agents, voice/vision—covering latency, guardrail control, and total cost. Includes a simple rule for hybrid routing: keep frontier tasks on closed, run bulk private work on tuned open."
+"href": "battery-new-wave-sodium-solid-state-under-70-kwh-oct-30-2025",
+"title": "Battery New Wave: Sodium and Solid-State Under $70/kWh?",
+"blurb": "Cheaper cells look close for storage and entry EVs if cycle life holds. Cost-band chart compares sodium, LFP, solid-state, and low-nickel lines—plus the two unlocks to watch: cell-to-pack designs and supply tie-ups for hard carbon and solid electrolytes."
 }
+
 ];
 
 
