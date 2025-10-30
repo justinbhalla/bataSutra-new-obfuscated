@@ -1,0 +1,155 @@
+<!-- SCIENCE: BATTERY NEW WAVE (EXPANDED) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Can sodium-ion and solid-state packs drop below $70/kWh? Cost bands, where each chemistry fits, scale levers, and what could hold them back."/>
+  <meta name="keywords" content="batteries, sodium-ion, solid-state, LFP, NMC, pack cost, kWh, precursors, cycle life"/>
+  <meta name="author" content="bataSutra" />
+  <title>Science — Battery New Wave: Sodium and Solid-State Under $70/kWh? — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 920px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:14px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:14px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">SCIENCE · ENERGY STORAGE</div>
+        <h1>Battery New Wave: Sodium and Solid-State Under $70/kWh?</h1>
+        <div class="sub">Cheaper cells without rare nickel or cobalt sound great. The catch: cycle life, packaging, and supply for key salts and separators.</div>
+        <div class="meta">By bataSutra Editorial · October 30, 2025</div>
+      </div>
+    </header>
+  </a>
+  <main>
+    <div class="wrap">
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Sodium-ion:</strong> Lower bill of inputs points to cheaper packs for two-wheelers, storage, and entry EVs.</li>
+      <li><strong>Solid-state:</strong> Higher energy in the same space; safety gains; packaging and cycle life are the hurdles.</li>
+      <li><strong>Reality check:</strong> Sub-$70/kWh needs scale, simple packs, and proven cycle life above 1,000 full cycles.</li>
+      <li><strong>Near-term fit:</strong> Stationary storage and short-range vehicles see gains first; long-range cars follow later.</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>Chemistry vs est. pack cost bands</h2>
+  <table class="table">
+    <thead><tr><th>Chemistry</th><th>Energy density (pack)</th><th>Est. pack cost band (US$/kWh)</th><th>Best early use</th><th>Key constraint</th></tr></thead>
+    <tbody>
+      <tr><td>Sodium-ion (hard carbon)</td><td>Low–mid</td><td>70–90 (with scale)</td><td>Storage, city EVs, two-wheelers</td><td>Anode/cathode supply; cycle life</td></tr>
+      <tr><td>LFP (current gen)</td><td>Mid</td><td>80–110</td><td>High-volume EVs, storage</td><td>Packing efficiency, cold-weather loss</td></tr>
+      <tr><td>Solid-state (pilot)</td><td>High (target)</td><td>100–150 (early)</td><td>Premium EVs, aero, high-end devices</td><td>Scale, yields, stability</td></tr>
+      <tr><td>NMC low-nickel</td><td>High</td><td>110–140</td><td>Long-range autos</td><td>Nickel supply, price swings</td></tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>Scale levers that cut cost</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Cell-to-pack (CTP)</h3>
+      <ul>
+        <li>Fewer parts and welds; less structure per kWh.</li>
+        <li>Helps lower energy-density chemistries like sodium compete on total pack cost.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Local inputs</h3>
+      <ul>
+        <li>Secure sources for soda salts, hard carbon precursors, stable separators.</li>
+        <li>Cuts freight/FX drag and supply shock risk.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>High-throughput lines</h3>
+      <ul>
+        <li>Coating speed and yield drive dollars per kWh more than hype does.</li>
+        <li>Automation reduces variance that shortens life.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Use-case fit map</h2>
+  <table class="table">
+    <thead><tr><th>Use case</th><th>Good fit</th><th>Why</th><th>Watch-outs</th></tr></thead>
+    <tbody>
+      <tr><td>Residential/storage</td><td>Sodium, LFP</td><td>Cost priority, safety, cycle count</td><td>Cycle fade at high temp; inverter pairing</td></tr>
+      <tr><td>Two-wheelers/short-range</td><td>Sodium, LFP</td><td>Value over range; simple packs</td><td>Cold-weather loss for LFP; pack size</td></tr>
+      <tr><td>Long-range autos</td><td>NMC, later solid-state</td><td>High density per liter</td><td>Cost and yields for solid-state</td></tr>
+      <tr><td>Premium devices/aero</td><td>Early solid-state</td><td>Safety and density</td><td>Cycle stability over years</td></tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>What could unlock the drop</h2>
+  <ul>
+    <li><strong>Simpler packs:</strong> CTP and structural packs cut overhead.</li>
+    <li><strong>Cycle proof:</strong> &gt;1,000 cycles at useful depth of discharge without rapid fade.</li>
+    <li><strong>Process control:</strong> Better coatings/electrolytes reduce variance that kills life.</li>
+  </ul>
+  <div class="callout"><span class="badge">What to watch</span> Supply tie-ups for hard-to-source precursors (high-quality hard carbon, stable solid electrolytes). Without these, cost targets slip.</div>
+</section>
+<section>
+  <h2>Risk flags</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Cycle fade</h3>
+      <p>Early wins look great until hot-weather cycles pull density down. Insist on long-cycle test data.</p>
+    </div>
+    <div class="card">
+      <h3>Pack integration</h3>
+      <p>New chemistries need fresh BMS rules. Bad tuning eats life and confuses warranty claims.</p>
+    </div>
+    <div class="card">
+      <h3>Input swings</h3>
+      <p>If a single salt or separator goes short, costs spike regardless of lab wins.</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>FAQ (quick)</h2>
+  <ul>
+    <li><strong>Is sub-$70/kWh real soon?</strong> Possible in storage/entry EVs if scale hits and life holds up; cars with long range take longer.</li>
+    <li><strong>Will solid-state win fast?</strong> Not without yield and life proof at scale. Expect phased entry at the high end first.</li>
+  </ul>
+</section>
+<div class="footer"><small class="mute">Bands are directional and assume steady input costs and scale. Validate with vendor quotes and long-cycle data before decisions.</small></div>
+    </div>
+  </main>
+</body>
+</html>
+::contentReference[oaicite:0]{index=0}
