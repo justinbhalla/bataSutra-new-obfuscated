@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "ventures-gpu-rush-infra-funds-ai-hubs-oct-30-2025",
+"href": "/articles/ventures-gpu-rush-infra-funds-ai-hubs-oct-30-2025",
 "title": "Venture’s GPU Rush: Why Infra Funds Back AI Hubs",
 "blurb": "Racks, rent, and reliable power draw long-horizon capital. Our deal grid (lease-to-own, pre-lease, rev-share, GPU SPV) ranks lock-in risk and payback logic, with a clear tell to track next: lease-to-own tied to confirmed substation dates."
 },
 {
-"href": "battery-new-wave-sodium-solid-state-under-70-kwh-oct-30-2025",
+"href": "/articles/battery-new-wave-sodium-solid-state-under-70-kwh-oct-30-2025",
 "title": "Battery New Wave: Sodium and Solid-State Under $70/kWh?",
 "blurb": "Cheaper cells look close for storage and entry EVs if cycle life holds. Cost-band chart compares sodium, LFP, solid-state, and low-nickel lines—plus the two unlocks to watch: cell-to-pack designs and supply tie-ups for hard carbon and solid electrolytes."
 }
