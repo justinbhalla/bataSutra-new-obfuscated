@@ -4,16 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/ventures-gpu-rush-infra-funds-ai-hubs-oct-30-2025",
-"title": "Venture’s GPU Rush: Why Infra Funds Back AI Hubs",
-"blurb": "Racks, rent, and reliable power draw long-horizon capital. Our deal grid (lease-to-own, pre-lease, rev-share, GPU SPV) ranks lock-in risk and payback logic, with a clear tell to track next: lease-to-own tied to confirmed substation dates."
+"href": "/articles/streamings-pivot-bundles-ads-password-truce-oct-31-2025",
+"title": "Streaming’s Pivot: Bundles, Ads, and the Password Truce",
+"blurb": "Why platforms are packaging services, pushing ad tiers, and soft-selling paid household add-ons. Includes a simple grid on bundle combos vs ARPU lift and churn, plus three tells to track: ad-tier fill during sports/holiday peaks, time-spent after bundle upgrades, and how many new users pick ad tiers first."
 },
 {
-"href": "/articles/battery-new-wave-sodium-solid-state-under-70-kwh-oct-30-2025",
-"title": "Battery New Wave: Sodium and Solid-State Under $70/kWh?",
-"blurb": "Cheaper cells look close for storage and entry EVs if cycle life holds. Cost-band chart compares sodium, LFP, solid-state, and low-nickel lines—plus the two unlocks to watch: cell-to-pack designs and supply tie-ups for hard carbon and solid electrolytes."
+"href": "/articles/on-device-ai-phones-features-people-notice-oct-31-2025",
+"title": "On-Device AI Phones: Features People Actually Notice",
+"blurb": "What feels faster without the cloud: captions, translate, camera fixes, and voice actions—along with the real battery trade-offs. Matrix shows feature × offline speed × battery hit, and a short watchlist: camera-native caption/translate, smarter power control for AI bursts, and phones that keep basic AI fully offline."
 }
-
 ];
 
 
