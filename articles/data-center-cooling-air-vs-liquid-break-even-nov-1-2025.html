@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Racks over ~30 kW are pushing operators to liquid. Here’s the break-even logic, a clear grid by rack density, and why AI servers make old air paths hard to justify."/>
+  <meta name="keywords" content="data centers, liquid cooling, DLC, direct-to-chip, immersion, rack density, OPEX, PUE"/>
+  <meta name="author" content="bataSutra" />
+  <title>Data-Center Cool: Air vs Liquid — Where the Break-Even Sits — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; } html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+p { margin: 10px 0; } ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background:#eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.table { width:100%; border-collapse: collapse; font-size:14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; }
+.table th { background:#fafafa; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">SCIENCE · INFRASTRUCTURE</div>
+        <h1>Data-Center Cool: Air vs Liquid — Where the Break-Even Sits</h1>
+        <div class="sub">AI racks over ~30 kW tilt the math: liquid cuts cooling energy and floor space, air hits noise and hot-aisle limits.</div>
+        <div class="meta">By bataSutra Editorial · November 1, 2025</div>
+      </div>
+    </header>
+  </a>
+
+  <main><div class="wrap">
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Threshold:</strong> Above ~30 kW per rack, air’s cost and complexity ramp fast.</li>
+      <li><strong>Shift:</strong> Operators pilot direct-to-chip as AI loads push power density up.</li>
+      <li><strong>Today:</strong> Adoption still gradual, but pressure is building as new GPUs land.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>Break-even grid (energy OPEX focus)</h2>
+  <p><small class="mute">Assumptions: average power price $0.10/kWh; IT load 24×7; air-cooling overhead ~25% of IT power at 20 kW, rising toward ~40% at 50 kW; liquid cuts that overhead ~15–30% depending on design.</small></p>
+  <table class="table">
+    <thead><tr><th>Rack IT load</th><th>Cooling type</th><th>Cooling energy/yr</th><th>Est. OPEX/yr (USD)</th><th>Note</th></tr></thead>
+    <tbody>
+      <tr><td>20 kW</td><td>Air</td><td>~44,000 kWh</td><td>~$4,400</td><td>Well-run hot-aisle still viable</td></tr>
+      <tr><td>20 kW</td><td>Liquid (D2C)</td><td>~34,000–37,000 kWh</td><td>~$3,400–$3,700</td><td>Early savings; capex weighs</td></tr>
+      <tr><td>30 kW</td><td>Air</td><td>~79,000 kWh</td><td>~$7,900</td><td>Air starts to strain</td></tr>
+      <tr><td>30 kW</td><td>Liquid (D2C)</td><td>~58,000–67,000 kWh</td><td>~$5,800–$6,700</td><td>Common inflection</td></tr>
+      <tr><td>50 kW</td><td>Air</td><td>~175,000 kWh</td><td>~$17,500</td><td>Hot-aisle & CRAHs near limits</td></tr>
+      <tr><td>50 kW</td><td>Liquid (D2C/Immersion)</td><td>~120,000–150,000 kWh</td><td>~$12,000–$15,000</td><td>Liquid generally wins</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Why the tilt is accelerating</h2>
+  <ul>
+    <li>Next-gen GPU trays push rack densities beyond what air paths can handle sustainably.</li>
+    <li>Floor-space relief: higher kW per rack with liquid means fewer racks for the same compute.</li>
+    <li>Noise/thermal comfort: air paths at high kW raise fan energy and acoustic issues.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>What to watch</h2>
+  <ul>
+    <li>Operator surveys show liquid interest rising as densities creep up; expect more 2026 pilots to convert to standard builds.</li>
+    <li>Vendor roadmaps: direct-to-chip kits aligned with new GPU platforms; immersion where water risk is a concern.</li>
+    <li>Facility upgrades: secondary loops, CDU placement, and pad-level heat rejection optimized for warm-water designs.</li>
+  </ul>
+</section>
+
+<div class="footer">
+  <small class="mute">Notes: Adoption trajectory and density thresholds based on industry surveys and vendor guidance through 2025; OPEX grid uses stated assumptions and will vary by climate, PUE, water temps, and tariff.</small>
+</div>
+
+  </div></main>
+</body>
+</html>
