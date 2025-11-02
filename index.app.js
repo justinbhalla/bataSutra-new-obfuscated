@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "creator-payout-wars-shorts-vs-reels-vs-tiktok-nov-2-2025",
+"href": "/articles/creator-payout-wars-shorts-vs-reels-vs-tiktok-nov-2-2025",
 "title": "Creator Payout Wars: Shorts vs Reels vs TikTok — Who Pays Better?",
 "blurb": "Ad-share beats flat funds when fill holds; popular tracks can shave the cut. Grid compares Shorts, Reels, and TikTok on payout paths, music impact, and retention lift—plus a practical play: one clean-audio cut, recurring series, stacked links."
 },
 {
-"href": "satellite-text-on-regular-phones-what-actually-works-today-nov-2-2025",
+"href": "/articles/satellite-text-on-regular-phones-what-actually-works-today-nov-2-2025",
 "title": "Satellite Text on Regular Phones: What Actually Works Today",
 "blurb": "Direct-to-device text is real with clear sky and short bursts. Table outlines provider paths, bands, regions, and SOS terms—along with tips on sky view, short messages, and background retry that raise real-world success."
 }
