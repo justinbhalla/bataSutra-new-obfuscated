@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/streamings-pivot-bundles-ads-password-truce-oct-31-2025",
-"title": "Streaming’s Pivot: Bundles, Ads, and the Password Truce",
-"blurb": "Why platforms are packaging services, pushing ad tiers, and soft-selling paid household add-ons. Includes a simple grid on bundle combos vs ARPU lift and churn, plus three tells to track: ad-tier fill during sports/holiday peaks, time-spent after bundle upgrades, and how many new users pick ad tiers first."
+"href": "/articles/global-grocery-private-label-takeover-nov-1-2025",
+"title": "Global Grocery Chains: Private Label’s Quiet Takeover",
+"blurb": "Store brands hit new highs: ~38% share in Europe, ~52% in the U.K., ~21% in the U.S. Why shoppers aren’t switching back, where price gaps stay wide, and which aisles (beauty, pet care) are getting premium store lines next."
 },
 {
-"href": "/articles/on-device-ai-phones-features-people-notice-oct-31-2025",
-"title": "On-Device AI Phones: Features People Actually Notice",
-"blurb": "What feels faster without the cloud: captions, translate, camera fixes, and voice actions—along with the real battery trade-offs. Matrix shows feature × offline speed × battery hit, and a short watchlist: camera-native caption/translate, smarter power control for AI bursts, and phones that keep basic AI fully offline."
+"href": "/articles/data-center-cooling-air-vs-liquid-break-even-nov-1-2025",
+"title": "Data-Center Cool: Air vs Liquid — Where the Break-Even Sits",
+"blurb": "AI racks above ~30 kW tilt the math toward liquid. A simple grid shows energy/OPEX by density, why fan and floor-space limits bite, and the upgrades to track (CDUs, warm-water loops) as liquid kits go mainstream."
 }
 ];
 
