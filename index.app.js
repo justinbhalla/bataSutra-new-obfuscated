@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/global-grocery-private-label-takeover-nov-1-2025",
-"title": "Global Grocery Chains: Private Label’s Quiet Takeover",
-"blurb": "Store brands hit new highs: ~38% share in Europe, ~52% in the U.K., ~21% in the U.S. Why shoppers aren’t switching back, where price gaps stay wide, and which aisles (beauty, pet care) are getting premium store lines next."
+"href": "creator-payout-wars-shorts-vs-reels-vs-tiktok-nov-2-2025",
+"title": "Creator Payout Wars: Shorts vs Reels vs TikTok — Who Pays Better?",
+"blurb": "Ad-share beats flat funds when fill holds; popular tracks can shave the cut. Grid compares Shorts, Reels, and TikTok on payout paths, music impact, and retention lift—plus a practical play: one clean-audio cut, recurring series, stacked links."
 },
 {
-"href": "/articles/data-center-cooling-air-vs-liquid-break-even-nov-1-2025",
-"title": "Data-Center Cool: Air vs Liquid — Where the Break-Even Sits",
-"blurb": "AI racks above ~30 kW tilt the math toward liquid. A simple grid shows energy/OPEX by density, why fan and floor-space limits bite, and the upgrades to track (CDUs, warm-water loops) as liquid kits go mainstream."
+"href": "satellite-text-on-regular-phones-what-actually-works-today-nov-2-2025",
+"title": "Satellite Text on Regular Phones: What Actually Works Today",
+"blurb": "Direct-to-device text is real with clear sky and short bursts. Table outlines provider paths, bands, regions, and SOS terms—along with tips on sky view, short messages, and background retry that raise real-world success."
 }
 ];
 
