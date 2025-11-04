@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/creator-payout-wars-shorts-vs-reels-vs-tiktok-nov-2-2025",
-"title": "Creator Payout Wars: Shorts vs Reels vs TikTok — Who Pays Better?",
-"blurb": "Ad-share beats flat funds when fill holds; popular tracks can shave the cut. Grid compares Shorts, Reels, and TikTok on payout paths, music impact, and retention lift—plus a practical play: one clean-audio cut, recurring series, stacked links."
+"href": "/articles/apple-india-local-iphone-assembly-prices-nov-4-2025",
+"title": "Apple in India: Can Local iPhone Assembly Bend Prices?",
+"blurb": "Sticker prices rarely tumble on launch; the real bend comes from trade-ins, EMI, and prior-gen mix as local value-add grows. We unpack the cost stack (duties, freight, channel), show India vs global ASP bands, and outline PLI checkpoints and risks—plus one rule: last year’s model + exchange + EMI during festive windows captures most savings."
 },
 {
-"href": "/articles/satellite-text-on-regular-phones-what-actually-works-today-nov-2-2025",
-"title": "Satellite Text on Regular Phones: What Actually Works Today",
-"blurb": "Direct-to-device text is real with clear sky and short bursts. Table outlines provider paths, bands, regions, and SOS terms—along with tips on sky view, short messages, and background retry that raise real-world success."
+"href": "/articles/ai-pcs-do-local-models-feel-faster-nov-4-2025",
+"title": "AI PCs: Do Local Models Actually Feel Faster?",
+"blurb": "Yes for short, private tasks—voice notes, captions, quick image fixes—once on-device packs finish downloading. Our task grid covers latency and battery impact, where cloud still wins (long transcripts, heavy gen), and setup tips that change day-one feel. One rule: if it fits on one screen, run it local; if it spans many files, send it to cloud."
 }
 ];
 
