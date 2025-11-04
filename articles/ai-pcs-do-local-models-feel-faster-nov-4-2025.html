@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Do AI PCs feel faster in real use? We test everyday tasks, explain on-device models, and track battery impact—then show where local inference wins and where cloud still rules."/>
+  <meta name="keywords" content="AI PC, on-device AI, NPU, latency, battery life, offline AI, PCs, laptops"/>
+  <meta name="author" content="bataSutra" />
+  <title>AI PCs: Do Local Models Actually Feel Faster? — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+:root { --brand:#8B0000; --ink:#111; --muted:#555; --bg:#fff; --light:#f9f5f5; --accent:#b22222; }
+* { box-sizing: border-box; }
+html { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif; color: var(--ink); }
+body { margin:0; background:var(--bg); line-height:1.6; }
+.header { background: var(--brand); color:#fff; padding:56px 24px 40px; }
+.wrap { max-width: 980px; margin: 0 auto; padding: 0 16px; }
+.kicker { text-transform: uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.9; }
+h1 { font-size: clamp(28px, 3.2vw, 40px); margin: 8px 0 10px; line-height:1.2; }
+.sub { font-size: clamp(16px, 2vw, 20px); opacity:.95; }
+.meta { font-size: 13px; opacity:.9; margin-top:10px; }
+main { padding: 28px 0 64px; background:#fff; }
+section { margin: 30px 0; }
+h2 { font-size: 22px; margin: 30px 0 10px; }
+h3 { font-size: 18px; margin: 22px 0 8px; }
+p { margin: 10px 0; }
+ul, ol { padding-left: 20px; }
+hr { border:0; height:1px; background: #eee; margin: 28px 0; }
+.callout { background: var(--light); border-left: 4px solid var(--brand); padding: 14px 16px; border-radius: 8px; }
+.badge { display:inline-block; padding:2px 8px; border:1px solid #e6e6e6; border-radius:999px; font-size:12px; color:#333; background:#fafafa; margin-right:6px; }
+.grid { display:grid; gap:16px; grid-template-columns: repeat(12, 1fr); }
+.card { grid-column: span 12; padding:16px; border:1px solid #eee; border-radius:12px; background:#fff; box-shadow: 0 1px 0 rgba(0,0,0,.03); }
+.card.split { display:grid; grid-template-columns: repeat(12, 1fr); gap:16px; }
+.card .left { grid-column: span 6; }
+.card .right { grid-column: span 6; }
+@media (max-width: 800px){ .card.split .left, .card.split .right { grid-column: span 12; } }
+.table { width:100%; border-collapse: collapse; font-size: 14px; }
+.table th, .table td { border:1px solid #eee; padding:10px; text-align:left; vertical-align: top;}
+.table th { background:#fafafa; }
+.figure { border:1px dashed #ddd; border-radius:10px; padding:12px; font-size:13px; color:#444; }
+.footer { color:#777; font-size:12px; margin-top:28px; }
+.header-link { text-decoration: none; color: inherit; display: block; }
+small.mute { color:var(--muted); }
+blockquote { margin: 10px 0; padding: 10px 16px; border-left: 3px solid #ddd; color:#333; background:#fafafa; border-radius:6px; }
+  </style>
+</head>
+<body>
+  <a aria-label="Back to Home (index)" class="header-link" href="/">
+    <header class="header">
+      <div class="wrap">
+        <div class="kicker">SCIENCE · COMPUTING & DEVICES</div>
+        <h1>AI PCs: Do Local Models Actually Feel Faster?</h1>
+        <div class="sub">The real-world test: voice, notes, captions, code assists, and image tweaks—where on-device wins, where cloud is still king, and how battery life factors in.</div>
+        <div class="meta">By bataSutra Editorial · November 3, 2025</div>
+      </div>
+    </header>
+  </a>
+  <main>
+    <div class="wrap">
+<section class="toc">
+  <strong>In this piece:</strong>
+  <ul>
+    <li>The short — what you’ll feel in the first week</li>
+    <li>What counts as “on-device” (and what doesn’t)</li>
+    <li>First-boot reality: downloads, caches, and privacy</li>
+    <li>Latency & battery: our task grid</li>
+    <li>When cloud still wins</li>
+    <li>Buyers’ guide: who should care now</li>
+    <li>Setup tips that change the feel</li>
+    <li>FAQ + one clean rule</li>
+  </ul>
+</section>
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>You’ll feel it in everyday work:</strong> voice-to-text, note cleanup, and quick captions snap to life with less spin.</li>
+      <li><strong>Battery hit is real but bounded:</strong> light tasks barely dent; heavy image/audio runs draw more, but NPUs keep fans quieter than you’d expect.</li>
+      <li><strong>Cloud still leads for giant jobs:</strong> very long transcripts, heavy image generation, and multi-file code refactors still prefer the datacenter.</li>
+    </ul>
+  </div>
+</section>
+<section>
+  <h2>What “on-device” actually means</h2>
+  <p>On-device AI uses a local neural processor (NPU) and GPU/CPU to run models without sending every token or pixel to a server. The benefits are privacy, lower latency, and predictable availability on weak connections. But there’s nuance:</p>
+  <ul>
+    <li><strong>Hybrid pipelines:</strong> Many apps run detection/summary locally, then call cloud for deeper or longer tasks.</li>
+    <li><strong>Model swaps:</strong> The app may choose small models locally (for speed) and large ones in cloud (for quality).</li>
+    <li><strong>Caching:</strong> Voice packs and vision encoders often download after first run—until then, “local” may still ping cloud.</li>
+  </ul>
+</section>
+<section>
+  <h2>First-boot reality</h2>
+  <div class="card split">
+    <div class="left">
+      <h3>Downloads you don’t see</h3>
+      <ul>
+        <li>Language packs for voice and offline captioning.</li>
+        <li>Small LLMs and vision encoders pre-tuned for device.</li>
+        <li>Keyword spots, wake-word, and prompt templates.</li>
+      </ul>
+    </div>
+    <div class="right">
+      <h3>Why it matters</h3>
+      <ul>
+        <li>Until packs are in place, latency may look unimpressive.</li>
+        <li>Post-download, tasks that felt “cloudy” begin to feel instant.</li>
+        <li>Battery impact dips as the device stops idling on network calls.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="callout"><span class="badge">What to watch</span> First-boot model downloads and whether your app clearly shows when local packs are ready. That single cue explains 80% of “it didn’t feel faster” complaints.</div>
+</section>
+<section>
+  <h2>Latency & battery: task grid</h2>
+  <div class="figure"><strong>Matrix cue:</strong> “feature × on-device time × battery hit”. Values are directional bands that reflect current-gen AI PC hardware and mainstream apps.</div>
+  <table class="table">
+    <thead><tr><th>Task</th><th>On-device time (typ.)</th><th>Battery hit (per 10 min)</th><th>Feel on a busy day</th></tr></thead>
+    <tbody>
+      <tr><td>Voice notes → clean text</td><td>Near-instant to a few sec</td><td>Low</td><td>Dictate, get readable bullets without waiting</td></tr>
+      <tr><td>Live captions (English)</td><td>Real-time</td><td>Low-to-mod</td><td>Subtitles track speech with little lag</td></tr>
+      <tr><td>Translate short clip (≤30s)</td><td>Seconds</td><td>Low-to-mod</td><td>Quick sanity captions for a social clip</td></tr>
+      <tr><td>Image cleanup (erase, relight)</td><td>Seconds</td><td>Mod</td><td>One-click fix without opening a giant editor</td></tr>
+      <tr><td>Email rewrite (short)</td><td>Instant to ~2s</td><td>Low</td><td>Tone tweak feels like autocomplete on steroids</td></tr>
+      <tr><td>Code hint (single file)</td><td>Instant to ~2s</td><td>Low</td><td>Inline snippets without cloud roundtrips</td></tr>
+      <tr><td>Long audio (≥60 min)</td><td>Better off in cloud</td><td>High if local</td><td>Datacenter wins on throughput & heat</td></tr>
+      <tr><td>High-res image generation</td><td>Better off in cloud</td><td>High if local</td><td>Local is fun; cloud is faster for big jobs</td></tr>
+    </tbody>
+  </table>
+</section>
+<section>
+  <h2>When cloud still wins</h2>
+  <ul>
+    <li><strong>Huge context:</strong> Long calls, multi-hour lectures, or multi-file codebases favor datacenter memory and throughput.</li>
+    <li><strong>Frontier quality:</strong> If you need the very best reasoning or image fidelity, cloud provides larger models and fresh weights.</li>
+    <li><strong>Collab states:</strong> Shared docs and multi-user sessions still rely on server-side logic for conflict handling and versioning.</li>
+  </ul>
+  <blockquote><strong>Pragmatic split:</strong> Keep fast, private, repeatable tasks on your device; escalate “heavy or shared” to cloud.</blockquote>
+</section>
+<section>
+  <h2>Buyers’ guide: who should care now</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Students & reporters</h3>
+      <p>Local voice notes, instant cleanup, and offline search save seconds per sentence—add those up across a day and you’re buying time.</p>
+    </div>
+    <div class="card">
+      <h3>Creators</h3>
+      <p>Quick image fixes and clip captions feel “there when you need them.” Heavy renders still belong to cloud or a desktop GPU.</p>
+    </div>
+    <div class="card">
+      <h3>Developers</h3>
+      <p>Inline code hints are snappier; local small models reduce privacy concerns. Big refactors or test suites still prefer server horsepower.</p>
+    </div>
+    <div class="card">
+      <h3>Frequent flyers</h3>
+      <p>On flight Wi-Fi, local caption/translate and note cleanup are the difference between “stuck” and “done.”</p>
+    </div>
+  </div>
+</section>
+<section>
+  <h2>Setup tips that change the feel</h2>
+  <ol>
+    <li><strong>Complete model packs:</strong> Open your AI hub/app once, let the language and vision packs finish downloading before judging speed.</li>
+    <li><strong>Pin local tasks:</strong> Assign hotkeys for “summarize selection,” “clean bullets,” and “caption this tab.” Muscle memory makes it feel instant.</li>
+    <li><strong>Cap background sync:</strong> Turn off giant cloud backups during local AI work; network thrash hurts perceived latency.</li>
+    <li><strong>Battery profile:</strong> Use a balanced profile; an aggressive saver can throttle your NPU/GPU, making “AI” feel sluggish.</li>
+  </ol>
+</section>
+<section>
+  <h2>Privacy & governance</h2>
+  <p>Local inference keeps raw media and drafts on your device by default. But some apps still upload telemetry. Audit settings: disable cloud logs you don’t need, restrict mic/cam permissions, and store sensitive packs in your user profile (not shared).</p>
+</section>
+<section>
+  <h2>FAQ</h2>
+  <ul>
+    <li><strong>Why didn’t it feel faster on day one?</strong> Model packs were likely downloading; once cached, latency drops sharply.</li>
+    <li><strong>Does local beat cloud on quality?</strong> Not generally. Local wins on privacy and speed for short tasks; cloud still leads on depth.</li>
+    <li><strong>Will my battery suffer?</strong> Light tasks barely register; sustained video or image jobs cost more. NPUs ease the hit compared to CPU-only runs.</li>
+  </ul>
+</section>
+<section>
+  <h2>One clean rule</h2>
+  <div class="callout">
+    <strong>If the task fits on one screen, try local first.</strong> If it spans many screens or many files, send it to cloud.
+  </div>
+</section>
+  <div class="footer"><small class="mute">Experience varies by hardware and app design. Enable local packs and hotkeys to unlock the “always-on” feel AI PCs promise.</small></div>
+</div>
+
+  </main>
+</body>
+</html>
