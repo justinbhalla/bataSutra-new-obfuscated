@@ -6,7 +6,7 @@ const ARTICLES = [
 {
 "href": "/articles/apple-india-local-iphone-assembly-prices-nov-4-2025",
 "title": "Apple in India: Can Local iPhone Assembly Bend Prices?",
-"blurb": "Sticker prices rarely tumble on launch; the real bend comes from trade-ins, EMI, and prior-gen mix as local value-add grows. We unpack the cost stack (duties, freight, channel), show India vs global ASP bands, and outline PLI checkpoints and risks—plus one rule: last year’s model + exchange + EMI during festive windows captures most savings."
+"blurb": "Sticker prices rarely tumble on launch; the real bend comes from trade-ins, EMI, and prior-gen mix as local value-add grows. We unpack the cost stack (duties, freight, channel), show India vs global ASP bands, and outline PLI checkpoints and risks—plus one rule: last year’s model + exchange + EMI during festive windows."
 },
 {
 "href": "/articles/ai-pcs-do-local-models-feel-faster-nov-4-2025",
