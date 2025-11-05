@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/apple-india-local-iphone-assembly-prices-nov-4-2025",
-"title": "Apple in India: Can Local iPhone Assembly Bend Prices?",
-"blurb": "Sticker prices rarely tumble on launch; the real bend comes from trade-ins, EMI, and prior-gen mix as local value-add grows. We unpack the cost stack (duties, freight, channel), show India vs global ASP bands, and outline PLI checkpoints and risks—plus one rule: last year’s model + exchange + EMI during festive windows."
+"href": "/articles/brain-computer-shortcut-thoughts-vs-keyboard-nov-03-2025",
+"title": "Brain-Computer Shortcut: Your Thoughts vs Your Keyboard",
+"blurb": "Consumer brain–computer interfaces are moving from lab demos to real pilots. This piece unpacks latency, accuracy, calibration, comfort, privacy, and the use cases that are actually ready today — accessibility, VR triggers, and short-phrase input. Includes pilot numbers, a short primer, vendor signals to watch, and one clean rule for trial size."
 },
 {
-"href": "/articles/ai-pcs-do-local-models-feel-faster-nov-4-2025",
-"title": "AI PCs: Do Local Models Actually Feel Faster?",
-"blurb": "Yes for short, private tasks—voice notes, captions, quick image fixes—once on-device packs finish downloading. Our task grid covers latency and battery impact, where cloud still wins (long transcripts, heavy gen), and setup tips that change day-one feel. One rule: if it fits on one screen, run it local; if it spans many files, send it to cloud."
+"href": "/articles/tech-ipo-comeback-hope-or-numbers-nov-03-2025",
+"title": "Tech IPO Comeback: Are We Buying Hope or Numbers?",
+"blurb": "Tech listings are reappearing but stability now beats pop. We explain why free float, anchor quality, and cash conversion matter more than oversubscription, show a practical checklist for reading DRHPs, and offer a short roster of deals to watch — plus one simple sizing rule for retail and pros."
 }
 ];
 
