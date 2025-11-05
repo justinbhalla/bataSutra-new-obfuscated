@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/brain-computer-shortcut-thoughts-vs-keyboard-nov-03-2025",
+"href": "/articles/brain-computer-shortcut-thoughts-vs-keyboard-nov-05-2025",
 "title": "Brain-Computer Shortcut: Your Thoughts vs Your Keyboard",
 "blurb": "Consumer brain–computer interfaces are moving from lab demos to real pilots. This piece unpacks latency, accuracy, calibration, comfort, privacy, and the use cases that are actually ready today — accessibility, VR triggers, and short-phrase input. Includes pilot numbers, a short primer, vendor signals to watch, and one clean rule for trial size."
 },
 {
-"href": "/articles/tech-ipo-comeback-hope-or-numbers-nov-03-2025",
+"href": "/articles/tech-ipo-comeback-hope-or-numbers-nov-05-2025",
 "title": "Tech IPO Comeback: Are We Buying Hope or Numbers?",
 "blurb": "Tech listings are reappearing but stability now beats pop. We explain why free float, anchor quality, and cash conversion matter more than oversubscription, show a practical checklist for reading DRHPs, and offer a short roster of deals to watch — plus one simple sizing rule for retail and pros."
 }
