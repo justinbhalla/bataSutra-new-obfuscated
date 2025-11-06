@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/brain-computer-shortcut-thoughts-vs-keyboard-nov-05-2025",
-"title": "Brain-Computer Shortcut: Your Thoughts vs Your Keyboard",
-"blurb": "Consumer brain–computer interfaces are moving from lab demos to real pilots. This piece unpacks latency, accuracy, calibration, comfort, privacy, and the use cases that are actually ready today — accessibility, VR triggers, and short-phrase input. Includes pilot numbers, a short primer, vendor signals to watch, and one clean rule for trial size."
+"href": "/articles/great-price-rewind-brands-cut-costs-nov-06-2025",
+"title": "The Great Price Rewind: Why Big Brands Are Quietly Cutting Costs",
+"blurb": "After two years of inflation-era hikes, brands from food to fashion are easing consumer pain—quietly. Coverage includes a category grid (rollback % × tactic), case stories (portion packs, loyalty windows, refill plays), a short on why 'shrinkflation' is getting a softer sequel, and one clear rule to watch: repeat-rate lift as the first success signal."
 },
 {
-"href": "/articles/tech-ipo-comeback-hope-or-numbers-nov-05-2025",
-"title": "Tech IPO Comeback: Are We Buying Hope or Numbers?",
-"blurb": "Tech listings are reappearing but stability now beats pop. We explain why free float, anchor quality, and cash conversion matter more than oversubscription, show a practical checklist for reading DRHPs, and offer a short roster of deals to watch — plus one simple sizing rule for retail and pros."
+"href": "/articles/sleep-science-2-0-billion-nights-insights-nov-06-2025",
+"title": "Sleep Science 2.0: What We’ve Learned from a Billion Nights of Data",
+"blurb": "Wearables turned global sleep labs. Readable synthesis of REM and deep-sleep patterns across ages, device correlation notes, a data table (age × REM × total sleep) and a short '2 a.m. paradox' story—ending with a single, practical rule: judge change by two-week trends, not single nights."
 }
 ];
 
