@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/great-price-rewind-brands-cut-costs-nov-06-2025",
-"title": "The Great Price Rewind: Why Big Brands Are Quietly Cutting Costs",
-"blurb": "After two years of inflation-era hikes, brands from food to fashion are easing consumer pain—quietly. Coverage includes a category grid (rollback % × tactic), case stories (portion packs, loyalty windows, refill plays), a short on why 'shrinkflation' is getting a softer sequel, and one clear rule to watch: repeat-rate lift as the first success signal."
+"href": "/articles/subscription-fatigue-bundles-bundled-out-nov-07-2025",
+"title": "Subscription Fatigue: When Bundles Become Bundled-Out",
+"blurb": "Households carrying stacks of streaming, fitness, storage and news are pruning. Deep feature story with category grid (avg subs per household × churn rate), human vignettes, signal table editors can re-use, and one clear rule for brands: keep weekly visible value or expect churn."
 },
 {
-"href": "/articles/sleep-science-2-0-billion-nights-insights-nov-06-2025",
-"title": "Sleep Science 2.0: What We’ve Learned from a Billion Nights of Data",
-"blurb": "Wearables turned global sleep labs. Readable synthesis of REM and deep-sleep patterns across ages, device correlation notes, a data table (age × REM × total sleep) and a short '2 a.m. paradox' story—ending with a single, practical rule: judge change by two-week trends, not single nights."
+"href": "/articles/augmented-hearing-smart-earbuds-emotion-nov-07-2025",
+"title": "Augmented Hearing: Smart Earbuds That Adjust to Your Emotion",
+"blurb": "Earbuds that sense stress and adapt audio are leaving pilots. Long read covering sensing tech, feature tradeoffs (latency, cost, battery), pilot results, privacy design, and a single shipping rule: start small, keep inference local, make actions visible."
 }
 ];
 
