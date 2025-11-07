@@ -6,7 +6,7 @@ const ARTICLES = [
 {
 "href": "/articles/subscription-fatigue-bundles-bundled-out-nov-07-2025",
 "title": "Subscription Fatigue: When Bundles Become Bundled-Out",
-"blurb": "Households carrying stacks of streaming, fitness, storage and news are pruning. Deep feature story with category grid (avg subs per household × churn rate), human vignettes, signal table editors can re-use, and one clear rule for brands: keep weekly visible value or expect churn."
+"blurb": "Households carrying stacks of streaming, fitness, storage and news are pruning. Deep feature story with category grid (avg subs per household × churn rate), human vignettes, signal table editors can re-use, and one clear rule for brands: keep weekly visible value."
 },
 {
 "href": "/articles/augmented-hearing-smart-earbuds-emotion-nov-07-2025",
