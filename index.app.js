@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/undersea-data-highways-india-cables-race-nov-08-2025",
-"title": "Undersea Data Highways: The Quiet Race India’s Cables Are Running",
+"title": "Undersea Highways: The Quiet Race India’s Cables Are Running",
 "blurb": "New submarine cable landings and private-public builds are cutting latency, creating edge hubs, and shifting who owns the internet’s tolls. Our report maps landing points, latency gains, and commercial ripple effects for cloud, streaming, and telco strategy."
 },
 {
 "href": "/articles/ocean-sovereign-ai-india-deep-sea-network-nov-08-2025",
-"title": "Ocean-Sovereign AI: India’s Deep-Sea Intelligence Network Goes Live",
+"title": "Ocean-Sovereign AI: India’s Deep-Sea Network Goes Live",
 "blurb": "A grid of AI-linked hydroacoustic nodes is turning the sea into a live dataset — serving defense, ecology, and offshore industry needs. We explain how the tech works, who benefits, the costs, and the privacy and policy questions now surfacing."
 }
 ];
