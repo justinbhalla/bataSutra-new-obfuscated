@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/undersea-data-highways-india-cables-race-nov-08-2025",
-"title": "Undersea Data Highways: The Quiet Race Cables Are Running",
-"blurb": "New submarine cable landings and private-public builds are cutting latency, creating edge hubs, and shifting who owns the internet’s tolls. Our report maps landing points, latency gains, and commercial ripple effects for cloud, streaming, and telco strategy."
+"href": "/articles/great-office-reshuffle-hq-shrink-2025-nov-10-2025",
+"title": "The Great Office Reshuffle: Why Corporate HQs Are Shrinking Again",
+"blurb": "India Inc is quietly cutting HQ space — automation, hybrid work, and lease math are driving a second wave of downsizing. Inside: sector-level shrink rates, the emotional cost of empty desks, how firms repurpose floors into client hubs and collab studios, and the key lease cycles and flex players to watch."
 },
 {
-"href": "/articles/ocean-sovereign-ai-india-deep-sea-network-nov-08-2025",
-"title": "Ocean-Sovereign AI: Deep-Sea Intelligence Network Goes Live",
-"blurb": "A grid of AI-linked hydroacoustic nodes is turning the sea into a live dataset — serving defense, ecology, and offshore industry needs. We explain how the tech works, who benefits, the costs, and the privacy and policy questions now surfacing."
+"href": "/articles/bio-ink-tattoos-skin-as-wearable-nov-10-2025",
+"title": "Bio-Ink Tattoos: Could Your Skin Be the Next Wearable?",
+"blurb": "Temporary, sensor-laden inks promise continuous health signals — glucose, hydration, stress — painted on skin. We explain the science, the startups piloting today, design and privacy tradeoffs, and the regulatory and market milestones that will decide whether this becomes mainstream."
 }
 ];
 
