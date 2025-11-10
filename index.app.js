@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/great-office-reshuffle-hq-shrink-2025-nov-09-2025",
-"title": "The Great Office Reshuffle: Why Corporate HQs Are Shrinking Again",
-"blurb": "India Inc is quietly cutting HQ space — automation, hybrid work, and lease math are driving a second wave of downsizing. Inside: sector-level shrink rates, the emotional cost of empty desks, how firms repurpose floors into client hubs and collab studios, and the key lease cycles and flex players to watch."
+"href": "/articles/luxury-in-recession-why-quiet-brands-are-winning-oct-11-2025",
+"title": "Luxury in Recession: Why Quiet Brands Are Winning the Loud Ones",
+"blurb": "Why subtlety sells when growth slows: heritage goods, low-key design, and repeat buyers are driving a stealth-luxury wave. Includes sales split, brand strategy grid, and the consumer psychology that turns silence into status."
 },
 {
-"href": "/articles/bio-ink-tattoos-skin-as-wearable-nov-09-2025",
-"title": "Bio-Ink Tattoos: Could Your Skin Be the Next Wearable?",
-"blurb": "Temporary, sensor-laden inks promise continuous health signals — glucose, hydration, stress — painted on skin. We explain the science, the startups piloting today, design and privacy tradeoffs, and the regulatory and market milestones that will decide whether this becomes mainstream."
+"href": "/articles/digital-twins-for-the-body-full-human-simulation-oct-11-2025",
+"title": "Digital Twins for the Body: Inside the First Full-Human Simulation",
+"blurb": "AI-driven replicas that simulate organs, drugs, and recovery paths are here. The feature breaks down how twins work, accuracy vs cost, clinical use cases, and the thorny ownership and privacy questions that follow."
 }
 ];
 
