@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/luxury-in-recession-why-quiet-brands-are-winning-oct-11-2025",
-"title": "Luxury in Recession: Why Quiet Brands Are Winning the Loud Ones",
-"blurb": "Why subtlety sells when growth slows: heritage goods, low-key design, and repeat buyers are driving a stealth-luxury wave. Includes sales split, brand strategy grid, and the consumer psychology that turns silence into status."
+"href": "/articles/cloud-costs-bite-back-saas-price-correction-nov-11-2025",
+"title": "Cloud Costs Bite Back: The Great SaaS Price Correction",
+"blurb": "Vendors are raising prices to cover AI compute and storage; enterprises are fighting back by pruning stacks, auditing usage, and shifting to open-source or self-hosted alternatives. Deep read: pricing trends, CFO playbook, and the future of the enterprise stack."
 },
 {
-"href": "/articles/digital-twins-for-the-body-full-human-simulation-oct-11-2025",
-"title": "Digital Twins for the Body: Inside the First Full-Human Simulation",
-"blurb": "AI-driven replicas that simulate organs, drugs, and recovery paths are here. The feature breaks down how twins work, accuracy vs cost, clinical use cases, and the thorny ownership and privacy questions that follow."
+"href": "/articles/new-longevity-boom-why-anti-aging-became-500b-hobby-nov-11-2025",
+"title": "The New Longevity Boom: Why Anti-Aging Became a $500 Billion Hobby",
+"blurb": "From peptides and DNA clocks to sleep-data economies, longevity has leapfrogged science into consumer culture. This feature maps the market, the tech, the psychology, and the regulation questions at the heart of modern age-extension."
 }
 ];
 
