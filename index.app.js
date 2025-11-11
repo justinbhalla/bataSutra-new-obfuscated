@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
 "href": "/articles/new-longevity-boom-why-anti-aging-became-500b-hobby-nov-11-2025",
-"title": "The New Longevity Boom: Why Anti-Aging Became a $500 Billion Hobby",
+"title": "The Longevity Boom: Why Anti-Aging Became a $500 Billion Hobby",
 "blurb": "From peptides and DNA clocks to sleep-data economies, longevity has leapfrogged science into consumer culture. This feature maps the market, the tech, the psychology, and the regulation questions at the heart of modern age-extension."
 }
 ];
