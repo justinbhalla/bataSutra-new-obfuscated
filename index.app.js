@@ -6,7 +6,7 @@ const ARTICLES = [
 {
 "href": "/articles/cloud-costs-bite-back-saas-price-correction-nov-11-2025",
 "title": "Cloud Costs Bite Back: The Great SaaS Price Correction",
-"blurb": "Vendors are raising prices to cover AI compute and storage; enterprises are fighting back by pruning stacks, auditing usage, and shifting to open-source or self-hosted alternatives. Deep read: pricing trends, CFO playbook, and the future of the enterprise stack."
+"blurb": "Vendors are raising prices to cover AI compute and storage; enterprises are fighting back by pruning stacks, auditing usage, and shifting to open-source or self-hosted alternatives. Deep read: pricing trends, CFO playbook, and the future."
 },
 {
 "href": "/articles/new-longevity-boom-why-anti-aging-became-500b-hobby-nov-11-2025",
