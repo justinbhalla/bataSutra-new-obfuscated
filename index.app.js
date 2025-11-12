@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/cloud-costs-bite-back-saas-price-correction-nov-11-2025",
-"title": "Cloud Costs Bite Back: The Great SaaS Price Correction",
-"blurb": "Vendors are raising prices to cover AI compute and storage; enterprises are fighting back by pruning stacks, auditing usage, and shifting to open-source or self-hosted alternatives. Deep read: pricing trends, CFO playbook, and the future."
+"href": "/articles/office-space-back-but-not-an-office-nov-12-2025",
+"title": "Office Space Is Back — But It Doesn’t Look Like One",
+"blurb": "Hybrid fatigue has turned corporate floors into creator studios, wellness hubs, and brand stages. This feature explains the design shift, the landlord pivot, and who wins (and loses) as offices trade desks for stages."
 },
 {
-"href": "/articles/new-longevity-boom-why-anti-aging-became-500b-hobby-nov-11-2025",
-"title": "The Longevity Boom: Why Anti-Aging Became a $500 Billion Hobby",
-"blurb": "From peptides and DNA clocks to sleep-data economies, longevity has leapfrogged science into consumer culture. This feature maps the market, the tech, the psychology, and the regulation questions at the heart of modern age-extension."
+"href": "/articles/plastics-comeback-recyclable-that-refuses-to-die-nov-12-2025",
+"title": "Plastic’s Comeback: The Strange Case of the Recyclable That Refuses to Die",
+"blurb": "Chemical recycling promises circularity but the real flows tell a different story. We map the gap between technical yield and actual recovery, explain why economics still favors virgin resin, and show what could close the loop."
 }
 ];
 
