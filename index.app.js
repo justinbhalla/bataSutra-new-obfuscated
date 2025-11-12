@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
 "href": "/articles/plastics-comeback-recyclable-that-refuses-to-die-nov-12-2025",
-"title": "Plastic’s Comeback: The Strange Case of the Recyclable That Refuses to Die",
+"title": "Plastic’s Comeback: The Strange Case of the Recyclable",
 "blurb": "Chemical recycling promises circularity but the real flows tell a different story. We map the gap between technical yield and actual recovery, explain why economics still favors virgin resin, and show what could close the loop."
 }
 ];
