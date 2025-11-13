@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/streamers-secret-pivot-bundles-local-prices-return-of-free-nov-13-2025",
-"title": "Streamers’ Secret Pivot: Bundles, Local Prices, and the Return of Free",
+"title": "Streamers’ Secret Pivot: Bundles, Local Prices, Return of Free",
 "blurb": "Global platforms are testing local bundles, ad tiers, and regional pricing to stop churn. We break down where ARPU lifts come from, why free is back in a new form, and the signals to watch during sports and holiday windows."
 },
 {
