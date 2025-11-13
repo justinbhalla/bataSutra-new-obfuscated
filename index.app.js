@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/office-space-back-but-not-an-office-nov-12-2025",
-"title": "Office Space Is Back — But It Doesn’t Look Like One",
-"blurb": "Hybrid fatigue has turned corporate floors into creator studios, wellness hubs, and brand stages. This feature explains the design shift, the landlord pivot, and who wins (and loses) as offices trade desks for stages."
+"href": "/articles/streamers-secret-pivot-bundles-local-prices-return-of-free-nov-13-2025",
+"title": "Streamers’ Secret Pivot: Bundles, Local Prices, and the Return of Free",
+"blurb": "Global platforms are testing local bundles, ad tiers, and regional pricing to stop churn. We break down where ARPU lifts come from, why free is back in a new form, and the signals to watch during sports and holiday windows."
 },
 {
-"href": "/articles/plastics-comeback-recyclable-that-refuses-to-die-nov-12-2025",
-"title": "Plastic’s Comeback: The Strange Case of the Recyclable",
-"blurb": "Chemical recycling promises circularity but the real flows tell a different story. We map the gap between technical yield and actual recovery, explain why economics still favors virgin resin, and show what could close the loop."
+"href": "/articles/on-device-ai-phones-features-people-actually-notice-nov-13-2025",
+"title": "On-Device AI Phones: Features People Actually Notice",
+"blurb": "On-device AI is turning tiny waits into instant interactions. This piece shows which features feel faster, the real battery tradeoffs, and the practical rollouts that will change daily phone use."
 }
 ];
 
