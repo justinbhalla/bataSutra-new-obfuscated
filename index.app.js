@@ -9,7 +9,7 @@ const ARTICLES = [
 "blurb": "How retailer wallets and reloads quietly became a parallel financial system. We unpack the psychology, the economics (float & retention), category grids (food, beauty, apparel), and what brands are doing as loyalty turns into soft fintech."
 },
 {
-"href": "/articles/dog-longevity-drugs-extend-years-nov-04-2025",
+"href": "/articles/dog-longevity-drugs-extend-years-nov-14-2025",
 "title": "Dog Longevity Drugs: The New Science That Might Add 2–3 Years to Your Pet’s Life",
 "blurb": "From low-dose rapamycin to senolytics and microbiome tuning — an accessible read on the trials, signals, breed-specific issues, safety dashboards, and the ethical question behind adding years to our pets’ lives."
 }
