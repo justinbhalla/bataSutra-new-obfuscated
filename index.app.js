@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/streamers-secret-pivot-bundles-local-prices-return-of-free-nov-13-2025",
-"title": "Streamers’ Secret Pivot: Bundles, Local Prices, Return of Free",
-"blurb": "Global platforms are testing local bundles, ad tiers, and regional pricing to stop churn. We break down where ARPU lifts come from, why free is back in a new form, and the signals to watch during sports and holiday windows."
+"href": "/articles/gift-cards-new-bank-accounts-gen-z-nov-14-2025",
+"title": "Gift Cards Are the New Bank Accounts: Why Gen Z Treats Balances Like Money",
+"blurb": "How retailer wallets and reloads quietly became a parallel financial system. We unpack the psychology, the economics (float & retention), category grids (food, beauty, apparel), and what brands are doing as loyalty turns into soft fintech."
 },
 {
-"href": "/articles/on-device-ai-phones-features-people-actually-notice-nov-13-2025",
-"title": "On-Device AI Phones: Features People Actually Notice",
-"blurb": "On-device AI is turning tiny waits into instant interactions. This piece shows which features feel faster, the real battery tradeoffs, and the practical rollouts that will change daily phone use."
+"href": "/articles/dog-longevity-drugs-extend-years-nov-04-2025",
+"title": "Dog Longevity Drugs: The New Science That Might Add 2–3 Years to Your Pet’s Life",
+"blurb": "From low-dose rapamycin to senolytics and microbiome tuning — an accessible read on the trials, signals, breed-specific issues, safety dashboards, and the ethical question behind adding years to our pets’ lives."
 }
 ];
 
