@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/quiet-luxury-grocery-trader-joes-mands-dm-nov-15-2025",
-"title": "The Rise of Luxury Grocery: Trader Joe’s, M&S, and DM Are Winning Hearts",
+"title": "The Rise of Grocery: Trader Joe’s, M&S, and DM Are Winning Hearts",
 "blurb": "The grocery aisle has quietly become a stage for tasteful, low-key indulgence. Trader Joe’s seasonal drops, M&S’s ‘Collection’ design language, and DM’s private-label discipline are turning everyday food into intentional small pleasures — beautiful packaging, considered portions, and repeatable rituals that drive loyalty and margin. We unpack the retail logic, design cues, and cultural habits."
 },
 {
