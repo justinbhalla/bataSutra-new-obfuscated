@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/gift-cards-new-bank-accounts-gen-z-nov-14-2025",
-"title": "Gift Cards Are the New Bank Accounts: Why Gen Z Treats Balances Like Money",
-"blurb": "How retailer wallets and reloads quietly became a parallel financial system. We unpack the psychology, the economics (float & retention), category grids (food, beauty, apparel), and what brands are doing as loyalty turns into soft fintech."
+"href": "/articles/quiet-luxury-grocery-trader-joes-mands-dm-nov-15-2025",
+"title": "The Rise of Quiet Luxury Grocery: Why Trader Joe’s, M&S, and DM Are Winning Hearts",
+"blurb": "The grocery aisle has quietly become a stage for tasteful, low-key indulgence. Trader Joe’s seasonal drops, M&S’s ‘Collection’ design language, and DM’s private-label discipline are turning everyday food into intentional small pleasures — beautiful packaging, considered portions, and repeatable rituals that drive loyalty and margin. We unpack the retail logic, design cues, and cultural habits reshaping how urban shoppers spend small amounts for big, daily returns."
 },
 {
-"href": "/articles/dog-longevity-drugs-extend-years-nov-14-2025",
-"title": "Dog Longevity Drugs: The New Science That Might Add 2–3 Years to Your Pet’s Life",
-"blurb": "From low-dose rapamycin to senolytics and microbiome tuning — an accessible read on the trials, signals, breed-specific issues, safety dashboards, and the ethical question behind adding years to our pets’ lives."
+"href": "/articles/sleep-temperature-why-1-5c-makes-or-breaks-deep-sleep-nov-15-2025",
+"title": "Sleep Temperature Science: Why 1.5°C Makes or Breaks Deep Sleep",
+"blurb": "Aggregated wearable data from Oura, Fitbit, and WHOOP shows tiny temperature shifts do disproportionate damage to restorative sleep. Different age groups have distinct thermal windows, and stability — not a single ‘perfect’ number — is the critical factor. This piece explains the biology, the measurable deep-sleep gains, and why cooling tech is moving from luxury to necessity."
 }
 ];
 
