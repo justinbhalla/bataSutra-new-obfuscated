@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/quiet-luxury-grocery-trader-joes-mands-dm-nov-15-2025",
-"title": "The Rise of Grocery: Trader Joe’s, M&S, and DM Are Winning Hearts",
-"blurb": "The grocery aisle has quietly become a stage for tasteful, low-key indulgence. Trader Joe’s seasonal drops, M&S’s ‘Collection’ design language, and DM’s private-label discipline are turning everyday food into intentional small pleasures — beautiful packaging, considered portions, and repeatable rituals that drive loyalty and margin. We unpack the retail logic, design cues, and cultural habits."
+"href": "/articles/saas-reset-india-hybrid-pricing-nov-16-2025",
+"title": "The SaaS Reset: Why India’s Mid-Tier SaaS Startups Are Moving to Hybrid Pricing Models",
+"blurb": "Mid-tier Indian SaaS companies are abandoning single-price orthodoxy. Facing slower enterprise spends, tougher renewal dynamics, and buyers who want flexibility, many startups are layering usage tiers, outcome-based fees, and seat-agnostic subscriptions into hybrid pricing bundles. This piece explains the commercial logic, unit-economics trade-offs, and product changes driving the reset — plus playbooks founders are using to stay cash-efficient while growing ARR."
 },
 {
-"href": "/articles/sleep-temperature-why-1-5c-makes-or-breaks-deep-sleep-nov-15-2025",
-"title": "Sleep Temperature Science: Why 1.5°C Makes or Breaks Deep Sleep",
-"blurb": "Aggregated wearable data from Oura, Fitbit, and WHOOP shows tiny temperature shifts do disproportionate damage to restorative sleep. Different age groups have distinct thermal windows, and stability — not a single ‘perfect’ number — is the critical factor. This piece explains the biology, the measurable deep-sleep gains, and why cooling tech is moving from luxury to necessity."
+"href": "/articles/glymphatic-clock-brain-waste-earlier-than-expected-nov-16-2025",
+"title": "The Glymphatic Clock: Why Brain-Waste Clearance Peaks Earlier Than Expected",
+"blurb": "New imaging studies show the brain’s overnight cleaning system starts its deep work sooner than conventional wisdom assumed — and that timing matters. The Glymphatic Clock rewrites when slow-wave sleep confers the biggest clearance benefits, with clear implications for late sleepers, naps, and sleep-timing interventions. We walk through the imaging evidence, physiological mechanisms, and practical takeaways for anyone who sleeps late by habit."
 }
 ];
 
