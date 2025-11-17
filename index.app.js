@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
 "href": "/articles/protein-folding-accidents-misfolding-signatures-neurodegeneration-nov-17-2025",
-"title": "Protein Folding Accidents: The Tiny Errors That Predict Neurodegeneration Years Earlier",
+"title": "Protein Folding Accidents: Tiny Errors That Predict Neurodegeneration Years Earlier",
 "blurb": "New approaches detect microscopic misfolding ‘signatures’ that flag neurodegenerative risk long before symptoms appear. Combining high-throughput assays, machine learning, and longitudinal imaging, researchers are building early-warning models that could transform diagnosis and drug timelines. We explain the biology, the predictive models, and what early detection might mean for treatment windows and clinical trials."
 }
 ];
