@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/saas-reset-india-hybrid-pricing-nov-16-2025",
-"title": "The SaaS Reset: Why India’s Mid-Tier SaaS Startups Are Moving to Hybrid Pricing Models",
-"blurb": "Mid-tier Indian SaaS companies are abandoning single-price orthodoxy. Facing slower enterprise spends, tougher renewal dynamics, and buyers who want flexibility, many startups are layering usage tiers, outcome-based fees, and seat-agnostic subscriptions into hybrid pricing bundles. This piece explains the commercial logic, unit-economics trade-offs, and product changes driving the reset — plus playbooks founders are using to stay cash-efficient while growing ARR."
+"href": "/articles/contentification-of-retail-stores-as-filming-stages-nov-17-2025",
+"title": "The Contentification of Retail: Brands Turning Stores into Filming Stages",
+"blurb": "Stores are being redesigned not just to sell but to be filmed. From ‘shootable’ aisles and built-in livestream bays to staff-as-creators and real-time UGC curation, retailers are converting physical space into repeatable media sets—blurring merchandising, social strategy, and operations. This piece maps the design moves, commercial logic, and production playbooks that make a good store also a good story."
 },
 {
-"href": "/articles/glymphatic-clock-brain-waste-earlier-than-expected-nov-16-2025",
-"title": "The Glymphatic Clock: Why Brain-Waste Clearance Peaks Earlier Than Expected",
-"blurb": "New imaging studies show the brain’s overnight cleaning system starts its deep work sooner than conventional wisdom assumed — and that timing matters. The Glymphatic Clock rewrites when slow-wave sleep confers the biggest clearance benefits, with clear implications for late sleepers, naps, and sleep-timing interventions. We walk through the imaging evidence, physiological mechanisms, and practical takeaways for anyone who sleeps late by habit."
+"href": "/articles/protein-folding-accidents-misfolding-signatures-neurodegeneration-nov-17-2025",
+"title": "Protein Folding Accidents: The Tiny Errors That Predict Neurodegeneration Years Earlier",
+"blurb": "New approaches detect microscopic misfolding ‘signatures’ that flag neurodegenerative risk long before symptoms appear. Combining high-throughput assays, machine learning, and longitudinal imaging, researchers are building early-warning models that could transform diagnosis and drug timelines. We explain the biology, the predictive models, and what early detection might mean for treatment windows and clinical trials."
 }
 ];
 
