@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/contentification-of-retail-stores-as-filming-stages-nov-17-2025",
-"title": "The Contentification of Retail: Brands Turning Stores into Filming Stages",
+"title": "Contentification of Retail: Brands Turning Stores into Filming Stages",
 "blurb": "Stores are being redesigned not just to sell but to be filmed. From ‘shootable’ aisles and built-in livestream bays to staff-as-creators and real-time UGC curation, retailers are converting physical space into repeatable media sets—blurring merchandising, social strategy, and operations. This piece maps the design moves, commercial logic, and production playbooks that make a good store also a good story."
 },
 {
 "href": "/articles/protein-folding-accidents-misfolding-signatures-neurodegeneration-nov-17-2025",
-"title": "Protein Folding Accidents: Tiny Errors That Predict Neurodegeneration Years Earlier",
+"title": "Protein Folding Accidents: Tiny Errors That Predict Neurodegeneration",
 "blurb": "New approaches detect microscopic misfolding ‘signatures’ that flag neurodegenerative risk long before symptoms appear. Combining high-throughput assays, machine learning, and longitudinal imaging, researchers are building early-warning models that could transform diagnosis and drug timelines. We explain the biology, the predictive models, and what early detection might mean for treatment windows and clinical trials."
 }
 ];
