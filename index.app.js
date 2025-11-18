@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/contentification-of-retail-stores-as-filming-stages-nov-17-2025",
-"title": "Contentification of Retail: Brands Turning Stores into Filming Stages",
-"blurb": "Stores are being redesigned not just to sell but to be filmed. From ‘shootable’ aisles and built-in livestream bays to staff-as-creators and real-time UGC curation, retailers are converting physical space into repeatable media sets—blurring merchandising, social strategy, and operations. This piece maps the design moves, commercial logic, and production playbooks that make a good store also a good story."
+"href": "/articles/supply-chain-of-aesthetics-packaging-vendors-power-brokers-nov-18-2025",
+"title": "Supply Chain of Aesthetics: Why Packaging Vendors Are Becoming Power Brokers",
+"blurb": "As quiet-luxury design floods the market, packaging vendors are moving from suppliers to strategic partners. Their access to specialty materials, finishing techniques, and agile production slots now shapes retail pricing, margin levers, and D2C brand positioning. This piece maps how converters, co-packers, and finishing houses are quietly rewiring value chains — and why brands are paying a premium for packaging that performs as a product."
 },
 {
-"href": "/articles/protein-folding-accidents-misfolding-signatures-neurodegeneration-nov-17-2025",
-"title": "Protein Accidents: Tiny Errors That Predict Neurodegeneration",
-"blurb": "New approaches detect microscopic misfolding ‘signatures’ that flag neurodegenerative risk long before symptoms appear. Combining high-throughput assays, machine learning, and longitudinal imaging, researchers are building early-warning models that could transform diagnosis and drug timelines. We explain the biology, the predictive models, and what early detection might mean for treatment windows and clinical trials."
+"href": "/articles/early-dementia-flags-nighttime-movement-smart-mattresses-nov-18-2025",
+"title": "The Early Dementia Flags Hidden in Night-Time Movement Patterns",
+"blurb": "New signal-processing models show subtle limb-movement signatures captured by smart mattresses predict cognitive decline years before clinical symptoms appear. By combining nocturnal kinematic patterns with longitudinal health data, researchers are building earlier, low-friction screening tools — with major implications for clinical trials, caregiving, and privacy. We explain the science, the evidence, and the ethical questions that follow."
 }
 ];
 
