@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/supply-chain-of-aesthetics-packaging-vendors-power-brokers-nov-18-2025",
-"title": "Supply Chain of Aesthetics: Why Packaging Vendors Are Becoming Power Brokers",
+"title": "Supply Chain of Aesthetics: Packaging Vendors Are Becoming Brokers",
 "blurb": "As quiet-luxury design floods the market, packaging vendors are moving from suppliers to strategic partners. Their access to specialty materials, finishing techniques, and agile production slots now shapes retail pricing, margin levers, and D2C brand positioning. This piece maps how converters, co-packers, and finishing houses are quietly rewiring value chains — and why brands are paying a premium for packaging that performs as a product."
 },
 {
