@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/why-your-brain-loves-short-videos-and-feels-empty-after-nov-21-2025",
-    "title": "Why Your Brain Loves Short Videos (and Why It Still Feels Empty After)",
+    "title": "Why Your Brain Loves Shorts (and Why It Still Feels Empty After)",
     "blurb": "Three-second clips deliver tiny dopamine spikes that keep your thumb scrolling, but starve the deeper reward circuits that make stories feel satisfying. A clear, human guide to what short videos do to attention, mood, and why the high never quite lands as happiness."
   }
 ];
