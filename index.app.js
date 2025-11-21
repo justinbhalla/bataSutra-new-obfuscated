@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/supply-chain-of-aesthetics-packaging-vendors-power-brokers-nov-18-2025",
-"title": "Supply Chain of Aesthetics: Vendors Are Becoming Brokers",
-"blurb": "As quiet-luxury design floods the market, packaging vendors are moving from suppliers to strategic partners. Their access to specialty materials, finishing techniques, and agile production slots now shapes retail pricing, margin levers, and D2C brand positioning. This piece maps how converters, co-packers, and finishing houses are quietly rewiring value chains — and why brands are paying a premium for packaging that performs as a product."
-},
-{
-"href": "/articles/early-dementia-flags-nighttime-movement-smart-mattresses-nov-18-2025",
-"title": "The Early Dementia Flags Hidden in Night-Time Movement Patterns",
-"blurb": "New signal-processing models show subtle limb-movement signatures captured by smart mattresses predict cognitive decline years before clinical symptoms appear. By combining nocturnal kinematic patterns with longitudinal health data, researchers are building earlier, low-friction screening tools — with major implications for clinical trials, caregiving, and privacy. We explain the science, the evidence, and the ethical questions that follow."
-}
+    "href": "/articles/return-of-the-third-place-cafes-bookstores-full-again-nov-21-2025",
+    "title": "The Return of the ‘Third Place’: Cafés and Bookstores Are Full Again",
+    "blurb": "Starbucks queues, indie roasteries, and revived bookstores point to the same story: people are paying for soft social noise, not just coffee. We trace how footfall, dwell-time, and TikTok aesthetics turned cafés and bookshops back into the world’s favourite ‘in-between’ spaces."
+  },
+  {
+    "href": "/articles/why-your-brain-loves-short-videos-and-feels-empty-after-nov-21-2025",
+    "title": "Why Your Brain Loves Short Videos (and Why It Still Feels Empty After)",
+    "blurb": "Three-second clips deliver tiny dopamine spikes that keep your thumb scrolling, but starve the deeper reward circuits that make stories feel satisfying. A clear, human guide to what short videos do to attention, mood, and why the high never quite lands as happiness."
+  }
 ];
 
 
