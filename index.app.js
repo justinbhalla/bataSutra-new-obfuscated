@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/return-of-the-third-place-cafes-bookstores-full-again-nov-21-2025",
-    "title": "The Return of the ‘Third Place’: Cafés and Bookstores Are Full Again",
-    "blurb": "Starbucks queues, indie roasteries, and revived bookstores point to the same story: people are paying for soft social noise, not just coffee. We trace how footfall, dwell-time, and TikTok aesthetics turned cafés and bookshops back into the world’s favourite ‘in-between’ spaces."
+    "href": "/articles/new-badge-of-cool-why-teens-are-buying-old-tech-again-nov-2025",
+    "title": "The New Badge of Cool: Why Teenagers Are Buying Old Tech Again",
+    "blurb": "From iPods climbing Depop charts to point-and-shoot cameras selling out, Gen Z is reviving early-2000s devices. Our grid compares resale price jumps and search spikes — showing why retro tech fits a world where ‘the future’ feels too fast."
   },
   {
-    "href": "/articles/why-your-brain-loves-short-videos-and-feels-empty-after-nov-21-2025",
-    "title": "Why Your Brain Loves Shorts (and Why It Still Feels Empty After)",
-    "blurb": "Three-second clips deliver tiny dopamine spikes that keep your thumb scrolling, but starve the deeper reward circuits that make stories feel satisfying. A clear, human guide to what short videos do to attention, mood, and why the high never quite lands as happiness."
+    "href": "/articles/your-stress-has-a-sound-biomarkers-hidden-in-your-voice-nov-2025",
+    "title": "Your Stress Has a Sound: The New Biomarkers Hidden in Your Voice",
+    "blurb": "Micro tremors in speech — jitter, shimmer, cadence shifts — are emerging as powerful stress markers. We break down which signals correlate most with load, and how wearables now listen for fatigue before you notice it yourself."
   }
 ];
 
