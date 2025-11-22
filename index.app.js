@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/new-badge-of-cool-why-teens-are-buying-old-tech-again-nov-2025",
-    "title": "The New Badge of Cool: Why Teenagers Are Buying Old Tech Again",
+    "title": "Badge of Cool: Why Teenagers Are Buying Old Tech Again",
     "blurb": "From iPods climbing Depop charts to point-and-shoot cameras selling out, Gen Z is reviving early-2000s devices. Our grid compares resale price jumps and search spikes — showing why retro tech fits a world where ‘the future’ feels too fast."
   },
   {
     "href": "/articles/your-stress-has-a-sound-biomarkers-hidden-in-your-voice-nov-2025",
-    "title": "Your Stress Has a Sound: The New Biomarkers Hidden in Your Voice",
+    "title": "Your Stress Has a Sound: Biomarkers Hidden in Your Voice",
     "blurb": "Micro tremors in speech — jitter, shimmer, cadence shifts — are emerging as powerful stress markers. We break down which signals correlate most with load, and how wearables now listen for fatigue before you notice it yourself."
   }
 ];
