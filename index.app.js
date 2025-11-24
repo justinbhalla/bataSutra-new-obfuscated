@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/ai-at-work-co-worker-you-didnt-hire-report-to-nov-2025",
     "title": "AI at Work: The Co-Worker You Didn’t Hire but Now Report To",
-    "blurb": "AI no longer waits for prompts — it summarizes your meetings, drafts your emails, ranks your priorities, and quietly shapes decisions before you do. A deep dive into how AI became the colleague you never hired, how it changes visibility, speed, and responsibility, and the one rule that keeps humans valuable: compete on interpretation, not output."
+    "blurb": "AI no longer waits for prompts — it summarizes your meetings, drafts your emails, ranks your priorities, and quietly shapes decisions before you do. A deep dive into how AI became the colleague you never hired, how it changes visibility, speed, and responsibility, and the one rule that keeps humans valuable: compete on interpretation."
   },
   {
     "href": "/articles/glp1-effect-ozempic-food-fitness-pharma-nov-2025",
