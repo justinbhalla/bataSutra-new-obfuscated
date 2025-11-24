@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/new-badge-of-cool-why-teens-are-buying-old-tech-again-nov-2025",
-    "title": "Badge of Cool: Why Teenagers Are Buying Old Tech Again",
-    "blurb": "From iPods climbing Depop charts to point-and-shoot cameras selling out, Gen Z is reviving early-2000s devices. Our grid compares resale price jumps and search spikes — showing why retro tech fits a world where ‘the future’ feels too fast."
+    "href": "/articles/ai-at-work-co-worker-you-didnt-hire-report-to-nov-2025",
+    "title": "AI at Work: The Co-Worker You Didn’t Hire but Now Report To",
+    "blurb": "AI no longer waits for prompts — it summarizes your meetings, drafts your emails, ranks your priorities, and quietly shapes decisions before you do. A deep dive into how AI became the colleague you never hired, how it changes visibility, speed, and responsibility, and the one rule that keeps humans valuable: compete on interpretation, not output."
   },
   {
-    "href": "/articles/your-stress-has-a-sound-biomarkers-hidden-in-your-voice-nov-2025",
-    "title": "Your Stress Has a Sound: Biomarkers Hidden in Your Voice",
-    "blurb": "Micro tremors in speech — jitter, shimmer, cadence shifts — are emerging as powerful stress markers. We break down which signals correlate most with load, and how wearables now listen for fatigue before you notice it yourself."
+    "href": "/articles/glp1-shockwaves-ozempic-food-fitness-pharma-nov-2025",
+    "title": "GLP-1 Shockwaves: How Ozempic-Style Drugs Are Rewriting Food, Fitness, and Pharma",
+    "blurb": "From grocery baskets to gym attendance to blockbuster R&D pipelines, GLP-1 drugs are reshaping billions in consumer behavior and industry economics. A full read on appetite shifts, supply-demand crunches, retail impact, and why weight-loss drugs may become the defining health infrastructure of the decade."
   }
 ];
 
