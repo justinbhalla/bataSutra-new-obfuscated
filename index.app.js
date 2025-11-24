@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/glp1-shockwaves-ozempic-food-fitness-pharma-nov-2025",
-    "title": "GLP-1 Shockwaves: How Ozempic-Style Drugs Are Rewriting Food, Fitness, and Pharma",
+    "title": "GLP-1 Shockwaves: How Ozempic-Style Drugs Are Rewriting Pharma",
     "blurb": "From grocery baskets to gym attendance to blockbuster R&D pipelines, GLP-1 drugs are reshaping billions in consumer behavior and industry economics. A full read on appetite shifts, supply-demand crunches, retail impact, and why weight-loss drugs may become the defining health infrastructure of the decade."
   }
 ];
