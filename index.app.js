@@ -9,7 +9,7 @@ const ARTICLES = [
     "blurb": "AI no longer waits for prompts — it summarizes your meetings, drafts your emails, ranks your priorities, and quietly shapes decisions before you do. A deep dive into how AI became the colleague you never hired, how it changes visibility, speed, and responsibility, and the one rule that keeps humans valuable: compete on interpretation, not output."
   },
   {
-    "href": "/articles/glp1-shockwaves-ozempic-food-fitness-pharma-nov-2025",
+    "href": "/articles/glp1-effect-ozempic-food-fitness-pharma-nov-2025",
     "title": "GLP-1 Effect: How Ozempic-Style Drugs Are Rewriting Pharma",
     "blurb": "From grocery baskets to gym attendance to blockbuster R&D pipelines, GLP-1 drugs are reshaping billions in consumer behavior and industry economics. A full read on appetite shifts, supply-demand crunches, retail impact, and why weight-loss drugs may become the defining health infrastructure of the decade."
   }
