@@ -4,7 +4,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-zero-app-why-free-is-becoming-the-most-expensive-price-nov-25-2025",
+    "href": "/articles/the-zero-app-why-free-is-becoming-the-most-expensive-price-nov-25",
     "title": "The $0 App: Why ‘Free’ Is Becoming the Most Expensive Price",
     "blurb": "From short-video feeds to AI sidekicks, the apps that look free are increasingly paid for with time, data, and dependency. We break down how attention, lock-in, and tiny “friction taxes” turn ₹0 products into some of the costliest habits in your digital life."
   },
