@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/ai-at-work-co-worker-you-didnt-hire-report-to-nov-2025",
-    "title": "AI at Work: The Co-Worker You Didn’t Hire but Now Report To",
-    "blurb": "AI no longer waits for prompts — it summarizes your meetings, drafts your emails, ranks your priorities, and quietly shapes decisions before you do. A deep dive into how AI became the colleague you never hired, how it changes visibility, speed, and responsibility, and the one rule that keeps humans valuable: compete on interpretation."
+    "href": "/articles/the-zero-app-why-free-is-becoming-the-most-expensive-price-nov-25-2025",
+    "title": "The $0 App: Why ‘Free’ Is Becoming the Most Expensive Price",
+    "blurb": "From short-video feeds to AI sidekicks, the apps that look free are increasingly paid for with time, data, and dependency. We break down how attention, lock-in, and tiny “friction taxes” turn ₹0 products into some of the costliest habits in your digital life."
   },
   {
-    "href": "/articles/glp1-effect-ozempic-food-fitness-pharma-nov-2025",
-    "title": "GLP-1 Effect: How Ozempic-Style Drugs Are Rewriting Pharma",
-    "blurb": "From grocery baskets to gym attendance to blockbuster R&D pipelines, GLP-1 drugs are reshaping billions in consumer behavior and industry economics. A full read on appetite shifts, supply-demand crunches, retail impact, and why weight-loss drugs may become the defining health infrastructure of the decade."
+    "href": "/articles/your-body-clock-isnt-24-hours-its-24-2-nov-25-2025",
+    "title": "Your Body Clock Isn’t 24 Hours — It’s 24.2",
+    "blurb": "Left alone, your inner day runs a little long — and light, screens, and alarm clocks drag it back into a 24-hour world. This explainer walks through the 24.2-hour body clock, social jet lag, and the small daily cues that decide how awake, hungry, and stable you feel."
   }
 ];
 
