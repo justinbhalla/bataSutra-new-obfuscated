@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/brain-fog-explained-three-theories-finally-converging-nov-26-2025",
-    "title": "Brain Fog Explained: The Three Theories Finally Converging",
+    "title": "Brain Fog Explained: Three Theories Finally Converging",
     "blurb": "Brain fog isn’t laziness; it’s biology under strain. This long-read unpacks how inflammation, broken sleep, and neurotransmitter imbalance layer into the same slow-thinking, lost-words feeling — with a clear diagram tying cause to symptom to recovery timelines, plus one practical rule: protect your first two hours of sleep."
   }
 ];
