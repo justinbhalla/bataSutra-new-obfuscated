@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/new-resale-economy-young-shoppers-treat-everything-temporary-nov-26-2025",
-    "title": "The New Resale Economy: Why Young Shoppers Treat Everything As Temporary",
+    "title": "The Resale Economy: Why Shoppers Treat Everything As Temporary",
     "blurb": "From iPhones to fast fashion, Gen Z now shops with resale value in mind. We track how Vinted, Depop, and refurbished phone programs turned “owning” into “renting life upgrades,” with a grid on category-wise resale percentages, days-to-flip, and the new math behind buying anything twice."
   },
   {
