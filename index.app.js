@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-zero-app-why-free-is-becoming-the-most-expensive-price-nov-25",
-    "title": "The $0 App: Why ‘Free’ Is Becoming the Most Expensive Price",
-    "blurb": "From short-video feeds to AI sidekicks, the apps that look free are increasingly paid for with time, data, and dependency. We break down how attention, lock-in, and tiny “friction taxes” turn ₹0 products into some of the costliest habits in your digital life."
+    "href": "/articles/new-resale-economy-young-shoppers-treat-everything-temporary-nov-26-2025",
+    "title": "The New Resale Economy: Why Young Shoppers Treat Everything As Temporary",
+    "blurb": "From iPhones to fast fashion, Gen Z now shops with resale value in mind. We track how Vinted, Depop, and refurbished phone programs turned “owning” into “renting life upgrades,” with a grid on category-wise resale percentages, days-to-flip, and the new math behind buying anything twice."
   },
   {
-    "href": "/articles/your-body-clock-isnt-24-hours-its-24-2-nov-25-2025",
-    "title": "Your Body Clock Isn’t 24 Hours — It’s 24.2",
-    "blurb": "Left alone, your inner day runs a little long — and light, screens, and alarm clocks drag it back into a 24-hour world. This explainer walks through the 24.2-hour body clock, social jet lag, and the small daily cues that decide how awake, hungry, and stable you feel."
+    "href": "/articles/brain-fog-explained-three-theories-finally-converging-nov-26-2025",
+    "title": "Brain Fog Explained: The Three Theories Finally Converging",
+    "blurb": "Brain fog isn’t laziness; it’s biology under strain. This long-read unpacks how inflammation, broken sleep, and neurotransmitter imbalance layer into the same slow-thinking, lost-words feeling — with a clear diagram tying cause to symptom to recovery timelines, plus one practical rule: protect your first two hours of sleep."
   }
 ];
 
