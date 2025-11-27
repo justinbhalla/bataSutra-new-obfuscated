@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/new-resale-economy-young-shoppers-treat-everything-temporary-nov-26-2025",
-    "title": "The Resale Economy: Why Shoppers Treat Everything As Temporary",
-    "blurb": "From iPhones to fast fashion, Gen Z now shops with resale value in mind. We track how Vinted, Depop, and refurbished phone programs turned “owning” into “renting life upgrades,” with a grid on category-wise resale percentages, days-to-flip, and the new math behind buying anything twice."
+    "href": "/articles/return-of-the-lunch-break-how-offices-bribe-employees-back-nov-2026",
+    "title": "The Return of the Lunch Break: How Offices Are Learning to Bribe Employees Back",
+    "blurb": "From upgraded cafeterias and quiet pods to barista bars and ‘no-meeting’ zones, companies are discovering that free food and softer spaces pull people back to office far better than hard mandates. We walk through the new perks grid—city-wise footfall trends, average dwell time, and what actually gets people to leave their kitchen table."
   },
   {
-    "href": "/articles/brain-fog-explained-three-theories-finally-converging-nov-26-2025",
-    "title": "Brain Fog Explained: Three Theories Finally Converging",
-    "blurb": "Brain fog isn’t laziness; it’s biology under strain. This long-read unpacks how inflammation, broken sleep, and neurotransmitter imbalance layer into the same slow-thinking, lost-words feeling — with a clear diagram tying cause to symptom to recovery timelines, plus one practical rule: protect your first two hours of sleep."
+    "href": "/articles/digital-echoes-what-your-typing-rhythm-reveals-about-your-brain-nov-2026",
+    "title": "Digital Echoes: What Your Typing Rhythm Reveals About Your Brain",
+    "blurb": "Keystroke timing turns out to be a quiet stress meter: tiny pauses, correction storms, and ‘sticky’ key-holds can flag fatigue and overload hours before you feel burned out. This piece breaks down the science of typing rhythms, the table linking variance to burnout scores, and the privacy line between helpful early warning and creepy surveillance."
   }
 ];
 
