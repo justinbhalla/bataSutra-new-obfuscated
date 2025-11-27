@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/return-of-the-lunch-break-how-offices-bribe-employees-back-nov-2026",
-    "title": "Return of the Lunch Break: Offices Are Learning to Bribe Employees Back",
+    "title": "Return of the Lunch Break: Offices Are Learning to Bribe Employees",
     "blurb": "From upgraded cafeterias and quiet pods to barista bars and ‘no-meeting’ zones, companies are discovering that free food and softer spaces pull people back to office far better than hard mandates. We walk through the new perks grid—city-wise footfall trends, average dwell time, and what actually gets people to leave their kitchen table."
   },
   {
