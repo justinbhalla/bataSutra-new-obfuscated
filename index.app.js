@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
 "href": "/articles/fast-fashion-isnt-fast-enough-tiktok-trends-vs-delivery-nov-2025",
-"title": "Fast Fashion Isn’t Fast Enough: When TikTok Trends Die Before Clothes Arrive",
+"title": "Fast Fashion Isn’t Fast Enough: When TikTok Trends Die",
 "blurb": "TikTok trend cycles now turn over in days, while most fashion supply chains still think in seasons. This piece follows the full arc — from a sound going viral to outfits hitting checkout — and shows where the lag lives, using a grid of category × delivery time × trend lifespan plus concrete examples of brands speeding up, slowing down, or being left with dead inventory."
 },
 {
 "href": "/articles/zoom-dysmorphia-how-cameras-distort-the-face-and-the-mind-nov-2025",
-"title": "Zoom Dysmorphia: How Cameras Distort the Face — and the Mind",
+"title": "Zoom Dysmorphia: How Cameras Distort the Face",
 "blurb": "Wide lenses, close distances, and always-on self-view quietly reshape how we see our own faces. This long read blends optics, psychology, and culture — explaining why video calls exaggerate noses and soften jaws, how that feeds cosmetic anxiety, and what simple fixes (distance, angle, self-view settings) can undo most of the damage to both appearance and confidence."
 }
 ];
