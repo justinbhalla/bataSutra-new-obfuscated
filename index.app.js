@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/return-of-the-lunch-break-how-offices-bribe-employees-back-nov-2026",
-    "title": "Return of the Lunch Break: Offices Are Learning to Bribe Employees",
-    "blurb": "From upgraded cafeterias and quiet pods to barista bars and ‘no-meeting’ zones, companies are discovering that free food and softer spaces pull people back to office far better than hard mandates. We walk through the new perks grid—city-wise footfall trends, average dwell time, and what actually gets people to leave their kitchen table."
-  },
-  {
-    "href": "/articles/digital-echoes-what-your-typing-rhythm-reveals-about-your-brain-nov-2026",
-    "title": "Digital Echoes: What Your Typing Rhythm Reveals About Your Brain",
-    "blurb": "Keystroke timing turns out to be a quiet stress meter: tiny pauses, correction storms, and ‘sticky’ key-holds can flag fatigue and overload hours before you feel burned out. This piece breaks down the science of typing rhythms, the table linking variance to burnout scores, and the privacy line between helpful early warning and creepy surveillance."
-  }
+"href": "/articles/fast-fashion-isnt-fast-enough-tiktok-trends-vs-delivery-nov-2025",
+"title": "Fast Fashion Isn’t Fast Enough: When TikTok Trends Die Before Clothes Arrive",
+"blurb": "TikTok trend cycles now turn over in days, while most fashion supply chains still think in seasons. This piece follows the full arc — from a sound going viral to outfits hitting checkout — and shows where the lag lives, using a grid of category × delivery time × trend lifespan plus concrete examples of brands speeding up, slowing down, or being left with dead inventory."
+},
+{
+"href": "/articles/zoom-dysmorphia-how-cameras-distort-the-face-and-the-mind-nov-2025",
+"title": "Zoom Dysmorphia: How Cameras Distort the Face — and the Mind",
+"blurb": "Wide lenses, close distances, and always-on self-view quietly reshape how we see our own faces. This long read blends optics, psychology, and culture — explaining why video calls exaggerate noses and soften jaws, how that feeds cosmetic anxiety, and what simple fixes (distance, angle, self-view settings) can undo most of the damage to both appearance and confidence."
+}
 ];
 
 
