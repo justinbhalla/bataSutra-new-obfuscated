@@ -10,8 +10,8 @@ const ARTICLES = [
   },
   {
     "href": "/articles/half-asleep-brain-first-seven-minutes-wake-nov",
-    "title": "Half-Asleep Brain: Why Your First 7 Minutes After Waking Predict Mental Performance",
-    "blurb": "Your brain doesn’t boot instantly. Early post-wake lag in attention and control networks quietly shapes focus, error rates, and task switching for the next couple of hours. This piece explains the science of sleep inertia, shows how those first minutes map to performance, and offers a simple rule for better mornings."
+    "title": "Why Your First 7 Minutes After Waking Predict Mental Performance",
+    "blurb": "Your brain doesn’t boot instantly. Early post-wake lag in attention and control networks quietly shapes focus, error rates, and task switching for the next couple of hours. This piece explains the science of sleep inertia, shows how those first minutes map to performance."
   }
 ];
 
