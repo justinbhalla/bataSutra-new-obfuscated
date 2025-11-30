@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/fast-fashion-isnt-fast-enough-tiktok-trends-vs-delivery-nov-2025",
-"title": "Fast Fashion Isn’t Fast Enough: When TikTok Trends Die",
-"blurb": "TikTok trend cycles now turn over in days, while most fashion supply chains still think in seasons. This piece follows the full arc — from a sound going viral to outfits hitting checkout — and shows where the lag lives, using a grid of category × delivery time × trend lifespan plus concrete examples of brands speeding up, slowing down, or being left with dead inventory."
-},
-{
-"href": "/articles/zoom-dysmorphia-how-cameras-distort-the-face-and-the-mind-nov-2025",
-"title": "Zoom Dysmorphia: How Cameras Distort the Face",
-"blurb": "Wide lenses, close distances, and always-on self-view quietly reshape how we see our own faces. This long read blends optics, psychology, and culture — explaining why video calls exaggerate noses and soften jaws, how that feeds cosmetic anxiety, and what simple fixes (distance, angle, self-view settings) can undo most of the damage to both appearance and confidence."
-}
+    "href": "/articles/influencers-one-person-qvc-retail-channel-nov",
+    "title": "Influencers Are Now Retail Channels: Rise of 1-Person QVC",
+    "blurb": "Live shopping and creator storefronts have turned individuals into full retail channels, often beating brands on conversion. We break down where creators win, where unit economics get tricky, and how categories like beauty, fashion, and home goods behave in a one-person QVC world."
+  },
+  {
+    "href": "/articles/half-asleep-brain-first-seven-minutes-wake-nov",
+    "title": "Half-Asleep Brain: Why Your First 7 Minutes After Waking Predict Mental Performance",
+    "blurb": "Your brain doesn’t boot instantly. Early post-wake lag in attention and control networks quietly shapes focus, error rates, and task switching for the next couple of hours. This piece explains the science of sleep inertia, shows how those first minutes map to performance, and offers a simple rule for better mornings."
+  }
 ];
 
 
