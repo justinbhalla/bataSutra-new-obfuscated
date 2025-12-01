@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/influencers-one-person-qvc-retail-channel-nov",
-    "title": "Influencers Are Now Retail Channels: Rise of 1-Person QVC",
-    "blurb": "Live shopping and creator storefronts have turned individuals into full retail channels, often beating brands on conversion. We break down where creators win, where unit economics get tricky, and how categories like beauty, fashion, and home goods behave in a one-person QVC world."
+    "href": "/articles/concert-tickets-are-now-finance-subscriptions-waitlists-dynamic-pricing-dec-1-2025",
+    "title": "Concert Tickets Are Now Finance: Subscriptions, Waitlists, Dynamic Pricing",
+    "blurb": "From Taylor Swift tiers to arena ‘passes,’ live music now runs on subscriptions, credit-like waitlists, and surge-style pricing. We break down how tickets became a financial product—who gets access, who eats the risk, and the new rules for fans, venues, and promoters when FOMO meets yield math."
   },
   {
-    "href": "/articles/half-asleep-brain-first-seven-minutes-wake-nov",
-    "title": "Why Your First 7 Minutes After Waking Predict Mental Performance",
-    "blurb": "Your brain doesn’t boot instantly. Early post-wake lag in attention and control networks quietly shapes focus, error rates, and task switching for the next couple of hours. This piece explains the science of sleep inertia, shows how those first minutes map to performance."
+    "href": "/articles/brain-noise-hidden-signal-that-predicts-innovation-dec-1-2025",
+    "title": "Brain Noise: The Hidden Signal That Predicts Innovation",
+    "blurb": "That messy mind you apologise for—drifting in showers, on walks, mid-email—turns out to be the creativity engine. This piece unpacks how neural ‘noise,’ daydreaming, and idea fragments link to breakthrough thinking, why total focus can backfire, and how to protect the kind of mental chaos that actually produces original work."
   }
 ];
 
