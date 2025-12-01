@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/concert-tickets-are-now-finance-subscriptions-waitlists-dynamic-pricing-dec-1-2025",
-    "title": "Concert Tickets Are Now Finance: Subscriptions, Waitlists, Dynamic Pricing",
+    "title": "Concert Tickets Are Now Finance: Subscriptions, Waitlists, Pricing",
     "blurb": "From Taylor Swift tiers to arena ‘passes,’ live music now runs on subscriptions, credit-like waitlists, and surge-style pricing. We break down how tickets became a financial product—who gets access, who eats the risk, and the new rules for fans, venues, and promoters when FOMO meets yield math."
   },
   {
