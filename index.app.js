@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/concert-tickets-are-now-finance-subscriptions-waitlists-dynamic-pricing-dec-1-2025",
-    "title": "Concert Tickets Are Now Finance: Subscriptions, Waitlists, Pricing",
-    "blurb": "From Taylor Swift tiers to arena ‘passes,’ live music now runs on subscriptions, credit-like waitlists, and surge-style pricing. We break down how tickets became a financial product—who gets access, who eats the risk, and the new rules for fans, venues, and promoters when FOMO meets yield math."
-  },
-  {
-    "href": "/articles/brain-noise-hidden-signal-that-predicts-innovation-dec-1-2025",
-    "title": "Brain Noise: The Hidden Signal That Predicts Innovation",
-    "blurb": "That messy mind you apologise for—drifting in showers, on walks, mid-email—turns out to be the creativity engine. This piece unpacks how neural ‘noise,’ daydreaming, and idea fragments link to breakthrough thinking, why total focus can backfire, and how to protect the kind of mental chaos that actually produces original work."
-  }
+"href": "/articles/dark-store-blitz-amazon-now-urban-logistics-dec-2-2025",
+"title": "Dark-Store Blitz: Amazon Now and the New Urban Logistics Map",
+"blurb": "Amazon Now’s plan to open dark stores at a two-a-day clip in Indian metros is building a second, invisible city of micro-warehouses, riders, and routing algorithms. This piece explains how the dark-store grid reshapes neighbourhood rents, kirana bargaining power, rider jobs, and the next wave of ONDC and zoning debates."
+},
+{
+"href": "/articles/robots-that-anticipate-you-fujitsu-spatial-world-models-dec-2-2025",
+"title": "Robots That Anticipate You: Fujitsu’s Human–Robot Choreography",
+"blurb": "Fujitsu and Carnegie Mellon’s “social digital twin” turns ordinary cameras into predictive 3D models of streets, warehouses, and corridors. We unpack how robots that anticipate your next step—not just avoid collisions—will be choreographed in factories, hospitals, and campuses, and what that means for surveillance."
+}
 ];
 
 
