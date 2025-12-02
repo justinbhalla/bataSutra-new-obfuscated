@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Robots That Anticipate You: Fujitsu’s Spatial World Models and Human–Robot Choreography — bataSutra</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Fujitsu’s Social Digital Twin work with Carnegie Mellon shows how AI can predict human movement in 3D — a preview of how robots will move around us in warehouses, hospitals, and cities.">
+  <meta name="author" content="bataSutra Research">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Robots That Anticipate You: Fujitsu’s Spatial World Models and Human–Robot Choreography">
+  <meta property="og:description" content="From traffic intersections to hospital corridors, predictive digital twins are becoming the choreography engine for humans and robots sharing space.">
+  <meta property="og:site_name" content="bataSutra">
+  <meta property="og:url" content="https://www.batasutra.in/articles/robots-that-anticipate-you-fujitsu-spatial-world-models-dec-2-2025">
+  <meta property="og:image" content="https://www.batasutra.in/assets/og/robots-anticipate-you.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Robots That Anticipate You: Fujitsu’s Spatial World Models and Human–Robot Choreography">
+  <meta name="twitter:description" content="Why the next generation of robots will move less like machines and more like good colleagues in a crowded office.">
+  <meta name="twitter:image" content="https://www.batasutra.in/assets/og/robots-anticipate-you.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Robots That Anticipate You: Fujitsu’s Spatial World Models and Human–Robot Choreography",
+    "description": "Fujitsu’s Social Digital Twin work with Carnegie Mellon shows how AI can predict human movement in 3D — a preview of how robots will move around us in warehouses, hospitals, and cities.",
+    "author": {
+      "@type": "Organization",
+      "name": "bataSutra Research"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "bataSutra",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.batasutra.in/assets/logo.png"
+      }
+    },
+    "datePublished": "2025-12-02",
+    "dateModified": "2025-12-02",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://www.batasutra.in/articles/robots-that-anticipate-you-fujitsu-spatial-world-models-dec-2-2025"
+    }
+  }
+  </script>
+
+  <!-- Fonts & basic styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      background: #ffffff; /* white background */
+      color: #020617;      /* dark text */
+    }
+    .page-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 32px 16px 64px;
+    }
+    header.article-header {
+      margin-bottom: 32px;
+    }
+    .kicker {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8b0000; /* red accent */
+      font-weight: 600;
+    }
+    h1.title {
+      font-size: clamp(2rem, 3vw, 2.5rem);
+      line-height: 1.2;
+      margin: 12px 0 10px;
+      font-weight: 700;
+      color: #020617;
+    }
+    .dek {
+      font-size: 1rem;
+      max-width: 640px;
+      color: #4b5563;
+    }
+    .meta-line {
+      margin-top: 10px;
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+    .meta-line span.brand {
+      font-weight: 600;
+      color: #020617;
+    }
+    .meta {
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: #6b7280;
+    }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      margin-right: 8px;
+      background: #f9fafb;
+    }
+    .pill strong {
+      font-weight: 600;
+      margin-right: 4px;
+      color: #020617;
+    }
+    .divider {
+      border-top: 1px solid #e5e7eb;
+      margin: 24px 0 20px;
+    }
+    h2 {
+      font-size: 1.25rem;
+      margin: 24px 0 8px;
+      color: #020617;
+    }
+    h3 {
+      font-size: 1.05rem;
+      margin: 20px 0 6px;
+      color: #020617;
+    }
+    p {
+      margin: 10px 0;
+      font-size: 0.96rem;
+    }
+    ul {
+      margin: 8px 0 16px 20px;
+      padding: 0;
+      font-size: 0.95rem;
+    }
+    li {
+      margin: 4px 0;
+    }
+    .the-short-block {
+      border-radius: 16px;
+      border: 1px solid #fecaca;
+      padding: 16px 18px;
+      background: #fff5f5; /* pale red tint */
+      margin-bottom: 16px;
+    }
+    .the-short-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #8b0000; /* red accent */
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .one-takeaway {
+      border-radius: 16px;
+      border: 1px dashed #cbd5e1;
+      padding: 16px 18px;
+      margin-top: 28px;
+      background: #f9fafb;
+      font-size: 0.95rem;
+    }
+    .one-takeaway strong {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      display: block;
+      margin-bottom: 6px;
+      color: #8b0000;
+    }
+    .disclaimer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid #e5e7eb;
+      font-size: 0.8rem;
+      color: #6b7280;
+    }
+    .disclaimer strong {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.7rem;
+      display: block;
+      margin-bottom: 4px;
+      color: #8b0000;
+    }
+  </style>
+</head>
+<body>
+  <main class="page-wrap">
+    <header class="article-header">
+      <div class="kicker">Science · Robotics &amp; AI</div>
+      <h1 class="title">Robots That Anticipate You: Fujitsu’s Spatial World Models and Human–Robot Choreography</h1>
+      <p class="dek">
+        Fujitsu’s “social digital twin” work with Carnegie Mellon shows how AI can reconstruct crowded streets in 3D and predict movement. The same idea will decide how safely robots move around us in warehouses, hospitals and homes.
+      </p>
+      <div class="meta-line">
+        <span class="brand">bataSutra Editorial</span>
+        <span> · </span>
+        <span>December 2, 2025</span>
+      </div>
+      <div class="meta">
+        <span class="pill"><strong>Category</strong> Science / Tech</span>
+        <span class="pill"><strong>Reading time</strong> 7–8 minutes</span>
+      </div>
+    </header>
+
+    <section class="the-short-block">
+      <div class="the-short-label">The Short</div>
+      <p>
+        Fujitsu and Carnegie Mellon University have developed an AI system that turns ordinary 2D camera footage into a dynamic 3D model of people and vehicles, tracking movement in real time. It is part of a broader “Social Digital Twin” vision: a live, predictive digital copy of real-world spaces where you can test how humans and machines will move before anything happens in the physical world.
+      </p>
+      <p>
+        Today it is being trialled at intersections in Pittsburgh. Tomorrow, the same idea could decide how a robot nurse walks around a crowded ward without bumping into anyone.
+      </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <article>
+      <!-- (unchanged body content) -->
+      <h2>1. What did Fujitsu actually build?</h2>
+      <p>
+        Under the joint project, a standard monocular RGB camera — essentially a normal CCTV — captures a busy scene with cars, pedestrians and cyclists. Fujitsu’s AI stack then does two key jobs:
+      </p>
+      <ul>
+        <li><strong>3D occupancy estimation</strong> to infer the 3D shape and volume each object occupies using deep learning.</li>
+        <li><strong>3D projection</strong> to place each object into a virtual 3D scene at the right position and scale.</li>
+      </ul>
+      <p>
+        The result is a live 3D “mini-city” where you can see how every object is moving and where it will be next across a short time horizon. Faces and licence plates are blurred to preserve privacy.
+      </p>
+      <p>
+        On top of this spatial layer, Fujitsu is building broader Social Digital Twins that combine movement with behavioural models — how people react to weather, policies and incentives.
+      </p>
+
+      <h2>2. Why anticipation matters more than recognition</h2>
+      <p>
+        Most people think of AI vision as recognising that something is a person, a car or a chair. For robots sharing space with humans, that is not enough. They need to answer two questions:
+      </p>
+      <ul>
+        <li>Where is everything now?</li>
+        <li>Where will everything be half a second, one second or three seconds from now?</li>
+      </ul>
+      <p>Real-world examples make this clearer:</p>
+      <ul>
+        <li>A warehouse robot has to guess if a human worker will bend down, speed up or turn left around a rack.</li>
+        <li>A hospital robot carrying medicine must navigate patients, trolleys and nurses without stopping every two seconds in panic.</li>
+        <li>A sidewalk delivery bot must know whether a child on a scooter is about to cross its path or just circling in place.</li>
+      </ul>
+      <p>
+        Fujitsu’s approach — producing high-precision 3D scenes from relatively inexpensive cameras — is a way to give robots this anticipatory sense without rebuilding every environment with heavy specialised sensors.
+      </p>
+
+      <h2>3. From traffic lights to choreography engines</h2>
+      <p>
+        Right now, Fujitsu and CMU are trialling the technology on traffic intersections in Pittsburgh, using it to better understand flows and potential near-misses.
+      </p>
+      <p>
+        Conceptually, these digital twins act as choreography engines:
+      </p>
+      <ul>
+        <li>They track everyone in a space.</li>
+        <li>They simulate the next few seconds of movement.</li>
+        <li>They suggest micro-adjustments to reduce conflict and delay.</li>
+      </ul>
+      <p>In practice, that means:</p>
+      <ul>
+        <li>Robots can slow down earlier or reroute entirely.</li>
+        <li>Traffic lights can extend or shorten a phase by a few seconds based on anticipated queues.</li>
+        <li>Building systems can stagger elevator dispatches when 50 people leave a floor at once.</li>
+      </ul>
+      <p>
+        In a warehouse, this could mean fewer collisions, smarter route planning that protects human walking lanes and the ability to rehearse a new layout digitally before shifting racks and robots in the real building.
+      </p>
+      <p>
+        In a hospital, robots could yield earlier to wheelchairs or stretchers, and corridors could be dynamically labelled as high-risk zones during shift changes.
+      </p>
+
+      <h2>4. The Social Digital Twin layer: modelling humans, not just objects</h2>
+      <p>
+        Fujitsu’s bigger bet is on Social Digital Twins — using AI plus social science to model not just movement, but behaviour. If you can simulate how people respond to policies, incentives and design changes, you can test options before rolling them out.
+      </p>
+      <p>Examples include:</p>
+      <ul>
+        <li>A city simulating the impact of closing one lane to cars on traffic, emissions and commute times.</li>
+        <li>A local government using policy-twin tools to test preventive healthcare programmes and see which combinations of nudges and campaigns yield better outcomes at lower cost.</li>
+      </ul>
+      <p>
+        When you plug robots into this, the questions change. You are no longer just asking whether a robot can avoid people. You are asking how the overall behaviour of a space changes if you introduce robots: do people slow down, cluster in different areas, or feel safer and more supported?
+      </p>
+
+      <h2>5. Where this shows up first in industry</h2>
+
+      <h3>A. Warehouses and factories</h3>
+      <p>
+        Expect early deployments where camera grids already exist and there is a strong return on investment for preventing downtime. A Social Digital Twin for a warehouse can:
+      </p>
+      <ul>
+        <li>Simulate adding more robots without touching the physical layout.</li>
+        <li>Show if human picking lanes become too narrow or congested.</li>
+        <li>Recommend alternative routes or scheduling to avoid bottlenecks.</li>
+      </ul>
+
+      <h3>B. Smart campuses and office parks</h3>
+      <p>
+        Property operators can use 3D movement models to optimise shuttle timing, drop-off points and lobby design. They can coordinate cleaning robots, security and human staff around actual movement patterns rather than guesswork.
+      </p>
+
+      <h3>C. Hospitals and elder care</h3>
+      <p>
+        Healthcare is more regulated, but the potential is large. Robots that can anticipate frail or unpredictable movement patterns and layouts tested in simulation to reduce fall risk are likely early themes. A hospital corridor can be tuned based on actual wheelchair, stretcher and staff flows rather than static architectural drawings.
+      </p>
+
+      <h2>6. Risks and open questions</h2>
+
+      <h3>1) Surveillance creep</h3>
+      <p>
+        If systems can reconstruct 3D scenes and predict movement, they can also track patterns of how people use a street or building, and flag “unusual” behaviour in ways that may be biased or opaque. Even when faces and licence plates are anonymised, movement signatures can be revealing — where someone usually comes from, where they go and how long they dwell.
+      </p>
+
+      <h3>2) Accountability when predictions fail</h3>
+      <p>
+        If a robot or traffic system based on a Social Digital Twin misjudges a movement and someone is hurt, responsibility becomes a shared question: is it the hardware vendor, the AI model provider or the operator? There is also the question of whether systems should maintain explainability logs that record the twin’s predictions at each step.
+      </p>
+
+      <h3>3) Standardisation</h3>
+      <p>
+        Different vendors will build their own twins. Without some standard, cities and campuses risk ending up with fragmented digital clones that cannot talk to each other, making it difficult to get a unified view of safety, traffic or energy.
+      </p>
+
+      <h2>7. What builders should take away</h2>
+      <p>
+        For teams working in robotics, logistics or smart-space design, the Fujitsu and CMU work is an early signal of what will become baseline:
+      </p>
+      <ul>
+        <li>Static maps are fading out. Robots and systems will be expected to operate on live, predictive spatial models, not just pre-drawn routes.</li>
+        <li>In many settings, cheap cameras plus good AI can approximate capabilities that previously required heavier hardware, bringing predictive spatial awareness to more places.</li>
+        <li>The real moat may be high-quality, labelled trajectory data — long sequences of how humans move in specific contexts such as warehouses, hospitals or stations.</li>
+      </ul>
+
+      <section class="one-takeaway">
+        <strong>One takeaway</strong>
+        Robots that simply avoid bumping into you are already yesterday’s news. The next generation will move more like good colleagues in a crowded office — anticipating your path, giving way when needed and coordinating with others. Social Digital Twins are an early look at the operating system for that choreography.
+      </section>
+
+      <section class="disclaimer">
+        <strong>Disclaimer</strong>
+        This bataSutra article is for informational and educational purposes only. It does not constitute engineering, medical, safety or regulatory advice, and it does not assess the fitness of any specific technology or vendor for a particular use case. Robotics and AI deployments can carry significant safety, privacy and ethical implications; organisations should conduct their own technical due diligence and consult qualified experts before implementation.
+      </section>
+    </article>
+  </main>
+</body>
+</html>
