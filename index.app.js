@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-"href": "/articles/dark-store-blitz-amazon-now-urban-logistics-dec-2-2025",
-"title": "Dark-Store Blitz: Amazon Now and the New Urban Logistics Map",
-"blurb": "Amazon Now’s plan to open dark stores at a two-a-day clip in Indian metros is building a second, invisible city of micro-warehouses, riders, and routing algorithms. This piece explains how the dark-store grid reshapes neighbourhood rents, kirana bargaining power, rider jobs, and the next wave of ONDC and zoning debates."
+  "href": "/articles/designing-products-in-a-dpdp-world-privacy-law-product-constraint-dec-3-2025",
+  "title": "Designing Products in a DPDP World: India’s Privacy Law as a Product Constraint",
+  "blurb": "India’s DPDP Act turns consent, purpose limitation and deletion into hard product constraints. This piece shows how Indian growth, UX and data teams need to redesign funnels, tracking and deletion flows when privacy becomes part of the product brief—not just a compliance PDF in a shared drive."
 },
 {
-"href": "/articles/robots-that-anticipate-you-fujitsu-spatial-world-models-dec-2-2025",
-"title": "Robots That Anticipate You: Fujitsu’s Human–Robot Choreography",
-"blurb": "Fujitsu and Carnegie Mellon’s “social digital twin” turns ordinary cameras into predictive 3D models of streets, warehouses, and corridors. We unpack how robots that anticipate your next step—not just avoid collisions—will be choreographed in factories, hospitals, and campuses, and what that means for surveillance."
+  "href": "/articles/neurotech-without-a-pause-button-bcis-headbands-cognitive-latency-dec-3-2025",
+  "title": "Neurotech Without a Pause Button: BCIs, Headbands and the Right to Cognitive Latency",
+  "blurb": "Brain–computer interfaces and consumer headbands are pushing neural signals into meeting rooms, classrooms and wellness apps. We unpack how neurotech without a pause button risks turning inner life into a KPI, why a right to ‘cognitive latency’ matters, and what responsible builders should do now."
 }
 ];
 
