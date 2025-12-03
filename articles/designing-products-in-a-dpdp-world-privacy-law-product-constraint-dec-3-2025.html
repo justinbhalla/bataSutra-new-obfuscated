@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="India’s Digital Personal Data Protection (DPDP) Act turns consent, purpose limitation and deletion into hard product constraints. For Indian apps, privacy is no longer a footer note — it’s part of UX and growth design."/>
+  <meta name="keywords" content="DPDP Act 2023, DPDP Rules 2025, India data protection, consent, product management, UX, growth, bataSutra"/>
+  <meta name="author" content="bataSutra"/>
+  <title>Designing Products in a DPDP World — bataSutra</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    :root { --brand:#8B0000; --bg:#fff; --ink:#111; --muted:#666; --light:#faf5f5; }
+    body { margin:0; font-family:'Inter',sans-serif; background:var(--bg); color:var(--ink); line-height:1.62; }
+    .wrap { max-width:960px; margin:0 auto; padding:0 18px; }
+    .header { background:var(--brand); color:#fff; padding:64px 24px 48px; }
+    .kicker { text-transform:uppercase; letter-spacing:.14em; font-weight:700; font-size:12px; opacity:.95; }
+    h1 { font-size:clamp(30px,4vw,48px); margin:8px 0 12px; line-height:1.18; }
+    .sub { font-size:clamp(16px,2.1vw,22px); opacity:.95; max-width:760px; }
+    .meta { margin-top:10px; font-size:13px; opacity:.9; }
+    main { padding:36px 0 72px; }
+    section { margin:34px 0; }
+    h2 { font-size:26px; margin:28px 0 12px; }
+    h3 { font-size:20px; margin:20px 0 10px; }
+    p { margin:12px 0; }
+    .callout { background:var(--light); border-left:4px solid var(--brand); padding:16px 18px; border-radius:8px; }
+    ul, ol { margin:12px 0 12px 20px; }
+    .table { width:100%; border-collapse:collapse; margin:18px 0; font-size:15px; }
+    .table th, .table td { border:1px solid #eee; padding:12px; text-align:left; }
+    .table th { background:#fafafa; }
+    blockquote { margin:20px 0; padding:12px 18px; border-left:4px solid #ddd; background:#fffaf8; border-radius:6px; font-style:italic; }
+    small.mute { color:var(--muted); }
+    .footer { margin:36px 0 0; padding-top:12px; border-top:1px solid #eee; }
+  </style>
+</head>
+
+<body>
+<header class="header">
+  <div class="wrap">
+    <div class="kicker">BUSINESS · DATA &amp; PRODUCT</div>
+    <h1>Designing Products in a DPDP World: India’s Privacy Law as a Product Constraint</h1>
+    <div class="sub">
+      India’s Digital Personal Data Protection (DPDP) Act doesn’t just add one more checkbox to onboarding. It hard-codes how much you can collect, why you can keep it, how long you can hold it, and how easily users can walk away. For Indian product teams, privacy is now part of the design brief — not a legal document in a shared folder.
+    </div>
+    <div class="meta">By bataSutra Editorial · December 3, 2025</div>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section>
+  <h2>The short</h2>
+  <div class="callout">
+    <ul>
+      <li><strong>Consent, purpose and deletion</strong> are no longer abstract principles — they define what your funnels, dashboards and CRM screens are allowed to do.</li>
+      <li><strong>“Collect first, decide later”</strong> breaks under DPDP: every new field and tracker needs a reason you can explain in one sentence.</li>
+      <li><strong>UX teams</strong> inherit hard work: clear notices, unbundled choices, and meaningful “no” options without dark patterns.</li>
+      <li><strong>Retention and deletion</strong> move from policy PDFs into actual product flows — erasure, export, and account closure need to be real features.</li>
+      <li><strong>Startups that treat privacy as design</strong> — not just compliance — will find it easier to sell to enterprises, regulators and global partners.</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>From “collect everything” to “collect with a reason”</h2>
+  <p>
+    For the past decade, the default growth mindset was simple: track as much as possible, store it forever, work out the monetisation later. The DPDP Act flips that script.
+  </p>
+  <p>
+    The law is built around concepts like <strong>purpose limitation</strong>, <strong>data minimisation</strong>, <strong>storage limitation</strong>, and <strong>user rights</strong>. In plain language:
+  </p>
+  <ul>
+    <li>You should only collect what you actually need for a specific purpose.</li>
+    <li>You should be able to state that purpose clearly up front.</li>
+    <li>You should not keep the data longer than necessary just because storage is cheap.</li>
+    <li>You should be able to delete or de-identify data once that purpose is over, subject to legal obligations.</li>
+  </ul>
+  <p>
+    That sounds abstract until you look at your own product:
+  </p>
+  <ul>
+    <li>Do you really need full date of birth, or will month and year do?</li>
+    <li>Do you have a business reason for storing every clickstream event and combining it with phone numbers?</li>
+    <li>Can you justify third-party tracking scripts on your landing pages beyond “we might run retargeting later”?</li>
+  </ul>
+  <p>
+    Under DPDP, those are no longer questions just for lawyers. They are design decisions for product managers and engineering leads.
+  </p>
+</section>
+
+<section>
+  <h2>Consent screens become UX, not boilerplate</h2>
+  <p>
+    The Act’s idea of consent is not the old “scroll past a wall of text and tap accept.” It pushes toward consent that is:
+  </p>
+  <ul>
+    <li><strong>Specific</strong> — tied to a clear purpose, not bundled with everything else.</li>
+    <li><strong>Informed</strong> — the user actually understands what is being collected and why.</li>
+    <li><strong>Unambiguous</strong> — expressed through a clear affirmative action.</li>
+    <li><strong>Revocable</strong> — easy to withdraw later, without penalties unrelated to the core service.</li>
+  </ul>
+  <p>
+    That forces a different kind of UX work:
+  </p>
+  <ul>
+    <li>Breaking one opaque “Agree to all” into smaller choices (product-critical vs marketing vs research).</li>
+    <li>Using plain language (“We use this so that…”) instead of legal phrasing.</li>
+    <li>Designing prominent “Manage data” or “Privacy” entry points in your app, not hiding them under five taps.</li>
+  </ul>
+
+  <blockquote>
+    If your product needs to trick users into tapping “Allow”, it is not just a legal risk — it is a design failure.
+  </blockquote>
+
+  <p>
+    For Indian apps with global ambitions, DPDP-compliant consent flows are also a strategic asset. They align more closely with the expectations of partners working under GDPR-style regimes.
+  </p>
+</section>
+
+<section>
+  <h2>Data retention and deletion as product features</h2>
+  <p>
+    Storage limitation is where many products quietly fall out of compliance. Logs, backups, test databases — they all accumulate personal data that nobody actively manages.
+  </p>
+  <p>
+    In a DPDP world, you need to answer three simple questions:
+  </p>
+  <ul>
+    <li><strong>How long</strong> will we keep this category of data if the user is active?</li>
+    <li><strong>What happens</strong> when they become inactive or close their account?</li>
+    <li><strong>Where exactly</strong> do we delete or de-identify it (primary DB, analytics, backups, third-party tools)?</li>
+  </ul>
+  <p>
+    That leads naturally to product work:
+  </p>
+  <ul>
+    <li>A clear, tested “Delete account” flow that actually triggers deletion jobs — not just marks a flag.</li>
+    <li>Tools for customer support to execute access, correction and erasure requests reliably.</li>
+    <li>Internal dashboards for privacy and engineering to see what is scheduled for deletion and what failed.</li>
+  </ul>
+  <p>
+    The teams that treat this as infrastructure will be the ones that can look regulators and enterprise customers in the eye when they ask, “Show us how you delete.”
+  </p>
+</section>
+
+<section>
+  <h2>Segmentation, ads and third-party tools after DPDP</h2>
+  <p>
+    Analytics, marketing automation, crash reporting, chat widgets, A/B testing tools — each new SDK is another potential data processor under the Act.
+  </p>
+  <p>
+    For product and growth teams, that means:
+  </p>
+  <ul>
+    <li><strong>Mapping data flows</strong> — who sends what to whom, for what purpose, and under which contract.</li>
+    <li><strong>Aligning consents</strong> — if a user opted out of marketing, are you sure their data is not still flowing to ad platforms via other tags?</li>
+    <li><strong>Reconsidering “free” tools</strong> that monetise by harvesting behavioural data.</li>
+  </ul>
+
+  <blockquote>
+    The new default should be: “Can we do this in-house with aggregated or anonymised data before we ship raw events to a third party?”
+  </blockquote>
+
+  <p>
+    Many teams will find they can hit their business goals with less granularity than they assumed, especially once they build decent in-house reporting on top of consented data.
+  </p>
+</section>
+
+<section>
+  <h2>What Indian product teams should do now</h2>
+  <p>
+    A practical way to respond is to treat DPDP as a product problem with legal constraints, not a legal problem with product side-effects.
+  </p>
+  <ul>
+    <li><strong>Audit one journey end-to-end</strong> — sign-up to first transaction — and mark every place personal data is captured, stored or shared.</li>
+    <li><strong>Rewrite notices</strong> in plain language. If you cannot explain the purpose in a short sentence, that’s a red flag.</li>
+    <li><strong>Pick three high-impact fixes</strong> — for example, a real “Delete account” flow, a simplified consent screen, and a cleaned-up tracking tag configuration.</li>
+    <li><strong>Bake privacy into your PRD template</strong> — add a small section: “What personal data will this feature use? Under which consent? How long will we keep it?”</li>
+  </ul>
+  <p>
+    The goal is not perfection on day one. It is to change the habit: every new feature ships with a privacy story, not just a happy-path story.
+  </p>
+</section>
+
+<section>
+  <h2>Rule — for every new data field</h2>
+  <p>
+    <strong>One-sentence test.</strong><br/>
+    Before adding any new field, tracker or SDK, ask: 
+  </p>
+  <blockquote>
+    “If a regulator or customer asked why we collect this, could we answer in one honest sentence without using the words ‘just in case’?”
+  </blockquote>
+  <p>
+    If the answer is no, you probably should not collect it.
+  </p>
+</section>
+
+<section>
+  <h2>Disclaimer</h2>
+  <p>
+    <small class="mute">
+      This bataSutra article is for informational and educational purposes only and does not constitute legal, compliance, tax or business advice. Organisations should not use this piece as the sole basis for any decision relating to the Digital Personal Data Protection Act or other regulations, and should consult qualified legal and privacy professionals for guidance tailored to their specific context.
+    </small>
+  </p>
+</section>
+
+<div class="footer">
+  <small class="mute">bataSutra Business tracks where regulation quietly rewrites product, growth, and infrastructure decisions in India.</small>
+</div>
+
+</main>
+</body>
+</html>
