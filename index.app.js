@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/designing-products-in-a-dpdp-world-privacy-law-product-constraint-dec-3-2025",
-  "title": "Designing Products in a DPDP World: India’s Privacy Law as a Product Constraint",
-  "blurb": "India’s DPDP Act turns consent, purpose limitation and deletion into hard product constraints. This piece shows how Indian growth, UX and data teams need to redesign funnels, tracking and deletion flows when privacy becomes part of the product brief—not just a compliance PDF in a shared drive."
+  "href": "/articles/bangalore-superbikes-are-now-electric-ultraviolette-f1-brain-two-wheeler-dec-4-2025",
+  "title": "Bangalore Superbikes Are Now Electric: Inside Ultraviolette’s F1-Brain Two-Wheeler",
+  "blurb": "Bengaluru’s tech crowd just got a new side-project on wheels: Ultraviolette’s F77 and X47 electric motorcycles, backed by Zoho and Ferrari-linked Lingotto. This piece breaks down the specs, the funding, and what it means when a ‘performance EV bike’ starts to look more like a connected gadget than a commuter machine."
 },
 {
-  "href": "/articles/neurotech-without-a-pause-button-bcis-headbands-cognitive-latency-dec-3-2025",
-  "title": "Neurotech Without a Pause Button: BCIs, Headbands and the Right to Cognitive Latency",
-  "blurb": "Brain–computer interfaces and consumer headbands are pushing neural signals into meeting rooms, classrooms and wellness apps. We unpack how neurotech without a pause button risks turning inner life into a KPI, why a right to ‘cognitive latency’ matters, and what responsible builders should do now."
+  "href": "/articles/morning-larks-night-owls-serial-napper-indias-new-sleep-personalities-dec-4-2025",
+  "title": "Morning Larks, Night Owls and the Serial Napper: India’s New Sleep Personalities",
+  "blurb": "New brain and sleep research says our nights fall into distinct profiles with their own strengths and risks—far beyond “good sleeper” vs “insomniac.” We translate the chronotype science into three familiar characters (lark, owl, serial napper) and offer small, realistic tweaks for each, no 5 am bootcamp required."
 }
 ];
 
