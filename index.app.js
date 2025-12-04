@@ -6,7 +6,7 @@ const ARTICLES = [
 {
   "href": "/articles/bangalore-superbikes-are-now-electric-ultraviolette-f1-brain-two-wheeler-dec-4-2025",
   "title": "Bangalore Superbikes Are Now Electric: Inside Ultraviolette’s F1-Brain Two-Wheeler",
-  "blurb": "Bengaluru’s tech crowd just got a new side-project on wheels: Ultraviolette’s F77 and X47 electric motorcycles, backed by Zoho and Ferrari-linked Lingotto. This piece breaks down the specs, the funding, and what it means when a ‘performance EV bike’ starts to look more like a connected gadget than a commuter machine."
+  "blurb": "Bengaluru’s tech crowd just got a new side-project on wheels: Ultraviolette’s F77 and X47 electric motorcycles, backed by Zoho and Ferrari-linked Lingotto. This piece breaks down the specs, the funding, and what it means when a ‘performance EV bike’ starts to look more like a connected gadget than a commuter system."
 },
 {
   "href": "/articles/morning-larks-night-owls-serial-napper-indias-new-sleep-personalities-dec-4-2025",
