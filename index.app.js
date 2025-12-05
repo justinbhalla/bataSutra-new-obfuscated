@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/bangalore-superbikes-are-now-electric-ultraviolette-f1-brain-two-wheeler-dec-4-2025",
-  "title": "Bangalore Superbikes Are Now Electric: Inside Ultraviolette’s F1-Brain Two-Wheeler",
-  "blurb": "Bengaluru’s tech crowd just got a new side-project on wheels: Ultraviolette’s F77 and X47 electric motorcycles, backed by Zoho and Ferrari-linked Lingotto. This piece breaks down the specs, the funding, and what it means when a ‘performance EV bike’ starts to look more like a connected gadget than a commuter system."
+  "href": "/articles/cool-stuff-not-just-cool-malls-pop-ups-are-the-new-weekend-plan-dec-5-2025",
+  "title": "Cool Stuff, Not Just Cool Malls: Pop-Ups Are the New Weekend Plan",
+  "blurb": "Christmas markets, indie fairs and weekend pop-ups are turning Indian cities into low-commitment ‘mini vacations’—one lawn, forty stalls, and a lot of fairy lights. This piece breaks down how pop-ups work for small brands, how to do a perfect ~₹1,500 run without going broke, and why “I went to a market, not a mall” is becoming the new weekend flex."
 },
 {
-  "href": "/articles/morning-larks-night-owls-serial-napper-indias-new-sleep-personalities-dec-4-2025",
-  "title": "Morning Larks, Night Owls and the Serial Napper: India’s New Sleep Personalities",
-  "blurb": "New brain and sleep research says our nights fall into distinct profiles with their own strengths and risks—far beyond “good sleeper” vs “insomniac.” We translate the chronotype science into three familiar characters (lark, owl, serial napper) and offer small, realistic tweaks for each, no 5 am bootcamp required."
+  "href": "/articles/tonights-cold-moon-last-full-moon-of-2025-explained-in-7-bullet-points-dec-5-2025",
+  "title": "Tonight’s Cold Moon: The Last Full Moon of 2025, Explained in 7 Bullet Points",
+  "blurb": "December’s Cold Moon is the last full moon—and last supermoon—of 2025. In seven simple bullets, we explain why it’s called the Cold Moon, when and where to look from India, how to shoot it with just your phone, and one tiny ritual you can steal to turn every full moon into a five-minute reset."
 }
 ];
 
