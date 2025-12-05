@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/tonights-cold-moon-last-full-moon-of-2025-explained-in-7-bullet-points-dec-5-2025",
-  "title": "Tonight’s Cold Moon: The Last Full Moon of 2025, Explained in 7 Bullet Points",
+  "title": "Tonight’s Cold Moon: The Last Full Moon of 2025, Explained",
   "blurb": "December’s Cold Moon is the last full moon—and last supermoon—of 2025. In seven simple bullets, we explain why it’s called the Cold Moon, when and where to look from India, how to shoot it with just your phone, and one tiny ritual you can steal to turn every full moon into a five-minute reset."
 }
 ];
