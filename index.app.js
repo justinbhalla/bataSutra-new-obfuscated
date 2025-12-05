@@ -6,7 +6,7 @@ const ARTICLES = [
 {
   "href": "/articles/cool-stuff-not-just-cool-malls-pop-ups-are-the-new-weekend-plan-dec-5-2025",
   "title": "Cool Stuff, Not Just Cool Malls: Pop-Ups Are the New Weekend Plan",
-  "blurb": "Christmas markets, indie fairs and weekend pop-ups are turning Indian cities into low-commitment ‘mini vacations’—one lawn, forty stalls, and a lot of fairy lights. This piece breaks down how pop-ups work for small brands, how to do a perfect ~₹1,500 run without going broke, and why “I went to a market, not a mall” is becoming the new weekend flex."
+  "blurb": "Christmas markets, indie fairs and weekend pop-ups are turning Indian cities into low-commitment ‘mini vacations’—one lawn, forty stalls, and a lot of fairy lights. This piece breaks down how pop-ups work for small brands, how to do a perfect ~₹1,500 run without going broke, and why “I went to a market, not a mall”."
 },
 {
   "href": "/articles/tonights-cold-moon-last-full-moon-of-2025-explained-in-7-bullet-points-dec-5-2025",
