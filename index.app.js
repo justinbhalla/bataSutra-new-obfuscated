@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
   "href": "/articles/small-city-checkouts-deep-country-carts-how-non-metro-india-steers-online-shopping-dec-8-2025",
-  "title": "Small-City Checkouts, Deep-Country Carts: How Non-Metro India Steers Online Shopping",
+  "title": "Small-City Checkouts, Deep-Country Carts",
   "blurb": "QR codes, kiranas and couriers in places like Jaipur, Kochi, Lucknow and Coimbatore now shape ratings, search results and repeat orders on India’s biggest platforms. This piece traces how non-metro shoppers quietly decide which brands break out nationally—and what that means for anyone building products beyond big-city bubbles."
 },
 {
