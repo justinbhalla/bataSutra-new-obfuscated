@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/cool-stuff-not-just-cool-malls-pop-ups-are-the-new-weekend-plan-dec-5-2025",
-  "title": "Cool Stuff, Not Just Cool Malls: Pop-Ups Are the New Weekend Plan",
-  "blurb": "Christmas markets, indie fairs and weekend pop-ups are turning Indian cities into low-commitment ‘mini vacations’—one lawn, forty stalls, and a lot of fairy lights. This piece breaks down how pop-ups work for small brands, how to do a perfect ~₹1,500 run without going broke, and why “I went to a market, not a mall”."
+  "href": "/articles/small-city-checkouts-deep-country-carts-how-non-metro-india-steers-online-shopping-dec-8-2025",
+  "title": "Small-City Checkouts, Deep-Country Carts: How Non-Metro India Steers Online Shopping",
+  "blurb": "QR codes, kiranas and couriers in places like Jaipur, Kochi, Lucknow and Coimbatore now shape ratings, search results and repeat orders on India’s biggest platforms. This piece traces how non-metro shoppers quietly decide which brands break out nationally—and what that means for anyone building products beyond big-city bubbles."
 },
 {
-  "href": "/articles/tonights-cold-moon-last-full-moon-of-2025-explained-in-7-bullet-points-dec-5-2025",
-  "title": "Tonight’s Cold Moon: The Last Full Moon of 2025, Explained",
-  "blurb": "December’s Cold Moon is the last full moon—and last supermoon—of 2025. In seven simple bullets, we explain why it’s called the Cold Moon, when and where to look from India, how to shoot it with just your phone, and one tiny ritual you can steal to turn every full moon into a five-minute reset."
+  "href": "/articles/rust-on-the-circuits-what-poor-sleep-does-to-brain-age-dec-8-2025",
+  "title": "Rust on the Circuits: What Poor Sleep Does to Brain Age",
+  "blurb": "Brain-scan models now show that years of short, broken sleep can make neural tissue look older than the age on your ID. This explainer unpacks how ‘brain age’ is calculated, which warning signs matter, and the low-glamour nightly habits that actually slow the rust."
 }
 ];
 
