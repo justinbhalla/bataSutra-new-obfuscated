@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/small-city-checkouts-deep-country-carts-how-non-metro-india-steers-online-shopping-dec-8-2025",
-  "title": "Small-City Checkouts, Deep-Country Carts",
-  "blurb": "QR codes, kiranas and couriers in places like Jaipur, Kochi, Lucknow and Coimbatore now shape ratings, search results and repeat orders on India’s biggest platforms. This piece traces how non-metro shoppers quietly decide which brands break out nationally—and what that means for anyone building products beyond big-city bubbles."
+  "href": "/articles/indias-ai-royalty-test-one-licence-one-payment-plan-dec-9-2025",
+  "title": "AI Royalty Test: The ‘One Licence, One Payment’ Plan",
+  "blurb": "India is testing a blanket ‘one licence, one payment’ regime for AI training on copyrighted works. This piece unpacks how a compulsory national licence could lower legal friction for small labs, reshape payouts for writers and studios, and turn compliance into a new cost line for every model trained on Indian content."
 },
 {
-  "href": "/articles/rust-on-the-circuits-what-poor-sleep-does-to-brain-age-dec-8-2025",
-  "title": "Rust on the Circuits: What Poor Sleep Does to Brain Age",
-  "blurb": "Brain-scan models now show that years of short, broken sleep can make neural tissue look older than the age on your ID. This explainer unpacks how ‘brain age’ is calculated, which warning signs matter, and the low-glamour nightly habits that actually slow the rust."
+  "href": "/articles/ghost-arcs-and-ancient-booms-universes-strangest-radio-and-gravity-echoes-dec-9-2025",
+  "title": "Ghost Arcs and Ancient Booms: The Universe’s Strangest Radio and Gravity Echoes",
+  "blurb": "Colossal radio arcs at cluster edges and odd gravitational-wave events both act like echoes from long-finished collisions. This piece explains what radio relics and candidate primordial black-hole signals really reveal about the universe’s past—and how to read the next dramatic headline without losing perspective."
 }
 ];
 
