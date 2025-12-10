@@ -10,7 +10,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/ghost-arcs-and-ancient-booms-universes-strangest-radio-and-gravity-echoes-dec-9-2025",
-  "title": "Ghost Arcs and Ancient Booms: The Universe’s Strangest Radio and Gravity Echoes",
+  "title": "Ghost Arcs and Ancient Booms: The Universe’s Strangest Radio",
   "blurb": "Colossal radio arcs at cluster edges and odd gravitational-wave events both act like echoes from long-finished collisions. This piece explains what radio relics and candidate primordial black-hole signals really reveal about the universe’s past—and how to read the next dramatic headline without losing perspective."
 }
 ];
