@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/indias-ai-royalty-test-one-licence-one-payment-plan-dec-9-2025",
-  "title": "AI Royalty Test: The ‘One Licence, One Payment’ Plan",
-  "blurb": "India is testing a blanket ‘one licence, one payment’ regime for AI training on copyrighted works. This piece unpacks how a compulsory national licence could lower legal friction for small labs, reshape payouts for writers and studios, and turn compliance into a new cost line for every model trained on Indian content."
-},
-{
-  "href": "/articles/ghost-arcs-and-ancient-booms-universes-strangest-radio-and-gravity-echoes-dec-9-2025",
-  "title": "Ghost Arcs and Ancient Booms: The Universe’s Strangest Radio",
-  "blurb": "Colossal radio arcs at cluster edges and odd gravitational-wave events both act like echoes from long-finished collisions. This piece explains what radio relics and candidate primordial black-hole signals really reveal about the universe’s past—and how to read the next dramatic headline without losing perspective."
-}
+    "href": "/articles/zero-delivery-hack-why-stores-pay-you-to-pick-up-dec-11-2025",
+    "title": "The ₹0 Delivery Hack: Why Stores Are Paying You to Pick Up Orders",
+    "blurb": "Buy Online, Pick Up In-Store looks like a free-delivery perk, but it’s really a last-mile cost hack. We break down how much retailers save when you walk to the counter, where the rewards come from, and why new store layouts are being drawn around pickup lanes and impulse racks."
+  },
+  {
+    "href": "/articles/your-gut-on-screens-late-night-scrolling-digestion-dec-11-2025",
+    "title": "Your Gut on Screens: How Late-Night Scrolling Rewrites Digestion",
+    "blurb": "It wasn’t just the 2 a.m. snack — it was the scroll before it. This piece traces how blue light, high-arousal feeds, and shifted sleep windows tug on hunger hormones, gut rhythm, and even microbiome timing, plus one simple rule for protecting your stomach in the last hour before bed."
+  }
 ];
 
 
