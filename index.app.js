@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/zero-delivery-hack-why-stores-pay-you-to-pick-up-dec-11-2025",
-    "title": "The ₹0 Delivery Hack: Why Stores Are Paying You to Pick Up Orders",
-    "blurb": "Buy Online, Pick Up In-Store looks like a free-delivery perk, but it’s really a last-mile cost hack. We break down how much retailers save when you walk to the counter, where the rewards come from, and why new store layouts are being drawn around pickup lanes and impulse racks."
-  },
-  {
-    "href": "/articles/your-gut-on-screens-late-night-scrolling-digestion-dec-11-2025",
-    "title": "Your Gut on Screens: How Late-Night Scrolling Rewrites Digestion",
-    "blurb": "It wasn’t just the 2 a.m. snack — it was the scroll before it. This piece traces how blue light, high-arousal feeds, and shifted sleep windows tug on hunger hormones, gut rhythm, and even microbiome timing, plus one simple rule for protecting your stomach in the last hour before bed."
-  }
+  "href": "/articles/secret-shopper-2-0-ai-store-layouts-real-time-dec-2025",
+  "title": "Secret Shopper 2.0: How AI Is Rewriting Store Layouts in Real Time",
+  "blurb": "Retail’s new observer isn’t a person with a clipboard — it’s ceiling-level analytics that tracks hesitation, backtracking, crowding, and pickup-then-put-back. As layouts shift from quarterly resets to continuous tuning, shelf space turns into a rotating scoreboard: smoother flow for shoppers, tighter conversion for stores, and fresh anxiety for brands competing for attention."
+},
+{
+  "href": "/articles/brain-gps-how-your-mind-builds-a-map-of-every-room-dec-2025",
+  "title": "Brain GPS: How Your Mind Builds a Map of Every Room You Enter",
+  "blurb": "Your brain maps space automatically using boundaries, anchors, and predictable pathways — and when those cues are missing, a room can feel ‘off’ even if nothing is wrong. This story explains why bookstores feel calming, why identical corridors drain you, and how screen-heavy life can tax orientation systems. Ending rule: comfort often equals map stability — clear edges plus one strong anchor."
+}
 ];
 
 
