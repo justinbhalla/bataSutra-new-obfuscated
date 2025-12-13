@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-  "href": "/articles/secret-shopper-2-0-ai-store-layouts-real-time-dec-2025",
-  "title": "Secret Shopper 2.0: How AI Is Rewriting Store Layouts in Real Time",
-  "blurb": "Retail’s new observer isn’t a person with a clipboard — it’s ceiling-level analytics that tracks hesitation, backtracking, crowding, and pickup-then-put-back. As layouts shift from quarterly resets to continuous tuning, shelf space turns into a rotating scoreboard: smoother flow for shoppers, tighter conversion for stores, and fresh anxiety for brands competing for attention."
-},
-{
-  "href": "/articles/brain-gps-how-your-mind-builds-a-map-of-every-room-dec-2025",
-  "title": "Brain GPS: How Your Mind Builds a Map of Every Room You Enter",
-  "blurb": "Your brain maps space automatically using boundaries, anchors, and predictable pathways — and when those cues are missing, a room can feel ‘off’ even if nothing is wrong. This story explains why bookstores feel calming, why identical corridors drain you, and how screen-heavy life can tax orientation systems. Ending rule: comfort often equals map stability — clear edges plus one strong anchor."
-}
+    "href": "/articles/black-friday-now-45-days-long-psychology-endless-sales-dec-2025",
+    "title": "Black Friday Is Now 45 Days Long: The Psychology of Endless Sales",
+    "blurb": "Retailers stretch discount windows to lift total volume while keeping pricing power through calmer buying, deferred decisions, and “always-on” deal framing. Includes a category grid on window length and conversion lift, plus the key tell: when ‘early access’ quietly becomes default pricing."
+  },
+  {
+    "href": "/articles/blink-science-2025-eyes-know-youre-tired-before-you-do-dec-2025",
+    "title": "Your Eyes Know You’re Tired Before You Do: Blink Science 2025",
+    "blurb": "Blink timing shifts show fatigue before you consciously feel it—often 20–40 minutes ahead of measurable performance drop. We break down the core blink markers, where they’re being deployed (driving, aviation, surgery), and why the brain misses the warning while the eyes broadcast it."
+  }
 ];
 
 
