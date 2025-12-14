@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/black-friday-now-45-days-long-psychology-endless-sales-dec-2025",
-    "title": "Black Friday Is Now 45 Days Long: The Psychology of Endless Sales",
-    "blurb": "Retailers stretch discount windows to lift total volume while keeping pricing power through calmer buying, deferred decisions, and “always-on” deal framing. Includes a category grid on window length and conversion lift, plus the key tell: when ‘early access’ quietly becomes default pricing."
+    "href": "/articles/free-returns-quietly-disappeared-reverse-logistics-dec-14-2025",
+    "title": "Why “Free Returns” Quietly Disappeared",
+    "blurb": "Free returns didn’t vanish overnight — they were redesigned into smaller text, store credit, tighter windows, and drop-off flows. We break down the hidden second supply chain behind a return (inspection, repack, discounting), the soft-language tactics brands use to add friction without backlash, and the tells to watch next: refund → credit screens, pickup → drop points, and membership-gated convenience."
   },
   {
-    "href": "/articles/blink-science-2025-eyes-know-youre-tired-before-you-do-dec-2025",
-    "title": "Your Eyes Know You’re Tired Before You Do: Blink Science 2025",
-    "blurb": "Blink timing shifts show fatigue before you consciously feel it—often 20–40 minutes ahead of measurable performance drop. We break down the core blink markers, where they’re being deployed (driving, aviation, surgery), and why the brain misses the warning while the eyes broadcast it."
+    "href": "/articles/brain-runs-slower-in-heat-cognitive-tax-attention-dec-14-2025",
+    "title": "Your Brain Runs Slower in Heat — Even Before You Notice",
+    "blurb": "Heat taxes attention before discomfort shows up. This story-driven science read explains why “soft warm” rooms can trigger attention drift and error creep, how modern urban life amplifies the effect (sealed buildings, screen-heavy work, warm nights), and the practical rule that flips the script: cool the room before blaming your focus — especially for decision-heavy work."
   }
 ];
 
