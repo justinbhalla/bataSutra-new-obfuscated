@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/free-returns-quietly-disappeared-reverse-logistics-dec-14-2025",
-    "title": "Why “Free Returns” Quietly Disappeared",
-    "blurb": "Free returns didn’t vanish overnight — they were redesigned into smaller text, store credit, tighter windows, and drop-off flows. We break down the hidden second supply chain behind a return (inspection, repack, discounting), the soft-language tactics brands use to add friction without backlash, and the tells to watch next: refund → credit screens, pickup → drop points, and membership-gated convenience."
+    "href": "/articles/why-everything-is-limited-edition-even-soap-dec-15-2025",
+    "title": "Why Everything Is ‘Limited Edition’ Now — Even Soap",
+    "blurb": "Scarcity has escaped sneakers and entered the bathroom. Brands now sell everyday items as time-boxed ‘drops’ to replace discounts with urgency, turn packaging into shareable media, and train shoppers to buy now, not later. The key tell to watch: how often ‘limited’ quietly comes back—rebranded, refreshed, and reset."
   },
   {
-    "href": "/articles/brain-runs-slower-in-heat-cognitive-tax-attention-dec-14-2025",
-    "title": "Your Brain Runs Slower in Heat — Even Before You Notice",
-    "blurb": "Heat taxes attention before discomfort shows up. This story-driven science read explains why “soft warm” rooms can trigger attention drift and error creep, how modern urban life amplifies the effect (sealed buildings, screen-heavy work, warm nights), and the practical rule that flips the script: cool the room before blaming your focus — especially for decision-heavy work."
+    "href": "/articles/your-brain-on-notifications-why-one-buzz-steals-five-minutes-dec-15-2025",
+    "title": "Your Brain on Notifications: Why One Buzz Steals 5 Minutes",
+    "blurb": "The real cost of a notification isn’t the glance—it’s the mental restart that follows. This piece explains the hidden ‘restart tax’ on focus, how unfinished tasks keep the brain half-alert, and why productivity loss shows up as exhaustion, not distraction. One clean rule reframes it all: track restarts per hour, not screen time."
   }
 ];
 
