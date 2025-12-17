@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/real-reason-brands-love-preorders-demand-risk-cashflow",
+    "href": "/articles/real-reason-brands-love-preorders-demand-risk",
     "title": "The Real Reason Brands Love Pre-Orders",
     "blurb": "Pre-orders aren’t about hype — they’re about certainty. By pulling demand forward, brands lock in cash, cut inventory risk, and turn customers into real-time demand sensors. This piece breaks down the quiet math behind pre-order windows, why they’re spreading beyond sneakers and gadgets, and the signals to watch when ‘early access’ becomes a balance-sheet tool."
   },
   {
-    "href": "/articles/why-time-feels-faster-as-you-age-brain-compression",
+    "href": "/articles/why-time-feels-faster-as-you-age-brain",
     "title": "Why Time Feels Faster as You Age",
     "blurb": "Clocks don’t speed up — memory thins out. Neuroscience shows the brain compresses routine years by recording fewer novel moments, making adulthood blur while childhood felt endless. This story explains how prediction replaces attention, why stable life accelerates time, and the simple rule that stretches years again: increase memory density."
   }
