@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/why-everything-is-limited-edition-even-soap-dec-15-2025",
-    "title": "Why Everything Is ‘Limited Edition’ Now — Even Soap",
-    "blurb": "Scarcity has escaped sneakers and entered the bathroom. Brands now sell everyday items as time-boxed ‘drops’ to replace discounts with urgency, turn packaging into shareable media, and train shoppers to buy now, not later. The key tell to watch: how often ‘limited’ quietly comes back—rebranded, refreshed, and reset."
+    "href": "/articles/real-reason-brands-love-preorders-demand-risk-cashflow",
+    "title": "The Real Reason Brands Love Pre-Orders",
+    "blurb": "Pre-orders aren’t about hype — they’re about certainty. By pulling demand forward, brands lock in cash, cut inventory risk, and turn customers into real-time demand sensors. This piece breaks down the quiet math behind pre-order windows, why they’re spreading beyond sneakers and gadgets, and the signals to watch when ‘early access’ becomes a balance-sheet tool."
   },
   {
-    "href": "/articles/your-brain-on-notifications-why-one-buzz-steals-five-minutes-dec-15-2025",
-    "title": "Your Brain on Notifications: Why One Buzz Steals 5 Minutes",
-    "blurb": "The real cost of a notification isn’t the glance—it’s the mental restart that follows. This piece explains the hidden ‘restart tax’ on focus, how unfinished tasks keep the brain half-alert, and why productivity loss shows up as exhaustion, not distraction. One clean rule reframes it all: track restarts per hour, not screen time."
+    "href": "/articles/why-time-feels-faster-as-you-age-brain-compression",
+    "title": "Why Time Feels Faster as You Age",
+    "blurb": "Clocks don’t speed up — memory thins out. Neuroscience shows the brain compresses routine years by recording fewer novel moments, making adulthood blur while childhood felt endless. This story explains how prediction replaces attention, why stable life accelerates time, and the simple rule that stretches years again: increase memory density."
   }
 ];
 
