@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/real-reason-brands-love-preorders-demand-risk",
-    "title": "The Real Reason Brands Love Pre-Orders",
-    "blurb": "Pre-orders aren’t about hype — they’re about certainty. By pulling demand forward, brands lock in cash, cut inventory risk, and turn customers into real-time demand sensors. This piece breaks down the quiet math behind pre-order windows, why they’re spreading beyond sneakers and gadgets, and the signals to watch when ‘early access’ becomes a balance-sheet tool."
+    "href": "/articles/why-everything-is-sold-out-even-when-it-isnt-dec-18-2025",
+    "title": "Why Everything Is ‘Sold Out’—Even When It Isn’t",
+    "blurb": "“Only 3 left” isn’t always inventory — it’s interface. We break down the scarcity playbook across fashion, beauty, gadgets, and grocery, showing how waitlists, restocks, and greyed-out buttons turn absence into value (and value into urgency). Plus: the simple tell that separates real shortages from designed scarcity."
   },
   {
-    "href": "/articles/why-time-feels-faster-as-you-age-brain",
-    "title": "Why Time Feels Faster as You Age",
-    "blurb": "Clocks don’t speed up — memory thins out. Neuroscience shows the brain compresses routine years by recording fewer novel moments, making adulthood blur while childhood felt endless. This story explains how prediction replaces attention, why stable life accelerates time, and the simple rule that stretches years again: increase memory density."
+    "href": "/articles/decision-fatigue-is-physical-what-your-brain-loses-by-evening-dec-18-2025",
+    "title": "Decision Fatigue Is Physical: What Your Brain Loses by Evening",
+    "blurb": "By night, your brain isn’t weaker — it’s depleted. This story tracks what shifts inside your cognition across the day (control, noise, impulse), why modern feeds drain your decision budget faster, and how to protect your highest-stakes choices by moving them earlier. Ends with one clean rule: important choices early, defaults late."
   }
 ];
 
