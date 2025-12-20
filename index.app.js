@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/your-body-clock-isnt-one-clock-its-many-and-they-fight-at-night-today",
-    "title": "Your Body Clock Isn’t One Clock — It’s Many (and They Fight at Night)",
+    "title": "Your Body Clock Isn’t One Clock — They Fight at Night",
     "blurb": "You don’t run on one circadian rhythm. Your brain, gut, liver, and immune system each keep time — and when life pulls them out of sync, you feel foggy, wired-but-tired, hungry at odd hours, and emotionally thin. This explainer turns ‘feeling off’ into biology you can finally understand."
   }
 ];
