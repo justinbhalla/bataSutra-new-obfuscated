@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/why-everything-is-sold-out-even-when-it-isnt-dec-18-2025",
-    "title": "Why Everything Is ‘Sold Out’—Even When It Isn’t",
-    "blurb": "“Only 3 left” isn’t always inventory — it’s interface. We break down the scarcity playbook across fashion, beauty, gadgets, and grocery, showing how waitlists, restocks, and greyed-out buttons turn absence into value (and value into urgency). Plus: the simple tell that separates real shortages from designed scarcity."
+    "href": "/articles/the-new-cool-why-teenagers-are-buying-old-tech-again-today",
+    "title": "The New Cool: Why Teenagers Are Buying Old Tech Again",
+    "blurb": "Retro isn’t ironic anymore — it’s a rebellion. Teens are picking iPods, wired headphones, flip phones, and grainy cameras over perfect glass rectangles because scarcity feels special, imperfection feels honest, and limits feel safe. Culture drives it, resale economics monetize it, and brands will soon chase it."
   },
   {
-    "href": "/articles/decision-fatigue-is-physical-what-your-brain-loses-by-evening-dec-18-2025",
-    "title": "Decision Fatigue Is Physical: What Your Brain Loses by Evening",
-    "blurb": "By night, your brain isn’t weaker — it’s depleted. This story tracks what shifts inside your cognition across the day (control, noise, impulse), why modern feeds drain your decision budget faster, and how to protect your highest-stakes choices by moving them earlier. Ends with one clean rule: important choices early, defaults late."
+    "href": "/articles/your-body-clock-isnt-one-clock-its-many-and-they-fight-at-night-today",
+    "title": "Your Body Clock Isn’t One Clock — It’s Many (and They Fight at Night)",
+    "blurb": "You don’t run on one circadian rhythm. Your brain, gut, liver, and immune system each keep time — and when life pulls them out of sync, you feel foggy, wired-but-tired, hungry at odd hours, and emotionally thin. This explainer turns ‘feeling off’ into biology you can finally understand."
   }
 ];
 
