@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-new-cool-why-teenagers-are-buying-old-tech-again-today",
-    "title": "The New Cool: Why Teenagers Are Buying Old Tech Again",
-    "blurb": "Retro isn’t ironic anymore — it’s a rebellion. Teens are picking iPods, wired headphones, flip phones, and grainy cameras over perfect glass rectangles because scarcity feels special, imperfection feels honest, and limits feel safe. Culture drives it, resale economics monetize it, and brands will soon chase it."
+    "href": "/articles/less-app-more-life-quiet-revolt-against-digital-overload-dec-22-2025",
+    "title": "Less App, More Life: The Quiet Revolt Against Digital Overload",
+    "blurb": "From screen-time caps and ‘dumb phones’ to group chats moving offline, people aren’t quitting tech — they’re rewriting the rules. This piece follows the small rebellions (no-notification weekends, app diets, analog hobbies) and the big consequences for platforms built on endless scroll."
   },
   {
-    "href": "/articles/your-body-clock-isnt-one-clock-its-many-and-they-fight-at-night-today",
-    "title": "Your Body Clock Isn’t One Clock — They Fight at Night",
-    "blurb": "You don’t run on one circadian rhythm. Your brain, gut, liver, and immune system each keep time — and when life pulls them out of sync, you feel foggy, wired-but-tired, hungry at odd hours, and emotionally thin. This explainer turns ‘feeling off’ into biology you can finally understand."
+    "href": "/articles/brain-noise-hidden-signal-that-predicts-innovation-dec-22-2025",
+    "title": "Brain Noise: The Hidden Signal That Predicts Innovation",
+    "blurb": "Tiny mental detours, stray associations, and ‘wandering thoughts’ once looked like pure distraction. New research suggests that this background noise can fuel creative leaps. We break down how noisy thinking works, when it helps or hurts, and how to design days that leave just enough room for sparks to appear."
   }
 ];
 
