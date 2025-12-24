@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/happiness-has-a-shape-peaks-and-gentle-endings-jan-2025",
-    "title": "Happiness Has a Shape: Peaks + Gentle Endings Beat Constant Pleasure",
+    "title": "Happiness Has a Shape: Peaks + Gentle Endings",
     "blurb": "Your brain doesn’t judge life by duration of joy — it remembers emotional peaks and how kindly experiences end. From travel to relationships to ordinary days, we explore why the most meaningful lives aren’t endlessly happy, but beautifully shaped."
   }
 ];
