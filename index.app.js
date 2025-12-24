@@ -6,11 +6,11 @@ const ARTICLES = [
 {
     "href": "/articles/era-of-soft-brands-warm-tone-vs-corporate-power-talk-jan-2025",
     "title": "The Era of Soft Brands: Why Warm Tone Beats Corporate Power Talk",
-    "blurb": "Authority used to sound stiff, serious, and distant. Today, the brands winning trust sound human, gentle, and reassuring. This story breaks down why warmth now outperforms power-talk, how tone rewires consumer emotion, and why the future of credibility is softer, not louder."
+    "blurb": "Authority used to sound stiff, serious, and distant. Today, the brands winning trust sound human, gentle, and reassuring. This story breaks down why warmth now outperforms power-talk, how tone rewires consumer emotion."
   },
   {
     "href": "/articles/happiness-has-a-shape-peaks-and-gentle-endings-jan-2025",
-    "title": "Happiness Has a Shape: Why Peaks + Gentle Endings Beat Constant Pleasure",
+    "title": "Happiness Has a Shape: Peaks + Gentle Endings Beat Constant Pleasure",
     "blurb": "Your brain doesn’t judge life by duration of joy — it remembers emotional peaks and how kindly experiences end. From travel to relationships to ordinary days, we explore why the most meaningful lives aren’t endlessly happy, but beautifully shaped."
   }
 ];
