@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/less-app-more-life-quiet-revolt-against-digital-overload-dec-22-2025",
-    "title": "Less App, More Life: The Quiet Revolt Against Digital Overload",
-    "blurb": "From screen-time caps and ‘dumb phones’ to group chats moving offline, people aren’t quitting tech — they’re rewriting the rules. This piece follows the small rebellions (no-notification weekends, app diets, analog hobbies) and the big consequences for platforms built on endless scroll."
+    "href": "/articles/era-of-soft-brands-warm-tone-vs-corporate-power-talk-jan-2025",
+    "title": "The Era of Soft Brands: Why Warm Tone Beats Corporate Power Talk",
+    "blurb": "Authority used to sound stiff, serious, and distant. Today, the brands winning trust sound human, gentle, and reassuring. This story breaks down why warmth now outperforms power-talk, how tone rewires consumer emotion, and why the future of credibility is softer, not louder."
   },
   {
-    "href": "/articles/brain-noise-hidden-signal-that-predicts-innovation-dec-22-2025",
-    "title": "Brain Noise: The Hidden Signal That Predicts Innovation",
-    "blurb": "Tiny mental detours, stray associations, and ‘wandering thoughts’ once looked like pure distraction. New research suggests that this background noise can fuel creative leaps. We break down how noisy thinking works, when it helps or hurts, and how to design days that leave just enough room for sparks to appear."
+    "href": "/articles/happiness-has-a-shape-peaks-and-gentle-endings-jan-2025",
+    "title": "Happiness Has a Shape: Why Peaks + Gentle Endings Beat Constant Pleasure",
+    "blurb": "Your brain doesn’t judge life by duration of joy — it remembers emotional peaks and how kindly experiences end. From travel to relationships to ordinary days, we explore why the most meaningful lives aren’t endlessly happy, but beautifully shaped."
   }
 ];
 
