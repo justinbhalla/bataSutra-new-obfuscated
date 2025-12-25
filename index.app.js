@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/era-of-soft-brands-warm-tone-vs-corporate-power-talk",
-    "title": "The Era of Soft Brands: Why Warm Tone Beats Corporate Power Talk",
-    "blurb": "Authority used to sound stiff, serious, and distant. Today, the brands winning trust sound human, gentle, and reassuring. This story breaks down why warmth now outperforms power-talk, how tone rewires consumer emotion."
+    "href": "/articles/rupee-forward-calm-stability-or-borrowed-time-dec-2025",
+    "title": "Rupee Forward Calm: Stability or Borrowed Time?",
+    "blurb": "RBI’s USD/INR swap has cooled forward premiums and given dealing rooms breathing room. This story explains what actually changed in the FX market, why forward premiums matter more than headlines, who benefits from this calmer phase, and whether India has secured stability — or simply pushed volatility into 2026."
   },
   {
-    "href": "/articles/happiness-has-a-shape-peaks-and-gentle-endings",
-    "title": "Happiness Has a Shape: Peaks + Gentle Endings",
-    "blurb": "Your brain doesn’t judge life by duration of joy — it remembers emotional peaks and how kindly experiences end. From travel to relationships to ordinary days, we explore why the most meaningful lives aren’t endlessly happy, but beautifully shaped."
+    "href": "/articles/chennai-students-nasa-space-apps-broadband-win-dec-2025",
+    "title": "When a Chennai Student Team Beat the World at a NASA Challenge",
+    "blurb": "A Chennai college team didn’t build sci-fi dreams — they built a practical, affordable satellite broadband concept designed for real Indian constraints. This piece explores what they created, why it won on a global NASA stage, what it signals about India’s next tech talent wave, and how ideas like this can turn into real infrastructure."
   }
 ];
 
