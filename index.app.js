@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/borrowed-calm-why-indias-markets-feel-stable-and-what-could-break-it-dec-2025",
-    "title": "Borrowed Calm: Why India’s Markets Feel Stable — and What Could Break It",
+    "title": "Borrowed Calm: Why India’s Markets Feel Stable",
     "blurb": "India’s markets look reassuringly steady — softer bond yields, calmer currency, and confident commentary. But this stability isn’t accidental; it’s engineered through liquidity, discipline, and credibility. This piece explains what created the calm, what could still break it, and why this moment is a window to strengthen systems rather than relax."
   },
   {
