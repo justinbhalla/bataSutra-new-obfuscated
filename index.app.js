@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/rupee-forward-calm-stability-or-borrowed-time-dec-2025",
-    "title": "Rupee Forward Calm: Stability or Borrowed Time?",
-    "blurb": "RBI’s USD/INR swap has cooled forward premiums and given dealing rooms breathing room. This story explains what actually changed in the FX market, why forward premiums matter more than headlines, who benefits from this calmer phase, and whether India has secured stability — or simply pushed volatility into 2026."
+    "href": "/articles/borrowed-calm-why-indias-markets-feel-stable-and-what-could-break-it-dec-2025",
+    "title": "Borrowed Calm: Why India’s Markets Feel Stable — and What Could Break It",
+    "blurb": "India’s markets look reassuringly steady — softer bond yields, calmer currency, and confident commentary. But this stability isn’t accidental; it’s engineered through liquidity, discipline, and credibility. This piece explains what created the calm, what could still break it, and why this moment is a window to strengthen systems rather than relax."
   },
   {
-    "href": "/articles/chennai-students-nasa-space-apps-broadband-win-dec-2025",
-    "title": "When a Chennai Student Team Beat the World at a NASA Challenge",
-    "blurb": "A Chennai college team didn’t build sci-fi dreams — they built a practical, affordable satellite broadband concept designed for real Indian constraints. This piece explores what they created, why it won on a global NASA stage, what it signals about India’s next tech talent wave, and how ideas like this can turn into real infrastructure."
+    "href": "/articles/fx-isnt-about-emotion-its-about-systems-dec-2025",
+    "title": "FX Isn’t About Emotion — It’s About Systems",
+    "blurb": "Every rupee move triggers pride or panic — but currency isn’t emotional theatre, it’s an engineered system driven by flows, oil, interest rates, policy credibility, and math. This story reframes how India should think about FX, why disciplined hedging beats patriotic anxiety, and why treating currency like infrastructure is the real maturity test."
   }
 ];
 
