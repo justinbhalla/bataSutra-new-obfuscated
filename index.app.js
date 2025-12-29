@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/borrowed-calm-why-indias-markets-feel-stable-and-what-could-break-it-dec-2025",
-    "title": "Borrowed Calm: Why India’s Markets Feel Stable",
-    "blurb": "India’s markets look reassuringly steady — softer bond yields, calmer currency, and confident commentary. But this stability isn’t accidental; it’s engineered through liquidity, discipline, and credibility. This piece explains what created the calm, what could still break it, and why this moment is a window to strengthen systems rather than relax."
+    "href": "/articles/the-cost-of-calm-why-stability-is-never-free-dec-2025",
+    "title": "The Cost of Calm: Why Stability Is Never Free",
+    "blurb": "Markets look steady. Volatility has cooled. Confidence feels restored. But stability is never a gift — it’s engineered through liquidity, intervention, delayed reforms and political trade-offs. This piece explains who actually pays for calm, where its hidden costs live, why ‘no crisis’ can sometimes be a warning signal, and how smart businesses should use quiet periods to repair, not relax."
   },
   {
-    "href": "/articles/fx-isnt-about-emotion-its-about-systems-dec-2025",
-    "title": "FX Isn’t About Emotion — It’s About Systems",
-    "blurb": "Every rupee move triggers pride or panic — but currency isn’t emotional theatre, it’s an engineered system driven by flows, oil, interest rates, policy credibility, and math. This story reframes how India should think about FX, why disciplined hedging beats patriotic anxiety, and why treating currency like infrastructure is the real maturity test."
+    "href": "/articles/the-psychology-of-resilience-why-people-adapt-faster-than-economies-dec-2025",
+    "title": "The Psychology of Resilience: Why People Adapt Faster Than Economies",
+    "blurb": "Markets panic loudly. Systems adjust slowly. People quietly adapt in weeks — changing spending, travel, routines and plans long before macro charts stabilise. This story explores why human brains are wired for fast recalibration, how resilience shows up in real behaviour, why analysts underestimate it, and how policy, businesses and individuals can work with human adaptability instead of fear."
   }
 ];
 
