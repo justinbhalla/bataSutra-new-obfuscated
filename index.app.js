@@ -6,12 +6,12 @@ const ARTICLES = [
 {
     "href": "/articles/the-cost-of-calm-why-stability-is-never-free-dec-2025",
     "title": "The Cost of Calm: Stability Is Never Free",
-    "blurb": "Markets look steady. Volatility has cooled. Confidence feels restored. But stability is never a gift — it’s engineered through liquidity, intervention, delayed reforms and political trade-offs. This piece explains who actually pays for calm, where its hidden costs live, why ‘no crisis’ can sometimes be a warning signal, and how smart businesses should use quiet periods to repair, not relax."
+    "blurb": "Volatility has cooled. Confidence feels restored. But stability is never a gift — it’s engineered through liquidity, intervention, delayed reforms and political trade-offs. This piece explains who actually pays for calm, where its hidden costs live, why ‘no crisis’ can sometimes be a warning signal, and how smart businesses should use quiet periods to repair, not relax."
   },
   {
     "href": "/articles/the-psychology-of-resilience-why-people-adapt-faster-than-economies-dec-2025",
     "title": "Psychology of Resilience: Why People Adapt Faster Than Economies",
-    "blurb": "Markets panic loudly. Systems adjust slowly. People quietly adapt in weeks — changing spending, travel, routines and plans long before macro charts stabilise. This story explores why human brains are wired for fast recalibration, how resilience shows up in real behaviour, why analysts underestimate it, and how policy, businesses and individuals can work with human adaptability instead of fear."
+    "blurb": "Systems adjust slowly. People quietly adapt in weeks — changing spending, travel, routines and plans long before macro charts stabilise. This story explores why human brains are wired for fast recalibration, how resilience shows up in real behaviour, why analysts underestimate it, and how policy, businesses and individuals can work with human adaptability instead of fear."
   }
 ];
 
