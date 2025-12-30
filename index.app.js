@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/the-discipline-reset-why-2026-will-reward-careful-leaders-not-loud-ones-dec-2025",
     "title": "Discipline Reset: Why 2026 Will Reward Careful Leaders",
-    "blurb": "Cheap money is gone. Hype no longer outruns fundamentals. The next winning companies will not be the loudest — they’ll be the most disciplined. This story explains why the market has shifted from celebrating drama to rewarding endurance, what investors now actually value, and how founders and CEOs must rethink leadership for the next cycle."
+    "blurb": "Cheap money is gone. Hype no longer outruns fundamentals. The next winning companies will not be the loudest — they’ll be the most disciplined. This story explains why the market has shifted from celebrating drama to rewarding endurance, what investors now actually value, and how founders and CEOs must rethink leadership."
   },
   {
     "href": "/articles/calm-technology-the-next-big-products-wont-excite-you-theyll-lower-your-stress-dec-2025",
