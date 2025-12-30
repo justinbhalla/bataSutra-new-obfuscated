@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-cost-of-calm-why-stability-is-never-free-dec-2025",
-    "title": "The Cost of Calm: Stability Is Never Free",
-    "blurb": "Volatility has cooled. Confidence feels restored. But stability is never a gift — it’s engineered through liquidity, intervention, delayed reforms and political trade-offs. This piece explains who actually pays for calm, where its hidden costs live, why ‘no crisis’ can sometimes be a warning signal, and how smart businesses should use quiet periods to repair, not relax."
+    "href": "/articles/the-discipline-reset-why-2026-will-reward-careful-leaders-not-loud-ones-dec-2025",
+    "title": "Discipline Reset: Why 2026 Will Reward Careful Leaders, Not Loud Ones",
+    "blurb": "Cheap money is gone. Hype no longer outruns fundamentals. The next winning companies will not be the loudest — they’ll be the most disciplined. This story explains why the market has shifted from celebrating drama to rewarding endurance, what investors now actually value, and how founders and CEOs must rethink leadership for the next cycle."
   },
   {
-    "href": "/articles/the-psychology-of-resilience-why-people-adapt-faster-than-economies-dec-2025",
-    "title": "Psychology of Resilience: Why People Adapt Faster Than Economies",
-    "blurb": "Systems adjust slowly. People quietly adapt in weeks — changing spending, travel, routines and plans long before macro charts stabilise. This story explores why human brains are wired for fast recalibration, how resilience shows up in real behaviour, why analysts underestimate it, and how policy, businesses and individuals can work with human adaptability instead of fear."
+    "href": "/articles/calm-technology-the-next-big-products-wont-excite-you-theyll-lower-your-stress-dec-2025",
+    "title": "Calm Technology: The Next Big Products Won’t Excite You — They’ll Lower Your Stress",
+    "blurb": "The world is overstimulated, users are tired, and the next great products won’t scream for attention — they’ll lower anxiety. This feature explores why calm design is becoming a business advantage, how products that reduce cognitive load build deeper loyalty, and why the future belongs to technology that makes our nervous systems breathe easier."
   }
 ];
 
