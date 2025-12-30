@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/the-discipline-reset-why-2026-will-reward-careful-leaders-not-loud-ones-dec-2025",
-    "title": "Discipline Reset: Why 2026 Will Reward Careful Leaders, Not Loud Ones",
+    "title": "Discipline Reset: Why 2026 Will Reward Careful Leaders",
     "blurb": "Cheap money is gone. Hype no longer outruns fundamentals. The next winning companies will not be the loudest — they’ll be the most disciplined. This story explains why the market has shifted from celebrating drama to rewarding endurance, what investors now actually value, and how founders and CEOs must rethink leadership for the next cycle."
   },
   {
     "href": "/articles/calm-technology-the-next-big-products-wont-excite-you-theyll-lower-your-stress-dec-2025",
-    "title": "Calm Technology: The Next Big Products Won’t Excite You — They’ll Lower Your Stress",
+    "title": "Calm Technology: The Next Big Products Won’t Excite You",
     "blurb": "The world is overstimulated, users are tired, and the next great products won’t scream for attention — they’ll lower anxiety. This feature explores why calm design is becoming a business advantage, how products that reduce cognitive load build deeper loyalty, and why the future belongs to technology that makes our nervous systems breathe easier."
   }
 ];
