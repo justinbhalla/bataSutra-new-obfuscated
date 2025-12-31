@@ -4,15 +4,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-discipline-reset-why-2026-will-reward-careful-leaders-not-loud-ones-dec-2025",
-    "title": "Discipline Reset: Why 2026 Will Reward Careful Leaders",
-    "blurb": "Cheap money is gone. Hype no longer outruns fundamentals. The next winning companies will not be the loudest — they’ll be the most disciplined. This story explains why the market has shifted from celebrating drama to rewarding endurance, what investors now actually value, and how founders and CEOs must rethink leadership."
+    "href": "/articles/profit-is-back-in-fashion-why-markets-now-reward-boring-companies-dec-2025",
+    "title": "Profit Is Back in Fashion: Why Markets Now Reward Boring Companies",
+    "blurb": "The era of loud growth stories is fading. Markets are rewarding companies that look almost dull from the outside — careful, cash-generating, predictable, and disciplined. This feature explains how higher rates reset investor expectations, why narrative-driven firms lost their advantage, what today’s ‘boring winners’ do differently, and how founders, CEOs and boards must adapt to a market that now values endurance over spectacle."
   },
   {
-    "href": "/articles/calm-technology-the-next-big-products-wont-excite-you-theyll-lower-your-stress-dec-2025",
-    "title": "Calm Technology: The Next Big Products Won’t Excite You",
-    "blurb": "The world is overstimulated, users are tired, and the next great products won’t scream for attention — they’ll lower anxiety. This feature explores why calm design is becoming a business advantage, how products that reduce cognitive load build deeper loyalty, and why the future belongs to technology that makes our nervous systems breathe easier."
+    "href": "/articles/technologys-next-promise-isnt-power-its-peace-dec-2025",
+    "title": "Technology’s Next Promise Isn’t Power — It’s Peace",
+    "blurb": "Technology delivered power, speed, and reach — but not peace. People are exhausted, overstimulated, and quietly searching for tools that lower anxiety instead of raising it. This story explores why the nervous system has finally entered the product brief, what ‘calm technology’ really looks like, the business case for emotional safety, and why the next winning products will be judged by how light they make life feel."
   }
+
 ];
 
 
