@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/profit-is-back-in-fashion-why-markets-now-reward-boring-companies-dec-2025",
     "title": "Why Markets Now Reward Boring Companies",
-    "blurb": "The era of loud growth stories is fading. Markets are rewarding companies that look almost dull from the outside — careful, cash-generating, predictable, and disciplined. This feature explains how higher rates reset investor expectations, why narrative-driven firms lost their advantage, what today’s ‘boring winners’ do differently, and how founders, CEOs and boards must adapt to a market that now values endurance over spectacle."
+    "blurb": "The era of loud growth stories is fading. Markets are rewarding companies that look almost dull from the outside — careful, cash-generating, predictable, and disciplined. This feature explains how higher rates reset investor expectations, why narrative-driven firms lost their advantage, what today’s ‘boring winners’ do differently, and how founders, CEOs and boards must adapt to a market."
   },
   {
     "href": "/articles/technologys-next-promise-isnt-power-its-peace-dec-2025",
