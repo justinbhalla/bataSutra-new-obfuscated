@@ -11,7 +11,7 @@ const ARTICLES = [
   {
     "href": "/articles/technologys-next-promise-isnt-power-its-peace-dec-2025",
     "title": "Technology’s Next Promise Isn’t Power — It’s Peace",
-    "blurb": "Technology delivered power, speed, and reach — but not peace. People are exhausted, overstimulated, and quietly searching for tools that lower anxiety instead of raising it. This story explores why the nervous system has finally entered the product brief, what ‘calm technology’ really looks like, the business case for emotional safety, and why the next winning products will be judged by how light they make life feel."
+    "blurb": "Delivered power, speed, and reach — but not peace. People are exhausted, overstimulated, and quietly searching for tools that lower anxiety instead of raising it. This story explores why the nervous system has finally entered the product brief, what ‘calm technology’ really looks like, the business case for emotional safety, and why the next winning products will be judged by how light they make life feel."
   }
 
 ];
