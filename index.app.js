@@ -10,7 +10,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/kinder-tech-the-next-decade-wont-be-about-faster-itll-be-about-gentler-dec-2025",
-    "title": "Kinder Tech: The Next Decade Won’t Be About Faster — It’ll Be About Gentler",
+    "title": "Kinder Tech: The Next Decade Won’t Be About Faster",
     "blurb": "Technology delivered power and speed — but also exhaustion. The next winning products won’t compete on intensity; they’ll compete on emotional safety. This feature explores why calm interfaces, kinder defaults, and nervous-system-aware design are becoming a business advantage, and why tech that lowers anxiety will define the decade ahead."
   }
 
