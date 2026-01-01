@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/profit-is-back-in-fashion-why-markets-now-reward-boring-companies-dec-2025",
-    "title": "Why Markets Now Reward Boring Companies",
-    "blurb": "The era of loud growth stories is fading. Markets are rewarding companies that look almost dull from the outside — careful, cash-generating, predictable, and disciplined. This feature explains how higher rates reset investor expectations, why narrative-driven firms lost their advantage, what today’s ‘boring winners’ do differently, and how founders, CEOs and boards must adapt to a market."
+    "href": "/articles/borrowed-calm-why-indias-stability-still-comes-with-hidden-costs-dec-2025",
+    "title": "Borrowed Calm: Why India’s Stability Still Comes With Hidden Costs",
+    "blurb": "India feels steady — resilient banks, composed markets, confident policy. But stability is never free. This story explains what really holds the calm together, how engineered buffers quietly absorb stress, where hidden vulnerabilities may be relocating, and why this is not a moment for celebration but a window to strengthen systems before the next shock."
   },
   {
-    "href": "/articles/technologys-next-promise-isnt-power-its-peace-dec-2025",
-    "title": "Technology’s Next Promise Isn’t Power — It’s Peace",
-    "blurb": "Delivered power, speed, and reach — but not peace. People are exhausted, overstimulated, and quietly searching for tools that lower anxiety instead of raising it. This story explores why the nervous system has finally entered the product brief, what ‘calm technology’ really looks like, the business case for emotional safety, and why the next winning products will be judged by how light they make life feel."
+    "href": "/articles/kinder-tech-the-next-decade-wont-be-about-faster-itll-be-about-gentler-dec-2025",
+    "title": "Kinder Tech: The Next Decade Won’t Be About Faster — It’ll Be About Gentler",
+    "blurb": "Technology delivered power and speed — but also exhaustion. The next winning products won’t compete on intensity; they’ll compete on emotional safety. This feature explores why calm interfaces, kinder defaults, and nervous-system-aware design are becoming a business advantage, and why tech that lowers anxiety will define the decade ahead."
   }
 
 ];
