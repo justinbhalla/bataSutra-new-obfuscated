@@ -6,7 +6,7 @@ const ARTICLES = [
 {
     "href": "/articles/the-price-of-preparedness-why-stability-requires-constant-investment-jan-2026",
     "title": "The Price of Preparedness",
-    "blurb": "Stability looks effortless when it works — markets function, banks hold, systems endure. But preparedness is never passive. It is paid for through capital buffers, discipline, redundancy, and restraint. This piece explains why stability always has a cost, who quietly bears it, why calm periods are the most dangerous moments to underinvest, and how societies fail less from shocks than from neglected maintenance."
+    "blurb": "Stability looks effortless when it works — markets function, banks hold, systems endure. But preparedness is never passive. It is paid for through capital buffers, discipline, redundancy, and restraint. This piece explains why stability always has a cost, who quietly bears it, why calm periods are the most dangerous moments to underinvest, and how societies fail less from shocks."
   },
   {
     "href": "/articles/reliability-is-the-new-brand-jan-2026",
