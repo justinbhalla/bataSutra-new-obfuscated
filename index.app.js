@@ -4,16 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/borrowed-calm-why-indias-stability-still-comes-with-hidden-costs-dec-2025",
-    "title": "Borrowed Calm: Why India’s Stability Still Comes With Hidden Costs",
-    "blurb": "India feels steady — resilient banks, composed markets, confident policy. But stability is never free. This story explains what really holds the calm together, how engineered buffers quietly absorb stress, where hidden vulnerabilities may be relocating, and why this is not a moment for celebration but a window to strengthen systems before the next shock."
+    "href": "/articles/the-price-of-preparedness-why-stability-requires-constant-investment-jan-2026",
+    "title": "The Price of Preparedness: Why Stability Requires Constant Investment",
+    "blurb": "Stability looks effortless when it works — markets function, banks hold, systems endure. But preparedness is never passive. It is paid for through capital buffers, discipline, redundancy, and restraint. This piece explains why stability always has a cost, who quietly bears it, why calm periods are the most dangerous moments to underinvest, and how societies fail less from shocks than from neglected maintenance."
   },
   {
-    "href": "/articles/kinder-tech-the-next-decade-wont-be-about-faster-itll-be-about-gentler-dec-2025",
-    "title": "Kinder Tech: The Next Decade Won’t Be About Faster",
-    "blurb": "Technology delivered power and speed — but also exhaustion. The next winning products won’t compete on intensity; they’ll compete on emotional safety. This feature explores why calm interfaces, kinder defaults, and nervous-system-aware design are becoming a business advantage, and why tech that lowers anxiety will define the decade ahead."
+    "href": "/articles/reliability-is-the-new-brand-jan-2026",
+    "title": "Reliability Is the New Brand",
+    "blurb": "In an uncertain world, excitement no longer wins loyalty — dependability does. Customers now value predictability, follow-through, and calm competence over bold promises. This feature explores why reliability has become the strongest brand signal, how it reduces anxiety and builds trust, and why consistency compounds quietly while charisma fades fast."
   }
-
 ];
 
 
