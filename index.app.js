@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-price-of-preparedness-why-stability-requires-constant-investment-jan-2026",
-    "title": "The Price of Preparedness",
-    "blurb": "Stability looks effortless when it works — markets function, banks hold, systems endure. But preparedness is never passive. It is paid for through capital buffers, discipline, redundancy, and restraint. This piece explains why stability always has a cost, who quietly bears it, why calm periods are the most dangerous moments to underinvest, and how societies fail less from shocks."
+    "href": "/articles/from-growth-to-endurance-how-companies-reprice-risk-after-volatility-jan-2026",
+    "title": "From Growth to Endurance: How Companies Reprice Risk After Volatility",
+    "blurb": "After years of shocks, companies are rethinking what risk actually means. Growth no longer feels protective; endurance does. This piece examines how firms are repricing risk, shifting focus from speed and scale to balance-sheet strength, execution discipline, and the ability to survive uncertainty without losing shape."
   },
   {
-    "href": "/articles/reliability-is-the-new-brand-jan-2026",
-    "title": "Reliability Is the New Brand",
-    "blurb": "In an uncertain world, excitement no longer wins loyalty — dependability does. Customers now value predictability, follow-through, and calm competence over bold promises. This feature explores why reliability has become the strongest brand signal, how it reduces anxiety and builds trust, and why consistency compounds quietly while charisma fades fast."
+    "href": "/articles/slow-science-why-the-most-important-discoveries-rarely-look-like-breakthroughs-jan-2026",
+    "title": "Slow Science: Why the Most Important Discoveries Rarely Look Like Breakthroughs",
+    "blurb": "Breakthroughs dominate headlines, but real scientific progress is slow, cumulative, and often invisible. This article explains why patience, replication, and incremental improvement drive durable discovery — and how the pressure for speed can quietly distort research, incentives, and trust."
   }
 ];
 
