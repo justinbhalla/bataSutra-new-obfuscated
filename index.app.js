@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-silent-price-cut-effort-reduction-beats-discounts-jan-2026",
-    "title": "The Silent Price Cut: Why Effort Reduction Beats Discounts",
-    "blurb": "Discounts no longer drive loyalty the way they once did. Today’s strongest brands win by quietly removing friction — fewer steps, faster resolution, lower anxiety. This piece explains why ease now feels more valuable than savings, and how effort has become the real price customers pay."
+    "href": "/articles/why-efficient-companies-are-becoming-fragile-jan-2026",
+    "title": "“Efficient” Companies Are Becoming Fragile",
+    "blurb": "Relentless optimization made organizations lean, fast, and profitable — but also brittle. This piece explains how efficiency strips away resilience, why small shocks now trigger large failures, and why redundancy is quietly returning as a strategic advantage."
   },
   {
-    "href": "/articles/why-the-brain-prefers-familiar-problems-over-important-ones-jan-2026",
-    "title": "Why the Brain Prefers Familiar Problems Over Important Ones",
-    "blurb": "Productivity often stalls not from laziness, but from cognition. The brain gravitates toward predictable tasks and avoids uncertain work — even when that work matters most. This article unpacks the science behind avoidance, discomfort, and why resistance often signals meaningful progress."
+    "href": "/articles/why-fast-science-produces-fragile-knowledge-jan-2026",
+    "title": "Fast Science Produces Fragile Knowledge",
+    "blurb": "Modern research rewards speed, novelty, and volume. But when discovery outruns verification, knowledge becomes thin and unstable. This article explores how fast science weakens foundations — and why durable truth still demands time."
   }
 ];
 
