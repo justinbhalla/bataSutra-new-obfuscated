@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/why-efficient-companies-are-becoming-fragile-jan-2026",
-    "title": "“Efficient” Companies Are Becoming Fragile",
-    "blurb": "Relentless optimization made organizations lean, fast, and profitable — but also brittle. This piece explains how efficiency strips away resilience, why small shocks now trigger large failures, and why redundancy is quietly returning as a strategic advantage."
+    "href": "/articles/the-resilience-gap-why-systems-fail-even-when-nothing-goes-wrong-jan-2026",
+    "title": "The Resilience Gap: Why Systems Fail Even When Nothing Goes Wrong",
+    "blurb": "Modern systems often break without shocks or mistakes. Optimised tightly for normal conditions, they lose slack, redundancy, and recovery capacity. This article explains how efficiency quietly creates fragility — and why resilience requires room to bend."
   },
   {
-    "href": "/articles/why-fast-science-produces-fragile-knowledge-jan-2026",
-    "title": "Fast Science Produces Fragile Knowledge",
-    "blurb": "Modern research rewards speed, novelty, and volume. But when discovery outruns verification, knowledge becomes thin and unstable. This article explores how fast science weakens foundations — and why durable truth still demands time."
+    "href": "/articles/fast-science-fragile-knowledge-jan-2026",
+    "title": "Fast Science, Fragile Knowledge",
+    "blurb": "Research is moving faster than ever, but verification is falling behind. As novelty outpaces replication, knowledge becomes thinner and less reliable. This piece examines why speed weakens scientific foundations — and why durable truth still demands time."
   }
 ];
 
