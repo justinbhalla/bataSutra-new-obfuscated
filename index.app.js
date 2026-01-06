@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
 {
     "href": "/articles/the-resilience-gap-why-systems-fail-even-when-nothing-goes-wrong-jan-2026",
-    "title": "The Resilience Gap: Why Systems Fail Even When Nothing Goes Wrong",
+    "title": "Why Systems Fail Even When Nothing Goes Wrong",
     "blurb": "Modern systems often break without shocks or mistakes. Optimised tightly for normal conditions, they lose slack, redundancy, and recovery capacity. This article explains how efficiency quietly creates fragility — and why resilience requires room to bend."
   },
   {
