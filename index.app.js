@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/how-the-brain-handles-uncertainty-jan-2026",
+    "href": "/articles/your-brain-was-not-built-for-infinite-options-science-of-decision-fatigue-jan-2026",
     "title": "How the Brain Handles Uncertainty",
     "blurb": "Uncertainty isn’t just uncomfortable — it’s cognitively expensive. This article explores how the brain reacts when outcomes are unclear, why ambiguity drains focus and decision quality, and how modern businesses, markets, and individuals can design systems that reduce mental friction instead of amplifying it."
   },
   {
-    "href": "/articles/the-attention-bottleneck-why-focus-is-breaking-jan-2026",
+    "href": "/articles/companies-that-look-profitable-but-are-quietly-burning-cash-jan-2026",
     "title": "The Attention Bottleneck",
     "blurb": "Attention has become the scarcest resource in the modern economy. From product design to workplace overload, this piece breaks down why human focus is hitting a hard limit, how constant inputs degrade thinking quality, and why the next competitive advantage will come from reducing noise—not adding more."
   }
