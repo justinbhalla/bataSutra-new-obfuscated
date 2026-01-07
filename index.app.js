@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-resilience-gap-why-systems-fail-even-when-nothing-goes-wrong-jan-2026",
-    "title": "Why Systems Fail Even When Nothing Goes Wrong",
-    "blurb": "Modern systems often break without shocks or mistakes. Optimised tightly for normal conditions, they lose slack, redundancy, and recovery capacity. This article explains how efficiency quietly creates fragility — and why resilience requires room to bend."
+    "href": "/articles/how-the-brain-handles-uncertainty-jan-2026",
+    "title": "How the Brain Handles Uncertainty",
+    "blurb": "Uncertainty isn’t just uncomfortable — it’s cognitively expensive. This article explores how the brain reacts when outcomes are unclear, why ambiguity drains focus and decision quality, and how modern businesses, markets, and individuals can design systems that reduce mental friction instead of amplifying it."
   },
   {
-    "href": "/articles/fast-science-fragile-knowledge-jan-2026",
-    "title": "Fast Science, Fragile Knowledge",
-    "blurb": "Research is moving faster than ever, but verification is falling behind. As novelty outpaces replication, knowledge becomes thinner and less reliable. This piece examines why speed weakens scientific foundations — and why durable truth still demands time."
+    "href": "/articles/the-attention-bottleneck-why-focus-is-breaking-jan-2026",
+    "title": "The Attention Bottleneck",
+    "blurb": "Attention has become the scarcest resource in the modern economy. From product design to workplace overload, this piece breaks down why human focus is hitting a hard limit, how constant inputs degrade thinking quality, and why the next competitive advantage will come from reducing noise—not adding more."
   }
 ];
 
