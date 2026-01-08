@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/your-brain-was-not-built-for-infinite-options-science-of-decision-fatigue-jan-2026",
-    "title": "How the Brain Handles Uncertainty",
-    "blurb": "Uncertainty isn’t just uncomfortable — it’s cognitively expensive. This article explores how the brain reacts when outcomes are unclear, why ambiguity drains focus and decision quality, and how modern businesses, markets, and individuals can design systems that reduce mental friction instead of amplifying it."
+    "href": "/articles/the-quiet-cash-cycle-why-profitable-companies-are-waiting-jan-2026",
+    "title": "The Quiet Cash Cycle",
+    "blurb": "Across industries, profitable companies are deliberately slowing spending. This article explains why holding cash has become a strategic choice rather than a defensive move, how optionality now outweighs speed, and why waiting may prove more valuable than early expansion in uncertain environments."
   },
   {
-    "href": "/articles/companies-that-look-profitable-but-are-quietly-burning-cash-jan-2026",
-    "title": "The Attention Bottleneck",
-    "blurb": "Attention has become the scarcest resource in the modern economy. From product design to workplace overload, this piece breaks down why human focus is hitting a hard limit, how constant inputs degrade thinking quality, and why the next competitive advantage will come from reducing noise—not adding more."
+    "href": "/articles/replication-is-back-and-its-changing-what-gets-funded-jan-2026",
+    "title": "Replication Is Back",
+    "blurb": "After years of prioritising novelty, science is quietly rebalancing toward reliability. This piece examines how the replication crisis reshaped funding incentives, why validation is regaining institutional support, and how slower, more careful science may ultimately produce stronger knowledge."
   }
 ];
 
