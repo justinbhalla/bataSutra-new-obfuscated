@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
 {
-    "href": "/articles/the-quiet-cash-cycle-why-profitable-companies-are-waiting-jan-2026",
-    "title": "The Quiet Cash Cycle",
-    "blurb": "Across industries, profitable companies are deliberately slowing spending. This article explains why holding cash has become a strategic choice rather than a defensive move, how optionality now outweighs speed, and why waiting may prove more valuable than early expansion in uncertain environments."
+    "href": "/articles/why-scientific-confidence-comes-from-boredom-jan-2026",
+    "title": "Why Scientific Confidence Comes From Boredom",
+    "blurb": "The most reliable scientific knowledge is rarely exciting. It is built through repetition, failed experiments, and results that change very little over time. This article explains why boredom is not a flaw in science — but the signal that understanding has finally stabilized."
   },
   {
-    "href": "/articles/replication-is-back-and-its-changing-what-gets-funded-jan-2026",
-    "title": "Replication Is Back",
-    "blurb": "After years of prioritising novelty, science is quietly rebalancing toward reliability. This piece examines how the replication crisis reshaped funding incentives, why validation is regaining institutional support, and how slower, more careful science may ultimately produce stronger knowledge."
+    "href": "/articles/the-fragility-of-seamless-systems-jan-2026",
+    "title": "The Fragility of Seamless Systems",
+    "blurb": "Seamless systems feel magical until they fail. Designed to eliminate friction, they often remove buffers, visibility, and human judgment. This piece explores how smoothness hides risk — and why systems that feel clunky are often the ones that survive stress."
   }
 ];
 
