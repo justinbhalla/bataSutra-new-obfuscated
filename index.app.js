@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-    "href": "/articles/the-fragility-of-seamless-systems-jan-2026",
-    "title": "The Fragility of Seamless Systems",
-    "blurb": "Seamless systems feel magical until they fail. Designed to eliminate friction, they often remove buffers, visibility, and human judgment. This piece explores how smoothness hides risk — and why systems that feel clunky are often the ones that survive stress."
+  "href": "why-companies-are-slowing-down-on-purpose-jan-2026",
+  "title": "Why Companies Are Slowing Down on Purpose",
+  "blurb": "After years of chasing speed, companies are deliberately extending timelines, staging decisions, and prioritising predictability. This article explains why strategic slowdown is emerging as a competitive advantage in uncertain markets — and why restraint now signals strength."
   },
     {
-    "href": "/articles/why-scientific-confidence-comes-from-boredom-jan-2026",
-    "title": "Why Scientific Confidence Comes From Boredom",
-    "blurb": "The most reliable scientific knowledge is rarely exciting. It is built through repetition, failed experiments, and results that change very little over time. This article explains why boredom is not a flaw in science."
+  "href": "replication-becoming-sciences-priority-again-jan-2026",
+  "title": "Replication Is Quietly Becoming Science’s Priority Again",
+  "blurb": "As unreliable findings accumulate, scientific institutions are shifting attention back to replication, validation, and durability. This piece explores why trust in science depends less on novelty — and more on results that hold up over time."
   }
 ];
 
