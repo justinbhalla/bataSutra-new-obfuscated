@@ -11,7 +11,7 @@ const ARTICLES = [
     {
     "href": "/articles/why-scientific-confidence-comes-from-boredom-jan-2026",
     "title": "Why Scientific Confidence Comes From Boredom",
-    "blurb": "The most reliable scientific knowledge is rarely exciting. It is built through repetition, failed experiments, and results that change very little over time. This article explains why boredom is not a flaw in science — but the signal that understanding has finally stabilized."
+    "blurb": "The most reliable scientific knowledge is rarely exciting. It is built through repetition, failed experiments, and results that change very little over time. This article explains why boredom is not a flaw in science."
   }
 ];
 
