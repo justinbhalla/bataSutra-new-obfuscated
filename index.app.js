@@ -4,12 +4,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "why-companies-are-slowing-down-on-purpose-jan-2026",
+  "href": "/articles/why-companies-are-slowing-down-on-purpose-jan-2026",
   "title": "Why Companies Are Slowing Down on Purpose",
   "blurb": "After years of chasing speed, companies are deliberately extending timelines, staging decisions, and prioritising predictability. This article explains why strategic slowdown is emerging as a competitive advantage — and why restraint now signals strength."
   },
     {
-  "href": "replication-becoming-sciences-priority-again-jan-2026",
+  "href": "/articles/replication-becoming-sciences-priority-again-jan-2026",
   "title": "Replication Is Quietly Becoming Science’s Priority Again",
   "blurb": "As unreliable findings accumulate, scientific institutions are shifting attention back to replication, validation, and durability. This piece explores why trust in science depends less on novelty — and more on results that hold up over time."
   }
