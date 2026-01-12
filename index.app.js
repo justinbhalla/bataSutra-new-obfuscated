@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-    "href": "/articles/efficiency-is-not-a-strategy-jan-2026",
-    "title": "Efficiency Is Not a Strategy",
-    "blurb": "Efficiency improves performance under stable conditions, but it does not prepare organisations for uncertainty. This article explains how optimisation removes buffers, why success creates fragility, and why true strategy preserves flexibility rather than maximising output."
+    "href": "/articles/the-cost-of-treating-speed-as-a-virtue-jan-2026",
+    "title": "The Cost of Treating Speed as a Virtue",
+    "blurb": "Speed is often framed as progress, but relentless acceleration hides compounding risks. This article examines how prioritising velocity distorts decision-making, increases systemic errors, and quietly transfers long-term costs to organisations, institutions, and society."
   },
-    {
-    "href": "/articles/slow-science-is-a-safety-system-jan-2026",
-    "title": "Slow Science Is a Safety System",
-    "blurb": "Discovery can move fast, but confidence should not. As research accelerates, verification lags behind. This piece explores why slowness protects scientific knowledge, how replication prevents hidden error, and why durable truth requires time."
+  {
+    "href": "/articles/what-uncertainty-signals-in-good-science-jan-2026",
+    "title": "What Uncertainty Signals in Good Science",
+    "blurb": "Uncertainty is not a weakness in scientific work; it is evidence of rigor. This piece explains why credible research openly exposes doubt, how uncertainty guides better inquiry, and why confident overstatement is often a warning sign rather than a breakthrough."
   }
 ];
 
