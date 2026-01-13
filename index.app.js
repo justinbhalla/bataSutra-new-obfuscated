@@ -4,15 +4,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-    "href": "/articles/the-cost-of-treating-speed-as-a-virtue-jan-2026",
-    "title": "The Cost of Treating Speed as a Virtue",
-    "blurb": "Speed is often framed as progress, but relentless acceleration hides compounding risks. This article examines how prioritising velocity distorts decision-making, increases systemic errors, and quietly transfers long-term costs to organisations, institutions, and society."
-  },
+  "href": "/articles/the-illusion-of-operational-excellence-jan-2026",
+  "title": "The Illusion of Operational Excellence",
+  "blurb": "Some organisations look flawlessly run — stable metrics, smooth processes, predictable execution. This piece explains how visible efficiency hides invisible risk, why learning slows inside perfect systems, and how failure accumulates quietly beneath operational calm."
+},
   {
-    "href": "/articles/what-uncertainty-signals-in-good-science-jan-2026",
-    "title": "What Uncertainty Signals in Good Science",
-    "blurb": "Uncertainty is not a weakness in scientific work; it is evidence of rigor. This piece explains why credible research openly exposes doubt, how uncertainty guides better inquiry, and why confident overstatement is often a warning sign rather than a breakthrough."
-  }
+  "href": "/articles/error-is-the-only-honest-signal-in-research-jan-2026",
+  "title": "Error Is the Only Honest Signal in Research",
+  "blurb": "Successful experiments reassure more than they reveal. This article shows why failure compresses learning, exposes assumptions, and marks the true boundaries of knowledge — and why suppressing error quietly slows discovery."
+}
 ];
 
 
