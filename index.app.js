@@ -6,7 +6,7 @@ const ARTICLES = [
   {
   "href": "/articles/the-illusion-of-operational-excellence-jan-2026",
   "title": "The Illusion of Operational Excellence",
-  "blurb": "Some organisations look flawlessly run — stable metrics, smooth processes, predictable execution. This piece explains how visible efficiency hides invisible risk, why learning slows inside perfect systems, and how failure accumulates quietly beneath operational calm."
+  "blurb": "Some organisations look flawlessly run — stable metrics, smooth processes, predictable execution. This piece explains how visible efficiency hides invisible risk, why learning slows inside perfect systems, and how failure accumulates quietly."
 },
   {
   "href": "/articles/error-is-the-only-honest-signal-in-research-jan-2026",
