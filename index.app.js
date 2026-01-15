@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "/articles/the-illusion-of-operational-excellence-jan-2026",
-  "title": "The Illusion of Operational Excellence",
-  "blurb": "Some organisations look flawlessly run — stable metrics, smooth processes, predictable execution. This piece explains how visible efficiency hides invisible risk, why learning slows inside perfect systems, and how failure accumulates quietly."
+  "href": "/articles/why-well-run-companies-still-break-jan-2026",
+  "title": "Why Well-Run Companies Still Break",
+  "blurb": "Operational discipline improves efficiency, but it can quietly strip organisations of slack, dissent, and recovery capacity. This article examines how optimisation creates hidden fragility, why smooth operations mask accumulating risk, and how resilience is often sacrificed in the pursuit of control."
 },
-  {
-  "href": "/articles/error-is-the-only-honest-signal-in-research-jan-2026",
-  "title": "Error Is the Only Honest Signal in Research",
-  "blurb": "Successful experiments reassure more than they reveal. This article shows why failure compresses learning, exposes assumptions, and marks the true boundaries of knowledge — and why suppressing error quietly slows discovery."
+{
+  "href": "/articles/the-problem-with-treating-discovery-like-competition-jan-2026",
+  "title": "The Problem With Treating Discovery Like Competition",
+  "blurb": "When discovery is treated as a race, speed and ranking begin to outweigh truth. This piece explores how publication pressure distorts research incentives, why fast results amplify error, and how competition reshapes science away from understanding and toward visibility."
 }
 ];
 
