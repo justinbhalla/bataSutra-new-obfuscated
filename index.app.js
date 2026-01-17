@@ -6,7 +6,7 @@ const ARTICLES = [
   {
   "href": "/articles/efficiency-is-a-local-optimum-jan-2026",
   "title": "Efficiency Is a Local Optimum",
-  "blurb": "Efficiency maximises performance under stable conditions, but it narrows the paths a system can take when reality shifts. This article explains how optimisation quietly removes slack, why locally optimal organisations fail faster under stress, and why resilience depends on preserving inefficiency."
+  "blurb": "Efficiency maximises performance under stable conditions, but it narrows the paths a system can take when reality shifts. This article explains how optimisation quietly removes slack, why locally optimal organisations fail faster under stress."
 },
 {
   "href": "/articles/fast-science-produces-thin-knowledge-jan-2026",
