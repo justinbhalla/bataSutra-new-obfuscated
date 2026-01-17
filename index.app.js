@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "/articles/why-well-run-companies-still-break-jan-2026",
-  "title": "Why Well-Run Companies Still Break",
-  "blurb": "Operational discipline improves efficiency, but it can quietly strip organisations of slack, dissent, and recovery capacity. This article examines how optimisation creates hidden fragility, why smooth operations mask accumulating risk, and how resilience is often sacrificed in the pursuit of control."
+  "href": "/articles/efficiency-is-a-local-optimum-jan-2026",
+  "title": "Efficiency Is a Local Optimum",
+  "blurb": "Efficiency maximises performance under stable conditions, but it narrows the paths a system can take when reality shifts. This article explains how optimisation quietly removes slack, why locally optimal organisations fail faster under stress, and why resilience depends on preserving inefficiency."
 },
 {
-  "href": "/articles/the-problem-with-treating-discovery-like-competition-jan-2026",
-  "title": "The Problem With Treating Discovery Like Competition",
-  "blurb": "When discovery is treated as a race, speed and ranking begin to outweigh truth. This piece explores how publication pressure distorts research incentives, why fast results amplify error, and how competition reshapes science away from understanding and toward visibility."
+  "href": "/articles/fast-science-produces-thin-knowledge-jan-2026",
+  "title": "Fast Science Produces Thin Knowledge",
+  "blurb": "As discovery accelerates, verification struggles to keep pace. This piece explores how speed, competition, and publication pressure weaken scientific foundations — and why confidence in knowledge grows from slowness, repetition, and patient validation."
 }
 ];
 
