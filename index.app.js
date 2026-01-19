@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "/articles/when-process-replaces-judgment-jan-2026",
-  "title": "When Process Replaces Judgment",
-  "blurb": "Processes reduce variability, but they also displace human judgment when exceptions matter most. This article explores how rule-driven systems quietly train people to stop thinking, why organisations confuse compliance with competence, and how over-process creates fragility in moments that demand discretion."
+  "href": "/articles/when-compliance-becomes-the-strategy-jan-2026",
+  "title": "When Compliance Becomes the Strategy",
+  "blurb": "Compliance reduces visible risk, but over time it can replace judgment itself. This article explains how regulatory alignment becomes a substitute for thinking, why box-ticking overtakes decision-making, and how organisations lose adaptability while remaining formally correct."
 },
 {
-  "href": "/articles/discovery-is-not-a-race-jan-2026",
-  "title": "Discovery Is Not a Race",
-  "blurb": "Speed accelerates output, but it rarely deepens understanding. This article explains why competitive timelines distort scientific inquiry, how premature conclusions harden into consensus, and why meaningful discovery requires patience, iteration, and room for intellectual error."
+  "href": "/articles/discovery-slows-down-when-it-speeds-up-jan-2026",
+  "title": "Discovery Slows Down When It Speeds Up",
+  "blurb": "Accelerating research promises progress, but often delivers thinner knowledge. This piece explores how speed distorts incentives, allows error to scale, and why durable scientific understanding requires time, verification, and restraint."
 }
 ];
 
