@@ -6,7 +6,7 @@ const ARTICLES = [
   {
   "href": "/articles/when-compliance-becomes-the-strategy-jan-2026",
   "title": "When Compliance Becomes the Strategy",
-  "blurb": "Compliance reduces visible risk, but over time it can replace judgment itself. This article explains how regulatory alignment becomes a substitute for thinking, why box-ticking overtakes decision-making, and how organisations lose adaptability while remaining formally correct."
+  "blurb": "Compliance reduces visible risk, but over time it can replace judgment itself. This article explains how regulatory alignment becomes a substitute for thinking, why box-ticking overtakes decision-making, and how organisations lose adaptability."
 },
 {
   "href": "/articles/discovery-slows-down-when-it-speeds-up-jan-2026",
