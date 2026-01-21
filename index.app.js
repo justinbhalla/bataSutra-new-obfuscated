@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "/articles/when-compliance-becomes-the-strategy-jan-2026",
-  "title": "When Compliance Becomes the Strategy",
-  "blurb": "Compliance reduces visible risk, but over time it can replace judgment itself. This article explains how regulatory alignment becomes a substitute for thinking, why box-ticking overtakes decision-making, and how organisations lose adaptability."
+  "href": "/articles/when-automation-stops-improving-decisions-jan-2026",
+  "title": "When Automation Stops Improving Decisions",
+  "blurb": "Automation improves consistency and speed, but beyond a point it weakens judgment. This article explains how decision systems shift from aids to authorities, why humans disengage as defaults harden, and how organisations lose the ability to reason when automated outputs go wrong."
 },
 {
-  "href": "/articles/discovery-slows-down-when-it-speeds-up-jan-2026",
-  "title": "Discovery Slows Down When It Speeds Up",
-  "blurb": "Accelerating research promises progress, but often delivers thinner knowledge. This piece explores how speed distorts incentives, allows error to scale, and why durable scientific understanding requires time, verification, and restraint."
+  "href": "/articles/scientific-progress-slows-when-incentives-accelerate-jan-2026",
+  "title": "Scientific Progress Slows When Incentives Accelerate",
+  "blurb": "Modern science rewards speed, visibility, and volume, but these incentives compress exploration and weaken verification. This piece examines how accelerated research systems produce more papers yet thinner knowledge, and why durable discovery depends on patience rather than velocity."
 }
 ];
 
