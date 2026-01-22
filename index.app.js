@@ -4,14 +4,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   {
-  "href": "/articles/when-automation-stops-improving-decisions-jan-2026",
-  "title": "When Automation Stops Improving Decisions",
-  "blurb": "Automation improves consistency and speed, but beyond a point it weakens judgment. This article explains how decision systems shift from aids to authorities, why humans disengage as defaults harden, and how organisations lose the ability to reason when automated outputs go wrong."
+  "href": "/articles/stability-is-not-the-absence-of-change-jan-2026",
+  "title": "Stability Is Not the Absence of Change",
+  "blurb": "Calm systems feel safe, but they often suppress early warning signals. This article explains why organisations that optimise for smoothness lose adaptive capacity, mistake silence for health, and fail suddenly after long periods of hidden stress."
 },
 {
-  "href": "/articles/scientific-progress-slows-when-incentives-accelerate-jan-2026",
-  "title": "Scientific Progress Slows When Incentives Accelerate",
-  "blurb": "Modern science rewards speed, visibility, and volume, but these incentives compress exploration and weaken verification. This piece examines how accelerated research systems produce more papers yet thinner knowledge, and why durable discovery depends on patience rather than velocity."
+  "href": "/articles/tools-advance-faster-than-questions-jan-2026",
+  "title": "Tools Advance Faster Than Questions",
+  "blurb": "Scientific capability is accelerating faster than scientific understanding. This piece explores how measurement outpaces meaning, why precision can mask shallow inquiry, and how progress stalls when tools lead curiosity instead of serving it."
 }
 ];
 
