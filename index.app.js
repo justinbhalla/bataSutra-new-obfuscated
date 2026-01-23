@@ -6,7 +6,7 @@ const ARTICLES = [
   
   {
     "href": "/articles/everything-is-a-subscription-ownership-is-fading-jan-2025",
-    "title": "Why Everything Is Becoming a Subscription — Even Things That Shouldn’t",
+    "title": "Why Everything Is Becoming a Subscription",
     "blurb": "Ownership didn’t disappear overnight — it was redesigned into monthly permissions. From cars to software to everyday utilities, this piece unpacks why businesses prefer subscriptions, how small recurring fees quietly outgrow one-time prices, and why consumers keep agreeing even as control slips away."
   },
   {
