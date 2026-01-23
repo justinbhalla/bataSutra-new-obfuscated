@@ -3,16 +3,18 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 
 // Local articles (fallback)
 const ARTICLES = [
+  
   {
-  "href": "/articles/stability-is-not-the-absence-of-change-jan-2026",
-  "title": "Stability Is Not the Absence of Change",
-  "blurb": "Calm systems feel safe, but they often suppress early warning signals. This article explains why organisations that optimise for smoothness lose adaptive capacity, mistake silence for health, and fail suddenly after long periods of hidden stress."
-},
-{
-  "href": "/articles/tools-advance-faster-than-questions-jan-2026",
-  "title": "Tools Advance Faster Than Questions",
-  "blurb": "Scientific capability is accelerating faster than scientific understanding. This piece explores how measurement outpaces meaning, why precision can mask shallow inquiry, and how progress stalls when tools lead curiosity instead of serving it."
-}
+    "href": "/articles/everything-is-a-subscription-ownership-is-fading-jan-2025",
+    "title": "Why Everything Is Becoming a Subscription — Even Things That Shouldn’t",
+    "blurb": "Ownership didn’t disappear overnight — it was redesigned into monthly permissions. From cars to software to everyday utilities, this piece unpacks why businesses prefer subscriptions, how small recurring fees quietly outgrow one-time prices, and why consumers keep agreeing even as control slips away."
+  },
+  {
+    "href": "/articles/your-brain-thinks-tomorrow-is-a-different-person-jan-2025",
+    "title": "Your Brain Thinks Tomorrow Is a Different Person",
+    "blurb": "Procrastination, overspending, and burnout aren’t failures of willpower. Neuroscience shows your brain treats your future self like a stranger. This article explains how neural distance sabotages long-term plans — and what actually helps present decisions protect tomorrow."
+  }
+
 ];
 
 
