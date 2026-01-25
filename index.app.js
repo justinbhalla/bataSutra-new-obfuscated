@@ -4,16 +4,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
-  {
-    "href": "/articles/everything-is-a-subscription-ownership-is-fading-jan-2025",
-    "title": "Why Everything Is Becoming a Subscription",
-    "blurb": "Ownership didn’t disappear overnight — it was redesigned into monthly permissions. From cars to software to everyday utilities, this piece unpacks why businesses prefer subscriptions, how small recurring fees quietly outgrow one-time prices, and why consumers keep agreeing even as control slips away."
-  },
-  {
-    "href": "/articles/your-brain-thinks-tomorrow-is-a-different-person-jan-2025",
-    "title": "Your Brain Thinks Tomorrow Is a Different Person",
-    "blurb": "Procrastination, overspending, and burnout aren’t failures of willpower. Neuroscience shows your brain treats your future self like a stranger. This article explains how neural distance sabotages long-term plans — and what actually helps present decisions protect tomorrow."
-  }
+ {
+  "href": "/articles/efficiency-without-resilience-jan-2026",
+  "title": "Efficiency Without Resilience Is Just Speed Toward Failure",
+  "blurb": "Optimised systems perform brilliantly under stable conditions, but they collapse faster when reality shifts. This article examines how organisations trim buffers, mistake speed for strength, and discover too late that resilience was removed in the name of efficiency."
+},
+  {{
+  "href": "/articles/science-advances-in-pauses-not-sprints-jan-2026",
+  "title": "Science Advances in Pauses, Not Sprints",
+  "blurb": "Modern research rewards speed and visibility, but understanding matures slowly. This piece explores why constant output thins knowledge, how replication and reflection disappear, and why breakthroughs often emerge during silence rather than acceleration."
+}
 
 ];
 
