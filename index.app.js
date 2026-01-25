@@ -9,7 +9,7 @@ const ARTICLES = [
   "title": "Efficiency Without Resilience Is Just Speed Toward Failure",
   "blurb": "Optimised systems perform brilliantly under stable conditions, but they collapse faster when reality shifts. This article examines how organisations trim buffers, mistake speed for strength, and discover too late that resilience was removed in the name of efficiency."
 },
-  {{
+  {
   "href": "/articles/science-advances-in-pauses-not-sprints-jan-2026",
   "title": "Science Advances in Pauses, Not Sprints",
   "blurb": "Modern research rewards speed and visibility, but understanding matures slowly. This piece explores why constant output thins knowledge, how replication and reflection disappear, and why breakthroughs often emerge during silence rather than acceleration."
