@@ -4,16 +4,17 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
- {
-  "href": "/articles/efficiency-without-resilience-jan-2026",
-  "title": "Efficiency Without Resilience Is Just Speed Toward Failure",
-  "blurb": "Optimised systems perform brilliantly under stable conditions, but they collapse faster when reality shifts. This article examines how organisations trim buffers, mistake speed for strength, and discover too late that resilience was removed in the name of efficiency."
+{
+  "href": "/articles/growth-breaks-where-feedback-disappears-jan-2026",
+  "title": "Growth Breaks Where Feedback Disappears",
+  "blurb": "As companies scale, real feedback gets filtered, delayed, or ignored. This article explores why success weakens signal quality, how organisations confuse metrics with meaning, and what happens when growth continues without correction."
 },
   {
-  "href": "/articles/science-advances-in-pauses-not-sprints-jan-2026",
-  "title": "Science Advances in Pauses, Not Sprints",
-  "blurb": "Modern research rewards speed and visibility, but understanding matures slowly. This piece explores why constant output thins knowledge, how replication and reflection disappear, and why breakthroughs often emerge during silence rather than acceleration."
+  "href": "/articles/science-moves-fast-when-failure-is-cheap-jan-2026",
+  "title": "Science Moves Fast When Failure Is Cheap",
+  "blurb": "Breakthroughs often come from environments where mistakes are tolerated and iteration is fast. This piece examines how cost, career risk, and reputation shape scientific progress—and why lowering the price of failure accelerates discovery."
 }
+
 
 ];
 
