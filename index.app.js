@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/growth-breaks-where-feedback-disappears-jan",
-  "title": "Growth Breaks Where Feedback Disappears",
+  "title": "Growth Decays = Feedback Disappears",
   "blurb": "As companies scale, real feedback gets filtered, delayed, or ignored. This article explores why success weakens signal quality, how organisations confuse metrics with meaning, and what happens when growth continues without correction."
 },
   {
