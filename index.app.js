@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/growth-breaks-where-feedback-disappears-jan-2026",
+  "href": "/articles/growth-breaks-where-feedback-disappears-jan",
   "title": "Growth Breaks Where Feedback Disappears",
   "blurb": "As companies scale, real feedback gets filtered, delayed, or ignored. This article explores why success weakens signal quality, how organisations confuse metrics with meaning, and what happens when growth continues without correction."
 },
   {
-  "href": "/articles/science-moves-fast-when-failure-is-cheap-jan-2026",
+  "href": "/articles/science-moves-fast-when-failure-is-cheap-jan",
   "title": "Science Moves Fast When Failure Is Cheap",
   "blurb": "Breakthroughs often come from environments where mistakes are tolerated and iteration is fast. This piece examines how cost, career risk, and reputation shape scientific progress—and why lowering the price of failure accelerates discovery."
 }
