@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/growth-breaks-where-feedback-disappears-jan",
-  "title": "Growth Decays = Feedback Disappears",
-  "blurb": "As companies scale, real feedback gets filtered, delayed, or ignored. This article explores why success weakens signal quality, how organisations confuse metrics with meaning, and what happens when growth continues without correction."
+  "href": "/articles/resilience-looks-inefficient-until-it-saves-you-jan-2026",
+  "title": "Resilience Looks Inefficient Until It Saves You",
+  "blurb": "Slack and redundancy appear wasteful during calm periods, but they are what allow organisations to survive shocks. This article explains how optimisation quietly removes recovery capacity, why failure feels sudden, and why resilience only becomes visible when it is almost gone."
 },
-  {
-  "href": "/articles/science-moves-fast-when-failure-is-cheap-jan",
-  "title": "Science Moves Fast When Failure Is Cheap",
-  "blurb": "Breakthroughs often come from environments where mistakes are tolerated and iteration is fast. This piece examines how cost, career risk, and reputation shape scientific progress—and why lowering the price of failure accelerates discovery."
+{
+  "href": "/articles/scientific-consensus-is-a-lagging-indicator-jan-2026",
+  "title": "Scientific Consensus Is a Lagging Indicator",
+  "blurb": "Agreement forms after uncertainty has narrowed, not while discovery is still unfolding. This piece explores why premature consensus distorts research incentives, how disagreement signals healthy inquiry, and why unresolved questions drive scientific progress."
 }
+
 
 
 ];
