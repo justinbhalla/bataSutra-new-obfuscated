@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/resilience-looks-inefficient-until-it-saves-you-jan-2026",
   "title": "Resilience Looks Inefficient Until It Saves You",
-  "blurb": "Slack and redundancy appear wasteful during calm periods, but they are what allow organisations to survive shocks. This article explains how optimisation quietly removes recovery capacity, why failure feels sudden, and why resilience only becomes visible when it is almost gone."
+  "blurb": "Slack and redundancy appear wasteful during calm periods, but they are what allow organisations to survive shocks. This article explains how optimisation quietly removes recovery capacity, why failure feels sudden, and why resilience only becomes visible."
 },
 {
   "href": "/articles/scientific-consensus-is-a-lagging-indicator-jan-2026",
