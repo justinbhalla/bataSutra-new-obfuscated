@@ -6,8 +6,8 @@ const ARTICLES = [
   
 {
   "href": "/articles/growth-hides-risk-better-than-it-reveals-jan-2026",
-  "title": "Growth Hides Risk Better Than It Reveals It",
-  "blurb": "Rapid expansion often conceals structural weakness rather than proving strength. This article explains how momentum delays scrutiny, why success masks fragility, and why risks surface only when growth slows."
+  "title": "Growth Hides Risk Better Than It Reveals",
+  "blurb": "Rapid expansion often conceals structural weakness rather than proving strength. This article explains how momentum delays scrutiny, why success masks fragility."
 },
 {
   "href": "/articles/speed-bias-embedded-in-scientific-culture-jan-2026",
