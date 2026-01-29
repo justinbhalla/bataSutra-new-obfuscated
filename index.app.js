@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
     "href": "/articles/age-of-invisible-fees-how-prices-rise-without-you-noticing-jan-2026",
-    "title": "The Age of Invisible Fees: How Prices Rise Without You Noticing",
+    "title": "Invisible Fees: How Prices Rise Without You Noticing",
     "blurb": "Prices didn’t suddenly jump — they quietly fragmented. From convenience fees to platform charges and ‘small’ add-ons, this piece unpacks how modern pricing hides inflation in plain sight, why your brain underestimates cumulative cost, and how everyday spending became harder to track than ever."
   },
   {
