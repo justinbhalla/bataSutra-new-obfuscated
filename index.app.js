@@ -5,15 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/growth-hides-risk-better-than-it-reveals-jan-2026",
-  "title": "Growth Hides Risk Better Than It Reveals",
-  "blurb": "Rapid expansion often conceals structural weakness rather than proving strength. This article explains how momentum delays scrutiny, why success masks fragility."
-},
-{
-  "href": "/articles/speed-bias-embedded-in-scientific-culture-jan-2026",
-  "title": "Speed Bias Is Now Embedded in Scientific Culture",
-  "blurb": "Acceleration has become a scientific virtue. This piece examines how funding cycles, publication pressure, and fast tools reshape research questions, compress reflection, and quietly narrow curiosity."
-}
+    "href": "/articles/age-of-invisible-fees-how-prices-rise-without-you-noticing-jan-2026",
+    "title": "The Age of Invisible Fees: How Prices Rise Without You Noticing",
+    "blurb": "Prices didn’t suddenly jump — they quietly fragmented. From convenience fees to platform charges and ‘small’ add-ons, this piece unpacks how modern pricing hides inflation in plain sight, why your brain underestimates cumulative cost, and how everyday spending became harder to track than ever."
+  },
+  {
+    "href": "/articles/your-brain-predicts-before-you-notice-jan-2026",
+    "title": "Your Brain Predicts Before You Notice",
+    "blurb": "Long before awareness kicks in, your brain is already forecasting outcomes, errors, and rewards. Drawing from neuroscience and perception research, this article explores predictive processing, why intuition feels instantaneous, and how much of ‘thinking’ happens before thought arrives."
+  }
 ];
 
 
