@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scientific-tools-now-outpace-human-intuition-jan-2026",
   "title": "Scientific Tools Now Outpace Human Intuition",
-  "blurb": "Modern instruments can detect patterns long before humans can understand them. This piece examines how simulation, automation, and machine-driven discovery are reshaping science, widening the gap between observation and intuition, and forcing a rethink of what understanding really means."
+  "blurb": "Modern instruments can detect patterns long before humans can understand them. This piece examines how simulation, automation, and machine-driven discovery are reshaping science, widening the gap between observation and intuition."
 }
 
 ];
