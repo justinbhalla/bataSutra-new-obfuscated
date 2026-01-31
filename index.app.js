@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-    "href": "/articles/age-of-invisible-fees-how-prices-rise-without-you-noticing-jan-2026",
-    "title": "Invisible Fees: How Prices Rise Without You Noticing",
-    "blurb": "Prices didn’t suddenly jump — they quietly fragmented. From convenience fees to platform charges and ‘small’ add-ons, this piece unpacks how modern pricing hides inflation in plain sight, why your brain underestimates cumulative cost, and how everyday spending became harder to track than ever."
-  },
-  {
-    "href": "/articles/your-brain-predicts-before-you-notice-jan-2026",
-    "title": "Your Brain Predicts Before You Notice",
-    "blurb": "Long before awareness kicks in, your brain is already forecasting outcomes, errors, and rewards. Drawing from neuroscience and perception research, this article explores predictive processing, why intuition feels instantaneous, and how much of ‘thinking’ happens before thought arrives."
-  }
+  "href": "/articles/scale-changes-what-failure-looks-like-jan-2026",
+  "title": "Scale Changes What Failure Looks Like",
+  "blurb": "Small organisations fail loudly and early, while large ones fail quietly and late. This article explores how scale delays feedback, hides deterioration behind buffers and momentum, and turns minor weaknesses into sudden, system-wide collapse."
+},
+{
+  "href": "/articles/scientific-tools-now-outpace-human-intuition-jan-2026",
+  "title": "Scientific Tools Now Outpace Human Intuition",
+  "blurb": "Modern instruments can detect patterns long before humans can understand them. This piece examines how simulation, automation, and machine-driven discovery are reshaping science, widening the gap between observation and intuition, and forcing a rethink of what understanding really means."
+}
+
 ];
 
 
