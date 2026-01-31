@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scale-changes-what-failure-looks-like-jan-2026",
-  "title": "Scale Changes What Failure Looks Like",
-  "blurb": "Small organisations fail loudly and early, while large ones fail quietly and late. This article explores how scale delays feedback, hides deterioration behind buffers and momentum, and turns minor weaknesses into sudden, system-wide collapse."
+  "href": "/articles/stability-can-be-a-leading-indicator-of-trouble-jan-2026",
+  "title": "Stability Can Be a Leading Indicator of Trouble",
+  "blurb": "Long periods of calm often feel reassuring, but in complex systems they can hide accumulated stress. This article explains why organisations mistake silence for health, how early warning signals get suppressed, and why failure often follows extended stability."
 },
 {
-  "href": "/articles/scientific-tools-now-outpace-human-intuition-jan-2026",
-  "title": "Tools Now Outpace Human Intuition",
-  "blurb": "Modern instruments can detect patterns long before humans can understand them. This piece examines how simulation, automation, and machine-driven discovery are reshaping science, widening the gap between observation and intuition."
+  "href": "/articles/discovery-slows-when-questions-get-expensive-jan-2026",
+  "title": "Discovery Slows When Questions Get Expensive",
+  "blurb": "As scientific tools grow more powerful and costly, fewer questions feel safe to ask. This piece explores how funding pressure narrows curiosity, why uncertainty becomes unaffordable, and how discovery slows even as capability expands."
 }
+
 
 ];
 
