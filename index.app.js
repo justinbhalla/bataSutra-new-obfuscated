@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/stability-can-be-a-leading-indicator-of-trouble-jan-2026",
-  "title": "Stability Can Be a Leading Indicator of Trouble",
-  "blurb": "Long periods of calm often feel reassuring, but in complex systems they can hide accumulated stress. This article explains why organisations mistake silence for health, how early warning signals get suppressed, and why failure often follows extended stability."
+  "href": "/articles/why-good-governance-can-delay-necessary-action-feb-2026",
+  "title": "Why Good Governance Can Delay Necessary Action",
+  "blurb": "Governance frameworks are designed to reduce risk, but they often slow response when conditions shift quickly. This article explains how layered approvals and procedural caution suppress initiative, why well-governed organisations hesitate at critical moments, and how compliance can unintentionally replace judgment."
 },
 {
-  "href": "/articles/discovery-slows-when-questions-get-expensive-jan-2026",
-  "title": "Discovery Slows When Questions Get Expensive",
-  "blurb": "As scientific tools grow more powerful and costly, fewer questions feel safe to ask. This piece explores how funding pressure narrows curiosity, why uncertainty becomes unaffordable, and how discovery slows even as capability expands."
+  "href": "/articles/replication-is-treated-as-waste-until-it-isnt-feb-2026",
+  "title": "Replication Is Treated as Waste — Until It Isn’t",
+  "blurb": "Replication is undervalued because it produces certainty rather than novelty. This piece explores why scientific systems reward new results over verification, how unreplicated findings accumulate hidden error, and why confidence collapses when confirmation arrives too late."
 }
+
 
 
 ];
