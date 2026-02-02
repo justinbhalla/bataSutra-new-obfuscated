@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/why-good-governance-can-delay-necessary-action-feb-2026",
-  "title": "Why Good Governance Can Delay Necessary Action",
-  "blurb": "Governance frameworks are designed to reduce risk, but they often slow response when conditions shift quickly. This article explains how layered approvals and procedural caution suppress initiative, why well-governed organisations hesitate at critical moments, and how compliance can unintentionally replace judgment."
+  "href": "/articles/scale-turns-small-errors-into-systemic-failures-feb-2026",
+  "title": "Scale Turns Small Errors Into Systemic Failures",
+  "blurb": "Minor flaws rarely matter at small size, but growth multiplies their consequences. This article explains how scale amplifies hidden weaknesses, why success delays correction, and how tolerable errors quietly become systemic risks."
 },
 {
-  "href": "/articles/replication-is-treated-as-waste-until-it-isnt-feb-2026",
-  "title": "Replication Is Treated as Waste — Until It Isn’t",
-  "blurb": "Replication is undervalued because it produces certainty rather than novelty. This piece explores why scientific systems reward new results over verification, how unreplicated findings accumulate hidden error, and why confidence collapses when confirmation arrives too late."
+  "href": "/articles/process-solves-yesterdays-problems-feb-2026",
+  "title": "Process Solves Yesterday’s Problems",
+  "blurb": "Protocols encode past learning, but discovery begins where assumptions break. This piece explores how rigid process filters out novelty, why method can replace curiosity, and how scientific insight depends on judgment beyond procedure."
 }
+
 
 
 
