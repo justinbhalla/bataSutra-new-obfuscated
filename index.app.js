@@ -10,7 +10,7 @@ const ARTICLES = [
   "blurb": "Dashboards and clean metrics create confidence, but they also narrow perception. This article explains how clarity simplifies reality, suppresses weak signals, and causes organisations to mistake visibility for understanding."
 },
 {
-  "href": "/articles/systems-are-now-better-than-theories-feb-2026",
+  "href": "/articles/systems-are-better-than-theories-feb-2026",
   "title": "Systems Are Better Than Theories",
   "blurb": "Scientific instruments now advance faster than scientific explanation. This piece explores how measurement outpaces meaning, why precision can disguise shallow models, and how knowledge thins when tools lead inquiry instead of serving theory."
 }
