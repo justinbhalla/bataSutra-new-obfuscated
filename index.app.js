@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/operational-clarity-can-reduce-strategic-awareness-feb-2026",
   "title": "Operational Clarity Can Reduce Strategic Awareness",
-  "blurb": "Dashboards and clean metrics create confidence, but they also narrow perception. This article explains how clarity simplifies reality, suppresses weak signals, and causes organisations to mistake visibility for understanding while strategic awareness quietly erodes."
+  "blurb": "Dashboards and clean metrics create confidence, but they also narrow perception. This article explains how clarity simplifies reality, suppresses weak signals, and causes organisations to mistake visibility for understanding."
 },
 {
   "href": "/articles/systems-are-now-better-than-theories-feb-2026",
