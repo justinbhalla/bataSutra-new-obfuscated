@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/tools-now-shape-questions-more-than-curiosity-feb-2026",
   "title": "Tools Now Shape Questions More Than Curiosity",
-  "blurb": "As scientific tools accelerate, inquiry increasingly bends around what can be measured rather than what needs to be understood. This piece explores how methods begin to dictate questions, why precision can mask weak theory, and how discovery becomes shallow when capability leads curiosity."
+  "blurb": "As scientific tools accelerate, inquiry increasingly bends around what can be measured rather than what needs to be understood. This piece explores how methods begin to dictate questions, why precision can mask weak theory."
 }
 
 
