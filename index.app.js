@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/operational-clarity-can-reduce-strategic-awareness-feb-2026",
-  "title": "Operational Clarity Can Reduce Strategic Awareness",
-  "blurb": "Dashboards and clean metrics create confidence, but they also narrow perception. This article explains how clarity simplifies reality, suppresses weak signals, and causes organisations to mistake visibility for understanding."
+  "href": "/articles/scale-turns-coordination-into-a-bottleneck-feb-2026",
+  "title": "Scale Turns Coordination Into a Bottleneck",
+  "blurb": "Growth expands capacity, but it also multiplies alignment costs. This article explains how coordination overhead rises faster than output at scale, why decision velocity collapses quietly, and how organisations stall not from lack of talent, but from too much agreement."
 },
 {
-  "href": "/articles/systems-are-better-than-theories-feb-2026",
-  "title": "Systems Are Better Than Theories",
-  "blurb": "Scientific instruments now advance faster than scientific explanation. This piece explores how measurement outpaces meaning, why precision can disguise shallow models, and how knowledge thins when tools lead inquiry instead of serving theory."
+  "href": "/articles/tools-now-shape-questions-more-than-curiosity-feb-2026",
+  "title": "Tools Now Shape Questions More Than Curiosity",
+  "blurb": "As scientific tools accelerate, inquiry increasingly bends around what can be measured rather than what needs to be understood. This piece explores how methods begin to dictate questions, why precision can mask weak theory, and how discovery becomes shallow when capability leads curiosity."
 }
 
 
