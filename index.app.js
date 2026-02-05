@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/scale-turns-coordination-into-a-bottleneck-feb-2026",
   "title": "Scale Turns Coordination Into a Bottleneck",
-  "blurb": "Growth expands capacity, but it also multiplies alignment costs. This article explains how coordination overhead rises faster than output at scale, why decision velocity collapses quietly, and how organisations stall not from lack of talent, but from too much agreement."
+  "blurb": "Growth expands capacity, but it also multiplies alignment costs. This article explains how coordination overhead rises faster than output at scale, why decision velocity collapses quietly, and how organisations stall not from lack of talent."
 },
 {
   "href": "/articles/tools-now-shape-questions-more-than-curiosity-feb-2026",
