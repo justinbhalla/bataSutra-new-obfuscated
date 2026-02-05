@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scale-turns-coordination-into-a-bottleneck-feb-2026",
-  "title": "Scale Turns Coordination Into a Bottleneck",
-  "blurb": "Growth expands capacity, but it also multiplies alignment costs. This article explains how coordination overhead rises faster than output at scale, why decision velocity collapses quietly, and how organisations stall not from lack of talent."
+  "href": "/articles/negative-results-are-structurally-suppressed-feb-2026",
+  "title": "Negative Results Are Structurally Suppressed",
+  "blurb": "Scientific progress depends on failure, yet incentives quietly filter it out. This article explains how unpublished null results distort entire fields, why apparent success masks fragile knowledge, and how discovery weakens when contradiction is hidden."
 },
 {
-  "href": "/articles/tools-now-shape-questions-more-than-curiosity-feb-2026",
-  "title": "Tools Now Shape Questions More Than Curiosity",
-  "blurb": "As scientific tools accelerate, inquiry increasingly bends around what can be measured rather than what needs to be understood. This piece explores how methods begin to dictate questions, why precision can mask weak theory."
+  "href": "/articles/ownership-dilutes-as-accountability-increases-feb-2026",
+  "title": "Ownership Dilutes as Accountability Increases",
+  "blurb": "As organisations add layers of oversight, responsibility fragments. This piece explores why more accountability can produce less ownership, how decisions become procedural rather than decisive, and why failures often occur without anyone clearly at fault."
 }
 
 
