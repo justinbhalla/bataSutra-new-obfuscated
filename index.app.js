@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/negative-results-are-structurally-suppressed-feb-2026",
-  "title": "Negative Results Are Structurally Suppressed",
-  "blurb": "Scientific progress depends on failure, yet incentives quietly filter it out. This article explains how unpublished null results distort entire fields, why apparent success masks fragile knowledge, and how discovery weakens when contradiction is hidden."
+  "href": "/articles/scale-creates-distance-between-action-and-outcome-feb-2026",
+  "title": "Scale Creates Distance Between Action and Outcome",
+  "blurb": "As organisations grow, the consequences of decisions move further away from decision-makers. This article examines how distance weakens feedback, dilutes accountability, and allows small errors to compound into systemic risk."
 },
 {
-  "href": "/articles/ownership-dilutes-as-accountability-increases-feb-2026",
-  "title": "Ownership Dilutes as Accountability Increases",
-  "blurb": "As organisations add layers of oversight, responsibility fragments. This piece explores why more accountability can produce less ownership, how decisions become procedural rather than decisive, and why failures often occur without anyone clearly at fault."
+  "href": "/articles/discovery-advances-faster-than-explanation-feb-2026",
+  "title": "Discovery Advances Faster Than Explanation",
+  "blurb": "Modern science can observe and measure faster than it can explain. This piece explores how discovery outpaces understanding, why interpretation fills the gap, and how explanation has become the true bottleneck in scientific progress."
 }
 
 
