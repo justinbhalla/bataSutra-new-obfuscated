@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/scale-creates-distance-between-action-and-outcome-feb-2026",
-  "title": "Scale Creates Distance Between Action and Outcome",
+  "title": "Scale Creates Distance Between Action",
   "blurb": "As organisations grow, the consequences of decisions move further away from decision-makers. This article examines how distance weakens feedback, dilutes accountability, and allows small errors to compound into systemic risk."
 },
 {
