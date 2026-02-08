@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/uncertainty-favors-narratives-feb-2026",
   "title": "Uncertainty Favors Narratives",
-  "blurb": "When evidence is incomplete, narratives dominate decisions. This piece explores why stories coordinate action faster than data, how belief fills explanatory gaps, and why uncertainty elevates interpretation over measurement."
+  "blurb": "When evidence is incomplete, narratives dominate decisions. This piece explores why stories coordinate action faster than data, how belief fills explanatory gaps, and why uncertainty elevates interpretation."
 }
 
 
