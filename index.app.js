@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/soft-power-emotional-intelligence-economic-advantage-feb-2026",
-  "title": "Soft Power Creates Economic Advantage",
-  "blurb": "In modern markets, influence outperforms authority. This article examines how emotional intelligence functions as soft power, why trust scales better than control, and how human alignment converts into durable economic value."
+  "href": "/articles/attention-is-the-scarcest-input-feb-2026",
+  "title": "Attention Is the Scarcest Input",
+  "blurb": "Capital, talent, and data scale easily. Attention does not. This article examines attention as a limiting input in modern systems, why overload degrades decision quality, and how scarcity reshapes organizational outcomes."
 },
 {
-  "href": "/articles/dopamine-novelty-retention-neuroscience-loyalty-feb-2026",
-  "title": "Dopamine, Novelty, and Retention",
-  "blurb": "Loyalty is neurological, not moral. This piece explores how dopamine drives anticipation, why novelty fades through adaptation, and how retention depends on structured variation rather than constant stimulation."
+  "href": "/articles/uncertainty-favors-narratives-feb-2026",
+  "title": "Uncertainty Favors Narratives",
+  "blurb": "When evidence is incomplete, narratives dominate decisions. This piece explores why stories coordinate action faster than data, how belief fills explanatory gaps, and why uncertainty elevates interpretation over measurement."
 }
 
 
