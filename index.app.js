@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scale-creates-distance-between-action-and-outcome-feb-2026",
-  "title": "Scale Creates Distance Between Action",
-  "blurb": "As organisations grow, the consequences of decisions move further away from decision-makers. This article examines how distance weakens feedback, dilutes accountability, and allows small errors to compound into systemic risk."
+  "href": "/articles/soft-power-emotional-intelligence-economic-advantage-feb-2026",
+  "title": "Soft Power Creates Economic Advantage",
+  "blurb": "In modern markets, influence outperforms authority. This article examines how emotional intelligence functions as soft power, why trust scales better than control, and how human alignment converts into durable economic value."
 },
 {
-  "href": "/articles/discovery-advances-faster-than-explanation-feb-2026",
-  "title": "Discovery Advances Faster Than Explanation",
-  "blurb": "Modern science can observe and measure faster than it can explain. This piece explores how discovery outpaces understanding, why interpretation fills the gap, and how explanation has become the true bottleneck in scientific progress."
+  "href": "/articles/dopamine-novelty-retention-neuroscience-loyalty-feb-2026",
+  "title": "Dopamine, Novelty, and Retention",
+  "blurb": "Loyalty is neurological, not moral. This piece explores how dopamine drives anticipation, why novelty fades through adaptation, and how retention depends on structured variation rather than constant stimulation."
 }
+
 
 
 
