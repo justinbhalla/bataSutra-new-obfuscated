@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/attention-is-the-scarcest-input-feb-2026",
-  "title": "Attention Is the Scarcest Input",
-  "blurb": "Capital, talent, and data scale easily. Attention does not. This article examines attention as a limiting input in modern systems, why overload degrades decision quality, and how scarcity reshapes organizational outcomes."
+  "href": "/articles/abstraction-hides-accountability-feb-2026",
+  "title": "Abstraction Hides Accountability",
+  "blurb": "As systems scale, responsibility diffuses. This article examines how abstraction creates distance between decisions and outcomes, why ownership weakens across layers, and how harm persists without clear accountability."
 },
 {
-  "href": "/articles/uncertainty-favors-narratives-feb-2026",
-  "title": "Uncertainty Favors Narratives",
-  "blurb": "When evidence is incomplete, narratives dominate decisions. This piece explores why stories coordinate action faster than data, how belief fills explanatory gaps, and why uncertainty elevates interpretation."
+  "href": "/articles/speed-converts-errors-into-structure-feb-2026",
+  "title": "Speed Converts Errors Into Structure",
+  "blurb": "Fast systems harden early decisions before they are understood. This piece explores how speed embeds mistakes into defaults, why feedback lags execution, and how errors solidify into enduring structure."
 }
+
 
 
 
