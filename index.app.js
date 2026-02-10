@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/abstraction-hides-accountability-feb-2026",
-  "title": "Abstraction Hides Accountability",
-  "blurb": "As systems scale, responsibility diffuses. This article examines how abstraction creates distance between decisions and outcomes, why ownership weakens across layers, and how harm persists without clear accountability."
+  "href": "/articles/alignment-is-a-temporary-state-feb-2026",
+  "title": "Alignment Is a Temporary State",
+  "blurb": "Alignment is not a condition that holds—it decays. This article explores why shared direction erodes over time, how small divergences compound into strategic drift, and why constant realignment is a structural necessity."
 },
 {
-  "href": "/articles/speed-converts-errors-into-structure-feb-2026",
-  "title": "Speed Converts Errors Into Structure",
-  "blurb": "Fast systems harden early decisions before they are understood. This piece explores how speed embeds mistakes into defaults, why feedback lags execution, and how errors solidify into enduring structure."
+  "href": "/articles/observation-changes-the-question-being-asked-feb-2026",
+  "title": "Observation Changes the Question Being Asked",
+  "blurb": "What science measures shapes what it investigates. This piece examines how tools and methods redefine inquiry itself, why observation biases curiosity, and how unanswered questions disappear when they cannot be easily observed."
 }
 
 
