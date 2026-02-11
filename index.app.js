@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/alignment-is-a-temporary-state-feb-2026",
-  "title": "Alignment Is a Temporary State",
-  "blurb": "Alignment is not a condition that holds—it decays. This article explores why shared direction erodes over time, how small divergences compound into strategic drift, and why constant realignment is a structural necessity."
+  "href": "/articles/growth-creates-information-blind-spots-feb-2026",
+  "title": "Growth Creates Information Blind Spots",
+  "blurb": "As organizations expand, structural distance increases. This article explores how scale fragments information flow, weakens feedback loops, and creates blind spots that leadership cannot easily detect."
 },
 {
-  "href": "/articles/observation-changes-the-question-being-asked-feb-2026",
-  "title": "Observation Changes the Question Being Asked",
-  "blurb": "What science measures shapes what it investigates. This piece examines how tools and methods redefine inquiry itself, why observation biases curiosity, and how unanswered questions disappear when they cannot be easily observed."
+  "href": "/articles/scientific-consensus-is-a-dynamic-equilibrium-feb-2026",
+  "title": "Scientific Consensus Is a Dynamic Equilibrium",
+  "blurb": "Scientific agreement is not fixed certainty but evolving balance. This piece examines how evidence, replication, and dissent interact to stabilize knowledge — and why consensus remains inherently provisional."
 }
 
 
