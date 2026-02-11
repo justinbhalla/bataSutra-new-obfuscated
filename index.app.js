@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scientific-consensus-is-a-dynamic-equilibrium-feb-2026",
   "title": "Scientific Consensus Is a Dynamic Equilibrium",
-  "blurb": "Scientific agreement is not fixed certainty but evolving balance. This piece examines how evidence, replication, and dissent interact to stabilize knowledge — and why consensus remains inherently provisional."
+  "blurb": "Scientific agreement is not fixed certainty but evolving balance. This piece examines how evidence, replication, and dissent interact to stabilize knowledge."
 }
 
 
