@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/growth-creates-information-blind-spots-feb-2026",
-  "title": "Growth Creates Information Blind Spots",
-  "blurb": "As organizations expand, structural distance increases. This article explores how scale fragments information flow, weakens feedback loops, and creates blind spots that leadership cannot easily detect."
+  "href": "/articles/control-scales-slower-than-complexity-feb-2026",
+  "title": "Control Scales Slower Than Complexity",
+  "blurb": "As organizations expand, interdependence multiplies faster than oversight. This article examines why governance lags growth, how coordination strains under scale, and why complexity often outpaces control."
 },
 {
-  "href": "/articles/scientific-consensus-is-a-dynamic-equilibrium-feb-2026",
-  "title": "Scientific Consensus Is a Dynamic Equilibrium",
-  "blurb": "Scientific agreement is not fixed certainty but evolving balance. This piece examines how evidence, replication, and dissent interact to stabilize knowledge."
+  "href": "/articles/explanations-simplify-more-than-reality-allows-feb-2026",
+  "title": "Explanations Simplify More Than Reality Allows",
+  "blurb": "Scientific models compress complexity to remain understandable. This piece explores how simplification clarifies but distorts, why coherence often hides uncertainty, and how reality inevitably exceeds explanation."
 }
+
 
 
 
