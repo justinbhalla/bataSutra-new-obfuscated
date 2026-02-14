@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/control-scales-slower-than-complexity-feb-2026",
-  "title": "Control Scales Slower Than Complexity",
-  "blurb": "As organizations expand, interdependence multiplies faster than oversight. This article examines why governance lags growth, how coordination strains under scale, and why complexity often outpaces control."
+  "href": "/articles/visibility-does-not-equal-transparency-feb-2026",
+  "title": "Visibility Does Not Equal Transparency",
+  "blurb": "Organizations now generate unprecedented volumes of data. This article explores why dashboards and real-time metrics increase visibility but do not guarantee clarity, and why transparency depends on context, interpretation, and shared understanding."
 },
 {
-  "href": "/articles/explanations-simplify-more-than-reality-allows-feb-2026",
-  "title": "Explanations Simplify More Than Reality Allows",
-  "blurb": "Scientific models compress complexity to remain understandable. This piece explores how simplification clarifies but distorts, why coherence often hides uncertainty, and how reality inevitably exceeds explanation."
+  "href": "/articles/theory-lags-data-in-interpretation-feb-2026",
+  "title": "Theory Lags Data in Interpretation",
+  "blurb": "Scientific instruments produce data at accelerating speed, but theoretical integration remains slower. This piece examines how observation outpaces explanation, why interpretation becomes the bottleneck, and how understanding consolidates only over time."
 }
 
 
