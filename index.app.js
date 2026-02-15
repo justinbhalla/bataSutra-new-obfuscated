@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/efficiency-trades-resilience-for-speed-feb-2026",
   "title": "Efficiency Trades Resilience for Speed",
-  "blurb": "Systems optimized for output often remove redundancy in pursuit of speed. This article examines how lean operations perform efficiently under stability but become fragile under stress, and why resilience depends on strategic slack."
+  "blurb": "Systems optimized for output often remove redundancy in pursuit of speed. This article examines how lean operations perform efficiently under stability but become fragile under stress."
 },
 {
   "href": "/articles/technological-tools-expand-questions-feb-2026",
