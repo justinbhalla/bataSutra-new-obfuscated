@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/visibility-does-not-equal-transparency-feb-2026",
-  "title": "Visibility Does Not Equal Transparency",
-  "blurb": "Organizations now generate unprecedented volumes of data. This article explores why dashboards and real-time metrics increase visibility but do not guarantee clarity, and why transparency depends on context, interpretation, and shared understanding."
+  "href": "/articles/efficiency-trades-resilience-for-speed-feb-2026",
+  "title": "Efficiency Trades Resilience for Speed",
+  "blurb": "Systems optimized for output often remove redundancy in pursuit of speed. This article examines how lean operations perform efficiently under stability but become fragile under stress, and why resilience depends on strategic slack."
 },
 {
-  "href": "/articles/theory-lags-data-in-interpretation-feb-2026",
-  "title": "Theory Lags Data in Interpretation",
-  "blurb": "Scientific instruments produce data at accelerating speed, but theoretical integration remains slower. This piece examines how observation outpaces explanation, why interpretation becomes the bottleneck, and how understanding consolidates only over time."
+  "href": "/articles/technological-tools-expand-questions-feb-2026",
+  "title": "Technological Tools Expand Questions",
+  "blurb": "Scientific instruments do more than deliver answers. This piece explores how new technologies redefine what can be observed, measured, and asked, expanding the frontier of inquiry itself."
 }
+
 
 
 
