@@ -7,11 +7,11 @@ const ARTICLES = [
 {
   "href": "/articles/coordination-becomes-the-primary-constraint-feb-2026",
   "title": "Coordination Becomes the Primary Constraint",
-  "blurb": "As organizations scale, execution slows not from lack of talent but from coordination overhead. This article explores how interdependence, alignment, and communication complexity become the dominant constraints on growth."
+  "blurb": "As organizations scale, execution slows not from lack of talent but from coordination overhead. This article explores how interdependence, alignment, and communication complexity."
 },
 {
   "href": "/articles/interdisciplinary-research-creates-conceptual-friction-feb-2026",
-  "title": "Interdisciplinary Research Creates Conceptual Friction",
+  "title": "Interdisciplinary Research Creates Friction",
   "blurb": "When scientific fields intersect, definitions and assumptions collide. This piece examines how conceptual friction slows collaboration but ultimately accelerates synthesis and innovation."
 }
 
