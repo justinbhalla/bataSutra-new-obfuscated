@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/efficiency-trades-resilience-for-speed-feb-2026",
-  "title": "Efficiency Trades Resilience for Speed",
-  "blurb": "Systems optimized for output often remove redundancy in pursuit of speed. This article examines how lean operations perform efficiently under stability but become fragile under stress."
+  "href": "/articles/coordination-becomes-the-primary-constraint-feb-2026",
+  "title": "Coordination Becomes the Primary Constraint",
+  "blurb": "As organizations scale, execution slows not from lack of talent but from coordination overhead. This article explores how interdependence, alignment, and communication complexity become the dominant constraints on growth."
 },
 {
-  "href": "/articles/technological-tools-expand-questions-feb-2026",
-  "title": "Technological Tools Expand Questions",
-  "blurb": "Scientific instruments do more than deliver answers. This piece explores how new technologies redefine what can be observed, measured, and asked, expanding the frontier of inquiry itself."
+  "href": "/articles/interdisciplinary-research-creates-conceptual-friction-feb-2026",
+  "title": "Interdisciplinary Research Creates Conceptual Friction",
+  "blurb": "When scientific fields intersect, definitions and assumptions collide. This piece examines how conceptual friction slows collaboration but ultimately accelerates synthesis and innovation."
 }
+
 
 
 
