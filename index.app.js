@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/coordination-becomes-the-primary-constraint-feb-2026",
-  "title": "Coordination Becomes the Primary Constraint",
-  "blurb": "As organizations scale, execution slows not from lack of talent but from coordination overhead. This article explores how interdependence, alignment, and communication complexity."
+  "href": "/articles/delegation-defines-decision-quality-feb-2026",
+  "title": "Delegation Defines Decision Quality",
+  "blurb": "The structure of delegated authority determines organizational speed and precision. This article explores how clear decision rights, defined scope, and adaptive governance shape accountability and influence the quality of outcomes."
 },
 {
-  "href": "/articles/interdisciplinary-research-creates-conceptual-friction-feb-2026",
-  "title": "Interdisciplinary Research Creates Friction",
-  "blurb": "When scientific fields intersect, definitions and assumptions collide. This piece examines how conceptual friction slows collaboration but ultimately accelerates synthesis and innovation."
+  "href": "/articles/boundaries-clarify-inquiry-feb-2026",
+  "title": "Boundaries Clarify Inquiry",
+  "blurb": "Defining scope determines what counts as evidence. This piece examines how scientific boundaries focus attention, constrain interpretation, and enable precise progress while imposing trade-offs on breadth."
 }
+
 
 
 
