@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/delegation-defines-decision-quality-feb-2026",
-  "title": "Delegation Defines Decision Quality",
-  "blurb": "The structure of delegated authority determines organizational speed and precision. This article explores how clear decision rights, defined scope, and adaptive governance shape accountability and influence the quality of outcomes."
+  "href": "/articles/reputation-compounds-similar-to-capital-feb-2026",
+  "title": "Reputation Compounds Similar To Capital",
+  "blurb": "Reputation accumulates gradually and converts into leverage at moments of decision. This article explores how reputational capital compounds, reduces friction, and shapes long-term economic advantage."
 },
 {
-  "href": "/articles/boundaries-clarify-inquiry-feb-2026",
-  "title": "Boundaries Clarify Inquiry",
-  "blurb": "Defining scope determines what counts as evidence. This piece examines how scientific boundaries focus attention, constrain interpretation, and enable precise progress while imposing trade-offs on breadth."
+  "href": "/articles/precision-expands-faster-than-understanding-feb-2026",
+  "title": "Precision Expands Faster Than Understanding",
+  "blurb": "Modern science measures with extraordinary resolution, yet explanation lags behind. This piece examines the widening gap between observation and interpretation, and why synthesis has become the central constraint of inquiry."
 }
 
 
