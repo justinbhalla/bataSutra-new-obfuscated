@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/reputation-compounds-similar-to-capital-feb-2026",
-  "title": "Reputation Compounds Similar To Capital",
-  "blurb": "Reputation accumulates gradually and converts into leverage at moments of decision. This article explores how reputational capital compounds, reduces friction, and shapes long-term economic advantage."
+  "href": "/articles/ownership-clarifies-incentives-feb-2026",
+  "title": "Ownership Clarifies Incentives",
+  "blurb": "When responsibility is explicit, execution sharpens. This article explores how defined ownership structures align incentives, reduce ambiguity, and improve decision quality."
 },
 {
-  "href": "/articles/precision-expands-faster-than-understanding-feb-2026",
-  "title": "Precision Expands Faster Than Understanding",
-  "blurb": "Modern science measures with extraordinary resolution, yet explanation lags behind. This piece examines the widening gap between observation and interpretation, and why synthesis has become the central constraint of inquiry."
+  "href": "/articles/replication-filters-noise-feb-2026",
+  "title": "Replication Filters Noise",
+  "blurb": "Repetition distinguishes signal from anomaly. This piece examines how replication narrows interpretation, filters noise, and strengthens the stability of scientific understanding."
 }
 
 
