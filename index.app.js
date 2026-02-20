@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/ownership-clarifies-incentives-feb-2026",
-  "title": "Ownership Clarifies Incentives",
-  "blurb": "When responsibility is explicit, execution sharpens. This article explores how defined ownership structures align incentives, reduce ambiguity, and improve decision quality."
+  "href": "/articles/capital-seeks-predictability-feb-2026",
+  "title": "Capital Seeks Predictability",
+  "blurb": "Investors reward stability over volatility. This article explores how predictability lowers risk premiums, attracts capital, and strengthens long-term enterprise value."
 },
 {
-  "href": "/articles/replication-filters-noise-feb-2026",
-  "title": "Replication Filters Noise",
-  "blurb": "Repetition distinguishes signal from anomaly. This piece examines how replication narrows interpretation, filters noise, and strengthens the stability of scientific understanding."
+  "href": "/articles/anomalies-reshape-theory-feb-2026",
+  "title": "Anomalies Reshape Theory",
+  "blurb": "Outliers often initiate conceptual shifts. This piece examines how anomalies challenge assumptions, expose theoretical limits, and drive scientific transformation."
 }
 
 
