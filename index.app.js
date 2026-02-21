@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/capital-seeks-predictability-feb-2026",
-  "title": "Capital Seeks Predictability",
-  "blurb": "Investors reward stability over volatility. This article explores how predictability lowers risk premiums, attracts capital, and strengthens long-term enterprise value."
+  "href": "/articles/scarcity-forces-strategic-discipline-feb-2026",
+  "title": "Scarcity Forces Strategic Discipline",
+  "blurb": "Limited resources sharpen prioritization and eliminate distraction. This article explores how constraint enforces discipline, clarifies trade-offs, and strengthens strategic execution."
 },
 {
-  "href": "/articles/anomalies-reshape-theory-feb-2026",
-  "title": "Anomalies Reshape Theory",
-  "blurb": "Outliers often initiate conceptual shifts. This piece examines how anomalies challenge assumptions, expose theoretical limits, and drive scientific transformation."
+  "href": "/articles/time-reveals-hidden-variables-feb-2026",
+  "title": "Time Reveals Hidden Variables",
+  "blurb": "Longitudinal observation exposes effects invisible in short frames. This piece examines how duration uncovers hidden variables, reshapes causality, and refines scientific understanding."
 }
-
 
 
 
