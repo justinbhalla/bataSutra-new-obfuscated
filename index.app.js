@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scarcity-forces-strategic-discipline-feb-2026",
-  "title": "Scarcity Forces Strategic Discipline",
-  "blurb": "Limited resources sharpen prioritization and eliminate distraction. This article explores how constraint enforces discipline, clarifies trade-offs, and strengthens strategic execution."
+  "href": "/articles/standardization-enables-speed-feb-2026",
+  "title": "Standardization Enables Speed",
+  "blurb": "Repeated processes reduce cognitive load and execution delay. This article explores how standardization compresses decision cycles, lowers friction, and increases operational velocity."
 },
 {
-  "href": "/articles/time-reveals-hidden-variables-feb-2026",
-  "title": "Time Reveals Hidden Variables",
-  "blurb": "Longitudinal observation exposes effects invisible in short frames. This piece examines how duration uncovers hidden variables, reshapes causality, and refines scientific understanding."
+  "href": "/articles/emergence-defies-reduction-feb-2026",
+  "title": "Emergence Defies Reduction",
+  "blurb": "Complex systems display properties not visible in their parts. This piece examines how emergence challenges reductionism, highlights interaction effects, and reshapes scientific explanation."
 }
+
 
 
 
