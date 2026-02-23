@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/standardization-enables-speed-feb-2026",
-  "title": "Standardization Enables Speed",
-  "blurb": "Repeated processes reduce cognitive load and execution delay. This article explores how standardization compresses decision cycles, lowers friction, and increases operational velocity."
+  "href": "/articles/slack-absorbs-shock-feb-2026",
+  "title": "Slack Absorbs Shock",
+  "blurb": "Redundant capacity stabilizes systems under stress. This article explores how slack buffers volatility, protects execution continuity, and strengthens long-term organizational resilience."
 },
 {
-  "href": "/articles/emergence-defies-reduction-feb-2026",
-  "title": "Emergence Defies Reduction",
-  "blurb": "Complex systems display properties not visible in their parts. This piece examines how emergence challenges reductionism, highlights interaction effects, and reshapes scientific explanation."
+  "href": "/articles/energy-constraints-shape-outcomes-feb-2026",
+  "title": "Energy Constraints Shape Outcomes",
+  "blurb": "Physical limits determine what systems can build, sustain, and scale. This piece examines how energy availability constrains complexity, governs stability, and defines structural possibility."
 }
 
 
