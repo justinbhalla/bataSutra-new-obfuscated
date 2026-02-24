@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/slack-absorbs-shock-feb-2026",
-  "title": "Slack Absorbs Shock",
-  "blurb": "Redundant capacity stabilizes systems under stress. This article explores how slack buffers volatility, protects execution continuity, and strengthens long-term organizational resilience."
+  "href": "/articles/stability-breeds-complacency-feb-2026",
+  "title": "Stability Breeds Complacency",
+  "blurb": "Extended calm periods reduce vigilance and compress perceived risk. This article examines how stability reshapes incentives, encourages leverage, and quietly increases systemic fragility."
 },
 {
-  "href": "/articles/energy-constraints-shape-outcomes-feb-2026",
-  "title": "Energy Constraints Shape Outcomes",
-  "blurb": "Physical limits determine what systems can build, sustain, and scale. This piece examines how energy availability constrains complexity, governs stability, and defines structural possibility."
+  "href": "/articles/thresholds-redefine-systems-feb-2026",
+  "title": "Thresholds Redefine Systems",
+  "blurb": "Incremental change can produce discontinuous transformation. This piece explores how threshold effects alter system behavior, why linear intuition fails, and how tipping points reshape complex environments."
 }
 
 
