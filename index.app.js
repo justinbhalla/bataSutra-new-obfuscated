@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/thresholds-redefine-systems-feb-2026",
   "title": "Thresholds Redefine Systems",
-  "blurb": "Incremental change can produce discontinuous transformation. This piece explores how threshold effects alter system behavior, why linear intuition fails, and how tipping points reshape complex environments."
+  "blurb": "Incremental change can produce discontinuous transformation. This piece explores how threshold effects alter system behavior, why linear intuition fail."
 }
 
 
