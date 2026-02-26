@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/speed-compresses-due-diligence-feb-2026",
   "title": "Speed Compresses Due Diligence",
-  "blurb": "Accelerated deal cycles increase systemic oversight risk. This article examines how compressed timelines reshape incentives, narrow scrutiny, and quietly elevate structural exposure across capital markets."
+  "blurb": "Accelerated deal cycles increase systemic oversight risk. This article examines how compressed timelines reshape incentives, narrow scrutiny, and quietly elevate structural exposure."
 },
 {
   "href": "/articles/systems-remember-their-history-feb-2026",
