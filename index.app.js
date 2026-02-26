@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/stability-breeds-complacency-feb-2026",
-  "title": "Stability Breeds Complacency",
-  "blurb": "Extended calm periods reduce vigilance and compress perceived risk. This article examines how stability reshapes incentives, encourages leverage, and quietly increases systemic fragility."
+  "href": "/articles/speed-compresses-due-diligence-feb-2026",
+  "title": "Speed Compresses Due Diligence",
+  "blurb": "Accelerated deal cycles increase systemic oversight risk. This article examines how compressed timelines reshape incentives, narrow scrutiny, and quietly elevate structural exposure across capital markets."
 },
 {
-  "href": "/articles/thresholds-redefine-systems-feb-2026",
-  "title": "Thresholds Redefine Systems",
-  "blurb": "Incremental change can produce discontinuous transformation. This piece explores how threshold effects alter system behavior, why linear intuition fail."
+  "href": "/articles/systems-remember-their-history-feb-2026",
+  "title": "Systems Remember Their History",
+  "blurb": "Path dependence shapes present behavior. This piece explores how prior decisions embed constraint, how institutional inertia limits flexibility, and why history continues to influence complex systems."
 }
-
 
 
 
