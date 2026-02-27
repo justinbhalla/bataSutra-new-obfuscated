@@ -5,15 +5,16 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/speed-compresses-due-diligence-feb-2026",
-  "title": "Speed Compresses Due Diligence",
-  "blurb": "Accelerated deal cycles increase systemic oversight risk. This article examines how compressed timelines reshape incentives, narrow scrutiny, and quietly elevate structural exposure."
+  "href": "/articles/coordination-becomes-scarce-at-scale-feb-2026",
+  "title": "Coordination Becomes Scarce at Scale",
+  "blurb": "As organizations expand, alignment becomes more difficult than execution. This article explores how growth multiplies communication overhead, fragments incentives, and turns coordination into the primary constraint."
 },
 {
-  "href": "/articles/systems-remember-their-history-feb-2026",
-  "title": "Systems Remember Their History",
-  "blurb": "Path dependence shapes present behavior. This piece explores how prior decisions embed constraint, how institutional inertia limits flexibility, and why history continues to influence complex systems."
+  "href": "/articles/robustness-emerges-from-structural-diversity-feb-2026",
+  "title": "Robustness Emerges From Structural Diversity",
+  "blurb": "Heterogeneity increases system survival probability. This piece examines how structural diversity reduces correlated failure, enhances adaptive capacity, and strengthens resilience across complex systems."
 }
+
 
 
 
