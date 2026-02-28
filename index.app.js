@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/coordination-becomes-scarce-at-scale-feb-2026",
-  "title": "Coordination Becomes Scarce at Scale",
-  "blurb": "As organizations expand, alignment becomes more difficult than execution. This article explores how growth multiplies communication overhead, fragments incentives, and turns coordination into the primary constraint."
+  "href": "/articles/complexity-obscures-accountability-feb-2026",
+  "title": "Complexity Obscures Accountability",
+  "blurb": "Layered structures diffuse responsibility. This article examines how institutional complexity fragments oversight, shifts ownership toward process, and allows failure to hide within hierarchy."
 },
 {
-  "href": "/articles/robustness-emerges-from-structural-diversity-feb-2026",
-  "title": "Robustness Emerges From Structural Diversity",
-  "blurb": "Heterogeneity increases system survival probability. This piece examines how structural diversity reduces correlated failure, enhances adaptive capacity, and strengthens resilience across complex systems."
+  "href": "/articles/noise-can-contain-signal-feb-2026",
+  "title": "Noise Can Contain Signal",
+  "blurb": "Variability sometimes encodes hidden pattern. This piece explores how apparent randomness can reveal structure at the right scale, and why interpretation depends on model and perspective."
 }
 
 
