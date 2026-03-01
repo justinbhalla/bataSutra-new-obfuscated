@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/complexity-obscures-accountability-feb-2026",
-  "title": "Complexity Obscures Accountability",
-  "blurb": "Layered structures diffuse responsibility. This article examines how institutional complexity fragments oversight, shifts ownership toward process, and allows failure to hide within hierarchy."
+  "href": "/articles/capital-allocation-signals-strategic-priority-feb-2026",
+  "title": "Capital Allocation Signals Strategic Priority",
+  "blurb": "Where firms deploy resources reveals more than public statements. This article examines how capital allocation exposes true priorities, constrains alternatives, and ultimately defines long-term strategic direction."
 },
 {
-  "href": "/articles/noise-can-contain-signal-feb-2026",
-  "title": "Noise Can Contain Signal",
-  "blurb": "Variability sometimes encodes hidden pattern. This piece explores how apparent randomness can reveal structure at the right scale, and why interpretation depends on model and perspective."
+  "href": "/articles/interdependence-creates-cascading-effects-feb-2026",
+  "title": "Interdependence Creates Cascading Effects",
+  "blurb": "Connected systems amplify local disturbances. This piece explores how interdependence transforms isolated shocks into systemic cascades, and why network design determines resilience."
 }
 
 
