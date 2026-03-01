@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/capital-allocation-signals-strategic-priority-feb-2026",
-  "title": "Capital Allocation Signals Strategic Priority",
-  "blurb": "Where firms deploy resources reveals more than public statements. This article examines how capital allocation exposes true priorities, constrains alternatives."
+  "href": "/articles/timing-alters-strategic-value-feb-2026",
+  "title": "Timing Alters Strategic Value",
+  "blurb": "Different patterns succeed or fail depending on sequence. This article explores how order, readiness, and context reshape outcomes more than intent alone."
 },
 {
-  "href": "/articles/interdependence-creates-cascading-effects-feb-2026",
-  "title": "Interdependence Creates Cascading Effects",
-  "blurb": "Connected systems amplify local disturbances. This piece explores how interdependence transforms isolated shocks into systemic cascades, and why network design determines resilience."
+  "href": "/articles/scale-changes-observable-reality-feb-2026",
+  "title": "Scale Changes Observable Reality",
+  "blurb": "Phenomena shift character at different lengths. This piece examines how scale alters interpretation, reveals hidden structure, and transforms noise into pattern."
 }
-
 
 
 
