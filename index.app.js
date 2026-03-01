@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/capital-allocation-signals-strategic-priority-feb-2026",
   "title": "Capital Allocation Signals Strategic Priority",
-  "blurb": "Where firms deploy resources reveals more than public statements. This article examines how capital allocation exposes true priorities, constrains alternatives, and ultimately defines long-term strategic direction."
+  "blurb": "Where firms deploy resources reveals more than public statements. This article examines how capital allocation exposes true priorities, constrains alternatives."
 },
 {
   "href": "/articles/interdependence-creates-cascading-effects-feb-2026",
