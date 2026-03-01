@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scale-changes-observable-reality-feb-2026",
   "title": "Scale Changes Observable Reality",
-  "blurb": "Phenomena shift character at different lengths. This piece examines how scale alters interpretation, reveals hidden structure, and transforms noise into pattern."
+  "blurb": "Phenomena shift character at different lengths. This piece examines how scale alters interpretation, reveals hidden structure, and transforms noise into strings."
 }
 
 
