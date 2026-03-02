@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/capital-backing-signals-commitment-feb-2026",
   "title": "Capital Backing Signals Commitment",
-  "blurb": "Financial support reveals institutional conviction. This article explores how capital deployment signals belief, constrains alternatives, and transforms strategic rhetoric into measurable direction."
+  "blurb": "Financial support reveals institutional conviction. This article explores how capital deployment signals belief, constrains alternatives, and transforms strategic rhetoric."
 },
 {
   "href": "/articles/joint-forces-shape-behavior-feb-2026",
