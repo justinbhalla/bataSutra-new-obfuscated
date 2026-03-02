@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/timing-alters-strategic-value-feb-2026",
-  "title": "Timing Alters Strategic Value",
-  "blurb": "Different patterns succeed or fail depending on sequence. This article explores how order, readiness, and context reshape outcomes more than intent alone."
+  "href": "/articles/capital-backing-signals-commitment-feb-2026",
+  "title": "Capital Backing Signals Commitment",
+  "blurb": "Financial support reveals institutional conviction. This article explores how capital deployment signals belief, constrains alternatives, and transforms strategic rhetoric into measurable direction."
 },
 {
-  "href": "/articles/scale-changes-observable-reality-feb-2026",
-  "title": "Scale Changes Observable Reality",
-  "blurb": "Phenomena shift character at different lengths. This piece examines how scale alters interpretation, reveals hidden structure, and transforms noise into strings."
+  "href": "/articles/joint-forces-shape-behavior-feb-2026",
+  "title": "Joint Forces Shape Behavior",
+  "blurb": "Interactions redefine outcomes. This piece examines how combined forces in complex systems generate behavior that cannot be understood by analyzing components in isolation."
 }
 
 
