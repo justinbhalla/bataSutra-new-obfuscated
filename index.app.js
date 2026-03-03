@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/capital-backing-signals-commitment-feb-2026",
-  "title": "Capital Backing Signals Commitment",
-  "blurb": "Financial support reveals institutional conviction. This article explores how capital deployment signals belief, constrains alternatives, and transforms strategic rhetoric."
+  "href": "/articles/authority-expands-until-it-slows-decisions-feb-2026",
+  "title": "Authority Expands Until It Slows Decisions",
+  "blurb": "Oversight increases control, but layered authority can reduce responsiveness. This article examines how expanding governance structures improve stability."
 },
 {
-  "href": "/articles/joint-forces-shape-behavior-feb-2026",
-  "title": "Joint Forces Shape Behavior",
-  "blurb": "Interactions redefine outcomes. This piece examines how combined forces in complex systems generate behavior that cannot be understood by analyzing components in isolation."
+  "href": "/articles/variation-sustains-adaptive-capacity-feb-2026",
+  "title": "Variation Sustains Adaptive Capacity",
+  "blurb": "Diversity underpins survival across domains. This piece explores how variation enhances resilience, reduces correlated failure, and strengthens adaptive systems."
 }
-
 
 
 
