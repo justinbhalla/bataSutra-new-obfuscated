@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/authority-expands-until-it-slows-decisions-feb-2026",
-  "title": "Authority Expands Until It Slows Decisions",
+  "title": "Authority Expands Until It Slows",
   "blurb": "Oversight increases control, but layered authority can reduce responsiveness. This article examines how expanding governance structures improve stability."
 },
 {
