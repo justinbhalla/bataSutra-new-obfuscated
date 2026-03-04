@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/stability-changes-what-leaders-notice-mar-2026",
   "title": "Stability Changes What Leaders Notice",
-  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders overlook early warning signs."
+  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders neglet early warning signs."
 },
 {
   "href": "/articles/nature-rarely-draws-clean-boundaries-mar-2026",
