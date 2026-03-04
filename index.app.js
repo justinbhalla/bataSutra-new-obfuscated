@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/authority-expands-until-it-slows-decisions-feb-2026",
-  "title": "Authority Expands Until It Slows",
-  "blurb": "Oversight increases control, but layered authority can reduce responsiveness. This article examines how expanding governance structures improve stability."
+  "href": "/articles/stability-changes-what-leaders-notice-mar-2026",
+  "title": "Stability Changes What Leaders Notice",
+  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders overlook early warning signs, and how calm environments gradually reshape decision-making."
 },
 {
-  "href": "/articles/variation-sustains-adaptive-capacity-feb-2026",
-  "title": "Variation Sustains Adaptive Capacity",
-  "blurb": "Diversity underpins survival across domains. This piece explores how variation enhances resilience, reduces correlated failure, and strengthens adaptive systems."
+  "href": "/articles/nature-rarely-draws-clean-boundaries-mar-2026",
+  "title": "Nature Rarely Draws Clean Boundaries",
+  "blurb": "Scientific categories impose order on continuous variation. This piece explores how classification simplifies reality, why natural systems resist rigid divisions, and how science refines understanding by adjusting its boundaries."
 }
 
 
