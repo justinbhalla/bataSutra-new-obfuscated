@@ -7,12 +7,12 @@ const ARTICLES = [
 {
   "href": "/articles/stability-changes-what-leaders-notice-mar-2026",
   "title": "Stability Changes What Leaders Notice",
-  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders overlook early warning signs, and how calm environments gradually reshape decision-making."
+  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders overlook early warning signs."
 },
 {
   "href": "/articles/nature-rarely-draws-clean-boundaries-mar-2026",
   "title": "Nature Rarely Draws Clean Boundaries",
-  "blurb": "Scientific categories impose order on continuous variation. This piece explores how classification simplifies reality, why natural systems resist rigid divisions, and how science refines understanding by adjusting its boundaries."
+  "blurb": "Scientific categories impose order on continuous variation. This piece explores how classification simplifies reality, why natural systems resist rigid divisions."
 }
 
 
