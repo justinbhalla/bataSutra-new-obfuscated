@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/stability-changes-what-leaders-notice-mar-2026",
-  "title": "Stability Changes What Leaders Notice",
-  "blurb": "Long quiet periods shift attention away from weak signals. This article examines how stability alters perception, why leaders neglect early warning signs."
+  "href": "/articles/prediction-improves-until-systems-begin-to-adapt-mar-2026",
+  "title": "Prediction Improves Until Systems Begin To Adapt",
+  "blurb": "Forecasting becomes unreliable once behavior changes in response to the forecast. This article explores how predictions reshape the systems they attempt to anticipate, turning forecasting into a reflexive process."
 },
 {
-  "href": "/articles/nature-rarely-draws-clean-boundaries-mar-2026",
-  "title": "Nature Rarely Draws Clean Boundaries",
-  "blurb": "Scientific categories impose order on continuous variation. This piece explores how classification simplifies reality, why natural systems resist rigid divisions."
+  "href": "/articles/abundance-can-produce-strategic-indifference-mar-2026",
+  "title": "Abundance Can Produce Strategic Indifference",
+  "blurb": "When resources are plentiful, prioritization weakens. This piece examines how abundance can dilute strategic focus, expand competing possibilities, and slow meaningful progress."
 }
 
 
