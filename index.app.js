@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/prediction-improves-until-systems-begin-to-adapt-mar-2026",
   "title": "Prediction Improves Until Systems Begin To Adapt",
-  "blurb": "Forecasting becomes unreliable once behavior changes in response to the forecast. This article explores how predictions reshape the systems they attempt to anticipate, turning forecasting into a reflexive process."
+  "blurb": "Forecasting becomes unreliable once behavior changes in response to the forecast. This article explores how predictions reshape the systems they attempt to anticipate."
 },
 {
   "href": "/articles/abundance-can-produce-strategic-indifference-mar-2026",
