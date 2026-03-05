@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/abundance-can-produce-strategic-indifference-mar-2026",
   "title": "Abundance Can Produce Strategic Indifference",
-  "blurb": "When resources are plentiful, prioritization weakens. This piece examines how abundance can dilute strategic focus, expand competing possibilities, and slow meaningful progress."
+  "blurb": "When constraint disappears, attention spreads and strategic clarity fades. This piece examines how abundance can dilute strategic focus, and expand competing possibilities."
 }
 
 
