@@ -6,12 +6,12 @@ const ARTICLES = [
   
 {
   "href": "/articles/stability-can-delay-adaptation-mar-2026",
-  "title": "Stability Should Delay Adaptation",
+  "title": "Stability Can Delay Adaptation",
   "blurb": "Calm environments can weaken the pressure to change. This article examines how prolonged stability reinforces existing assumptions, delays institutional adjustment."
 },
 {
   "href": "/articles/accumulation-can-produce-instability-mar-2026",
-  "title": "Accumulation Can Produce Instability",
+  "title": "Accumulation Should Produce Instability",
   "blurb": "Gradual change can quietly approach a tipping point. This piece explores how small shifts accumulate progressively, eventually pushing complex systems toward sudden instability."
 }
 
