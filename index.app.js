@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/prediction-improves-until-systems-begin-to-adapt-mar-2026",
-  "title": "Prediction Improves Until Systems Begin To Adapt",
-  "blurb": "Forecasting becomes unreliable once behavior changes in response to the forecast. This article explores how predictions reshape the systems they attempt to anticipate."
+  "href": "/articles/stability-can-delay-adaptation-mar-2026",
+  "title": "Stability Can Delay Adaptation",
+  "blurb": "Calm environments can weaken the pressure to change. This article examines how prolonged stability reinforces existing assumptions, delays institutional adjustment, and allows emerging shifts to go unnoticed."
 },
 {
-  "href": "/articles/abundance-can-produce-strategic-indifference-mar-2026",
-  "title": "Abundance Can Produce Strategic Indifference",
-  "blurb": "When constraint disappears, attention spreads and strategic clarity fades. This piece examines how abundance can dilute strategic focus, and expand competing possibilities."
+  "href": "/articles/accumulation-can-produce-instability-mar-2026",
+  "title": "Accumulation Can Produce Instability",
+  "blurb": "Gradual change can quietly approach a tipping point. This piece explores how small shifts accumulate over time, eventually pushing complex systems toward sudden instability."
 }
 
 
