@@ -11,7 +11,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/accumulation-can-produce-instability-mar-2026",
-  "title": "Accumulation Can Produce Instability",
+  "title": "Accumulation Should Produce Instability",
   "blurb": "Gradual change can quietly approach a tipping point. This piece explores how small shifts accumulate progressively, eventually pushing complex systems toward sudden instability."
 }
 
