@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/stability-can-delay-adaptation-mar-2026",
   "title": "Stability Can Delay Adaptation",
-  "blurb": "Calm environments can weaken the pressure to change. This article examines how prolonged stability reinforces existing assumptions, delays institutional adjustment, and allows emerging shifts to go unnoticed."
+  "blurb": "Calm environments can weaken the pressure to change. This article examines how prolonged stability reinforces existing assumptions, delays institutional adjustment."
 },
 {
   "href": "/articles/accumulation-can-produce-instability-mar-2026",
