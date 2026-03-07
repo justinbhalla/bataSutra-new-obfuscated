@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/data-is-outpacing-scientific-interpretation-mar-2026",
   "title": "Data Is Outpacing Scientific Interpretation",
-  "blurb": "New instruments generate datasets faster than theories can explain them. This piece examines how modern science now produces observations more quickly than it can interpret them."
+  "blurb": "New instruments generate datasets faster than theories can explain them. This piece examines how science now produces observations more quickly than it can interpret them."
 }
 
 
