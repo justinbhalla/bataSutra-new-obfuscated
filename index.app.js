@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/supply-chains-are-becoming-software-systems-mar-2026",
   "title": "Supply Chains Are Becoming Software Systems",
-  "blurb": "Digital twins, AI orchestration, and real-time logistics are reshaping how goods move. This article explores how software is increasingly coordinating physical supply networks."
+  "blurb": "Digital twins, AI orchestration, and real-time logistics are reshaping how goods shift. This article explores how software is increasingly coordinating physical supply networks."
 },
 {
   "href": "/articles/data-is-outpacing-scientific-interpretation-mar-2026",
