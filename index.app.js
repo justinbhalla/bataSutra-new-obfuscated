@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/stability-can-delay-adaptation-mar-2026",
-  "title": "Stability Can Delay Adaptation",
-  "blurb": "Calm environments can weaken the pressure to change. This article examines how prolonged stability reinforces existing assumptions, delays institutional adjustment."
+  "href": "/articles/supply-chains-are-becoming-software-systems-mar-2026",
+  "title": "Supply Chains Are Becoming Software Systems",
+  "blurb": "Digital twins, AI orchestration, and real-time logistics are reshaping how goods move. This article explores how software is increasingly coordinating physical supply networks."
 },
 {
-  "href": "/articles/accumulation-can-produce-instability-mar-2026",
-  "title": "Accumulation Should Produce Instability",
-  "blurb": "Gradual change can quietly approach a tipping point. This piece explores how small shifts accumulate progressively, eventually pushing complex systems toward sudden instability."
+  "href": "/articles/data-is-outpacing-scientific-interpretation-mar-2026",
+  "title": "Data Is Outpacing Scientific Interpretation",
+  "blurb": "New instruments generate datasets faster than theories can explain them. This piece examines how modern science now produces observations more quickly than it can interpret them."
 }
-
 
 
 
