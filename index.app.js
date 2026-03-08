@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/decision-speed-is-the-corporate-bottleneck-mar-2026",
   "title": "Decision Speed Is the Corporate Bottleneck",
-  "blurb": "Organizations now collect information faster than they can act on it. This article explores how modern companies are constrained less by insight than by the speed of their decision processes."
+  "blurb": "Organizations now collect information faster than they can act on it. This article explores how new companies are constrained less by insight than by the speed of their decision processes."
 },
 {
   "href": "/articles/cognitive-bandwidth-is-the-gridlock-of-alliances-mar-2026",
