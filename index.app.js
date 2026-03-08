@@ -10,8 +10,8 @@ const ARTICLES = [
   "blurb": "Organizations now collect information faster than they can act on it. This article explores how new companies are constrained less by insight than by the speed of their decision processes."
 },
 {
-  "href": "/articles/cognitive-bandwidths-are-the-gridlock-of-alliances-mar-2026",
-  "title": "Cognitive Bandwidths Are the Gridlock of Alliances",
+  "href": "/articles/cognitive-bandwidth-is-the-gridlock-of-alliances-mar-2026",
+  "title": "Cognitive Bandwidth Is the Gridlock of Alliances",
   "blurb": "Researchers struggle to absorb the expanding literature across disciplines. This piece examines how limited cognitive bandwidth slows scientific collaboration despite growing research networks."
 }
 
