@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/supply-chains-are-becoming-software-systems-mar-2026",
-  "title": "Supply Chains Are Becoming Software Systems",
-  "blurb": "Digital twins, AI orchestration, and real-time logistics are reshaping how goods shift. This article explores how software is increasingly coordinating physical supply networks."
+  "href": "/articles/decision-speed-is-the-corporate-bottleneck-mar-2026",
+  "title": "Decision Speed Is the Corporate Bottleneck",
+  "blurb": "Organizations now collect information faster than they can act on it. This article explores how modern companies are constrained less by insight than by the speed of their decision processes."
 },
 {
-  "href": "/articles/data-is-outpacing-scientific-interpretation-mar-2026",
-  "title": "Data Is Outpacing Scientific Interpretation",
-  "blurb": "New instruments generate datasets faster than theories can explain them. This piece examines how science now produces observations more quickly than it can interpret them."
+  "href": "/articles/cognitive-bandwidth-is-the-gridlock-of-alliances-mar-2026",
+  "title": "Cognitive Bandwidth Is the Gridlock of Alliances",
+  "blurb": "Researchers struggle to absorb the expanding literature across disciplines. This piece examines how limited cognitive bandwidth slows scientific collaboration despite growing research networks."
 }
 
 
