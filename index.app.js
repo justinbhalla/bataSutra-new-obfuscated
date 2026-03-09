@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/compute-access-is-becoming-strategic-power-mar-2026",
   "title": "Compute Access Is Becoming Strategic Power",
-  "blurb": "Control of GPUs and data centers is shaping competitive advantage. This article examines how access to large-scale computation is emerging as a decisive strategic resource."
+  "blurb": "Control of GPUs and data centers is shaping competitive advantage. This article examines how access to large-scale computation is ascending as a decisive strategic resource."
 },
 {
   "href": "/articles/laboratories-are-changing-discovery-cycles-mar-2026",
