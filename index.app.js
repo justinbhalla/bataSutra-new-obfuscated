@@ -10,8 +10,8 @@ const ARTICLES = [
   "blurb": "Control of GPUs and data centers is shaping competitive advantage. This article examines how access to large-scale computation is emerging as a decisive strategic resource."
 },
 {
-  "href": "/articles/autonomous-laboratories-are-changing-discovery-cycles-mar-2026",
-  "title": "Autonomous Laboratories Are Changing Discovery Cycles",
+  "href": "/articles/laboratories-are-changing-discovery-cycles-mar-2026",
+  "title": "Laboratories Are Changing Discovery Cycles",
   "blurb": "AI-driven experiments reduce the time between hypothesis and result. This piece explores how autonomous laboratories are accelerating the pace of scientific discovery."
 }
 
