@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/laboratories-are-changing-discovery-cycles-mar-2026",
   "title": "Laboratories Are Changing Discovery Cycles",
-  "blurb": "AI-driven experiments reduce the time between hypothesis and result. This piece explores how autonomous laboratories are accelerating the pace of scientific discovery."
+  "blurb": "AI-driven experiments reduce the time between hypothesis and result. This piece explores how laboratories are accelerating the pace of scientific discovery."
 }
 
 
