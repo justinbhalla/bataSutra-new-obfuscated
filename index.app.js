@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/decision-speed-is-the-corporate-bottleneck-mar-2026",
-  "title": "Decision Speed Is the Corporate Bottleneck",
-  "blurb": "Organizations now collect information faster than they can act on it. This article explores how new companies are constrained less by insight than by the speed of their decision processes."
+  "href": "/articles/compute-access-is-becoming-strategic-power-mar-2026",
+  "title": "Compute Access Is Becoming Strategic Power",
+  "blurb": "Control of GPUs and data centers is shaping competitive advantage. This article examines how access to large-scale computation is emerging as a decisive strategic resource."
 },
 {
-  "href": "/articles/cognitive-bandwidth-is-the-gridlock-of-alliances-mar-2026",
-  "title": "Cognitive Bandwidth Is the Gridlock of Alliances",
-  "blurb": "Researchers struggle to absorb the expanding literature across disciplines. This piece examines how limited cognitive bandwidth slows scientific collaboration despite growing research networks."
+  "href": "/articles/autonomous-laboratories-are-changing-discovery-cycles-mar-2026",
+  "title": "Autonomous Laboratories Are Changing Discovery Cycles",
+  "blurb": "AI-driven experiments reduce the time between hypothesis and result. This piece explores how autonomous laboratories are accelerating the pace of scientific discovery."
 }
 
 
