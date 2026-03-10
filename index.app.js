@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/compute-access-is-becoming-strategic-power-mar-2026",
-  "title": "Compute Access Is Becoming Strategic Power",
-  "blurb": "Control of GPUs and data centers is shaping competitive advantage. This article examines how access to large-scale computation is ascending as a decisive strategic resource."
+  "href": "/articles/industrial-geography-is-being-rewritten-by-security-concerns-mar-2026",
+  "title": "Industrial Geography Is Being Rewritten by Security Concerns",
+  "blurb": "Political alignment increasingly shapes where industries locate production. This article examines how security priorities are reshaping global supply chains."
 },
 {
-  "href": "/articles/laboratories-are-changing-discovery-cycles-mar-2026",
-  "title": "Laboratories Are Changing Discovery Cycles",
-  "blurb": "AI-driven experiments reduce the time between hypothesis and result. This piece explores how laboratories are accelerating the pace of scientific discovery."
+  "href": "/articles/observation-capacity-is-exceeding-human-interpretation-mar-2026",
+  "title": "Observation Capacity Are Exceeding Human Interpretation",
+  "blurb": "Scientists can now observe far additionally than they can explain. This piece explores how new instruments generate data faster than theories can interpret it."
 }
 
 
