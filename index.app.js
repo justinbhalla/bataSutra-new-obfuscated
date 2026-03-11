@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/industrial-geography-is-being-rewritten-by-security-concerns-mar-2026",
-  "title": "Industrial Geography Is Being Rewritten by Security Concerns",
-  "blurb": "Political alignment increasingly shapes where industries locate production. This article examines how security priorities are reshaping global supply chains."
+  "href": "/articles/prediction-can-change-the-outcome-mar-2026",
+  "title": "Prediction Can Change the Outcome",
+  "blurb": "Forecasts influence behavior before events occur. This article explores how predictions reshape decisions and alter the systems they attempt to describe."
 },
 {
-  "href": "/articles/observation-capacity-is-exceeding-human-interpretation-mar-2026",
-  "title": "Observation Capacity Are Exceeding Human Interpretation",
-  "blurb": "Scientists can now observe far additionally than they can explain. This piece explores how new instruments generate data faster than theories can interpret it."
+  "href": "/articles/technology-should-increase-human-responsibility-mar-2026",
+  "title": "Technology Should Increase Human Responsibility",
+  "blurb": "As systems execute tasks, humans bear greater accountability. This piece examines how technology shifts responsibility rather than eliminating them."
 }
-
 
 
 
