@@ -7,12 +7,12 @@ const ARTICLES = [
 {
   "href": "/articles/prediction-can-change-the-outcome-mar-2026",
   "title": "Prediction Can Change the Outcome",
-  "blurb": "Forecasts influence behavior before events occur. This article explores how predictions reshape decisions and alter the systems they attempt to describe."
+  "blurb": "Forecasts influence behavior before events occur. This article explores how predictions reshape decisions."
 },
 {
   "href": "/articles/technology-should-increase-human-responsibility-mar-2026",
   "title": "Technology Should Increase Human Responsibility",
-  "blurb": "As systems execute tasks, humans bear greater accountability. This piece examines how technology shifts responsibility rather than eliminating them."
+  "blurb": "As systems execute tasks, humans bear greater accountability. This piece examines how technology shifts responsibility."
 }
 
 
