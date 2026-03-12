@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/prediction-can-change-the-outcome-mar-2026",
-  "title": "Prediction Can Change the Outcome",
-  "blurb": "Forecasts influence behavior before events occur. This article explores how predictions reshape decisions."
+  "href": "/articles/scale-is-becoming-a-coordination-problem-mar-2026",
+  "title": "Scale Is Becoming a Coordination Problem",
+  "blurb": "The largest firms struggle less with resources than with internal alignment. This article examines how growth transforms management into a coordination challenge."
 },
 {
-  "href": "/articles/technology-should-increase-human-responsibility-mar-2026",
-  "title": "Technology Should Increase Human Responsibility",
-  "blurb": "As systems execute tasks, humans bear greater accountability. This piece examines how technology shifts responsibility."
+  "href": "/articles/scientific-knowledge-grows-faster-than-integration-mar-2026",
+  "title": "Scientific Knowledge Grows Faster Than Integration",
+  "blurb": "Researchers contend to synthesize expanding literature. This piece explores how scientific discovery now advances faster than understanding can integrate it."
 }
 
 
