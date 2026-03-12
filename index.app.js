@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/scale-is-becoming-a-coordination-problem-mar-2026",
   "title": "Scale Is Becoming a Coordination Problem",
-  "blurb": "The largest firms struggle less with resources than with internal alignment. This article examines how growth transforms management into a coordination challenge."
+  "blurb": "The largest firms struggle less with resources than with internal alignment. This article examines how growth transforms organizations into a coordination challenge."
 },
 {
   "href": "/articles/scientific-knowledge-grows-faster-than-integration-mar-2026",
