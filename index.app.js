@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scientific-knowledge-grows-faster-than-integration-mar-2026",
   "title": "Scientific Knowledge Grows Faster Than Integration",
-  "blurb": "Researchers contend to synthesize expanding literature. This piece explores how scientific discovery now advances faster than understanding can integrate it."
+  "blurb": "Researchers contend to synthesize expanding literature. This piece explores how scientific discovery now advances faster than understanding can integrate them."
 }
 
 
