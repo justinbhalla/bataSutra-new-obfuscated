@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/research-fields-are-converging-through-data-mar-2026",
   "title": "Research Fields Are Converging Through Data",
-  "blurb": "Shared datasets are fusing previously joint disciplines. This piece explores how data-driven research is reshaping scientific boundaries."
+  "blurb": "Shared datasets are fusing joint disciplines. This piece explores how data-driven research is reshaping scientific boundaries."
 }
 
 
