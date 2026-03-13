@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scale-is-becoming-a-coordination-problem-mar-2026",
-  "title": "Scale Is Becoming a Coordination Problem",
-  "blurb": "The largest firms struggle less with resources than with internal alignment. This article examines how growth transforms organizations into a coordination challenge."
+  "href": "/articles/corporate-strategy-is-shifting-towards-resilience-mar-2026",
+  "title": "Corporate Strategy Is Shifting Towards Resilience",
+  "blurb": "Firms are focusing on consistency instead of clean efficiency. This article examines how resilience is becoming a central objective of new corporate strategy."
 },
 {
-  "href": "/articles/scientific-knowledge-grows-faster-than-integration-mar-2026",
-  "title": "Scientific Knowledge Grows Faster Than Integration",
-  "blurb": "Researchers contend to synthesize expanding literature. This piece explores how scientific discovery now advances faster than understanding can integrate them."
+  "href": "/articles/research-fields-are-converging-through-data-mar-2026",
+  "title": "Research Fields Are Converging Through Data",
+  "blurb": "Shared datasets are fusing previously combinded disciplines. This piece explores how data-driven research is reshaping scientific boundaries."
 }
-
 
 
 
