@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/corporate-strategy-is-shifting-towards-resilience-mar-2026",
   "title": "Corporate Strategy Is Shifting Towards Resilience",
-  "blurb": "Firms are focusing on consistency instead of clean efficiency. This article examines how resilience is becoming a central objective of new corporate strategy."
+  "blurb": "Firms are focusing on consistency instead of clean efficiency. This article examines how resilience is becoming a central objective."
 },
 {
   "href": "/articles/research-fields-are-converging-through-data-mar-2026",
