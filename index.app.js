@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/corporate-strategy-is-shifting-towards-resilience-mar-2026",
-  "title": "Corporate Strategy Is Shifting Towards Resilience",
-  "blurb": "Firms are focusing on consistency instead of clean efficiency. This article examines how resilience is becoming a central objective."
+  "href": "/articles/joining-gyms-is-a-commitment-signal-mar-2026",
+  "title": "Joining Gyms Is a Commitment Sign",
+  "blurb": "Joining a gym often reflects identity formation rather than immediate exercise behavior. This article explores how health clubs act as a commitment sign."
 },
 {
-  "href": "/articles/research-fields-are-converging-through-data-mar-2026",
-  "title": "Research Fields Are Converging Through Data",
-  "blurb": "Shared datasets are fusing joint disciplines. This piece explores how data-driven research is reshaping scientific boundaries."
+  "href": "/articles/group-environments-can-improve-corporeal-adherence-mar-2026",
+  "title": "Group Environments Can Improve Corporeal Adherence",
+  "blurb": "Organized exercise settings often increase consistency. This piece examines how group environments in gyms and health clubs strengthen adherence."
 }
-
 
 
 
