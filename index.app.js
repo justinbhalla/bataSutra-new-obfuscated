@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/joining-gyms-is-a-commitment-signal-mar-2026",
   "title": "Joining Gyms Is a Commitment Sign",
-  "blurb": "Joining a gym often reflects identity formation rather than immediate exercise behavior. This article explores how health clubs act as a commitment sign."
+  "blurb": "Joining a gym often reflects identity formation rather than instant exercise behavior. This article explores how health clubs act as a commitment sign."
 },
 {
   "href": "/articles/group-settings-can-improve-corporeal-adherence-mar-2026",
