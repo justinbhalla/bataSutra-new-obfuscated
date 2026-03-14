@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/group-settings-can-improve-corporeal-adherence-mar-2026",
   "title": "Group Settings Can Improve Corporeal Adherence",
-  "blurb": "Organized exercise settings often increase consistency. This piece examines how group environments in gyms and health clubs strengthen adherence."
+  "blurb": "Organized exercise settings often increase consistency. This piece focuses on how group environments in gyms and health clubs strengthen adherence."
 }
 
 
