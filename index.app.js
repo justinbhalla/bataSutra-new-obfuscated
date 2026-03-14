@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/joining-gyms-is-a-strong-decision-mar-2026",
   "title": "Joining Gyms Is a Strong Decision",
-  "blurb": "Joining a gym often reflects identity formation rather than instant exercise behavior. This article explores how health clubs act as a commitment sign."
+  "blurb": "Joining a gym often reflects identity formation rather than instant exercise behavior. This article explores how health clubs act as a strong decision."
 },
 {
   "href": "/articles/group-settings-can-improve-corporeal-adherence-mar-2026",
