@@ -10,7 +10,7 @@ const ARTICLES = [
   "blurb": "Joining a gym often reflects identity formation rather than immediate exercise behavior. This article explores how health clubs act as a commitment sign."
 },
 {
-  "href": "/articles/group-environments-can-improve-corporeal-adherence-mar-2026",
+  "href": "/articles/group-settings-can-improve-corporeal-adherence-mar-2026",
   "title": "Group Settings Can Improve Corporeal Adherence",
   "blurb": "Organized exercise settings often increase consistency. This piece examines how group environments in gyms and health clubs strengthen adherence."
 }
