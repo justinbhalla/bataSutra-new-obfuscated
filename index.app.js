@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/corporate-strategy-is-becoming-scenario-based-mar-2026",
   "title": "Corporate Strategies Are Becoming Scenario-Based",
-  "blurb": "Organizations increasingly prepare for various possible outcomes rather than relying on a one forecast. This article examines how scenario planning is reshaping corporate strategy."
+  "blurb": "Organizations increasingly prepare for various possible outcomes rather than relying on one forecast. This article examines how scenario planning is reshaping corporate strategy."
 },
 {
   "href": "/articles/data-saturation-is-changing-scientific-theory-mar-2026",
