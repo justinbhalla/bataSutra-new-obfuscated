@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/joining-gyms-is-a-strong-decision-mar-2026",
-  "title": "Joining Gyms Is a Strong Decision",
-  "blurb": "Joining a gym often reflects identity formation rather than instant exercise behavior. This article explores how health clubs act as a strong decision."
+  "href": "/articles/corporate-strategy-is-becoming-scenario-based-mar-2026",
+  "title": "Corporate Strategies Are Becoming Scenario-Based",
+  "blurb": "Organizations increasingly prepare for various possible outcomes rather than relying on a one forecast. This article examines how scenario planning is reshaping corporate strategy."
 },
 {
-  "href": "/articles/group-settings-can-improve-corporeal-adherence-mar-2026",
-  "title": "Group Settings Can Improve Corporeal Adherence",
-  "blurb": "Organized exercise settings often increase consistency. This piece focuses on how group settings in gyms and health clubs strengthen adherence."
+  "href": "/articles/data-saturation-is-changing-scientific-theory-mar-2026",
+  "title": "Data Saturation Is Changing Scientific Theory",
+  "blurb": "Researchers increasingly derive hypotheses from data rather than theory. This piece explores how abundant datasets are transforming the relationship between observation and explanation."
 }
 
 
