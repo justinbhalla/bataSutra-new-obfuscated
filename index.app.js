@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/decision-architecture-determines-organizational-speed-mar-2026",
+  "href": "/articles/decision-architecture-sets-organizational-speed-mar-2026",
   "title": "Decision Architecture Determines Organizational Speed",
-  "blurb": "How authority is distributed increasingly defines responsiveness. This article explores how decision structures shape how quickly organizations translate insight into action."
+  "blurb": "How authority is distributed increasingly defines responsiveness. This article explores decision structures shape; quickly organizations translate insight into action."
 },
 {
   "href": "/articles/scientific-knowledge-expanding-faster-than-synthesis-mar-2026",
   "title": "Scientific Knowledge Is Expanding Faster Than Synthesis",
-  "blurb": "Researchers struggle to integrate rapidly growing literature. This piece examines how the expansion of scientific output is outpacing the synthesis needed for coherent understanding."
+  "blurb": "Researchers struggle to integrate rapidly growing literature. This piece examines the expansion of scientific output is outpacing the synthesis needed for coherent understanding."
 }
 
 
