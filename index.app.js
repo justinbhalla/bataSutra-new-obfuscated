@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scientific-knowledge-expanding-faster-than-synthesis-mar-2026",
   "title": "Scientific Knowledge Is Expanding Faster Than Synthesis",
-  "blurb": "Researchers struggle to integrate rapidly growing literature. This piece examines the expansion of scientific output is outpacing the synthesis needed for coherent understanding."
+  "blurb": "Researchers struggle to integrate rapidly growing literature. This piece examines the expansion of scientific output is outpacing the synthesis needed."
 }
 
 
