@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/corporate-strategy-is-becoming-scenario-based-mar-2026",
-  "title": "Corporate Strategies Are Becoming Scenario-Based",
-  "blurb": "Organizations increasingly prepare for various possible outcomes rather than relying on one forecast. This article examines how scenario planning is reshaping corporate strategy."
+  "href": "/articles/decision-architecture-determines-organizational-speed-mar-2026",
+  "title": "Decision Architecture Determines Organizational Speed",
+  "blurb": "How authority is distributed increasingly defines responsiveness. This article explores how decision structures shape how quickly organizations translate insight into action."
 },
 {
-  "href": "/articles/data-saturation-is-changing-scientific-theory-mar-2026",
-  "title": "Data Saturation Is Changing Scientific Theory",
-  "blurb": "Researchers increasingly derive hypotheses from data rather than theory. This piece explores how abundant datasets are transforming the relationship between observation and explanation."
+  "href": "/articles/scientific-knowledge-expanding-faster-than-synthesis-mar-2026",
+  "title": "Scientific Knowledge Is Expanding Faster Than Synthesis",
+  "blurb": "Researchers struggle to integrate rapidly growing literature. This piece examines how the expansion of scientific output is outpacing the synthesis needed for coherent understanding."
 }
 
 
