@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/standardization-decreases-strategic-elasticity-mar-2026",
-  "title": "Standardization Decreases Strategic Elasticity",
+  "title": "Standardization Can Decreases Strategic Elasticity",
   "blurb": "Uniform systems improve efficiency but reduce flexibility. This article explores how standardization strengthens execution."
 },
 {
