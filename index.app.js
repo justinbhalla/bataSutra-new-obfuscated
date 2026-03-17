@@ -11,7 +11,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/specialization-increases-cross-field-insight-mar-2026",
-  "title": "Specialization Increases Cross-Field Insight",
+  "title": "Specialization Increases Cross Field Insight",
   "blurb": "Deep expertise can extend broader understanding. This piece examines how specialization enables stronger connections across disciplines."
 }
 
