@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/collaboration-producing-knowledge-without-understanding-mar-2026",
   "title": "Collaboration Is Producing Knowledge Without Understanding",
-  "blurb": "Large teams generate results no single researcher fully grasps. This piece examines how modern science produces knowledge that is collectively validated but individually fragmented."
+  "blurb": "Large teams can generate some results that researcher fully grasps. This piece examines how new science produces knowledge that is collectively validated but fragmented."
 }
 
 
