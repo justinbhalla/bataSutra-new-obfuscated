@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/scaling-increases-coordination-costs-faster-than-revenue-mar-2026",
   "title": "Scaling Can Increase Coordination Costs Faster Than Revenue",
-  "blurb": "Scaling expands output, but also multiplies internal friction. This article explores how coordination costs can rise faster than revenue as organizations grow."
+  "blurb": "Scaling expands output, but also expands internal friction. This article explores how coordination costs can rise faster than revenue as organizations grow."
 },
 {
   "href": "/articles/collaboration-producing-knowledge-without-understanding-mar-2026",
