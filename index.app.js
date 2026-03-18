@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/standardization-decreases-strategic-elasticity-mar-2026",
-  "title": "Standardization Can Decreases Strategic Elasticity",
-  "blurb": "Uniform systems improve efficiency but reduce flexibility. This article explores how standardization strengthens execution."
+  "href": "/articles/scaling-increases-coordination-costs-faster-than-revenue-mar-2026",
+  "title": "Scaling Can Increase Coordination Costs Faster Than Revenue",
+  "blurb": "Scaling expands output, but also multiplies internal friction. This article explores how coordination costs can rise faster than revenue as organizations grow."
 },
 {
-  "href": "/articles/specialization-increases-cross-field-insight-mar-2026",
-  "title": "Specialization Increases Cross Field Insight",
-  "blurb": "Deep expertise can extend broader understanding. This piece examines how specialization enables stronger connections."
+  "href": "/articles/collaboration-producing-knowledge-without-understanding-mar-2026",
+  "title": "Collaboration Is Producing Knowledge Without Understanding",
+  "blurb": "Large teams generate results no single researcher fully grasps. This piece examines how modern science produces knowledge that is collectively validated but individually fragmented."
 }
 
 
