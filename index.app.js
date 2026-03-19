@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scaling-increases-coordination-costs-faster-than-revenue-mar-2026",
-  "title": "Scaling Can Increase Coordination Costs Faster Than Revenue",
-  "blurb": "Scaling expands output, but also expands internal friction. This article explores how coordination costs can rise faster than revenue as organizations grow."
+  "href": "/articles/risk-shifting-from-events-to-systems-mar-2026",
+  "title": "Risk Is Shifting From Events to Systems",
+  "blurb": "Failures are increasingly driven by structure rather than shocks. This article examines how interconnected systems are reshaping how risk emerges and spreads."
 },
 {
-  "href": "/articles/collaboration-producing-knowledge-without-understanding-mar-2026",
-  "title": "Collaboration Is Producing Knowledge Without Understanding",
-  "blurb": "Large teams can generate some results that researcher fully grasps. This piece examines how new science produces knowledge that is collectively validated but fragmented."
+  "href": "/articles/scientific-progress-becoming-infrastructure-led-mar-2026",
+  "title": "Scientific Progress Is Becoming Infrastructure Led",
+  "blurb": "Access to large tools increasingly shapes what research gets done. This piece explores how infrastructure is directing the pace and direction of scientific discovery."
 }
 
 
