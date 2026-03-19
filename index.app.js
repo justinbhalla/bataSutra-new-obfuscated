@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/risk-shifting-from-events-to-systems-mar-2026",
-  "title": "Risk Is Shifting From Events to Systems",
+  "title": "Risk Can Shifting From Events to Systems",
   "blurb": "Failures are increasingly driven by structure rather than shocks. This article examines how interconnected systems are reshaping how risk emerges and spreads."
 },
 {
