@@ -5,17 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/risk-shifting-from-events-to-systems-mar-2026",
-  "title": "Risks Can Shift From Events to Systems",
-  "blurb": "Failures are increasingly driven by structure rather than shocks. This article examines how interconnected systems are reshaping how risk emerges and spreads."
+  "href": "/articles/hindrances-can-be-organizational-bottlenecks",
+  "title": "Hindrances Can Be Organizational Bottlenecks",
+  "blurb": "Internal alignment increasingly slows execution greater than external competition. This article focuses on coordination as the constraint on organizational speed."
 },
 {
-  "href": "/articles/scientific-progress-becoming-infrastructure-led-mar-2026",
-  "title": "Scientific Progress Is Becoming Infrastructure Led",
-  "blurb": "Access to large tools increasingly shapes what research gets done. This piece explores how infrastructure is directing the pace and direction of scientific discovery."
+  "href": "/articles/knowledge-growth-outpaces-conceptual-stability",
+  "title": "Knowledge Growth Outpaces Conceptual Stability",
+  "blurb": "New findings are showing up faster than structures can absorb. This piece explores discovery is creating instability in scientific understanding."
 }
-
-
 
 
 
