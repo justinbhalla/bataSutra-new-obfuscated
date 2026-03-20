@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/hindrances-can-be-organizational-bottlenecks",
   "title": "Hindrances Can Be Organizational Bottlenecks",
-  "blurb": "Internal alignment increasingly slows execution greater than external competition. This article focuses on coordination as the constraint on organizational speed."
+  "blurb": "Coherence slows execution greater than external competition. This article focuses on coordination as the constraint on organizational speed."
 },
 {
   "href": "/articles/knowledge-growth-outpaces-conceptual-stability",
