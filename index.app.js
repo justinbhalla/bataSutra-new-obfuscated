@@ -5,8 +5,8 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/hindrances-can-be-organizational-bottlenecks",
-  "title": "Hindrances Can Be Organizational Bottlenecks",
+  "href": "/articles/hindrences-can-be-organizational-bottlenecks",
+  "title": "Hindrences Can Be Organizational Bottlenecks",
   "blurb": "Coherence slows execution greater than external competition. This article focuses on coordination as the constraint on organizational speed."
 },
 {
