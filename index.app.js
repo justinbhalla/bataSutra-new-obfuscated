@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/hindernces-can-be-organizational-bottlenecks",
-  "title": "Hinderences Can Be Organizational Bottlenecks",
-  "blurb": "Coherence slows execution greater than external competition. This article focuses on coordination as the constraint on organizational speed."
+  "href": "/articles/strategic-clarity-declines-as-data-expands-mar-2026",
+  "title": "Strategic Clarity Declines as Data Expands",
+  "blurb": "New information expands possibilities but produces direction harder to define. This article explores why strategy depends on selection, not the volume of data."
 },
 {
-  "href": "/articles/knowledge-growth-outpaces-conceptual-stability",
-  "title": "Knowledge Growth Outpaces Conceptual Stability",
-  "blurb": "New findings are showing up faster than structures can absorb. This piece explores discovery is creating instability in scientific understanding."
+  "href": "/articles/scientific-progress-is-cyclical-rather-than-linear-mar-2026",
+  "title": "Scientific Progress Is Cyclical Rather Than Linear",
+  "blurb": "Discovery advances in bursts, while understanding takes time to settle. This piece examines how science shifts through cycles of expansion and consolidation."
 }
-
 
 
 
