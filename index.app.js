@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/strategic-clarity-declines-as-data-expands",
-  "title": "Strategic Clarity Declines as Data Expands",
-  "blurb": "New information expands possibilities but produces direction harder to define. This article explores why strategy depends on selection, not the volume of data."
+  "href": "/articles/scale-converts-coordination-into-constraint",
+  "title": "Scale Converts Coordination Into Constraint",
+  "blurb": "Growth expands capability but also increases dependencies. This article explores how coordination shifts from support to constraint as organizations scale."
 },
 {
-  "href": "/articles/scientific-progress-is-cyclical-rather-than-linear",
-  "title": "Scientific Progress Is Cyclical Rather Than Linear",
-  "blurb": "Discovery advances in bursts, while understanding takes time to settle. This piece examines how science shifts through cycles of expansion and consolidation."
+  "href": "/articles/knowledge-validation-lags-behind-discovery",
+  "title": "Knowledge Validation Lags Behind Discovery",
+  "blurb": "New findings are appearing faster than they can be verified. This piece focuses on how validation is the bottleneck in scientific advancy."
 }
 
 
