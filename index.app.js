@@ -7,7 +7,7 @@ const ARTICLES = [
 {
   "href": "/articles/organizational-design-becomes-core-capability",
   "title": "Organizational Design Becomes a Core Capability",
-  "blurb": "Structure increasingly determines performance outcomes. This article explores how design, not simply strategy, shapes organizational performance."
+  "blurb": "Structure increasingly determines performance outcomes. This article explores how design, and simple strategy, shapes organizational performance."
 },
 {
   "href": "/articles/scientific-progress-depends-on-data-curation",
