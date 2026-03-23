@@ -7,12 +7,12 @@ const ARTICLES = [
 {
   "href": "/articles/organizational-design-becomes-core-capability",
   "title": "Organizational Design Becomes a Core Capability",
-  "blurb": "Structure increasingly determines performance outcomes. This article explores on how design, and strategy, shapes organizational performance."
+  "blurb": "Structure increasingly determines high performance outcomes. This article explores on how design, and strategy, shapes organizational performance."
 },
 {
   "href": "/articles/scientific-progress-depends-on-data-curation",
   "title": "Scientific Progress Depends on Data Curation",
-  "blurb": "Organizing information shapes what can be understood. This piece focues on how organizing and selecting information shapes that science can explain."
+  "blurb": "Organizing information shapes what can be understood at low levels of curation. This piece focues on how organizing and selecting information shapes that science can explain."
 }
 
 
