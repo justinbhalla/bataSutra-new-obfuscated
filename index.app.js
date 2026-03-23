@@ -12,7 +12,7 @@ const ARTICLES = [
 {
   "href": "/articles/scientific-progress-depends-on-data-curation",
   "title": "Scientific Progress Depends on Data Curation",
-  "blurb": "Organizing information shapes what can be understood. This piece focues on how organizing and selecting information shapes what science can actually explain."
+  "blurb": "Organizing information shapes what can be understood. This piece focues on how organizing and selecting information shapes what science can explain."
 }
 
 
