@@ -5,16 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/scale-converts-coordination-into-constraint",
-  "title": "Scale Converts Coordination Into Constraint",
-  "blurb": "Growth expands capability but also increases dependencies. This article explores how coordination shifts from support to constraint as organizations scale."
+  "href": "/articles/organizational-design-becomes-core-capability-mar-2026",
+  "title": "Organizational Design Becomes a Core Capability",
+  "blurb": "Structure increasingly determines performance outcomes.. This article explores why design, not simply strategy, shapes organizational performance."
 },
 {
-  "href": "/articles/knowledge-validation-lags-behind-discovery",
-  "title": "Knowledge Validation Lags Behind Discovery",
-  "blurb": "New findings are appearing faster than they can be verified. This piece focuses on how validation is the bottleneck in scientific advancy."
+  "href": "/articles/scientific-progress-depends-on-data-curation-mar-2026",
+  "title": "Scientific Progress Depends on Data Curation",
+  "blurb": "Organizing information shapes what can be understood. This piece focues on how organizing and selecting information shapes what science can actually explain."
 }
-
 
 
 ];
