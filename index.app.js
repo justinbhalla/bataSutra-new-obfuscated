@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/organizational-design-becomes-core-capability-mar-2026",
+  "href": "/articles/organizational-design-becomes-core-capability",
   "title": "Organizational Design Becomes a Core Capability",
   "blurb": "Structure increasingly determines performance outcomes.. This article explores why design, not simply strategy, shapes organizational performance."
 },
 {
-  "href": "/articles/scientific-progress-depends-on-data-curation-mar-2026",
+  "href": "/articles/scientific-progress-depends-on-data-curation",
   "title": "Scientific Progress Depends on Data Curation",
   "blurb": "Organizing information shapes what can be understood. This piece focues on how organizing and selecting information shapes what science can actually explain."
 }
