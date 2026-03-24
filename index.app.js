@@ -11,7 +11,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/insight-dependent-on-data-filtering",
-  "title": "Insight Springs from Careful Selection",
+  "title": "Insight Can Spring from Careful Selection",
   "blurb": "Selective curation shapes signals seen. This piece shows how careful selection sets the base for sharp insight across data heavy systems."
 }
 ];
