@@ -5,17 +5,15 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/organizational-design-becomes-core-capability",
-  "title": "Organizational Design Becomes a Core Capability",
-  "blurb": "Structure increasingly control high performance outcomes. This article explores on how design, and strategy, shapes organizational performance."
+  "href": "/articles/joint-control-expands-as-visibility-declines",
+  "title": "Joint Control Expands as Clarity Shrinks",
+  "blurb": "Shared control scales across complex systems, yet clear sense shrinks. This article studies how joint control can cut holistic sight and coherent sense."
 },
 {
-  "href": "/articles/scientific-progress-depends-on-data-curation",
-  "title": "Scientific Progress Depends on Data Curation",
-  "blurb": "Organizing information shapes what can be understood at low levels of curation. This piece focuses on how selecting data is shaped."
+  "href": "/articles/insight-dependent-on-data-filtering",
+  "title": "Insight Springs from Careful Selection",
+  "blurb": "Selective curation shapes signals seen. This piece shows how careful selection sets the base for sharp insight across data heavy systems."
 }
-
-
 ];
 
 
