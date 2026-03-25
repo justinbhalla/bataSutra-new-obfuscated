@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/capital-surplus-can-soften-discipline",
-  "title": "Capital Surplus Can Soften Discipline and Twist Strategic Choices",
+  "title": "Capital Surplus Can Soften Discipline and Bend Strategic Choices",
   "blurb": "Capital surplus expands choice but can shorten a long selection. This article shows how excess capital can soften discipline and shift strategic focus."
 },
 {
