@@ -11,7 +11,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/curation-sets-scientific-insight",
-  "title": "Curation Sets Scientific Insight",
+  "title": "Curation Can Set Scientific Insight",
   "blurb": "Cautious curation select gold signals and shapes clear insight. This piece shows how selection sets the path for scientific conclusion."
 }
 ];
