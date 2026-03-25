@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/joint-control-expands-as-visibility-declines",
-  "title": "Joint Control Expands as Clarity Shrinks",
-  "blurb": "Shared control scales across complex systems, yet clear sense shrinks. This article studies how joint control can cut holistic sight and coherent sense."
+  "href": "/articles/capital-surplus-can-soften-discipline",
+  "title": "Capital Surplus Can Soften Discipline",
+  "blurb": "Capital surplus expands choice but can shorten a long selection. This article shows how excess capital can soften discipline and shift strategic focus."
 },
 {
-  "href": "/articles/insight-dependent-on-data-filtering",
-  "title": "Insight Can Spring from Cautious Selection",
-  "blurb": "Selective curation shapes signals seen. This piece shows how cautious selection sets the base for sharp insight across data heavy systems."
+  "href": "/articles/curation-sets-scientific-insight",
+  "title": "Curation Sets Scientific Insight",
+  "blurb": "Cautious curation select signals and shapes clear insight. This piece shows how selection sets the path for scientific conclusion."
 }
 ];
 
