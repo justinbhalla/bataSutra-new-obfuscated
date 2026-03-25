@@ -6,12 +6,12 @@ const ARTICLES = [
   
 {
   "href": "/articles/capital-surplus-can-soften-discipline",
-  "title": "Capital Surplus Can Soften Discipline",
+  "title": "Capital Surplus Can Soften Discipline and Twist Strategic Choices",
   "blurb": "Capital surplus expands choice but can shorten a long selection. This article shows how excess capital can soften discipline and shift strategic focus."
 },
 {
   "href": "/articles/curation-sets-scientific-insight",
-  "title": "Curation Can Set Scientific Insight",
+  "title": "Curation Sets Scientific Insight and Shapes Clear Conceptual Clarity",
   "blurb": "Cautious curation select gold signals and shapes clear insight. This piece shows how selection sets the path for scientific conclusion."
 }
 ];
