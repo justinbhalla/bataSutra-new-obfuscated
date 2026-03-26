@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/constraint-can-create-clear-strategic-clarity-at-scale",
-  "title": "Constraint Can Create Clear Strategic Clarity is at Scale",
+  "title": "Constraint Creates Clear Strategic Clarity and Consistency at Scale",
   "blurb": "Scarcity sharpens selection and sustains clear strategic focus. This article shows how constraint can shorten support; disciplined execution at scale."
 },
 {
