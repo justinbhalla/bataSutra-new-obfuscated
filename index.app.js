@@ -11,7 +11,7 @@ const ARTICLES = [
 },
 {
   "href": "/articles/scientific-systems-sustain-continuous-but-shifting-insight-cycles",
-  "title": "Scientific Systems Can Sustain Continuously but Shift Insight Cycles",
+  "title": "Scientific Systems Sustain Continuous Signals but Shift Insight Cycles",
   "blurb": "Scientific systems sustain continuous discovery, yet insight stays in shifting cycles. This piece shows how stable clarity stays as knowledge expands."
 }
 ];
