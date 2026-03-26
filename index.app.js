@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/capital-surplus-can-soften-discipline",
-  "title": "Capital Surplus Can Soften Discipline and Bend Strategic Choices",
-  "blurb": "Capital surplus expands choice but can shorten a long selection. This article shows how excess capital can soften discipline and shift focus."
+  "href": "/articles/constraint-can-create-clear-strategic-clarity-at-scale",
+  "title": "Constraint Can Create Clear Strategic Clarity is at Scale",
+  "blurb": "Scarcity sharpens selection and sustains clear strategic focus. This article shows how constraint can shorten support; disciplined execution at scale."
 },
 {
-  "href": "/articles/curation-sets-scientific-insight",
-  "title": "Curation Sets Scientific Insight and Shapes Clear Conceptual Clarity",
-  "blurb": "Cautious curation select high gold signals and shapes clear insight. This piece shows how selection sets the path for scientific conclusion."
+  "href": "/articles/scientific-systems-sustain-continuous-but-shifting-insight-cycles",
+  "title": "Scientific Systems Can Sustain Continuously but Shift Insight Cycles",
+  "blurb": "Scientific systems sustain continuous discovery, yet insight stays in shifting cycles. This piece shows how stable clarity stays as knowledge expands."
 }
 ];
 
