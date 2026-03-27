@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/constraint-can-create-clear-strategic-clarity-at-scale",
-  "title": "Constraint Creates Clear Strategic Clarity and Consistency at Scale",
-  "blurb": "Scarcity sharpens selection and sustains clear strategic focus. This article shows how constraint can shorten support; disciplined execution at scale."
+  "href": "/articles/capital-cycles-can-skew-strategic-behavior-across-corporate-systems",
+  "title": "Capital Cycles Can Skew Strategic Behavior Across Corporate Systems",
+  "blurb": "Capital cycles shift conditions between surplus and constraint. This article shows how these shifts can skew strategic behavior and soften or sharpen discipline across systems."
 },
 {
-  "href": "/articles/scientific-systems-sustain-continuous-but-shifting-insight-cycles",
-  "title": "Scientific Systems Sustain Continuous Signals but Shift Insight Cycles",
-  "blurb": "Scientific systems sustain continuous discovery, yet insight stays in shifting cycles. This piece shows how stable clarity stays as knowledge expands."
+  "href": "/articles/search-capacity-can-surpass-synthesis-capability-in-scientific-systems",
+  "title": "Search Capacity Can Surpass Synthesis Capability in Scientific Systems",
+  "blurb": "Search systems scale discovery, but synthesis stays slower. This piece shows how search capacity can surpass synthesis capability, shaping how scientific insight develops."
 }
 ];
 
