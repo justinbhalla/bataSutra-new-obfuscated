@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/capital-cycles-can-skew-strategic-behavior-across-corporate-systems",
-  "title": "Capital Cycles Can Bend Strategic Behavior Across Corporate Systems",
+  "title": "Capital Cycles Can Bend Strategic Behavior Behind Corporate Systems",
   "blurb": "Capital cycles shift conditions between surplus and constraint. This article shows how these shifts can skew strategic behavior and soften or sharpen discipline across systems."
 },
 {
