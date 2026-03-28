@@ -5,14 +5,14 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/capital-cycles-can-bend-strategic-behavior-behind-corporate-systems",
-  "title": "Capital Cycles Can Bend Strategic Behavior Behind Corporate Systems",
-  "blurb": "Capital cycles shift conditions between surplus and constraint. This article shows how these shifts can skew strategic behavior and soften or sharpen discipline across systems."
+  "href": "/articles/signal-clutter-can-cloud-clear-strategic-selection-across-large-systems-mar-2026",
+  "title": "Signal Clutter Can Cloud Clear Strategic Selection Across Large Systems",
+  "blurb": "Signal clutter can cloud clarity as scale increases. This article shows how conflicting signals can shorten clear strategic selection across complex systems."
 },
 {
-  "href": "/articles/search-capacity-can-surpass-synthesis-capability-in-scientific-systems",
-  "title": "Search Capacity Can Surpass Synthesis Capability in Scientific Systems",
-  "blurb": "Search systems scale discovery, but synthesis stays slower. This piece shows how search capacity can surpass synthesis capability, shaping how scientific insight develops."
+  "href": "/articles/scientific-knowledge-can-stay-in-constant-shift-across-discovery-cycles-mar-2026",
+  "title": "Scientific Knowledge Can Stay in Constant Shift Across Discovery Cycles",
+  "blurb": "Scientific knowledge stays in constant shift as discovery continues. This piece shows how continuous discovery can shorten stable conceptual clarity across cycles."
 }
 ];
 
