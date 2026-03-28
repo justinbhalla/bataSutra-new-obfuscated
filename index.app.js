@@ -5,12 +5,12 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 {
-  "href": "/articles/signal-clutter-can-cloud-clear-strategic-selection-across-large-systems-mar-2026",
+  "href": "/articles/signal-clutter-can-cloud-clear-strategic-selection-across-large-systems",
   "title": "Signal Clutter Can Cloud Clear Strategic Selection Behind Large Systems",
   "blurb": "Signal clutter can cloud clarity as scale increases. This article shows how conflicting signals can shorten clear strategic selection behind complex systems."
 },
 {
-  "href": "/articles/scientific-knowledge-can-stay-in-constant-shift-across-discovery-cycles-mar-2026",
+  "href": "/articles/scientific-knowledge-can-stay-in-constant-shift-across-discovery-cycles",
   "title": "Scientific Knowledge Can Stay in Constant Shift Across Discovery Cycles",
   "blurb": "Scientific knowledge stays in constant shift as discovery continues. This piece shows how continuous discovery can shorten stable conceptual clarity across cycles."
 }
