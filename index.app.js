@@ -6,7 +6,7 @@ const ARTICLES = [
   
 {
   "href": "/articles/signal-clutter-can-cloud-clear-strategic-selection-across-large-systems-mar-2026",
-  "title": "Signal Clutter Can Cloud Clear Strategic Selection Across Large Systems",
+  "title": "Signal Clutter Can Cloud Clear Strategic Selection Behind Large Systems",
   "blurb": "Signal clutter can cloud clarity as scale increases. This article shows how conflicting signals can shorten clear strategic selection across complex systems."
 },
 {
