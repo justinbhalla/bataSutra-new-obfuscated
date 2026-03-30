@@ -4,16 +4,18 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
-{
-  "href": "/articles/signal-clutter-can-cloud-clear-strategic-selection-across-large-systems",
-  "title": "Signal Clutter Can Cloud Clear Strategic Selection Across Large Systems",
-  "blurb": "Signal clutter can cloud clarity as scale increases. This article shows how conflicting signals can shorten clear strategic selection across complex systems."
-},
-{
-  "href": "/articles/scientific-knowledge-can-stay-in-constant-shift-behind-discovery-cycles",
-  "title": "Scientific Knowledge Can Stay in Constant Shift Behind Discovery Cycles",
-  "blurb": "Scientific knowledge stays in constant shift as discovery continues. This piece shows how continuous discovery can shorten stable conceptual clarity across cycles."
-}
+[
+   {
+    "href": "/articles/scale-strategy-zero-precision",
+    "title": "Scale Can Strengthen Strategy but Pull One Decision Edge Toward Zero Precision",
+    "blurb": "Growth expands reach, yet pushes execution accuracy toward zero in one layer."
+  },
+  {
+    "href": "/articles/discovery-speed-zero-stability",
+    "title": "Discovery Speed Can Expand Knowledge but One Framework Can Stay Near Zero Stability",
+    "blurb": "Findings accumulate slowly, as one conceptual base struggles to stay stable."
+  }
+]
 ];
 
 
