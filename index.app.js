@@ -11,7 +11,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/discovery-speed-zero-stability",
-    "title": "Discovery Speed Can Expand Knowledge but One Framework Can Stay Near Zero Stability",
+    "title": "Discovery Speed Can Expand Knowledge but Three Frameworks Can Stay Near Zero Stability",
     "blurb": "Findings accumulate slowly, as one conceptual base struggles to stay stable."
   }
 ];
