@@ -4,8 +4,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
-[
-   {
+{
     "href": "/articles/scale-strategy-zero-precision",
     "title": "Scale Can Strengthen Strategy but Pull One Decision Edge Toward Zero Precision",
     "blurb": "Growth expands reach, yet pushes execution accuracy toward zero in one layer."
@@ -13,9 +12,8 @@ const ARTICLES = [
   {
     "href": "/articles/discovery-speed-zero-stability",
     "title": "Discovery Speed Can Expand Knowledge but One Framework Can Stay Near Zero Stability",
-    "blurb": "Findings accumulate slowly, as one conceptual base struggles to stay stable."
+    "blurb": "Findings accumulate slowly, as one conceptual base struggles to remain stable."
   }
-]
 ];
 
 
