@@ -7,7 +7,7 @@ const ARTICLES = [
 {
     "href": "/articles/scale-strategy-zero-precision",
     "title": "Scale Can Strengthen Strategy but Pull One Decision Edge Toward Zero Precision",
-    "blurb": "Growth expands reach, yet pushes execution accuracy toward zero in one layer."
+    "blurb": "Growth expands reach, yet pulls execution accuracy toward zero in one layer."
   },
   {
     "href": "/articles/discovery-speed-zero-stability",
