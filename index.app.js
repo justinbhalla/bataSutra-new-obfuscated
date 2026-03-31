@@ -4,7 +4,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
-[
+
   {
     "href": "/articles/saas-scale-zero-conservation",
     "title": "Scale Can Expand Access Through SaaS 4.0 but Pull One Example Toward Zero Conservation",
@@ -15,7 +15,7 @@ const ARTICLES = [
     "title": "CRISPR 2.1 Can Expand Gene Editing Control but Push One Outcome Behind Zero Predictability",
     "blurb": "Precision tools extend capability, yet specific effects stay uneven."
   }
-]
+
 ];
 
 
