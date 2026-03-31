@@ -4,16 +4,18 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 // Local articles (fallback)
 const ARTICLES = [
   
-{
-    "href": "/articles/scale-strategy-zero-precision",
-    "title": "Scale Can Strengthen Strategy but Pull One Decision Edge Toward Zero Precision",
-    "blurb": "Growth expands reach, yet pulls execution accuracy toward zero in one layer."
+[
+  {
+    "href": "/articles/saas-scale-zero-conservation",
+    "title": "Scale Can Expand Access Through SaaS 4.0 but Pull One Example Toward Zero Conservation",
+    "blurb": "Product spread increases, yet one application loses sustained value."
   },
   {
-    "href": "/articles/discovery-speed-zero-stability",
-    "title": "Discovery Speed Can Expand Knowledge but One Framework Can Stay Near Zero Stability",
-    "blurb": "Findings accumulate slowly, as one conceptual base struggles to stay stable."
+    "href": "/articles/crispr-zero-predictability",
+    "title": "CRISPR 2.1 Can Expand Gene Editing Control but Push One Outcome Behind Zero Predictability",
+    "blurb": "Precision tools extend capability, yet specific effects stay uneven."
   }
+]
 ];
 
 
