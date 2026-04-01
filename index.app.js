@@ -13,7 +13,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/high-resolution-climate-feedback-certainty",
-    "title": "High Resolution Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
+    "title": "High Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
     "blurb": "Simulation depth increases, yet systemic feedback stays unclear."
   }
 
