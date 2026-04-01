@@ -12,7 +12,7 @@ const ARTICLES = [
     "blurb": "Data coverage expands, however structural stability stays concealed."
   },
   {
-    "href": "/articles/high-resolution-climate-feedback-certainty",
+    "href": "/articles/high-climate-feedback-certainty",
     "title": "High Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
     "blurb": "Simulation depth increases, yet structural feedback stays unclear."
   }
