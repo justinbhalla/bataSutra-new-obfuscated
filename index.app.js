@@ -13,7 +13,7 @@ const ARTICLES = [
   {
     "href": "/articles/crispr-zero-predictability",
     "title": "CRISPR 2.1 Can Expand Gene Editing Control but Push One Outcome Behind Zero Predictability",
-    "blurb": "Precision tools extend capability, yet specific effects stay uneven."
+    "blurb": "Sharp tools extend capability, yet specific effects stay uneven."
   }
 
 ];
