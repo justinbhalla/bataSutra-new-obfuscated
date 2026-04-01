@@ -9,12 +9,12 @@ const ARTICLES = [
   {
     "href": "/articles/supply-chain-erp-failure-nodes",
     "title": "Supply Chain ERP Systems Can Improve Traceability but Hide Four Critical Failure Nodes",
-    "blurb": "Data coverage expands, however systemic stability stays concealed."
+    "blurb": "Data coverage expands, however structural stability stays concealed."
   },
   {
     "href": "/articles/high-resolution-climate-feedback-certainty",
     "title": "High Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
-    "blurb": "Simulation depth increases, yet systemic feedback stays unclear."
+    "blurb": "Simulation depth increases, yet structural feedback stays unclear."
   }
 
 
