@@ -5,7 +5,7 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 
-  [
+  
   {
     "href": "/articles/supply-chain-erp-failure-nodes",
     "title": "Supply Chain ERP Systems Can Improve Traceability but Hide Four Critical Failure Nodes",
@@ -16,7 +16,7 @@ const ARTICLES = [
     "title": "High Resolution Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
     "blurb": "Simulation depth increases, yet systemic feedback stays unclear."
   }
-]
+
 
 ];
 
