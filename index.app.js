@@ -5,16 +5,18 @@ const SHEET_ID='1WN8151jGQjqbfO0Aj2tK-79yJ9gCD_z0DLCdxs_higg';
 const ARTICLES = [
   
 
+  [
   {
-    "href": "/articles/saas-scale-zero-conservation",
-    "title": "Scale Can Expand Access Through SaaS 4.0 but Pull One Example Toward Zero Conservation",
-    "blurb": "Product spread increases, yet one application loses sustained value."
+    "href": "/articles/supply-chain-erp-failure-nodes",
+    "title": "Supply Chain ERP Systems Can Improve Traceability but Hide Four Critical Failure Nodes",
+    "blurb": "Data coverage expands, however systemic stability stays concealed."
   },
   {
-    "href": "/articles/crispr-zero-predictability",
-    "title": "CRISPR 2.1 Can Expand Gene Editing Control but Push One Outcome Behind Zero Predictability",
-    "blurb": "Sharp tools extend capability, yet specific effects stay uneven."
+    "href": "/articles/high-resolution-climate-feedback-certainty",
+    "title": "High Resolution Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
+    "blurb": "Simulation depth increases, yet systemic feedback stays unclear."
   }
+]
 
 ];
 
