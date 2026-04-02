@@ -9,12 +9,12 @@ const ARTICLES = [
   
   {
     "href": "/articles/ai-coding-tools-system-integrity",
-    "title": "Fast AI Coding Tools Can Produce 10X Output but Reduce One Layer of System Integrity",
+    "title": "Fast AI Coding Tools Can Create 10X Output but decrease One Layer of System Integrity",
     "blurb": "Development accelerates, yet architectural discipline declines."
   },
   {
     "href": "/articles//quantum-simulation-boundary-condition",
-    "title": "Quantum Simulation Systems Running 1000 Iterations Are Capable of Improving Accuracy",
+    "title": "Quantum Simulation Systems Jogging 1000 Iterations Can Improve System Accuracy",
     "blurb": "Computational precision rises, however theoretical limits persist."
   }
 
