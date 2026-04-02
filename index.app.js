@@ -14,7 +14,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles//quantum-simulation-boundary-condition",
-    "title": "Quantum Simulation Systems Running 1000 Iterations Can Improve Accuracy",
+    "title": "Quantum Simulation Systems Running 1000 Iterations Are Capable of Improving Accuracy",
     "blurb": "Computational precision rises, however theoretical limits persist."
   }
 
