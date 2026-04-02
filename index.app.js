@@ -15,7 +15,7 @@ const ARTICLES = [
   {
     "href": "/articles//quantum-simulation-boundary-condition",
     "title": "Quantum Simulation Systems Running 1000 Iterations Can Improve Accuracy",
-    "blurb": "Computational sharpness rises, however theoretical limits persist."
+    "blurb": "Computational precision rises, however theoretical limits persist."
   }
 
 
