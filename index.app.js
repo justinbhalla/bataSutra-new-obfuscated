@@ -6,15 +6,16 @@ const ARTICLES = [
   
 
   
+  
   {
-    "href": "/articles/supply-chain-erp-failure-nodes",
-    "title": "Supply Chain ERP Systems Can Improve Traceability but Hide Four Critical Failure Nodes",
-    "blurb": "Data coverage expands, however structural stability stays concealed."
+    "href": "/articles/ai-coding-tools-system-integrity",
+    "title": "Fast AI Coding Tools Can Produce 10X Output but Reduce One Layer of System Integrity",
+    "blurb": "Development accelerates, yet architectural discipline declines."
   },
   {
-    "href": "/articles/high-climate-feedback-certainty",
-    "title": "High Climate Systems Can Process 3X Data however Leave Two Feedback Loops Near Zero Certainty",
-    "blurb": "Simulation depth increases, yet structural feedback stays unclear."
+    "href": "/articles//quantum-simulation-boundary-condition",
+    "title": "Quantum Simulation Systems Running 1000 Iterations Can Improve Accuracy",
+    "blurb": "Computational precision rises, however theoretical limits persist."
   }
 
 
