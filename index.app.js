@@ -7,15 +7,16 @@ const ARTICLES = [
 
   
   
+  
   {
-    "href": "/articles/ai-coding-tools-system-integrity",
-    "title": "Fast AI Coding Tools Can Create 10X Output but decrease One Layer of System Integrity",
-    "blurb": "Development accelerates, yet architectural discipline declines."
+    "href": "/articles/corporate-okr-systems-zero-attention",
+    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority to Zero Attention",
+    "blurb": "Scale expands, however focus narrows."
   },
   {
-    "href": "/articles//quantum-simulation-boundary-condition",
-    "title": "Quantum Simulation Systems Jogging 1000 Iterations Can Improve System Accuracy",
-    "blurb": "Computational precision rises, however theoretical limits persist."
+    "href": "/articles/planetary-atmosphere-chemical-cycles-zero-certainty",
+    "title": "Planetary Atmosphere Systems Processing 12 Chemical Cycles Can Improve Simulation however Pull Two Reaction Paths to Zero Certainty",
+    "blurb": "Systems depth increases, yet chemical complexity prevents solutions."
   }
 
 
