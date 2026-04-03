@@ -10,7 +10,7 @@ const ARTICLES = [
   
   {
     "href": "/articles/corporate-okr-systems-zero-attention",
-    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority to Zero Attention",
+    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority",
     "blurb": "Scale expands, however focus narrows."
   },
   {
