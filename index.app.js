@@ -16,7 +16,7 @@ const ARTICLES = [
   {
     "href": "/articles/planetary-chemical-cycles-zero-certainty",
     "title": "Planetary Systems Processing 12 Chemical Cycles Can Decrease Simulations however Pull Two Paths",
-    "blurb": "Systems depth increases, yet chemicals prevents solutions."
+    "blurb": "Systems depth decrease; prevents solutions."
   }
 
 
