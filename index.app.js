@@ -15,7 +15,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/planetary-atmosphere-chemical-cycles-zero-certainty",
-    "title": "Planetary Atmosphere Systems Processing 12 Chemical Cycles Can Improve Simulation however Pull Two Paths",
+    "title": "Planetary Systems Processing 12 Chemical Cycles Can Improve Simulation however Pull Two Paths",
     "blurb": "Systems depth increases, yet chemical complexity prevents solutions."
   }
 
