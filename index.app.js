@@ -8,16 +8,18 @@ const ARTICLES = [
   
   
   
+ 
   {
-    "href": "/articles/corporate-okr-systems-zero-attention",
-    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority",
-    "blurb": "Scale expands, however focus narrows."
+    "href": "/articles/cash-ops-data-zero-clarity",
+    "title": "Cash Ops Using ₹8B Data Sets Can Boost Scale but Push One Key Signal to Zero Clarity",
+    "blurb": "Data bulk lifts size, however key insight fades."
   },
   {
-    "href": "/articles/planetary-chemical-cycles-zero-certainty",
-    "title": "Planetary Systems Processing 12 Chemical Cycles Can Decrease Simulations however Pull Two Paths",
-    "blurb": "Systems depth decrease; prevents solutions."
+    "href": "/articles/space-lab-4d-infinite-solutions",
+    "title": "Space Lab Using 4D Data Sets Can Boost Study but Pull Two Key Signals to Infinite Solutions",
+    "blurb": "Data sets aid study; key cue increases."
   }
+
 
 
 ];
