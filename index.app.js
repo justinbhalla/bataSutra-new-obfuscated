@@ -10,16 +10,18 @@ const ARTICLES = [
   
  
   
-   {
-    "href": "/articles/cash-ops-data-zero-clarity",
-    "title": "Cash Ops Using ₹8B Data Sets Can Boost Scale but Push One Key Signal to Zero Clarity",
-    "blurb": "Data bulk lifts size, however key insight fades."
+   
+  {
+    "href": "/articles/sales-ops-kpi-focus",
+    "title": "Sales Ops Leverage 11 KPIs Can Lift Pace yet One Key Goal Stays Out of Focus",
+    "blurb": "KPI use aids speed, yet goal dips."
   },
   {
-    "href": "/articles/space-lab-4d-infinite-solutions",
-    "title": "Space Lab Using 4D Data Sets Can Boost Study but Pull Two Key Signals to Infinite Solutions",
-    "blurb": "Data sets aid study; key cue increases."
+    "href": "/articles/cell-lab-noise-path",
+    "title": "Cell Lab Capitalize 8K Cells Can Increase Insight yet One Path Fades Into Noise",
+    "blurb": "Cell scale aids insight, however path cue dips."
   }
+
 
 
 
