@@ -11,15 +11,15 @@ const ARTICLES = [
  
   
    
-  {
-    "href": "/articles/sales-ops-kpi-focus",
-    "title": "Sales Ops Leverage 11 KPIs Can Lift Pace yet One Key Goal Stays Out of Focus",
-    "blurb": "KPI use aids speed, yet goal dips."
+ {
+    "href": "/articles/corporate-okr-systems-zero-attention",
+    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority",
+    "blurb": "Scale expands, however focus narrows."
   },
   {
-    "href": "/articles/cell-lab-noise-path",
-    "title": "Cell Lab Capitalize 8K Cells Can Increase Insight yet One Path Fades Into Noise",
-    "blurb": "Cell scale aids insight, however path cue dips."
+    "href": "/articles/planetary-chemical-cycles-zero-certainty",
+    "title": "Planetary Systems Processing 12 Chemical Cycles Can Decrease Simulations however Pull Two Paths",
+    "blurb": "Systems depth increases, yet chemicals prevents solutions."
   }
 
 
