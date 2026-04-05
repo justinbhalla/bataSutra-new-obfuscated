@@ -13,7 +13,7 @@ const ARTICLES = [
   {
     "href": "/articles/sales-ops-kpi-focus",
     "title": "Sales Ops Leverage 11 KPIs Can Lift Pace yet One Key Goal Stays Out of Focus",
-    "blurb": "KPI use aids speed, yet goal salience dips."
+    "blurb": "KPI use aids speed, yet goals dips."
   },
   {
     "href": "/articles/cell-lab-noise-path",
