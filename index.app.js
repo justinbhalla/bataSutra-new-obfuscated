@@ -11,15 +11,16 @@ const ARTICLES = [
  
   
    
- {
-    "href": "/articles/corporate-okr-systems-zero-attention",
-    "title": "Corporate OKR Systems Tracking 15 Goals Can Improve Alignment but Push One Strategic Priority",
-    "blurb": "Scale expands, however focus narrows."
+
+  {
+    "href": "/articles/sales-kpi-loop-focus",
+    "title": "Sales KPIs 12 Deep However One Core Goal Sits Loop",
+    "blurb": "KPI depth lifts pace, yet focus slips."
   },
   {
-    "href": "/articles/planetary-chemical-cycles-zero-certainty",
-    "title": "Planetary Systems Processing 12 Chemical Cycles Can Decrease Simulations however Pull Two Paths",
-    "blurb": "Systems depth increases, yet chemicals prevents solutions."
+    "href": "/articles/cell-sets-elusive-path",
+    "title": "Cell Sets 8K However One Path Sits Elusive in Bio Cycles",
+    "blurb": "Cell depth lifts insight, yet path cue slips."
   }
 
 
