@@ -14,7 +14,7 @@ const ARTICLES = [
 
   {
     "href": "/articles/sales-kpi-loop-focus",
-    "title": "Sales KPIs 12 Deep However One Core Goal Sits Loop",
+    "title": "Sales KPIs 12 Deep However One Core Goal Sets Loops",
     "blurb": "KPI depth lifts pace, yet focus slips."
   },
   {
