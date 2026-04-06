@@ -15,12 +15,12 @@ const ARTICLES = [
   {
     "href": "/articles/sales-kpi-loop-focus",
     "title": "Sales KPIs 12 Deep However One Core Goal Sets Loops",
-    "blurb": "KPI depth lifts pace, yet focus slips."
+    "blurb": "KPI depth lifts pace, yet focus stays."
   },
   {
     "href": "/articles/cell-sets-elusive-path",
     "title": "Cell Sets 8K Yet One Path Sits Elusive in Bio Cycles",
-    "blurb": "Cell depth lifts insight, However path cue slips."
+    "blurb": "Cell depth lifts insight, However path cue slides."
   }
 
 
