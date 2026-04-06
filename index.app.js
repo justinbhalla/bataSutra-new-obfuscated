@@ -19,8 +19,8 @@ const ARTICLES = [
   },
   {
     "href": "/articles/cell-sets-elusive-path",
-    "title": "Cell Sets 8K However One Path Sits Elusive in Bio Cycles",
-    "blurb": "Cell depth lifts insight, yet path cue slips."
+    "title": "Cell Sets 8K Yet One Path Sits Elusive in Bio Cycles",
+    "blurb": "Cell depth lifts insight, However path cue slips."
   }
 
 
