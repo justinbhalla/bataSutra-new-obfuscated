@@ -12,17 +12,18 @@ const ARTICLES = [
   
    
 
+  [
   {
-    "href": "/articles/sales-kpi-loop-focus",
-    "title": "Sales KPIs 12 Deep However One Core Goal Sets Loops",
-    "blurb": "KPI depth lifts pace, yet focus stays."
+    "href": "/articles/car-sales-idle-cost",
+    "title": "Car Sales 25K Units Yet One Sits Idle in High Cost Lots",
+    "blurb": "Sales increase, yet idle cost slides."
   },
   {
-    "href": "/articles/cell-sets-elusive-path",
-    "title": "Cell Sets 8K Yet One Path Sits Elusive in Bio Cycles",
-    "blurb": "Cell depth lifts insight, However path cue slides."
+    "href": "/articles/space-light-soft",
+    "title": "Space Light 18X Yet Two Flux Stays Soft in Distant Cycles",
+    "blurb": "Light scale lifts sight, yet flux slips."
   }
-
+]
 
 
 
