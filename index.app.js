@@ -15,12 +15,12 @@ const ARTICLES = [
   
   {
     "href": "/articles/car-sales-idle-cost",
-    "title": "Car Sales 25K Units Yet Six Sits Idle High Cost Lots",
+    "title": "Car Sales 25K Units Yet Eight Sits Idle High Cost Lots",
     "blurb": "Sales increase, yet idle cost slides."
   },
   {
     "href": "/articles/space-light-soft",
-    "title": "Space Light 18X Yet Seven Flux Stays Soft Distant Cycles",
+    "title": "Space Light 18X Yet Nine Flux Stays Soft Distant Cycles",
     "blurb": "Light scale lifts sight, yet flux slips."
   }
 
