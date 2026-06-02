@@ -15,7 +15,7 @@ const ARTICLES = [
   
   {
     "href": "/articles/car-sales-idle-cost",
-    "title": "Car Sales 25K Units Yet One Sits Idle High Cost Lots",
+    "title": "Car Sales 25K Units Yet Two Sits Idle High Cost Lots",
     "blurb": "Sales increase, yet idle cost slides."
   },
   {
