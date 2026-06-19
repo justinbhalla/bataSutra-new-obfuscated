@@ -20,7 +20,7 @@ const ARTICLES = [
   },
   {
     "href": "/articles/space-light-soft",
-    "title": "Space Light 18X Yet Onw Flux Stays Soft Distant Cycles",
+    "title": "Space Light 18X Yet One Flux Stays Soft Distant Cycles",
     "blurb": "Light scale lifts sight, yet flux slips."
   }
 
